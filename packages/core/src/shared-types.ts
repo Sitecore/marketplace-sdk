@@ -186,5 +186,5 @@ export interface ExternalUrlPayload {
 export interface PagesContextParams {
   itemId?: string;
   language?: string;
-  itemVersion?: string;
+  itemVersion?: number;
 }
