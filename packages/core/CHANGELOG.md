@@ -1,5 +1,12 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.1.6
+
+### Patch Changes
+
+- d2f72e4: Updates itemVersion field type to number in pages context mutation
+- 11081ee: Updates application touchpoint context to support multiple dashboard blocks
+
 ## 0.1.5
 
 ### Patch Changes
