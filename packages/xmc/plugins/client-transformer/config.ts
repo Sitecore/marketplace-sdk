@@ -9,7 +9,6 @@ export const defaultClientTransformerConfig: Plugin.Config<Config> = {
   _handlerLegacy: () => {},
   name: '@sitecore-marketplace/client-transformer',
   output: 'client',
-  typePrefix: '',
 };
 
 /**

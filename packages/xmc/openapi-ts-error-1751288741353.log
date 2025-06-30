@@ -1,0 +1,12 @@
+context.startLexicalEnvironment is not a function
+TypeError: context.startLexicalEnvironment is not a function
+    at visitParameterList (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94131:11)
+    at visitEachChildOfArrowFunction (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94723:7)
+    at Object.visitEachChild (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94284:33)
+    at visit (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\packages\xmc\plugins\client-transformer\plugin.ts:28:15)
+    at visitNode (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94036:19)
+    at visitEachChildOfVariableDeclaration (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94984:7)
+    at Object.visitEachChild (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94284:33)
+    at visit (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\packages\xmc\plugins\client-transformer\plugin.ts:28:15)
+    at visitArrayWorker (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94098:49)
+    at visitNodes2 (D:\Sitecore\Sitecore-PD\mkp\sitecore-marketplace-sdk\node_modules\.pnpm\typescript@5.8.2\node_modules\typescript\lib\typescript.js:94069:19)

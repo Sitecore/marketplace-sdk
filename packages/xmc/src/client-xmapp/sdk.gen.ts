@@ -6,155 +6,7 @@ import {
   type Client,
   formDataBodySerializer,
 } from '@hey-api/client-fetch';
-import type {
-  ListLanguagesData,
-  ListLanguagesResponse,
-  ListLanguagesError,
-  CreateLanguageData,
-  CreateLanguageResponse,
-  CreateLanguageError,
-  ListSupportedLanguagesData,
-  ListSupportedLanguagesResponse,
-  ListSupportedLanguagesError,
-  ListPageVariantsData,
-  ListPageVariantsResponse,
-  ListPageVariantsError,
-  GetLivePageStateData,
-  GetLivePageStateError,
-  ListCollectionsData,
-  ListCollectionsResponse,
-  ListCollectionsError,
-  CreateCollectionData,
-  CreateCollectionResponse,
-  CreateCollectionError,
-  DeleteCollectionData,
-  DeleteCollectionResponse,
-  DeleteCollectionError,
-  RetrieveCollectionData,
-  RetrieveCollectionResponse,
-  RetrieveCollectionError,
-  UpdateCollectionData,
-  UpdateCollectionResponse,
-  UpdateCollectionError,
-  GetFavoriteSitesData,
-  GetFavoriteSitesResponse,
-  GetFavoriteSitesError,
-  AddFavoriteSiteData,
-  AddFavoriteSiteResponse,
-  AddFavoriteSiteError,
-  ListJobsData,
-  ListJobsResponse,
-  ListJobsError,
-  RetrieveJobData,
-  RetrieveJobResponse,
-  RetrieveJobError,
-  AggregateLivePageVariantsData,
-  AggregateLivePageVariantsResponse,
-  AggregateLivePageVariantsError,
-  AggregatePageDataData,
-  AggregatePageDataResponse,
-  AggregatePageDataError,
-  RenameCollectionData,
-  RenameCollectionResponse,
-  RenameCollectionError,
-  SortCollectionsData,
-  SortCollectionsResponse,
-  SortCollectionsError,
-  ValidateCollectionNameData,
-  ValidateCollectionNameResponse,
-  ValidateCollectionNameError,
-  DeleteLanguageData,
-  DeleteLanguageResponse,
-  DeleteLanguageError,
-  UpdateLanguageData,
-  UpdateLanguageResponse,
-  UpdateLanguageError,
-  RemoveFavoriteSiteData,
-  RemoveFavoriteSiteError,
-  ListSitesData,
-  ListSitesResponse,
-  ListSitesError,
-  CreateSiteData,
-  CreateSiteResponse,
-  CreateSiteError,
-  DeleteSiteData,
-  DeleteSiteResponse,
-  DeleteSiteError,
-  RetrieveSiteData,
-  RetrieveSiteResponse,
-  RetrieveSiteError,
-  UpdateSiteData,
-  UpdateSiteResponse,
-  UpdateSiteError,
-  CopySiteData,
-  CopySiteResponse,
-  CopySiteError,
-  RenameSiteData,
-  RenameSiteResponse,
-  RenameSiteError,
-  SortSitesData,
-  SortSitesResponse,
-  SortSitesError,
-  ValidateSiteNameData,
-  ValidateSiteNameResponse,
-  ValidateSiteNameError,
-  ListTrackedSitesData,
-  ListTrackedSitesResponse,
-  ListTrackedSitesError,
-  ListCollectionSitesData,
-  ListCollectionSitesResponse,
-  ListCollectionSitesError,
-  DetachAnalyticsIdentifierData,
-  DetachAnalyticsIdentifierResponse,
-  DetachAnalyticsIdentifierError,
-  RetrieveSiteHierarchyData,
-  RetrieveSiteHierarchyResponse,
-  RetrieveSiteHierarchyError,
-  RetrievePageHierarchyData,
-  RetrievePageHierarchyResponse,
-  RetrievePageHierarchyError,
-  ListPageAncestorsData,
-  ListPageAncestorsResponse,
-  ListPageAncestorsError,
-  ListPageChildrenData,
-  ListPageChildrenResponse,
-  ListPageChildrenError,
-  ListHostsData,
-  ListHostsResponse,
-  ListHostsError,
-  CreateHostData,
-  CreateHostResponse,
-  CreateHostError,
-  DeleteHostData,
-  DeleteHostError,
-  RetrieveHostData,
-  RetrieveHostResponse,
-  RetrieveHostError,
-  UpdateHostData,
-  UpdateHostResponse,
-  UpdateHostError,
-  GetRenderingHostsData,
-  GetRenderingHostsResponse,
-  GetRenderingHostsError,
-  ListSiteTemplatesData,
-  ListSiteTemplatesResponse,
-  ListSiteTemplatesError,
-  UploadSiteThumbnailData,
-  UploadSiteThumbnailResponse,
-  UploadSiteThumbnailError,
-  RetrieveLocalizationStatisticsData,
-  RetrieveLocalizationStatisticsResponse,
-  RetrieveLocalizationStatisticsError,
-  RetrieveSitemapConfigurationData,
-  RetrieveSitemapConfigurationResponse,
-  RetrieveSitemapConfigurationError,
-  UpdateSitemapConfigurationData,
-  UpdateSitemapConfigurationResponse,
-  UpdateSitemapConfigurationError,
-  RetrieveWorkflowStatisticsData,
-  RetrieveWorkflowStatisticsResponse,
-  RetrieveWorkflowStatisticsError,
-} from './types.gen';
+import type { Xmapp } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 
 export type Options<
@@ -182,8 +34,8 @@ export const listLanguages = <ThrowOnError extends boolean = false>(
   options?: Options<ListLanguagesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
-    ListLanguagesResponse,
-    ListLanguagesError,
+    Xmapp.ListLanguagesResponse,
+    Xmapp.ListLanguagesError,
     ThrowOnError
   >({
     url: '/api/v1/languages',
@@ -201,8 +53,8 @@ export const createLanguage = <ThrowOnError extends boolean = false>(
   options: Options<CreateLanguageData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    CreateLanguageResponse,
-    CreateLanguageError,
+    Xmapp.CreateLanguageResponse,
+    Xmapp.CreateLanguageError,
     ThrowOnError
   >({
     url: '/api/v1/languages',
@@ -222,8 +74,8 @@ export const listSupportedLanguages = <ThrowOnError extends boolean = false>(
   options?: Options<ListSupportedLanguagesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
-    ListSupportedLanguagesResponse,
-    ListSupportedLanguagesError,
+    Xmapp.ListSupportedLanguagesResponse,
+    Xmapp.ListSupportedLanguagesError,
     ThrowOnError
   >({
     url: '/api/v1/languages/supported',
@@ -239,8 +91,8 @@ export const listPageVariants = <ThrowOnError extends boolean = false>(
   options: Options<ListPageVariantsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    ListPageVariantsResponse,
-    ListPageVariantsError,
+    Xmapp.ListPageVariantsResponse,
+    Xmapp.ListPageVariantsError,
     ThrowOnError
   >({
     url: '/api/v1/pages/{pageId}/live/variants',
@@ -255,7 +107,7 @@ export const listPageVariants = <ThrowOnError extends boolean = false>(
 export const getLivePageState = <ThrowOnError extends boolean = false>(
   options: Options<GetLivePageStateData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).get<unknown, GetLivePageStateError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).get<unknown, Xmapp.GetLivePageStateError, ThrowOnError>({
     url: '/api/v1/pages/{pageId}/live',
     ...options,
   });
@@ -269,8 +121,8 @@ export const listCollections = <ThrowOnError extends boolean = false>(
   options?: Options<ListCollectionsData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
-    ListCollectionsResponse,
-    ListCollectionsError,
+    Xmapp.ListCollectionsResponse,
+    Xmapp.ListCollectionsError,
     ThrowOnError
   >({
     url: '/api/v1/collections',
@@ -286,8 +138,8 @@ export const createCollection = <ThrowOnError extends boolean = false>(
   options?: Options<CreateCollectionData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).post<
-    CreateCollectionResponse,
-    CreateCollectionError,
+    Xmapp.CreateCollectionResponse,
+    Xmapp.CreateCollectionError,
     ThrowOnError
   >({
     url: '/api/v1/collections',
@@ -307,8 +159,8 @@ export const deleteCollection = <ThrowOnError extends boolean = false>(
   options: Options<DeleteCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<
-    DeleteCollectionResponse,
-    DeleteCollectionError,
+    Xmapp.DeleteCollectionResponse,
+    Xmapp.DeleteCollectionError,
     ThrowOnError
   >({
     url: '/api/v1/collections/{collectionId}',
@@ -324,8 +176,8 @@ export const retrieveCollection = <ThrowOnError extends boolean = false>(
   options: Options<RetrieveCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrieveCollectionResponse,
-    RetrieveCollectionError,
+    Xmapp.RetrieveCollectionResponse,
+    Xmapp.RetrieveCollectionError,
     ThrowOnError
   >({
     url: '/api/v1/collections/{collectionId}',
@@ -341,8 +193,8 @@ export const updateCollection = <ThrowOnError extends boolean = false>(
   options: Options<UpdateCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
-    UpdateCollectionResponse,
-    UpdateCollectionError,
+    Xmapp.UpdateCollectionResponse,
+    Xmapp.UpdateCollectionError,
     ThrowOnError
   >({
     url: '/api/v1/collections/{collectionId}',
@@ -362,8 +214,8 @@ export const getFavoriteSites = <ThrowOnError extends boolean = false>(
   options?: Options<GetFavoriteSitesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
-    GetFavoriteSitesResponse,
-    GetFavoriteSitesError,
+    Xmapp.GetFavoriteSitesResponse,
+    Xmapp.GetFavoriteSitesError,
     ThrowOnError
   >({
     url: '/api/v1/favorites/sites',
@@ -379,8 +231,8 @@ export const addFavoriteSite = <ThrowOnError extends boolean = false>(
   options: Options<AddFavoriteSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    AddFavoriteSiteResponse,
-    AddFavoriteSiteError,
+    Xmapp.AddFavoriteSiteResponse,
+    Xmapp.AddFavoriteSiteError,
     ThrowOnError
   >({
     url: '/api/v1/favorites/sites',
@@ -399,7 +251,11 @@ export const addFavoriteSite = <ThrowOnError extends boolean = false>(
 export const listJobs = <ThrowOnError extends boolean = false>(
   options?: Options<ListJobsData, ThrowOnError>,
 ) => {
-  return (options?.client ?? _heyApiClient).get<ListJobsResponse, ListJobsError, ThrowOnError>({
+  return (options?.client ?? _heyApiClient).get<
+    Xmapp.ListJobsResponse,
+    Xmapp.ListJobsError,
+    ThrowOnError
+  >({
     url: '/api/v1/jobs',
     ...options,
   });
@@ -412,12 +268,14 @@ export const listJobs = <ThrowOnError extends boolean = false>(
 export const retrieveJob = <ThrowOnError extends boolean = false>(
   options: Options<RetrieveJobData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).get<RetrieveJobResponse, RetrieveJobError, ThrowOnError>(
-    {
-      url: '/api/v1/jobs/{jobHandle}/status',
-      ...options,
-    },
-  );
+  return (options.client ?? _heyApiClient).get<
+    Xmapp.RetrieveJobResponse,
+    Xmapp.RetrieveJobError,
+    ThrowOnError
+  >({
+    url: '/api/v1/jobs/{jobHandle}/status',
+    ...options,
+  });
 };
 
 /**
@@ -428,8 +286,8 @@ export const aggregateLivePageVariants = <ThrowOnError extends boolean = false>(
   options?: Options<AggregateLivePageVariantsData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).post<
-    AggregateLivePageVariantsResponse,
-    AggregateLivePageVariantsError,
+    Xmapp.AggregateLivePageVariantsResponse,
+    Xmapp.AggregateLivePageVariantsError,
     ThrowOnError
   >({
     url: '/api/v1/aggregation/pages/live/variants',
@@ -449,8 +307,8 @@ export const aggregatePageData = <ThrowOnError extends boolean = false>(
   options?: Options<AggregatePageDataData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).post<
-    AggregatePageDataResponse,
-    AggregatePageDataError,
+    Xmapp.AggregatePageDataResponse,
+    Xmapp.AggregatePageDataError,
     ThrowOnError
   >({
     url: '/api/v1/aggregation/pages',
@@ -470,8 +328,8 @@ export const renameCollection = <ThrowOnError extends boolean = false>(
   options: Options<RenameCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    RenameCollectionResponse,
-    RenameCollectionError,
+    Xmapp.RenameCollectionResponse,
+    Xmapp.RenameCollectionError,
     ThrowOnError
   >({
     url: '/api/v1/collections/{collectionId}/rename',
@@ -491,8 +349,8 @@ export const sortCollections = <ThrowOnError extends boolean = false>(
   options: Options<SortCollectionsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    SortCollectionsResponse,
-    SortCollectionsError,
+    Xmapp.SortCollectionsResponse,
+    Xmapp.SortCollectionsError,
     ThrowOnError
   >({
     url: '/api/v1/collections/sort',
@@ -518,8 +376,8 @@ export const validateCollectionName = <ThrowOnError extends boolean = false>(
   options: Options<ValidateCollectionNameData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    ValidateCollectionNameResponse,
-    ValidateCollectionNameError,
+    Xmapp.ValidateCollectionNameResponse,
+    Xmapp.ValidateCollectionNameError,
     ThrowOnError
   >({
     url: '/api/v1/collections/name/validate',
@@ -540,8 +398,8 @@ export const deleteLanguage = <ThrowOnError extends boolean = false>(
   options: Options<DeleteLanguageData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<
-    DeleteLanguageResponse,
-    DeleteLanguageError,
+    Xmapp.DeleteLanguageResponse,
+    Xmapp.DeleteLanguageError,
     ThrowOnError
   >({
     url: '/api/v1/languages/{isoCode}',
@@ -558,8 +416,8 @@ export const updateLanguage = <ThrowOnError extends boolean = false>(
   options: Options<UpdateLanguageData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
-    UpdateLanguageResponse,
-    UpdateLanguageError,
+    Xmapp.UpdateLanguageResponse,
+    Xmapp.UpdateLanguageError,
     ThrowOnError
   >({
     url: '/api/v1/languages/{isoCode}',
@@ -578,7 +436,11 @@ export const updateLanguage = <ThrowOnError extends boolean = false>(
 export const removeFavoriteSite = <ThrowOnError extends boolean = false>(
   options: Options<RemoveFavoriteSiteData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).delete<unknown, RemoveFavoriteSiteError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).delete<
+    unknown,
+    Xmapp.RemoveFavoriteSiteError,
+    ThrowOnError
+  >({
     url: '/api/v1/favorites/sites/{siteId}',
     ...options,
   });
@@ -591,7 +453,11 @@ export const removeFavoriteSite = <ThrowOnError extends boolean = false>(
 export const listSites = <ThrowOnError extends boolean = false>(
   options?: Options<ListSitesData, ThrowOnError>,
 ) => {
-  return (options?.client ?? _heyApiClient).get<ListSitesResponse, ListSitesError, ThrowOnError>({
+  return (options?.client ?? _heyApiClient).get<
+    Xmapp.ListSitesResponse,
+    Xmapp.ListSitesError,
+    ThrowOnError
+  >({
     url: '/api/v1/sites',
     ...options,
   });
@@ -606,7 +472,11 @@ export const listSites = <ThrowOnError extends boolean = false>(
 export const createSite = <ThrowOnError extends boolean = false>(
   options: Options<CreateSiteData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<CreateSiteResponse, CreateSiteError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).post<
+    Xmapp.CreateSiteResponse,
+    Xmapp.CreateSiteError,
+    ThrowOnError
+  >({
     url: '/api/v1/sites',
     ...options,
     headers: {
@@ -627,8 +497,8 @@ export const deleteSite = <ThrowOnError extends boolean = false>(
   options: Options<DeleteSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<
-    DeleteSiteResponse,
-    DeleteSiteError,
+    Xmapp.DeleteSiteResponse,
+    Xmapp.DeleteSiteError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}',
@@ -644,8 +514,8 @@ export const retrieveSite = <ThrowOnError extends boolean = false>(
   options: Options<RetrieveSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrieveSiteResponse,
-    RetrieveSiteError,
+    Xmapp.RetrieveSiteResponse,
+    Xmapp.RetrieveSiteError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}',
@@ -660,16 +530,18 @@ export const retrieveSite = <ThrowOnError extends boolean = false>(
 export const updateSite = <ThrowOnError extends boolean = false>(
   options: Options<UpdateSiteData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).patch<UpdateSiteResponse, UpdateSiteError, ThrowOnError>(
-    {
-      url: '/api/v1/sites/{siteId}',
-      ...options,
-      headers: {
-        'Content-Type': 'application/json',
-        ...options?.headers,
-      },
+  return (options.client ?? _heyApiClient).patch<
+    Xmapp.UpdateSiteResponse,
+    Xmapp.UpdateSiteError,
+    ThrowOnError
+  >({
+    url: '/api/v1/sites/{siteId}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
     },
-  );
+  });
 };
 
 /**
@@ -679,7 +551,11 @@ export const updateSite = <ThrowOnError extends boolean = false>(
 export const copySite = <ThrowOnError extends boolean = false>(
   options: Options<CopySiteData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<CopySiteResponse, CopySiteError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).post<
+    Xmapp.CopySiteResponse,
+    Xmapp.CopySiteError,
+    ThrowOnError
+  >({
     url: '/api/v1/sites/{siteId}/copy',
     ...options,
     headers: {
@@ -696,7 +572,11 @@ export const copySite = <ThrowOnError extends boolean = false>(
 export const renameSite = <ThrowOnError extends boolean = false>(
   options: Options<RenameSiteData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<RenameSiteResponse, RenameSiteError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).post<
+    Xmapp.RenameSiteResponse,
+    Xmapp.RenameSiteError,
+    ThrowOnError
+  >({
     url: '/api/v1/sites/{siteId}/rename',
     ...options,
     headers: {
@@ -713,7 +593,11 @@ export const renameSite = <ThrowOnError extends boolean = false>(
 export const sortSites = <ThrowOnError extends boolean = false>(
   options: Options<SortSitesData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<SortSitesResponse, SortSitesError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).post<
+    Xmapp.SortSitesResponse,
+    Xmapp.SortSitesError,
+    ThrowOnError
+  >({
     url: '/api/v1/sites/sort',
     ...options,
     headers: {
@@ -737,8 +621,8 @@ export const validateSiteName = <ThrowOnError extends boolean = false>(
   options: Options<ValidateSiteNameData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    ValidateSiteNameResponse,
-    ValidateSiteNameError,
+    Xmapp.ValidateSiteNameResponse,
+    Xmapp.ValidateSiteNameError,
     ThrowOnError
   >({
     url: '/api/v1/sites/name/validate',
@@ -758,8 +642,8 @@ export const listTrackedSites = <ThrowOnError extends boolean = false>(
   options: Options<ListTrackedSitesData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    ListTrackedSitesResponse,
-    ListTrackedSitesError,
+    Xmapp.ListTrackedSitesResponse,
+    Xmapp.ListTrackedSitesError,
     ThrowOnError
   >({
     url: '/api/v1/sites/analytics-identifiers/{analyticsIdentifier}',
@@ -775,8 +659,8 @@ export const listCollectionSites = <ThrowOnError extends boolean = false>(
   options: Options<ListCollectionSitesData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    ListCollectionSitesResponse,
-    ListCollectionSitesError,
+    Xmapp.ListCollectionSitesResponse,
+    Xmapp.ListCollectionSitesError,
     ThrowOnError
   >({
     url: '/api/v1/collections/{collectionId}/sites',
@@ -792,8 +676,8 @@ export const detachAnalyticsIdentifier = <ThrowOnError extends boolean = false>(
   options: Options<DetachAnalyticsIdentifierData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    DetachAnalyticsIdentifierResponse,
-    DetachAnalyticsIdentifierError,
+    Xmapp.DetachAnalyticsIdentifierResponse,
+    Xmapp.DetachAnalyticsIdentifierError,
     ThrowOnError
   >({
     url: '/api/v1/sites/analytics-identifiers/{analyticsIdentifier}/detach',
@@ -813,8 +697,8 @@ export const retrieveSiteHierarchy = <ThrowOnError extends boolean = false>(
   options: Options<RetrieveSiteHierarchyData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrieveSiteHierarchyResponse,
-    RetrieveSiteHierarchyError,
+    Xmapp.RetrieveSiteHierarchyResponse,
+    Xmapp.RetrieveSiteHierarchyError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/hierarchy',
@@ -830,8 +714,8 @@ export const retrievePageHierarchy = <ThrowOnError extends boolean = false>(
   options: Options<RetrievePageHierarchyData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrievePageHierarchyResponse,
-    RetrievePageHierarchyError,
+    Xmapp.RetrievePageHierarchyResponse,
+    Xmapp.RetrievePageHierarchyError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/hierarchy/{pageId}',
@@ -847,8 +731,8 @@ export const listPageAncestors = <ThrowOnError extends boolean = false>(
   options: Options<ListPageAncestorsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    ListPageAncestorsResponse,
-    ListPageAncestorsError,
+    Xmapp.ListPageAncestorsResponse,
+    Xmapp.ListPageAncestorsError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/hierarchy/{pageId}/ancestors',
@@ -864,8 +748,8 @@ export const listPageChildren = <ThrowOnError extends boolean = false>(
   options: Options<ListPageChildrenData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    ListPageChildrenResponse,
-    ListPageChildrenError,
+    Xmapp.ListPageChildrenResponse,
+    Xmapp.ListPageChildrenError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/hierarchy/{pageId}/children',
@@ -880,7 +764,11 @@ export const listPageChildren = <ThrowOnError extends boolean = false>(
 export const listHosts = <ThrowOnError extends boolean = false>(
   options: Options<ListHostsData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).get<ListHostsResponse, ListHostsError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).get<
+    Xmapp.ListHostsResponse,
+    Xmapp.ListHostsError,
+    ThrowOnError
+  >({
     url: '/api/v1/sites/{siteId}/hosts',
     ...options,
   });
@@ -893,7 +781,11 @@ export const listHosts = <ThrowOnError extends boolean = false>(
 export const createHost = <ThrowOnError extends boolean = false>(
   options: Options<CreateHostData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<CreateHostResponse, CreateHostError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).post<
+    Xmapp.CreateHostResponse,
+    Xmapp.CreateHostError,
+    ThrowOnError
+  >({
     url: '/api/v1/sites/{siteId}/hosts',
     ...options,
     headers: {
@@ -910,7 +802,7 @@ export const createHost = <ThrowOnError extends boolean = false>(
 export const deleteHost = <ThrowOnError extends boolean = false>(
   options: Options<DeleteHostData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).delete<unknown, DeleteHostError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).delete<unknown, Xmapp.DeleteHostError, ThrowOnError>({
     url: '/api/v1/sites/{siteId}/hosts/{hostId}',
     ...options,
   });
@@ -924,8 +816,8 @@ export const retrieveHost = <ThrowOnError extends boolean = false>(
   options: Options<RetrieveHostData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrieveHostResponse,
-    RetrieveHostError,
+    Xmapp.RetrieveHostResponse,
+    Xmapp.RetrieveHostError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/hosts/{hostId}',
@@ -940,16 +832,18 @@ export const retrieveHost = <ThrowOnError extends boolean = false>(
 export const updateHost = <ThrowOnError extends boolean = false>(
   options: Options<UpdateHostData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).patch<UpdateHostResponse, UpdateHostError, ThrowOnError>(
-    {
-      url: '/api/v1/sites/{siteId}/hosts/{hostId}',
-      ...options,
-      headers: {
-        'Content-Type': 'application/json',
-        ...options?.headers,
-      },
+  return (options.client ?? _heyApiClient).patch<
+    Xmapp.UpdateHostResponse,
+    Xmapp.UpdateHostError,
+    ThrowOnError
+  >({
+    url: '/api/v1/sites/{siteId}/hosts/{hostId}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
     },
-  );
+  });
 };
 
 /**
@@ -960,8 +854,8 @@ export const getRenderingHosts = <ThrowOnError extends boolean = false>(
   options: Options<GetRenderingHostsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    GetRenderingHostsResponse,
-    GetRenderingHostsError,
+    Xmapp.GetRenderingHostsResponse,
+    Xmapp.GetRenderingHostsError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/renderinghosts',
@@ -977,8 +871,8 @@ export const listSiteTemplates = <ThrowOnError extends boolean = false>(
   options?: Options<ListSiteTemplatesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
-    ListSiteTemplatesResponse,
-    ListSiteTemplatesError,
+    Xmapp.ListSiteTemplatesResponse,
+    Xmapp.ListSiteTemplatesError,
     ThrowOnError
   >({
     url: '/api/v1/sites/templates',
@@ -994,8 +888,8 @@ export const uploadSiteThumbnail = <ThrowOnError extends boolean = false>(
   options: Options<UploadSiteThumbnailData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
-    UploadSiteThumbnailResponse,
-    UploadSiteThumbnailError,
+    Xmapp.UploadSiteThumbnailResponse,
+    Xmapp.UploadSiteThumbnailError,
     ThrowOnError
   >({
     ...formDataBodySerializer,
@@ -1016,8 +910,8 @@ export const retrieveLocalizationStatistics = <ThrowOnError extends boolean = fa
   options: Options<RetrieveLocalizationStatisticsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrieveLocalizationStatisticsResponse,
-    RetrieveLocalizationStatisticsError,
+    Xmapp.RetrieveLocalizationStatisticsResponse,
+    Xmapp.RetrieveLocalizationStatisticsError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/statistics/localization',
@@ -1033,8 +927,8 @@ export const retrieveSitemapConfiguration = <ThrowOnError extends boolean = fals
   options: Options<RetrieveSitemapConfigurationData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrieveSitemapConfigurationResponse,
-    RetrieveSitemapConfigurationError,
+    Xmapp.RetrieveSitemapConfigurationResponse,
+    Xmapp.RetrieveSitemapConfigurationError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/configuration/sitemap',
@@ -1050,8 +944,8 @@ export const updateSitemapConfiguration = <ThrowOnError extends boolean = false>
   options: Options<UpdateSitemapConfigurationData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
-    UpdateSitemapConfigurationResponse,
-    UpdateSitemapConfigurationError,
+    Xmapp.UpdateSitemapConfigurationResponse,
+    Xmapp.UpdateSitemapConfigurationError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/configuration/sitemap',
@@ -1071,8 +965,8 @@ export const retrieveWorkflowStatistics = <ThrowOnError extends boolean = false>
   options: Options<RetrieveWorkflowStatisticsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
-    RetrieveWorkflowStatisticsResponse,
-    RetrieveWorkflowStatisticsError,
+    Xmapp.RetrieveWorkflowStatisticsResponse,
+    Xmapp.RetrieveWorkflowStatisticsError,
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/statistics/workflow',
