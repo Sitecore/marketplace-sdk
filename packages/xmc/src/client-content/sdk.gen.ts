@@ -4,6 +4,10 @@ import type { Options as ClientOptions, TDataShape, Client } from '@hey-api/clie
 import type { Content } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 
+type GraphqlResponse = Content.GraphqlResponse;
+
+type GraphqlData = Content.GraphqlData;
+
 export type Options<
   TData extends TDataShape = TDataShape,
   ThrowOnError extends boolean = boolean,
@@ -26,9 +30,9 @@ export type Options<
  * Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supported by the Preview API and Delivery API.
  */
 export const graphql = <ThrowOnError extends boolean = false>(
-  options: Options<Content.GraphqlData, ThrowOnError>,
+  options: Options<GraphqlData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<Content.GraphqlResponse, unknown, ThrowOnError>({
+  return (options.client ?? _heyApiClient).post<GraphqlResponse, unknown, ThrowOnError>({
     url: '/graphql/v1',
     ...options,
     headers: {

@@ -2,10 +2,8 @@ import type { Plugin } from '@hey-api/openapi-ts';
 import type { Config } from './types';
 import ts from 'typescript';
 
-// Helper function to update a file to use namespaced types
+// Helper function to update a file to use namespaced types with type aliases
 function updateFileWithNamespace(file: any, namespace: string): void {
-  console.log('📁 updateFileWithNamespace called for namespace:', namespace);
-
   // Find and update imports from './types.gen'
   const typesGenImports = file['_imports'].get('./types.gen');
   if (typesGenImports) {
@@ -13,8 +11,6 @@ function updateFileWithNamespace(file: any, namespace: string): void {
     const importedTypeNames = Array.from(typesGenImports.keys()).filter(
       (name) => typeof name === 'string',
     ) as string[];
-
-    console.log('📥 Found imported type names:', importedTypeNames);
 
     // Clear existing imports from types.gen
     typesGenImports.clear();
@@ -26,112 +22,23 @@ function updateFileWithNamespace(file: any, namespace: string): void {
       name: namespace,
     });
 
-    console.log('📝 Calling updateTypeReferences...');
-    // Update all type references in the file to use namespaced types
-    updateTypeReferences(file['_items'], importedTypeNames, namespace);
-  } else {
-    console.log('❌ No ./types.gen imports found in file');
-  }
-}
+    // Create type aliases for each imported type so they can be used directly
+    importedTypeNames.forEach((typeName) => {
+      const typeAliasDeclaration = ts.factory.createTypeAliasDeclaration(
+        undefined, // no modifiers
+        ts.factory.createIdentifier(typeName),
+        undefined, // no type parameters
+        ts.factory.createTypeReferenceNode(
+          ts.factory.createQualifiedName(
+            ts.factory.createIdentifier(namespace),
+            ts.factory.createIdentifier(typeName),
+          ),
+        ),
+      );
 
-// Helper function to update type references to use namespaced types
-function updateTypeReferences(items: ts.Node[], typeNames: string[], namespace: string): void {
-  console.log('🔧 updateTypeReferences called with:', {
-    typeNames,
-    namespace,
-    itemsCount: items.length,
-  });
-
-  const transformer = (context: ts.TransformationContext) => {
-    return (rootNode: ts.Node) => {
-      function visit(node: ts.Node): ts.Node {
-        // Check if this is a type reference that should be namespaced
-        if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
-          const typeName = node.typeName.text;
-          console.log(`🔍 Found type reference: "${typeName}"`);
-
-          // Handle the special case where the entire generic type appears as a single identifier
-          if (typeName.includes('<') && typeName.includes('>')) {
-            console.log(`🔍 Found complex type identifier: "${typeName}"`);
-            // This is likely a string representation of a generic type that needs special handling
-            // Try to extract and transform the type names within it
-            let transformedTypeName = typeName;
-            typeNames.forEach((targetType) => {
-              const regex = new RegExp(`\\b${targetType}\\b`, 'g');
-              transformedTypeName = transformedTypeName.replace(
-                regex,
-                `${namespace}.${targetType}`,
-              );
-            });
-
-            if (transformedTypeName !== typeName) {
-              console.log(
-                `✅ String-transformed complex type: "${typeName}" -> "${transformedTypeName}"`,
-              );
-              // Create a new identifier with the transformed name
-              return ts.factory.updateTypeReferenceNode(
-                node,
-                ts.factory.createIdentifier(transformedTypeName),
-                node.typeArguments,
-              );
-            }
-          }
-
-          // First check if the main type name should be namespaced
-          if (typeNames.includes(typeName)) {
-            console.log(`✅ Transforming main type: "${typeName}" -> "${namespace}.${typeName}"`);
-            // Replace with namespaced type reference
-            return ts.factory.updateTypeReferenceNode(
-              node,
-              ts.factory.createQualifiedName(
-                ts.factory.createIdentifier(namespace),
-                ts.factory.createIdentifier(typeName),
-              ),
-              node.typeArguments,
-            );
-          }
-          // If the main type doesn't need namespacing, check if any type arguments do
-          else if (node.typeArguments) {
-            console.log(`🔍 Checking type arguments for "${typeName}":`, node.typeArguments.length);
-            // Process type arguments to see if any need namespacing
-            const transformedTypeArgs = node.typeArguments.map((arg, index) => {
-              console.log(`  🔍 Processing type argument ${index}:`, ts.SyntaxKind[arg.kind]);
-              const result = visit(arg) as ts.TypeNode;
-              return result;
-            });
-
-            // Check if any type arguments were actually transformed
-            const hasChanges = transformedTypeArgs.some(
-              (arg, index) => arg !== node.typeArguments![index],
-            );
-
-            if (hasChanges) {
-              console.log(`✅ Updated type arguments for "${typeName}"`);
-              return ts.factory.updateTypeReferenceNode(
-                node,
-                node.typeName,
-                ts.factory.createNodeArray(transformedTypeArgs),
-              );
-            } else {
-              console.log(`🔄 No changes needed for type arguments of "${typeName}"`);
-            }
-          }
-        }
-
-        // Recursively visit all child nodes to catch nested type references
-        return ts.visitEachChild(node, visit, context);
-      }
-      return visit(rootNode);
-    };
-  };
-
-  // Transform each item in the file
-  for (let i = 0; i < items.length; i++) {
-    const result = ts.transform(items[i], [transformer]);
-    if (result.transformed[0]) {
-      items[i] = result.transformed[0];
-    }
-    result.dispose();
+      // Add the type alias to the beginning of the file
+      file['_items'].unshift(typeAliasDeclaration);
+    });
   }
 }
 
@@ -163,19 +70,13 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
       // Update SDK file imports if namespace is used
       const sdkFile = context.files['sdk'];
       if (sdkFile) {
-        console.log('🚀 Processing SDK file...');
         updateFileWithNamespace(sdkFile, plugin.namespace);
-      } else {
-        console.log('❌ SDK file not found');
       }
 
       // Update client file
       const clientFile = context.files[plugin.output];
       if (clientFile) {
-        console.log('🚀 Processing client file...');
         updateFileWithNamespace(clientFile, plugin.namespace);
-      } else {
-        console.log('❌ Client file not found');
       }
     }
     // If no namespace, leave types as-is (no wrapping)

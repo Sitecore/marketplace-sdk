@@ -6,7 +6,7 @@
 
 # Interface: ApplicationContext
 
-Defined in: core/dist/shared-types.d.ts:66
+Defined in: core/dist/shared-types.d.ts:82
 
 ## Indexable
 
@@ -18,7 +18,7 @@ Defined in: core/dist/shared-types.d.ts:66
 
 > `optional` **iconUrl**: `string`
 
-Defined in: core/dist/shared-types.d.ts:71
+Defined in: core/dist/shared-types.d.ts:87
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: core/dist/shared-types.d.ts:71
 
 > **id**: `string`
 
-Defined in: core/dist/shared-types.d.ts:67
+Defined in: core/dist/shared-types.d.ts:83
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: core/dist/shared-types.d.ts:67
 
 > `optional` **installationId**: `string`
 
-Defined in: core/dist/shared-types.d.ts:73
+Defined in: core/dist/shared-types.d.ts:89
 
 ***
 
@@ -42,15 +42,15 @@ Defined in: core/dist/shared-types.d.ts:73
 
 > `optional` **name**: `string`
 
-Defined in: core/dist/shared-types.d.ts:69
+Defined in: core/dist/shared-types.d.ts:85
 
 ***
 
 ### resources?
 
-> `optional` **resources**: \[\{ `context?`: \{ `live?`: `string`; `preview?`: `string`; \}; `resourceId?`: `string`; `tenantId?`: `string`; `tenantName?`: `string`; \}\]
+> `optional` **resources**: `ApplicationResourceContext`[]
 
-Defined in: core/dist/shared-types.d.ts:74
+Defined in: core/dist/shared-types.d.ts:90
 
 ***
 
@@ -58,15 +58,15 @@ Defined in: core/dist/shared-types.d.ts:74
 
 > `optional` **state**: `string`
 
-Defined in: core/dist/shared-types.d.ts:72
+Defined in: core/dist/shared-types.d.ts:88
 
 ***
 
 ### touchpoints?
 
-> `optional` **touchpoints**: \[\{ `route`: `string`; `touchpointId`: `string`; \}\]
+> `optional` **touchpoints**: `ApplicationTouchpointContext`[]
 
-Defined in: core/dist/shared-types.d.ts:85
+Defined in: core/dist/shared-types.d.ts:91
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: core/dist/shared-types.d.ts:85
 
 > `optional` **type**: `string`
 
-Defined in: core/dist/shared-types.d.ts:70
+Defined in: core/dist/shared-types.d.ts:86
 
 ***
 
@@ -82,4 +82,4 @@ Defined in: core/dist/shared-types.d.ts:70
 
 > **url**: `string`
 
-Defined in: core/dist/shared-types.d.ts:68
+Defined in: core/dist/shared-types.d.ts:84

@@ -19,6 +19,9 @@
 
 - [AdditionalData](interfaces/AdditionalData.md)
 - [ApplicationContext](interfaces/ApplicationContext.md)
+- [ApplicationResourceContext](interfaces/ApplicationResourceContext.md)
+- [ApplicationRuntimeContext](interfaces/ApplicationRuntimeContext.md)
+- [ApplicationTouchpointContext](interfaces/ApplicationTouchpointContext.md)
 - [BaseHostSchema](interfaces/BaseHostSchema.md)
 - [BaseMessage](interfaces/BaseMessage.md)
 - [CoreSDKConfig](interfaces/CoreSDKConfig.md)

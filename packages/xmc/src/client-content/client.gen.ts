@@ -9,6 +9,8 @@ import {
 } from '@hey-api/client-fetch';
 import { clientSdkfetch } from '../client-sdk-fetch';
 
+type ClientOptions = Content.ClientOptions;
+
 /**
  * The `createClientConfig()` function will be called on client initialization
  * and the returned object will become the client's initial configuration.
@@ -17,12 +19,12 @@ import { clientSdkfetch } from '../client-sdk-fetch';
  * `setConfig()`. This is useful for example if you're using Next.js
  * to ensure your client always has the correct values.
  */
-export type CreateClientConfig<T extends DefaultClientOptions = Content.ClientOptions> = (
+export type CreateClientConfig<T extends DefaultClientOptions = ClientOptions> = (
   override?: Config<DefaultClientOptions & T>,
 ) => Config<Required<DefaultClientOptions> & T>;
 
 export const client = createClient(
-  createConfig<Content.ClientOptions>({
+  createConfig<ClientOptions>({
     baseUrl: 'https://example.com/content/api',
     fetch: clientSdkfetch,
   }),

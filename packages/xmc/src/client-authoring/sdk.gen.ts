@@ -4,6 +4,10 @@ import type { Options as ClientOptions, TDataShape, Client } from '@hey-api/clie
 import type { Authoring } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 
+type GraphqlResponse = Authoring.GraphqlResponse;
+
+type GraphqlData = Authoring.GraphqlData;
+
 export type Options<
   TData extends TDataShape = TDataShape,
   ThrowOnError extends boolean = boolean,
@@ -26,9 +30,9 @@ export type Options<
  * Send a GraphQL query or mutation request to the Sitecore Authoring API. Both queries and mutations are supported.
  */
 export const graphql = <ThrowOnError extends boolean = false>(
-  options: Options<Authoring.GraphqlData, ThrowOnError>,
+  options: Options<GraphqlData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<Authoring.GraphqlResponse, unknown, ThrowOnError>({
+  return (options.client ?? _heyApiClient).post<GraphqlResponse, unknown, ThrowOnError>({
     url: '/graphql',
     ...options,
     headers: {

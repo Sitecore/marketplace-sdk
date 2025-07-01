@@ -6,7 +6,7 @@
 
 # Interface: MutationMap
 
-Defined in: [client/src/sdk-types.ts:246](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/sdk-types.ts#L246)
+Defined in: [client/src/sdk-types.ts:246](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L246)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [client/src/sdk-types.ts:246](https://github.com/Sitecore/sitecore-m
 
 > **context**: `object`
 
-Defined in: [client/src/sdk-types.ts:252](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/sdk-types.ts#L252)
+Defined in: [client/src/sdk-types.ts:252](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L252)
 
 #### params
 
@@ -34,7 +34,7 @@ Defined in: [client/src/sdk-types.ts:252](https://github.com/Sitecore/sitecore-m
 
 > **reloadCanvas**: `object`
 
-Defined in: [client/src/sdk-types.ts:247](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/sdk-types.ts#L247)
+Defined in: [client/src/sdk-types.ts:247](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L247)
 
 #### params
 
