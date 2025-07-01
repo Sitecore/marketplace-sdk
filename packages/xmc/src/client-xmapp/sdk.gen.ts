@@ -31,7 +31,7 @@ export type Options<
  * Retrieves the list of languages added to the environment.
  */
 export const listLanguages = <ThrowOnError extends boolean = false>(
-  options?: Options<ListLanguagesData, ThrowOnError>,
+  options?: Options<Xmapp.ListLanguagesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
     Xmapp.ListLanguagesResponse,
@@ -50,7 +50,7 @@ export const listLanguages = <ThrowOnError extends boolean = false>(
  * If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.
  */
 export const createLanguage = <ThrowOnError extends boolean = false>(
-  options: Options<CreateLanguageData, ThrowOnError>,
+  options: Options<Xmapp.CreateLanguageData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.CreateLanguageResponse,
@@ -71,7 +71,7 @@ export const createLanguage = <ThrowOnError extends boolean = false>(
  * Retrieves the list of languages supported by Sitecore XM Cloud, and associated data.
  */
 export const listSupportedLanguages = <ThrowOnError extends boolean = false>(
-  options?: Options<ListSupportedLanguagesData, ThrowOnError>,
+  options?: Options<Xmapp.ListSupportedLanguagesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
     Xmapp.ListSupportedLanguagesResponse,
@@ -88,7 +88,7 @@ export const listSupportedLanguages = <ThrowOnError extends boolean = false>(
  * Fetches the identifiers of currently active personalization variants for a page.
  */
 export const listPageVariants = <ThrowOnError extends boolean = false>(
-  options: Options<ListPageVariantsData, ThrowOnError>,
+  options: Options<Xmapp.ListPageVariantsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.ListPageVariantsResponse,
@@ -105,7 +105,7 @@ export const listPageVariants = <ThrowOnError extends boolean = false>(
  * Checks if the requested page is active.
  */
 export const getLivePageState = <ThrowOnError extends boolean = false>(
-  options: Options<GetLivePageStateData, ThrowOnError>,
+  options: Options<Xmapp.GetLivePageStateData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<unknown, Xmapp.GetLivePageStateError, ThrowOnError>({
     url: '/api/v1/pages/{pageId}/live',
@@ -118,7 +118,7 @@ export const getLivePageState = <ThrowOnError extends boolean = false>(
  * Fetches the list of site collections in the environment, with associated details.
  */
 export const listCollections = <ThrowOnError extends boolean = false>(
-  options?: Options<ListCollectionsData, ThrowOnError>,
+  options?: Options<Xmapp.ListCollectionsData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
     Xmapp.ListCollectionsResponse,
@@ -135,7 +135,7 @@ export const listCollections = <ThrowOnError extends boolean = false>(
  * Creates a collection by specifying a name and, optionally, a display name and description.
  */
 export const createCollection = <ThrowOnError extends boolean = false>(
-  options?: Options<CreateCollectionData, ThrowOnError>,
+  options?: Options<Xmapp.CreateCollectionData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).post<
     Xmapp.CreateCollectionResponse,
@@ -156,7 +156,7 @@ export const createCollection = <ThrowOnError extends boolean = false>(
  * Deletes a site collection, including sites in that collection.
  */
 export const deleteCollection = <ThrowOnError extends boolean = false>(
-  options: Options<DeleteCollectionData, ThrowOnError>,
+  options: Options<Xmapp.DeleteCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<
     Xmapp.DeleteCollectionResponse,
@@ -173,7 +173,7 @@ export const deleteCollection = <ThrowOnError extends boolean = false>(
  * Fetches information about a site collection.
  */
 export const retrieveCollection = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveCollectionData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveCollectionResponse,
@@ -190,7 +190,7 @@ export const retrieveCollection = <ThrowOnError extends boolean = false>(
  * Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).
  */
 export const updateCollection = <ThrowOnError extends boolean = false>(
-  options: Options<UpdateCollectionData, ThrowOnError>,
+  options: Options<Xmapp.UpdateCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
     Xmapp.UpdateCollectionResponse,
@@ -211,7 +211,7 @@ export const updateCollection = <ThrowOnError extends boolean = false>(
  * Fetches a list of your favorite sites
  */
 export const getFavoriteSites = <ThrowOnError extends boolean = false>(
-  options?: Options<GetFavoriteSitesData, ThrowOnError>,
+  options?: Options<Xmapp.GetFavoriteSitesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
     Xmapp.GetFavoriteSitesResponse,
@@ -228,7 +228,7 @@ export const getFavoriteSites = <ThrowOnError extends boolean = false>(
  * Adds a site to your list of favorites
  */
 export const addFavoriteSite = <ThrowOnError extends boolean = false>(
-  options: Options<AddFavoriteSiteData, ThrowOnError>,
+  options: Options<Xmapp.AddFavoriteSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.AddFavoriteSiteResponse,
@@ -249,7 +249,7 @@ export const addFavoriteSite = <ThrowOnError extends boolean = false>(
  * Fetches information about background jobs. Returns empty array if no jobs are running.
  */
 export const listJobs = <ThrowOnError extends boolean = false>(
-  options?: Options<ListJobsData, ThrowOnError>,
+  options?: Options<Xmapp.ListJobsData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
     Xmapp.ListJobsResponse,
@@ -266,7 +266,7 @@ export const listJobs = <ThrowOnError extends boolean = false>(
  * Fetches information about a background job.
  */
 export const retrieveJob = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveJobData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveJobData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveJobResponse,
@@ -283,7 +283,7 @@ export const retrieveJob = <ThrowOnError extends boolean = false>(
  * Returns currently active personalization variants for the requested pages.
  */
 export const aggregateLivePageVariants = <ThrowOnError extends boolean = false>(
-  options?: Options<AggregateLivePageVariantsData, ThrowOnError>,
+  options?: Options<Xmapp.AggregateLivePageVariantsData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).post<
     Xmapp.AggregateLivePageVariantsResponse,
@@ -304,7 +304,7 @@ export const aggregateLivePageVariants = <ThrowOnError extends boolean = false>(
  * Aggregates data about multiple pages and their components.
  */
 export const aggregatePageData = <ThrowOnError extends boolean = false>(
-  options?: Options<AggregatePageDataData, ThrowOnError>,
+  options?: Options<Xmapp.AggregatePageDataData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).post<
     Xmapp.AggregatePageDataResponse,
@@ -325,7 +325,7 @@ export const aggregatePageData = <ThrowOnError extends boolean = false>(
  * Changes the system name of a site collection.
  */
 export const renameCollection = <ThrowOnError extends boolean = false>(
-  options: Options<RenameCollectionData, ThrowOnError>,
+  options: Options<Xmapp.RenameCollectionData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.RenameCollectionResponse,
@@ -346,7 +346,7 @@ export const renameCollection = <ThrowOnError extends boolean = false>(
  * By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
  */
 export const sortCollections = <ThrowOnError extends boolean = false>(
-  options: Options<SortCollectionsData, ThrowOnError>,
+  options: Options<Xmapp.SortCollectionsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.SortCollectionsResponse,
@@ -373,7 +373,7 @@ export const sortCollections = <ThrowOnError extends boolean = false>(
  * - Can include Latin alphanumeric characters, spaces and dashes.
  */
 export const validateCollectionName = <ThrowOnError extends boolean = false>(
-  options: Options<ValidateCollectionNameData, ThrowOnError>,
+  options: Options<Xmapp.ValidateCollectionNameData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.ValidateCollectionNameResponse,
@@ -395,7 +395,7 @@ export const validateCollectionName = <ThrowOnError extends boolean = false>(
  * To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
  */
 export const deleteLanguage = <ThrowOnError extends boolean = false>(
-  options: Options<DeleteLanguageData, ThrowOnError>,
+  options: Options<Xmapp.DeleteLanguageData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<
     Xmapp.DeleteLanguageResponse,
@@ -413,7 +413,7 @@ export const deleteLanguage = <ThrowOnError extends boolean = false>(
  * To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
  */
 export const updateLanguage = <ThrowOnError extends boolean = false>(
-  options: Options<UpdateLanguageData, ThrowOnError>,
+  options: Options<Xmapp.UpdateLanguageData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
     Xmapp.UpdateLanguageResponse,
@@ -434,7 +434,7 @@ export const updateLanguage = <ThrowOnError extends boolean = false>(
  * Removes a site from your list of favorites
  */
 export const removeFavoriteSite = <ThrowOnError extends boolean = false>(
-  options: Options<RemoveFavoriteSiteData, ThrowOnError>,
+  options: Options<Xmapp.RemoveFavoriteSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<
     unknown,
@@ -451,7 +451,7 @@ export const removeFavoriteSite = <ThrowOnError extends boolean = false>(
  * Fetches the list of sites in the environment, with associated details.
  */
 export const listSites = <ThrowOnError extends boolean = false>(
-  options?: Options<ListSitesData, ThrowOnError>,
+  options?: Options<Xmapp.ListSitesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
     Xmapp.ListSitesResponse,
@@ -470,7 +470,7 @@ export const listSites = <ThrowOnError extends boolean = false>(
  * It is also possible to create a site by duplicating a site.
  */
 export const createSite = <ThrowOnError extends boolean = false>(
-  options: Options<CreateSiteData, ThrowOnError>,
+  options: Options<Xmapp.CreateSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.CreateSiteResponse,
@@ -494,7 +494,7 @@ export const createSite = <ThrowOnError extends boolean = false>(
  * • Items that are cloned to other sites are turned into regular items, and the links removed.
  */
 export const deleteSite = <ThrowOnError extends boolean = false>(
-  options: Options<DeleteSiteData, ThrowOnError>,
+  options: Options<Xmapp.DeleteSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<
     Xmapp.DeleteSiteResponse,
@@ -511,7 +511,7 @@ export const deleteSite = <ThrowOnError extends boolean = false>(
  * Fetches information about a site.
  */
 export const retrieveSite = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveSiteData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveSiteResponse,
@@ -528,7 +528,7 @@ export const retrieveSite = <ThrowOnError extends boolean = false>(
  * Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).
  */
 export const updateSite = <ThrowOnError extends boolean = false>(
-  options: Options<UpdateSiteData, ThrowOnError>,
+  options: Options<Xmapp.UpdateSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
     Xmapp.UpdateSiteResponse,
@@ -549,7 +549,7 @@ export const updateSite = <ThrowOnError extends boolean = false>(
  * You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.
  */
 export const copySite = <ThrowOnError extends boolean = false>(
-  options: Options<CopySiteData, ThrowOnError>,
+  options: Options<Xmapp.CopySiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.CopySiteResponse,
@@ -570,7 +570,7 @@ export const copySite = <ThrowOnError extends boolean = false>(
  * Changes the system name of a site.
  */
 export const renameSite = <ThrowOnError extends boolean = false>(
-  options: Options<RenameSiteData, ThrowOnError>,
+  options: Options<Xmapp.RenameSiteData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.RenameSiteResponse,
@@ -591,7 +591,7 @@ export const renameSite = <ThrowOnError extends boolean = false>(
  * By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
  */
 export const sortSites = <ThrowOnError extends boolean = false>(
-  options: Options<SortSitesData, ThrowOnError>,
+  options: Options<Xmapp.SortSitesData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.SortSitesResponse,
@@ -618,7 +618,7 @@ export const sortSites = <ThrowOnError extends boolean = false>(
  * - Can include Latin alphanumeric characters, spaces and dashes.
  */
 export const validateSiteName = <ThrowOnError extends boolean = false>(
-  options: Options<ValidateSiteNameData, ThrowOnError>,
+  options: Options<Xmapp.ValidateSiteNameData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.ValidateSiteNameResponse,
@@ -639,7 +639,7 @@ export const validateSiteName = <ThrowOnError extends boolean = false>(
  * Fetches a list of sites that use an [analytics identifier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html).
  */
 export const listTrackedSites = <ThrowOnError extends boolean = false>(
-  options: Options<ListTrackedSitesData, ThrowOnError>,
+  options: Options<Xmapp.ListTrackedSitesData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.ListTrackedSitesResponse,
@@ -656,7 +656,7 @@ export const listTrackedSites = <ThrowOnError extends boolean = false>(
  * Fetches a list of sites in a site collection.
  */
 export const listCollectionSites = <ThrowOnError extends boolean = false>(
-  options: Options<ListCollectionSitesData, ThrowOnError>,
+  options: Options<Xmapp.ListCollectionSitesData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.ListCollectionSitesResponse,
@@ -673,7 +673,7 @@ export const listCollectionSites = <ThrowOnError extends boolean = false>(
  * Removes the analytics identifiers from one or more sites.
  */
 export const detachAnalyticsIdentifier = <ThrowOnError extends boolean = false>(
-  options: Options<DetachAnalyticsIdentifierData, ThrowOnError>,
+  options: Options<Xmapp.DetachAnalyticsIdentifierData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.DetachAnalyticsIdentifierResponse,
@@ -694,7 +694,7 @@ export const detachAnalyticsIdentifier = <ThrowOnError extends boolean = false>(
  * Fetches hierarchy information about the main page of a site, including its children, ancestors, and siblings.
  */
 export const retrieveSiteHierarchy = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveSiteHierarchyData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveSiteHierarchyData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveSiteHierarchyResponse,
@@ -711,7 +711,7 @@ export const retrieveSiteHierarchy = <ThrowOnError extends boolean = false>(
  * Fetches hierarchy information about a page, including its children, ancestors, and siblings.
  */
 export const retrievePageHierarchy = <ThrowOnError extends boolean = false>(
-  options: Options<RetrievePageHierarchyData, ThrowOnError>,
+  options: Options<Xmapp.RetrievePageHierarchyData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrievePageHierarchyResponse,
@@ -728,7 +728,7 @@ export const retrievePageHierarchy = <ThrowOnError extends boolean = false>(
  * Fetches information about the ancestors of a page.
  */
 export const listPageAncestors = <ThrowOnError extends boolean = false>(
-  options: Options<ListPageAncestorsData, ThrowOnError>,
+  options: Options<Xmapp.ListPageAncestorsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.ListPageAncestorsResponse,
@@ -745,7 +745,7 @@ export const listPageAncestors = <ThrowOnError extends boolean = false>(
  * Fetches information about the children of a page.
  */
 export const listPageChildren = <ThrowOnError extends boolean = false>(
-  options: Options<ListPageChildrenData, ThrowOnError>,
+  options: Options<Xmapp.ListPageChildrenData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.ListPageChildrenResponse,
@@ -762,7 +762,7 @@ export const listPageChildren = <ThrowOnError extends boolean = false>(
  * Retrieves the list of hosts for a site.
  */
 export const listHosts = <ThrowOnError extends boolean = false>(
-  options: Options<ListHostsData, ThrowOnError>,
+  options: Options<Xmapp.ListHostsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.ListHostsResponse,
@@ -779,7 +779,7 @@ export const listHosts = <ThrowOnError extends boolean = false>(
  * Creates a host for a site.
  */
 export const createHost = <ThrowOnError extends boolean = false>(
-  options: Options<CreateHostData, ThrowOnError>,
+  options: Options<Xmapp.CreateHostData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.CreateHostResponse,
@@ -800,7 +800,7 @@ export const createHost = <ThrowOnError extends boolean = false>(
  * Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
  */
 export const deleteHost = <ThrowOnError extends boolean = false>(
-  options: Options<DeleteHostData, ThrowOnError>,
+  options: Options<Xmapp.DeleteHostData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<unknown, Xmapp.DeleteHostError, ThrowOnError>({
     url: '/api/v1/sites/{siteId}/hosts/{hostId}',
@@ -813,7 +813,7 @@ export const deleteHost = <ThrowOnError extends boolean = false>(
  * Fetches details about a site host.
  */
 export const retrieveHost = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveHostData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveHostData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveHostResponse,
@@ -830,7 +830,7 @@ export const retrieveHost = <ThrowOnError extends boolean = false>(
  * Modifies the properties of a host.
  */
 export const updateHost = <ThrowOnError extends boolean = false>(
-  options: Options<UpdateHostData, ThrowOnError>,
+  options: Options<Xmapp.UpdateHostData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
     Xmapp.UpdateHostResponse,
@@ -851,7 +851,7 @@ export const updateHost = <ThrowOnError extends boolean = false>(
  * Fetches a list of rendering hosts for a site.
  */
 export const getRenderingHosts = <ThrowOnError extends boolean = false>(
-  options: Options<GetRenderingHostsData, ThrowOnError>,
+  options: Options<Xmapp.GetRenderingHostsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.GetRenderingHostsResponse,
@@ -868,7 +868,7 @@ export const getRenderingHosts = <ThrowOnError extends boolean = false>(
  * Gets the site templates available in the environment that can be used for creating sites. Learn more about [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html).
  */
 export const listSiteTemplates = <ThrowOnError extends boolean = false>(
-  options?: Options<ListSiteTemplatesData, ThrowOnError>,
+  options?: Options<Xmapp.ListSiteTemplatesData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<
     Xmapp.ListSiteTemplatesResponse,
@@ -885,7 +885,7 @@ export const listSiteTemplates = <ThrowOnError extends boolean = false>(
  * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
  */
 export const uploadSiteThumbnail = <ThrowOnError extends boolean = false>(
-  options: Options<UploadSiteThumbnailData, ThrowOnError>,
+  options: Options<Xmapp.UploadSiteThumbnailData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     Xmapp.UploadSiteThumbnailResponse,
@@ -907,7 +907,7 @@ export const uploadSiteThumbnail = <ThrowOnError extends boolean = false>(
  * Fetches localization statistics for a site, including the number of pages in each locale.
  */
 export const retrieveLocalizationStatistics = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveLocalizationStatisticsData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveLocalizationStatisticsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveLocalizationStatisticsResponse,
@@ -924,7 +924,7 @@ export const retrieveLocalizationStatistics = <ThrowOnError extends boolean = fa
  * Fetches a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
  */
 export const retrieveSitemapConfiguration = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveSitemapConfigurationData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveSitemapConfigurationData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveSitemapConfigurationResponse,
@@ -941,7 +941,7 @@ export const retrieveSitemapConfiguration = <ThrowOnError extends boolean = fals
  * Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
  */
 export const updateSitemapConfiguration = <ThrowOnError extends boolean = false>(
-  options: Options<UpdateSitemapConfigurationData, ThrowOnError>,
+  options: Options<Xmapp.UpdateSitemapConfigurationData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).patch<
     Xmapp.UpdateSitemapConfigurationResponse,
@@ -962,7 +962,7 @@ export const updateSitemapConfiguration = <ThrowOnError extends boolean = false>
  * Fetches the workflows defined for a site, their states, and the number of pages in each state.
  */
 export const retrieveWorkflowStatistics = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveWorkflowStatisticsData, ThrowOnError>,
+  options: Options<Xmapp.RetrieveWorkflowStatisticsData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     Xmapp.RetrieveWorkflowStatisticsResponse,

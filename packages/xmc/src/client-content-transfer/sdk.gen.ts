@@ -26,7 +26,7 @@ export type Options<
  * Creates a new transfer in the Source environment.
  */
 export const createContentTransfer = <ThrowOnError extends boolean = false>(
-  options: Options<CreateContentTransferData, ThrowOnError>,
+  options: Options<ContentTransfer.CreateContentTransferData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<unknown, unknown, ThrowOnError>({
     url: '/content/v1/transfers',
@@ -43,7 +43,7 @@ export const createContentTransfer = <ThrowOnError extends boolean = false>(
  * Gets the status of the created content transfer by transfer ID.
  */
 export const getContentTransferStatus = <ThrowOnError extends boolean = false>(
-  options: Options<GetContentTransferStatusData, ThrowOnError>,
+  options: Options<ContentTransfer.GetContentTransferStatusData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     ContentTransfer.GetContentTransferStatusResponse,
@@ -60,7 +60,7 @@ export const getContentTransferStatus = <ThrowOnError extends boolean = false>(
  * Retrieves the specified chunk from the specified chunk set in the Source environment.
  */
 export const getChunk = <ThrowOnError extends boolean = false>(
-  options: Options<GetChunkData, ThrowOnError>,
+  options: Options<ContentTransfer.GetChunkData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     ContentTransfer.GetChunkResponse,
@@ -77,7 +77,7 @@ export const getChunk = <ThrowOnError extends boolean = false>(
  * Saves the specified chunk from the specified chunk set in the Target environment.
  */
 export const saveChunk = <ThrowOnError extends boolean = false>(
-  options: Options<SaveChunkData, ThrowOnError>,
+  options: Options<ContentTransfer.SaveChunkData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).put<unknown, unknown, ThrowOnError>({
     bodySerializer: null,
@@ -95,7 +95,7 @@ export const saveChunk = <ThrowOnError extends boolean = false>(
  * Marks the specified chunk set as complete for the given transfer.
  */
 export const completeChunkSetTransfer = <ThrowOnError extends boolean = false>(
-  options: Options<CompleteChunkSetTransferData, ThrowOnError>,
+  options: Options<ContentTransfer.CompleteChunkSetTransferData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<
     ContentTransfer.CompleteChunkSetTransferResponse,
@@ -112,7 +112,7 @@ export const completeChunkSetTransfer = <ThrowOnError extends boolean = false>(
  * Deletes the content transfer by transfer ID. Starts a clean-up of all resources related to content transfer in Source or Target environments.
  */
 export const deleteContentTransfer = <ThrowOnError extends boolean = false>(
-  options: Options<DeleteContentTransferData, ThrowOnError>,
+  options: Options<ContentTransfer.DeleteContentTransferData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).delete<unknown, unknown, ThrowOnError>({
     url: '/content/v1/transfers/{transferId}',
@@ -125,7 +125,7 @@ export const deleteContentTransfer = <ThrowOnError extends boolean = false>(
  * Starts consuming a `.raif` file in the specified database.
  */
 export const consumeFile = <ThrowOnError extends boolean = false>(
-  options: Options<ConsumeFileData, ThrowOnError>,
+  options: Options<ContentTransfer.ConsumeFileData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<unknown, unknown, ThrowOnError>({
     url: '/items/v2/ConsumeFile',
@@ -138,7 +138,7 @@ export const consumeFile = <ThrowOnError extends boolean = false>(
  * Retrieves the status of a consumed `.raif` file.
  */
 export const getBlobState = <ThrowOnError extends boolean = false>(
-  options: Options<GetBlobStateData, ThrowOnError>,
+  options: Options<ContentTransfer.GetBlobStateData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).get<
     ContentTransfer.GetBlobStateResponse,

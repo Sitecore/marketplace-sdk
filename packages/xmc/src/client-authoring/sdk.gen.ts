@@ -26,7 +26,7 @@ export type Options<
  * Send a GraphQL query or mutation request to the Sitecore Authoring API. Both queries and mutations are supported.
  */
 export const graphql = <ThrowOnError extends boolean = false>(
-  options: Options<GraphqlData, ThrowOnError>,
+  options: Options<Authoring.GraphqlData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<Authoring.GraphqlResponse, unknown, ThrowOnError>({
     url: '/graphql',

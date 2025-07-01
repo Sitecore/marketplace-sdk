@@ -26,7 +26,7 @@ export type Options<
  * Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supported by the Preview API and Delivery API.
  */
 export const graphql = <ThrowOnError extends boolean = false>(
-  options: Options<GraphqlData, ThrowOnError>,
+  options: Options<Content.GraphqlData, ThrowOnError>,
 ) => {
   return (options.client ?? _heyApiClient).post<Content.GraphqlResponse, unknown, ThrowOnError>({
     url: '/graphql/v1',
