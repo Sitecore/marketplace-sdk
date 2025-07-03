@@ -10,9 +10,9 @@ export interface Config {
    */
   output?: string;
   /**
-   * Type prefix.
+   * Namespace to wrap exported types.
    *
-   * @default false
+   * @default undefined
    */
-  typePrefix: string;
+  namespace?: string;
 }

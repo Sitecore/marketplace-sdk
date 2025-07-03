@@ -6,7 +6,7 @@
 
 # Interface: BaseQueryResult\<TData, TError\>
 
-Defined in: [client/src/types.ts:29](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L29)
+Defined in: [client/src/types.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L29)
 
 ## Extended by
 
@@ -26,7 +26,7 @@ Defined in: [client/src/types.ts:29](https://github.com/Sitecore/sitecore-market
 
 > **data**: `undefined` \| `TData`
 
-Defined in: [client/src/types.ts:31](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L31)
+Defined in: [client/src/types.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L31)
 
 The current data value
 
@@ -36,7 +36,7 @@ The current data value
 
 > **error**: `undefined` \| `TError`
 
-Defined in: [client/src/types.ts:33](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L33)
+Defined in: [client/src/types.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L33)
 
 The current error if any
 
@@ -46,7 +46,7 @@ The current error if any
 
 > **isError**: `boolean`
 
-Defined in: [client/src/types.ts:39](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L39)
+Defined in: [client/src/types.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L39)
 
 Whether the query has errored
 
@@ -56,7 +56,7 @@ Whether the query has errored
 
 > **isLoading**: `boolean`
 
-Defined in: [client/src/types.ts:37](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L37)
+Defined in: [client/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L37)
 
 Whether the query is currently loading
 
@@ -66,7 +66,7 @@ Whether the query is currently loading
 
 > **isSuccess**: `boolean`
 
-Defined in: [client/src/types.ts:41](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L41)
+Defined in: [client/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L41)
 
 Whether the query was successful
 
@@ -76,7 +76,7 @@ Whether the query was successful
 
 > **refetch**: () => `Promise`\<`BaseQueryResult`\<`TData`, `TError`\>\>
 
-Defined in: [client/src/types.ts:43](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L43)
+Defined in: [client/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L43)
 
 Function to manually trigger a refetch
 
@@ -90,7 +90,7 @@ Function to manually trigger a refetch
 
 > **status**: [`QueryStatus`](../type-aliases/QueryStatus.md)
 
-Defined in: [client/src/types.ts:35](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L35)
+Defined in: [client/src/types.ts:35](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L35)
 
 The current status of the query
 
@@ -100,7 +100,7 @@ The current status of the query
 
 > `optional` **unsubscribe**: () => `void`
 
-Defined in: [client/src/types.ts:45](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/client/src/types.ts#L45)
+Defined in: [client/src/types.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L45)
 
 Function to unsubscribe if subscribed
 

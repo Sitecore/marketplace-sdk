@@ -6,7 +6,7 @@
 
 # Interface: ResponseMessage\<T\>
 
-Defined in: [packages/core/src/types.ts:94](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L94)
+Defined in: [packages/core/src/types.ts:94](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L94)
 
 Response message sent in reply to a request.
 
@@ -26,7 +26,7 @@ Response message sent in reply to a request.
 
 > `optional` **data**: `T`
 
-Defined in: [packages/core/src/types.ts:100](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L100)
+Defined in: [packages/core/src/types.ts:100](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L100)
 
 Response data if the request was successful
 
@@ -36,7 +36,7 @@ Response data if the request was successful
 
 > `optional` **error**: `object`
 
-Defined in: [packages/core/src/types.ts:102](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L102)
+Defined in: [packages/core/src/types.ts:102](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L102)
 
 Error information if the request failed
 
@@ -64,7 +64,7 @@ Error message
 
 > **id**: `string`
 
-Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L37)
+Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L37)
 
 Unique identifier for the message
 
@@ -78,7 +78,7 @@ Unique identifier for the message
 
 > `optional` **source**: `string`
 
-Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L43)
+Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L43)
 
 Source identifier for the message
 
@@ -92,7 +92,7 @@ Source identifier for the message
 
 > **success**: `boolean`
 
-Defined in: [packages/core/src/types.ts:98](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L98)
+Defined in: [packages/core/src/types.ts:98](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L98)
 
 Indicates whether the request was successful
 
@@ -102,7 +102,7 @@ Indicates whether the request was successful
 
 > **timestamp**: `number`
 
-Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L41)
+Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L41)
 
 Timestamp when the message was created
 
@@ -116,7 +116,7 @@ Timestamp when the message was created
 
 > **type**: `"response"`
 
-Defined in: [packages/core/src/types.ts:96](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/types.ts#L96)
+Defined in: [packages/core/src/types.ts:96](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L96)
 
 Message type is always "response"
 

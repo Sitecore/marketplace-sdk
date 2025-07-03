@@ -4,18 +4,16 @@ import * as content from './client-content/sdk.gen';
 import * as contentTransfer from './client-content-transfer/sdk.gen';
 import * as xmapp from './client-xmapp/sdk.gen';
 
-// The type `ClientOptions` from difference clients conflicts,
-//  we can generate the types in namespace later to sovle conflict
-// export * from './client-authoring/types.gen';
+export * from './client-authoring/types.gen';
 export * from './client-authoring/augmentation.gen';
 
-//export * from './client-content/types.gen';
+export * from './client-content/types.gen';
 export * from './client-content/augmentation.gen';
 
-// export * from './client-content-transfer/types.gen';
+export * from './client-content-transfer/types.gen';
 export * from './client-content-transfer/augmentation.gen';
 
-// export * from './client-xmapp/types.gen';
+export * from './client-xmapp/types.gen';
 export * from './client-xmapp/augmentation.gen';
 
 // Define a map for namespaces and their corresponding SDKs

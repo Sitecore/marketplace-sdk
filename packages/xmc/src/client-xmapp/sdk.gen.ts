@@ -6,156 +6,302 @@ import {
   type Client,
   formDataBodySerializer,
 } from '@hey-api/client-fetch';
-import type {
-  ListLanguagesData,
-  ListLanguagesResponse,
-  ListLanguagesError,
-  CreateLanguageData,
-  CreateLanguageResponse,
-  CreateLanguageError,
-  ListSupportedLanguagesData,
-  ListSupportedLanguagesResponse,
-  ListSupportedLanguagesError,
-  ListPageVariantsData,
-  ListPageVariantsResponse,
-  ListPageVariantsError,
-  GetLivePageStateData,
-  GetLivePageStateError,
-  ListCollectionsData,
-  ListCollectionsResponse,
-  ListCollectionsError,
-  CreateCollectionData,
-  CreateCollectionResponse,
-  CreateCollectionError,
-  DeleteCollectionData,
-  DeleteCollectionResponse,
-  DeleteCollectionError,
-  RetrieveCollectionData,
-  RetrieveCollectionResponse,
-  RetrieveCollectionError,
-  UpdateCollectionData,
-  UpdateCollectionResponse,
-  UpdateCollectionError,
-  GetFavoriteSitesData,
-  GetFavoriteSitesResponse,
-  GetFavoriteSitesError,
-  AddFavoriteSiteData,
-  AddFavoriteSiteResponse,
-  AddFavoriteSiteError,
-  ListJobsData,
-  ListJobsResponse,
-  ListJobsError,
-  RetrieveJobData,
-  RetrieveJobResponse,
-  RetrieveJobError,
-  AggregateLivePageVariantsData,
-  AggregateLivePageVariantsResponse,
-  AggregateLivePageVariantsError,
-  AggregatePageDataData,
-  AggregatePageDataResponse,
-  AggregatePageDataError,
-  RenameCollectionData,
-  RenameCollectionResponse,
-  RenameCollectionError,
-  SortCollectionsData,
-  SortCollectionsResponse,
-  SortCollectionsError,
-  ValidateCollectionNameData,
-  ValidateCollectionNameResponse,
-  ValidateCollectionNameError,
-  DeleteLanguageData,
-  DeleteLanguageResponse,
-  DeleteLanguageError,
-  UpdateLanguageData,
-  UpdateLanguageResponse,
-  UpdateLanguageError,
-  RemoveFavoriteSiteData,
-  RemoveFavoriteSiteError,
-  ListSitesData,
-  ListSitesResponse,
-  ListSitesError,
-  CreateSiteData,
-  CreateSiteResponse,
-  CreateSiteError,
-  DeleteSiteData,
-  DeleteSiteResponse,
-  DeleteSiteError,
-  RetrieveSiteData,
-  RetrieveSiteResponse,
-  RetrieveSiteError,
-  UpdateSiteData,
-  UpdateSiteResponse,
-  UpdateSiteError,
-  CopySiteData,
-  CopySiteResponse,
-  CopySiteError,
-  RenameSiteData,
-  RenameSiteResponse,
-  RenameSiteError,
-  SortSitesData,
-  SortSitesResponse,
-  SortSitesError,
-  ValidateSiteNameData,
-  ValidateSiteNameResponse,
-  ValidateSiteNameError,
-  ListTrackedSitesData,
-  ListTrackedSitesResponse,
-  ListTrackedSitesError,
-  ListCollectionSitesData,
-  ListCollectionSitesResponse,
-  ListCollectionSitesError,
-  DetachAnalyticsIdentifierData,
-  DetachAnalyticsIdentifierResponse,
-  DetachAnalyticsIdentifierError,
-  RetrieveSiteHierarchyData,
-  RetrieveSiteHierarchyResponse,
-  RetrieveSiteHierarchyError,
-  RetrievePageHierarchyData,
-  RetrievePageHierarchyResponse,
-  RetrievePageHierarchyError,
-  ListPageAncestorsData,
-  ListPageAncestorsResponse,
-  ListPageAncestorsError,
-  ListPageChildrenData,
-  ListPageChildrenResponse,
-  ListPageChildrenError,
-  ListHostsData,
-  ListHostsResponse,
-  ListHostsError,
-  CreateHostData,
-  CreateHostResponse,
-  CreateHostError,
-  DeleteHostData,
-  DeleteHostError,
-  RetrieveHostData,
-  RetrieveHostResponse,
-  RetrieveHostError,
-  UpdateHostData,
-  UpdateHostResponse,
-  UpdateHostError,
-  GetRenderingHostsData,
-  GetRenderingHostsResponse,
-  GetRenderingHostsError,
-  ListSiteTemplatesData,
-  ListSiteTemplatesResponse,
-  ListSiteTemplatesError,
-  UploadSiteThumbnailData,
-  UploadSiteThumbnailResponse,
-  UploadSiteThumbnailError,
-  RetrieveLocalizationStatisticsData,
-  RetrieveLocalizationStatisticsResponse,
-  RetrieveLocalizationStatisticsError,
-  RetrieveSitemapConfigurationData,
-  RetrieveSitemapConfigurationResponse,
-  RetrieveSitemapConfigurationError,
-  UpdateSitemapConfigurationData,
-  UpdateSitemapConfigurationResponse,
-  UpdateSitemapConfigurationError,
-  RetrieveWorkflowStatisticsData,
-  RetrieveWorkflowStatisticsResponse,
-  RetrieveWorkflowStatisticsError,
-} from './types.gen';
+import type { Xmapp } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
+
+type RetrieveWorkflowStatisticsError = Xmapp.RetrieveWorkflowStatisticsError;
+
+type RetrieveWorkflowStatisticsResponse = Xmapp.RetrieveWorkflowStatisticsResponse;
+
+type RetrieveWorkflowStatisticsData = Xmapp.RetrieveWorkflowStatisticsData;
+
+type UpdateSitemapConfigurationError = Xmapp.UpdateSitemapConfigurationError;
+
+type UpdateSitemapConfigurationResponse = Xmapp.UpdateSitemapConfigurationResponse;
+
+type UpdateSitemapConfigurationData = Xmapp.UpdateSitemapConfigurationData;
+
+type RetrieveSitemapConfigurationError = Xmapp.RetrieveSitemapConfigurationError;
+
+type RetrieveSitemapConfigurationResponse = Xmapp.RetrieveSitemapConfigurationResponse;
+
+type RetrieveSitemapConfigurationData = Xmapp.RetrieveSitemapConfigurationData;
+
+type RetrieveLocalizationStatisticsError = Xmapp.RetrieveLocalizationStatisticsError;
+
+type RetrieveLocalizationStatisticsResponse = Xmapp.RetrieveLocalizationStatisticsResponse;
+
+type RetrieveLocalizationStatisticsData = Xmapp.RetrieveLocalizationStatisticsData;
+
+type UploadSiteThumbnailError = Xmapp.UploadSiteThumbnailError;
+
+type UploadSiteThumbnailResponse = Xmapp.UploadSiteThumbnailResponse;
+
+type UploadSiteThumbnailData = Xmapp.UploadSiteThumbnailData;
+
+type ListSiteTemplatesError = Xmapp.ListSiteTemplatesError;
+
+type ListSiteTemplatesResponse = Xmapp.ListSiteTemplatesResponse;
+
+type ListSiteTemplatesData = Xmapp.ListSiteTemplatesData;
+
+type GetRenderingHostsError = Xmapp.GetRenderingHostsError;
+
+type GetRenderingHostsResponse = Xmapp.GetRenderingHostsResponse;
+
+type GetRenderingHostsData = Xmapp.GetRenderingHostsData;
+
+type UpdateHostError = Xmapp.UpdateHostError;
+
+type UpdateHostResponse = Xmapp.UpdateHostResponse;
+
+type UpdateHostData = Xmapp.UpdateHostData;
+
+type RetrieveHostError = Xmapp.RetrieveHostError;
+
+type RetrieveHostResponse = Xmapp.RetrieveHostResponse;
+
+type RetrieveHostData = Xmapp.RetrieveHostData;
+
+type DeleteHostError = Xmapp.DeleteHostError;
+
+type DeleteHostData = Xmapp.DeleteHostData;
+
+type CreateHostError = Xmapp.CreateHostError;
+
+type CreateHostResponse = Xmapp.CreateHostResponse;
+
+type CreateHostData = Xmapp.CreateHostData;
+
+type ListHostsError = Xmapp.ListHostsError;
+
+type ListHostsResponse = Xmapp.ListHostsResponse;
+
+type ListHostsData = Xmapp.ListHostsData;
+
+type ListPageChildrenError = Xmapp.ListPageChildrenError;
+
+type ListPageChildrenResponse = Xmapp.ListPageChildrenResponse;
+
+type ListPageChildrenData = Xmapp.ListPageChildrenData;
+
+type ListPageAncestorsError = Xmapp.ListPageAncestorsError;
+
+type ListPageAncestorsResponse = Xmapp.ListPageAncestorsResponse;
+
+type ListPageAncestorsData = Xmapp.ListPageAncestorsData;
+
+type RetrievePageHierarchyError = Xmapp.RetrievePageHierarchyError;
+
+type RetrievePageHierarchyResponse = Xmapp.RetrievePageHierarchyResponse;
+
+type RetrievePageHierarchyData = Xmapp.RetrievePageHierarchyData;
+
+type RetrieveSiteHierarchyError = Xmapp.RetrieveSiteHierarchyError;
+
+type RetrieveSiteHierarchyResponse = Xmapp.RetrieveSiteHierarchyResponse;
+
+type RetrieveSiteHierarchyData = Xmapp.RetrieveSiteHierarchyData;
+
+type DetachAnalyticsIdentifierError = Xmapp.DetachAnalyticsIdentifierError;
+
+type DetachAnalyticsIdentifierResponse = Xmapp.DetachAnalyticsIdentifierResponse;
+
+type DetachAnalyticsIdentifierData = Xmapp.DetachAnalyticsIdentifierData;
+
+type ListCollectionSitesError = Xmapp.ListCollectionSitesError;
+
+type ListCollectionSitesResponse = Xmapp.ListCollectionSitesResponse;
+
+type ListCollectionSitesData = Xmapp.ListCollectionSitesData;
+
+type ListTrackedSitesError = Xmapp.ListTrackedSitesError;
+
+type ListTrackedSitesResponse = Xmapp.ListTrackedSitesResponse;
+
+type ListTrackedSitesData = Xmapp.ListTrackedSitesData;
+
+type ValidateSiteNameError = Xmapp.ValidateSiteNameError;
+
+type ValidateSiteNameResponse = Xmapp.ValidateSiteNameResponse;
+
+type ValidateSiteNameData = Xmapp.ValidateSiteNameData;
+
+type SortSitesError = Xmapp.SortSitesError;
+
+type SortSitesResponse = Xmapp.SortSitesResponse;
+
+type SortSitesData = Xmapp.SortSitesData;
+
+type RenameSiteError = Xmapp.RenameSiteError;
+
+type RenameSiteResponse = Xmapp.RenameSiteResponse;
+
+type RenameSiteData = Xmapp.RenameSiteData;
+
+type CopySiteError = Xmapp.CopySiteError;
+
+type CopySiteResponse = Xmapp.CopySiteResponse;
+
+type CopySiteData = Xmapp.CopySiteData;
+
+type UpdateSiteError = Xmapp.UpdateSiteError;
+
+type UpdateSiteResponse = Xmapp.UpdateSiteResponse;
+
+type UpdateSiteData = Xmapp.UpdateSiteData;
+
+type RetrieveSiteError = Xmapp.RetrieveSiteError;
+
+type RetrieveSiteResponse = Xmapp.RetrieveSiteResponse;
+
+type RetrieveSiteData = Xmapp.RetrieveSiteData;
+
+type DeleteSiteError = Xmapp.DeleteSiteError;
+
+type DeleteSiteResponse = Xmapp.DeleteSiteResponse;
+
+type DeleteSiteData = Xmapp.DeleteSiteData;
+
+type CreateSiteError = Xmapp.CreateSiteError;
+
+type CreateSiteResponse = Xmapp.CreateSiteResponse;
+
+type CreateSiteData = Xmapp.CreateSiteData;
+
+type ListSitesError = Xmapp.ListSitesError;
+
+type ListSitesResponse = Xmapp.ListSitesResponse;
+
+type ListSitesData = Xmapp.ListSitesData;
+
+type RemoveFavoriteSiteError = Xmapp.RemoveFavoriteSiteError;
+
+type RemoveFavoriteSiteData = Xmapp.RemoveFavoriteSiteData;
+
+type UpdateLanguageError = Xmapp.UpdateLanguageError;
+
+type UpdateLanguageResponse = Xmapp.UpdateLanguageResponse;
+
+type UpdateLanguageData = Xmapp.UpdateLanguageData;
+
+type DeleteLanguageError = Xmapp.DeleteLanguageError;
+
+type DeleteLanguageResponse = Xmapp.DeleteLanguageResponse;
+
+type DeleteLanguageData = Xmapp.DeleteLanguageData;
+
+type ValidateCollectionNameError = Xmapp.ValidateCollectionNameError;
+
+type ValidateCollectionNameResponse = Xmapp.ValidateCollectionNameResponse;
+
+type ValidateCollectionNameData = Xmapp.ValidateCollectionNameData;
+
+type SortCollectionsError = Xmapp.SortCollectionsError;
+
+type SortCollectionsResponse = Xmapp.SortCollectionsResponse;
+
+type SortCollectionsData = Xmapp.SortCollectionsData;
+
+type RenameCollectionError = Xmapp.RenameCollectionError;
+
+type RenameCollectionResponse = Xmapp.RenameCollectionResponse;
+
+type RenameCollectionData = Xmapp.RenameCollectionData;
+
+type AggregatePageDataError = Xmapp.AggregatePageDataError;
+
+type AggregatePageDataResponse = Xmapp.AggregatePageDataResponse;
+
+type AggregatePageDataData = Xmapp.AggregatePageDataData;
+
+type AggregateLivePageVariantsError = Xmapp.AggregateLivePageVariantsError;
+
+type AggregateLivePageVariantsResponse = Xmapp.AggregateLivePageVariantsResponse;
+
+type AggregateLivePageVariantsData = Xmapp.AggregateLivePageVariantsData;
+
+type RetrieveJobError = Xmapp.RetrieveJobError;
+
+type RetrieveJobResponse = Xmapp.RetrieveJobResponse;
+
+type RetrieveJobData = Xmapp.RetrieveJobData;
+
+type ListJobsError = Xmapp.ListJobsError;
+
+type ListJobsResponse = Xmapp.ListJobsResponse;
+
+type ListJobsData = Xmapp.ListJobsData;
+
+type AddFavoriteSiteError = Xmapp.AddFavoriteSiteError;
+
+type AddFavoriteSiteResponse = Xmapp.AddFavoriteSiteResponse;
+
+type AddFavoriteSiteData = Xmapp.AddFavoriteSiteData;
+
+type GetFavoriteSitesError = Xmapp.GetFavoriteSitesError;
+
+type GetFavoriteSitesResponse = Xmapp.GetFavoriteSitesResponse;
+
+type GetFavoriteSitesData = Xmapp.GetFavoriteSitesData;
+
+type UpdateCollectionError = Xmapp.UpdateCollectionError;
+
+type UpdateCollectionResponse = Xmapp.UpdateCollectionResponse;
+
+type UpdateCollectionData = Xmapp.UpdateCollectionData;
+
+type RetrieveCollectionError = Xmapp.RetrieveCollectionError;
+
+type RetrieveCollectionResponse = Xmapp.RetrieveCollectionResponse;
+
+type RetrieveCollectionData = Xmapp.RetrieveCollectionData;
+
+type DeleteCollectionError = Xmapp.DeleteCollectionError;
+
+type DeleteCollectionResponse = Xmapp.DeleteCollectionResponse;
+
+type DeleteCollectionData = Xmapp.DeleteCollectionData;
+
+type CreateCollectionError = Xmapp.CreateCollectionError;
+
+type CreateCollectionResponse = Xmapp.CreateCollectionResponse;
+
+type CreateCollectionData = Xmapp.CreateCollectionData;
+
+type ListCollectionsError = Xmapp.ListCollectionsError;
+
+type ListCollectionsResponse = Xmapp.ListCollectionsResponse;
+
+type ListCollectionsData = Xmapp.ListCollectionsData;
+
+type GetLivePageStateError = Xmapp.GetLivePageStateError;
+
+type GetLivePageStateData = Xmapp.GetLivePageStateData;
+
+type ListPageVariantsError = Xmapp.ListPageVariantsError;
+
+type ListPageVariantsResponse = Xmapp.ListPageVariantsResponse;
+
+type ListPageVariantsData = Xmapp.ListPageVariantsData;
+
+type ListSupportedLanguagesError = Xmapp.ListSupportedLanguagesError;
+
+type ListSupportedLanguagesResponse = Xmapp.ListSupportedLanguagesResponse;
+
+type ListSupportedLanguagesData = Xmapp.ListSupportedLanguagesData;
+
+type CreateLanguageError = Xmapp.CreateLanguageError;
+
+type CreateLanguageResponse = Xmapp.CreateLanguageResponse;
+
+type CreateLanguageData = Xmapp.CreateLanguageData;
+
+type ListLanguagesError = Xmapp.ListLanguagesError;
+
+type ListLanguagesResponse = Xmapp.ListLanguagesResponse;
+
+type ListLanguagesData = Xmapp.ListLanguagesData;
 
 export type Options<
   TData extends TDataShape = TDataShape,

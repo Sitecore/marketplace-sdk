@@ -13,7 +13,6 @@
     "test": "vitest",
     "build": "pnpm run clean && rollup -c",
     "clean": "rimraf dist tsconfig.tsbuildinfo",
-    "prepare": "npm run build",
     "generate:module": "tsx generate-xmc.ts",
     "coverage": "vitest --coverage",
     "generate:docs": "npx typedoc --plugin typedoc-plugin-markdown --outputFileStrategy Members --parametersFormat table --readme none --out ../../docs/modules/xmc src/index.ts --githubPages false"
@@ -44,6 +43,7 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
+    "@sitecore-marketplace-sdk/client": "workspace:*",
     "@types/node": "^20.17.19",
     "@vitest/coverage-v8": "^3.0.6",
     "@vitest/expect": "^3.0.5",

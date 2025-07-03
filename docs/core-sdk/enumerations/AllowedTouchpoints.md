@@ -6,7 +6,7 @@
 
 # Enumeration: AllowedTouchpoints
 
-Defined in: [packages/core/src/constants.ts:1](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/constants.ts#L1)
+Defined in: [packages/core/src/constants.ts:1](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/constants.ts#L1)
 
 ## Enumeration Members
 
@@ -14,7 +14,7 @@ Defined in: [packages/core/src/constants.ts:1](https://github.com/Sitecore/sitec
 
 > **standalone**: `"standalone"`
 
-Defined in: [packages/core/src/constants.ts:2](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/constants.ts#L2)
+Defined in: [packages/core/src/constants.ts:2](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/constants.ts#L2)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [packages/core/src/constants.ts:2](https://github.com/Sitecore/sitec
 
 > **xmcDashboardBlocks**: `"xmc:dashboardblocks"`
 
-Defined in: [packages/core/src/constants.ts:6](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/constants.ts#L6)
+Defined in: [packages/core/src/constants.ts:6](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/constants.ts#L6)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [packages/core/src/constants.ts:6](https://github.com/Sitecore/sitec
 
 > **xmcFullscreen**: `"xmc:fullscreen"`
 
-Defined in: [packages/core/src/constants.ts:3](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/constants.ts#L3)
+Defined in: [packages/core/src/constants.ts:3](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/constants.ts#L3)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [packages/core/src/constants.ts:3](https://github.com/Sitecore/sitec
 
 > **xmcPagesContextPanel**: `"xmc:pages:contextpanel"`
 
-Defined in: [packages/core/src/constants.ts:4](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/constants.ts#L4)
+Defined in: [packages/core/src/constants.ts:4](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/constants.ts#L4)
 
 ***
 
@@ -46,4 +46,4 @@ Defined in: [packages/core/src/constants.ts:4](https://github.com/Sitecore/sitec
 
 > **xmcPagesCustomField**: `"xmc:pages:customfield"`
 
-Defined in: [packages/core/src/constants.ts:5](https://github.com/Sitecore/sitecore-marketplace-sdk/blob/c654677445b16d8ca23b9ea08164f907627519f1/packages/core/src/constants.ts#L5)
+Defined in: [packages/core/src/constants.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/constants.ts#L5)

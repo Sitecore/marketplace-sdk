@@ -23,7 +23,7 @@ createClient({
       namespaces: ['xmc.xmapp'],
     }),
     defineClientTransformerConfig({
-      typePrefix: 'Xmapp',
+      namespace: 'Xmapp',
     }),
   ],
 });
@@ -48,7 +48,7 @@ createClient({
       namespaces: ['xmc.authoring'],
     }),
     defineClientTransformerConfig({
-      typePrefix: 'Authoring',
+      namespace: 'Authoring',
     }),
   ],
 });
@@ -73,7 +73,7 @@ createClient({
       namespaces: ['xmc.contentTransfer'],
     }),
     defineClientTransformerConfig({
-      typePrefix: 'ContentTransfer',
+      namespace: 'ContentTransfer',
     }),
   ],
 });
@@ -98,7 +98,7 @@ createClient({
       namespaces: ['xmc.preview', 'xmc.live'],
     }),
     defineClientTransformerConfig({
-      typePrefix: 'Content',
+      namespace: 'Content',
     }),
   ],
 });
