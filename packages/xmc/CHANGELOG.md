@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.1.7
+
+### Patch Changes
+
+- 90aaa94: XMC package now includes exported types for query and mutation requests and responses.
+
 ## 0.1.4
 
 ### Patch Changes
