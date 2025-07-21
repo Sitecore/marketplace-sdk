@@ -91,7 +91,7 @@ Here are the main monorepo commands defined in the root `package.json`:
   pnpm test:all
   ```
 
-- **Generate Client SDK types - Under development**  
+- **Generate Client SDK types**  
   Automatically generate static TypeScript types for the Client SDK based on the defined schema:
 
   ```bash
