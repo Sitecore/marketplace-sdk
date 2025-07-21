@@ -18,21 +18,19 @@ npm install @sitecore-marketplace-sdk/xmc
 ```
 
 ## Initialization
-Before you use queries or mutations, you must initialize the XMC module:
+Before you use queries or mutations, you must initialize the XMC module.
+
+1. Update the code where you initialized the Client SDK by importing `XMC` and adding it to `config`:
 
 ```typescript
-import { ClientSDK } from '@sitecore-marketplace-sdk/client';
+// utils/hooks/useMarketplaceClient.ts
 import { XMC } from '@sitecore-marketplace-sdk/xmc';
 
-// Create a configuration object:
+// ...
 const config = {
-  origin: 'https://xmapps.sitecorecloud.io', // Where in Sitecore to display the app
-  target: window.parent,  // To iframe the app
+  // ...
   modules: [XMC] // Extend Client SDK with `XMC`
 };
-
-// Create a Client SDK instance using the configuration:
-const client = await ClientSDK.init(config);
 ```
 
 ## Usage
@@ -40,24 +38,36 @@ const client = await ClientSDK.init(config);
 Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For example, pass `'xmc.xmapp.listSites'` to retrieve a list of sites:
 
 ```typescript
-const sites = await client.query('xmc.xmapp.listSites')
-console.log(sites.data); // Displays the list of sites
+client.query("xmc.xmapp.listSites")
+  .then((res) => {
+    console.log(
+      "Success retrieving xmc.xumapp.getLivePageState:",
+      res.data
+    );
+  })
+  .catch((error) => {
+    console.error(
+      "Error retrieving xmc.xmapp.getLivePageState:",
+      error
+    );
+});
 ```
 
 For an overview of all the possible values, refer to the [`QueryMap` interface](../../docs/xmc/interfaces/QueryMap.md).
 
-### Perform a mutation
+### Make a mutation
 Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
 
-For example, to update various parameters of a site, pass `'xmc.xmapp.updateSite'` as the first argument, then pass an object as the second argument. Inside the object, pass the data you want to change to `params`:
+For example, to open a different page in the XM Cloud Page builder in response to some other action:
 
 ```typescript
-// Trigger a state change in the host, such as XM Cloud Sites:
-const mutationResult = await client.mutate('xmc.xmapp.updateSite', {
-  params: { id: '123', name: "new site name" },
-});
-
-console.log(mutationResult.data); // Displays the updated host state data
+const openDifferentPage = () => {
+  client?.mutate("pages.context", {
+    params: {
+      itemId: "<ID_OF_NEW_PAGE>",
+    },
+  });
+};
 ```
 
 For an overview of all the possible values, refer to the [`MutationMap` interface](../../docs/xmc/interfaces/MutationMap.md).
