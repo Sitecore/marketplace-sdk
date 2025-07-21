@@ -1,5 +1,5 @@
 // Import shared types (e.g. User and ApplicationMetadata)
-import { ApplicationContext, UserInfo } from '@sitecore-marketplace-sdk/core';
+import { ApplicationContext, UserInfo, PagesContextParams } from '@sitecore-marketplace-sdk/core';
 
 // --- Host state types ---
 
@@ -186,6 +186,26 @@ interface PagesContextPageInfo {
   [key: string]: any;
 }
 
+interface SiteContext {
+  siteInfo: {
+    siteId: string;
+    name: string;
+    displayName: string;
+    url: string;
+    hosts: {
+      id: string;
+      name: string;
+      languageSettings: {
+        defaultLanguage: string;
+        [key: string]: any;
+      };
+      [key: string]: any;
+    }[];
+    [key: string]: any;
+  } | null;
+  [key: string]: any;
+}
+
 // --- Static mappings for queries and mutations ---
 
 export interface QueryMap {
@@ -211,6 +231,11 @@ export interface QueryMap {
     response: ApplicationContext;
     subscribe: false;
   };
+  'site.context': {
+    params: void;
+    response: SiteContext;
+    subscribe: false;
+  };
   'host.route': {
     params: void;
     response: string;
@@ -221,6 +246,11 @@ export interface QueryMap {
 export interface MutationMap {
   'pages.reloadCanvas': {
     params: void;
+    response: void;
+    subscribe: false;
+  };
+  'pages.context': {
+    params: PagesContextParams;
     response: void;
     subscribe: false;
   };

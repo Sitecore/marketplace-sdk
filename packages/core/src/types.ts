@@ -8,7 +8,7 @@ export interface CoreSDKConfig {
   /** The target window to communicate with (e.g., iframe.contentWindow) */
   target?: Window;
   /** The origin of the target (e.g., "https://example.com") */
-  targetOrigin: string;
+  targetOrigin?: string;
   /** The origin of the current window (usually window.location.origin) */
   selfOrigin: string;
   /** Optional timeout for requests in milliseconds (default: 30000) */
@@ -22,7 +22,7 @@ export interface HandshakeConfig {
   /** Indicates whether this is the host or client side */
   type: 'host' | 'client';
   /** The origin of the target (e.g., "https://example.com") */
-  targetOrigin: string;
+  targetOrigin?: string;
   /** The origin of the current window (usually window.location.origin) */
   selfOrigin: string;
   /** Version of the SDK for compatibility checking */

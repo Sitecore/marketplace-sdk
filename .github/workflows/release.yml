@@ -37,14 +37,6 @@ jobs:
       - name: Create Release Pull Request
         uses: changesets/action@v1.4.10
         with:
-          publish: pnpm run mkptool publish
           version: pnpm changeset version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
-          DISPATCH_REPO_OWNER: ${{ vars.DISPATCH_REPO_OWNER }}
-          DISPATCH_REPO_NAME: ${{ vars.DISPATCH_REPO_NAME }}
-          DISPATCH_APP_ID: ${{ secrets.DISPATCH_APP_ID }}
-          DISPATCH_APP_PRIVATE_KEY: ${{ secrets.DISPATCH_APP_PRIVATE_KEY }}
-          PUBLISH_MAX_RETRIES: ${{vars.PUBLISH_MAX_RETRIES || '30'}}
-          PUBLISH_RETRY_DELAY_MS: ${{vars.PUBLISH_RETRY_DELAY_MS || '30000'}}

@@ -3,6 +3,7 @@ import { CoreError } from '../errors';
 import type { HandshakeMessage } from '../types';
 import { afterEach, beforeEach, describe, expect, test, vi, Mock } from 'vitest';
 import { source } from './shared';
+import { AllowedOrigins } from '../allowed-origins';
 
 describe('PostMessageBridge', () => {
   const mockTarget = {
@@ -121,6 +122,70 @@ describe('PostMessageBridge', () => {
       window.dispatchEvent(event);
 
       await expect(Promise.resolve()).resolves.toBeUndefined();
+    });
+
+    test('validates origin and updates targetOrigin for client handshake with null targetOrigin', () => {
+      const mockEvent = {
+        origin: 'https://allowed-origin.com',
+        data: {
+          type: 'handshake',
+          source: 'sitecore-marketplace-sdk',
+        },
+      } as MessageEvent;
+
+      const mockAllowOrigins = ['https://allowed-origin.com'];
+      vi.spyOn(AllowedOrigins, 'some').mockImplementation((callback) => mockAllowOrigins.some(callback));
+
+      const bridge = new PostMessageBridge({
+        target: mockTarget,
+        targetOrigin: null,
+        selfOrigin: testSelfOrigin,
+        timeout: 5000,
+      });
+
+      bridge.initialize({
+        type: 'client',
+        targetOrigin: null,
+        selfOrigin: testSelfOrigin,
+        version: '1.0.0'
+      });
+
+      const isValid = (bridge as any).isValidOrigin(mockEvent, mockEvent.data);
+
+      expect(isValid).toBe(true);
+      expect(bridge['config'].targetOrigin).toBe('https://allowed-origin.com');
+    });
+
+    test('fail validates origin when used not allowed origin', () => {
+      const mockEvent = {
+        origin: 'https://notallowed-origin.com',
+        data: {
+          type: 'handshake',
+          source: 'sitecore-marketplace-sdk',
+        },
+      } as MessageEvent;
+
+      const mockAllowOrigins = ['https://allowed-origin.com'];
+      vi.spyOn(AllowedOrigins, 'some').mockImplementation((callback) => mockAllowOrigins.some(callback));
+
+      const bridge = new PostMessageBridge({
+        target: mockTarget,
+        targetOrigin: null,
+        selfOrigin: testSelfOrigin,
+        timeout: 5000,
+      });
+
+      bridge.initialize({
+        type: 'client',
+        targetOrigin: null,
+        selfOrigin: testSelfOrigin,
+        version: '1.0.0'
+      });
+
+      const isValid = (bridge as any).isValidOrigin(mockEvent, mockEvent.data);
+
+      expect(isValid).toBe(false);
+      expect(bridge['config'].targetOrigin).toBe(null);
     });
 
     // describe('request/response', () => {

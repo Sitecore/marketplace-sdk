@@ -27,14 +27,14 @@ paths:
                   type: object
                   additionalProperties: {}
                   description: Optional variables for the GraphQL query
-                  example: { "id": "1" }
+                  example: { 'id': '1' }
                 operationName:
                   type: string
                   nullable: true
                   description: Name of the operation if multiple operations are provided
-                  example: "GetItem"
+                  example: 'GetItem'
       responses:
-        "200":
+        '200':
           description: Successful GraphQL response
           content:
             application/json:
@@ -64,9 +64,9 @@ paths:
                           type: array
                           items:
                             type: string
-        "400":
+        '400':
           description: Bad request (e.g., syntax error in query)
-        "401":
+        '401':
           description: Unauthorized request (missing or invalid authentication)
-        "500":
+        '500':
           description: Internal server error

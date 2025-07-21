@@ -4,7 +4,7 @@ import { handler } from './plugin';
 import type { Config } from './types';
 
 export const defaultClientTransformerConfig: Plugin.Config<Config> = {
-  _dependencies: ['@hey-api/client-fetch'],
+  _dependencies: ['@hey-api/client-fetch', '@hey-api/typescript'],
   _handler: handler,
   _handlerLegacy: () => {},
   name: '@sitecore-marketplace/client-transformer',

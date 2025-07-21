@@ -8,10 +8,14 @@ declare module '@sitecore-marketplace-sdk/client' {
 
 declare module '@sitecore-marketplace-sdk/client' {
   interface MutationMap {
+    /**
+     * Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supported by the Preview API and Delivery API.*/
     'xmc.preview.graphql': {
       params: Parameters<typeof sdk.graphql>[0];
       response: Awaited<ReturnType<typeof sdk.graphql>>;
     };
+    /**
+     * Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supported by the Preview API and Delivery API.*/
     'xmc.live.graphql': {
       params: Parameters<typeof sdk.graphql>[0];
       response: Awaited<ReturnType<typeof sdk.graphql>>;

@@ -112,6 +112,23 @@ describe('sdk-types', () => {
     expect(mutationMap).toBeDefined();
   });
 
+  it('should validate pages.context MutationMap', () => {
+    const mutationMap: MutationMap = {
+      'pages.reloadCanvas': {
+        params: undefined,
+        response: undefined,
+        subscribe: false,
+      },
+      'pages.context': {
+        params: { itemId: 'item1', language: 'en', itemVersion: '2' },
+        response: undefined,
+        subscribe: false,
+      },
+    };
+    expect(mutationMap['pages.context'].params).toEqual({ itemId: 'item1', language: 'en', itemVersion: '2' });
+    expect(mutationMap['pages.context'].response).toBeUndefined();
+  });
+
   it('should validate QueryKey', () => {
     const queryKey: QueryKey = 'host.user';
     expect(queryKey).toBe('host.user');

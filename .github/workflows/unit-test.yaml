@@ -20,6 +20,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i
       - name: Ensure changesets included
+        if: ${{ !(github.event.pull_request.title && contains(github.event.pull_request.title, 'Version Packages')) }}
         run: pnpm changeset status --since=origin/main
       - name: Setup bc
         run: |

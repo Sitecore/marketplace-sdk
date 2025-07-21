@@ -99,25 +99,75 @@ export class GenericResponseData {
   }
 }
 
+/**
+ * Represents a resource in an application runtime context.
+ */
+export interface ApplicationResourceContext {
+  resourceId: string;
+  tenantId: string;
+  tenantName?: string;
+  tenantDisplayName?: string;
+  context: {
+    live: string;
+    preview: string;
+  };
+  [key: string]: any;
+}
+
+/**
+ * Represents a touchpoint metadata in an application runtime context.
+ */
+export interface ApplicationTouchpointMetaContext {
+  route: string;
+  id: string;
+  title?: string;
+  description?: string;
+  iconUrl?: string;
+  pictureUrl?: string;
+  developerName?: string;
+  [key: string]: any;
+}
+
+/**
+ * Represents a touchpoint in an application runtime context.
+ */
+export interface ApplicationTouchpointContext {
+  touchpointId: string;
+  route?: string;
+  meta?: ApplicationTouchpointMetaContext[];
+  [key: string]: any;
+}
+
 export interface ApplicationContext {
   id: string;
   url: string;
   name?: string;
   type?: string;
   iconUrl?: string;
+  state?: string;
   installationId?: string;
-  resources?: [
-    {
-      resourceId?: string;
-      tenantId?: string;
-      tenantName?: string;
-      context?: {
-        live?: string;
-        preview?: string;
-      };
-    }
-  ];
-  [key: string]: any
+  resources?: ApplicationResourceContext[];
+  touchpoints?: ApplicationTouchpointContext[];
+  [key: string]: any;
+}
+
+/**
+ * Represents the runtime context of an application.
+ */
+export interface ApplicationRuntimeContext {
+  installationId: string;
+  application: {
+    id: string;
+    name: string;
+    type: string;
+    url: string;
+    iconUrl?: string;
+    state: string;
+    [key: string]: any;
+  };
+  resources: ApplicationResourceContext[];
+  touchpoints: ApplicationTouchpointContext[];
+  [key: string]: any;
 }
 
 /**
@@ -130,3 +180,11 @@ export interface ExternalUrlPayload {
   newTab?: boolean;
 }
 
+/**
+ * Parameters for Pages Context mutation.
+ */
+export interface PagesContextParams {
+  itemId?: string;
+  language?: string;
+  itemVersion?: number;
+}

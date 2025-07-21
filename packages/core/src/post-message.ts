@@ -12,6 +12,7 @@ import {
   CoreSDKConfig,
   HandshakeConfig,
 } from './types';
+import { AllowedOrigins } from './allowed-origins';
 
 const DEFAULT_TIMEOUT = 30000; // 30 seconds
 
@@ -292,21 +293,9 @@ export class PostMessageBridge {
     }
 
     // Determine the expected origin.
-    let expectedOrigin = this.config.targetOrigin;
-
-    // Parse origins to compare only the origin
     try {
-      const eventOriginUrl = new URL(event.origin);
-      const expectedOriginUrl = new URL(expectedOrigin);
-
-      console.debug(
-        `[${this.sdkType} PostMessageBridge] Received message:`,
-        event.data,
-        `from origin: ${eventOriginUrl.origin}. Expected origin: ${expectedOriginUrl.origin}`,
-      );
-
-      // Compare only the origin
-      if (eventOriginUrl.origin !== expectedOriginUrl.origin) {
+      let isValidOrigin = this.isValidOrigin(event, message);
+      if (!isValidOrigin) {
         const error = this.formatError(CoreError.invalidOrigin(event.origin));
         console.warn(error);
         // If the message comes from an unexpected origin, simply ignore it.
@@ -338,6 +327,33 @@ export class PostMessageBridge {
     // Process the message normally if we have a target
     this.processMessage(message, event.origin);
   };
+
+  private isValidOrigin(event: MessageEvent, message: Message): boolean {
+    let isValidOrigin = false;
+
+    // For client SDK, we need to validate the origin during the handshake.
+    if (this.sdkType === 'client' && message.type === 'handshake' && this.isNullOrEmpty(this.config.targetOrigin)) {
+      isValidOrigin = AllowedOrigins.some(origin => event.origin.includes(origin));
+      //Once origin is confirmed, targetOrigin will not be null
+      if (isValidOrigin) {
+        this.config.targetOrigin = event.origin;
+      }
+    } else {
+      let expectedOrigin = this.config.targetOrigin!;
+      const eventOriginUrl = new URL(event.origin);
+      const expectedOriginUrl = new URL(expectedOrigin);
+
+      console.debug(
+        `[${this.sdkType} PostMessageBridge] Received message:`,
+        event.data,
+        `from origin: ${eventOriginUrl.origin}. Expected origin: ${expectedOriginUrl.origin}`,
+      );
+
+      isValidOrigin = eventOriginUrl.origin === expectedOriginUrl.origin;
+    }
+
+    return isValidOrigin;
+  }
 
   /**
    * Processes a message after origin validation.
@@ -431,7 +447,9 @@ export class PostMessageBridge {
       message,
     );
 
-    const handler = this.requestHandlers.get(message.action);
+    const fullKey = message.action.split(':');
+    const actionWithoutPostfix = fullKey[0];
+    const handler = this.requestHandlers.get(message.action) ?? this.requestHandlers.get(actionWithoutPostfix);
     const catchAllHandler = this.requestHandlers.get('*');
     if (!handler && !catchAllHandler) {
       // No handler registered for this action, send an error response.
@@ -498,7 +516,21 @@ export class PostMessageBridge {
       message,
       `to targetOrigin: ${this.config.targetOrigin}`,
     );
-    this.config.target.postMessage(message, this.config.targetOrigin);
+
+    // Only client can be null for targetOrigin
+    let targetOrigin : string;
+    if(this.isNullOrEmpty(this.config.targetOrigin)){
+      targetOrigin = "*";
+    }
+    else{
+      targetOrigin = this.config.targetOrigin!;
+    }
+
+    this.config.target.postMessage(message, targetOrigin);
+  }
+
+  private isNullOrEmpty(prop: string | undefined): boolean {
+    return prop == null || prop === "";
   }
 
   /**

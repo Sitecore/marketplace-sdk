@@ -9,7 +9,7 @@ const MAX_RETRIES = 5;
 
 export interface HandshakeManagerConfig {
   type: 'host' | 'client';
-  targetOrigin: string;
+  targetOrigin?: string;
   selfOrigin: string;
   version: string;
   timeout?: number;

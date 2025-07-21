@@ -9,4 +9,10 @@ export interface Config {
    * @default 'client'
    */
   output?: string;
+  /**
+   * Namespace to wrap exported types.
+   *
+   * @default undefined
+   */
+  namespace?: string;
 }

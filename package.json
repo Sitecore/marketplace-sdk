@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "packages/*",
-    "scripts/mkptool"
+    "packages/*"
   ],
   "scripts": {
     "test": "turbo run test",
@@ -15,14 +14,14 @@
     "test:all": "turbo run test",
     "coverage": "turbo run coverage",
     "generate:module": "turbo run generate:module",
-    "pack:client": "turbo exec --scope @sitecore-marketplace-sdk/client -- pnpm pack",
-    "pack:core": "turbo exec --scope @sitecore-marketplace-sdk/core -- pnpm pack",
-    "pack:xmc": "turbo exec --scope @sitecore-marketplace-sdk/xmc -- pnpm pack",
-    "pack:all": "turbo exec -- pnpm pack",
+    "pack:client": "cd packages/client && pnpm pack",
+    "pack:core": "cd packages/core && pnpm pack",
+    "pack:xmc": "cd packages/xmc && pnpm pack",
+    "pack:all": "pnpm pack:core && pnpm pack:client && pnpm pack:xmc",
     "postinstall": "pnpm build:serial",
     "changeset": "changeset",
     "empty-changeset": "pnpm changeset --empty",
-    "mkptool": "node scripts/mkptool/dist/index.js"
+    "generate:docs": "turbo run generate:docs"
   },
   "author": {
     "name": "Sitecore Corporation"
@@ -33,11 +32,14 @@
     "@changesets/cli": "2.29.2",
     "jest-environment-jsdom": "^29.0.0",
     "turbo": "^2.5.0",
+    "typedoc": "^0.28.1",
+    "typedoc-plugin-markdown": "^4.6.0",
     "typescript": "^5.0.0"
   },
   "pnpm": {
     "overrides": {
-      "esbuild@<=0.24.2": ">=0.25.0"
+      "esbuild@<=0.24.2": ">=0.25.0",
+      "@eslint/plugin-kit@<0.3.3": ">=0.3.3"
     }
   },
   "packageManager": "pnpm@10.6.3"

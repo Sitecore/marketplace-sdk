@@ -1,7 +1,7 @@
 node_modules
 dist/
 *.tsbuildinfo
-
+*.log
 # Ignore distribution files in SDK packages
 packages/*/dist/
 

@@ -72,7 +72,7 @@ export interface MutationOptions<K extends MutationKey>
  */
 export interface ClientSDKConfig extends CoreSDKConfig {
   /** The origin of the remote endpoint (e.g. client for the host, or host for the client) */
-  targetOrigin: string;
+  targetOrigin?: string;
   /** Our own origin – this defaults to the value of window.location.origin */
   selfOrigin: string;
   /** Events that the SDK can listen for */
@@ -84,7 +84,7 @@ export interface ClientSDKConfig extends CoreSDKConfig {
 }
 
 export type ClientSDKInitConfig = {
-  origin: string;
+  origin?: string;
   target: Window;
   timeout?: number;
   modules?: SDKModule[];

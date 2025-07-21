@@ -1,6 +1,8 @@
 // Re-export types and errors for consumers
 export * from './types';
 export * from './errors';
+export * from './shared-types';
+export * from './constants';
 
 import { PostMessageBridge } from './post-message';
 import { CoreSDKConfig, HandshakeConfig } from './types';
@@ -131,5 +133,3 @@ export class CoreSDK {
     this.bridge.destroy();
   }
 }
-
-export * from './shared-types';

@@ -354,7 +354,7 @@ describe('ClientSDK', () => {
     });
 
     // Verify the request was made with correct endpoint and parameters
-    expect(CoreSDK.prototype.request).toHaveBeenCalledWith('pages.reloadCanvas', undefined);
+    expect(CoreSDK.prototype.request).toHaveBeenCalledWith('pages.reloadCanvas:mutation', undefined);
     expect(logger.info).toHaveBeenCalledWith(`Mutation (${mutationKey}) success:`, undefined);
     expect(onSuccessMock).toHaveBeenCalledWith(undefined);
     expect(onErrorMock).not.toHaveBeenCalled();
@@ -654,5 +654,46 @@ describe('ClientSDK', () => {
     // Test with undefined route
     await expect(client.emitRouteEvent(undefined as unknown as string)).rejects
       .toThrow('Route is required for sendRouteEvent');
+  });
+
+  it('should call coreSdk.request with pages.getValue in getValue()', async () => {
+    client = await ClientSDK.init(config);
+    const mockRequest = vi.spyOn(client['coreSdk'], 'request').mockResolvedValue('mockedValue');
+    const result = await client.getValue();
+    expect(mockRequest).toHaveBeenCalledWith('pages.getValue', {});
+    expect(result).toBe('mockedValue');
+  });
+
+  it.each([
+    [true, { value: 'testValue', canvasReload: true }],
+    [false, { value: 'testValue', canvasReload: false }],
+  ])('should call coreSdk.request with pages.setValue in setValue() when canvasReload is %s', async (canvasReload, expectedParams) => {
+    client = await ClientSDK.init(config);
+    const mockRequest = vi.spyOn(client['coreSdk'], 'request').mockResolvedValue(undefined);
+    await client.setValue('testValue', canvasReload);
+    expect(mockRequest).toHaveBeenCalledWith('pages.setValue', expectedParams);
+  });
+
+  it('should call coreSdk.request with pages.closeApp in closeApp()', async () => {
+    client = await ClientSDK.init(config);
+    const mockRequest = vi.spyOn(client['coreSdk'], 'request').mockResolvedValue(undefined);
+    await client.closeApp();
+    expect(mockRequest).toHaveBeenCalledWith('pages.closeApp', {});
+  });
+
+  it('should call coreSdk.request with pages.context in mutate()', async () => {
+    client = await ClientSDK.init(config);
+    const mockRequest = vi.spyOn(client['coreSdk'], 'request').mockResolvedValue(undefined);
+    const params = { itemId: '123', language: 'en', itemVersion: '1' };
+    await client.mutate('pages.context', { params });
+    expect(mockRequest).toHaveBeenCalledWith('pages.context:mutation', params);
+  });
+
+  it('should call coreSdk.request with pages.setValue in mutate()', async () => {
+    client = await ClientSDK.init(config);
+    const mockRequest = vi.spyOn(client['coreSdk'], 'request').mockResolvedValue(undefined);
+    const params = { value: 'test', canvasReload: false };
+    await client.mutate('pages.setValue', { params });
+    expect(mockRequest).toHaveBeenCalledWith('pages.setValue:mutation', params);
   });
 });

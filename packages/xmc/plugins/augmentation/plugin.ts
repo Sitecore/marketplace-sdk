@@ -59,6 +59,18 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
         ]),
       );
 
+      // Add documentation for the key in proper JSDoc format
+      const jsDocComment = `
+ *
+ * ${operation.description || operation.summary || 'No summary available.'}
+`;
+      ts.addSyntheticLeadingComment(
+        propertySignature,
+        ts.SyntaxKind.MultiLineCommentTrivia,
+        jsDocComment.trim(),
+        true,
+      );
+
       overrides[interfaceName].push(propertySignature);
     });
   });

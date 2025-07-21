@@ -4,21 +4,29 @@ import * as sdk from './sdk.gen';
 
 declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
+    /**
+     * Gets the status of the created content transfer by transfer ID.*/
     'xmc.contentTransfer.getContentTransferStatus': {
       params: Parameters<typeof sdk.getContentTransferStatus>[0];
       response: Awaited<ReturnType<typeof sdk.getContentTransferStatus>>;
       subscribe: false;
     };
+    /**
+     * Retrieves the specified chunk from the specified chunk set in the Source environment.*/
     'xmc.contentTransfer.getChunk': {
       params: Parameters<typeof sdk.getChunk>[0];
       response: Awaited<ReturnType<typeof sdk.getChunk>>;
       subscribe: false;
     };
+    /**
+     * Starts consuming a `.raif` file in the specified database.*/
     'xmc.contentTransfer.consumeFile': {
       params: Parameters<typeof sdk.consumeFile>[0];
       response: Awaited<ReturnType<typeof sdk.consumeFile>>;
       subscribe: false;
     };
+    /**
+     * Retrieves the status of a consumed `.raif` file.*/
     'xmc.contentTransfer.getBlobState': {
       params: Parameters<typeof sdk.getBlobState>[0];
       response: Awaited<ReturnType<typeof sdk.getBlobState>>;
@@ -29,18 +37,26 @@ declare module '@sitecore-marketplace-sdk/client' {
 
 declare module '@sitecore-marketplace-sdk/client' {
   interface MutationMap {
+    /**
+     * Creates a new transfer in the Source environment.*/
     'xmc.contentTransfer.createContentTransfer': {
       params: Parameters<typeof sdk.createContentTransfer>[0];
       response: Awaited<ReturnType<typeof sdk.createContentTransfer>>;
     };
+    /**
+     * Saves the specified chunk from the specified chunk set in the Target environment.*/
     'xmc.contentTransfer.saveChunk': {
       params: Parameters<typeof sdk.saveChunk>[0];
       response: Awaited<ReturnType<typeof sdk.saveChunk>>;
     };
+    /**
+     * Marks the specified chunk set as complete for the given transfer.*/
     'xmc.contentTransfer.completeChunkSetTransfer': {
       params: Parameters<typeof sdk.completeChunkSetTransfer>[0];
       response: Awaited<ReturnType<typeof sdk.completeChunkSetTransfer>>;
     };
+    /**
+     * Deletes the content transfer by transfer ID. Starts a clean-up of all resources related to content transfer in Source or Target environments.*/
     'xmc.contentTransfer.deleteContentTransfer': {
       params: Parameters<typeof sdk.deleteContentTransfer>[0];
       response: Awaited<ReturnType<typeof sdk.deleteContentTransfer>>;
