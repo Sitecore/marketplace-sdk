@@ -4,7 +4,7 @@ The open-source Sitecore Marketplace SDK lets JavaScript/TypeScript developers b
 
 This mono-repository manages the following Marketplace SDK packages:
 - `core` – an internal package that sets up secure communication between a Marketplace application (the client) and Sitecore (the host), using the web browser's [PostMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). For more information, refer to the package [README](packages/core/README.md).
-- `client` – required for all Marketplace applications. This package provides secure, bidirectional communication between the Marketplace app and Sitecore. It lets you make queries and perform mutations. Queries support one-off data requests and subscriptions for live updates. Mutations trigger state changes or HTTP requests in Sitecore. For more information, refer to the package [README](packages/client/README.md).
+- `client` – required for all Marketplace applications. This package provides secure, bidirectional communication between the Marketplace app and Sitecore. It lets you make queries and mutations. Queries support one-off data requests and subscriptions for live updates. Mutations trigger state changes or HTTP requests in Sitecore. For more information, refer to the package [README](packages/client/README.md).
 - `xmc` – extends the Client SDK and provides type-safe interfaces for interacting with Sitecore XM Cloud APIs. For more information, refer to the package [README](packages/xmc/README.md).
 
 The packages expose uniform, type-safe, and developer-friendly APIs to speed up your Marketplace app development work.
@@ -24,8 +24,7 @@ npm install @sitecore-marketplace-sdk/xmc
   > [!NOTE]
   > For Intellisense to work correctly with the SDK packages, make sure all peer dependencies are installed and their versions are compatible. Issues with peer dependencies are logged in your terminal.
 
-Then, refer to the READMEs of the installed packages and the reference documentation in the `/docs` folder.
-
+Then, refer to the READMEs of the installed packages, the reference documentation in the `/docs` folder, and the official [Marketplace developer documentation](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) and [Marketplace SDK documentation](https://doc.sitecore.com/mp/en/developers/sdk/latest/sitecore-marketplace-sdk/sitecore-marketplace-sdk-for-javascript.html).
 
 ### Contribute to the SDK 
 This section describes how to work with the monorepo so you can contribute to the SDK development.
@@ -92,7 +91,7 @@ Here are the main monorepo commands defined in the root `package.json`:
   pnpm test:all
   ```
 
-- **Generate Client SDK types - Under development**  
+- **Generate Client SDK types**  
   Automatically generate static TypeScript types for the Client SDK based on the defined schema:
 
   ```bash
@@ -110,7 +109,7 @@ Each package is inside the `packages/` directory. For example, to work with the 
 2. Use package-specific scripts (e.g., `build`, `lint`, `test`) as defined in its own `package.json`.
   
 ## License 
-The Sitecore Marketplace SDK is licensed under the Apache 2.0 License. Refer to the [LICENSE](./LICENSE.MD) file in the repository root.
+The Sitecore Marketplace SDK is licensed under the Apache 2.0 License. Refer to the [LICENSE](./LICENSE.md) file in the repository root.
 
 ## Status
 The Sitecore Marketplace SDK is actively maintained.
