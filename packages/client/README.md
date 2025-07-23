@@ -85,9 +85,7 @@ async function getMarketplaceClient() {
 export function useMarketplaceClient(options: UseMarketplaceClientOptions = {}) {
   // Memoize the options to prevent unnecessary re-renders
   const opts = useMemo(() => ({ ...DEFAULT_OPTIONS, ...options }), [
-    options.retryAttempts,
-    options.retryDelay,
-    options.autoInit,
+    options,
   ]);
 
   const [state, setState] = useState<MarketplaceClientState>({
@@ -168,7 +166,7 @@ export function useMarketplaceClient(options: UseMarketplaceClientOptions = {}) 
 // src/pages/index.tsx
 
 import { useState, useEffect } from "react";
-import { ApplicationContext } from "@sitecore-marketplace-sdk/client";
+import type { ApplicationContext } from "@sitecore-marketplace-sdk/client";
 import { useMarketplaceClient } from "@/utils/hooks/useMarketplaceClient";
 
 function App() {
