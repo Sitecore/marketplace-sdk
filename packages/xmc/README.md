@@ -38,10 +38,16 @@ const config = {
 Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For example, pass `'xmc.xmapp.listSites'` to retrieve a list of sites:
 
 ```typescript
-client.query("xmc.xmapp.listSites")
+client.query("xmc.xmapp.listSites", {
+   params: {
+        query: {
+          sitecoreContextId,
+        },
+      },
+})
   .then((res) => {
     console.log(
-      "Success retrieving xmc.xumapp.getLivePageState:",
+      "Success retrieving xmc.xmapp.getLivePageState:",
       res.data
     );
   })
