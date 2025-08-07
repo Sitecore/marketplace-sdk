@@ -8,7 +8,7 @@
 
 > **RetrieveJobData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1807](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1807)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1807](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1807)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1807](https://github.com
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1808](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1808)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1808](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1808)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1808](https://github.com
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1809](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1809)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1809](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1809)
 
 #### jobHandle
 
@@ -38,7 +38,7 @@ The handle of the job. If you don’t know the handle of the job, first retrieve
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1815](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1815)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1815](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1815)
 
 #### sitecoreContextId?
 
@@ -52,4 +52,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/jobs/{jobHandle}/status"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1821](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1821)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1821](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1821)

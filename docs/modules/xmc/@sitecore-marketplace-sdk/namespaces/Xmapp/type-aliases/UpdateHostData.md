@@ -8,7 +8,7 @@
 
 > **UpdateHostData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2810](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2810)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2810](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2810)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2810](https://github.com
 
 > **body**: [`UpdateHostInput`](UpdateHostInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2814](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2814)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2814](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2814)
 
 New parameter values for the host.
 
@@ -26,7 +26,7 @@ New parameter values for the host.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2815](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2815)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2815](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2815)
 
 #### hostId
 
@@ -46,7 +46,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2825](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2825)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2825](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2825)
 
 #### sitecoreContextId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/hosts/{hostId}"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2831](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2831)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2831](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2831)

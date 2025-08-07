@@ -8,4 +8,4 @@
 
 > **GetChunkResponse** = [`GetChunkResponses`](GetChunkResponses.md)\[keyof [`GetChunkResponses`](GetChunkResponses.md)\]
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:161](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L161)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:161](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L161)

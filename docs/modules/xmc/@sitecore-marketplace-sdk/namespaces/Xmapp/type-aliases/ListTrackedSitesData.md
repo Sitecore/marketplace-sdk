@@ -8,7 +8,7 @@
 
 > **ListTrackedSitesData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2391](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2391)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2391](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2391)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2391](https://github.com
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2392](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2392)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2392](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2392)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2392](https://github.com
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2393](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2393)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2393](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2393)
 
 #### analyticsIdentifier
 
@@ -38,7 +38,7 @@ Analytics identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2399](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2399)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2399](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2399)
 
 #### sitecoreContextId?
 
@@ -52,4 +52,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/analytics-identifiers/{analyticsIdentifier}"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2405](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2405)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2405](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2405)

@@ -8,4 +8,4 @@
 
 > **GetLivePageStateError** = [`GetLivePageStateErrors`](GetLivePageStateErrors.md)\[keyof [`GetLivePageStateErrors`](GetLivePageStateErrors.md)\]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1559](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1559)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1559](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1559)

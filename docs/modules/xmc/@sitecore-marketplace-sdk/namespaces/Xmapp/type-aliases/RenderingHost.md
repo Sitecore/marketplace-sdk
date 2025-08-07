@@ -8,7 +8,7 @@
 
 > **RenderingHost** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:819](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L819)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:819](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L819)
 
 The rendering host response entity.
 
@@ -18,7 +18,7 @@ The rendering host response entity.
 
 > `optional` **appName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:834](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L834)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:834](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L834)
 
 The name of the app.
 Example value: Default
@@ -29,7 +29,7 @@ Example value: Default
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:824](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L824)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:824](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L824)
 
 The rendering host ID.
 Example value: 5aae1eeaea2440bf96f11f43da82c77b
@@ -40,7 +40,7 @@ Example value: 5aae1eeaea2440bf96f11f43da82c77b
 
 > `optional` **layoutServiceConfiguration**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:839](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L839)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:839](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L839)
 
 The server side rendering engine configuration URL.
 Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config
@@ -51,7 +51,7 @@ Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:829](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L829)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:829](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L829)
 
 The name of the rendering host.
 Example value: Default
@@ -62,7 +62,7 @@ Example value: Default
 
 > `optional` **serverSideRenderingEngineApplicationUrl**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:849](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L849)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:849](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L849)
 
 The server side rendering engine application URL.
 Example value: https://xmc-eh-uniqueid.sitecorecloud.io/
@@ -73,7 +73,7 @@ Example value: https://xmc-eh-uniqueid.sitecorecloud.io/
 
 > `optional` **serverSideRenderingEngineEndpointUrl**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:844](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L844)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:844](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L844)
 
 The server side rendering engine endpoint URL.
 Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render

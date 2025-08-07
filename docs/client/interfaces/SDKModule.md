@@ -6,7 +6,7 @@
 
 # Interface: SDKModule
 
-Defined in: [client/src/sdk-types.ts:263](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L263)
+Defined in: [client/src/sdk-types.ts:263](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L263)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [client/src/sdk-types.ts:263](https://github.com/Sitecore/marketplac
 
 > **invokeOperation**: (`operationName`, ...`args`) => `any`
 
-Defined in: [client/src/sdk-types.ts:265](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L265)
+Defined in: [client/src/sdk-types.ts:265](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L265)
 
 #### Parameters
 
@@ -33,4 +33,4 @@ Defined in: [client/src/sdk-types.ts:265](https://github.com/Sitecore/marketplac
 
 > **namespace**: `string`
 
-Defined in: [client/src/sdk-types.ts:264](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L264)
+Defined in: [client/src/sdk-types.ts:264](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L264)

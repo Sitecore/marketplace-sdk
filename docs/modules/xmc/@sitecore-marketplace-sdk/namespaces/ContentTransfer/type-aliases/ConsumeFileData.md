@@ -8,7 +8,7 @@
 
 > **ConsumeFileData** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L293)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L293)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:293](https://
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:294](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L294)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:294](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L294)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:294](https://
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:295](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L295)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:295](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L295)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:295](https://
 
 > **query**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:296](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L296)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:296](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L296)
 
 #### databaseName
 
@@ -58,4 +58,4 @@ The Sitecore context ID.
 
 > **url**: `"/items/v2/ConsumeFile"`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:310](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L310)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:310](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L310)

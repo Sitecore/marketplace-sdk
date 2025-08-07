@@ -8,7 +8,7 @@
 
 > **ListCollectionSitesResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2452](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2452)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2452](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2452)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2452](https://github.com
 
 > **200**: [`Site`](Site.md)[]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2456](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2456)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2456](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2456)
 
 Successful operation

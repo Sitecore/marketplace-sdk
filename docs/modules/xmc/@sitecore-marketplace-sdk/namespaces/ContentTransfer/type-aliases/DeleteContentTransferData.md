@@ -8,7 +8,7 @@
 
 > **DeleteContentTransferData** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:257](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L257)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:257](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L257)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:257](https://
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:258](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L258)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:258](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L258)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:258](https://
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:259](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L259)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:259](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L259)
 
 #### transferId
 
@@ -38,7 +38,7 @@ ID of the transfer to delete.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:265](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L265)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:265](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L265)
 
 #### sitecoreContextId?
 
@@ -52,4 +52,4 @@ The Sitecore context ID.
 
 > **url**: `"/content/v1/transfers/{transferId}"`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:271](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L271)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:271](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L271)

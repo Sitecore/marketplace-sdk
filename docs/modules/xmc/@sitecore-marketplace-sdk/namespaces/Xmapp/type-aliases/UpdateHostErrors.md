@@ -8,7 +8,7 @@
 
 > **UpdateHostErrors** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2833](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2833)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2833](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2833)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2833](https://github.com
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2837](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2837)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2837](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2837)
 
 One or more validation errors occurred
 
@@ -26,7 +26,7 @@ One or more validation errors occurred
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2841](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2841)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2841](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2841)
 
 Invalid host ID
 
@@ -36,6 +36,6 @@ Invalid host ID
 
 > **409**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2845](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2845)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2845](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2845)
 
 The host name is already in use

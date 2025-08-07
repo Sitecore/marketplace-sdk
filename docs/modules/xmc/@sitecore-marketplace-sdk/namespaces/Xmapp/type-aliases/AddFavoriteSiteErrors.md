@@ -8,7 +8,7 @@
 
 > **AddFavoriteSiteErrors** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1764](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1764)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1764](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1764)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1764](https://github.com
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1768](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1768)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1768](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1768)
 
 One or more validation errors occurred.
 
@@ -26,6 +26,6 @@ One or more validation errors occurred.
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1772](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1772)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1772](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1772)
 
 Provided site not found.

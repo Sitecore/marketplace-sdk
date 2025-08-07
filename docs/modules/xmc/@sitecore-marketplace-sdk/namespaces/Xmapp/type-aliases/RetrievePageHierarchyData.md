@@ -8,7 +8,7 @@
 
 > **RetrievePageHierarchyData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2543](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2543)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2543](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2543)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2543](https://github.com
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2544](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2544)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2544](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2544)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2544](https://github.com
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2545](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2545)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2545](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2545)
 
 #### pageId
 
@@ -44,7 +44,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2555](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2555)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2555](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2555)
 
 #### language?
 
@@ -64,4 +64,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/hierarchy/{pageId}"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2565](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2565)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2565](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2565)

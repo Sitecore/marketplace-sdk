@@ -8,7 +8,7 @@
 
 > **UpdateCollectionData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1688](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1688)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1688](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1688)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1688](https://github.com
 
 > `optional` **body**: [`UpdateSiteCollectionInput`](UpdateSiteCollectionInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1692](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1692)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1692](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1692)
 
 Input data containing name and the description of the site collection
 
@@ -26,7 +26,7 @@ Input data containing name and the description of the site collection
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1693](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1693)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1693](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1693)
 
 #### collectionId
 
@@ -40,7 +40,7 @@ The identifier of the site collection.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1699](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1699)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1699](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1699)
 
 #### sitecoreContextId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/collections/{collectionId}"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1705](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1705)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1705](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1705)

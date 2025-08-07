@@ -8,7 +8,7 @@
 
 > **GetBlobStateErrors** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:347](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L347)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:347](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L347)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:347](https://
 
 > **400**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:351](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L351)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:351](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L351)
 
 Invalid file name.
 
@@ -26,7 +26,7 @@ Invalid file name.
 
 > **401**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:355](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L355)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:355](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L355)
 
 Invalid access token.
 
@@ -36,6 +36,6 @@ Invalid access token.
 
 > **403**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:359](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L359)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:359](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L359)
 
 Authorization failed (required role is missing).

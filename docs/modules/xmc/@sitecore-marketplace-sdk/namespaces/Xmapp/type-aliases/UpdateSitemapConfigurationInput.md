@@ -8,7 +8,7 @@
 
 > **UpdateSitemapConfigurationInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1323](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1323)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1323](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1323)
 
 A sitemap configuration update request
 
@@ -18,7 +18,7 @@ A sitemap configuration update request
 
 > `optional` **alternateLinksOptions**: [`SitemapAlternateLinksOptions`](SitemapAlternateLinksOptions.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1339](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1339)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1339](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1339)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1339](https://github.com
 
 > `optional` **cacheOptions**: [`SitemapCacheOptions`](SitemapCacheOptions.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1341](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1341)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1341](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1341)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1341](https://github.com
 
 > `optional` **enabled**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1333](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1333)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1333](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1333)
 
 Indicates whether sitemap generation is enabled.
 Example value: True
@@ -45,7 +45,7 @@ Example value: True
 
 > **id**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1328](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1328)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1328](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1328)
 
 The identifier of the sitemap configuration item.
 Example value: da570793-3539-4923-88ca-8314ddd193f7
@@ -56,7 +56,7 @@ Example value: da570793-3539-4923-88ca-8314ddd193f7
 
 > `optional` **maxNumberOfPages**: `number` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1338](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1338)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1338](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1338)
 
 Maximum number of pages to include in a single sitemap file.
 Example value: 1000
@@ -67,4 +67,4 @@ Example value: 1000
 
 > `optional` **urlOptions**: [`SitemapUrlOptions`](SitemapUrlOptions.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1340](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1340)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1340](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1340)

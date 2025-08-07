@@ -6,9 +6,13 @@
 
 # Interface: ApplicationRuntimeContext
 
-Defined in: [packages/core/src/shared-types.ts:136](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L136)
+Defined in: [packages/core/src/shared-types.ts:161](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L161)
 
 Represents the runtime context of an application.
+
+## Indexable
+
+\[`key`: `string`\]: `any`
 
 ## Properties
 
@@ -16,7 +20,11 @@ Represents the runtime context of an application.
 
 > **application**: `object`
 
-Defined in: [packages/core/src/shared-types.ts:138](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L138)
+Defined in: [packages/core/src/shared-types.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L163)
+
+#### Index Signature
+
+\[`key`: `string`\]: `any`
 
 #### iconUrl?
 
@@ -44,24 +52,48 @@ Defined in: [packages/core/src/shared-types.ts:138](https://github.com/Sitecore/
 
 ***
 
+### extensionsPoints?
+
+> `optional` **extensionsPoints**: [`ApplicationTouchpointContext`](ApplicationTouchpointContext.md)[]
+
+Defined in: [packages/core/src/shared-types.ts:177](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L177)
+
+***
+
 ### installationId
 
 > **installationId**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:137](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L137)
+Defined in: [packages/core/src/shared-types.ts:162](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L162)
 
 ***
 
-### resources
+### resourceAccess?
+
+> `optional` **resourceAccess**: [`ApplicationResourceContext`](ApplicationResourceContext.md)[]
+
+Defined in: [packages/core/src/shared-types.ts:176](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L176)
+
+***
+
+### ~~resources~~
 
 > **resources**: [`ApplicationResourceContext`](ApplicationResourceContext.md)[]
 
-Defined in: [packages/core/src/shared-types.ts:146](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L146)
+Defined in: [packages/core/src/shared-types.ts:173](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L173)
+
+#### Deprecated
+
+Use resourceAccess instead
 
 ***
 
-### touchpoints
+### ~~touchpoints~~
 
 > **touchpoints**: [`ApplicationTouchpointContext`](ApplicationTouchpointContext.md)[]
 
-Defined in: [packages/core/src/shared-types.ts:147](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L147)
+Defined in: [packages/core/src/shared-types.ts:175](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L175)
+
+#### Deprecated
+
+Use extensionsPoints instead

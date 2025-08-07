@@ -8,7 +8,7 @@
 
 > **ListSiteTemplatesData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2890](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2890)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2890](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2890)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2890](https://github.com
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2891](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2891)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2891](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2891)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2891](https://github.com
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2892](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2892)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2892](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2892)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2892](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2893](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2893)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2893](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2893)
 
 #### sitecoreContextId?
 
@@ -46,4 +46,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/templates"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2899](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2899)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2899](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2899)

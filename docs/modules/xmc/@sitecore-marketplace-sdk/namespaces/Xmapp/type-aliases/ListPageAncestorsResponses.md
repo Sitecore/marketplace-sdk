@@ -8,7 +8,7 @@
 
 > **ListPageAncestorsResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2618](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2618)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2618](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2618)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2618](https://github.com
 
 > **200**: [`PageResponse`](PageResponse.md)[]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2622](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2622)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2622](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2622)
 
 List of retrieved ancestor pages

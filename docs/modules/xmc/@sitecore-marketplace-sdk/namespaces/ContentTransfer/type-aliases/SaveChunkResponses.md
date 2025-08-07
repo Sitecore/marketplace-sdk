@@ -8,7 +8,7 @@
 
 > **SaveChunkResponses** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:204](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L204)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:204](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L204)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:204](https://
 
 > **201**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L208)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L208)
 
 The chunk is pushed.

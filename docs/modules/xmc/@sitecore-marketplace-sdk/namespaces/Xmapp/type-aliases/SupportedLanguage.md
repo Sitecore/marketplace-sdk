@@ -8,7 +8,7 @@
 
 > **SupportedLanguage** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1151](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1151)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1151](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1151)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1151](https://github.com
 
 > `optional` **charSet**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1171](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1171)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1171](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1171)
 
 The character encoding, that specifies how characters are represented in a document or web page.
 Example value: iso-8859-1
@@ -27,7 +27,7 @@ Example value: iso-8859-1
 
 > `optional` **codePage**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1176](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1176)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1176](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1176)
 
 The code of the page.
 Example value: 65001
@@ -38,7 +38,7 @@ Example value: 65001
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1166](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1166)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1166](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1166)
 
 The display name of the language.
 Example value: German (Germany) : Deutsch (Deutschland)
@@ -49,7 +49,7 @@ Example value: German (Germany) : Deutsch (Deutschland)
 
 > `optional` **encoding**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1181](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1181)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1181](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1181)
 
 The encoding.
 Example value: utf-8
@@ -60,7 +60,7 @@ Example value: utf-8
 
 > `optional` **englishName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1161](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1161)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1161](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1161)
 
 The english name of the language.
 Example value: German (Germany)
@@ -71,7 +71,7 @@ Example value: German (Germany)
 
 > `optional` **languageCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1186](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1186)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1186](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1186)
 
 The code for the language.
 Example value: de
@@ -82,7 +82,7 @@ Example value: de
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1156](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1156)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1156](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1156)
 
 The full name of the language.
 Example value: de-DE
@@ -93,7 +93,7 @@ Example value: de-DE
 
 > `optional` **regionCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1191](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1191)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1191](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1191)
 
 The regional ISO code of the language. For example, US for the USA, or DK for Denmark.
 Example value: DE

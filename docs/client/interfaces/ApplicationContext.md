@@ -6,7 +6,7 @@
 
 # Interface: ApplicationContext
 
-Defined in: core/dist/shared-types.d.ts:82
+Defined in: core/dist/shared-types.d.ts:102
 
 ## Indexable
 
@@ -14,11 +14,19 @@ Defined in: core/dist/shared-types.d.ts:82
 
 ## Properties
 
+### extensionsPoints?
+
+> `optional` **extensionsPoints**: `ApplicationTouchpointContext`[]
+
+Defined in: core/dist/shared-types.d.ts:115
+
+***
+
 ### iconUrl?
 
 > `optional` **iconUrl**: `string`
 
-Defined in: core/dist/shared-types.d.ts:87
+Defined in: core/dist/shared-types.d.ts:107
 
 ***
 
@@ -26,7 +34,7 @@ Defined in: core/dist/shared-types.d.ts:87
 
 > **id**: `string`
 
-Defined in: core/dist/shared-types.d.ts:83
+Defined in: core/dist/shared-types.d.ts:103
 
 ***
 
@@ -34,7 +42,7 @@ Defined in: core/dist/shared-types.d.ts:83
 
 > `optional` **installationId**: `string`
 
-Defined in: core/dist/shared-types.d.ts:89
+Defined in: core/dist/shared-types.d.ts:109
 
 ***
 
@@ -42,15 +50,27 @@ Defined in: core/dist/shared-types.d.ts:89
 
 > `optional` **name**: `string`
 
-Defined in: core/dist/shared-types.d.ts:85
+Defined in: core/dist/shared-types.d.ts:105
 
 ***
 
-### resources?
+### resourceAccess?
+
+> `optional` **resourceAccess**: `ApplicationResourceContext`[]
+
+Defined in: core/dist/shared-types.d.ts:114
+
+***
+
+### ~~resources?~~
 
 > `optional` **resources**: `ApplicationResourceContext`[]
 
-Defined in: core/dist/shared-types.d.ts:90
+Defined in: core/dist/shared-types.d.ts:111
+
+#### Deprecated
+
+Use resourceAccess instead
 
 ***
 
@@ -58,15 +78,19 @@ Defined in: core/dist/shared-types.d.ts:90
 
 > `optional` **state**: `string`
 
-Defined in: core/dist/shared-types.d.ts:88
+Defined in: core/dist/shared-types.d.ts:108
 
 ***
 
-### touchpoints?
+### ~~touchpoints?~~
 
 > `optional` **touchpoints**: `ApplicationTouchpointContext`[]
 
-Defined in: core/dist/shared-types.d.ts:91
+Defined in: core/dist/shared-types.d.ts:113
+
+#### Deprecated
+
+Use extensionsPoints instead
 
 ***
 
@@ -74,7 +98,7 @@ Defined in: core/dist/shared-types.d.ts:91
 
 > `optional` **type**: `string`
 
-Defined in: core/dist/shared-types.d.ts:86
+Defined in: core/dist/shared-types.d.ts:106
 
 ***
 
@@ -82,4 +106,4 @@ Defined in: core/dist/shared-types.d.ts:86
 
 > **url**: `string`
 
-Defined in: core/dist/shared-types.d.ts:84
+Defined in: core/dist/shared-types.d.ts:104

@@ -8,7 +8,7 @@
 
 > **SaveChunkErrors** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:190](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L190)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:190](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L190)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:190](https://
 
 > **400**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:194](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L194)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:194](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L194)
 
 Invalid transfer id, chunk set id, or chunk id.
 
@@ -26,7 +26,7 @@ Invalid transfer id, chunk set id, or chunk id.
 
 > **401**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:198](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L198)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:198](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L198)
 
 Invalid access token.
 
@@ -36,6 +36,6 @@ Invalid access token.
 
 > **403**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L202)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L202)
 
 Authorization failed (required role is missing).

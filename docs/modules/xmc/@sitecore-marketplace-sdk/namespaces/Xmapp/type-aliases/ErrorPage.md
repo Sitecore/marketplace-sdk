@@ -8,7 +8,7 @@
 
 > **ErrorPage** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:214](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L214)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:214](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L214)
 
 The error page response entity.
 
@@ -18,7 +18,7 @@ The error page response entity.
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:219](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L219)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:219](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L219)
 
 The identifier of the page.
 Example value: 68900348a3b84eb8ac7df4d179c25727
@@ -29,7 +29,7 @@ Example value: 68900348a3b84eb8ac7df4d179c25727
 
 > `optional` **path**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L224)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L224)
 
 The path for the page.
 Example value: Sitecore/Content/Home/Categories/Products/MyProduct

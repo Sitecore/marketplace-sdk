@@ -8,7 +8,7 @@
 
 > **AddLanguageModel** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:14](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L14)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:14](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L14)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:14](https://github.com/S
 
 > `optional` **charset**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L19)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L19)
 
 The character encoding, that specifies how characters are represented in a document or web page.
 Example value: iso-8859-1
@@ -27,7 +27,7 @@ Example value: iso-8859-1
 
 > `optional` **codePage**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:24](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L24)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:24](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L24)
 
 Code Page
 Example value: 65001
@@ -38,7 +38,7 @@ Example value: 65001
 
 > `optional` **customCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L29)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L29)
 
 If you wish to support a nonstandard country or region code, you can provide a custom language code.
 Example value: en-EU
@@ -49,7 +49,7 @@ Example value: en-EU
 
 > `optional` **database**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:34](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L34)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:34](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L34)
 
 Database
 Example value: master
@@ -60,7 +60,7 @@ Example value: master
 
 > `optional` **encoding**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L39)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L39)
 
 Example value: utf-8
 Example value: utf-8
@@ -71,7 +71,7 @@ Example value: utf-8
 
 > `optional` **fallbackLanguage**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L59)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L59)
 
 If you wish to configure fallback for the new language, add the ISO language code for the fallback language.
 Example value: en
@@ -82,7 +82,7 @@ Example value: en
 
 > **languageCode**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L44)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L44)
 
 The ISO code for the language.
 Example value: en
@@ -93,7 +93,7 @@ Example value: en
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L49)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L49)
 
 The name that will be used for the language.
 Example value: en-US
@@ -104,7 +104,7 @@ Example value: en-US
 
 > `optional` **regionCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L54)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L54)
 
 The regional ISO code of the language. Example values: US for the USA, or DK for Denmark.
 Example value: US
@@ -115,7 +115,7 @@ Example value: US
 
 > `optional` **spellChecker**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:64](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L64)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:64](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L64)
 
 A reference to the dictionary file name that you want to use to spellcheck in the new language.
 Example value: en-US.tdf

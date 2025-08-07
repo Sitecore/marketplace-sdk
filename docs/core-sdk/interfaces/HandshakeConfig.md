@@ -6,7 +6,7 @@
 
 # Interface: HandshakeConfig
 
-Defined in: [packages/core/src/types.ts:21](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L21)
+Defined in: [packages/core/src/types.ts:21](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L21)
 
 Configuration for the handshake process.
 
@@ -16,7 +16,7 @@ Configuration for the handshake process.
 
 > **selfOrigin**: `string`
 
-Defined in: [packages/core/src/types.ts:27](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L27)
+Defined in: [packages/core/src/types.ts:27](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L27)
 
 The origin of the current window (usually window.location.origin)
 
@@ -26,7 +26,7 @@ The origin of the current window (usually window.location.origin)
 
 > `optional` **targetOrigin**: `string`
 
-Defined in: [packages/core/src/types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L25)
+Defined in: [packages/core/src/types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L25)
 
 The origin of the target (e.g., "https://example.com")
 
@@ -36,7 +36,7 @@ The origin of the target (e.g., "https://example.com")
 
 > **type**: `"host"` \| `"client"`
 
-Defined in: [packages/core/src/types.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L23)
+Defined in: [packages/core/src/types.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L23)
 
 Indicates whether this is the host or client side
 
@@ -46,6 +46,6 @@ Indicates whether this is the host or client side
 
 > **version**: `string`
 
-Defined in: [packages/core/src/types.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L29)
+Defined in: [packages/core/src/types.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L29)
 
 Version of the SDK for compatibility checking

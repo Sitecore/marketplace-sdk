@@ -8,7 +8,7 @@
 
 > **SiteTemplate** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1011](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1011)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1011](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1011)
 
 Site template response entity.
 
@@ -18,7 +18,7 @@ Site template response entity.
 
 > `optional` **contents**: [`StringStringKeyValuePair`](StringStringKeyValuePair.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1035](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1035)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1035](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1035)
 
 The summary of what pages, components, or integrations are included in the template.
 
@@ -28,7 +28,7 @@ The summary of what pages, components, or integrations are included in the templ
 
 > `optional` **createdBy**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1039](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1039)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1039](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1039)
 
 The author of the site template.
 
@@ -38,7 +38,7 @@ The author of the site template.
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1031](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1031)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1031](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1031)
 
 The description of the site template.
 Example value: An example of a simple website with homepage, subpage, navigation, and footer.
@@ -49,7 +49,7 @@ Example value: An example of a simple website with homepage, subpage, navigation
 
 > `optional` **enabled**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1026](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1026)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1026](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1026)
 
 Indicates whenever the template is enabled.
 Example value: True
@@ -60,7 +60,7 @@ Example value: True
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1016](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1016)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1016](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1016)
 
 The identifier of the site template.
 Example value: {5AAE1EEA-EA24-40BF-96F1-1F43DA82C77B}
@@ -71,7 +71,7 @@ Example value: {5AAE1EEA-EA24-40BF-96F1-1F43DA82C77B}
 
 > `optional` **image**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1054](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1054)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1054](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1054)
 
 Large resolution screenshot of the site template.
 Example value: https://customer-tenant.sitecorecloud.io/-/media/Feature/JSS-Experience-Accelerator/Basic-Site/template-thumbnail.png
@@ -82,7 +82,7 @@ Example value: https://customer-tenant.sitecorecloud.io/-/media/Feature/JSS-Expe
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1021](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1021)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1021](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1021)
 
 The name of the site template.
 Example value: Basic
@@ -93,7 +93,7 @@ Example value: Basic
 
 > `optional` **thumbnail**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1049](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1049)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1049](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1049)
 
 The thumbnail of the site template.
 Example value: https://customer-tenant.sitecorecloud.io/-/media/Feature/JSS-Experience-Accelerator/Basic-Site/template-thumbnail.png?w=176
@@ -104,7 +104,7 @@ Example value: https://customer-tenant.sitecorecloud.io/-/media/Feature/JSS-Expe
 
 > `optional` **updatedOn**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1044](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1044)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1044](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1044)
 
 The date of the last update.
 Example value: 2019-08-24T14:15:22Z

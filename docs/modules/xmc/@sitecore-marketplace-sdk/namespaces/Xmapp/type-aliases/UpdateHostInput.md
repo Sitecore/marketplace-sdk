@@ -8,7 +8,7 @@
 
 > **UpdateHostInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1216](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1216)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1216](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1216)
 
 A host update request.
 
@@ -18,7 +18,7 @@ A host update request.
 
 > `optional` **analyticsIdentifiers**: [`AnalyticsIdentifier`](AnalyticsIdentifier.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1252](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1252)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1252](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1252)
 
 The list of analytics tracker identifiers mapped to the host, per language.
 
@@ -28,7 +28,7 @@ The list of analytics tracker identifiers mapped to the host, per language.
 
 > `optional` **homePageId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1244](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1244)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1244](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1244)
 
 The identifier of the home page.
 Example value: 110d559fdea542ea9c1c8a5df7e70ef9
@@ -39,7 +39,7 @@ Example value: 110d559fdea542ea9c1c8a5df7e70ef9
 
 > `optional` **hostnames**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1229](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1229)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1229](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1229)
 
 One or more hostnames.
 Example value: [
@@ -53,7 +53,7 @@ Example value: [
 
 > `optional` **languageSettings**: [`SiteLanguageSettings`](SiteLanguageSettings.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1259](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1259)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1259](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1259)
 
 ***
 
@@ -61,7 +61,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1259](https://github.com
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1221](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1221)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1221](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1221)
 
 Name of the host
 Example value: skate-park
@@ -72,7 +72,7 @@ Example value: skate-park
 
 > `optional` **renderingHost**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1239](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1239)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1239](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1239)
 
 The rendering host.
 Example value: Default
@@ -83,7 +83,7 @@ Example value: Default
 
 > `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1256](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1256)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1256](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1256)
 
 The host settings collection.
 
@@ -93,7 +93,7 @@ The host settings collection.
 
 > `optional` **targetHostname**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1234](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1234)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1234](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1234)
 
 The target hostname.
 Example value: www.skate-park.com
@@ -104,6 +104,6 @@ Example value: www.skate-park.com
 
 > `optional` **thumbnail**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1248](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1248)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1248](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1248)
 
 The thumbnail information.

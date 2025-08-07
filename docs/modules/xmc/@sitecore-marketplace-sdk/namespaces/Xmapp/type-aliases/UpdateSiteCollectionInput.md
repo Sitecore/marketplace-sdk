@@ -8,7 +8,7 @@
 
 > **UpdateSiteCollectionInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1264](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1264)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1264](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1264)
 
 Update site collection request
 
@@ -18,7 +18,7 @@ Update site collection request
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1274](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1274)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1274](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1274)
 
 Description of the site collection.
 Example value: Example site collection description.
@@ -29,7 +29,7 @@ Example value: Example site collection description.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1269](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1269)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1269](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1269)
 
 Display name for the site collection.
 Example value: Skate Brand Websites
@@ -40,7 +40,7 @@ Example value: Skate Brand Websites
 
 > `optional` **sortOrder**: `number` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1279](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1279)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1279](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1279)
 
 The name of the site collection.
 Example value: 100

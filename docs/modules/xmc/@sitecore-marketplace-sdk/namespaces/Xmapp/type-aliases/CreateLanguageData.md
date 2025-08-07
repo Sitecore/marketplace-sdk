@@ -8,7 +8,7 @@
 
 > **CreateLanguageData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1444](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1444)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1444](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1444)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1444](https://github.com
 
 > **body**: [`AddLanguageModel`](AddLanguageModel.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1448](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1448)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1448](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1448)
 
 Input parameters
 
@@ -26,7 +26,7 @@ Input parameters
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1449](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1449)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1449](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1449)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1449](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1450](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1450)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1450](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1450)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/languages"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1456](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1456)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1456](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1456)

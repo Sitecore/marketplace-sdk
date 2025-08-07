@@ -8,7 +8,7 @@
 
 > **ErrorPagesConfiguration** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L244)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L244)
 
 An object containing the site error pages
 
@@ -18,7 +18,7 @@ An object containing the site error pages
 
 > `optional` **errorPage**: [`ErrorPage`](ErrorPage.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:245](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L245)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:245](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L245)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:245](https://github.com/
 
 > `optional` **notFoundPage**: [`ErrorPage`](ErrorPage.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:246](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L246)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:246](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L246)

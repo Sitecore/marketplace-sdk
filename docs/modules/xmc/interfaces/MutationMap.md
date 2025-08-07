@@ -54,7 +54,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:211
 
 > **graphql**: `object`
 
-Defined in: [packages/xmc/src/client-authoring/augmentation.gen.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-authoring/augmentation.gen.ts#L13)
+Defined in: [packages/xmc/src/client-authoring/augmentation.gen.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-authoring/augmentation.gen.ts#L13)
 
 Send a GraphQL query or mutation request to the Sitecore Authoring API. Both queries and mutations are supported.
 
@@ -72,7 +72,7 @@ Send a GraphQL query or mutation request to the Sitecore Authoring API. Both que
 
 > **completeChunkSetTransfer**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L54)
+Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L54)
 
 Marks the specified chunk set as complete for the given transfer.
 
@@ -90,7 +90,7 @@ Marks the specified chunk set as complete for the given transfer.
 
 > **createContentTransfer**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:42](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L42)
+Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:42](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L42)
 
 Creates a new transfer in the Source environment.
 
@@ -108,7 +108,7 @@ Creates a new transfer in the Source environment.
 
 > **deleteContentTransfer**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L60)
+Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L60)
 
 Deletes the content transfer by transfer ID. Starts a clean-up of all resources related to content transfer in Source or Target environments.
 
@@ -126,7 +126,7 @@ Deletes the content transfer by transfer ID. Starts a clean-up of all resources 
 
 > **saveChunk**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L48)
+Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L48)
 
 Saves the specified chunk from the specified chunk set in the Target environment.
 
@@ -144,7 +144,7 @@ Saves the specified chunk from the specified chunk set in the Target environment
 
 > **graphql**: `object`
 
-Defined in: [packages/xmc/src/client-content/augmentation.gen.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content/augmentation.gen.ts#L19)
+Defined in: [packages/xmc/src/client-content/augmentation.gen.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content/augmentation.gen.ts#L19)
 
 Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supported by the Preview API and Delivery API.
 
@@ -162,7 +162,7 @@ Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supp
 
 > **graphql**: `object`
 
-Defined in: [packages/xmc/src/client-content/augmentation.gen.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content/augmentation.gen.ts#L13)
+Defined in: [packages/xmc/src/client-content/augmentation.gen.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content/augmentation.gen.ts#L13)
 
 Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supported by the Preview API and Delivery API.
 
@@ -180,7 +180,7 @@ Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supp
 
 > **addFavoriteSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L208)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L208)
 
 Adds a site to your list of favorites
 
@@ -198,7 +198,7 @@ Adds a site to your list of favorites
 
 > **aggregateLivePageVariants**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:214](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L214)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:214](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L214)
 
 Returns currently active personalization variants for the requested pages.
 
@@ -216,7 +216,7 @@ Returns currently active personalization variants for the requested pages.
 
 > **aggregatePageData**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:220](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L220)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:220](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L220)
 
 Aggregates data about multiple pages and their components.
 
@@ -234,7 +234,7 @@ Aggregates data about multiple pages and their components.
 
 > **copySite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L293)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L293)
 
 You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.
 
@@ -252,7 +252,7 @@ You can create a site by duplicating an existing one. When you duplicate a site,
 
 > **createCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:190](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L190)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:190](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L190)
 
 Creates a collection by specifying a name and, optionally, a display name and description.
 
@@ -270,7 +270,7 @@ Creates a collection by specifying a name and, optionally, a display name and de
 
 > **createHost**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:329](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L329)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:329](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L329)
 
 Creates a host for a site.
 
@@ -288,7 +288,7 @@ Creates a host for a site.
 
 > **createLanguage**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:184](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L184)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:184](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L184)
 
 Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by Sitecore XM Cloud. If you do not know the language code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
            To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
@@ -308,7 +308,7 @@ Adds a language to your environment, so you can create content and build website
 
 > **createSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:272](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L272)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:272](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L272)
 
 [Creates a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html) for the environment.
            Sites are created using  [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html). Every site belongs to a [site collection](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site-collection.html). You can either create a site inside an existing collection or create a new one.
@@ -328,7 +328,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:272](https://gith
 
 > **deleteCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:196](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L196)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:196](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L196)
 
 Deletes a site collection, including sites in that collection.
 
@@ -346,7 +346,7 @@ Deletes a site collection, including sites in that collection.
 
 > **deleteHost**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:335](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L335)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:335](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L335)
 
 Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
 
@@ -364,7 +364,7 @@ Deletes a site using a hostID. Deletes a site, including its pages, settings, me
 
 > **deleteLanguage**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:251](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L251)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:251](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L251)
 
 Deletes a language from the XM Cloud environment.
            To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
@@ -383,7 +383,7 @@ Deletes a language from the XM Cloud environment.
 
 > **deleteSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:281](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L281)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:281](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L281)
 
 Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
           Deleting a site affects related websites in the collection:
@@ -404,7 +404,7 @@ Deletes a site, including its pages, settings, media files, data sources, presen
 
 > **detachAnalyticsIdentifier**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:323](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L323)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:323](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L323)
 
 Removes the analytics identifiers from one or more sites.
 
@@ -422,7 +422,7 @@ Removes the analytics identifiers from one or more sites.
 
 > **removeFavoriteSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:264](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L264)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:264](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L264)
 
 Removes a site from your list of favorites
 
@@ -440,7 +440,7 @@ Removes a site from your list of favorites
 
 > **renameCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:226](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L226)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:226](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L226)
 
 Changes the system name of a site collection.
 
@@ -458,7 +458,7 @@ Changes the system name of a site collection.
 
 > **renameSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:299](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L299)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:299](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L299)
 
 Changes the system name of a site.
 
@@ -476,7 +476,7 @@ Changes the system name of a site.
 
 > **sortCollections**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:232](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L232)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:232](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L232)
 
 By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
 
@@ -494,7 +494,7 @@ By assigning a sort value to site collection IDs, you can use this endpoint to a
 
 > **sortSites**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:305](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L305)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:305](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L305)
 
 By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
 
@@ -512,7 +512,7 @@ By assigning a sort value to site IDs, you can use this endpoint to apply an ord
 
 > **updateCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L202)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L202)
 
 Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).
 
@@ -530,7 +530,7 @@ Updates the display name and the description of the site collection. To change t
 
 > **updateHost**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:341](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L341)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:341](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L341)
 
 Modifies the properties of a host.
 
@@ -548,7 +548,7 @@ Modifies the properties of a host.
 
 > **updateLanguage**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:258](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L258)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:258](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L258)
 
 Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by Sitecore XM Cloud.
            To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
@@ -567,7 +567,7 @@ Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/ad
 
 > **updateSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:287](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L287)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:287](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L287)
 
 Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).
 
@@ -585,7 +585,7 @@ Updates various parameters of a site. To change the name of a site, see [rename 
 
 > **updateSitemapConfiguration**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:353](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L353)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:353](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L353)
 
 Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
 
@@ -603,7 +603,7 @@ Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configur
 
 > **uploadSiteThumbnail**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:347](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L347)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:347](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L347)
 
 Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
 
@@ -621,7 +621,7 @@ Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users
 
 > **validateCollectionName**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L244)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L244)
 
 Validates a site collection name to ensure it meets the required criteria. The validations applied to the collection name:
 - Is a string and can't be null.
@@ -645,7 +645,7 @@ Validates a site collection name to ensure it meets the required criteria. The v
 
 > **validateSiteName**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:317](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/augmentation.gen.ts#L317)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:317](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/augmentation.gen.ts#L317)
 
 Validates a site name to ensure it meets the required criteria. The validations applied to the site name:
 - Is a string and can't be null.

@@ -6,7 +6,7 @@
 
 # Enumeration: ErrorCode
 
-Defined in: [packages/core/src/errors.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L5)
+Defined in: [packages/core/src/errors.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L5)
 
 Enumeration of all possible error codes that can be thrown by the SDK.
 These codes help identify the type and source of errors for better error handling.
@@ -17,7 +17,7 @@ These codes help identify the type and source of errors for better error handlin
 
 > **ALREADY\_INITIALIZED**: `"ALREADY_INITIALIZED"`
 
-Defined in: [packages/core/src/errors.ts:24](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L24)
+Defined in: [packages/core/src/errors.ts:24](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L24)
 
 ***
 
@@ -25,7 +25,7 @@ Defined in: [packages/core/src/errors.ts:24](https://github.com/Sitecore/marketp
 
 > **CLIENT\_NOT\_READY**: `"CLIENT_NOT_READY"`
 
-Defined in: [packages/core/src/errors.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L33)
+Defined in: [packages/core/src/errors.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L33)
 
 ***
 
@@ -33,7 +33,7 @@ Defined in: [packages/core/src/errors.ts:33](https://github.com/Sitecore/marketp
 
 > **CONNECTION\_ERROR**: `"CONNECTION_ERROR"`
 
-Defined in: [packages/core/src/errors.ts:8](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L8)
+Defined in: [packages/core/src/errors.ts:8](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L8)
 
 ***
 
@@ -41,7 +41,7 @@ Defined in: [packages/core/src/errors.ts:8](https://github.com/Sitecore/marketpl
 
 > **EXECUTION\_ERROR**: `"EXECUTION_ERROR"`
 
-Defined in: [packages/core/src/errors.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L16)
+Defined in: [packages/core/src/errors.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L16)
 
 ***
 
@@ -49,7 +49,7 @@ Defined in: [packages/core/src/errors.ts:16](https://github.com/Sitecore/marketp
 
 > **HANDSHAKE\_FAILED**: `"HANDSHAKE_FAILED"`
 
-Defined in: [packages/core/src/errors.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L9)
+Defined in: [packages/core/src/errors.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L9)
 
 ***
 
@@ -57,7 +57,7 @@ Defined in: [packages/core/src/errors.ts:9](https://github.com/Sitecore/marketpl
 
 > **HOST\_NOT\_READY**: `"HOST_NOT_READY"`
 
-Defined in: [packages/core/src/errors.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L29)
+Defined in: [packages/core/src/errors.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L29)
 
 ***
 
@@ -65,7 +65,7 @@ Defined in: [packages/core/src/errors.ts:29](https://github.com/Sitecore/marketp
 
 > **IFRAME\_ERROR**: `"IFRAME_ERROR"`
 
-Defined in: [packages/core/src/errors.ts:34](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L34)
+Defined in: [packages/core/src/errors.ts:34](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L34)
 
 ***
 
@@ -73,7 +73,7 @@ Defined in: [packages/core/src/errors.ts:34](https://github.com/Sitecore/marketp
 
 > **INITIALIZATION\_ERROR**: `"INITIALIZATION_ERROR"`
 
-Defined in: [packages/core/src/errors.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L26)
+Defined in: [packages/core/src/errors.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L26)
 
 ***
 
@@ -81,7 +81,7 @@ Defined in: [packages/core/src/errors.ts:26](https://github.com/Sitecore/marketp
 
 > **INVALID\_ORIGIN**: `"INVALID_ORIGIN"`
 
-Defined in: [packages/core/src/errors.ts:10](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L10)
+Defined in: [packages/core/src/errors.ts:10](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L10)
 
 ***
 
@@ -89,7 +89,7 @@ Defined in: [packages/core/src/errors.ts:10](https://github.com/Sitecore/marketp
 
 > **INVALID\_REQUEST**: `"INVALID_REQUEST"`
 
-Defined in: [packages/core/src/errors.ts:14](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L14)
+Defined in: [packages/core/src/errors.ts:14](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L14)
 
 ***
 
@@ -97,7 +97,7 @@ Defined in: [packages/core/src/errors.ts:14](https://github.com/Sitecore/marketp
 
 > **INVALID\_STATE**: `"INVALID_STATE"`
 
-Defined in: [packages/core/src/errors.ts:20](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L20)
+Defined in: [packages/core/src/errors.ts:20](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L20)
 
 ***
 
@@ -105,7 +105,7 @@ Defined in: [packages/core/src/errors.ts:20](https://github.com/Sitecore/marketp
 
 > **METHOD\_NOT\_FOUND**: `"METHOD_NOT_FOUND"`
 
-Defined in: [packages/core/src/errors.ts:15](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L15)
+Defined in: [packages/core/src/errors.ts:15](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L15)
 
 ***
 
@@ -113,7 +113,7 @@ Defined in: [packages/core/src/errors.ts:15](https://github.com/Sitecore/marketp
 
 > **NOT\_CONNECTED**: `"NOT_CONNECTED"`
 
-Defined in: [packages/core/src/errors.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L25)
+Defined in: [packages/core/src/errors.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L25)
 
 ***
 
@@ -121,7 +121,7 @@ Defined in: [packages/core/src/errors.ts:25](https://github.com/Sitecore/marketp
 
 > **NOT\_INITIALIZED**: `"NOT_INITIALIZED"`
 
-Defined in: [packages/core/src/errors.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L23)
+Defined in: [packages/core/src/errors.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L23)
 
 ***
 
@@ -129,7 +129,7 @@ Defined in: [packages/core/src/errors.ts:23](https://github.com/Sitecore/marketp
 
 > **SUBSCRIPTION\_ERROR**: `"SUBSCRIPTION_ERROR"`
 
-Defined in: [packages/core/src/errors.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L19)
+Defined in: [packages/core/src/errors.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L19)
 
 ***
 
@@ -137,7 +137,7 @@ Defined in: [packages/core/src/errors.ts:19](https://github.com/Sitecore/marketp
 
 > **TIMEOUT**: `"TIMEOUT"`
 
-Defined in: [packages/core/src/errors.ts:7](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L7)
+Defined in: [packages/core/src/errors.ts:7](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L7)
 
 ***
 
@@ -145,7 +145,7 @@ Defined in: [packages/core/src/errors.ts:7](https://github.com/Sitecore/marketpl
 
 > **TOKEN\_ERROR**: `"TOKEN_ERROR"`
 
-Defined in: [packages/core/src/errors.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L30)
+Defined in: [packages/core/src/errors.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L30)
 
 ***
 
@@ -153,4 +153,4 @@ Defined in: [packages/core/src/errors.ts:30](https://github.com/Sitecore/marketp
 
 > **UNKNOWN\_ERROR**: `"UNKNOWN_ERROR"`
 
-Defined in: [packages/core/src/errors.ts:11](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/errors.ts#L11)
+Defined in: [packages/core/src/errors.ts:11](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/errors.ts#L11)

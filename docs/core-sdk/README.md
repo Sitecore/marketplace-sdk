@@ -22,6 +22,7 @@
 - [ApplicationResourceContext](interfaces/ApplicationResourceContext.md)
 - [ApplicationRuntimeContext](interfaces/ApplicationRuntimeContext.md)
 - [ApplicationTouchpointContext](interfaces/ApplicationTouchpointContext.md)
+- [ApplicationTouchpointMetaContext](interfaces/ApplicationTouchpointMetaContext.md)
 - [BaseHostSchema](interfaces/BaseHostSchema.md)
 - [BaseMessage](interfaces/BaseMessage.md)
 - [CoreSDKConfig](interfaces/CoreSDKConfig.md)

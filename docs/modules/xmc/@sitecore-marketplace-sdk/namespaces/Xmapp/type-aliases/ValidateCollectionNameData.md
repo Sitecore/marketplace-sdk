@@ -8,7 +8,7 @@
 
 > **ValidateCollectionNameData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1965](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1965)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1965](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1965)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1965](https://github.com
 
 > **body**: [`ValidateCollectionNameInput`](ValidateCollectionNameInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1969](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1969)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1969](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1969)
 
 The site collection name to validate.
 
@@ -26,7 +26,7 @@ The site collection name to validate.
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1970](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1970)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1970](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1970)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1970](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1971](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1971)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1971](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1971)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/collections/name/validate"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1977](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1977)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1977](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1977)

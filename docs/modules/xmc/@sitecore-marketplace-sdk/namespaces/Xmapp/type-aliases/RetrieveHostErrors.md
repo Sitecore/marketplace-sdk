@@ -8,7 +8,7 @@
 
 > **RetrieveHostErrors** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2792](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2792)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2792](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2792)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2792](https://github.com
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2796](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2796)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2796](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2796)
 
 One or more validation errors occurred
 
@@ -26,6 +26,6 @@ One or more validation errors occurred
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2800](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2800)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2800](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2800)
 
 Invalid host ID

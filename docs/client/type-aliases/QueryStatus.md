@@ -8,4 +8,4 @@
 
 > **QueryStatus** = `"idle"` \| `"loading"` \| `"error"` \| `"success"`
 
-Defined in: [client/src/types.ts:11](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/types.ts#L11)
+Defined in: [client/src/types.ts:11](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L11)

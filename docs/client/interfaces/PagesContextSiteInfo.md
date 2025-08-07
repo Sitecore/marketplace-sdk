@@ -6,7 +6,7 @@
 
 # Interface: PagesContextSiteInfo
 
-Defined in: [client/src/sdk-types.ts:105](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L105)
+Defined in: [client/src/sdk-types.ts:105](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L105)
 
 ## Indexable
 
@@ -18,7 +18,7 @@ Defined in: [client/src/sdk-types.ts:105](https://github.com/Sitecore/marketplac
 
 > `optional` **brandKitId**: `string`
 
-Defined in: [client/src/sdk-types.ts:120](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L120)
+Defined in: [client/src/sdk-types.ts:120](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L120)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [client/src/sdk-types.ts:120](https://github.com/Sitecore/marketplac
 
 > `optional` **collectionId**: `string`
 
-Defined in: [client/src/sdk-types.ts:116](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L116)
+Defined in: [client/src/sdk-types.ts:116](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L116)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [client/src/sdk-types.ts:116](https://github.com/Sitecore/marketplac
 
 > `optional` **created**: `string`
 
-Defined in: [client/src/sdk-types.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L117)
+Defined in: [client/src/sdk-types.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L117)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [client/src/sdk-types.ts:117](https://github.com/Sitecore/marketplac
 
 > `optional` **createdBy**: `string`
 
-Defined in: [client/src/sdk-types.ts:118](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L118)
+Defined in: [client/src/sdk-types.ts:118](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L118)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [client/src/sdk-types.ts:118](https://github.com/Sitecore/marketplac
 
 > `optional` **description**: `string`
 
-Defined in: [client/src/sdk-types.ts:108](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L108)
+Defined in: [client/src/sdk-types.ts:108](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L108)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [client/src/sdk-types.ts:108](https://github.com/Sitecore/marketplac
 
 > `optional` **displayName**: `string`
 
-Defined in: [client/src/sdk-types.ts:109](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L109)
+Defined in: [client/src/sdk-types.ts:109](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L109)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [client/src/sdk-types.ts:109](https://github.com/Sitecore/marketplac
 
 > `optional` **errorPagesConfiguration**: `any`
 
-Defined in: [client/src/sdk-types.ts:135](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L135)
+Defined in: [client/src/sdk-types.ts:135](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L135)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [client/src/sdk-types.ts:135](https://github.com/Sitecore/marketplac
 
 > `optional` **hosts**: `any`
 
-Defined in: [client/src/sdk-types.ts:133](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L133)
+Defined in: [client/src/sdk-types.ts:133](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L133)
 
 ***
 
@@ -82,7 +82,7 @@ Defined in: [client/src/sdk-types.ts:133](https://github.com/Sitecore/marketplac
 
 > `optional` **id**: `string`
 
-Defined in: [client/src/sdk-types.ts:106](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L106)
+Defined in: [client/src/sdk-types.ts:106](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L106)
 
 ***
 
@@ -90,7 +90,7 @@ Defined in: [client/src/sdk-types.ts:106](https://github.com/Sitecore/marketplac
 
 > `optional` **languages**: `string`[]
 
-Defined in: [client/src/sdk-types.ts:132](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L132)
+Defined in: [client/src/sdk-types.ts:132](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L132)
 
 ***
 
@@ -98,7 +98,7 @@ Defined in: [client/src/sdk-types.ts:132](https://github.com/Sitecore/marketplac
 
 > `optional` **name**: `string`
 
-Defined in: [client/src/sdk-types.ts:107](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L107)
+Defined in: [client/src/sdk-types.ts:107](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L107)
 
 ***
 
@@ -106,7 +106,7 @@ Defined in: [client/src/sdk-types.ts:107](https://github.com/Sitecore/marketplac
 
 > `optional` **permissions**: `object`
 
-Defined in: [client/src/sdk-types.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L121)
+Defined in: [client/src/sdk-types.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L121)
 
 #### Index Signature
 
@@ -150,7 +150,7 @@ Defined in: [client/src/sdk-types.ts:121](https://github.com/Sitecore/marketplac
 
 > `optional` **properties**: `any`
 
-Defined in: [client/src/sdk-types.ts:141](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L141)
+Defined in: [client/src/sdk-types.ts:141](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L141)
 
 ***
 
@@ -158,7 +158,7 @@ Defined in: [client/src/sdk-types.ts:141](https://github.com/Sitecore/marketplac
 
 > `optional` **settings**: `object`
 
-Defined in: [client/src/sdk-types.ts:136](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L136)
+Defined in: [client/src/sdk-types.ts:136](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L136)
 
 #### Index Signature
 
@@ -178,7 +178,7 @@ Defined in: [client/src/sdk-types.ts:136](https://github.com/Sitecore/marketplac
 
 > `optional` **sortOrder**: `number`
 
-Defined in: [client/src/sdk-types.ts:119](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L119)
+Defined in: [client/src/sdk-types.ts:119](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L119)
 
 ***
 
@@ -186,7 +186,7 @@ Defined in: [client/src/sdk-types.ts:119](https://github.com/Sitecore/marketplac
 
 > `optional` **supportedLanguages**: `string`[]
 
-Defined in: [client/src/sdk-types.ts:134](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L134)
+Defined in: [client/src/sdk-types.ts:134](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L134)
 
 ***
 
@@ -194,7 +194,7 @@ Defined in: [client/src/sdk-types.ts:134](https://github.com/Sitecore/marketplac
 
 > `optional` **thumbnail**: `object`
 
-Defined in: [client/src/sdk-types.ts:110](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/client/src/sdk-types.ts#L110)
+Defined in: [client/src/sdk-types.ts:110](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L110)
 
 #### Index Signature
 
