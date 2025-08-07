@@ -4,10 +4,12 @@
 
 Deprecate `resources` and `touchpoints` properties in favor of `resourceAccess` and `extensionsPoints`
 
-**BREAKING CHANGE (Deprecation):**
+**Deprecation Notice:**
 
 - The `resources` property in `ApplicationContext` and `ApplicationRuntimeContext` interfaces is now deprecated. Use `resourceAccess` instead.
 - The `touchpoints` property in `ApplicationContext` and `ApplicationRuntimeContext` interfaces is now deprecated. Use `extensionsPoints` instead.
+
+This is a non-breaking change - existing code will continue to work unchanged.
 
 **What changed:**
 
