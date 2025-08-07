@@ -146,8 +146,12 @@ export interface ApplicationContext {
   iconUrl?: string;
   state?: string;
   installationId?: string;
+  /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
+  /** @deprecated Use extensionsPoints instead */
   touchpoints?: ApplicationTouchpointContext[];
+  resourceAccess?: ApplicationResourceContext[];
+  extensionsPoints?: ApplicationTouchpointContext[];
   [key: string]: any;
 }
 
@@ -165,8 +169,12 @@ export interface ApplicationRuntimeContext {
     state: string;
     [key: string]: any;
   };
+  /** @deprecated Use resourceAccess instead */
   resources: ApplicationResourceContext[];
+  /** @deprecated Use extensionsPoints instead */
   touchpoints: ApplicationTouchpointContext[];
+  resourceAccess?: ApplicationResourceContext[];
+  extensionsPoints?: ApplicationTouchpointContext[];
   [key: string]: any;
 }
 
