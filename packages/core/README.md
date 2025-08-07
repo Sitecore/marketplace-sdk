@@ -16,7 +16,7 @@ The `core` package sets up secure communication between a Marketplace applicatio
 `core` is automatically installed when you install other Marketplace SDK packages, such as `client`.
 
 ## License 
-This package is part of the Sitecore Marketplace SDK, licensed under the Apache 2.0 License. Refer to the [LICENSE](../../LICENSE.MD) file in the repository root.
+This package is part of the Sitecore Marketplace SDK, licensed under the Apache 2.0 License. Refer to the [LICENSE](../../LICENSE.md) file in the repository root.
 
 ## Status
 The `core` package is actively maintained as part of the Sitecore Marketplace SDK.
