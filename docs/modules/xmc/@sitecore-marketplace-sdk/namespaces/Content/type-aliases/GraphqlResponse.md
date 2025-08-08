@@ -8,4 +8,4 @@
 
 > **GraphqlResponse** = [`GraphqlResponses`](GraphqlResponses.md)\[keyof [`GraphqlResponses`](GraphqlResponses.md)\]
 
-Defined in: [packages/xmc/src/client-content/types.gen.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content/types.gen.ts#L63)
+Defined in: [packages/xmc/src/client-content/types.gen.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content/types.gen.ts#L63)

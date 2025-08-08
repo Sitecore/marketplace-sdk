@@ -8,7 +8,7 @@
 
 > **CreateHostData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2694](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2694)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2694](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2694)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2694](https://github.com
 
 > **body**: [`CreateHostInput`](CreateHostInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2698](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2698)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2698](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2698)
 
 The parameters of a host.
 
@@ -26,7 +26,7 @@ The parameters of a host.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2699](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2699)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2699](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2699)
 
 #### siteId
 
@@ -40,7 +40,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2705](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2705)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2705](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2705)
 
 #### sitecoreContextId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/hosts"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2711](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2711)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2711](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2711)

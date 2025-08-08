@@ -8,7 +8,7 @@
 
 > **RetrievePageHierarchyResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2579](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2579)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2579](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2579)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2579](https://github.com
 
 > **200**: [`PageHierarchy`](PageHierarchy.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2583](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2583)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2583](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2583)
 
 Page hierarchy retrieved successfully

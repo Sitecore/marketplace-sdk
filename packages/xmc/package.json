@@ -15,7 +15,7 @@
     "clean": "rimraf dist tsconfig.tsbuildinfo",
     "generate:module": "tsx generate-xmc.ts",
     "coverage": "vitest --coverage",
-    "generate:docs": "npx typedoc --plugin typedoc-plugin-markdown --outputFileStrategy Members --parametersFormat table --readme none --out ../../docs/modules/xmc src/index.ts --githubPages false"
+    "generate:docs": "npx typedoc --options ../../typedoc.json --out ../../docs/modules/xmc src/index.ts"
   },
   "author": {
     "name": "Sitecore Corporation"

@@ -8,7 +8,7 @@
 
 > **EditLanguageInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:204](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L204)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:204](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L204)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:204](https://github.com/
 
 > `optional` **baseIsoCultureCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L208)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L208)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:208](https://github.com/
 
 > `optional` **fallbackLanguageIso**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:207](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L207)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:207](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L207)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:207](https://github.com/
 
 > `optional` **fallbackRegionDisplayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:209](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L209)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:209](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L209)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:209](https://github.com/
 
 > `optional` **languageCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:205](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L205)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:205](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L205)
 
 ***
 
@@ -48,4 +48,4 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:205](https://github.com/
 
 > `optional` **regionCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:206](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L206)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:206](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L206)

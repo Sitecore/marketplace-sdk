@@ -8,7 +8,7 @@
 
 > **AggregateLivePageVariantsData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1837](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1837)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1837](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1837)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1837](https://github.com
 
 > `optional` **body**: [`PageRequest`](PageRequest.md)[]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1841](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1841)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1841](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1841)
 
 The collection of pages (by their identifier and language) for which to get personalization variants.
 
@@ -26,7 +26,7 @@ The collection of pages (by their identifier and language) for which to get pers
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1842](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1842)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1842](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1842)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1842](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1843](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1843)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1843](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1843)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/aggregation/pages/live/variants"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1849](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1849)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1849](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1849)

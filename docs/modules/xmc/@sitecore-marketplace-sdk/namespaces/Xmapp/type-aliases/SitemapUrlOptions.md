@@ -8,7 +8,7 @@
 
 > **SitemapUrlOptions** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1108](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1108)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1108](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1108)
 
 URL property configurations in the sitemap.
 
@@ -18,7 +18,7 @@ URL property configurations in the sitemap.
 
 > `optional` **includeChangeFreq**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1113](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1113)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1113](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1113)
 
 Whether to include a change frequency attribute in the sitemap, that specifies how often the page changes its content.
 Example value: True
@@ -29,7 +29,7 @@ Example value: True
 
 > `optional` **includeLastMod**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1118](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1118)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1118](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1118)
 
 hether to include the last modification date in the sitemap.
 Example value: True
@@ -40,7 +40,7 @@ Example value: True
 
 > `optional` **includePriority**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1123](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1123)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1123](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1123)
 
 Whether to include priority information in the sitemap. The priority is a number between 0 and 1 that represents the importance of a page.
 Example value: True

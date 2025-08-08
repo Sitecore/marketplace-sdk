@@ -8,7 +8,7 @@
 
 > **PageHierarchy** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:565](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L565)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:565](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L565)
 
 Page hierarchy response entity.
 
@@ -18,7 +18,7 @@ Page hierarchy response entity.
 
 > `optional` **ancestors**: [`PageResponse`](PageResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:574](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L574)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:574](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L574)
 
 Details of this page's ancestors.
 
@@ -28,7 +28,7 @@ Details of this page's ancestors.
 
 > `optional` **children**: [`PageResponse`](PageResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:570](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L570)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:570](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L570)
 
 Details of this page's children.
 
@@ -38,7 +38,7 @@ Details of this page's children.
 
 > `optional` **page**: [`PageResponse`](PageResponse.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:566](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L566)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:566](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L566)
 
 ***
 
@@ -46,6 +46,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:566](https://github.com/
 
 > `optional` **siblings**: [`PageResponse`](PageResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:578](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L578)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:578](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L578)
 
 Details of this page's siblings.

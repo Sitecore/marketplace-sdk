@@ -8,7 +8,7 @@
 
 > **PageVariantsAggregationResponse** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:692](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L692)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:692](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L692)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:692](https://github.com/
 
 > `optional` **pages**: [`PageVariantsResponse`](PageVariantsResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:696](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L696)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:696](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L696)
 
 Aggregated data of the currently active variants for this page.

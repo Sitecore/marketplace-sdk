@@ -8,7 +8,7 @@
 
 > **ListCollectionsData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1566](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1566)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1566](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1566)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1566](https://github.com
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1567](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1567)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1567](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1567)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1567](https://github.com
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1568](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1568)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1568](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1568)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1568](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1569](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1569)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1569](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1569)
 
 #### sitecoreContextId?
 
@@ -46,4 +46,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/collections"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1575](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1575)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1575](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1575)

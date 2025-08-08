@@ -8,7 +8,7 @@
 
 > **NameValidationResult** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:453](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L453)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:453](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L453)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:453](https://github.com/
 
 > `optional` **isValid**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:457](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L457)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:457](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L457)
 
 indicates whether the name is valid.
 
@@ -26,6 +26,6 @@ indicates whether the name is valid.
 
 > `optional` **message**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:461](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L461)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:461](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L461)
 
 details about the request.

@@ -8,7 +8,7 @@
 
 > **UploadSiteThumbnailData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2916](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2916)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2916](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2916)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2916](https://github.com
 
 > `optional` **body**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2917](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2917)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2917](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2917)
 
 #### ContentDisposition?
 
@@ -52,7 +52,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2917](https://github.com
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2927](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2927)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2927](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2927)
 
 #### siteId
 
@@ -66,7 +66,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2933](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2933)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2933](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2933)
 
 #### sitecoreContextId?
 
@@ -80,4 +80,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/upload-thumbnail"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2939](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2939)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2939](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2939)

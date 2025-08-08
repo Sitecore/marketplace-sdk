@@ -8,7 +8,7 @@
 
 > **CreateContentTransferResponses** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L54)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L54)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:54](https://g
 
 > **202**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L58)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L58)
 
 Transfer creation started.

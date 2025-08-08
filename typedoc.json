@@ -1,0 +1,10 @@
+{
+  "plugin": ["typedoc-plugin-markdown"],
+  "outputFileStrategy": "Members",
+  "parametersFormat": "table",
+  "readme": "none",
+  "githubPages": false,
+  "disableSources": false,
+  "sourceLinkTemplate": "https://github.com/Sitecore/marketplace-sdk/blob/main/{path}#L{line}",
+  "gitRevision": "main"
+}
