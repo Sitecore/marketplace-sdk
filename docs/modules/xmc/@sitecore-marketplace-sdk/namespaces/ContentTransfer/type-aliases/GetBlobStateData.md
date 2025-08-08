@@ -8,7 +8,7 @@
 
 > **GetBlobStateData** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:332](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L332)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:332](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L332)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:332](https://
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:333](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L333)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:333](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L333)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:333](https://
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:334](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L334)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:334](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L334)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:334](https://
 
 > **query**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:335](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L335)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:335](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L335)
 
 #### fileName
 
@@ -52,4 +52,4 @@ The Sitecore context ID.
 
 > **url**: `"/items/v2/GetBlobState"`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:345](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L345)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:345](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L345)

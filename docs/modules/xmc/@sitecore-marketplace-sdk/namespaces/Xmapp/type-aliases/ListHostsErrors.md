@@ -8,7 +8,7 @@
 
 > **ListHostsErrors** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2680](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2680)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2680](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2680)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2680](https://github.com
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2684](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2684)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2684](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2684)
 
 One or more validation errors occurred

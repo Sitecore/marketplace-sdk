@@ -8,7 +8,7 @@
 
 > **CreateSiteCollectionInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:178](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L178)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:178](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L178)
 
 A site collection creation request.
 
@@ -18,7 +18,7 @@ A site collection creation request.
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:193](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L193)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:193](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L193)
 
 A longer, more detailed description of the collection.
 Example value: Collection for all Skate Park brand websites.
@@ -29,7 +29,7 @@ Example value: Collection for all Skate Park brand websites.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:188](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L188)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:188](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L188)
 
 A short, meaningful name for the collection.
 Example value: Skate Brand Websites
@@ -40,7 +40,7 @@ Example value: Skate Brand Websites
 
 > **name**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:183](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L183)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:183](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L183)
 
 The unique system name of the new collection.
 Example value: skate-brand-sites

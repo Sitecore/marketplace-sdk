@@ -8,7 +8,7 @@
 
 > **CreateContentTransferData** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:4](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L4)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:4](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L4)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:4](https://gi
 
 > **body**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L5)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L5)
 
 #### configuration
 
@@ -38,7 +38,7 @@ Id of the transfer to create.
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L31)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L31)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:31](https://g
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:32](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L32)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:32](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L32)
 
 #### sitecoreContextId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/content/v1/transfers"`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:38](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L38)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:38](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L38)

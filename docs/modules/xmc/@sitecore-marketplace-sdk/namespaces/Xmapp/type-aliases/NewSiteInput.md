@@ -8,7 +8,7 @@
 
 > **NewSiteInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:466](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L466)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:466](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L466)
 
 A site creation request.
 
@@ -18,7 +18,7 @@ A site creation request.
 
 > `optional` **collectionDescription**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:529](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L529)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:529](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L529)
 
 If you want to create a new site collection while creating a new site, you can provide a collection description.
 Example value: Sample description for the site collection containing Sites for Brand A
@@ -29,7 +29,7 @@ Example value: Sample description for the site collection containing Sites for B
 
 > `optional` **collectionDisplayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:524](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L524)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:524](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L524)
 
 The display name for the collection.
 Example value: Skate Park Site
@@ -40,7 +40,7 @@ Example value: Skate Park Site
 
 > `optional` **collectionId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:488](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L488)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:488](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L488)
 
 The ID of the collection you want the new site to belong to. If you don't know the collection ID, first [retrieve collections](#tag/Collections/operation/Get).
 Required if Sitecore.XmApps.Sites.Models.REST.NewSiteInput.CollectionName is not provided. If left empty, you must provide collectionName instead and a new collection will be created along with the newly created site.
@@ -53,7 +53,7 @@ Example value: 5aae1eeaea2440bf96f11f43da82c77b
 
 > `optional` **collectionName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:519](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L519)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:519](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L519)
 
 The name of the new collection you want the new site to belong to.
 Required if Sitecore.XmApps.Sites.Models.REST.NewSiteInput.CollectionId is not provided. If left empty, you must provide collectionId of an existing collection you want the new site to belong to.
@@ -66,7 +66,7 @@ Example value: Brand A
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:512](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L512)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:512](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L512)
 
 Optional text that provides a meaningful description of the site.
 Example value: New site for Brand A in English-speaking countries.
@@ -77,7 +77,7 @@ Example value: New site for Brand A in English-speaking countries.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:476](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L476)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:476](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L476)
 
 The display name for the site.
 Example value: Skate Park Site
@@ -88,7 +88,7 @@ Example value: Skate Park Site
 
 > `optional` **hostName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:507](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L507)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:507](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L507)
 
 Optional hostname for the new site. Default value: *
 Example value: dev.skate-park.com
@@ -99,7 +99,7 @@ Example value: dev.skate-park.com
 
 > **language**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:494](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L494)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:494](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L494)
 
 The language for the site. If you do not know what languages are available in the environment, first [retrieve the list of languages](#tag/Languages/operation/Get).
 If the language you want is not available in the environment, [add the language](#tag/Languages/operation/Create) first.
@@ -111,7 +111,7 @@ Example value: en
 
 > `optional` **languages**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:502](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L502)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:502](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L502)
 
 The list of supported languages for the site.
 Example value: [
@@ -125,7 +125,7 @@ Example value: [
 
 > `optional` **posMappings**: [`AnalyticsIdentifier`](AnalyticsIdentifier.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:534](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L534)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:534](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L534)
 
 The [site identifier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html) for the site.
 This identifier lets you control analytics and personalization for the site.
@@ -136,7 +136,7 @@ This identifier lets you control analytics and personalization for the site.
 
 > **siteName**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:471](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L471)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:471](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L471)
 
 The name of the site.
 Example value: skate-park
@@ -147,7 +147,7 @@ Example value: skate-park
 
 > **templateId**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:481](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L481)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:481](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L481)
 
 The ID of the template used to create the site. If you don't know the template ID, first [retrieve site templates](#tag/Sites/operation/GetTemplates).
 Example value: 5aae1eeaea2440bf96f11f43da82c77b

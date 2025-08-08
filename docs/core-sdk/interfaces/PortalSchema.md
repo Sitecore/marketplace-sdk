@@ -6,7 +6,7 @@
 
 # Interface: PortalSchema
 
-Defined in: [packages/core/src/types.ts:162](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L162)
+Defined in: [packages/core/src/types.ts:162](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L162)
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: [packages/core/src/types.ts:162](https://github.com/Sitecore/marketp
 
 > **iframeMetadata**: [`IframeMetadata`](IframeMetadata.md)
 
-Defined in: [packages/core/src/types.ts:149](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L149)
+Defined in: [packages/core/src/types.ts:149](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L149)
 
 #### Inherited from
 
@@ -30,7 +30,7 @@ Defined in: [packages/core/src/types.ts:149](https://github.com/Sitecore/marketp
 
 > **methods**: `object` & `object`
 
-Defined in: [packages/core/src/types.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L163)
+Defined in: [packages/core/src/types.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L163)
 
 #### Type declaration
 
@@ -62,7 +62,7 @@ Defined in: [packages/core/src/types.ts:163](https://github.com/Sitecore/marketp
 
 > **version**: `string`
 
-Defined in: [packages/core/src/types.ts:148](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L148)
+Defined in: [packages/core/src/types.ts:148](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L148)
 
 #### Inherited from
 

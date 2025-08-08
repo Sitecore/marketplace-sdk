@@ -15,7 +15,7 @@
     "lint": "eslint src --ext .ts",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "generate:docs": "npx typedoc --plugin typedoc-plugin-markdown --outputFileStrategy Members --parametersFormat table --readme none --out ../../docs/client src/index.ts --githubPages false"
+    "generate:docs": "npx typedoc --options ../../typedoc.json --out ../../docs/client src/index.ts"
   },
   "files": [
     "dist"

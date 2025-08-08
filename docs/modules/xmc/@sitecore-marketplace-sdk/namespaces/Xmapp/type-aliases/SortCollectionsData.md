@@ -8,7 +8,7 @@
 
 > **SortCollectionsData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1933](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1933)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1933](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1933)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1933](https://github.com
 
 > **body**: [`SortCollectionsInput`](SortCollectionsInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1937](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1937)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1937](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1937)
 
 A _collections_ JSON object of key-value pairs where the collection ID (string) is the key and the sort order (integer) is the value.
 
@@ -26,7 +26,7 @@ A _collections_ JSON object of key-value pairs where the collection ID (string) 
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1938](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1938)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1938](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1938)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1938](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1939](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1939)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1939](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1939)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/collections/sort"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1945](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1945)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1945](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1945)

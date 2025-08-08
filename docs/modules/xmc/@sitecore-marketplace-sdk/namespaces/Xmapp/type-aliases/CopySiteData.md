@@ -8,7 +8,7 @@
 
 > **CopySiteData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2257](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2257)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2257](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2257)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2257](https://github.com
 
 > **body**: [`CopySiteInput`](CopySiteInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2261](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2261)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2261](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2261)
 
 Input object containing the name and description of the new site
 
@@ -26,7 +26,7 @@ Input object containing the name and description of the new site
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2262](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2262)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2262](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2262)
 
 #### siteId
 
@@ -40,7 +40,7 @@ The identifier of the site you want to duplicate.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2268](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2268)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2268](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2268)
 
 #### sitecoreContextId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/copy"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2274](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2274)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2274](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2274)

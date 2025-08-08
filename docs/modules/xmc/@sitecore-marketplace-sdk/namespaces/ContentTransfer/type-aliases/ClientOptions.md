@@ -8,7 +8,7 @@
 
 > **ClientOptions** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:379](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L379)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:379](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L379)
 
 ## Properties
 
@@ -16,4 +16,4 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:379](https://
 
 > **baseUrl**: `"https://example.com/authoring/transfer"` \| `string` & `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:380](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L380)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:380](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L380)

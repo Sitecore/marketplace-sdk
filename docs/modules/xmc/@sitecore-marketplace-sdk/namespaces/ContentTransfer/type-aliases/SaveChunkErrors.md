@@ -8,7 +8,7 @@
 
 > **SaveChunkErrors** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:190](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L190)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:190](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L190)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:190](https://
 
 > **400**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:194](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L194)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:194](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L194)
 
 Invalid transfer id, chunk set id, or chunk id.
 
@@ -26,7 +26,7 @@ Invalid transfer id, chunk set id, or chunk id.
 
 > **401**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:198](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L198)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:198](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L198)
 
 Invalid access token.
 
@@ -36,6 +36,6 @@ Invalid access token.
 
 > **403**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L202)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L202)
 
 Authorization failed (required role is missing).

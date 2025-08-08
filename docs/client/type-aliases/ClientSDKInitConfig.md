@@ -8,7 +8,7 @@
 
 > **ClientSDKInitConfig** = `object`
 
-Defined in: [client/src/types.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L86)
+Defined in: [client/src/types.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L86)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [client/src/types.ts:86](https://github.com/Sitecore/marketplace-sdk
 
 > `optional` **events**: [`ClientSDKConfig`](../interfaces/ClientSDKConfig.md)\[`"events"`\]
 
-Defined in: [client/src/types.ts:91](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L91)
+Defined in: [client/src/types.ts:91](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L91)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [client/src/types.ts:91](https://github.com/Sitecore/marketplace-sdk
 
 > `optional` **modules**: [`SDKModule`](../interfaces/SDKModule.md)[]
 
-Defined in: [client/src/types.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L90)
+Defined in: [client/src/types.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L90)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [client/src/types.ts:90](https://github.com/Sitecore/marketplace-sdk
 
 > `optional` **navbarItems**: [`NavbarItemsProps`](../interfaces/NavbarItemsProps.md)
 
-Defined in: [client/src/types.ts:92](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L92)
+Defined in: [client/src/types.ts:92](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L92)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [client/src/types.ts:92](https://github.com/Sitecore/marketplace-sdk
 
 > `optional` **origin**: `string`
 
-Defined in: [client/src/types.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L87)
+Defined in: [client/src/types.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L87)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [client/src/types.ts:87](https://github.com/Sitecore/marketplace-sdk
 
 > **target**: `Window`
 
-Defined in: [client/src/types.ts:88](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L88)
+Defined in: [client/src/types.ts:88](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L88)
 
 ***
 
@@ -56,4 +56,4 @@ Defined in: [client/src/types.ts:88](https://github.com/Sitecore/marketplace-sdk
 
 > `optional` **timeout**: `number`
 
-Defined in: [client/src/types.ts:89](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L89)
+Defined in: [client/src/types.ts:89](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L89)

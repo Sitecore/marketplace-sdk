@@ -8,7 +8,7 @@
 
 > **Permissions** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:724](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L724)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:724](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L724)
 
 The access rights of the current user to the site.
 
@@ -18,7 +18,7 @@ The access rights of the current user to the site.
 
 > `optional` **canAdmin**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:729](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L729)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:729](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L729)
 
 If set to true, canAdmin gives you admin rights. Being an admin means that you control access permissions for other users. The Administer access right requires Read and Write access rights.
 Example value: False
@@ -29,7 +29,7 @@ Example value: False
 
 > `optional` **canCreate**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:739](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L739)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:739](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L739)
 
 If set to true, canCreate gives you permission to create entities.
 Example value: False
@@ -40,7 +40,7 @@ Example value: False
 
 > `optional` **canDelete**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:744](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L744)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:744](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L744)
 
 If set to true, canDelete gives you permission to delete entities.
 Example value: False
@@ -51,7 +51,7 @@ Example value: False
 
 > `optional` **canDuplicate**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:764](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L764)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:764](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L764)
 
 If set to true, canDuplicate gives you permission to duplicate entities.
 Example value: False
@@ -62,7 +62,7 @@ Example value: False
 
 > `optional` **canPublish**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:759](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L759)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:759](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L759)
 
 If set to true, canPublish gives you permission to publish sites in this environment.
 Example value: False
@@ -73,7 +73,7 @@ Example value: False
 
 > `optional` **canRead**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:754](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L754)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:754](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L754)
 
 If set to true, canRead gives you permission to see entities, including all their parameters.
 Example value: False
@@ -84,7 +84,7 @@ Example value: False
 
 > `optional` **canRename**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:749](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L749)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:749](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L749)
 
 If set to true, canRename gives you permission to rename entities.
 Example value: False
@@ -95,7 +95,7 @@ Example value: False
 
 > `optional` **canWrite**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:734](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L734)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:734](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L734)
 
 If set to true, canWrite gives you permission to edit values. The canWrite access right requires the canRead access right.
 Example value: False

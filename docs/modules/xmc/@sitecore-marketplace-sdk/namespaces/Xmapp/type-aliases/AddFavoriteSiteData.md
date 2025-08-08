@@ -8,7 +8,7 @@
 
 > **AddFavoriteSiteData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1750](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1750)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1750](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1750)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1750](https://github.com
 
 > **body**: [`AddFavoriteSiteInput`](AddFavoriteSiteInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1754](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1754)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1754](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1754)
 
 The input model.
 
@@ -26,7 +26,7 @@ The input model.
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1755](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1755)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1755](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1755)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1755](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1756](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1756)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1756](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1756)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/favorites/sites"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1762](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1762)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1762](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1762)

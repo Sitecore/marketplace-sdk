@@ -8,7 +8,7 @@
 
 > **ListSupportedLanguagesErrors** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1483](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1483)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1483](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1483)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1483](https://github.com
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1487](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1487)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1487](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1487)
 
 Bad request

@@ -8,7 +8,7 @@
 
 > **GraphqlResponses** = `object`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:42](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-authoring/types.gen.ts#L42)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:42](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-authoring/types.gen.ts#L42)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-authoring/types.gen.ts:42](https://github.c
 
 > **200**: `object`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-authoring/types.gen.ts#L46)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-authoring/types.gen.ts#L46)
 
 Successful GraphQL response
 

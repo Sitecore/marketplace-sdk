@@ -8,7 +8,7 @@
 
 > **SortCollectionsResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1958](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1958)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1958](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1958)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1958](https://github.com
 
 > **204**: `void`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1962](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1962)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1962](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1962)
 
 Site collections sort order updated successfully

@@ -8,7 +8,7 @@
 
 > **ClientOptions** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3099](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L3099)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3099](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L3099)
 
 ## Properties
 
@@ -16,4 +16,4 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3099](https://github.com
 
 > **baseUrl**: `"https://example.com/authoring"` \| `string` & `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3100](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L3100)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3100](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L3100)

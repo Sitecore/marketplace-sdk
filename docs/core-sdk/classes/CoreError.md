@@ -6,7 +6,7 @@
 
 # Class: CoreError
 
-Defined in: [packages/core/src/errors.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L59)
+Defined in: [packages/core/src/errors.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L59)
 
 Core error class that implements the SDKError interface.
 Provides static factory methods for creating common error types.
@@ -35,7 +35,7 @@ throw CoreError.methodNotFound('getUserInfo');
 
 > **new CoreError**(`code`, `message`, `details?`): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L60)
+Defined in: [packages/core/src/errors.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L60)
 
 #### Parameters
 
@@ -75,7 +75,7 @@ Defined in: node\_modules/.pnpm/typescript@5.8.2/node\_modules/typescript/lib/li
 
 > **code**: [`ErrorCode`](../enumerations/ErrorCode.md)
 
-Defined in: [packages/core/src/errors.ts:61](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L61)
+Defined in: [packages/core/src/errors.ts:61](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L61)
 
 #### Implementation of
 
@@ -87,7 +87,7 @@ Defined in: [packages/core/src/errors.ts:61](https://github.com/Sitecore/marketp
 
 > `optional` **details**: `unknown`
 
-Defined in: [packages/core/src/errors.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L63)
+Defined in: [packages/core/src/errors.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L63)
 
 #### Implementation of
 
@@ -188,7 +188,7 @@ Defined in: node\_modules/.pnpm/@types+node@20.17.28/node\_modules/@types/node/g
 
 > `static` **alreadyInitialized**(): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:103](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L103)
+Defined in: [packages/core/src/errors.ts:103](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L103)
 
 Creates an already initialized error.
 
@@ -227,7 +227,7 @@ Create .stack property on a target object
 
 > `static` **executionError**(`error`): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:119](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L119)
+Defined in: [packages/core/src/errors.ts:119](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L119)
 
 Creates an execution error.
 
@@ -247,7 +247,7 @@ Creates an execution error.
 
 > `static` **handshakeFailed**(`details?`): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:81](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L81)
+Defined in: [packages/core/src/errors.ts:81](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L81)
 
 Creates a handshake failed error.
 
@@ -267,7 +267,7 @@ Creates a handshake failed error.
 
 > `static` **invalidOrigin**(`origin`): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:89](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L89)
+Defined in: [packages/core/src/errors.ts:89](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L89)
 
 Creates an invalid origin error.
 
@@ -287,7 +287,7 @@ Creates an invalid origin error.
 
 > `static` **methodNotFound**(`method`): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:111](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L111)
+Defined in: [packages/core/src/errors.ts:111](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L111)
 
 Creates a method not found error.
 
@@ -307,7 +307,7 @@ Creates a method not found error.
 
 > `static` **notInitialized**(): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:96](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L96)
+Defined in: [packages/core/src/errors.ts:96](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L96)
 
 Creates a not initialized error.
 
@@ -321,7 +321,7 @@ Creates a not initialized error.
 
 > `static` **timeout**(`details?`): `CoreError`
 
-Defined in: [packages/core/src/errors.ts:73](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/errors.ts#L73)
+Defined in: [packages/core/src/errors.ts:73](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/errors.ts#L73)
 
 Creates a timeout error.
 

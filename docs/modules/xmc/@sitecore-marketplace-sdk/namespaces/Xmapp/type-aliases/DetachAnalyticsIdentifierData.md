@@ -8,7 +8,7 @@
 
 > **DetachAnalyticsIdentifierData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2460](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2460)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2460](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2460)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2460](https://github.com
 
 > **body**: [`DetachFromSitesInput`](DetachFromSitesInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2464](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2464)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2464](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2464)
 
 Input containing an array of site identifiers.
 
@@ -26,7 +26,7 @@ Input containing an array of site identifiers.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2465](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2465)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2465](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2465)
 
 #### analyticsIdentifier
 
@@ -40,7 +40,7 @@ Analytics identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2471](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2471)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2471](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2471)
 
 #### sitecoreContextId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/analytics-identifiers/{analyticsIdentifier}/detach"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2477](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2477)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2477](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2477)

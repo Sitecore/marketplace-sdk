@@ -8,7 +8,7 @@
 
 > **SaveChunkData** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:162](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L162)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:162](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L162)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:162](https://
 
 > **body**: `Blob` \| `File`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L163)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L163)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:163](https://
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:164](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L164)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:164](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L164)
 
 #### chunkId
 
@@ -50,7 +50,7 @@ ID of the transfer.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:178](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L178)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:178](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L178)
 
 #### isMedia?
 
@@ -70,4 +70,4 @@ The Sitecore context ID.
 
 > **url**: `"/content/v1/transfers/{transferId}/chunksets/{chunksetId}/chunks/{chunkId}"`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:188](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L188)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:188](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L188)

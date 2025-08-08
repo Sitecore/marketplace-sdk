@@ -8,7 +8,7 @@
 
 > **ListSiteTemplatesResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2908](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2908)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2908](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2908)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2908](https://github.com
 
 > **200**: [`SiteTemplate`](SiteTemplate.md)[]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2912](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2912)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2912](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2912)
 
 Successful operation

@@ -6,7 +6,7 @@
 
 # Interface: NavbarItemsProps
 
-Defined in: [client/src/sdk-types.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L90)
+Defined in: [client/src/sdk-types.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L90)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [client/src/sdk-types.ts:90](https://github.com/Sitecore/marketplace
 
 > **appLogo**: `string`
 
-Defined in: [client/src/sdk-types.ts:91](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L91)
+Defined in: [client/src/sdk-types.ts:91](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L91)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [client/src/sdk-types.ts:91](https://github.com/Sitecore/marketplace
 
 > **appName**: `string`
 
-Defined in: [client/src/sdk-types.ts:92](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L92)
+Defined in: [client/src/sdk-types.ts:92](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L92)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [client/src/sdk-types.ts:92](https://github.com/Sitecore/marketplace
 
 > **helpLinks**: `NavBarItem`[]
 
-Defined in: [client/src/sdk-types.ts:94](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L94)
+Defined in: [client/src/sdk-types.ts:94](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L94)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [client/src/sdk-types.ts:94](https://github.com/Sitecore/marketplace
 
 > **menu**: `NavBarItem`[]
 
-Defined in: [client/src/sdk-types.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L93)
+Defined in: [client/src/sdk-types.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L93)

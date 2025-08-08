@@ -8,7 +8,7 @@
 
 > **ListHostsResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2687](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2687)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2687](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2687)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2687](https://github.com
 
 > **200**: [`Host`](Host.md)[]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2691](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2691)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2691](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2691)
 
 Hosts retrieved successfully

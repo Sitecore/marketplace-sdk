@@ -8,7 +8,7 @@
 
 > **RetrieveHostResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2803](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2803)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2803](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2803)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2803](https://github.com
 
 > **200**: [`Host`](Host.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2807](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2807)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2807](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2807)
 
 Returns the host found by the host ID

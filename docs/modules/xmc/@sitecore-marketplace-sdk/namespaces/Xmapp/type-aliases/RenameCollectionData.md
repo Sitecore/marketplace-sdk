@@ -8,7 +8,7 @@
 
 > **RenameCollectionData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1896](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1896)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1896](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1896)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1896](https://github.com
 
 > **body**: [`RenameSiteCollectionInput`](RenameSiteCollectionInput.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1900](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1900)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1900](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1900)
 
 Input object containing the new system name of the site collection.
 
@@ -26,7 +26,7 @@ Input object containing the new system name of the site collection.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1901](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1901)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1901](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1901)
 
 #### collectionId
 
@@ -40,7 +40,7 @@ The identifier of the site collection.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1907](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1907)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1907](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1907)
 
 #### sitecoreContextId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/collections/{collectionId}/rename"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1913](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1913)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1913](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1913)

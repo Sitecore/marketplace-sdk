@@ -8,7 +8,7 @@
 
 > **AggregateLivePageVariantsResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1859](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1859)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1859](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1859)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1859](https://github.com
 
 > **200**: [`PageVariantsAggregationResponse`](PageVariantsAggregationResponse.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1863](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1863)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1863](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1863)
 
 Live page personalization variants retrieved successfully.

@@ -8,7 +8,7 @@
 
 > **UploadMediaOutput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1343](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1343)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1343](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1343)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1343](https://github.com
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1348](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1348)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1348](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1348)
 
 The thumbnail image ID.
 Example value: {5AAE1EEA-EA24-40BF-96F1-1F43DA82C77B}
@@ -27,7 +27,7 @@ Example value: {5AAE1EEA-EA24-40BF-96F1-1F43DA82C77B}
 
 > `optional` **itemPath**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1358](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1358)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1358](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1358)
 
 The path to the media folder where thumbnail images are stored.
 Example value: sitecore/media library/Project/sample-collection/sample-site
@@ -38,7 +38,7 @@ Example value: sitecore/media library/Project/sample-collection/sample-site
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1353](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1353)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1353](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1353)
 
 Name of the uploaded image.
 Example value: skate-park-screenshot
@@ -49,7 +49,7 @@ Example value: skate-park-screenshot
 
 > `optional` **url**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1363](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1363)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1363](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1363)
 
 URL of the image to be used as the thumbnail.
 Example value: https://xmc-customer-tenant.sitecorecloud.io/-/media/Project/sample-collection/sample-site/System/7/0/B/C/thumbnail_70BC64BDE257400E82BFDB3344797DB7.png

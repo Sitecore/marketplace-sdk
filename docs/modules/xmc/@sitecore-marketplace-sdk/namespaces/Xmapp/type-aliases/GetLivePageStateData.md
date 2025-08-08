@@ -8,7 +8,7 @@
 
 > **GetLivePageStateData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1533](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1533)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1533](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1533)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1533](https://github.com
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1534](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1534)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1534](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1534)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1534](https://github.com
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1535](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1535)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1535](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1535)
 
 #### pageId
 
@@ -38,7 +38,7 @@ The page identifier
 
 > **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1541](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1541)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1541](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1541)
 
 #### language
 
@@ -58,4 +58,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/live"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1551](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1551)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1551](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1551)

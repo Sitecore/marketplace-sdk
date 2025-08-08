@@ -6,7 +6,7 @@
 
 # Interface: QueryMap
 
-Defined in: [client/src/sdk-types.ts:211](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L211)
+Defined in: [client/src/sdk-types.ts:211](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L211)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [client/src/sdk-types.ts:211](https://github.com/Sitecore/marketplac
 
 > **context**: `object`
 
-Defined in: [client/src/sdk-types.ts:229](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L229)
+Defined in: [client/src/sdk-types.ts:229](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L229)
 
 #### params
 
@@ -34,7 +34,7 @@ Defined in: [client/src/sdk-types.ts:229](https://github.com/Sitecore/marketplac
 
 > **route**: `object`
 
-Defined in: [client/src/sdk-types.ts:239](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L239)
+Defined in: [client/src/sdk-types.ts:239](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L239)
 
 #### params
 
@@ -54,7 +54,7 @@ Defined in: [client/src/sdk-types.ts:239](https://github.com/Sitecore/marketplac
 
 > **state**: `object`
 
-Defined in: [client/src/sdk-types.ts:217](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L217)
+Defined in: [client/src/sdk-types.ts:217](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L217)
 
 #### params
 
@@ -74,7 +74,7 @@ Defined in: [client/src/sdk-types.ts:217](https://github.com/Sitecore/marketplac
 
 > **user**: `object`
 
-Defined in: [client/src/sdk-types.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L212)
+Defined in: [client/src/sdk-types.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L212)
 
 #### params
 
@@ -94,7 +94,7 @@ Defined in: [client/src/sdk-types.ts:212](https://github.com/Sitecore/marketplac
 
 > **context**: `object`
 
-Defined in: [client/src/sdk-types.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L224)
+Defined in: [client/src/sdk-types.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L224)
 
 #### params
 
@@ -114,7 +114,7 @@ Defined in: [client/src/sdk-types.ts:224](https://github.com/Sitecore/marketplac
 
 > **context**: `object`
 
-Defined in: [client/src/sdk-types.ts:234](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L234)
+Defined in: [client/src/sdk-types.ts:234](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L234)
 
 #### params
 

@@ -8,7 +8,7 @@
 
 > **CopySiteInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:106](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L106)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:106](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L106)
 
 A site duplication request.
 
@@ -18,7 +18,7 @@ A site duplication request.
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L121)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L121)
 
 Description for the new site.
 Example value: Sample showcase website description.
@@ -29,7 +29,7 @@ Example value: Sample showcase website description.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:116](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L116)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:116](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L116)
 
 Display name for the new site.
 Example value: Skate Park
@@ -40,7 +40,7 @@ Example value: Skate Park
 
 > **name**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:111](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L111)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:111](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L111)
 
 Name for the new site.
 Example value: skate-park
@@ -51,6 +51,6 @@ Example value: skate-park
 
 > `optional` **posMappings**: [`AnalyticsIdentifier`](AnalyticsIdentifier.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:125](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L125)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:125](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L125)
 
 Analytics identifiers for the new site.
