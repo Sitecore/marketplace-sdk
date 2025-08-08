@@ -1,29 +1,28 @@
 ---
-'@sitecore-marketplace-sdk/core': patch
+'@sitecore-marketplace-sdk/core': minor
 ---
 
-Deprecate `resources` and `touchpoints` properties in favor of `resourceAccess` and `extensionsPoints`
+Introduce new extensionPoint naming conventions with full backward compatibility
 
-**Deprecation Notice:**
+**New Features:**
 
-- The `resources` property in `ApplicationContext` and `ApplicationRuntimeContext` interfaces is now deprecated. Use `resourceAccess` instead.
-- The `touchpoints` property in `ApplicationContext` and `ApplicationRuntimeContext` interfaces is now deprecated. Use `extensionsPoints` instead.
+- Added `AllowedExtensionPoints` type alias for `AllowedTouchpoints` enum
+- Added `ApplicationExtensionPointContext` interface as the new standard (replaces `ApplicationTouchpointContext`)
+- Added `ApplicationExtensionPointMetaContext` interface as the new standard (replaces `ApplicationTouchpointMetaContext`)
+- Added `extensionPoints` property to `ApplicationContext` and `ApplicationRuntimeContext` interfaces
+- Updated `resourceAccess` property naming (replaces deprecated `resources`)
 
-This is a non-breaking change - existing code will continue to work unchanged.
+**Backward Compatibility:**
+
+This is a fully backward-compatible change. All existing code will continue to work without modifications:
+
+- `AllowedTouchpoints` enum remains unchanged and fully functional
+- `ApplicationTouchpointContext` and `ApplicationTouchpointMetaContext` interfaces remain functional but are marked as deprecated
+- `touchpoints` and `resources` properties continue to work but show deprecation warnings
 
 **What changed:**
 
-- Added deprecation JSDoc comments to `resources` and `touchpoints` properties in both interfaces
-- Added new `resourceAccess` and `extensionsPoints` properties to `ApplicationContext` and `ApplicationRuntimeContext` interfaces
-- Maintained backward compatibility - deprecated properties still work but will show deprecation warnings in IDEs
-
-**Migration guide:**
-
-Replace usage of deprecated properties with their new equivalents:
-
-- `applicationContext.resources` → `applicationContext.resourceAccess`
-- `applicationContext.touchpoints` → `applicationContext.extensionsPoints`
-- `runtimeContext.resources` → `runtimeContext.resourceAccess`
-- `runtimeContext.touchpoints` → `runtimeContext.extensionsPoints`
-
-The deprecated properties will be removed in a future major version.
+- Added new `extensionPoints` property alongside deprecated `touchpoints`
+- Added new extension point interfaces with cleaner naming
+- Added type alias for better API consistency
+- Maintained full backward compatibility with automatic property mapping
