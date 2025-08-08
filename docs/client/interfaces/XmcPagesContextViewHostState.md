@@ -6,7 +6,7 @@
 
 # Interface: XmcPagesContextViewHostState
 
-Defined in: [client/src/sdk-types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L25)
+Defined in: [client/src/sdk-types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L25)
 
 ## Indexable
 
@@ -18,7 +18,7 @@ Defined in: [client/src/sdk-types.ts:25](https://github.com/Sitecore/marketplace
 
 > `optional` **organizationId**: `string`
 
-Defined in: [client/src/sdk-types.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L26)
+Defined in: [client/src/sdk-types.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L26)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [client/src/sdk-types.ts:26](https://github.com/Sitecore/marketplace
 
 > `optional` **userInfo**: [`XmcPagesContextViewUserInfo`](XmcPagesContextViewUserInfo.md)
 
-Defined in: [client/src/sdk-types.ts:28](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L28)
+Defined in: [client/src/sdk-types.ts:28](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L28)
 
 ***
 
@@ -34,4 +34,4 @@ Defined in: [client/src/sdk-types.ts:28](https://github.com/Sitecore/marketplace
 
 > `optional` **xmCloudTenantInfo**: [`XmcPagesContextViewTenantInfo`](XmcPagesContextViewTenantInfo.md)
 
-Defined in: [client/src/sdk-types.ts:27](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L27)
+Defined in: [client/src/sdk-types.ts:27](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L27)

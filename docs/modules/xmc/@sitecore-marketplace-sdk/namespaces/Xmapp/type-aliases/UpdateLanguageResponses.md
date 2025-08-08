@@ -8,7 +8,7 @@
 
 > **UpdateLanguageResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2055](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2055)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2055](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2055)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2055](https://github.com
 
 > **204**: `void`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2059](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L2059)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2059](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L2059)
 
 No Content

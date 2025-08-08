@@ -6,7 +6,7 @@
 
 # Interface: RequestMessage\<T\>
 
-Defined in: [packages/core/src/types.ts:82](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L82)
+Defined in: [packages/core/src/types.ts:82](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L82)
 
 Request message sent to perform an action.
 
@@ -26,7 +26,7 @@ Request message sent to perform an action.
 
 > **action**: `string`
 
-Defined in: [packages/core/src/types.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L86)
+Defined in: [packages/core/src/types.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L86)
 
 The action to perform (e.g., "host.user")
 
@@ -36,7 +36,7 @@ The action to perform (e.g., "host.user")
 
 > **id**: `string`
 
-Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L37)
+Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L37)
 
 Unique identifier for the message
 
@@ -50,7 +50,7 @@ Unique identifier for the message
 
 > `optional` **payload**: `T`
 
-Defined in: [packages/core/src/types.ts:88](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L88)
+Defined in: [packages/core/src/types.ts:88](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L88)
 
 Optional payload data for the request
 
@@ -60,7 +60,7 @@ Optional payload data for the request
 
 > `optional` **source**: `string`
 
-Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L43)
+Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L43)
 
 Source identifier for the message
 
@@ -74,7 +74,7 @@ Source identifier for the message
 
 > **timestamp**: `number`
 
-Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L41)
+Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L41)
 
 Timestamp when the message was created
 
@@ -88,7 +88,7 @@ Timestamp when the message was created
 
 > **type**: `"request"`
 
-Defined in: [packages/core/src/types.ts:84](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/types.ts#L84)
+Defined in: [packages/core/src/types.ts:84](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/types.ts#L84)
 
 Message type is always "request"
 

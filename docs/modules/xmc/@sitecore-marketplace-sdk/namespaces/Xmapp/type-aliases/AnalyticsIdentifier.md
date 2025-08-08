@@ -8,7 +8,7 @@
 
 > **AnalyticsIdentifier** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:69](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L69)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:69](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L69)
 
 An Analytics tracker identifer for a site.
 
@@ -18,7 +18,7 @@ An Analytics tracker identifer for a site.
 
 > **language**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L79)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L79)
 
 The language for the analytics identifier.
 Example value: en
@@ -29,7 +29,7 @@ Example value: en
 
 > **name**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:74](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L74)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:74](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L74)
 
 The name of the analytics identifier.
 Example value: skate-park

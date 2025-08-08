@@ -6,7 +6,7 @@
 
 # Interface: XmcPagesContextViewUserInfo
 
-Defined in: [client/src/sdk-types.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L46)
+Defined in: [client/src/sdk-types.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L46)
 
 ## Indexable
 
@@ -18,7 +18,7 @@ Defined in: [client/src/sdk-types.ts:46](https://github.com/Sitecore/marketplace
 
 > `optional` **address**: `string`
 
-Defined in: [client/src/sdk-types.ts:64](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L64)
+Defined in: [client/src/sdk-types.ts:64](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L64)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [client/src/sdk-types.ts:64](https://github.com/Sitecore/marketplace
 
 > `optional` **birthdate**: `string`
 
-Defined in: [client/src/sdk-types.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L59)
+Defined in: [client/src/sdk-types.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L59)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [client/src/sdk-types.ts:59](https://github.com/Sitecore/marketplace
 
 > `optional` **email**: `string`
 
-Defined in: [client/src/sdk-types.ts:56](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L56)
+Defined in: [client/src/sdk-types.ts:56](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L56)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [client/src/sdk-types.ts:56](https://github.com/Sitecore/marketplace
 
 > `optional` **email\_verified**: `boolean`
 
-Defined in: [client/src/sdk-types.ts:57](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L57)
+Defined in: [client/src/sdk-types.ts:57](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L57)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [client/src/sdk-types.ts:57](https://github.com/Sitecore/marketplace
 
 > `optional` **family\_name**: `string`
 
-Defined in: [client/src/sdk-types.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L49)
+Defined in: [client/src/sdk-types.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L49)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [client/src/sdk-types.ts:49](https://github.com/Sitecore/marketplace
 
 > `optional` **gender**: `string`
 
-Defined in: [client/src/sdk-types.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L58)
+Defined in: [client/src/sdk-types.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L58)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [client/src/sdk-types.ts:58](https://github.com/Sitecore/marketplace
 
 > `optional` **given\_name**: `string`
 
-Defined in: [client/src/sdk-types.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L48)
+Defined in: [client/src/sdk-types.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L48)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [client/src/sdk-types.ts:48](https://github.com/Sitecore/marketplace
 
 > `optional` **locale**: `string`
 
-Defined in: [client/src/sdk-types.ts:61](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L61)
+Defined in: [client/src/sdk-types.ts:61](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L61)
 
 ***
 
@@ -82,7 +82,7 @@ Defined in: [client/src/sdk-types.ts:61](https://github.com/Sitecore/marketplace
 
 > `optional` **middle\_name**: `string`
 
-Defined in: [client/src/sdk-types.ts:50](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L50)
+Defined in: [client/src/sdk-types.ts:50](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L50)
 
 ***
 
@@ -90,7 +90,7 @@ Defined in: [client/src/sdk-types.ts:50](https://github.com/Sitecore/marketplace
 
 > `optional` **name**: `string`
 
-Defined in: [client/src/sdk-types.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L47)
+Defined in: [client/src/sdk-types.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L47)
 
 ***
 
@@ -98,7 +98,7 @@ Defined in: [client/src/sdk-types.ts:47](https://github.com/Sitecore/marketplace
 
 > `optional` **nickname**: `string`
 
-Defined in: [client/src/sdk-types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L51)
+Defined in: [client/src/sdk-types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L51)
 
 ***
 
@@ -106,7 +106,7 @@ Defined in: [client/src/sdk-types.ts:51](https://github.com/Sitecore/marketplace
 
 > `optional` **phone\_number**: `string`
 
-Defined in: [client/src/sdk-types.ts:62](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L62)
+Defined in: [client/src/sdk-types.ts:62](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L62)
 
 ***
 
@@ -114,7 +114,7 @@ Defined in: [client/src/sdk-types.ts:62](https://github.com/Sitecore/marketplace
 
 > `optional` **phone\_number\_verified**: `boolean`
 
-Defined in: [client/src/sdk-types.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L63)
+Defined in: [client/src/sdk-types.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L63)
 
 ***
 
@@ -122,7 +122,7 @@ Defined in: [client/src/sdk-types.ts:63](https://github.com/Sitecore/marketplace
 
 > `optional` **picture**: `string`
 
-Defined in: [client/src/sdk-types.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L54)
+Defined in: [client/src/sdk-types.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L54)
 
 ***
 
@@ -130,7 +130,7 @@ Defined in: [client/src/sdk-types.ts:54](https://github.com/Sitecore/marketplace
 
 > `optional` **preferred\_username**: `string`
 
-Defined in: [client/src/sdk-types.ts:52](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L52)
+Defined in: [client/src/sdk-types.ts:52](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L52)
 
 ***
 
@@ -138,7 +138,7 @@ Defined in: [client/src/sdk-types.ts:52](https://github.com/Sitecore/marketplace
 
 > `optional` **profile**: `string`
 
-Defined in: [client/src/sdk-types.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L53)
+Defined in: [client/src/sdk-types.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L53)
 
 ***
 
@@ -146,7 +146,7 @@ Defined in: [client/src/sdk-types.ts:53](https://github.com/Sitecore/marketplace
 
 > `optional` **sub**: `string`
 
-Defined in: [client/src/sdk-types.ts:66](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L66)
+Defined in: [client/src/sdk-types.ts:66](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L66)
 
 ***
 
@@ -154,7 +154,7 @@ Defined in: [client/src/sdk-types.ts:66](https://github.com/Sitecore/marketplace
 
 > `optional` **updated\_at**: `string`
 
-Defined in: [client/src/sdk-types.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L65)
+Defined in: [client/src/sdk-types.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L65)
 
 ***
 
@@ -162,7 +162,7 @@ Defined in: [client/src/sdk-types.ts:65](https://github.com/Sitecore/marketplace
 
 > `optional` **website**: `string`
 
-Defined in: [client/src/sdk-types.ts:55](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L55)
+Defined in: [client/src/sdk-types.ts:55](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L55)
 
 ***
 
@@ -170,4 +170,4 @@ Defined in: [client/src/sdk-types.ts:55](https://github.com/Sitecore/marketplace
 
 > `optional` **zoneinfo**: `string`
 
-Defined in: [client/src/sdk-types.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/sdk-types.ts#L60)
+Defined in: [client/src/sdk-types.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/sdk-types.ts#L60)

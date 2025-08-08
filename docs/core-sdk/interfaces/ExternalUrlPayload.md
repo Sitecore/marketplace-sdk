@@ -6,7 +6,7 @@
 
 # Interface: ExternalUrlPayload
 
-Defined in: [packages/core/src/shared-types.ts:184](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L184)
+Defined in: [packages/core/src/shared-types.ts:210](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L210)
 
 External URL navigation payload.
 
@@ -16,7 +16,7 @@ External URL navigation payload.
 
 > `optional` **newTab**: `boolean`
 
-Defined in: [packages/core/src/shared-types.ts:188](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L188)
+Defined in: [packages/core/src/shared-types.ts:214](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L214)
 
 Whether to open the URL in a new tab
 
@@ -26,6 +26,6 @@ Whether to open the URL in a new tab
 
 > **url**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:186](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L186)
+Defined in: [packages/core/src/shared-types.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L212)
 
 The URL to navigate to

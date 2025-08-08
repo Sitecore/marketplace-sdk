@@ -8,7 +8,7 @@
 
 > **RenameSiteInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:809](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L809)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:809](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L809)
 
 A site rename request.
 
@@ -18,7 +18,7 @@ A site rename request.
 
 > **name**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:814](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L814)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:814](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L814)
 
 The new name for the site.
 Example value: new-site

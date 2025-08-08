@@ -6,7 +6,7 @@
 
 ## Enumerations
 
-- [AllowedTouchpoints](enumerations/AllowedTouchpoints.md)
+- [~~AllowedTouchpoints~~](enumerations/AllowedTouchpoints.md)
 - [ErrorCode](enumerations/ErrorCode.md)
 
 ## Classes
@@ -19,10 +19,12 @@
 
 - [AdditionalData](interfaces/AdditionalData.md)
 - [ApplicationContext](interfaces/ApplicationContext.md)
+- [ApplicationExtensionPointContext](interfaces/ApplicationExtensionPointContext.md)
+- [ApplicationExtensionPointMetaContext](interfaces/ApplicationExtensionPointMetaContext.md)
 - [ApplicationResourceContext](interfaces/ApplicationResourceContext.md)
 - [ApplicationRuntimeContext](interfaces/ApplicationRuntimeContext.md)
-- [ApplicationTouchpointContext](interfaces/ApplicationTouchpointContext.md)
-- [ApplicationTouchpointMetaContext](interfaces/ApplicationTouchpointMetaContext.md)
+- [~~ApplicationTouchpointContext~~](interfaces/ApplicationTouchpointContext.md)
+- [~~ApplicationTouchpointMetaContext~~](interfaces/ApplicationTouchpointMetaContext.md)
 - [BaseHostSchema](interfaces/BaseHostSchema.md)
 - [BaseMessage](interfaces/BaseMessage.md)
 - [CoreSDKConfig](interfaces/CoreSDKConfig.md)
@@ -45,4 +47,5 @@
 
 ## Type Aliases
 
+- [AllowedExtensionPoints](type-aliases/AllowedExtensionPoints.md)
 - [Message](type-aliases/Message.md)

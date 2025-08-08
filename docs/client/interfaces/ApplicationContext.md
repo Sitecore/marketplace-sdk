@@ -6,7 +6,7 @@
 
 # Interface: ApplicationContext
 
-Defined in: core/dist/shared-types.d.ts:102
+Defined in: core/dist/shared-types.d.ts:126
 
 ## Indexable
 
@@ -14,11 +14,11 @@ Defined in: core/dist/shared-types.d.ts:102
 
 ## Properties
 
-### extensionsPoints?
+### extensionPoints?
 
-> `optional` **extensionsPoints**: `ApplicationTouchpointContext`[]
+> `optional` **extensionPoints**: `ApplicationExtensionPointContext`[]
 
-Defined in: core/dist/shared-types.d.ts:115
+Defined in: core/dist/shared-types.d.ts:139
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: core/dist/shared-types.d.ts:115
 
 > `optional` **iconUrl**: `string`
 
-Defined in: core/dist/shared-types.d.ts:107
+Defined in: core/dist/shared-types.d.ts:131
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: core/dist/shared-types.d.ts:107
 
 > **id**: `string`
 
-Defined in: core/dist/shared-types.d.ts:103
+Defined in: core/dist/shared-types.d.ts:127
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: core/dist/shared-types.d.ts:103
 
 > `optional` **installationId**: `string`
 
-Defined in: core/dist/shared-types.d.ts:109
+Defined in: core/dist/shared-types.d.ts:133
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: core/dist/shared-types.d.ts:109
 
 > `optional` **name**: `string`
 
-Defined in: core/dist/shared-types.d.ts:105
+Defined in: core/dist/shared-types.d.ts:129
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: core/dist/shared-types.d.ts:105
 
 > `optional` **resourceAccess**: `ApplicationResourceContext`[]
 
-Defined in: core/dist/shared-types.d.ts:114
+Defined in: core/dist/shared-types.d.ts:138
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: core/dist/shared-types.d.ts:114
 
 > `optional` **resources**: `ApplicationResourceContext`[]
 
-Defined in: core/dist/shared-types.d.ts:111
+Defined in: core/dist/shared-types.d.ts:135
 
 #### Deprecated
 
@@ -78,7 +78,7 @@ Use resourceAccess instead
 
 > `optional` **state**: `string`
 
-Defined in: core/dist/shared-types.d.ts:108
+Defined in: core/dist/shared-types.d.ts:132
 
 ***
 
@@ -86,11 +86,11 @@ Defined in: core/dist/shared-types.d.ts:108
 
 > `optional` **touchpoints**: `ApplicationTouchpointContext`[]
 
-Defined in: core/dist/shared-types.d.ts:113
+Defined in: core/dist/shared-types.d.ts:137
 
 #### Deprecated
 
-Use extensionsPoints instead
+Use extensionPoints instead
 
 ***
 
@@ -98,7 +98,7 @@ Use extensionsPoints instead
 
 > `optional` **type**: `string`
 
-Defined in: core/dist/shared-types.d.ts:106
+Defined in: core/dist/shared-types.d.ts:130
 
 ***
 
@@ -106,4 +106,4 @@ Defined in: core/dist/shared-types.d.ts:106
 
 > **url**: `string`
 
-Defined in: core/dist/shared-types.d.ts:104
+Defined in: core/dist/shared-types.d.ts:128

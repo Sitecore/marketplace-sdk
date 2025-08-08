@@ -8,7 +8,7 @@
 
 > **AggregatePageDataData** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1867](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1867)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1867](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1867)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1867](https://github.com
 
 > `optional` **body**: [`PageRequest`](PageRequest.md)[]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1871](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1871)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1871](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1871)
 
 The collection of pages, by their identifier and language, for which to get data.
 
@@ -26,7 +26,7 @@ The collection of pages, by their identifier and language, for which to get data
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1872](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1872)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1872](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1872)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1872](https://github.com
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1873](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1873)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1873](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1873)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/aggregation/pages"`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1879](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1879)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1879](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1879)

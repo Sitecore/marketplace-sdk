@@ -8,7 +8,7 @@
 
 > **GetChunkResponses** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:155](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L155)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:155](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L155)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:155](https://
 
 > **200**: `Blob` \| `File`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:159](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-content-transfer/types.gen.ts#L159)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:159](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-content-transfer/types.gen.ts#L159)
 
 The chunk is pulled.

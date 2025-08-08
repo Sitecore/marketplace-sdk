@@ -8,7 +8,7 @@
 
 > **DetachFromSitesInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:198](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L198)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:198](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L198)
 
 Analytics identifier detach request.
 
@@ -18,6 +18,6 @@ Analytics identifier detach request.
 
 > **sitesIdentifiers**: `string`[]
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L202)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L202)
 
 The list of sites, based on their identifier, for which the analytic identifier should be unassigned.

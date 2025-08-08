@@ -8,7 +8,7 @@
 
 > **ValidateSiteNameInput** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1374](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1374)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1374](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1374)
 
 A site name validation request.
 
@@ -18,7 +18,7 @@ A site name validation request.
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1379](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L1379)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1379](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L1379)
 
 The name of the site to validate.
 Example value: skate-park

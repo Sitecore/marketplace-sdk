@@ -8,7 +8,7 @@
 
 > **PageResponse** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:626](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L626)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:626](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L626)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:626](https://github.com/
 
 > `optional` **children**: `PageResponse`[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:638](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L638)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:638](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L638)
 
 Children of the page.
 
@@ -26,7 +26,7 @@ Children of the page.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:653](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L653)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:653](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L653)
 
 The page's display name.
 Example value: Site Home
@@ -37,7 +37,7 @@ Example value: Site Home
 
 > `optional` **hasChildren**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:683](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L683)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:683](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L683)
 
 Whether the page has any child pages.
 Example value: True
@@ -48,7 +48,7 @@ Example value: True
 
 > `optional` **hasPresentation**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:678](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L678)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:678](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L678)
 
 If set to true, this page can be rendered in the XM Cloud Pages application. This endpoint is set to false for the root item of the site, as well as for the folders if there are any.
 Example value: True
@@ -59,7 +59,7 @@ Example value: True
 
 > `optional` **hasVersions**: `boolean`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:634](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L634)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:634](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L634)
 
 Indicates whether the page has versions in the queried language.
 
@@ -69,7 +69,7 @@ Indicates whether the page has versions in the queried language.
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:643](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L643)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:643](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L643)
 
 The identifier of the page.
 Example value: 68900348a3b84eb8ac7df4d179c25727
@@ -80,7 +80,7 @@ Example value: 68900348a3b84eb8ac7df4d179c25727
 
 > `optional` **insertOptions**: [`PageInsertOption`](PageInsertOption.md)[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:630](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L630)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:630](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L630)
 
 Insert options for the page.
 
@@ -90,7 +90,7 @@ Insert options for the page.
 
 > `optional` **language**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:658](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L658)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:658](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L658)
 
 The page language.
 Example value: en-US
@@ -101,7 +101,7 @@ Example value: en-US
 
 > `optional` **locking**: [`PageLocking`](PageLocking.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:685](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L685)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:685](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L685)
 
 ***
 
@@ -109,7 +109,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:685](https://github.com/
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:648](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L648)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:648](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L648)
 
 The page's system name.
 Example value: Home
@@ -120,7 +120,7 @@ Example value: Home
 
 > `optional` **parentId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:673](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L673)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:673](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L673)
 
 The identifier of the page's parent.
 Example value: 4bc0c81a280b4b13890b7b074b9d68f4
@@ -131,7 +131,7 @@ Example value: 4bc0c81a280b4b13890b7b074b9d68f4
 
 > `optional` **path**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:690](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L690)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:690](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L690)
 
 The path for the page.
 Example value: Sitecore/Content/Home/Categories/Products/MyProduct
@@ -142,7 +142,7 @@ Example value: Sitecore/Content/Home/Categories/Products/MyProduct
 
 > `optional` **permissions**: [`Permissions`](Permissions.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:684](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L684)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:684](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L684)
 
 ***
 
@@ -150,7 +150,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:684](https://github.com/
 
 > `optional` **templateId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:668](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L668)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:668](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L668)
 
 The identifier of the template this page is based on.
 Example value: 6fe7d6551e3d4c2780105777f06c6c4f
@@ -161,7 +161,7 @@ Example value: 6fe7d6551e3d4c2780105777f06c6c4f
 
 > `optional` **version**: `number`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:663](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L663)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:663](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L663)
 
 The current version of the page.
 Example value: 1

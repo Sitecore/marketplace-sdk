@@ -6,7 +6,7 @@
 
 # Interface: GenericRequestData
 
-Defined in: [packages/core/src/shared-types.ts:8](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L8)
+Defined in: [packages/core/src/shared-types.ts:8](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L8)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [packages/core/src/shared-types.ts:8](https://github.com/Sitecore/ma
 
 > `optional` **body**: `ArrayBuffer`
 
-Defined in: [packages/core/src/shared-types.ts:38](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L38)
+Defined in: [packages/core/src/shared-types.ts:38](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L38)
 
 The request body, which must be provided as an ArrayBuffer.
 This is typically used for sending binary data or serialized content.
@@ -25,7 +25,7 @@ This is typically used for sending binary data or serialized content.
 
 > `optional` **contextId**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L13)
+Defined in: [packages/core/src/shared-types.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L13)
 
 An optional context ID associated with the request.
 This can be used to identify or group related requests.
@@ -36,7 +36,7 @@ This can be used to identify or group related requests.
 
 > `optional` **headers**: `Record`\<`string`, `string`\>
 
-Defined in: [packages/core/src/shared-types.ts:32](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L32)
+Defined in: [packages/core/src/shared-types.ts:32](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L32)
 
 Optional headers to include in the request.
 These headers can be used to provide additional metadata or configuration
@@ -48,7 +48,7 @@ for the request, such as authentication tokens or content type.
 
 > `optional` **method**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L25)
+Defined in: [packages/core/src/shared-types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L25)
 
 The HTTP method to use for the request (e.g., 'GET', 'POST', 'PUT', 'DELETE').
 Defaults to 'GET' if not specified.
@@ -59,7 +59,7 @@ Defaults to 'GET' if not specified.
 
 > **path**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L19)
+Defined in: [packages/core/src/shared-types.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L19)
 
 The API endpoint path, which can be relative or absolute.
 For example: '/api/resource' or 'https://example.com/api/resource'.
@@ -70,7 +70,7 @@ For example: '/api/resource' or 'https://example.com/api/resource'.
 
 > **requiresAuth**: `boolean`
 
-Defined in: [packages/core/src/shared-types.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L44)
+Defined in: [packages/core/src/shared-types.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L44)
 
 Indicates whether authentication is required for the request.
 If true, the request will include authentication headers or tokens.

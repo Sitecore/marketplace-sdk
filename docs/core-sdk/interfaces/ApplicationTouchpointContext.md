@@ -4,11 +4,15 @@
 
 [@sitecore-marketplace-sdk/core](../README.md) / ApplicationTouchpointContext
 
-# Interface: ApplicationTouchpointContext
+# Interface: ~~ApplicationTouchpointContext~~
 
-Defined in: [packages/core/src/shared-types.ts:134](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L134)
+Defined in: [packages/core/src/shared-types.ts:150](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L150)
 
 Represents a touchpoint in an application runtime context.
+
+## Deprecated
+
+Use ApplicationExtensionPointContext instead
 
 ## Indexable
 
@@ -16,24 +20,24 @@ Represents a touchpoint in an application runtime context.
 
 ## Properties
 
-### meta?
+### ~~meta?~~
 
 > `optional` **meta**: [`ApplicationTouchpointMetaContext`](ApplicationTouchpointMetaContext.md)[]
 
-Defined in: [packages/core/src/shared-types.ts:137](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L137)
+Defined in: [packages/core/src/shared-types.ts:153](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L153)
 
 ***
 
-### route?
+### ~~route?~~
 
 > `optional` **route**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:136](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L136)
+Defined in: [packages/core/src/shared-types.ts:152](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L152)
 
 ***
 
-### touchpointId
+### ~~touchpointId~~
 
 > **touchpointId**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:135](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/core/src/shared-types.ts#L135)
+Defined in: [packages/core/src/shared-types.ts:151](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/core/src/shared-types.ts#L151)

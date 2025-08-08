@@ -8,7 +8,7 @@
 
 > **GraphqlErrors** = `object`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:28](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-authoring/types.gen.ts#L28)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:28](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-authoring/types.gen.ts#L28)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-authoring/types.gen.ts:28](https://github.c
 
 > **400**: `unknown`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:32](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-authoring/types.gen.ts#L32)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:32](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-authoring/types.gen.ts#L32)
 
 Bad request (e.g., syntax error in query)
 
@@ -26,7 +26,7 @@ Bad request (e.g., syntax error in query)
 
 > **401**: `unknown`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:36](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-authoring/types.gen.ts#L36)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:36](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-authoring/types.gen.ts#L36)
 
 Unauthorized request (missing or invalid authentication)
 
@@ -36,6 +36,6 @@ Unauthorized request (missing or invalid authentication)
 
 > **500**: `unknown`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:40](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-authoring/types.gen.ts#L40)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:40](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-authoring/types.gen.ts#L40)
 
 Internal server error

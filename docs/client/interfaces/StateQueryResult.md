@@ -6,7 +6,7 @@
 
 # Interface: StateQueryResult\<TData, TError\>
 
-Defined in: [client/src/types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L51)
+Defined in: [client/src/types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L51)
 
 ## Extends
 
@@ -25,7 +25,7 @@ Defined in: [client/src/types.ts:51](https://github.com/Sitecore/marketplace-sdk
 
 > **data**: `undefined` \| `TData`
 
-Defined in: [client/src/types.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L31)
+Defined in: [client/src/types.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L31)
 
 The current data value
 
@@ -39,7 +39,7 @@ The current data value
 
 > **error**: `undefined` \| `TError`
 
-Defined in: [client/src/types.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L33)
+Defined in: [client/src/types.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L33)
 
 The current error if any
 
@@ -53,7 +53,7 @@ The current error if any
 
 > **isError**: `boolean`
 
-Defined in: [client/src/types.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L39)
+Defined in: [client/src/types.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L39)
 
 Whether the query has errored
 
@@ -67,7 +67,7 @@ Whether the query has errored
 
 > **isLoading**: `boolean`
 
-Defined in: [client/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L37)
+Defined in: [client/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L37)
 
 Whether the query is currently loading
 
@@ -81,7 +81,7 @@ Whether the query is currently loading
 
 > **isSuccess**: `boolean`
 
-Defined in: [client/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L41)
+Defined in: [client/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L41)
 
 Whether the query was successful
 
@@ -95,7 +95,7 @@ Whether the query was successful
 
 > **refetch**: () => `Promise`\<[`BaseQueryResult`](BaseQueryResult.md)\<`TData`, `TError`\>\>
 
-Defined in: [client/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L43)
+Defined in: [client/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L43)
 
 Function to manually trigger a refetch
 
@@ -113,7 +113,7 @@ Function to manually trigger a refetch
 
 > **status**: [`QueryStatus`](../type-aliases/QueryStatus.md)
 
-Defined in: [client/src/types.ts:35](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L35)
+Defined in: [client/src/types.ts:35](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L35)
 
 The current status of the query
 
@@ -127,7 +127,7 @@ The current status of the query
 
 > `optional` **unsubscribe**: () => `void`
 
-Defined in: [client/src/types.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/client/src/types.ts#L45)
+Defined in: [client/src/types.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/client/src/types.ts#L45)
 
 Function to unsubscribe if subscribed
 

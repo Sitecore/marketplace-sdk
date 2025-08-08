@@ -8,7 +8,7 @@
 
 > **SiteCollection** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:939](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L939)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:939](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L939)
 
 Site collection response entity.
 
@@ -18,7 +18,7 @@ Site collection response entity.
 
 > `optional` **created**: `string`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:974](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L974)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:974](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L974)
 
 The date when the site collection was created.
 Example value: 2019-08-24T14:15:22Z
@@ -29,7 +29,7 @@ Example value: 2019-08-24T14:15:22Z
 
 > `optional` **createdBy**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:969](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L969)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:969](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L969)
 
 The ID of the user who created the site collection.
 Example value: L6kfw52ZVf
@@ -40,7 +40,7 @@ Example value: L6kfw52ZVf
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:954](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L954)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:954](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L954)
 
 The description of the site collection.
 Example value: Collection for all Skate Park brand websites.
@@ -51,7 +51,7 @@ Example value: Collection for all Skate Park brand websites.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:959](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L959)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:959](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L959)
 
 The display name of the site collection.
 Example value: Skate Park Websites
@@ -62,7 +62,7 @@ Example value: Skate Park Websites
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:944](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L944)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:944](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L944)
 
 The identifier of the site collection.
 Example value: 497f6eca-6276-4993-bfeb-53cbbbba6f08
@@ -73,7 +73,7 @@ Example value: 497f6eca-6276-4993-bfeb-53cbbbba6f08
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:949](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L949)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:949](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L949)
 
 The unique system name of the site collection.
 Example value: skate-park-sites
@@ -84,7 +84,7 @@ Example value: skate-park-sites
 
 > `optional` **permissions**: [`Permissions`](Permissions.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:975](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L975)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:975](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L975)
 
 ***
 
@@ -92,7 +92,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:975](https://github.com/
 
 > `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:979](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L979)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:979](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L979)
 
 The site collection settings.
 
@@ -102,7 +102,7 @@ The site collection settings.
 
 > `optional` **sortOrder**: `number` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:964](https://github.com/Sitecore/marketplace-sdk/blob/893df143248e67d8c66e942a96045542130259a0/packages/xmc/src/client-xmapp/types.gen.ts#L964)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:964](https://github.com/Sitecore/marketplace-sdk/blob/047115917e8843232ba2a4ba284b67585698b1c5/packages/xmc/src/client-xmapp/types.gen.ts#L964)
 
 Sort order of the site collection.
 Example value: 100
