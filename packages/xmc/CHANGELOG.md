@@ -1,5 +1,28 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 1.0.0
+
+### Minor Changes
+
+- ff3ca07: Update XMC SDK to support new extensionPoint naming conventions
+
+  **Compatibility Update:**
+
+  - Updated to work with new extensionPoint interfaces from core SDK
+  - Maintains full backward compatibility with existing touchpoint-based code
+  - No breaking changes to XMC-specific functionality
+
+  **What changed:**
+
+  - Updated dependencies to support new extensionPoint types
+  - Enhanced type compatibility for both old and new naming conventions
+  - Maintained all XMC-specific functionality while supporting new interface names
+
+### Patch Changes
+
+- Updated dependencies [ff3ca07]
+  - @sitecore-marketplace-sdk/client@1.0.0
+
 ## 0.1.7
 
 ### Patch Changes
