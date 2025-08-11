@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.2.1
+
+### Patch Changes
+
+- d41657b: Fixes `AllowedExtensionPoints` exports
+
 ## 0.2.0
 
 ### Minor Changes
