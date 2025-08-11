@@ -8,7 +8,7 @@
 
 > **RetrieveLocalizationStatisticsResponses** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2984](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2984)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2984](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2984)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2984](https://github.com
 
 > **200**: [`LocalizationStatistics`](LocalizationStatistics.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2988](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L2988)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:2988](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L2988)
 
 Successful operation

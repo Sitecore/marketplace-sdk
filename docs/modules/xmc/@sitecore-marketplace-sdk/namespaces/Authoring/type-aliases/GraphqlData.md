@@ -8,7 +8,7 @@
 
 > **GraphqlData** = `object`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:4](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-authoring/types.gen.ts#L4)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:4](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-authoring/types.gen.ts#L4)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-authoring/types.gen.ts:4](https://github.co
 
 > **body**: `object`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-authoring/types.gen.ts#L5)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-authoring/types.gen.ts#L5)
 
 #### operationName?
 
@@ -42,7 +42,7 @@ Optional variables for the GraphQL query or mutation
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-authoring/types.gen.ts#L19)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-authoring/types.gen.ts#L19)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [packages/xmc/src/client-authoring/types.gen.ts:19](https://github.c
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:20](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-authoring/types.gen.ts#L20)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:20](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-authoring/types.gen.ts#L20)
 
 #### sitecoreContextId?
 
@@ -64,4 +64,4 @@ The Sitecore context ID.
 
 > **url**: `"/graphql"`
 
-Defined in: [packages/xmc/src/client-authoring/types.gen.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-authoring/types.gen.ts#L26)
+Defined in: [packages/xmc/src/client-authoring/types.gen.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-authoring/types.gen.ts#L26)

@@ -8,7 +8,7 @@
 
 > **StringStringKeyValuePair** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1147](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1147)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1147](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1147)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1147](https://github.com
 
 > `optional` **key**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1148](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1148)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1148](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1148)
 
 ***
 
@@ -24,4 +24,4 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1148](https://github.com
 
 > `optional` **value**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1149](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L1149)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1149](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1149)

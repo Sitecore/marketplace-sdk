@@ -8,7 +8,7 @@
 
 > **UpdateSitemapConfigurationErrors** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3047](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L3047)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3047](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L3047)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3047](https://github.com
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3051](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L3051)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3051](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L3051)
 
 One or more validation errors occurred
 
@@ -26,6 +26,6 @@ One or more validation errors occurred
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3055](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L3055)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:3055](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L3055)
 
 Site or sitemap configuration not found for the provided ID

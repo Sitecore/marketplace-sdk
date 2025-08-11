@@ -6,7 +6,7 @@
 
 # Interface: EventMessage\<T\>
 
-Defined in: [packages/core/src/types.ts:115](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L115)
+Defined in: [packages/core/src/types.ts:115](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L115)
 
 Event message sent to notify about an event.
 
@@ -26,7 +26,7 @@ Event message sent to notify about an event.
 
 > **event**: `string`
 
-Defined in: [packages/core/src/types.ts:119](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L119)
+Defined in: [packages/core/src/types.ts:119](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L119)
 
 The event name
 
@@ -36,7 +36,7 @@ The event name
 
 > **id**: `string`
 
-Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L37)
+Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L37)
 
 Unique identifier for the message
 
@@ -50,7 +50,7 @@ Unique identifier for the message
 
 > `optional` **payload**: `T`
 
-Defined in: [packages/core/src/types.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L121)
+Defined in: [packages/core/src/types.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L121)
 
 Optional payload data for the event
 
@@ -60,7 +60,7 @@ Optional payload data for the event
 
 > `optional` **source**: `string`
 
-Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L43)
+Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L43)
 
 Source identifier for the message
 
@@ -74,7 +74,7 @@ Source identifier for the message
 
 > **timestamp**: `number`
 
-Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L41)
+Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L41)
 
 Timestamp when the message was created
 
@@ -88,7 +88,7 @@ Timestamp when the message was created
 
 > **type**: `"event"`
 
-Defined in: [packages/core/src/types.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L117)
+Defined in: [packages/core/src/types.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L117)
 
 Message type is always "event"
 

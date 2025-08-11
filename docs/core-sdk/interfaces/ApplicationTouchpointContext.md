@@ -4,9 +4,15 @@
 
 [@sitecore-marketplace-sdk/core](../README.md) / ApplicationTouchpointContext
 
-# Interface: ApplicationTouchpointContext
+# Interface: ~~ApplicationTouchpointContext~~
 
-Defined in: [packages/core/src/shared-types.ts:114](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L114)
+Defined in: [packages/core/src/shared-types.ts:150](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L150)
+
+Represents a touchpoint in an application runtime context.
+
+## Deprecated
+
+Use ApplicationExtensionPointContext instead
 
 ## Indexable
 
@@ -14,16 +20,24 @@ Defined in: [packages/core/src/shared-types.ts:114](https://github.com/Sitecore/
 
 ## Properties
 
-### route?
+### ~~meta?~~
 
-> `optional` **route**: `string`
+> `optional` **meta**: [`ApplicationTouchpointMetaContext`](ApplicationTouchpointMetaContext.md)[]
 
-Defined in: [packages/core/src/shared-types.ts:116](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L116)
+Defined in: [packages/core/src/shared-types.ts:153](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L153)
 
 ***
 
-### touchpointId
+### ~~route?~~
+
+> `optional` **route**: `string`
+
+Defined in: [packages/core/src/shared-types.ts:152](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L152)
+
+***
+
+### ~~touchpointId~~
 
 > **touchpointId**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:115](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L115)
+Defined in: [packages/core/src/shared-types.ts:151](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L151)

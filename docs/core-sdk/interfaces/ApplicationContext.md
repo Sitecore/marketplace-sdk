@@ -6,7 +6,7 @@
 
 # Interface: ApplicationContext
 
-Defined in: [packages/core/src/shared-types.ts:120](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L120)
+Defined in: [packages/core/src/shared-types.ts:167](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L167)
 
 ## Indexable
 
@@ -14,11 +14,19 @@ Defined in: [packages/core/src/shared-types.ts:120](https://github.com/Sitecore/
 
 ## Properties
 
+### extensionPoints?
+
+> `optional` **extensionPoints**: [`ApplicationExtensionPointContext`](ApplicationExtensionPointContext.md)[]
+
+Defined in: [packages/core/src/shared-types.ts:180](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L180)
+
+***
+
 ### iconUrl?
 
 > `optional` **iconUrl**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:125](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L125)
+Defined in: [packages/core/src/shared-types.ts:172](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L172)
 
 ***
 
@@ -26,7 +34,7 @@ Defined in: [packages/core/src/shared-types.ts:125](https://github.com/Sitecore/
 
 > **id**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L121)
+Defined in: [packages/core/src/shared-types.ts:168](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L168)
 
 ***
 
@@ -34,7 +42,7 @@ Defined in: [packages/core/src/shared-types.ts:121](https://github.com/Sitecore/
 
 > `optional` **installationId**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:127](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L127)
+Defined in: [packages/core/src/shared-types.ts:174](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L174)
 
 ***
 
@@ -42,15 +50,27 @@ Defined in: [packages/core/src/shared-types.ts:127](https://github.com/Sitecore/
 
 > `optional` **name**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:123](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L123)
+Defined in: [packages/core/src/shared-types.ts:170](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L170)
 
 ***
 
-### resources?
+### resourceAccess?
+
+> `optional` **resourceAccess**: [`ApplicationResourceContext`](ApplicationResourceContext.md)[]
+
+Defined in: [packages/core/src/shared-types.ts:179](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L179)
+
+***
+
+### ~~resources?~~
 
 > `optional` **resources**: [`ApplicationResourceContext`](ApplicationResourceContext.md)[]
 
-Defined in: [packages/core/src/shared-types.ts:128](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L128)
+Defined in: [packages/core/src/shared-types.ts:176](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L176)
+
+#### Deprecated
+
+Use resourceAccess instead
 
 ***
 
@@ -58,15 +78,19 @@ Defined in: [packages/core/src/shared-types.ts:128](https://github.com/Sitecore/
 
 > `optional` **state**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:126](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L126)
+Defined in: [packages/core/src/shared-types.ts:173](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L173)
 
 ***
 
-### touchpoints?
+### ~~touchpoints?~~
 
 > `optional` **touchpoints**: [`ApplicationTouchpointContext`](ApplicationTouchpointContext.md)[]
 
-Defined in: [packages/core/src/shared-types.ts:129](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L129)
+Defined in: [packages/core/src/shared-types.ts:178](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L178)
+
+#### Deprecated
+
+Use extensionPoints instead
 
 ***
 
@@ -74,7 +98,7 @@ Defined in: [packages/core/src/shared-types.ts:129](https://github.com/Sitecore/
 
 > `optional` **type**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:124](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L124)
+Defined in: [packages/core/src/shared-types.ts:171](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L171)
 
 ***
 
@@ -82,4 +106,4 @@ Defined in: [packages/core/src/shared-types.ts:124](https://github.com/Sitecore/
 
 > **url**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:122](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/shared-types.ts#L122)
+Defined in: [packages/core/src/shared-types.ts:169](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L169)

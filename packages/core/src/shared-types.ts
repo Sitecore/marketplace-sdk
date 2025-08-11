@@ -116,6 +116,7 @@ export interface ApplicationResourceContext {
 
 /**
  * Represents a touchpoint metadata in an application runtime context.
+ * @deprecated Use ApplicationExtensionPointMetaContext instead
  */
 export interface ApplicationTouchpointMetaContext {
   route: string;
@@ -129,12 +130,37 @@ export interface ApplicationTouchpointMetaContext {
 }
 
 /**
+ * Represents an extension point metadata in an application runtime context.
+ */
+export interface ApplicationExtensionPointMetaContext {
+  route: string;
+  id: string;
+  title?: string;
+  description?: string;
+  iconUrl?: string;
+  pictureUrl?: string;
+  developerName?: string;
+  [key: string]: any;
+}
+
+/**
  * Represents a touchpoint in an application runtime context.
+ * @deprecated Use ApplicationExtensionPointContext instead
  */
 export interface ApplicationTouchpointContext {
   touchpointId: string;
   route?: string;
   meta?: ApplicationTouchpointMetaContext[];
+  [key: string]: any;
+}
+
+/**
+ * Represents an extension point in an application runtime context.
+ */
+export interface ApplicationExtensionPointContext {
+  extensionPointId: string;
+  route?: string;
+  meta?: ApplicationExtensionPointMetaContext[];
   [key: string]: any;
 }
 
@@ -146,8 +172,12 @@ export interface ApplicationContext {
   iconUrl?: string;
   state?: string;
   installationId?: string;
+  /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
+  /** @deprecated Use extensionPoints instead */
   touchpoints?: ApplicationTouchpointContext[];
+  resourceAccess?: ApplicationResourceContext[];
+  extensionPoints?: ApplicationExtensionPointContext[];
   [key: string]: any;
 }
 
@@ -165,8 +195,12 @@ export interface ApplicationRuntimeContext {
     state: string;
     [key: string]: any;
   };
+  /** @deprecated Use resourceAccess instead */
   resources: ApplicationResourceContext[];
+  /** @deprecated Use extensionPoints instead */
   touchpoints: ApplicationTouchpointContext[];
+  resourceAccess?: ApplicationResourceContext[];
+  extensionPoints?: ApplicationExtensionPointContext[];
   [key: string]: any;
 }
 

@@ -8,7 +8,7 @@
 
 > **CreateContentTransferErrors** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:40](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L40)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:40](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L40)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:40](https://g
 
 > **400**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L44)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L44)
 
 Invalid transfer id or configuration.
 
@@ -26,7 +26,7 @@ Invalid transfer id or configuration.
 
 > **401**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L48)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L48)
 
 Invalid access token.
 
@@ -36,6 +36,6 @@ Invalid access token.
 
 > **403**: `unknown`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:52](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L52)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:52](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L52)
 
 Authorization failed (required role is missing).

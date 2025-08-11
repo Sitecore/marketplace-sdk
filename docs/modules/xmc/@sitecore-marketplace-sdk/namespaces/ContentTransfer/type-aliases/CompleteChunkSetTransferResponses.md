@@ -8,7 +8,7 @@
 
 > **CompleteChunkSetTransferResponses** = `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L244)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L244)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:244](https://
 
 > **200**: `object`
 
-Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:248](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-content-transfer/types.gen.ts#L248)
+Defined in: [packages/xmc/src/client-content-transfer/types.gen.ts:248](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/types.gen.ts#L248)
 
 Chunk set transfer completed.
 

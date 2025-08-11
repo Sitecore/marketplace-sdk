@@ -6,7 +6,7 @@
 
 # Interface: HandshakeMessage
 
-Defined in: [packages/core/src/types.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L49)
+Defined in: [packages/core/src/types.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L49)
 
 Handshake message sent to initiate or respond to a handshake.
 
@@ -24,7 +24,7 @@ Handshake message sent to initiate or respond to a handshake.
 
 > **event**: `string`
 
-Defined in: [packages/core/src/types.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L53)
+Defined in: [packages/core/src/types.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L53)
 
 The handshake event (e.g., "handshake:init")
 
@@ -34,7 +34,7 @@ The handshake event (e.g., "handshake:init")
 
 > **handshakeType**: `"request"` \| `"response"`
 
-Defined in: [packages/core/src/types.ts:55](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L55)
+Defined in: [packages/core/src/types.ts:55](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L55)
 
 Type of handshake (request or response)
 
@@ -44,7 +44,7 @@ Type of handshake (request or response)
 
 > **id**: `string`
 
-Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L37)
+Defined in: [packages/core/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L37)
 
 Unique identifier for the message
 
@@ -58,7 +58,7 @@ Unique identifier for the message
 
 > **sdkType**: `"host"` \| `"client"`
 
-Defined in: [packages/core/src/types.ts:57](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L57)
+Defined in: [packages/core/src/types.ts:57](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L57)
 
 Type of SDK (host or client)
 
@@ -68,7 +68,7 @@ Type of SDK (host or client)
 
 > `optional` **source**: `string`
 
-Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L43)
+Defined in: [packages/core/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L43)
 
 Source identifier for the message
 
@@ -82,7 +82,7 @@ Source identifier for the message
 
 > **timestamp**: `number`
 
-Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L41)
+Defined in: [packages/core/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L41)
 
 Timestamp when the message was created
 
@@ -96,7 +96,7 @@ Timestamp when the message was created
 
 > **type**: `"handshake"`
 
-Defined in: [packages/core/src/types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L51)
+Defined in: [packages/core/src/types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L51)
 
 Message type is always "handshake"
 
@@ -110,6 +110,6 @@ Message type is always "handshake"
 
 > **version**: `string`
 
-Defined in: [packages/core/src/types.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/core/src/types.ts#L59)
+Defined in: [packages/core/src/types.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L59)
 
 Version of the SDK for compatibility checking

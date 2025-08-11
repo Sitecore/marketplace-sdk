@@ -8,7 +8,7 @@
 
 > **PageVariantsResponse** = `object`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:698](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L698)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:698](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L698)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:698](https://github.com/
 
 > `optional` **language**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:708](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L708)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:708](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L708)
 
 The language of the page.
 Example value: en-US
@@ -27,7 +27,7 @@ Example value: en-US
 
 > `optional` **pageId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:703](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L703)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:703](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L703)
 
 The identifier of the page.
 Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
@@ -38,7 +38,7 @@ Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
 
 > `optional` **variantIds**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:716](https://github.com/Sitecore/marketplace-sdk/blob/e3ec55ede335ad59ac5875d32f0d68c50e7bc899/packages/xmc/src/client-xmapp/types.gen.ts#L716)
+Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:716](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L716)
 
 The list of page personalization variant identifiers.
 Example value: [
