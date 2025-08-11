@@ -9,4 +9,14 @@ export enum AllowedTouchpoints {
   xmcDashboardBlocks = 'xmc:dashboardblocks',
 }
 
-export type AllowedExtensionPoints = AllowedTouchpoints;
+/**
+ * Allowed extension points for Sitecore Marketplace applications.
+ * This enum defines the valid extension points where applications can be embedded.
+ */
+export enum AllowedExtensionPoints {
+  standalone = 'standalone',
+  xmcFullscreen = 'xmc:fullscreen',
+  xmcPagesContextPanel = 'xmc:pages:contextpanel',
+  xmcPagesCustomField = 'xmc:pages:customfield',
+  xmcDashboardBlocks = 'xmc:dashboardblocks',
+}
