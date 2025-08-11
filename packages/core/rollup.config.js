@@ -9,6 +9,7 @@ export default {
       file: 'dist/index.cjs.js', // CommonJS output
       format: 'cjs',
       sourcemap: true,
+      exports: 'named',
     },
     {
       file: 'dist/index.esm.js', // ES module output
@@ -24,7 +25,6 @@ export default {
       declaration: true,
       declarationDir: 'dist',
     }),
-    terser(), // Minify the output
   ],
   external: [],
 };

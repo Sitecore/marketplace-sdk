@@ -196,9 +196,9 @@ export interface ApplicationRuntimeContext {
     [key: string]: any;
   };
   /** @deprecated Use resourceAccess instead */
-  resources: ApplicationResourceContext[];
+  resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
-  touchpoints: ApplicationTouchpointContext[];
+  touchpoints?: ApplicationTouchpointContext[];
   resourceAccess?: ApplicationResourceContext[];
   extensionPoints?: ApplicationExtensionPointContext[];
   [key: string]: any;
