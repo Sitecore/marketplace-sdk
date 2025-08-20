@@ -1,0 +1,311 @@
+openapi: 3.0.3
+info:
+  title: Sitecore Content Transfer API
+  version: 1.0.0
+servers:
+  - url: https://example.com/authoring/transfer
+paths:
+  /content/v1/transfers:
+    post:
+      summary: Create a Content Transfer
+      description: Creates a new transfer in the Source environment.
+      operationId: createContentTransfer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                configuration:
+                  type: object
+                  properties:
+                    dataTrees:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          itemPath:
+                            type: string
+                            description: The existing item path in the Source environment in the master database.
+                          scope:
+                            type: string
+                            enum: [SingleItem, ItemAndDescendants]
+                            default: SingleItem
+                            description: The scope of the itemPath to transfer.
+                          mergeStrategy:
+                            type: string
+                            enum:
+                              [
+                                OverrideExistingItem,
+                                KeepExistingItem,
+                                LatestWin,
+                                OverrideExistingTree,
+                              ]
+                            default: OverrideExistingItem
+                            description: The merge strategy of the itemPath to transfer.
+                transferId:
+                  type: string
+                  maxLength: 50
+                  description: Id of the transfer to create.
+              required: [configuration, transferId]
+      responses:
+        "202":
+          description: Transfer creation started.
+        "400":
+          description: Invalid transfer id or configuration.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).
+
+  /content/v1/transfers/{transferId}/status:
+    get:
+      summary: Get the status of a Content Transfer
+      description: Gets the status of the created content transfer by transfer ID.
+      operationId: getContentTransferStatus
+      parameters:
+        - name: transferId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the transfer to retrieve.
+      responses:
+        "200":
+          description: Transfer status successfully retrieved.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [State, ChunkSetsMetadata]
+                properties:
+                  State:
+                    type: string
+                    description: The state of the transfer (e.g., `Completed`).
+                  ChunkSetsMetadata:
+                    type: array
+                    items:
+                      type: object
+                      required: [ChunkSetId, ChunkCount, TotalItemCount]
+                      properties:
+                        ChunkSetId:
+                          type: string
+                          description: The ID of the chunk set.
+                        ChunkCount:
+                          type: integer
+                          description: The number of chunks in the chunk set.
+                        TotalItemCount:
+                          type: integer
+                          description: The total number of items in the chunk set.
+        "400":
+          description: Invalid transfer id.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).
+
+  /content/v1/transfers/{transferId}/chunksets/{chunksetId}/chunks/{chunkId}:
+    get:
+      summary: Get a Chunk
+      description: Retrieves the specified chunk from the specified chunk set in the Source environment.
+      operationId: getChunk
+      parameters:
+        - name: transferId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the transfer.
+        - name: chunksetId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the chunk set.
+        - name: chunkId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Id of the chunk.
+      responses:
+        "200":
+          description: The chunk is pulled.
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        "400":
+          description: Invalid transfer id, chunk set id, or chunk id.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).
+
+    put:
+      summary: Save a Chunk
+      description: Saves the specified chunk from the specified chunk set in the Target environment.
+      operationId: saveChunk
+      parameters:
+        - name: transferId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the transfer.
+        - name: chunksetId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the chunk set.
+        - name: chunkId
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Id of the chunk.
+        - name: isMedia
+          in: query
+          schema:
+            type: boolean
+          description: Indicates whether this chunk is media. Default is false.
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        "201":
+          description: The chunk is pushed.
+        "400":
+          description: Invalid transfer id, chunk set id, or chunk id.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).
+
+  /content/v1/transfers/{transferId}/chunksets/{chunksetId}/complete:
+    post:
+      summary: Complete a Chunk Set Transfer
+      description: Marks the specified chunk set as complete for the given transfer.
+      operationId: completeChunkSetTransfer
+      parameters:
+        - name: transferId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the transfer.
+        - name: chunksetId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the chunk set.
+      responses:
+        "200":
+          description: Chunk set transfer completed.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ContentTransferFileName]
+                properties:
+                  ContentTransferFileName:
+                    type: string
+                    description: The name of the content transfer file.
+        "400":
+          description: Invalid transfer id or chunk set id.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).
+
+  /content/v1/transfers/{transferId}:
+    delete:
+      summary: Delete a Content Transfer
+      description: Deletes the content transfer by transfer ID. Starts a clean-up of all resources related to content transfer in Source or Target environments.
+      operationId: deleteContentTransfer
+      parameters:
+        - name: transferId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the transfer to delete.
+      responses:
+        "202":
+          description: Transfer cleanup started.
+        "400":
+          description: Invalid transfer id.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).
+
+  /items/v2/ConsumeFile:
+    get:
+      summary: Start raif file consuming
+      description: Starts consuming a `.raif` file in the specified database.
+      operationId: consumeFile
+      parameters:
+        - name: databaseName
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The name of the database (e.g., `master`).
+        - name: fileName
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The full path of the `.raif` file to consume.
+      responses:
+        "202":
+          description: Raif file consuming started.
+        "400":
+          description: Invalid database name or file name.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).
+
+  /items/v2/GetBlobState:
+    get:
+      summary: Get consumed files status
+      description: Retrieves the status of a consumed `.raif` file.
+      operationId: getBlobState
+      parameters:
+        - name: fileName
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The full path of the `.raif` file to check the status.
+      responses:
+        "200":
+          description: File status successfully retrieved.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: The status of the file (e.g., `OK`, `NotFound`, `Error`).
+                  details:
+                    type: object
+                    additionalProperties: true
+                    description: Additional details about the file status.
+        "400":
+          description: Invalid file name.
+        "401":
+          description: Invalid access token.
+        "403":
+          description: Authorization failed (required role is missing).

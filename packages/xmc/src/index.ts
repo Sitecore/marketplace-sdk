@@ -16,6 +16,9 @@ export * from './client-content-transfer/augmentation.gen';
 export * from './client-xmapp/types.gen';
 export * from './client-xmapp/augmentation.gen';
 
+// Experimental exports with prefix to avoid conflicts
+export * from './experimental_xmc'; // This will export all experimental types and APIs
+
 // Define a map for namespaces and their corresponding SDKs
 const namespaceMap: Record<string, any> = {
   authoring: authoring,
