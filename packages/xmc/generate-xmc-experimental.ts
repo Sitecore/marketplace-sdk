@@ -2,13 +2,14 @@ import { createClient } from '@hey-api/openapi-ts';
 import { defineAugmentationConfig } from './plugins/augmentation';
 import { defineClientTransformerConfig } from './plugins/client-transformer/config';
 import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
+import { defineNamespaceTransformerConfig } from './plugins/namespace-transformer';
 
 createClient({
   input: 'https://api-docs.sitecore.com/_spec/xmc/sites-api/index.yaml',
   output: {
     format: 'prettier',
     lint: 'eslint',
-    path: './src/experimental/client-xmapp',
+    path: './src/experimental/client-sites',
   },
   plugins: [
     defineSchemaPatcherConfig(),
@@ -19,9 +20,31 @@ createClient({
       enums: 'javascript',
       name: '@hey-api/typescript',
     },
-    /*     defineClientTransformerConfig({
-      namespace: 'Xmapp',
-    }), */
+    defineNamespaceTransformerConfig({
+      namespace: 'EXPERIMENTAL_Sites',
+    }),
+  ],
+});
+
+createClient({
+  input: 'https://api-docs.sitecore.com/_spec/xmc/pages-api/index.yaml',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/experimental/client-pages',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineNamespaceTransformerConfig({
+      namespace: 'EXPERIMENTAL_Pages',
+    }),
   ],
 });
 
@@ -41,6 +64,9 @@ createClient({
       enums: 'javascript',
       name: '@hey-api/typescript',
     },
+    defineNamespaceTransformerConfig({
+      namespace: 'EXPERIMENTAL_Authoring',
+    }),
   ],
 });
 

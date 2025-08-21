@@ -4,6 +4,14 @@ info:
   version: 1.0.0
 servers:
   - url: https://example.com/content/api
+security:
+  - Bearer: []
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      description: Enter your bearer token in the text input below.
+      scheme: Bearer
 paths:
   /graphql/v1:
     post:

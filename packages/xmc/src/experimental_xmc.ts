@@ -1,10 +1,12 @@
-import * as experimental_xmapp_sdk from './experimental/client-xmapp/sdk.gen';
+import * as experimental_sites_sdk from './experimental/client-sites/sdk.gen';
+import * as experimental_pages_sdk from './experimental/client-pages/sdk.gen';
 import * as experimental_authoring_sdk from './experimental/client-authoring/sdk.gen';
 import { createClient, createConfig, type Client } from '@hey-api/client-fetch';
 
 // Re-export experimental types for convenience
-export * as Experimental_XmappTypes from './experimental/client-xmapp/types.gen';
-export * as Experimental_AuthoringTypes from './experimental/client-authoring/types.gen';
+export * from './experimental/client-sites/types.gen';
+export * from './experimental/client-pages/types.gen';
+export * from './experimental/client-authoring/types.gen';
 
 // Default headers required for API calls
 const DEFAULT_HEADERS = {
@@ -19,20 +21,22 @@ interface ApiConfig {
 }
 
 // Supported API types
-type ApiType = 'xmapp' | 'authoring';
+type ApiType = 'sites' | 'pages' | 'authoring';
 
 // Configuration type for Experimental_XMC
-interface ExperimentalXMCConfig {
+export interface EXPERIMENTAL_XMCConfig {
   getAccessToken: () => Promise<string>;
 }
 
 // Type definitions for the API objects with full IntelliSense support
 // These types provide complete IntelliSense for all available methods and their parameters
-export type XmappApi = typeof experimental_xmapp_sdk;
+export type SitesApi = typeof experimental_sites_sdk;
+export type PagesApi = typeof experimental_pages_sdk;
 export type AuthoringApi = typeof experimental_authoring_sdk;
 
-export class Experimental_XMC {
-  public readonly xmapp: XmappApi;
+export class EXPERIMENTAL_XMC {
+  public readonly sites: SitesApi;
+  public readonly pages: PagesApi;
   public readonly authoring: AuthoringApi;
   public readonly getAccessToken: () => Promise<string>;
 
@@ -41,17 +45,22 @@ export class Experimental_XMC {
   private readonly edgePlatformProxyUrl: string;
   private readonly defaultEdgePlatformProxyUrl = 'https://edge-platform.sitecorecloud.io';
 
-  constructor(config: ExperimentalXMCConfig) {
+  constructor(config: EXPERIMENTAL_XMCConfig) {
     console.log('🔧 [Experimental_XMC] Constructor called');
     this.getAccessToken = config.getAccessToken;
     this.edgePlatformProxyUrl = this.calculateEdgePlatformProxyUrl();
 
     // Define default API configurations
     const defaultApiConfigs: Record<ApiType, ApiConfig> = {
-      xmapp: {
+      sites: {
         baseUrl: `${this.edgePlatformProxyUrl}/authoring`,
-        sdk: experimental_xmapp_sdk,
-        name: 'XMApp API',
+        sdk: experimental_sites_sdk,
+        name: 'Sites API',
+      },
+      pages: {
+        baseUrl: `${this.edgePlatformProxyUrl}/authoring`,
+        sdk: experimental_pages_sdk,
+        name: 'Pages API',
       },
       authoring: {
         baseUrl: `${this.edgePlatformProxyUrl}/v1/authoring`,
@@ -67,7 +76,8 @@ export class Experimental_XMC {
     this.customClients = this.createCustomClients();
 
     // Create API proxies with separated methods and types
-    this.xmapp = this.createApiProxy('xmapp');
+    this.sites = this.createApiProxy('sites');
+    this.pages = this.createApiProxy('pages');
     this.authoring = this.createApiProxy('authoring');
   }
 

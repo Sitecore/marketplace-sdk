@@ -4,12 +4,22 @@ info:
   version: 1.0.0
 servers:
   - url: https://example.com/v1/authoring
+security:
+  - Bearer: []
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      description: Enter your bearer token in the text input below.
+      scheme: Bearer
 paths:
   /graphql:
     post:
       summary: Execute a GraphQL query or mutation
       description: Send a GraphQL query or mutation request to the Sitecore Authoring API. Both queries and mutations are supported.
       operationId: graphql
+      security:
+        - Bearer: []
       requestBody:
         required: true
         content:

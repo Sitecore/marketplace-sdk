@@ -6,161 +6,313 @@ import {
   type Client,
   formDataBodySerializer,
 } from '@hey-api/client-fetch';
-import type {
-  ListLanguagesData,
-  ListLanguagesResponse,
-  ListLanguagesError,
-  CreateLanguageData,
-  CreateLanguageResponse,
-  CreateLanguageError,
-  ListSupportedLanguagesData,
-  ListSupportedLanguagesResponse,
-  ListSupportedLanguagesError,
-  ListCollectionsData,
-  ListCollectionsResponse,
-  ListCollectionsError,
-  CreateCollectionData,
-  CreateCollectionResponse,
-  CreateCollectionError,
-  DeleteCollectionData,
-  DeleteCollectionResponse,
-  DeleteCollectionError,
-  RetrieveCollectionData,
-  RetrieveCollectionResponse,
-  RetrieveCollectionError,
-  UpdateCollectionData,
-  UpdateCollectionResponse,
-  UpdateCollectionError,
-  GetFavoriteSitesData,
-  GetFavoriteSitesResponse,
-  GetFavoriteSitesError,
-  AddFavoriteSiteData,
-  AddFavoriteSiteResponse,
-  AddFavoriteSiteError,
-  GetFavoriteSiteTemplatesData,
-  GetFavoriteSiteTemplatesResponse,
-  GetFavoriteSiteTemplatesError,
-  AddFavoriteSiteTemplateData,
-  AddFavoriteSiteTemplateResponse,
-  AddFavoriteSiteTemplateError,
-  ListJobsData,
-  ListJobsResponse,
-  ListJobsError,
-  RetrieveJobData,
-  RetrieveJobResponse,
-  RetrieveJobError,
-  AggregateLivePageVariantsData,
-  AggregateLivePageVariantsResponse,
-  AggregateLivePageVariantsError,
-  AggregatePageDataData,
-  AggregatePageDataResponse,
-  AggregatePageDataError,
-  RenameCollectionData,
-  RenameCollectionResponse,
-  RenameCollectionError,
-  SortCollectionsData,
-  SortCollectionsResponse,
-  SortCollectionsError,
-  ValidateCollectionNameData,
-  ValidateCollectionNameResponse,
-  ValidateCollectionNameError,
-  DeleteLanguageData,
-  DeleteLanguageResponse,
-  DeleteLanguageError,
-  UpdateLanguageData,
-  UpdateLanguageResponse,
-  UpdateLanguageError,
-  RemoveFavoriteSiteData,
-  RemoveFavoriteSiteResponse,
-  RemoveFavoriteSiteError,
-  RemoveFavoriteSiteTemplateData,
-  RemoveFavoriteSiteTemplateResponse,
-  RemoveFavoriteSiteTemplateError,
-  ListSitesData,
-  ListSitesResponse,
-  ListSitesError,
-  CreateSiteData,
-  CreateSiteResponse,
-  CreateSiteError,
-  DeleteSiteData,
-  DeleteSiteResponse,
-  DeleteSiteError,
-  RetrieveSiteData,
-  RetrieveSiteResponse,
-  RetrieveSiteError,
-  UpdateSiteData,
-  UpdateSiteResponse,
-  UpdateSiteError,
-  CopySiteData,
-  CopySiteResponse,
-  CopySiteError,
-  RenameSiteData,
-  RenameSiteResponse,
-  RenameSiteError,
-  SortSitesData,
-  SortSitesResponse,
-  SortSitesError,
-  ValidateSiteNameData,
-  ValidateSiteNameResponse,
-  ValidateSiteNameError,
-  ListTrackedSitesData,
-  ListTrackedSitesResponse,
-  ListTrackedSitesError,
-  ListCollectionSitesData,
-  ListCollectionSitesResponse,
-  ListCollectionSitesError,
-  DetachAnalyticsIdentifierData,
-  DetachAnalyticsIdentifierResponse,
-  DetachAnalyticsIdentifierError,
-  RetrieveSiteHierarchyData,
-  RetrieveSiteHierarchyResponse,
-  RetrieveSiteHierarchyError,
-  RetrievePageHierarchyData,
-  RetrievePageHierarchyResponse,
-  RetrievePageHierarchyError,
-  ListPageAncestorsData,
-  ListPageAncestorsResponse,
-  ListPageAncestorsError,
-  ListPageChildrenData,
-  ListPageChildrenResponse,
-  ListPageChildrenError,
-  ListHostsData,
-  ListHostsResponse,
-  ListHostsError,
-  CreateHostData,
-  CreateHostResponse,
-  CreateHostError,
-  DeleteHostData,
-  DeleteHostError,
-  RetrieveHostData,
-  RetrieveHostResponse,
-  RetrieveHostError,
-  UpdateHostData,
-  UpdateHostResponse,
-  UpdateHostError,
-  GetRenderingHostsData,
-  GetRenderingHostsResponse,
-  GetRenderingHostsError,
-  ListSiteTemplatesData,
-  ListSiteTemplatesResponse,
-  ListSiteTemplatesError,
-  UploadSiteThumbnailData,
-  UploadSiteThumbnailResponse,
-  UploadSiteThumbnailError,
-  RetrieveLocalizationStatisticsData,
-  RetrieveLocalizationStatisticsResponse,
-  RetrieveLocalizationStatisticsError,
-  RetrieveSitemapConfigurationData,
-  RetrieveSitemapConfigurationResponse,
-  RetrieveSitemapConfigurationError,
-  UpdateSitemapConfigurationData,
-  UpdateSitemapConfigurationResponse,
-  UpdateSitemapConfigurationError,
-  RetrieveWorkflowStatisticsData,
-  RetrieveWorkflowStatisticsResponse,
-  RetrieveWorkflowStatisticsError,
-} from './types.gen';
+import type { EXPERIMENTAL_Sites } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
+
+type RetrieveWorkflowStatisticsError = EXPERIMENTAL_Sites.RetrieveWorkflowStatisticsError;
+
+type RetrieveWorkflowStatisticsResponse = EXPERIMENTAL_Sites.RetrieveWorkflowStatisticsResponse;
+
+type RetrieveWorkflowStatisticsData = EXPERIMENTAL_Sites.RetrieveWorkflowStatisticsData;
+
+type UpdateSitemapConfigurationError = EXPERIMENTAL_Sites.UpdateSitemapConfigurationError;
+
+type UpdateSitemapConfigurationResponse = EXPERIMENTAL_Sites.UpdateSitemapConfigurationResponse;
+
+type UpdateSitemapConfigurationData = EXPERIMENTAL_Sites.UpdateSitemapConfigurationData;
+
+type RetrieveSitemapConfigurationError = EXPERIMENTAL_Sites.RetrieveSitemapConfigurationError;
+
+type RetrieveSitemapConfigurationResponse = EXPERIMENTAL_Sites.RetrieveSitemapConfigurationResponse;
+
+type RetrieveSitemapConfigurationData = EXPERIMENTAL_Sites.RetrieveSitemapConfigurationData;
+
+type RetrieveLocalizationStatisticsError = EXPERIMENTAL_Sites.RetrieveLocalizationStatisticsError;
+
+type RetrieveLocalizationStatisticsResponse =
+  EXPERIMENTAL_Sites.RetrieveLocalizationStatisticsResponse;
+
+type RetrieveLocalizationStatisticsData = EXPERIMENTAL_Sites.RetrieveLocalizationStatisticsData;
+
+type UploadSiteThumbnailError = EXPERIMENTAL_Sites.UploadSiteThumbnailError;
+
+type UploadSiteThumbnailResponse = EXPERIMENTAL_Sites.UploadSiteThumbnailResponse;
+
+type UploadSiteThumbnailData = EXPERIMENTAL_Sites.UploadSiteThumbnailData;
+
+type ListSiteTemplatesError = EXPERIMENTAL_Sites.ListSiteTemplatesError;
+
+type ListSiteTemplatesResponse = EXPERIMENTAL_Sites.ListSiteTemplatesResponse;
+
+type ListSiteTemplatesData = EXPERIMENTAL_Sites.ListSiteTemplatesData;
+
+type GetRenderingHostsError = EXPERIMENTAL_Sites.GetRenderingHostsError;
+
+type GetRenderingHostsResponse = EXPERIMENTAL_Sites.GetRenderingHostsResponse;
+
+type GetRenderingHostsData = EXPERIMENTAL_Sites.GetRenderingHostsData;
+
+type UpdateHostError = EXPERIMENTAL_Sites.UpdateHostError;
+
+type UpdateHostResponse = EXPERIMENTAL_Sites.UpdateHostResponse;
+
+type UpdateHostData = EXPERIMENTAL_Sites.UpdateHostData;
+
+type RetrieveHostError = EXPERIMENTAL_Sites.RetrieveHostError;
+
+type RetrieveHostResponse = EXPERIMENTAL_Sites.RetrieveHostResponse;
+
+type RetrieveHostData = EXPERIMENTAL_Sites.RetrieveHostData;
+
+type DeleteHostError = EXPERIMENTAL_Sites.DeleteHostError;
+
+type DeleteHostData = EXPERIMENTAL_Sites.DeleteHostData;
+
+type CreateHostError = EXPERIMENTAL_Sites.CreateHostError;
+
+type CreateHostResponse = EXPERIMENTAL_Sites.CreateHostResponse;
+
+type CreateHostData = EXPERIMENTAL_Sites.CreateHostData;
+
+type ListHostsError = EXPERIMENTAL_Sites.ListHostsError;
+
+type ListHostsResponse = EXPERIMENTAL_Sites.ListHostsResponse;
+
+type ListHostsData = EXPERIMENTAL_Sites.ListHostsData;
+
+type ListPageChildrenError = EXPERIMENTAL_Sites.ListPageChildrenError;
+
+type ListPageChildrenResponse = EXPERIMENTAL_Sites.ListPageChildrenResponse;
+
+type ListPageChildrenData = EXPERIMENTAL_Sites.ListPageChildrenData;
+
+type ListPageAncestorsError = EXPERIMENTAL_Sites.ListPageAncestorsError;
+
+type ListPageAncestorsResponse = EXPERIMENTAL_Sites.ListPageAncestorsResponse;
+
+type ListPageAncestorsData = EXPERIMENTAL_Sites.ListPageAncestorsData;
+
+type RetrievePageHierarchyError = EXPERIMENTAL_Sites.RetrievePageHierarchyError;
+
+type RetrievePageHierarchyResponse = EXPERIMENTAL_Sites.RetrievePageHierarchyResponse;
+
+type RetrievePageHierarchyData = EXPERIMENTAL_Sites.RetrievePageHierarchyData;
+
+type RetrieveSiteHierarchyError = EXPERIMENTAL_Sites.RetrieveSiteHierarchyError;
+
+type RetrieveSiteHierarchyResponse = EXPERIMENTAL_Sites.RetrieveSiteHierarchyResponse;
+
+type RetrieveSiteHierarchyData = EXPERIMENTAL_Sites.RetrieveSiteHierarchyData;
+
+type DetachAnalyticsIdentifierError = EXPERIMENTAL_Sites.DetachAnalyticsIdentifierError;
+
+type DetachAnalyticsIdentifierResponse = EXPERIMENTAL_Sites.DetachAnalyticsIdentifierResponse;
+
+type DetachAnalyticsIdentifierData = EXPERIMENTAL_Sites.DetachAnalyticsIdentifierData;
+
+type ListCollectionSitesError = EXPERIMENTAL_Sites.ListCollectionSitesError;
+
+type ListCollectionSitesResponse = EXPERIMENTAL_Sites.ListCollectionSitesResponse;
+
+type ListCollectionSitesData = EXPERIMENTAL_Sites.ListCollectionSitesData;
+
+type ListTrackedSitesError = EXPERIMENTAL_Sites.ListTrackedSitesError;
+
+type ListTrackedSitesResponse = EXPERIMENTAL_Sites.ListTrackedSitesResponse;
+
+type ListTrackedSitesData = EXPERIMENTAL_Sites.ListTrackedSitesData;
+
+type ValidateSiteNameError = EXPERIMENTAL_Sites.ValidateSiteNameError;
+
+type ValidateSiteNameResponse = EXPERIMENTAL_Sites.ValidateSiteNameResponse;
+
+type ValidateSiteNameData = EXPERIMENTAL_Sites.ValidateSiteNameData;
+
+type SortSitesError = EXPERIMENTAL_Sites.SortSitesError;
+
+type SortSitesResponse = EXPERIMENTAL_Sites.SortSitesResponse;
+
+type SortSitesData = EXPERIMENTAL_Sites.SortSitesData;
+
+type RenameSiteError = EXPERIMENTAL_Sites.RenameSiteError;
+
+type RenameSiteResponse = EXPERIMENTAL_Sites.RenameSiteResponse;
+
+type RenameSiteData = EXPERIMENTAL_Sites.RenameSiteData;
+
+type CopySiteError = EXPERIMENTAL_Sites.CopySiteError;
+
+type CopySiteResponse = EXPERIMENTAL_Sites.CopySiteResponse;
+
+type CopySiteData = EXPERIMENTAL_Sites.CopySiteData;
+
+type UpdateSiteError = EXPERIMENTAL_Sites.UpdateSiteError;
+
+type UpdateSiteResponse = EXPERIMENTAL_Sites.UpdateSiteResponse;
+
+type UpdateSiteData = EXPERIMENTAL_Sites.UpdateSiteData;
+
+type RetrieveSiteError = EXPERIMENTAL_Sites.RetrieveSiteError;
+
+type RetrieveSiteResponse = EXPERIMENTAL_Sites.RetrieveSiteResponse;
+
+type RetrieveSiteData = EXPERIMENTAL_Sites.RetrieveSiteData;
+
+type DeleteSiteError = EXPERIMENTAL_Sites.DeleteSiteError;
+
+type DeleteSiteResponse = EXPERIMENTAL_Sites.DeleteSiteResponse;
+
+type DeleteSiteData = EXPERIMENTAL_Sites.DeleteSiteData;
+
+type CreateSiteError = EXPERIMENTAL_Sites.CreateSiteError;
+
+type CreateSiteResponse = EXPERIMENTAL_Sites.CreateSiteResponse;
+
+type CreateSiteData = EXPERIMENTAL_Sites.CreateSiteData;
+
+type ListSitesError = EXPERIMENTAL_Sites.ListSitesError;
+
+type ListSitesResponse = EXPERIMENTAL_Sites.ListSitesResponse;
+
+type ListSitesData = EXPERIMENTAL_Sites.ListSitesData;
+
+type RemoveFavoriteSiteTemplateError = EXPERIMENTAL_Sites.RemoveFavoriteSiteTemplateError;
+
+type RemoveFavoriteSiteTemplateResponse = EXPERIMENTAL_Sites.RemoveFavoriteSiteTemplateResponse;
+
+type RemoveFavoriteSiteTemplateData = EXPERIMENTAL_Sites.RemoveFavoriteSiteTemplateData;
+
+type RemoveFavoriteSiteError = EXPERIMENTAL_Sites.RemoveFavoriteSiteError;
+
+type RemoveFavoriteSiteResponse = EXPERIMENTAL_Sites.RemoveFavoriteSiteResponse;
+
+type RemoveFavoriteSiteData = EXPERIMENTAL_Sites.RemoveFavoriteSiteData;
+
+type UpdateLanguageError = EXPERIMENTAL_Sites.UpdateLanguageError;
+
+type UpdateLanguageResponse = EXPERIMENTAL_Sites.UpdateLanguageResponse;
+
+type UpdateLanguageData = EXPERIMENTAL_Sites.UpdateLanguageData;
+
+type DeleteLanguageError = EXPERIMENTAL_Sites.DeleteLanguageError;
+
+type DeleteLanguageResponse = EXPERIMENTAL_Sites.DeleteLanguageResponse;
+
+type DeleteLanguageData = EXPERIMENTAL_Sites.DeleteLanguageData;
+
+type ValidateCollectionNameError = EXPERIMENTAL_Sites.ValidateCollectionNameError;
+
+type ValidateCollectionNameResponse = EXPERIMENTAL_Sites.ValidateCollectionNameResponse;
+
+type ValidateCollectionNameData = EXPERIMENTAL_Sites.ValidateCollectionNameData;
+
+type SortCollectionsError = EXPERIMENTAL_Sites.SortCollectionsError;
+
+type SortCollectionsResponse = EXPERIMENTAL_Sites.SortCollectionsResponse;
+
+type SortCollectionsData = EXPERIMENTAL_Sites.SortCollectionsData;
+
+type RenameCollectionError = EXPERIMENTAL_Sites.RenameCollectionError;
+
+type RenameCollectionResponse = EXPERIMENTAL_Sites.RenameCollectionResponse;
+
+type RenameCollectionData = EXPERIMENTAL_Sites.RenameCollectionData;
+
+type AggregatePageDataError = EXPERIMENTAL_Sites.AggregatePageDataError;
+
+type AggregatePageDataResponse = EXPERIMENTAL_Sites.AggregatePageDataResponse;
+
+type AggregatePageDataData = EXPERIMENTAL_Sites.AggregatePageDataData;
+
+type AggregateLivePageVariantsError = EXPERIMENTAL_Sites.AggregateLivePageVariantsError;
+
+type AggregateLivePageVariantsResponse = EXPERIMENTAL_Sites.AggregateLivePageVariantsResponse;
+
+type AggregateLivePageVariantsData = EXPERIMENTAL_Sites.AggregateLivePageVariantsData;
+
+type RetrieveJobError = EXPERIMENTAL_Sites.RetrieveJobError;
+
+type RetrieveJobResponse = EXPERIMENTAL_Sites.RetrieveJobResponse;
+
+type RetrieveJobData = EXPERIMENTAL_Sites.RetrieveJobData;
+
+type ListJobsError = EXPERIMENTAL_Sites.ListJobsError;
+
+type ListJobsResponse = EXPERIMENTAL_Sites.ListJobsResponse;
+
+type ListJobsData = EXPERIMENTAL_Sites.ListJobsData;
+
+type AddFavoriteSiteTemplateError = EXPERIMENTAL_Sites.AddFavoriteSiteTemplateError;
+
+type AddFavoriteSiteTemplateResponse = EXPERIMENTAL_Sites.AddFavoriteSiteTemplateResponse;
+
+type AddFavoriteSiteTemplateData = EXPERIMENTAL_Sites.AddFavoriteSiteTemplateData;
+
+type GetFavoriteSiteTemplatesError = EXPERIMENTAL_Sites.GetFavoriteSiteTemplatesError;
+
+type GetFavoriteSiteTemplatesResponse = EXPERIMENTAL_Sites.GetFavoriteSiteTemplatesResponse;
+
+type GetFavoriteSiteTemplatesData = EXPERIMENTAL_Sites.GetFavoriteSiteTemplatesData;
+
+type AddFavoriteSiteError = EXPERIMENTAL_Sites.AddFavoriteSiteError;
+
+type AddFavoriteSiteResponse = EXPERIMENTAL_Sites.AddFavoriteSiteResponse;
+
+type AddFavoriteSiteData = EXPERIMENTAL_Sites.AddFavoriteSiteData;
+
+type GetFavoriteSitesError = EXPERIMENTAL_Sites.GetFavoriteSitesError;
+
+type GetFavoriteSitesResponse = EXPERIMENTAL_Sites.GetFavoriteSitesResponse;
+
+type GetFavoriteSitesData = EXPERIMENTAL_Sites.GetFavoriteSitesData;
+
+type UpdateCollectionError = EXPERIMENTAL_Sites.UpdateCollectionError;
+
+type UpdateCollectionResponse = EXPERIMENTAL_Sites.UpdateCollectionResponse;
+
+type UpdateCollectionData = EXPERIMENTAL_Sites.UpdateCollectionData;
+
+type RetrieveCollectionError = EXPERIMENTAL_Sites.RetrieveCollectionError;
+
+type RetrieveCollectionResponse = EXPERIMENTAL_Sites.RetrieveCollectionResponse;
+
+type RetrieveCollectionData = EXPERIMENTAL_Sites.RetrieveCollectionData;
+
+type DeleteCollectionError = EXPERIMENTAL_Sites.DeleteCollectionError;
+
+type DeleteCollectionResponse = EXPERIMENTAL_Sites.DeleteCollectionResponse;
+
+type DeleteCollectionData = EXPERIMENTAL_Sites.DeleteCollectionData;
+
+type CreateCollectionError = EXPERIMENTAL_Sites.CreateCollectionError;
+
+type CreateCollectionResponse = EXPERIMENTAL_Sites.CreateCollectionResponse;
+
+type CreateCollectionData = EXPERIMENTAL_Sites.CreateCollectionData;
+
+type ListCollectionsError = EXPERIMENTAL_Sites.ListCollectionsError;
+
+type ListCollectionsResponse = EXPERIMENTAL_Sites.ListCollectionsResponse;
+
+type ListCollectionsData = EXPERIMENTAL_Sites.ListCollectionsData;
+
+type ListSupportedLanguagesError = EXPERIMENTAL_Sites.ListSupportedLanguagesError;
+
+type ListSupportedLanguagesResponse = EXPERIMENTAL_Sites.ListSupportedLanguagesResponse;
+
+type ListSupportedLanguagesData = EXPERIMENTAL_Sites.ListSupportedLanguagesData;
+
+type CreateLanguageError = EXPERIMENTAL_Sites.CreateLanguageError;
+
+type CreateLanguageResponse = EXPERIMENTAL_Sites.CreateLanguageResponse;
+
+type CreateLanguageData = EXPERIMENTAL_Sites.CreateLanguageData;
+
+type ListLanguagesError = EXPERIMENTAL_Sites.ListLanguagesError;
+
+type ListLanguagesResponse = EXPERIMENTAL_Sites.ListLanguagesResponse;
+
+type ListLanguagesData = EXPERIMENTAL_Sites.ListLanguagesData;
 
 export type Options<
   TData extends TDataShape = TDataShape,

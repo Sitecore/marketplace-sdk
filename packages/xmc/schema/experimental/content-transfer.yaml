@@ -4,6 +4,14 @@ info:
   version: 1.0.0
 servers:
   - url: https://example.com/authoring/transfer
+security:
+  - Bearer: []
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      description: Enter your bearer token in the text input below.
+      scheme: Bearer
 paths:
   /content/v1/transfers:
     post:
@@ -50,13 +58,13 @@ paths:
                   description: Id of the transfer to create.
               required: [configuration, transferId]
       responses:
-        "202":
+        '202':
           description: Transfer creation started.
-        "400":
+        '400':
           description: Invalid transfer id or configuration.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
 
   /content/v1/transfers/{transferId}/status:
@@ -72,7 +80,7 @@ paths:
             type: string
           description: ID of the transfer to retrieve.
       responses:
-        "200":
+        '200':
           description: Transfer status successfully retrieved.
           content:
             application/json:
@@ -98,11 +106,11 @@ paths:
                         TotalItemCount:
                           type: integer
                           description: The total number of items in the chunk set.
-        "400":
+        '400':
           description: Invalid transfer id.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
 
   /content/v1/transfers/{transferId}/chunksets/{chunksetId}/chunks/{chunkId}:
@@ -130,18 +138,18 @@ paths:
             type: integer
           description: Id of the chunk.
       responses:
-        "200":
+        '200':
           description: The chunk is pulled.
           content:
             application/octet-stream:
               schema:
                 type: string
                 format: binary
-        "400":
+        '400':
           description: Invalid transfer id, chunk set id, or chunk id.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
 
     put:
@@ -180,13 +188,13 @@ paths:
               type: string
               format: binary
       responses:
-        "201":
+        '201':
           description: The chunk is pushed.
-        "400":
+        '400':
           description: Invalid transfer id, chunk set id, or chunk id.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
 
   /content/v1/transfers/{transferId}/chunksets/{chunksetId}/complete:
@@ -208,7 +216,7 @@ paths:
             type: string
           description: ID of the chunk set.
       responses:
-        "200":
+        '200':
           description: Chunk set transfer completed.
           content:
             application/json:
@@ -219,11 +227,11 @@ paths:
                   ContentTransferFileName:
                     type: string
                     description: The name of the content transfer file.
-        "400":
+        '400':
           description: Invalid transfer id or chunk set id.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
 
   /content/v1/transfers/{transferId}:
@@ -239,13 +247,13 @@ paths:
             type: string
           description: ID of the transfer to delete.
       responses:
-        "202":
+        '202':
           description: Transfer cleanup started.
-        "400":
+        '400':
           description: Invalid transfer id.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
 
   /items/v2/ConsumeFile:
@@ -267,13 +275,13 @@ paths:
             type: string
           description: The full path of the `.raif` file to consume.
       responses:
-        "202":
+        '202':
           description: Raif file consuming started.
-        "400":
+        '400':
           description: Invalid database name or file name.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
 
   /items/v2/GetBlobState:
@@ -289,7 +297,7 @@ paths:
             type: string
           description: The full path of the `.raif` file to check the status.
       responses:
-        "200":
+        '200':
           description: File status successfully retrieved.
           content:
             application/json:
@@ -303,9 +311,9 @@ paths:
                     type: object
                     additionalProperties: true
                     description: Additional details about the file status.
-        "400":
+        '400':
           description: Invalid file name.
-        "401":
+        '401':
           description: Invalid access token.
-        "403":
+        '403':
           description: Authorization failed (required role is missing).
