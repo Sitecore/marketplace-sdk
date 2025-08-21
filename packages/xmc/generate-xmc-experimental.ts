@@ -1,6 +1,4 @@
 import { createClient } from '@hey-api/openapi-ts';
-import { defineAugmentationConfig } from './plugins/augmentation';
-import { defineClientTransformerConfig } from './plugins/client-transformer/config';
 import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from './plugins/namespace-transformer';
 

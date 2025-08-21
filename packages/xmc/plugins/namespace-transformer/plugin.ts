@@ -42,7 +42,6 @@ function updateFileWithNamespace(file: any, namespace: string): void {
   }
 }
 
-const clientOptions = 'ClientOptions';
 export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
   // type.gen file - conditionally wrap in namespace
   context.subscribe('after', () => {
@@ -81,111 +80,4 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
     }
     // If no namespace, leave types as-is (no wrapping)
   });
-
-  // Handle client-specific modifications (always needed for clientSdkfetch)
-  const file = context.files[plugin.output];
-
-  // Handle imports - this will be updated by updateFileWithNamespace if namespace is used
-  // if (!plugin.namespace) {
-  //   // Only handle imports manually if no namespace (otherwise updateFileWithNamespace handles it)
-  //   file['_imports'].get('./types.gen')?.delete(clientOptions);
-  //   file.import({
-  //     asType: true,
-  //     module: './types.gen',
-  //     name: clientOptions,
-  //   });
-  // }
-
-  // file.import({
-  //   module: '../client-sdk-fetch',
-  //   name: 'clientSdkfetch',
-  // });
-
-  // client export node
-  // const clientNode = file['_items'][file['_items'].length - 1];
-
-  // // Ensure clientNode is a VariableStatement
-  // if (!clientNode || !ts.isVariableStatement(clientNode)) {
-  //   throw new Error('clientNode is not a valid VariableStatement');
-  // }
-
-  // Get the VariableDeclaration from the declarationList
-  // const declarationList = clientNode.declarationList;
-  // const declarations = declarationList.declarations;
-  // if (!declarations || declarations.length === 0) {
-  //   throw new Error('No declarations found in clientNode');
-  // }
-
-  // const variableDeclaration = declarations[0]; // Assuming the first declaration is the one we need
-  // if (!ts.isVariableDeclaration(variableDeclaration)) {
-  //   throw new Error('The declaration is not a valid VariableDeclaration');
-  // }
-
-  // const initializer = variableDeclaration.initializer;
-  // if (!initializer || !ts.isCallExpression(initializer)) {
-  //   throw new Error('VariableDeclaration initializer is not a CallExpression');
-  // }
-
-  // const createClientArgs = initializer.arguments;
-  // if (!createClientArgs || createClientArgs.length === 0) {
-  //   throw new Error('createClient has no arguments');
-  // }
-
-  // const createConfigCall = createClientArgs[0];
-  // if (!ts.isCallExpression(createConfigCall)) {
-  //   throw new Error('First argument of createClient is not a CallExpression');
-  // }
-
-  // const configObject = createConfigCall.arguments[0];
-  // if (!configObject || !ts.isObjectLiteralExpression(configObject)) {
-  //   throw new Error('createConfig argument is not an ObjectLiteralExpression');
-  // }
-
-  // // Add a new property to the ObjectLiteralExpression
-  // const fetchProperty = ts.factory.createPropertyAssignment(
-  //   'fetch',
-  //   ts.factory.createIdentifier('clientSdkfetch'),
-  // );
-
-  // const updatedProperties = ts.factory.createNodeArray([...configObject.properties, fetchProperty]);
-
-  // const updatedConfigObject = ts.factory.updateObjectLiteralExpression(
-  //   configObject,
-  //   updatedProperties,
-  // );
-
-  // const updatedCreateConfigCall = ts.factory.updateCallExpression(
-  //   createConfigCall,
-  //   createConfigCall.expression,
-  //   createConfigCall.typeArguments,
-  //   [updatedConfigObject],
-  // );
-
-  // const updatedInitializer = ts.factory.updateCallExpression(
-  //   initializer,
-  //   initializer.expression,
-  //   initializer.typeArguments,
-  //   [updatedCreateConfigCall],
-  // );
-
-  // const updatedVariableDeclaration = ts.factory.updateVariableDeclaration(
-  //   variableDeclaration,
-  //   variableDeclaration.name,
-  //   variableDeclaration.exclamationToken,
-  //   variableDeclaration.type,
-  //   updatedInitializer,
-  // );
-
-  // const updatedDeclarationList = ts.factory.updateVariableDeclarationList(declarationList, [
-  //   updatedVariableDeclaration,
-  // ]);
-
-  // const updatedClientNode = ts.factory.updateVariableStatement(
-  //   clientNode,
-  //   clientNode.modifiers,
-  //   updatedDeclarationList,
-  // );
-
-  // // Replace the original clientNode with the updated one
-  // file['_items'][file['_items'].length - 1] = updatedClientNode;
 };
