@@ -1,12 +1,16 @@
 import * as experimental_sites_sdk from './experimental/client-sites/sdk.gen';
 import * as experimental_pages_sdk from './experimental/client-pages/sdk.gen';
 import * as experimental_authoring_sdk from './experimental/client-authoring/sdk.gen';
+import * as experimental_content_transfer_sdk from './experimental/client-content-transfer/sdk.gen';
+import * as experimental_content_sdk from './experimental/client-content/sdk.gen';
 import { createClient, createConfig, type Client } from '@hey-api/client-fetch';
 
 // Re-export experimental types for convenience
 export * from './experimental/client-sites/types.gen';
 export * from './experimental/client-pages/types.gen';
 export * from './experimental/client-authoring/types.gen';
+export * from './experimental/client-content-transfer/types.gen';
+export * from './experimental/client-content/types.gen';
 
 // Default headers required for API calls
 const DEFAULT_HEADERS = {
@@ -21,7 +25,7 @@ interface ApiConfig {
 }
 
 // Supported API types
-type ApiType = 'sites' | 'pages' | 'authoring';
+type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' | 'live';
 
 // Configuration type for Experimental_XMC
 export interface EXPERIMENTAL_XMCConfig {
@@ -33,11 +37,16 @@ export interface EXPERIMENTAL_XMCConfig {
 export type SitesApi = typeof experimental_sites_sdk;
 export type PagesApi = typeof experimental_pages_sdk;
 export type AuthoringApi = typeof experimental_authoring_sdk;
+export type ContentTransferApi = typeof experimental_content_transfer_sdk;
+export type ContentApi = typeof experimental_content_sdk;
 
 export class EXPERIMENTAL_XMC {
   public readonly sites: SitesApi;
   public readonly pages: PagesApi;
   public readonly authoring: AuthoringApi;
+  public readonly contentTransfer: ContentTransferApi;
+  public readonly preview: ContentApi;
+  public readonly live: ContentApi;
   public readonly getAccessToken: () => Promise<string>;
 
   private readonly apiConfigs: Record<ApiType, ApiConfig>;
@@ -67,6 +76,21 @@ export class EXPERIMENTAL_XMC {
         sdk: experimental_authoring_sdk,
         name: 'Authoring API',
       },
+      contentTransfer: {
+        baseUrl: `${this.edgePlatformProxyUrl}/authoring/transfer`,
+        sdk: experimental_content_transfer_sdk,
+        name: 'Content Transfer API',
+      },
+      preview: {
+        baseUrl: `${this.edgePlatformProxyUrl}/content/api`,
+        sdk: experimental_content_sdk,
+        name: 'Preview API',
+      },
+      live: {
+        baseUrl: `${this.edgePlatformProxyUrl}/content/api`,
+        sdk: experimental_content_sdk,
+        name: 'Live API',
+      },
     };
 
     // Use default configurations
@@ -79,6 +103,9 @@ export class EXPERIMENTAL_XMC {
     this.sites = this.createApiProxy('sites');
     this.pages = this.createApiProxy('pages');
     this.authoring = this.createApiProxy('authoring');
+    this.contentTransfer = this.createApiProxy('contentTransfer');
+    this.preview = this.createApiProxy('preview');
+    this.live = this.createApiProxy('live');
   }
 
   /**
@@ -113,13 +140,23 @@ export class EXPERIMENTAL_XMC {
       ...this.apiConfigs[apiType].sdk,
     };
 
+    // Cache for wrapped methods to avoid recreating functions
+    const methodCache = new Map<string, Function>();
+
     return new Proxy(apiObject, {
       get: (target, prop) => {
+        const propKey = String(prop);
         const originalMethod = target[prop as keyof typeof target];
 
         if (typeof originalMethod === 'function') {
-          return (options?: any) => {
-            console.log(`🎭 [Experimental_XMC] Calling ${apiType}.${String(prop)}`);
+          // Check if we already have a wrapped version
+          if (methodCache.has(propKey)) {
+            return methodCache.get(propKey);
+          }
+
+          // Create wrapped method and cache it
+          const wrappedMethod = (options?: any) => {
+            console.log(`🎭 [Experimental_XMC] Calling ${apiType}.${propKey}`);
 
             const result = originalMethod({
               ...options,
@@ -132,6 +169,9 @@ export class EXPERIMENTAL_XMC {
 
             return result;
           };
+
+          methodCache.set(propKey, wrappedMethod);
+          return wrappedMethod;
         }
 
         return originalMethod;

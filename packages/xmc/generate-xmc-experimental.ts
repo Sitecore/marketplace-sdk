@@ -70,52 +70,46 @@ createClient({
   ],
 });
 
-// createClient({
-//   input: './schema/content-transfer.yaml',
-//   output: {
-//     format: 'prettier',
-//     lint: 'eslint',
-//     path: './src/client-content-transfer',
-//   },
-//   plugins: [
-//     defineSchemaPatcherConfig(),
-//     '@hey-api/client-fetch',
-//     '@hey-api/schemas',
-//     '@hey-api/sdk',
-//     {
-//       enums: 'javascript',
-//       name: '@hey-api/typescript',
-//     },
-//     defineAugmentationConfig({
-//       namespaces: ['xmc.contentTransfer'],
-//     }),
-//     defineClientTransformerConfig({
-//       namespace: 'ContentTransfer',
-//     }),
-//   ],
-// });
+createClient({
+  input: './schema/experimental/content-transfer.yaml',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/experimental/client-content-transfer',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineNamespaceTransformerConfig({
+      namespace: 'EXPERIMENTAL_ContentTransfer',
+    }),
+  ],
+});
 
-// createClient({
-//   input: './schema/content.yaml',
-//   output: {
-//     format: 'prettier',
-//     lint: 'eslint',
-//     path: './src/client-content',
-//   },
-//   plugins: [
-//     defineSchemaPatcherConfig(),
-//     '@hey-api/client-fetch',
-//     '@hey-api/schemas',
-//     '@hey-api/sdk',
-//     {
-//       enums: 'javascript',
-//       name: '@hey-api/typescript',
-//     },
-//     defineAugmentationConfig({
-//       namespaces: ['xmc.preview', 'xmc.live'],
-//     }),
-//     defineClientTransformerConfig({
-//       namespace: 'Content',
-//     }),
-//   ],
-// });
+createClient({
+  input: './schema/experimental/content.yaml',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/experimental/client-content',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineNamespaceTransformerConfig({
+      namespace: 'EXPERIMENTAL_Content',
+    }),
+  ],
+});
