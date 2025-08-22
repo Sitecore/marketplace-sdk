@@ -47,8 +47,8 @@ export class EXPERIMENTAL_XMC {
   public readonly contentTransfer: ContentTransferApi;
   public readonly preview: ContentApi;
   public readonly live: ContentApi;
-  public readonly getAccessToken: () => Promise<string>;
 
+  private readonly getAccessToken: () => Promise<string>;
   private readonly apiConfigs: Record<ApiType, ApiConfig>;
   private readonly customClients: Record<ApiType, Client>;
   private readonly edgePlatformProxyUrl: string;
