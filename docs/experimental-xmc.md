@@ -186,8 +186,8 @@ When setting up your Auth0 application, use the following Sitecore configuration
 
 ```bash
 # Auth0 Configuration for Sitecore
-VITE_AUTH0_DOMAIN=https://auth.sitecorecloud.io
-VITE_AUTH0_AUDIENCE=https://api-webapp.sitecorecloud.io
+AUTH0_DOMAIN=https://auth.sitecorecloud.io
+AUTH0_AUDIENCE=https://api-webapp.sitecorecloud.io
 ```
 
 **Required Scopes:**
