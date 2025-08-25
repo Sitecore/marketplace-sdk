@@ -183,9 +183,18 @@ export class EXPERIMENTAL_XMC {
    * Calculates the edge platform proxy URL from environment or falls back to default
    */
   private calculateEdgePlatformProxyUrl(): string {
-    // Prefer environment variable EDGE_PLATFORM_PROXY_URL
-    if ((window as any).env && (window as any).env.VITE_EDGE_PLATFORM_PROXY_URL) {
-      const envUrl = (window as any).env.VITE_EDGE_PLATFORM_PROXY_URL;
+    let envUrl: string | undefined;
+
+    // Check if we're in a browser environment
+    if (typeof window !== 'undefined') {
+      // Browser environment - check window.env
+      envUrl = (window as any)?.env?.EDGE_PLATFORM_PROXY_URL;
+    } else {
+      // Node.js environment - check process.env
+      envUrl = process.env.EDGE_PLATFORM_PROXY_URL;
+    }
+
+    if (envUrl) {
       return envUrl;
     }
 
