@@ -6,6 +6,7 @@
 
 ## Enumerations
 
+- [AllowedExtensionPoints](enumerations/AllowedExtensionPoints.md)
 - [~~AllowedTouchpoints~~](enumerations/AllowedTouchpoints.md)
 - [ErrorCode](enumerations/ErrorCode.md)
 
@@ -47,5 +48,4 @@
 
 ## Type Aliases
 
-- [AllowedExtensionPoints](type-aliases/AllowedExtensionPoints.md)
 - [Message](type-aliases/Message.md)

@@ -38,3 +38,4 @@ jobs:
         run: ./scripts/publish-preview-packages.sh
         env:
           LERNA_SINCE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          TURBO_SCM_BASE: origin/main

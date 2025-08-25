@@ -22,6 +22,11 @@
       "dependsOn": [],
       "outputs": []
     },
+    "generate:module:experimental": {
+      "cache": false,
+      "dependsOn": [],
+      "outputs": []
+    },
     "generate:docs": {
       "cache": false,
       "dependsOn": [],

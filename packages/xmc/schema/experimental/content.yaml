@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: Sitecore GraphQL API
+  version: 1.0.0
+servers:
+  - url: https://example.com/content/api
+security:
+  - Bearer: []
+components:
+  securitySchemes:
+    Bearer:
+      type: http
+      description: Enter your bearer token in the text input below.
+      scheme: Bearer
+paths:
+  /graphql/v1:
+    post:
+      summary: Execute a GraphQL query
+      description: Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supported by the Preview API and Delivery API.
+      operationId: graphql
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: The GraphQL query string
+                  example: |
+                    # Query example
+                    { item(path: "/sitecore/content/Home") { name, fields { title { value } } } }
+                variables:
+                  type: object
+                  additionalProperties: {}
+                  description: Optional variables for the GraphQL query
+                  example: { 'id': '1' }
+                operationName:
+                  type: string
+                  nullable: true
+                  description: Name of the operation if multiple operations are provided
+                  example: 'GetItem'
+      responses:
+        '200':
+          description: Successful GraphQL response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    description: GraphQL response data
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        message:
+                          type: string
+                        locations:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              line:
+                                type: integer
+                              column:
+                                type: integer
+                        path:
+                          type: array
+                          items:
+                            type: string
+        '400':
+          description: Bad request (e.g., syntax error in query)
+        '401':
+          description: Unauthorized request (missing or invalid authentication)
+        '500':
+          description: Internal server error

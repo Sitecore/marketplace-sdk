@@ -14,6 +14,7 @@
     "build": "pnpm run clean && rollup -c",
     "clean": "rimraf dist tsconfig.tsbuildinfo",
     "generate:module": "tsx generate-xmc.ts",
+    "generate:module:experimental": "tsx generate-xmc-experimental.ts",
     "coverage": "vitest --coverage",
     "generate:docs": "npx typedoc --options ../../typedoc.json --out ../../docs/modules/xmc src/index.ts"
   },

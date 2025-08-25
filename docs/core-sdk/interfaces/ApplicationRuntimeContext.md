@@ -76,9 +76,9 @@ Defined in: [packages/core/src/shared-types.ts:202](https://github.com/Sitecore/
 
 ***
 
-### ~~resources~~
+### ~~resources?~~
 
-> **resources**: [`ApplicationResourceContext`](ApplicationResourceContext.md)[]
+> `optional` **resources**: [`ApplicationResourceContext`](ApplicationResourceContext.md)[]
 
 Defined in: [packages/core/src/shared-types.ts:199](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L199)
 
@@ -88,9 +88,9 @@ Use resourceAccess instead
 
 ***
 
-### ~~touchpoints~~
+### ~~touchpoints?~~
 
-> **touchpoints**: [`ApplicationTouchpointContext`](ApplicationTouchpointContext.md)[]
+> `optional` **touchpoints**: [`ApplicationTouchpointContext`](ApplicationTouchpointContext.md)[]
 
 Defined in: [packages/core/src/shared-types.ts:201](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L201)
 

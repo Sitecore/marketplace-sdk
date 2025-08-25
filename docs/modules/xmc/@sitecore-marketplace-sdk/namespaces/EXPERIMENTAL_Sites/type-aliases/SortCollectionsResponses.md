@@ -1,0 +1,21 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Sites](../README.md) / SortCollectionsResponses
+
+# Type Alias: SortCollectionsResponses
+
+> **SortCollectionsResponses** = `object`
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2045](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2045)
+
+## Properties
+
+### 204
+
+> **204**: `void`
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2049](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2049)
+
+No content
