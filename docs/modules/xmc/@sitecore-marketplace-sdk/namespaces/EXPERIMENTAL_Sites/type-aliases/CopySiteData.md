@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_Sites](../README.md) / CopySiteData
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Sites](../README.md) / CopySiteData
 
 # Type Alias: CopySiteData
 

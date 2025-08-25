@@ -1,6 +1,6 @@
-# EXPERIMENTAL_XMC - Server-to-Server API Access
+# experimental_XMC - Server-to-Server API Access
 
-The `EXPERIMENTAL_XMC` class provides direct access to Sitecore APIs without requiring the Host SDK or Client SDK mode. This is perfect for server-side applications and other scenarios where you need direct API communication.
+The `experimental_XMC` class provides direct access to Sitecore APIs without requiring the Host SDK or Client SDK mode. This is perfect for server-side applications and other scenarios where you need direct API communication.
 
 ## 🚀 Quick Start
 
@@ -13,10 +13,10 @@ npm install @sitecore-marketplace-sdk/xmc
 ### Basic Usage
 
 ```typescript
-import { EXPERIMENTAL_XMC } from '@sitecore-marketplace-sdk/xmc';
+import { experimental_createXMCClient } from '@sitecore-marketplace-sdk/xmc';
 
-// Initialize with your token provider
-const xmc = new EXPERIMENTAL_XMC({
+// Create client asynchronously
+const xmc = await experimental_createXMCClient({
   getAccessToken: async () => {
     // Return your access token here
     return await getYourAccessToken();
@@ -31,7 +31,7 @@ const languages = await xmc.sites.listLanguages({
 
 ## 🔧 Available APIs
 
-The `EXPERIMENTAL_XMC` provides access to the following APIs:
+The `experimental_XMC` provides access to the following APIs:
 
 - **Sites API** (`xmc.sites.*`) - Site and language management
 - **Pages API** (`xmc.pages.*`) - Page search and management
@@ -162,20 +162,20 @@ For better IntelliSense and type safety, import the experimental type namespaces
 
 ```typescript
 import {
-  EXPERIMENTAL_Sites,
-  EXPERIMENTAL_Pages,
-  EXPERIMENTAL_Authoring,
-  EXPERIMENTAL_ContentTransfer,
-  EXPERIMENTAL_Content,
+  experimental_Sites,
+  experimental_Pages,
+  experimental_Authoring,
+  experimental_ContentTransfer,
+  experimental_Content,
 } from '@sitecore-marketplace-sdk/xmc';
 
 // Type your responses
 const response = await xmc.sites.listLanguages();
-let data: EXPERIMENTAL_Sites.ListLanguagesResponse = response.data!;
+let data: experimental_Sites.ListLanguagesResponse = response.data!;
 
 // Type your requests
 const searchResponse = await xmc.pages.search();
-let searchData: EXPERIMENTAL_Pages.SearchResponse = searchResponse.data!;
+let searchData: experimental_Pages.SearchResponse = searchResponse.data!;
 ```
 
 ## 🔐 Authentication Setup
@@ -200,7 +200,7 @@ VITE_AUTH0_AUDIENCE=https://api-webapp.sitecorecloud.io
 
 ```typescript
 // Example: Next.js server-side with user token
-const xmc = new EXPERIMENTAL_XMC({
+const xmc = await experimental_createXMCClient({
   getAccessToken: async () => {
     // Your server-side token logic (e.g., from session, database, etc.)
     return await getUserAccessToken();
@@ -215,14 +215,14 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 const { getAccessTokenSilently } = useAuth0();
 
-const xmc = new EXPERIMENTAL_XMC({
+const xmc = await experimental_createXMCClient({
   getAccessToken: () => getAccessTokenSilently(),
 });
 ```
 
 ## 🖥️ Demo Application Setup
 
-Want to see `EXPERIMENTAL_XMC` in action? This shows how to build a standalone application that runs independently outside of Sitecore and authenticates using Sitecore Identity. Here's the core integration template:
+Want to see `experimental_XMC` in action? This shows how to build a standalone application that runs independently outside of Sitecore and authenticates using Sitecore Identity. Here's the core integration template:
 
 The demo app shows two approaches:
 
@@ -258,7 +258,7 @@ function AuthProvider({ children }) {
 
 ```typescript
 // src/features/client-sdk/providers/ExperimentalXMCProvider.tsx
-import { EXPERIMENTAL_XMC } from '@sitecore-marketplace-sdk/xmc';
+import { experimental_createXMCClient } from '@sitecore-marketplace-sdk/xmc';
 import { useAuth0 } from '@auth0/auth0-react';
 
 export const ExperimentalXMCProvider = ({ children }) => {
@@ -269,7 +269,7 @@ export const ExperimentalXMCProvider = ({ children }) => {
     const init = async () => {
       if (isLoading || !isAuthenticated) return;
 
-      const xmc = new EXPERIMENTAL_XMC({
+      const xmc = await experimental_createXMCClient({
         getAccessToken: () => getAccessTokenSilently(),
       });
 
@@ -313,13 +313,13 @@ const ExperimentalXMCDemo = () => {
 
 ## 🏪 Setting Up Your Sitecore Marketplace App
 
-To test the `EXPERIMENTAL_XMC` package, you need to create a custom app with Standalone extension points:
+To test the `experimental_XMC` package, you need to create a custom app with Standalone extension points:
 
 1. **Create a Custom App**: Follow the [Sitecore Marketplace documentation](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) to create your custom app with Standalone extension points.
 
 2. **Install the App**: Once created, install your app in your Sitecore environment.
 
-3. **Get Context IDs**: After installation, you can use a regular standalone application that uses the Sitecore Client SDK. Using the Client SDK, you can use the `application.context` query to get context information temporarily, which provides the context IDs needed for the `EXPERIMENTAL_XMC` package.
+3. **Get Context IDs**: After installation, you can use a regular standalone application that uses the Sitecore Client SDK. Using the Client SDK, you can use the `application.context` query to get context information temporarily, which provides the context IDs needed for the `experimental_XMC` package.
 
 ```typescript
 // Using Client SDK to get context information

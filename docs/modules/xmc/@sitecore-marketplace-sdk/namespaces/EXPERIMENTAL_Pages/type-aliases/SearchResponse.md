@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_Pages](../README.md) / SearchResponse
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Pages](../README.md) / SearchResponse
 
 # Type Alias: SearchResponse
 

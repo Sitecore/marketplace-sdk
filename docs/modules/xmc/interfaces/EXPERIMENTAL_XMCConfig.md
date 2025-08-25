@@ -2,9 +2,9 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../README.md) / EXPERIMENTAL\_XMCConfig
+[@sitecore-marketplace-sdk/xmc](../README.md) / experimental\_XMCConfig
 
-# Interface: EXPERIMENTAL\_XMCConfig
+# Interface: experimental\_XMCConfig
 
 Defined in: [packages/xmc/src/experimental\_xmc.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L31)
 

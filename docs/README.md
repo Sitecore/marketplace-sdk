@@ -21,11 +21,11 @@ React-based SDK for building client-side marketplace applications.
 Extended Marketplace Client package with API access and experimental features.
 
 - [XMC Module Documentation](./modules/xmc/README.md)
-- [EXPERIMENTAL_XMC Documentation](./experimental-xmc.md) - Server-to-server API access
+- [experimental_XMC Documentation](./experimental-xmc.md) - Server-to-server API access
 
 ## 🎯 Use Cases
 
 - **Client-Side Apps**: Use Client SDK for React applications
-- **Server-Side Apps**: Use EXPERIMENTAL_XMC for Node.js, serverless functions
+- **Server-Side Apps**: Use experimental_XMC for Node.js, serverless functions
 - **Microservices**: Direct API access for service-to-service communication
 - **Build Scripts**: Content deployment and automation scripts

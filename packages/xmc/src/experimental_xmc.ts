@@ -27,9 +27,16 @@ interface ApiConfig {
 // Supported API types
 type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' | 'live';
 
-// Configuration type for Experimental_XMC
-export interface EXPERIMENTAL_XMCConfig {
+// Configuration type for experimental_XMC
+export interface experimental_XMCConfig {
   getAccessToken: () => Promise<string>;
+}
+
+// Helper function to create experimental_XMC client asynchronously
+export async function experimental_createXMCClient(
+  config: experimental_XMCConfig,
+): Promise<experimental_XMC> {
+  return new experimental_XMC(config);
 }
 
 // Type definitions for the API objects with full IntelliSense support
@@ -40,7 +47,7 @@ export type AuthoringApi = typeof experimental_authoring_sdk;
 export type ContentTransferApi = typeof experimental_content_transfer_sdk;
 export type ContentApi = typeof experimental_content_sdk;
 
-export class EXPERIMENTAL_XMC {
+export class experimental_XMC {
   public readonly sites: SitesApi;
   public readonly pages: PagesApi;
   public readonly authoring: AuthoringApi;
@@ -54,8 +61,8 @@ export class EXPERIMENTAL_XMC {
   private readonly edgePlatformProxyUrl: string;
   private readonly defaultEdgePlatformProxyUrl = 'https://edge-platform.sitecorecloud.io';
 
-  constructor(config: EXPERIMENTAL_XMCConfig) {
-    console.log('🔧 [Experimental_XMC] Constructor called');
+  constructor(config: experimental_XMCConfig) {
+    console.log('🔧 [experimental_XMC] Constructor called');
     this.getAccessToken = config.getAccessToken;
     this.edgePlatformProxyUrl = this.calculateEdgePlatformProxyUrl();
 
@@ -116,7 +123,7 @@ export class EXPERIMENTAL_XMC {
 
     for (const [apiType, config] of Object.entries(this.apiConfigs)) {
       const authFunction = async () => {
-        console.log(`🔑 [Experimental_XMC] Getting access token for ${apiType}`);
+        console.log(`🔑 [experimental_XMC] Getting access token for ${apiType}`);
         const token = await this.getAccessToken();
         return token;
       };
@@ -156,7 +163,7 @@ export class EXPERIMENTAL_XMC {
 
           // Create wrapped method and cache it
           const wrappedMethod = (options?: any) => {
-            console.log(`🎭 [Experimental_XMC] Calling ${apiType}.${propKey}`);
+            console.log(`🎭 [experimental_XMC] Calling ${apiType}.${propKey}`);
 
             const result = originalMethod({
               ...options,

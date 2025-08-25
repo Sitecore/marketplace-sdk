@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_ContentTransfer](../README.md) / SaveChunkErrors
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_ContentTransfer](../README.md) / SaveChunkErrors
 
 # Type Alias: SaveChunkErrors
 

@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_ContentTransfer](../README.md) / CreateContentTransferErrors
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_ContentTransfer](../README.md) / CreateContentTransferErrors
 
 # Type Alias: CreateContentTransferErrors
 

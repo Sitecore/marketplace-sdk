@@ -2,21 +2,21 @@
 '@sitecore-marketplace-sdk/xmc': patch
 ---
 
-# Experimental XMC - Server-to-Server API Access
+# experimental_XMC - Server-to-Server API Access
 
 ## 🚀 What's New
 
 ### Server-to-Server Support
 
-EXPERIMENTAL_XMC enables API access to Sitecore APIs without requiring the Host SDK or Client SDK mode. Perfect for server-side applications that need to communicate with Sitecore APIs.
+experimental_XMC enables API access to Sitecore APIs without requiring the Host SDK or Client SDK mode. Perfect for server-side applications that need to communicate with Sitecore APIs.
 
 ### Setup
 
 ```typescript
-import { EXPERIMENTAL_XMC } from '@sitecore-marketplace-sdk/xmc';
+import { experimental_createXMCClient } from '@sitecore-marketplace-sdk/xmc';
 
 // No Host SDK required
-const xmc = new EXPERIMENTAL_XMC({
+const xmc = await experimental_createXMCClient({
   getAccessToken: () => auth0.getAccessTokenSilently(),
 });
 ```
@@ -24,11 +24,11 @@ const xmc = new EXPERIMENTAL_XMC({
 ### Enhanced Type Safety
 
 ```typescript
-import { EXPERIMENTAL_Sites } from '@sitecore-marketplace-sdk/xmc';
+import { experimental_Sites } from '@sitecore-marketplace-sdk/xmc';
 
 // Optional: Full IntelliSense support with types
 const response = await xmc.sites.listLanguages();
-let data: EXPERIMENTAL_Sites.ListLanguagesResponse = response.data!;
+let data: experimental_Sites.ListLanguagesResponse = response.data!;
 ```
 
 ## 🎯 Quick Start - Server-to-Server
@@ -36,15 +36,15 @@ let data: EXPERIMENTAL_Sites.ListLanguagesResponse = response.data!;
 ### 1. Install and Import
 
 ```typescript
-import { EXPERIMENTAL_XMC } from '@sitecore-marketplace-sdk/xmc';
+import { experimental_createXMCClient } from '@sitecore-marketplace-sdk/xmc';
 // Optional: import types for enhanced IntelliSense
-import { EXPERIMENTAL_Sites } from '@sitecore-marketplace-sdk/xmc';
+import { experimental_Sites } from '@sitecore-marketplace-sdk/xmc';
 ```
 
 ### 2. Initialize with Auth
 
 ```typescript
-const xmc = new EXPERIMENTAL_XMC({
+const xmc = await experimental_createXMCClient({
   getAccessToken: () => auth0.getAccessTokenSilently(),
 });
 ```
@@ -134,7 +134,7 @@ const liveContent = await xmc.live.graphql({
 
 ```typescript
 // Node.js server, Azure Functions, AWS Lambda, etc.
-const xmc = new EXPERIMENTAL_XMC({
+const xmc = await experimental_createXMCClient({
   getAccessToken: () => getServerSideToken(),
 });
 
@@ -146,8 +146,8 @@ const languages = await xmc.sites.listLanguages();
 
 For enhanced IntelliSense, you can optionally import type namespaces:
 
-- `EXPERIMENTAL_Sites.*` - Sites API types
-- `EXPERIMENTAL_Pages.*` - Pages API types
-- `EXPERIMENTAL_Authoring.*` - Authoring API types
-- `EXPERIMENTAL_ContentTransfer.*` - Content Transfer API types
-- `EXPERIMENTAL_Content.*` - Content API types
+- `experimental_Sites.*` - Sites API types
+- `experimental_Pages.*` - Pages API types
+- `experimental_Authoring.*` - Authoring API types
+- `experimental_ContentTransfer.*` - Content Transfer API types
+- `experimental_Content.*` - Content API types

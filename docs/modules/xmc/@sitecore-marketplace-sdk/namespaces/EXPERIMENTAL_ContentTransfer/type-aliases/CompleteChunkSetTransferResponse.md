@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_ContentTransfer](../README.md) / CompleteChunkSetTransferResponse
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_ContentTransfer](../README.md) / CompleteChunkSetTransferResponse
 
 # Type Alias: CompleteChunkSetTransferResponse
 

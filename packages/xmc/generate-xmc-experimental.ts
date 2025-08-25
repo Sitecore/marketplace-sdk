@@ -19,7 +19,7 @@ createClient({
       name: '@hey-api/typescript',
     },
     defineNamespaceTransformerConfig({
-      namespace: 'EXPERIMENTAL_Sites',
+      namespace: 'experimental_Sites',
     }),
   ],
 });
@@ -41,7 +41,7 @@ createClient({
       name: '@hey-api/typescript',
     },
     defineNamespaceTransformerConfig({
-      namespace: 'EXPERIMENTAL_Pages',
+      namespace: 'experimental_Pages',
     }),
   ],
 });
@@ -63,7 +63,7 @@ createClient({
       name: '@hey-api/typescript',
     },
     defineNamespaceTransformerConfig({
-      namespace: 'EXPERIMENTAL_Authoring',
+      namespace: 'experimental_Authoring',
     }),
   ],
 });
@@ -85,7 +85,7 @@ createClient({
       name: '@hey-api/typescript',
     },
     defineNamespaceTransformerConfig({
-      namespace: 'EXPERIMENTAL_ContentTransfer',
+      namespace: 'experimental_ContentTransfer',
     }),
   ],
 });
@@ -107,7 +107,7 @@ createClient({
       name: '@hey-api/typescript',
     },
     defineNamespaceTransformerConfig({
-      namespace: 'EXPERIMENTAL_Content',
+      namespace: 'experimental_Content',
     }),
   ],
 });

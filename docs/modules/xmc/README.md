@@ -9,20 +9,20 @@
 - [Authoring](@sitecore-marketplace-sdk/namespaces/Authoring/README.md)
 - [Content](@sitecore-marketplace-sdk/namespaces/Content/README.md)
 - [ContentTransfer](@sitecore-marketplace-sdk/namespaces/ContentTransfer/README.md)
-- [EXPERIMENTAL\_Authoring](@sitecore-marketplace-sdk/namespaces/EXPERIMENTAL_Authoring/README.md)
-- [EXPERIMENTAL\_Content](@sitecore-marketplace-sdk/namespaces/EXPERIMENTAL_Content/README.md)
-- [EXPERIMENTAL\_ContentTransfer](@sitecore-marketplace-sdk/namespaces/EXPERIMENTAL_ContentTransfer/README.md)
-- [EXPERIMENTAL\_Pages](@sitecore-marketplace-sdk/namespaces/EXPERIMENTAL_Pages/README.md)
-- [EXPERIMENTAL\_Sites](@sitecore-marketplace-sdk/namespaces/EXPERIMENTAL_Sites/README.md)
+- [experimental\_Authoring](@sitecore-marketplace-sdk/namespaces/experimental_Authoring/README.md)
+- [experimental\_Content](@sitecore-marketplace-sdk/namespaces/experimental_Content/README.md)
+- [experimental\_ContentTransfer](@sitecore-marketplace-sdk/namespaces/experimental_ContentTransfer/README.md)
+- [experimental\_Pages](@sitecore-marketplace-sdk/namespaces/experimental_Pages/README.md)
+- [experimental\_Sites](@sitecore-marketplace-sdk/namespaces/experimental_Sites/README.md)
 - [Xmapp](@sitecore-marketplace-sdk/namespaces/Xmapp/README.md)
 
 ## Classes
 
-- [EXPERIMENTAL\_XMC](classes/EXPERIMENTAL_XMC.md)
+- [experimental\_XMC](classes/experimental_XMC.md)
 
 ## Interfaces
 
-- [EXPERIMENTAL\_XMCConfig](interfaces/EXPERIMENTAL_XMCConfig.md)
+- [experimental\_XMCConfig](interfaces/experimental_XMCConfig.md)
 - [MutationMap](interfaces/MutationMap.md)
 - [QueryMap](interfaces/QueryMap.md)
 
@@ -37,3 +37,7 @@
 ## Variables
 
 - [XMC](variables/XMC.md)
+
+## Functions
+
+- [experimental\_createXMCClient](functions/experimental_createXMCClient.md)

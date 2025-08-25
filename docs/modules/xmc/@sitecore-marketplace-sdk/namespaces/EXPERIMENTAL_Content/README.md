@@ -2,9 +2,9 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../README.md) / EXPERIMENTAL\_Content
+[@sitecore-marketplace-sdk/xmc](../../../README.md) / experimental\_Content
 
-# EXPERIMENTAL\_Content
+# experimental\_Content
 
 ## Type Aliases
 

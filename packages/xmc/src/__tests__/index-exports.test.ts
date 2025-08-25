@@ -6,11 +6,11 @@ vi.mock('../client-sdk-fetch', () => ({
 }));
 
 // Test imports from index.ts
-import { EXPERIMENTAL_XMC, XMC } from '../index';
+import { experimental_XMC, XMC } from '../index';
 
 // Test type imports from index.ts
 import type {
-  EXPERIMENTAL_XMCConfig,
+  experimental_XMCConfig,
   SitesApi,
   PagesApi,
   AuthoringApi,
@@ -18,36 +18,36 @@ import type {
   ContentApi,
 } from '../index';
 
-// Test EXPERIMENTAL_ namespace imports like in demo app
+// Test experimental_ namespace imports like in demo app
 import {
-  EXPERIMENTAL_Sites,
-  EXPERIMENTAL_Pages,
-  EXPERIMENTAL_Authoring,
-  EXPERIMENTAL_ContentTransfer,
-  EXPERIMENTAL_Content,
+  experimental_Sites,
+  experimental_Pages,
+  experimental_Authoring,
+  experimental_ContentTransfer,
+  experimental_Content,
 } from '../index';
 
 describe('Index Exports', () => {
-  describe('EXPERIMENTAL_XMC Export', () => {
-    it('should export EXPERIMENTAL_XMC class', () => {
-      expect(EXPERIMENTAL_XMC).toBeDefined();
-      expect(typeof EXPERIMENTAL_XMC).toBe('function');
+  describe('experimental_XMC Export', () => {
+    it('should export experimental_XMC class', () => {
+      expect(experimental_XMC).toBeDefined();
+      expect(typeof experimental_XMC).toBe('function');
     });
 
-    it('should allow creating EXPERIMENTAL_XMC instance', () => {
+    it('should allow creating experimental_XMC instance', () => {
       const mockGetAccessToken = vi.fn().mockResolvedValue('test-token');
 
-      const xmc = new EXPERIMENTAL_XMC({
+      const xmc = new experimental_XMC({
         getAccessToken: mockGetAccessToken,
       });
 
-      expect(xmc).toBeInstanceOf(EXPERIMENTAL_XMC);
-      expect(xmc.getAccessToken).toBe(mockGetAccessToken);
+      expect(xmc).toBeInstanceOf(experimental_XMC);
+      // Note: getAccessToken is private, so we can't test it directly
     });
 
     it('should have all API properties', () => {
       const mockGetAccessToken = vi.fn().mockResolvedValue('test-token');
-      const xmc = new EXPERIMENTAL_XMC({
+      const xmc = new experimental_XMC({
         getAccessToken: mockGetAccessToken,
       });
 
@@ -93,7 +93,7 @@ describe('Index Exports', () => {
 
   describe('Type Exports from Index', () => {
     it('should export all required types', () => {
-      const config: EXPERIMENTAL_XMCConfig = {
+      const config: experimental_XMCConfig = {
         getAccessToken: async () => 'test-token',
       };
       const sitesApi: SitesApi = {} as SitesApi;
@@ -110,21 +110,21 @@ describe('Index Exports', () => {
       expect(contentApi).toBeDefined();
     });
 
-    it('should support all EXPERIMENTAL_ namespaces', () => {
+    it('should support all experimental_ namespaces', () => {
       // Test that we can use types from all namespaces (TypeScript compilation test)
-      const mockSitesData: EXPERIMENTAL_Sites.ListLanguagesResponse = [
+      const mockSitesData: experimental_Sites.ListLanguagesResponse = [
         { id: 'test-id', iso: 'en', regionalIsoCode: 'en-US' },
       ];
-      const mockPagesData: EXPERIMENTAL_Pages.SearchResponse = {
+      const mockPagesData: experimental_Pages.SearchResponse = {
         // PagesSearchResult structure
         results: [],
         totalCount: 0,
       };
-      const mockAuthoringData: EXPERIMENTAL_Authoring.GraphqlResponse = {
+      const mockAuthoringData: experimental_Authoring.GraphqlResponse = {
         data: { test: 'value' },
         errors: [],
       };
-      const mockContentTransferData: EXPERIMENTAL_ContentTransfer.GetContentTransferStatusResponse =
+      const mockContentTransferData: experimental_ContentTransfer.GetContentTransferStatusResponse =
         {
           State: 'Completed',
           ChunkSetsMetadata: [
@@ -135,7 +135,7 @@ describe('Index Exports', () => {
             },
           ],
         };
-      const mockContentData: EXPERIMENTAL_Content.GraphqlResponse = {
+      const mockContentData: experimental_Content.GraphqlResponse = {
         data: { content: 'test' },
       };
 
@@ -152,12 +152,12 @@ describe('Index Exports', () => {
   describe('Integration Tests', () => {
     it('should support full integration with proper types', () => {
       const mockGetAccessToken = vi.fn().mockResolvedValue('test-token');
-      const config: EXPERIMENTAL_XMCConfig = {
+      const config: experimental_XMCConfig = {
         getAccessToken: mockGetAccessToken,
       };
 
-      // Create EXPERIMENTAL_XMC instance
-      const xmc = new EXPERIMENTAL_XMC(config);
+      // Create experimental_XMC instance
+      const xmc = new experimental_XMC(config);
 
       // Test that all APIs are available and properly typed
       expect(typeof xmc.sites.listLanguages).toBe('function');

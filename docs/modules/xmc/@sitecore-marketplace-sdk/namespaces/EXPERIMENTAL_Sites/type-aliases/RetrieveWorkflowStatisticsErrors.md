@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_Sites](../README.md) / RetrieveWorkflowStatisticsErrors
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Sites](../README.md) / RetrieveWorkflowStatisticsErrors
 
 # Type Alias: RetrieveWorkflowStatisticsErrors
 

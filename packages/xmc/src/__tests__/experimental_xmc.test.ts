@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { EXPERIMENTAL_XMC, type EXPERIMENTAL_XMCConfig } from '../experimental_xmc';
+import { experimental_XMC, type experimental_XMCConfig } from '../experimental_xmc';
 
 // Mock the @hey-api/client-fetch module
 vi.mock('@hey-api/client-fetch', () => ({
@@ -33,9 +33,9 @@ vi.mock('../experimental/client-content/sdk.gen', () => ({
   graphql: vi.fn(),
 }));
 
-describe('EXPERIMENTAL_XMC', () => {
+describe('experimental_XMC', () => {
   let mockGetAccessToken: () => Promise<string>;
-  let experimentalXMC: EXPERIMENTAL_XMC;
+  let experimentalXMC: experimental_XMC;
 
   beforeEach(() => {
     // Reset all mocks
@@ -51,7 +51,7 @@ describe('EXPERIMENTAL_XMC', () => {
     });
 
     // Create instance
-    experimentalXMC = new EXPERIMENTAL_XMC({
+    experimentalXMC = new experimental_XMC({
       getAccessToken: mockGetAccessToken,
     });
   });
@@ -62,8 +62,8 @@ describe('EXPERIMENTAL_XMC', () => {
 
   describe('Constructor', () => {
     it('should create an instance with correct configuration', () => {
-      expect(experimentalXMC).toBeInstanceOf(EXPERIMENTAL_XMC);
-      expect(experimentalXMC.getAccessToken).toBe(mockGetAccessToken);
+      expect(experimentalXMC).toBeInstanceOf(experimental_XMC);
+      // Note: getAccessToken is private, so we can't test it directly
     });
 
     it('should have all required API properties', () => {
@@ -84,12 +84,12 @@ describe('EXPERIMENTAL_XMC', () => {
       // Mock environment variable
       Object.defineProperty(window, 'env', {
         value: {
-          VITE_EDGE_PLATFORM_PROXY_URL: 'https://custom-edge.example.com',
+          EDGE_PLATFORM_PROXY_URL: 'https://custom-edge.example.com',
         },
         writable: true,
       });
 
-      const customXMC = new EXPERIMENTAL_XMC({
+      const customXMC = new experimental_XMC({
         getAccessToken: mockGetAccessToken,
       });
 
@@ -155,7 +155,7 @@ describe('EXPERIMENTAL_XMC', () => {
   describe('Error Handling', () => {
     it('should handle getAccessToken errors gracefully', async () => {
       const errorGetAccessToken = vi.fn().mockRejectedValue(new Error('Token error'));
-      const errorXMC = new EXPERIMENTAL_XMC({
+      const errorXMC = new experimental_XMC({
         getAccessToken: errorGetAccessToken,
       });
 

@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_Authoring](../README.md) / GraphqlData
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Authoring](../README.md) / GraphqlData
 
 # Type Alias: GraphqlData
 

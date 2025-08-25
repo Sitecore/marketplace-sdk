@@ -2,7 +2,7 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [EXPERIMENTAL\_Sites](../README.md) / RemoveFavoriteSiteTemplateErrors
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Sites](../README.md) / RemoveFavoriteSiteTemplateErrors
 
 # Type Alias: RemoveFavoriteSiteTemplateErrors
 

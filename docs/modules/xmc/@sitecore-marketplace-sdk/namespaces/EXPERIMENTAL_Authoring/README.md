@@ -2,9 +2,9 @@
 
 ***
 
-[@sitecore-marketplace-sdk/xmc](../../../README.md) / EXPERIMENTAL\_Authoring
+[@sitecore-marketplace-sdk/xmc](../../../README.md) / experimental\_Authoring
 
-# EXPERIMENTAL\_Authoring
+# experimental\_Authoring
 
 ## Type Aliases
 
