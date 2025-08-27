@@ -252,8 +252,8 @@ AUTH0_AUDIENCE='https://api-webapp.sitecorecloud.io'
 AUTH0_SCOPE='openid profile email offline_access'
 
 # Experimental Phase Configuration
-AUTH0_ORGANIZATION_ID='app orgId'
-AUTH0_TENANT_ID='tenantId' // You can get the tenantId from stand-alone app url as you open from portal shell
+SITECORE_ORGANIZATION_ID='app orgId'
+SITECORE_TENANT_ID='tenantId' // You can get the tenantId from stand-alone app url as you open from portal shell
 ```
 
 **Auth0 Configuration (lib/auth0.js):**
@@ -277,8 +277,8 @@ export const auth0 = new Auth0Client({
   authorizationParameters: {
     scope: process.env.AUTH0_SCOPE,
     audience: process.env.AUTH0_AUDIENCE,
-    organization_id: process.env.AUTH0_ORGANIZATION_ID,
-    tenant_id: process.env.AUTH0_TENANT_ID,
+    organization_id: process.env.SITECORE_ORGANIZATION_ID,
+    tenant_id: process.env.SITECORE_TENANT_ID,
   },
 });
 ```
@@ -375,7 +375,7 @@ During the experimental phase, you must configure your organization ID and tenan
 authorizationParameters: {
   scope: process.env.AUTH0_SCOPE,
   audience: process.env.AUTH0_AUDIENCE,
-  organization_id: process.env.AUTH0_ORGANIZATION_ID, // Required for experimental phase
-  tenant_id: process.env.AUTH0_TENANT_ID // Required for experimental phase
+  organization_id: process.env.SITECORE_ORGANIZATION_ID, // Required for experimental phase
+  tenant_id: process.env.SITECORE_TENANT_ID // Required for experimental phase
 }
 ```
