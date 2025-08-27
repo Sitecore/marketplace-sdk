@@ -194,7 +194,6 @@ AUTH0_AUDIENCE=https://api-webapp.sitecorecloud.io
 
 - `openid profile email` - Basic user information
 - `offline_access` - Refresh token support
-- `read:marketplace` - Marketplace API access
 
 ### Server-Side Token Provider
 
@@ -211,9 +210,9 @@ const xmc = await experimental_createXMCClient({
 ### Auth0 Integration (Client-Side)
 
 ```typescript
-import { useAuth0 } from '@auth0/auth0-react';
+import { useUser } from '@auth0/nextjs-auth0';
 
-const { getAccessTokenSilently } = useAuth0();
+const { user } = useUser();
 
 const xmc = await experimental_createXMCClient({
   getAccessToken: () => getAccessTokenSilently(),
@@ -222,104 +221,115 @@ const xmc = await experimental_createXMCClient({
 
 ## 🖥️ Demo Application Setup
 
-Want to see `experimental_XMC` in action? This shows how to build a standalone application that runs independently outside of Sitecore and authenticates using Sitecore Identity. Here's the core integration template:
+Want to see `experimental_XMC` in action? This shows how to build a standalone Next.js application that runs inside Sitecore Marketplace Extension points inside iframe.
 
-The demo app shows two approaches:
+**💡 Getting Started:** You can start with the official [Auth0 Next.js Sample Application](https://github.com/auth0-samples/auth0-nextjs-samples/tree/main/Sample-01) and then apply the modifications shown below to integrate with Sitecore's experimental XMC functionality.
 
-#### A. Using React Context (Recommended)
+**⚠️ IMPORTANT:** The configuration below includes critical iframe compatibility settings that are required for the app to work when embedded in the Sitecore portal shell.
 
-**AuthProvider Setup:**
+Here's the core integration template:
 
-```typescript
-// src/providers/AuthProvider.tsx
-import { Auth0Provider } from '@auth0/auth0-react';
-import { audience, clientId, domain } from '../config/envConfig';
+### Next.js App Configuration
 
-function AuthProvider({ children }) {
-  return (
-    <Auth0Provider
-      domain={domain}
-      clientId={clientId}
-      authorizationParams={{
-        audience: audience,
-        redirect_uri: window.location.origin,
-        scope: 'openid profile email offline_access read:marketplace',
-      }}
-      useRefreshTokens={true}
-      useRefreshTokensFallback={true}
-    >
-      {children}
-    </Auth0Provider>
-  );
-}
+**Install Dependencies:**
+
+```bash
+npm install @auth0/nextjs-auth0 @sitecore-marketplace-sdk/xmc
 ```
 
-**ExperimentalXMC Provider:**
+**⚠️ CRITICAL:** The Auth0 configuration below includes essential iframe compatibility settings. Without these settings, login will fail when your app runs inside an iframe.
 
-```typescript
-// src/features/client-sdk/providers/ExperimentalXMCProvider.tsx
+**Environment Variables (.env.local):**
+
+```bash
+# Auth0 Configuration
+AUTH0_SECRET='LONG_RANDOM_VALUE'
+APP_BASE_URL='http://localhost:3000'
+AUTH0_DOMAIN='https://auth.sitecorecloud.io'
+AUTH0_CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
+AUTH0_CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
+AUTH0_AUDIENCE='https://api-webapp.sitecorecloud.io'
+AUTH0_SCOPE='openid profile email offline_access'
+
+# Experimental Phase Configuration
+AUTH0_ORGANIZATION_ID='app orgId'
+AUTH0_TENANT_ID='tenantId' // You can get the tenantId from stand-alone app url as you open from portal shell
+```
+
+**Auth0 Configuration (lib/auth0.js):**
+
+```javascript
+import { Auth0Client } from '@auth0/nextjs-auth0/server';
+
+// Initialize the Auth0 client with iframe-compatible settings
+// ⚠️ CRITICAL: The cookie configuration below is REQUIRED for iframe compatibility
+export const auth0 = new Auth0Client({
+  session: {
+    cookie: {
+      sameSite: 'none', // Required for iframe login
+      secure: true, // Required for iframe login
+    },
+  },
+  transactionCookie: {
+    sameSite: 'none', // Required for iframe login
+    secure: true, // Required for iframe login
+  },
+  authorizationParameters: {
+    scope: process.env.AUTH0_SCOPE,
+    audience: process.env.AUTH0_AUDIENCE,
+    organization_id: process.env.AUTH0_ORGANIZATION_ID,
+    tenant_id: process.env.AUTH0_TENANT_ID,
+  },
+});
+```
+
+**API Route for Server-Side XMC (app/api/xmc/route.js):**
+
+```javascript
+import { NextResponse } from 'next/server';
+import { auth0 } from '../../../lib/auth0';
 import { experimental_createXMCClient } from '@sitecore-marketplace-sdk/xmc';
-import { useAuth0 } from '@auth0/auth0-react';
 
-export const ExperimentalXMCProvider = ({ children }) => {
-  const [experimentalXMC, setExperimentalXMC] = useState(null);
-  const { getAccessTokenSilently, isAuthenticated, isLoading } = useAuth0();
+export const GET = async function xmcApi() {
+  try {
+    const session = await auth0.getSession();
 
-  useEffect(() => {
-    const init = async () => {
-      if (isLoading || !isAuthenticated) return;
+    if (!session) {
+      return NextResponse.json({ error: 'Not authenticated' }, { status: 401 });
+    }
 
-      const xmc = await experimental_createXMCClient({
-        getAccessToken: () => getAccessTokenSilently(),
-      });
+    // Create XMC client
+    const xmc = await experimental_createXMCClient({
+      getAccessToken: async () => {
+        const { token: accessToken } = await auth0.getAccessToken();
+        return accessToken;
+      },
+    });
 
-      setExperimentalXMC(xmc);
-    };
-
-    init();
-  }, [getAccessTokenSilently, isAuthenticated, isLoading]);
-
-  return (
-    <ExperimentalXMCContext.Provider value={experimentalXMC}>
-      {children}
-    </ExperimentalXMCContext.Provider>
-  );
-};
-```
-
-**Using the Hook:**
-
-```typescript
-// src/components/ExperimentalXMCDemo.tsx
-import { useExperimentalXMC } from '../features/client-sdk/hooks/useExperimentalXMC';
-
-const ExperimentalXMCDemo = () => {
-  const XMC = useExperimentalXMC();
-
-  const handleSitesTest = async () => {
-    const response = await XMC.sites.listLanguages({
+    // Example API call
+    const contextId = 'your-context-id'; // Replace with actual context ID
+    const response = await xmc.sites.listLanguages({
       query: { sitecoreContextId: contextId },
     });
-    console.log('Languages:', response.data);
-  };
 
-  return (
-    <div>
-      <button onClick={handleSitesTest}>Test Sites API</button>
-    </div>
-  );
+    return NextResponse.json(response.data);
+  } catch (error) {
+    return NextResponse.json({ error: error.message }, { status: error.status || 500 });
+  }
 };
 ```
 
 ## 🏪 Setting Up Your Sitecore Marketplace App
 
-To test the `experimental_XMC` package, you need to create a custom app with Standalone extension points:
+To test the `experimental_XMC` package, you need to create a custom app with Standalone Extension point besides other Extension points:
 
-1. **Create a Custom App**: Follow the [Sitecore Marketplace documentation](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) to create your custom app with Standalone extension points.
+1. **Create a Custom App**: Follow the [Sitecore Marketplace documentation](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) to create your custom app with Standalone Extension point and other Extension points of your choice.
 
 2. **Install the App**: Once created, install your app in your Sitecore environment.
 
-3. **Get Context IDs**: After installation, you can use a regular standalone application that uses the Sitecore Client SDK. Using the Client SDK, you can use the `application.context` query to get context information temporarily, which provides the context IDs needed for the `experimental_XMC` package.
+3. **Get Organization and Tenant IDs**: After installation, when you open your standalone app from the portal shell, you can extract the `orgId` and `tenantId` from the app URL. These values are required for the experimental phase configuration.
+
+4. **Get Context IDs**: After installation, you can use a regular standalone application that uses the Sitecore Client SDK. Using the Client SDK, you can use the `application.context` query to get context information temporarily, which provides the context IDs needed for the `experimental_XMC` package.
 
 ```typescript
 // Using Client SDK to get context information
@@ -335,3 +345,39 @@ const response = await xmc.sites.listLanguages({
   query: { sitecoreContextId: contextId },
 });
 ```
+
+## 🔧 Important Configuration Notes
+
+### Iframe Compatibility
+
+**⚠️ CRITICAL REQUIREMENT:** For the experimental phase, your Next.js app must be configured to work inside iframes. The following cookie configuration is **MANDATORY** for login to work inside iframes:
+
+```javascript
+session: {
+  cookie: {
+    sameSite: 'none',  // Required for iframe login
+    secure: true       // Required for iframe login
+  }
+},
+transactionCookie: {
+  sameSite: 'none',    // Required for iframe login
+  secure: true         // Required for iframe login
+}
+```
+
+**Why this is required:** When your app runs inside an iframe within the Sitecore portal shell, browsers enforce strict cookie policies. The `sameSite: 'none'` and `secure: true` settings allow authentication cookies to be sent across different origins, which is necessary for the login flow to work properly within the iframe context.
+
+### Organization and Tenant IDs
+
+During the experimental phase, you must configure your organization ID and tenant ID in the Auth0 configuration:
+
+```javascript
+authorizationParameters: {
+  scope: process.env.AUTH0_SCOPE,
+  audience: process.env.AUTH0_AUDIENCE,
+  organization_id: process.env.AUTH0_ORGANIZATION_ID, // Required for experimental phase
+  tenant_id: process.env.AUTH0_TENANT_ID // Required for experimental phase
+}
+```
+
+These values are provided by Sitecore for the experimental phase and are required for proper authentication and authorization.
