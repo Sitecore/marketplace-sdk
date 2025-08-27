@@ -379,5 +379,3 @@ authorizationParameters: {
   tenant_id: process.env.AUTH0_TENANT_ID // Required for experimental phase
 }
 ```
-
-These values are provided by Sitecore for the experimental phase and are required for proper authentication and authorization.
