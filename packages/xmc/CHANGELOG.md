@@ -8,7 +8,7 @@
 
   ## 🚀 What's New
 
-  ### Server-to-Server Support
+  ### Server-to-Server API Support
 
   experimental_XMC enables API access to Sitecore APIs without requiring the Client SDK mode. Perfect for server-side applications that need to communicate with Sitecore APIs.
 
