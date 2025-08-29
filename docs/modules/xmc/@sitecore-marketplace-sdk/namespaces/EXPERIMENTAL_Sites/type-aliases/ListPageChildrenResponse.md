@@ -1,0 +1,11 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Sites](../README.md) / ListPageChildrenResponse
+
+# Type Alias: ListPageChildrenResponse
+
+> **ListPageChildrenResponse** = [`ListPageChildrenResponses`](ListPageChildrenResponses.md)\[keyof [`ListPageChildrenResponses`](ListPageChildrenResponses.md)\]
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2872](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2872)
