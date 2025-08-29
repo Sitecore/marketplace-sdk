@@ -225,7 +225,7 @@ Want to see `experimental_XMC` in action? This shows how to build a standalone N
 
 **💡 Getting Started:** You can start with the official [Auth0 Next.js Sample Application](https://github.com/auth0-samples/auth0-nextjs-samples/tree/main/Sample-01) and then apply the modifications shown below to integrate with Sitecore's experimental XMC functionality.
 
-**⚠️ IMPORTANT:** The configuration below includes critical iframe compatibility settings that are required for the app to work when embedded in the Sitecore portal shell.
+**⚠️ IMPORTANT:** The configuration below includes critical iframe compatibility settings that are required for the app to work when embedded in the Sitecore environment.
 
 Here's the core integration template:
 
@@ -237,14 +237,12 @@ Here's the core integration template:
 npm install @auth0/nextjs-auth0 @sitecore-marketplace-sdk/xmc
 ```
 
-**⚠️ CRITICAL:** The Auth0 configuration below includes essential iframe compatibility settings. Without these settings, login will fail when your app runs inside an iframe.
-
 **Environment Variables (.env.local):**
 
 ```bash
 # Auth0 Configuration
 AUTH0_SECRET='LONG_RANDOM_VALUE'
-APP_BASE_URL='http://localhost:3000'
+APP_BASE_URL='https://localhost:3000'  # Must be HTTPS for iframe authentication0
 AUTH0_DOMAIN='https://auth.sitecorecloud.io'
 AUTH0_CLIENT_ID='YOUR_AUTH0_CLIENT_ID'
 AUTH0_CLIENT_SECRET='YOUR_AUTH0_CLIENT_SECRET'
@@ -350,7 +348,15 @@ const response = await xmc.sites.listLanguages({
 
 ### Iframe Compatibility
 
-**⚠️ CRITICAL REQUIREMENT:** For the experimental phase, your Next.js app must be configured to work inside iframes. The following cookie configuration is **MANDATORY** for login to work inside iframes:
+**⚠️ CRITICAL REQUIREMENT:** For the experimental phase, your Next.js app must be configured to work inside iframes. This includes both HTTPS requirements and cookie configuration.
+
+#### HTTPS Requirement
+
+Authentication inside iframes requires HTTPS. For local testing, use `next dev --experimental-https` and ensure your `APP_BASE_URL` uses `https://localhost:3000`.
+
+#### Cookie Configuration
+
+The following cookie configuration is **MANDATORY** for login to work inside iframes:
 
 ```javascript
 session: {
