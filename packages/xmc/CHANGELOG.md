@@ -8,7 +8,7 @@
 
   ## 🚀 What's New
 
-  ### Server-to-Server API Support
+  ### Server-side API Support
 
   experimental_XMC enables API access to Sitecore APIs without requiring the Client SDK mode. Perfect for server-side applications that need to communicate with Sitecore APIs.
 
@@ -33,7 +33,7 @@
   let data: experimental_Sites.ListLanguagesResponse = response.data!;
   ```
 
-  ## 🎯 Quick Start - Server-to-Server
+  ## 🎯 Quick Start
 
   ### 1. Install and Import
 
