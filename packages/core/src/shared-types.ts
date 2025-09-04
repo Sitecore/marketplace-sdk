@@ -106,8 +106,6 @@ export interface ApplicationResourceContext {
   resourceId: string;
   tenantId: string;
   tenantName?: string;
-  inventoryTenantId: string;
-  organizationId: string;
   tenantDisplayName?: string;
   context: {
     live: string;
@@ -174,9 +172,7 @@ export interface ApplicationContext {
   iconUrl?: string;
   state?: string;
   installationId?: string;
-  /** The inventory tenant (environment) identifier associated with this application instance */
   inventoryTenantId?: string;
-  /** The organization identifier associated with this application instance */
   organizationId?: string;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
