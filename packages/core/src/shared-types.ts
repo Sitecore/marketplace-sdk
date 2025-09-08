@@ -172,6 +172,8 @@ export interface ApplicationContext {
   iconUrl?: string;
   state?: string;
   installationId?: string;
+  tenantId?: string;
+  organizationId?: string;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
@@ -186,6 +188,8 @@ export interface ApplicationContext {
  */
 export interface ApplicationRuntimeContext {
   installationId: string;
+  tenantId?: string;
+  organizationId?: string;
   application: {
     id: string;
     name: string;
