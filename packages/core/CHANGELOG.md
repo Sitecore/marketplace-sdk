@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.2.2
+
+### Patch Changes
+
+- a650e09: Add Organization ID and Tenant ID in ApplicationRuntimeContext
+
 ## 0.2.1
 
 ### Patch Changes

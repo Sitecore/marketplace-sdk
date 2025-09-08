@@ -1,5 +1,12 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [a650e09]
+  - @sitecore-marketplace-sdk/core@0.2.2
+
 ## 0.2.0
 
 ### Minor Changes
