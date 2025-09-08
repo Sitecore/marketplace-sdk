@@ -172,7 +172,7 @@ export interface ApplicationContext {
   iconUrl?: string;
   state?: string;
   installationId?: string;
-  tenantId?: string;
+  MarketplaceAppTenantId?: string;
   organizationId?: string;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
@@ -188,7 +188,7 @@ export interface ApplicationContext {
  */
 export interface ApplicationRuntimeContext {
   installationId: string;
-  tenantId?: string;
+  MarketplaceAppTenantId?: string;
   organizationId?: string;
   application: {
     id: string;
