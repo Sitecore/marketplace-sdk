@@ -6,8 +6,7 @@
   "linked": [
     [
       "@sitecore-marketplace-sdk/xmc",
-      "@sitecore-marketplace-sdk/client",
-      "@sitecore-marketplace-sdk/core"
+      "@sitecore-marketplace-sdk/client"
     ]
   ],
   "access": "public",
