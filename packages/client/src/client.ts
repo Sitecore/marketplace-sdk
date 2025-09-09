@@ -38,6 +38,24 @@ import type {
   SDKModule,
 } from './sdk-types';
 
+// Constants
+const DEFAULT_HEADER = { 'sc-resource': 'marketplace' };
+const EDGE_PLATFORM_PROXY_URL = 'https://edge-platform.sitecorecloud.io';
+
+/**
+ * Gets the Edge Platform Proxy URL, preferring EDGE_PLATFORM_PROXY_URL environment variable
+ * over the default production URL
+ */
+function getEdgePlatformProxyUrl(): string {
+  // Prefer environment variable EDGE_PLATFORM_PROXY_URL
+  if ((window as any).env && (window as any).env.VITE_EDGE_PLATFORM_PROXY_URL) {
+    return (window as any).env.VITE_EDGE_PLATFORM_PROXY_URL;
+  }
+
+  // Fallback to default production URL when environment variable is not set
+  return EDGE_PLATFORM_PROXY_URL;
+}
+
 export class ClientSDK {
   private stateManager: StateManager;
   private coreSdk: CoreSDK;
@@ -79,6 +97,7 @@ export class ClientSDK {
       timeout: config.timeout,
       events: config.events,
       navbarItems: config.navbarItems,
+      getAccessToken: config.getAccessToken,
     };
     const client = new ClientSDK(coreConfig);
     // Run the handshake. If this throws, the promise is rejected.
@@ -145,7 +164,10 @@ export class ClientSDK {
     return Array.from(this.modules.keys());
   }
 
-  private resolveOperation(keyOrOperationKey: string, type: 'query' | 'mutation'): { request: Function; operation: string } {
+  private resolveOperation(
+    keyOrOperationKey: string,
+    type: 'query' | 'mutation',
+  ): { request: Function; operation: string } {
     let request = this.coreSdk.request.bind(this.coreSdk); // Bind to preserve context
     let operation = keyOrOperationKey + ':' + type; // Default operation name
 
@@ -355,7 +377,62 @@ export class ClientSDK {
     }
   }
 
-  private async _fetch(input: globalThis.Request): Promise<Response> {
+  /**
+   * Makes a direct authenticated fetch request using the configured getAccessToken callback.
+   * Replicates the behavior of host's handleGenericApiRequest method.
+   * @param input - The original request object
+   * @returns Promise that resolves to the fetch response
+   */
+  private async _fetchDirect(input: globalThis.Request): Promise<Response> {
+    const token = await this.config.getAccessToken!();
+    const url = new URL(input.url);
+    const path = url.pathname + url.search + url.hash;
+
+    // Get the edge platform proxy URL, preferring EDGE_PLATFORM_PROXY_URL environment variable
+    const edgePlatformProxyUrl = getEdgePlatformProxyUrl();
+
+    // Build the full URL using edge platform proxy
+    const fullUrl = edgePlatformProxyUrl + (path.startsWith('/') ? path : '/' + path);
+
+    // Start with marketplace default header and merge with existing headers
+    const headers: Record<string, string> = { ...DEFAULT_HEADER };
+
+    // Add existing headers from the request
+    if (input.headers) {
+      input.headers.forEach((value, key) => {
+        headers[key] = value;
+      });
+    }
+
+    // Add authentication header
+    headers['Authorization'] = `Bearer ${token}`;
+
+    // Add context ID header if available (extracted from existing headers)
+    const contextId = input.headers?.get('x-sitecore-contextid');
+    if (contextId) {
+      headers['x-sitecore-contextid'] = contextId;
+    }
+
+    // Make direct fetch request to edge platform proxy
+    return fetch(fullUrl, {
+      method: input.method,
+      headers,
+      body: input.body,
+      mode: input.mode,
+      credentials: input.credentials,
+      cache: input.cache,
+      redirect: input.redirect,
+      referrer: input.referrer,
+      integrity: input.integrity,
+    });
+  }
+
+  /**
+   * Makes a fetch request through the host proxy using the host.request event.
+   * @param input - The original request object
+   * @returns Promise that resolves to the proxied response
+   */
+  private async _fetchViaHost(input: globalThis.Request): Promise<Response> {
     const url = new URL(input.url);
     const path = url.pathname + url.search + url.hash;
 
@@ -381,6 +458,21 @@ export class ClientSDK {
         };
         return new Response(response.body, init);
       });
+  }
+
+  /**
+   * Do not remove this method. It is used by the XMC SDK to make requests to the host.
+   * When getAccessToken is configured, makes direct authenticated requests.
+   * Otherwise, uses host.request event.
+   */
+  private async _fetch(input: globalThis.Request): Promise<Response> {
+    // If getAccessToken is configured, use direct authenticated request
+    if (this.config.getAccessToken) {
+      return this._fetchDirect(input);
+    }
+
+    // Otherwise, use host proxy method
+    return this._fetchViaHost(input);
   }
 
   async logout(): Promise<void> {
