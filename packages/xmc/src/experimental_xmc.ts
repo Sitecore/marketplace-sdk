@@ -14,7 +14,8 @@ export * from './experimental/client-content/types.gen';
 
 // Default headers required for API calls
 const DEFAULT_HEADERS = {
-  'sc-resource': 'marketplace',
+  'sc-resource': 'marketplace', 
+  'sc-marketplace-auth': 'interactive/v1',
 } as const;
 
 // API configurations with better typing
