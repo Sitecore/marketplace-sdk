@@ -127,6 +127,7 @@ describe('experimental_XMC', () => {
         expect.objectContaining({
           headers: expect.objectContaining({
             'sc-resource': 'marketplace',
+            'sc-marketplace-auth': 'interactive/v1',
           }),
         }),
       );
@@ -145,6 +146,7 @@ describe('experimental_XMC', () => {
         expect.objectContaining({
           headers: expect.objectContaining({
             'sc-resource': 'marketplace',
+            'sc-marketplace-auth': 'interactive/v1',
             'custom-header': 'value',
           }),
         }),
