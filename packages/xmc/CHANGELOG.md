@@ -1,5 +1,13 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.2.2
+
+### Patch Changes
+
+- ef13abb: Update XMC SDK to support Auth0 token exchange flow
+- Updated dependencies [e4ac5c7]
+  - @sitecore-marketplace-sdk/client@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
