@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.2.2
+
+### Patch Changes
+
+- e4ac5c7: Update core dependency to pick up added ApplicationContext fields and ApplicationRuntimeContext field: organizationId and marketplaceAppTenantId (both optional).
+
 ## 0.2.0
 
 ### Minor Changes
