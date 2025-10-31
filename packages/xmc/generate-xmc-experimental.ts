@@ -111,3 +111,25 @@ createClient({
     }),
   ],
 });
+
+createClient({
+  input: 'https://ai-agent-api-use.sitecorecloud.io/api/docs/openapi.json',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/experimental/client-agent',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineNamespaceTransformerConfig({
+      namespace: 'experimental_Agent',
+    }),
+  ],
+});
