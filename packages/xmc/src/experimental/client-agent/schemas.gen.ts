@@ -103,57 +103,6 @@ export const AddLanguageResponseSchema = {
   title: 'AddLanguageResponse',
 } as const;
 
-export const AddTestVariantRequestSchema = {
-  properties: {
-    name: {
-      type: 'string',
-      title: 'Name',
-    },
-    datasource_id: {
-      anyOf: [
-        {
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Datasource Id',
-    },
-    fields: {
-      anyOf: [
-        {
-          additionalProperties: true,
-          type: 'object',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Fields',
-    },
-  },
-  type: 'object',
-  required: ['name', 'datasource_id', 'fields'],
-  title: 'AddTestVariantRequest',
-} as const;
-
-export const AddTestVariantResponseSchema = {
-  properties: {
-    variant_id: {
-      type: 'string',
-      title: 'Variant Id',
-    },
-    test_id: {
-      type: 'string',
-      title: 'Test Id',
-    },
-  },
-  type: 'object',
-  required: ['variant_id', 'test_id'],
-  title: 'AddTestVariantResponse',
-} as const;
-
 export const AllowedChildTemplateModelSchema = {
   properties: {
     name: {
@@ -863,6 +812,78 @@ export const ComponentsResponseSchema = {
 
 export const ConditionTemplateSchema = {
   properties: {
+    href: {
+      type: 'string',
+      title: 'Href',
+    },
+    ref: {
+      type: 'string',
+      title: 'Ref',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+    },
+    modifiedByRef: {
+      type: 'string',
+      title: 'Modifiedbyref',
+    },
+    modifiedAt: {
+      type: 'string',
+      title: 'Modifiedat',
+    },
+    revision: {
+      type: 'integer',
+      title: 'Revision',
+    },
+    archived: {
+      type: 'boolean',
+      title: 'Archived',
+    },
+    friendlyId: {
+      type: 'string',
+      title: 'Friendlyid',
+    },
+    type: {
+      type: 'string',
+      title: 'Type',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+    },
+    icon: {
+      type: 'string',
+      title: 'Icon',
+    },
+    additionalFields: {
+      additionalProperties: true,
+      type: 'object',
+      title: 'Additionalfields',
+    },
+    templateElements: {
+      items: {
+        additionalProperties: true,
+        type: 'object',
+      },
+      type: 'array',
+      title: 'Templateelements',
+    },
+    defaultTemplate: {
+      type: 'boolean',
+      title: 'Defaulttemplate',
+    },
+    tags: {
+      items: {
+        type: 'string',
+      },
+      type: 'array',
+      title: 'Tags',
+    },
+    customTemplate: {
+      type: 'boolean',
+      title: 'Customtemplate',
+    },
     clientKey: {
       anyOf: [
         {
@@ -874,45 +895,58 @@ export const ConditionTemplateSchema = {
       ],
       title: 'Clientkey',
     },
-    customTemplate: {
-      type: 'boolean',
-      title: 'Customtemplate',
+    description: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Description',
     },
-    defaultTemplate: {
-      type: 'boolean',
-      title: 'Defaulttemplate',
+    revisionComment: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Revisioncomment',
     },
-    friendlyId: {
-      type: 'string',
-      title: 'Friendlyid',
-    },
-    href: {
-      type: 'string',
-      title: 'Href',
-    },
-    name: {
-      type: 'string',
-      title: 'Name',
-    },
-    ref: {
-      type: 'string',
-      title: 'Ref',
-    },
-    additionalFields: {
-      additionalProperties: true,
-      type: 'object',
-      title: 'Additionalfields',
+    render: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Render',
     },
   },
   type: 'object',
   required: [
-    'customTemplate',
-    'defaultTemplate',
-    'friendlyId',
     'href',
-    'name',
     'ref',
+    'name',
+    'modifiedByRef',
+    'modifiedAt',
+    'revision',
+    'archived',
+    'friendlyId',
+    'type',
+    'status',
+    'icon',
     'additionalFields',
+    'templateElements',
+    'defaultTemplate',
+    'tags',
+    'customTemplate',
   ],
   title: 'ConditionTemplate',
 } as const;
@@ -1013,53 +1047,6 @@ export const ContentItemResponseSchema = {
   type: 'object',
   required: ['itemId', 'name', 'path', 'template'],
   title: 'ContentItemResponse',
-} as const;
-
-export const CreateABTestResponseSchema = {
-  properties: {
-    test_id: {
-      type: 'string',
-      title: 'Test Id',
-    },
-    status: {
-      type: 'string',
-      title: 'Status',
-    },
-  },
-  type: 'object',
-  required: ['test_id', 'status'],
-  title: 'CreateABTestResponse',
-} as const;
-
-export const CreateComponentABTestRequestSchema = {
-  properties: {
-    page_id: {
-      type: 'string',
-      title: 'Page Id',
-    },
-    component_id: {
-      type: 'string',
-      title: 'Component Id',
-    },
-    name: {
-      type: 'string',
-      title: 'Name',
-    },
-    type: {
-      type: 'string',
-      title: 'Type',
-    },
-    variants: {
-      items: {
-        $ref: '#/components/schemas/TestVariantModel',
-      },
-      type: 'array',
-      title: 'Variants',
-    },
-  },
-  type: 'object',
-  required: ['page_id', 'component_id', 'name', 'type', 'variants'],
-  title: 'CreateComponentABTestRequest',
 } as const;
 
 export const CreateComponentDatasourceRequestSchema = {
@@ -1246,37 +1233,44 @@ export const CreatePageResponseSchema = {
 
 export const CreatePersonalizationRequestSchema = {
   properties: {
-    page_id: {
-      type: 'string',
-      title: 'Page Id',
-    },
     name: {
       type: 'string',
       title: 'Name',
     },
-    variants: {
-      items: {
-        $ref: '#/components/schemas/PersonalizationVariantInputModel',
-      },
-      type: 'array',
-      title: 'Variants',
+    language: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Language',
+      default: 'en',
     },
-  },
-  type: 'object',
-  required: ['page_id', 'name', 'variants'],
-  title: 'CreatePersonalizationRequest',
-} as const;
-
-export const CreatePersonalizationResponseSchema = {
-  properties: {
-    personalization_id: {
+    variant_name: {
       type: 'string',
-      title: 'Personalization Id',
+      title: 'Variant Name',
+    },
+    audience_name: {
+      type: 'string',
+      title: 'Audience Name',
+    },
+    condition_template_id: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Condition Template Id',
+    },
+    condition_params: {
+      additionalProperties: true,
+      type: 'object',
+      title: 'Condition Params',
     },
   },
   type: 'object',
-  required: ['personalization_id'],
-  title: 'CreatePersonalizationResponse',
+  required: ['name', 'variant_name', 'audience_name', 'condition_template_id', 'condition_params'],
+  title: 'CreatePersonalizationRequest',
 } as const;
 
 export const DatasourceFieldNodeSchema = {
@@ -1314,83 +1308,6 @@ export const DeleteContentResponseSchema = {
   type: 'object',
   required: ['success', 'deletedId'],
   title: 'DeleteContentResponse',
-} as const;
-
-export const ExperimentResultModelSchema = {
-  properties: {
-    test_id: {
-      type: 'string',
-      title: 'Test Id',
-    },
-    start_date: {
-      type: 'string',
-      title: 'Start Date',
-    },
-    end_date: {
-      anyOf: [
-        {
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'End Date',
-    },
-    total_impressions: {
-      type: 'integer',
-      title: 'Total Impressions',
-    },
-    total_conversions: {
-      type: 'integer',
-      title: 'Total Conversions',
-    },
-    variants: {
-      items: {
-        $ref: '#/components/schemas/ExperimentResultVariantModel',
-      },
-      type: 'array',
-      title: 'Variants',
-    },
-  },
-  type: 'object',
-  required: [
-    'test_id',
-    'start_date',
-    'end_date',
-    'total_impressions',
-    'total_conversions',
-    'variants',
-  ],
-  title: 'ExperimentResultModel',
-} as const;
-
-export const ExperimentResultVariantModelSchema = {
-  properties: {
-    variant_id: {
-      type: 'string',
-      title: 'Variant Id',
-    },
-    variant_name: {
-      type: 'string',
-      title: 'Variant Name',
-    },
-    impressions: {
-      type: 'integer',
-      title: 'Impressions',
-    },
-    conversions: {
-      type: 'integer',
-      title: 'Conversions',
-    },
-    ctr: {
-      type: 'number',
-      title: 'Ctr',
-    },
-  },
-  type: 'object',
-  required: ['variant_id', 'variant_name', 'impressions', 'conversions', 'ctr'],
-  title: 'ExperimentResultVariantModel',
 } as const;
 
 export const FieldModelSchema = {
@@ -1443,45 +1360,220 @@ export const FlowDefinitionConditionGroupSchema = {
   title: 'FlowDefinitionConditionGroup',
 } as const;
 
-export const FlowDefinitionModelSchema = {
+export const FlowDefinitionResponseSchema = {
   properties: {
-    id: {
+    clientKey: {
       type: 'string',
-      title: 'Id',
+      title: 'Clientkey',
+    },
+    href: {
+      type: 'string',
+      title: 'Href',
+    },
+    ref: {
+      type: 'string',
+      title: 'Ref',
     },
     name: {
       type: 'string',
       title: 'Name',
     },
-    description: {
+    modifiedByRef: {
+      type: 'string',
+      title: 'Modifiedbyref',
+    },
+    modifiedAt: {
+      type: 'string',
+      title: 'Modifiedat',
+    },
+    revision: {
+      type: 'integer',
+      title: 'Revision',
+    },
+    archived: {
+      type: 'boolean',
+      title: 'Archived',
+    },
+    friendlyId: {
+      type: 'string',
+      title: 'Friendlyid',
+    },
+    type: {
+      type: 'string',
+      title: 'Type',
+    },
+    subtype: {
+      type: 'string',
+      title: 'Subtype',
+    },
+    channels: {
+      items: {
+        type: 'string',
+      },
+      type: 'array',
+      title: 'Channels',
+    },
+    triggers: {
       anyOf: [
         {
-          type: 'string',
+          items: {},
+          type: 'array',
         },
         {
           type: 'null',
         },
       ],
-      title: 'Description',
+      title: 'Triggers',
     },
-    nodes: {
-      items: {
-        $ref: '#/components/schemas/FlowNodeModel',
-      },
-      type: 'array',
-      title: 'Nodes',
+    dashboardLinks: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Dashboardlinks',
     },
-    edges: {
-      items: {
-        $ref: '#/components/schemas/FlowEdgeModel',
-      },
-      type: 'array',
-      title: 'Edges',
+    tags: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Tags',
+    },
+    businessProcess: {
+      type: 'string',
+      title: 'Businessprocess',
+    },
+    siteId: {
+      type: 'string',
+      title: 'Siteid',
+    },
+    traffic: {
+      $ref: '#/components/schemas/FlowDefinitionTraffic',
+    },
+    transpiledVariants: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Transpiledvariants',
+    },
+    variants: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Variants',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+    },
+    schedule: {
+      $ref: '#/components/schemas/FlowDefinitionSchedule',
+    },
+    revisions: {
+      $ref: '#/components/schemas/FlowDefinitionRevisions',
+    },
+    sampleSizeConfig: {
+      $ref: '#/components/schemas/FlowDefinitionSampleSizeConfig',
+    },
+    notificationEnabled: {
+      type: 'boolean',
+      title: 'Notificationenabled',
     },
   },
   type: 'object',
-  required: ['id', 'name', 'description', 'nodes', 'edges'],
-  title: 'FlowDefinitionModel',
+  required: [
+    'clientKey',
+    'href',
+    'ref',
+    'name',
+    'modifiedByRef',
+    'modifiedAt',
+    'revision',
+    'archived',
+    'friendlyId',
+    'type',
+    'subtype',
+    'channels',
+    'businessProcess',
+    'siteId',
+    'traffic',
+    'status',
+    'schedule',
+    'revisions',
+    'sampleSizeConfig',
+    'notificationEnabled',
+  ],
+  title: 'FlowDefinitionResponse',
+} as const;
+
+export const FlowDefinitionRevisionsSchema = {
+  properties: {
+    href: {
+      type: 'string',
+      title: 'Href',
+    },
+  },
+  type: 'object',
+  required: ['href'],
+  title: 'FlowDefinitionRevisions',
+} as const;
+
+export const FlowDefinitionSampleSizeConfigSchema = {
+  properties: {
+    baseValue: {
+      type: 'number',
+      title: 'Basevalue',
+    },
+    minimumDetectableDifference: {
+      type: 'number',
+      title: 'Minimumdetectabledifference',
+    },
+    confidenceLevel: {
+      type: 'number',
+      title: 'Confidencelevel',
+    },
+  },
+  type: 'object',
+  required: ['baseValue', 'minimumDetectableDifference', 'confidenceLevel'],
+  title: 'FlowDefinitionSampleSizeConfig',
+} as const;
+
+export const FlowDefinitionScheduleSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      title: 'Type',
+    },
+    startDate: {
+      type: 'string',
+      title: 'Startdate',
+    },
+  },
+  type: 'object',
+  required: ['type', 'startDate'],
+  title: 'FlowDefinitionSchedule',
 } as const;
 
 export const FlowDefinitionSplitSchema = {
@@ -1511,55 +1603,31 @@ export const FlowDefinitionSplitSchema = {
   title: 'FlowDefinitionSplit',
 } as const;
 
-export const FlowEdgeModelSchema = {
+export const FlowDefinitionTrafficSchema = {
   properties: {
-    id: {
-      type: 'string',
-      title: 'Id',
-    },
-    from: {
-      type: 'string',
-      title: 'From',
-    },
-    to: {
-      type: 'string',
-      title: 'To',
-    },
-    label: {
-      anyOf: [
-        {
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Label',
-    },
-  },
-  type: 'object',
-  required: ['id', 'from', 'to', 'label'],
-  title: 'FlowEdgeModel',
-} as const;
-
-export const FlowNodeModelSchema = {
-  properties: {
-    id: {
-      type: 'string',
-      title: 'Id',
-    },
     type: {
       type: 'string',
       title: 'Type',
     },
-    label: {
+    weightingAlgorithm: {
       type: 'string',
-      title: 'Label',
+      title: 'Weightingalgorithm',
+    },
+    modifiedAt: {
+      type: 'string',
+      title: 'Modifiedat',
+    },
+    splits: {
+      items: {
+        $ref: '#/components/schemas/FlowDefinitionSplit',
+      },
+      type: 'array',
+      title: 'Splits',
     },
   },
   type: 'object',
-  required: ['id', 'type', 'label'],
-  title: 'FlowNodeModel',
+  required: ['type', 'weightingAlgorithm', 'modifiedAt', 'splits'],
+  title: 'FlowDefinitionTraffic',
 } as const;
 
 export const GetPageComponentsResponseSchema = {
@@ -2104,33 +2172,6 @@ export const PageTemplateResponseSchema = {
   title: 'PageTemplateResponse',
 } as const;
 
-export const PersonalizationRuleModelSchema = {
-  properties: {
-    id: {
-      type: 'string',
-      title: 'Id',
-    },
-    condition: {
-      type: 'string',
-      title: 'Condition',
-    },
-    value: {
-      anyOf: [
-        {
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Value',
-    },
-  },
-  type: 'object',
-  required: ['id', 'condition', 'value'],
-  title: 'PersonalizationRuleModel',
-} as const;
-
 export const PersonalizationVariantDetailModelSchema = {
   properties: {
     page_id: {
@@ -2161,66 +2202,6 @@ export const PersonalizationVariantDetailModelSchema = {
   type: 'object',
   required: ['page_id', 'variant_name', 'audience_name', 'template'],
   title: 'PersonalizationVariantDetailModel',
-} as const;
-
-export const PersonalizationVariantInputModelSchema = {
-  properties: {
-    name: {
-      type: 'string',
-      title: 'Name',
-    },
-    rules: {
-      items: {
-        $ref: '#/components/schemas/PersonalizationRuleModel',
-      },
-      type: 'array',
-      title: 'Rules',
-      default: [],
-    },
-    datasource_id: {
-      anyOf: [
-        {
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Datasource Id',
-    },
-    fields: {
-      anyOf: [
-        {
-          additionalProperties: true,
-          type: 'object',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Fields',
-    },
-  },
-  type: 'object',
-  required: ['name', 'datasource_id', 'fields'],
-  title: 'PersonalizationVariantInputModel',
-} as const;
-
-export const RemoveComponentResponseSchema = {
-  properties: {
-    success: {
-      type: 'boolean',
-      title: 'Success',
-    },
-    removedComponentId: {
-      type: 'string',
-      format: 'uuid',
-      title: 'Removedcomponentid',
-    },
-  },
-  type: 'object',
-  required: ['success', 'removedComponentId'],
-  title: 'RemoveComponentResponse',
 } as const;
 
 export const SearchResponseSchema = {
@@ -2406,41 +2387,6 @@ export const SiteInformationResponseSchema = {
     'non_visual_content_locations',
   ],
   title: 'SiteInformationResponse',
-} as const;
-
-export const TestVariantModelSchema = {
-  properties: {
-    name: {
-      type: 'string',
-      title: 'Name',
-    },
-    datasource_id: {
-      anyOf: [
-        {
-          type: 'string',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Datasource Id',
-    },
-    fields: {
-      anyOf: [
-        {
-          additionalProperties: true,
-          type: 'object',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Fields',
-    },
-  },
-  type: 'object',
-  required: ['name', 'datasource_id', 'fields'],
-  title: 'TestVariantModel',
 } as const;
 
 export const UpdateAssetRequestSchema = {
