@@ -81,6 +81,8 @@ export interface ClientSDKConfig extends CoreSDKConfig {
     onPageContextUpdate?: (data: any) => void;
   };
   navbarItems?: NavbarItemsProps;
+  /** Callback function to retrieve access token for authenticated requests */
+  getAccessToken?: () => string | Promise<string>;
 }
 
 export type ClientSDKInitConfig = {
@@ -90,6 +92,8 @@ export type ClientSDKInitConfig = {
   modules?: SDKModule[];
   events?: ClientSDKConfig['events'];
   navbarItems?: NavbarItemsProps;
+  /** Callback function to retrieve access token for authenticated requests */
+  getAccessToken?: () => string | Promise<string>;
 };
 
 export { UserInfo, ApplicationContext } from '@sitecore-marketplace-sdk/core';
