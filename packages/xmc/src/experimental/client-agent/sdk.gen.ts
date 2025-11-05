@@ -21,6 +21,15 @@ type JobsRevertJobError = experimental_Agent.JobsRevertJobError;
 
 type JobsRevertJobData = experimental_Agent.JobsRevertJobData;
 
+type PersonalizationGetConditionTemplateByIdError =
+  experimental_Agent.PersonalizationGetConditionTemplateByIdError;
+
+type PersonalizationGetConditionTemplateByIdResponse =
+  experimental_Agent.PersonalizationGetConditionTemplateByIdResponse;
+
+type PersonalizationGetConditionTemplateByIdData =
+  experimental_Agent.PersonalizationGetConditionTemplateByIdData;
+
 type PersonalizationGetConditionTemplatesError =
   experimental_Agent.PersonalizationGetConditionTemplatesError;
 
@@ -47,41 +56,6 @@ type PersonalizationCreatePersonalizationVersionResponse =
 
 type PersonalizationCreatePersonalizationVersionData =
   experimental_Agent.PersonalizationCreatePersonalizationVersionData;
-
-type ExperimentsGetAbTestResultsError = experimental_Agent.ExperimentsGetAbTestResultsError;
-
-type ExperimentsGetAbTestResultsResponse = experimental_Agent.ExperimentsGetAbTestResultsResponse;
-
-type ExperimentsGetAbTestResultsData = experimental_Agent.ExperimentsGetAbTestResultsData;
-
-type ExperimentsGetAbTestFlowDefinitionError =
-  experimental_Agent.ExperimentsGetAbTestFlowDefinitionError;
-
-type ExperimentsGetAbTestFlowDefinitionResponse =
-  experimental_Agent.ExperimentsGetAbTestFlowDefinitionResponse;
-
-type ExperimentsGetAbTestFlowDefinitionData =
-  experimental_Agent.ExperimentsGetAbTestFlowDefinitionData;
-
-type ExperimentsAddTestVariantError = experimental_Agent.ExperimentsAddTestVariantError;
-
-type ExperimentsAddTestVariantResponse = experimental_Agent.ExperimentsAddTestVariantResponse;
-
-type ExperimentsAddTestVariantData = experimental_Agent.ExperimentsAddTestVariantData;
-
-type ExperimentsListPageVariantsError = experimental_Agent.ExperimentsListPageVariantsError;
-
-type ExperimentsListPageVariantsResponse = experimental_Agent.ExperimentsListPageVariantsResponse;
-
-type ExperimentsListPageVariantsData = experimental_Agent.ExperimentsListPageVariantsData;
-
-type ExperimentsCreateComponentAbTestError =
-  experimental_Agent.ExperimentsCreateComponentAbTestError;
-
-type ExperimentsCreateComponentAbTestResponse =
-  experimental_Agent.ExperimentsCreateComponentAbTestResponse;
-
-type ExperimentsCreateComponentAbTestData = experimental_Agent.ExperimentsCreateComponentAbTestData;
 
 type EnvironmentsListLanguagesError = experimental_Agent.EnvironmentsListLanguagesError;
 
@@ -181,12 +155,6 @@ type ContentCreateContentItemError = experimental_Agent.ContentCreateContentItem
 type ContentCreateContentItemResponse = experimental_Agent.ContentCreateContentItemResponse;
 
 type ContentCreateContentItemData = experimental_Agent.ContentCreateContentItemData;
-
-type PagesRemoveComponentOnPageError = experimental_Agent.PagesRemoveComponentOnPageError;
-
-type PagesRemoveComponentOnPageResponse = experimental_Agent.PagesRemoveComponentOnPageResponse;
-
-type PagesRemoveComponentOnPageData = experimental_Agent.PagesRemoveComponentOnPageData;
 
 type PagesGetAllowedComponentsByPlaceholderError =
   experimental_Agent.PagesGetAllowedComponentsByPlaceholderError;
@@ -696,7 +664,7 @@ export const pagesGetPage = <ThrowOnError extends boolean = false>(
 
 /**
  * Get allowed components by placeholder
- * Retrieves a list of components that are allowed to be added to a specific placeholder on a page. This helps ensure only compatible components are added to each placeholder.
+ * Retrieves a list of components that are allowed to be added to a specific placeholder on a page. This helps ensure only compatible components are added to each placeholder. You can use * to fetch all components.
  */
 export const pagesGetAllowedComponentsByPlaceholder = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetAllowedComponentsByPlaceholderData, ThrowOnError>,
@@ -713,30 +681,6 @@ export const pagesGetAllowedComponentsByPlaceholder = <ThrowOnError extends bool
       },
     ],
     url: '/api/v1/pages/{pageId}/placeholders/{placeholderName}/allowed-components',
-    ...options,
-  });
-};
-
-/**
- * @deprecated
- * Remove component on page
- * Removes a specific component from a page. The component is completely removed from the specified placeholder.
- */
-export const pagesRemoveComponentOnPage = <ThrowOnError extends boolean = false>(
-  options: Options<PagesRemoveComponentOnPageData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).delete<
-    PagesRemoveComponentOnPageResponse,
-    PagesRemoveComponentOnPageError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/pages/{pageId}/components/{componentId}',
     ...options,
   });
 };
@@ -1108,136 +1052,8 @@ export const environmentsListLanguages = <ThrowOnError extends boolean = false>(
 };
 
 /**
- * @deprecated
- * Create component A/B test
- * Creates a new A/B test for a specific component on a page. The test will allow you to compare different versions of the component to determine which performs better.
- */
-export const experimentsCreateComponentAbTest = <ThrowOnError extends boolean = false>(
-  options: Options<ExperimentsCreateComponentAbTestData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).post<
-    ExperimentsCreateComponentAbTestResponse,
-    ExperimentsCreateComponentAbTestError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/experiments/ab-tests',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * List page tests
- * Retrieves all experiments currently running or completed for a specific page. This includes A/B tests, multivariate tests, and personalization experiments.
- */
-export const experimentsListPageVariants = <ThrowOnError extends boolean = false>(
-  options: Options<ExperimentsListPageVariantsData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).get<
-    ExperimentsListPageVariantsResponse,
-    ExperimentsListPageVariantsError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/experiments/by-page/{pageId}',
-    ...options,
-  });
-};
-
-/**
- * @deprecated
- * Add test variant
- * Adds a new variant to an existing experiment. This allows you to test additional versions beyond the original A/B test setup.
- */
-export const experimentsAddTestVariant = <ThrowOnError extends boolean = false>(
-  options: Options<ExperimentsAddTestVariantData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).post<
-    ExperimentsAddTestVariantResponse,
-    ExperimentsAddTestVariantError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/experiments/{testId}/variants',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * @deprecated
- * Get A/B test flow definition
- * Retrieves the flow definition for a specific experiment, including the test structure, goals, and configuration details.
- */
-export const experimentsGetAbTestFlowDefinition = <ThrowOnError extends boolean = false>(
-  options: Options<ExperimentsGetAbTestFlowDefinitionData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).get<
-    ExperimentsGetAbTestFlowDefinitionResponse,
-    ExperimentsGetAbTestFlowDefinitionError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/experiments/flows/{flowId}',
-    ...options,
-  });
-};
-
-/**
- * @deprecated
- * Get A/B test results
- * Retrieves the results and performance metrics for a specific experiment, including conversion rates, statistical significance, and variant performance.
- */
-export const experimentsGetAbTestResults = <ThrowOnError extends boolean = false>(
-  options: Options<ExperimentsGetAbTestResultsData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).get<
-    ExperimentsGetAbTestResultsResponse,
-    ExperimentsGetAbTestResultsError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/experiments/{testId}/results',
-    ...options,
-  });
-};
-
-/**
- * @deprecated
- * Create personalization version
- * Creates a new personalization version for a page, allowing you to deliver tailored content to specific audience segments based on their behavior and preferences.
+ * Create a personalization version for a page
+ * Creates a new personalization definition with one or more variants.
  */
 export const personalizationCreatePersonalizationVersion = <ThrowOnError extends boolean = false>(
   options: Options<PersonalizationCreatePersonalizationVersionData, ThrowOnError>,
@@ -1306,6 +1122,29 @@ export const personalizationGetConditionTemplates = <ThrowOnError extends boolea
       },
     ],
     url: '/api/v1/personalization/condition-templates',
+    ...options,
+  });
+};
+
+/**
+ * Get a condition template and its parameters for creating a personalization variant on a page
+ * Returns a condition template by ID and its parameters for creating a personalization variant on a page
+ */
+export const personalizationGetConditionTemplateById = <ThrowOnError extends boolean = false>(
+  options: Options<PersonalizationGetConditionTemplateByIdData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    PersonalizationGetConditionTemplateByIdResponse,
+    PersonalizationGetConditionTemplateByIdError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/personalization/condition-templates/{template_id}',
     ...options,
   });
 };

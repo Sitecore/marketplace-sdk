@@ -22,17 +22,6 @@ export namespace Agent {
   export type AddLanguageResponse = {
     success: boolean;
   };
-  export type AddTestVariantRequest = {
-    name: string;
-    datasource_id: string | null;
-    fields: {
-      [key: string]: unknown;
-    } | null;
-  };
-  export type AddTestVariantResponse = {
-    variant_id: string;
-    test_id: string;
-  };
   export type AllowedChildTemplateModel = {
     name: string;
     templateId: string;
@@ -164,16 +153,30 @@ export namespace Agent {
     components: Components;
   };
   export type ConditionTemplate = {
-    clientKey?: string | null;
-    customTemplate: boolean;
-    defaultTemplate: boolean;
-    friendlyId: string;
     href: string;
-    name: string;
     ref: string;
+    name: string;
+    modifiedByRef: string;
+    modifiedAt: string;
+    revision: number;
+    archived: boolean;
+    friendlyId: string;
+    type: string;
+    status: string;
+    icon: string;
     additionalFields: {
       [key: string]: unknown;
     };
+    templateElements: Array<{
+      [key: string]: unknown;
+    }>;
+    defaultTemplate: boolean;
+    tags: Array<string>;
+    customTemplate: boolean;
+    clientKey?: string | null;
+    description?: string | null;
+    revisionComment?: string | null;
+    render?: boolean | null;
   };
   export type ContentItemResponse = {
     itemId: string;
@@ -190,17 +193,6 @@ export namespace Agent {
     } | null;
     created_at?: string | null;
     updated_at?: string | null;
-  };
-  export type CreateAbTestResponse = {
-    test_id: string;
-    status: string;
-  };
-  export type CreateComponentAbTestRequest = {
-    page_id: string;
-    component_id: string;
-    name: string;
-    type: string;
-    variants: Array<TestVariantModel>;
   };
   export type CreateComponentDatasourceRequest = {
     siteName: string;
@@ -246,12 +238,14 @@ export namespace Agent {
     name: string;
   };
   export type CreatePersonalizationRequest = {
-    page_id: string;
     name: string;
-    variants: Array<PersonalizationVariantInputModel>;
-  };
-  export type CreatePersonalizationResponse = {
-    personalization_id: string;
+    language?: string | null;
+    variant_name: string;
+    audience_name: string;
+    condition_template_id: string;
+    condition_params: {
+      [key: string]: unknown;
+    };
   };
   export type DatasourceFieldNode = {
     name: string;
@@ -261,21 +255,6 @@ export namespace Agent {
   export type DeleteContentResponse = {
     success: boolean;
     deletedId: string;
-  };
-  export type ExperimentResultModel = {
-    test_id: string;
-    start_date: string;
-    end_date: string | null;
-    total_impressions: number;
-    total_conversions: number;
-    variants: Array<ExperimentResultVariantModel>;
-  };
-  export type ExperimentResultVariantModel = {
-    variant_id: string;
-    variant_name: string;
-    impressions: number;
-    conversions: number;
-    ctr: number;
   };
   export type FieldModel = {
     name: string;
@@ -290,12 +269,44 @@ export namespace Agent {
   export type FlowDefinitionConditionGroup = {
     conditions: Array<FlowDefinitionCondition>;
   };
-  export type FlowDefinitionModel = {
-    id: string;
+  export type FlowDefinitionResponse = {
+    clientKey: string;
+    href: string;
+    ref: string;
     name: string;
-    description: string | null;
-    nodes: Array<FlowNodeModel>;
-    edges: Array<FlowEdgeModel>;
+    modifiedByRef: string;
+    modifiedAt: string;
+    revision: number;
+    archived: boolean;
+    friendlyId: string;
+    type: string;
+    subtype: string;
+    channels: Array<string>;
+    triggers?: Array<unknown> | null;
+    dashboardLinks?: Array<unknown> | null;
+    tags?: Array<unknown> | null;
+    businessProcess: string;
+    siteId: string;
+    traffic: FlowDefinitionTraffic;
+    transpiledVariants?: Array<unknown> | null;
+    variants?: Array<unknown> | null;
+    status: string;
+    schedule: FlowDefinitionSchedule;
+    revisions: FlowDefinitionRevisions;
+    sampleSizeConfig: FlowDefinitionSampleSizeConfig;
+    notificationEnabled: boolean;
+  };
+  export type FlowDefinitionRevisions = {
+    href: string;
+  };
+  export type FlowDefinitionSampleSizeConfig = {
+    baseValue: number;
+    minimumDetectableDifference: number;
+    confidenceLevel: number;
+  };
+  export type FlowDefinitionSchedule = {
+    type: string;
+    startDate: string;
   };
   export type FlowDefinitionSplit = {
     template: string;
@@ -303,16 +314,11 @@ export namespace Agent {
     audienceName: string;
     conditionGroups: Array<FlowDefinitionConditionGroup>;
   };
-  export type FlowEdgeModel = {
-    id: string;
-    from: string;
-    to: string;
-    label: string | null;
-  };
-  export type FlowNodeModel = {
-    id: string;
+  export type FlowDefinitionTraffic = {
     type: string;
-    label: string;
+    weightingAlgorithm: string;
+    modifiedAt: string;
+    splits: Array<FlowDefinitionSplit>;
   };
   export type GetPageComponentsResponse = {
     pageId: string;
@@ -426,29 +432,12 @@ export namespace Agent {
     name: string;
     fields: Array<PageTemplateFieldModel>;
   };
-  export type PersonalizationRuleModel = {
-    id: string;
-    condition: string;
-    value: string | null;
-  };
   export type PersonalizationVariantDetailModel = {
     page_id: string;
     variant_name: string;
     audience_name: string;
     template: string;
     condition_groups?: Array<FlowDefinitionConditionGroup>;
-  };
-  export type PersonalizationVariantInputModel = {
-    name: string;
-    rules?: Array<PersonalizationRuleModel>;
-    datasource_id: string | null;
-    fields: {
-      [key: string]: unknown;
-    } | null;
-  };
-  export type RemoveComponentResponse = {
-    success: boolean;
-    removedComponentId: string;
   };
   export type SearchResponse = {
     results?: Array<SearchResult>;
@@ -487,13 +476,6 @@ export namespace Agent {
     rootPath: string;
     page_locations: Array<PageLocationModel>;
     non_visual_content_locations: Array<NonVisualContentLocationModel>;
-  };
-  export type TestVariantModel = {
-    name: string;
-    datasource_id: string | null;
-    fields: {
-      [key: string]: unknown;
-    } | null;
   };
   export type UpdateAssetRequest = {
     fields: {
@@ -1150,37 +1132,6 @@ export namespace Agent {
   };
   export type PagesGetAllowedComponentsByPlaceholderResponse =
     PagesGetAllowedComponentsByPlaceholderResponses[keyof PagesGetAllowedComponentsByPlaceholderResponses];
-  export type PagesRemoveComponentOnPageData = {
-    body?: never;
-    path: {
-      pageId: string;
-      componentId: string;
-    };
-    query: {
-      placeholderId: string;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/{pageId}/components/{componentId}';
-  };
-  export type PagesRemoveComponentOnPageErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesRemoveComponentOnPageError =
-    PagesRemoveComponentOnPageErrors[keyof PagesRemoveComponentOnPageErrors];
-  export type PagesRemoveComponentOnPageResponses = {
-    /**
-     * Successful Response
-     */
-    200: RemoveComponentResponse;
-  };
-  export type PagesRemoveComponentOnPageResponse =
-    PagesRemoveComponentOnPageResponses[keyof PagesRemoveComponentOnPageResponses];
   export type ContentCreateContentItemData = {
     body: CreateContentItemRequest;
     headers?: {
@@ -1706,180 +1657,6 @@ export namespace Agent {
   };
   export type EnvironmentsListLanguagesResponse =
     EnvironmentsListLanguagesResponses[keyof EnvironmentsListLanguagesResponses];
-  export type ExperimentsCreateComponentAbTestData = {
-    body: CreateComponentAbTestRequest;
-    headers?: {
-      /**
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/experiments/ab-tests';
-  };
-  export type ExperimentsCreateComponentAbTestErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type ExperimentsCreateComponentAbTestError =
-    ExperimentsCreateComponentAbTestErrors[keyof ExperimentsCreateComponentAbTestErrors];
-  export type ExperimentsCreateComponentAbTestResponses = {
-    /**
-     * Successful Response
-     */
-    201: CreateAbTestResponse;
-  };
-  export type ExperimentsCreateComponentAbTestResponse =
-    ExperimentsCreateComponentAbTestResponses[keyof ExperimentsCreateComponentAbTestResponses];
-  export type ExperimentsListPageVariantsData = {
-    body?: never;
-    headers?: {
-      /**
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      pageId: string;
-    };
-    query?: {
-      language?: string;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/experiments/by-page/{pageId}';
-  };
-  export type ExperimentsListPageVariantsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type ExperimentsListPageVariantsError =
-    ExperimentsListPageVariantsErrors[keyof ExperimentsListPageVariantsErrors];
-  export type ExperimentsListPageVariantsResponses = {
-    /**
-     * Successful Response
-     */
-    200: Array<FlowDefinitionSplit>;
-  };
-  export type ExperimentsListPageVariantsResponse =
-    ExperimentsListPageVariantsResponses[keyof ExperimentsListPageVariantsResponses];
-  export type ExperimentsAddTestVariantData = {
-    body: AddTestVariantRequest;
-    headers?: {
-      /**
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      testId: string;
-    };
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/experiments/{testId}/variants';
-  };
-  export type ExperimentsAddTestVariantErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type ExperimentsAddTestVariantError =
-    ExperimentsAddTestVariantErrors[keyof ExperimentsAddTestVariantErrors];
-  export type ExperimentsAddTestVariantResponses = {
-    /**
-     * Successful Response
-     */
-    201: AddTestVariantResponse;
-  };
-  export type ExperimentsAddTestVariantResponse =
-    ExperimentsAddTestVariantResponses[keyof ExperimentsAddTestVariantResponses];
-  export type ExperimentsGetAbTestFlowDefinitionData = {
-    body?: never;
-    headers?: {
-      /**
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      flowId: string;
-    };
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/experiments/flows/{flowId}';
-  };
-  export type ExperimentsGetAbTestFlowDefinitionErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type ExperimentsGetAbTestFlowDefinitionError =
-    ExperimentsGetAbTestFlowDefinitionErrors[keyof ExperimentsGetAbTestFlowDefinitionErrors];
-  export type ExperimentsGetAbTestFlowDefinitionResponses = {
-    /**
-     * Successful Response
-     */
-    200: FlowDefinitionModel;
-  };
-  export type ExperimentsGetAbTestFlowDefinitionResponse =
-    ExperimentsGetAbTestFlowDefinitionResponses[keyof ExperimentsGetAbTestFlowDefinitionResponses];
-  export type ExperimentsGetAbTestResultsData = {
-    body?: never;
-    headers?: {
-      /**
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      testId: string;
-    };
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/experiments/{testId}/results';
-  };
-  export type ExperimentsGetAbTestResultsErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type ExperimentsGetAbTestResultsError =
-    ExperimentsGetAbTestResultsErrors[keyof ExperimentsGetAbTestResultsErrors];
-  export type ExperimentsGetAbTestResultsResponses = {
-    /**
-     * Successful Response
-     */
-    200: ExperimentResultModel;
-  };
-  export type ExperimentsGetAbTestResultsResponse =
-    ExperimentsGetAbTestResultsResponses[keyof ExperimentsGetAbTestResultsResponses];
   export type PersonalizationCreatePersonalizationVersionData = {
     body: CreatePersonalizationRequest;
     headers?: {
@@ -1911,7 +1688,7 @@ export namespace Agent {
     /**
      * Successful Response
      */
-    201: CreatePersonalizationResponse;
+    201: FlowDefinitionResponse;
   };
   export type PersonalizationCreatePersonalizationVersionResponse =
     PersonalizationCreatePersonalizationVersionResponses[keyof PersonalizationCreatePersonalizationVersionResponses];
@@ -1984,6 +1761,41 @@ export namespace Agent {
   };
   export type PersonalizationGetConditionTemplatesResponse =
     PersonalizationGetConditionTemplatesResponses[keyof PersonalizationGetConditionTemplatesResponses];
+  export type PersonalizationGetConditionTemplateByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      template_id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/personalization/condition-templates/{template_id}';
+  };
+  export type PersonalizationGetConditionTemplateByIdErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationGetConditionTemplateByIdError =
+    PersonalizationGetConditionTemplateByIdErrors[keyof PersonalizationGetConditionTemplateByIdErrors];
+  export type PersonalizationGetConditionTemplateByIdResponses = {
+    /**
+     * Successful Response
+     */
+    200: ConditionTemplate;
+  };
+  export type PersonalizationGetConditionTemplateByIdResponse =
+    PersonalizationGetConditionTemplateByIdResponses[keyof PersonalizationGetConditionTemplateByIdResponses];
   export type JobsRevertJobData = {
     body?: never;
     path: {

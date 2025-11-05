@@ -89,7 +89,7 @@ declare module '@sitecore-marketplace-sdk/client' {
       subscribe: false;
     };
     /**
-     * Retrieves a list of components that are allowed to be added to a specific placeholder on a page. This helps ensure only compatible components are added to each placeholder.*/
+     * Retrieves a list of components that are allowed to be added to a specific placeholder on a page. This helps ensure only compatible components are added to each placeholder. You can use * to fetch all components.*/
     'xmc.agent.pagesGetAllowedComponentsByPlaceholder': {
       params: Parameters<typeof sdk.pagesGetAllowedComponentsByPlaceholder>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetAllowedComponentsByPlaceholder>>;
@@ -159,27 +159,6 @@ declare module '@sitecore-marketplace-sdk/client' {
       subscribe: false;
     };
     /**
-     * Retrieves all experiments currently running or completed for a specific page. This includes A/B tests, multivariate tests, and personalization experiments.*/
-    'xmc.agent.experimentsListPageVariants': {
-      params: Parameters<typeof sdk.experimentsListPageVariants>[0];
-      response: Awaited<ReturnType<typeof sdk.experimentsListPageVariants>>;
-      subscribe: false;
-    };
-    /**
-     * Retrieves the flow definition for a specific experiment, including the test structure, goals, and configuration details.*/
-    'xmc.agent.experimentsGetAbTestFlowDefinition': {
-      params: Parameters<typeof sdk.experimentsGetAbTestFlowDefinition>[0];
-      response: Awaited<ReturnType<typeof sdk.experimentsGetAbTestFlowDefinition>>;
-      subscribe: false;
-    };
-    /**
-     * Retrieves the results and performance metrics for a specific experiment, including conversion rates, statistical significance, and variant performance.*/
-    'xmc.agent.experimentsGetAbTestResults': {
-      params: Parameters<typeof sdk.experimentsGetAbTestResults>[0];
-      response: Awaited<ReturnType<typeof sdk.experimentsGetAbTestResults>>;
-      subscribe: false;
-    };
-    /**
      * Retrieves all personalization versions configured for a specific page, including their targeting rules and content variations.*/
     'xmc.agent.personalizationGetPersonalizationVersionsByPage': {
       params: Parameters<typeof sdk.personalizationGetPersonalizationVersionsByPage>[0];
@@ -191,6 +170,13 @@ declare module '@sitecore-marketplace-sdk/client' {
     'xmc.agent.personalizationGetConditionTemplates': {
       params: Parameters<typeof sdk.personalizationGetConditionTemplates>[0];
       response: Awaited<ReturnType<typeof sdk.personalizationGetConditionTemplates>>;
+      subscribe: false;
+    };
+    /**
+     * Returns a condition template by ID and its parameters for creating a personalization variant on a page*/
+    'xmc.agent.personalizationGetConditionTemplateById': {
+      params: Parameters<typeof sdk.personalizationGetConditionTemplateById>[0];
+      response: Awaited<ReturnType<typeof sdk.personalizationGetConditionTemplateById>>;
       subscribe: false;
     };
     /**
@@ -237,12 +223,6 @@ declare module '@sitecore-marketplace-sdk/client' {
       response: Awaited<ReturnType<typeof sdk.pagesSetComponentDatasource>>;
     };
     /**
-     * Removes a specific component from a page. The component is completely removed from the specified placeholder.*/
-    'xmc.agent.pagesRemoveComponentOnPage': {
-      params: Parameters<typeof sdk.pagesRemoveComponentOnPage>[0];
-      response: Awaited<ReturnType<typeof sdk.pagesRemoveComponentOnPage>>;
-    };
-    /**
      * Creates a new content item with the specified template, fields, and location.*/
     'xmc.agent.contentCreateContentItem': {
       params: Parameters<typeof sdk.contentCreateContentItem>[0];
@@ -279,19 +259,7 @@ declare module '@sitecore-marketplace-sdk/client' {
       response: Awaited<ReturnType<typeof sdk.assetsUpdateAsset>>;
     };
     /**
-     * Creates a new A/B test for a specific component on a page. The test will allow you to compare different versions of the component to determine which performs better.*/
-    'xmc.agent.experimentsCreateComponentAbTest': {
-      params: Parameters<typeof sdk.experimentsCreateComponentAbTest>[0];
-      response: Awaited<ReturnType<typeof sdk.experimentsCreateComponentAbTest>>;
-    };
-    /**
-     * Adds a new variant to an existing experiment. This allows you to test additional versions beyond the original A/B test setup.*/
-    'xmc.agent.experimentsAddTestVariant': {
-      params: Parameters<typeof sdk.experimentsAddTestVariant>[0];
-      response: Awaited<ReturnType<typeof sdk.experimentsAddTestVariant>>;
-    };
-    /**
-     * Creates a new personalization version for a page, allowing you to deliver tailored content to specific audience segments based on their behavior and preferences.*/
+     * Creates a new personalization definition with one or more variants.*/
     'xmc.agent.personalizationCreatePersonalizationVersion': {
       params: Parameters<typeof sdk.personalizationCreatePersonalizationVersion>[0];
       response: Awaited<ReturnType<typeof sdk.personalizationCreatePersonalizationVersion>>;
