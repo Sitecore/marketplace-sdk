@@ -1,5 +1,12 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.3.0
+
+### Minor Changes
+
+- 56c82ec: Added Agent API documentation
+- d936872: Added new Agent API in the xmc module
+
 ## 0.2.2
 
 ### Patch Changes
