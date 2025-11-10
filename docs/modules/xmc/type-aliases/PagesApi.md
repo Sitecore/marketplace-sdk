@@ -8,4 +8,4 @@
 
 > **PagesApi** = *typeof* `experimental_pages_sdk`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L45)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L48)

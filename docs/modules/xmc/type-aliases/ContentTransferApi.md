@@ -8,4 +8,4 @@
 
 > **ContentTransferApi** = *typeof* `experimental_content_transfer_sdk`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L47)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:50](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L50)
