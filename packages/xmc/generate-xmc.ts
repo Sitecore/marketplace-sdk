@@ -102,3 +102,28 @@ createClient({
     }),
   ],
 });
+
+createClient({
+  input: 'https://ai-agent-api-use.sitecorecloud.io/api/docs/openapi.json',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-agent',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.agent'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Agent',
+    }),
+  ],
+});

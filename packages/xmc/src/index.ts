@@ -3,6 +3,7 @@ import * as authoring from './client-authoring/sdk.gen';
 import * as content from './client-content/sdk.gen';
 import * as contentTransfer from './client-content-transfer/sdk.gen';
 import * as xmapp from './client-xmapp/sdk.gen';
+import * as agent from './client-agent/sdk.gen';
 
 export * from './client-authoring/types.gen';
 export * from './client-authoring/augmentation.gen';
@@ -16,6 +17,9 @@ export * from './client-content-transfer/augmentation.gen';
 export * from './client-xmapp/types.gen';
 export * from './client-xmapp/augmentation.gen';
 
+export * from './client-agent/types.gen';
+export * from './client-agent/augmentation.gen';
+
 // Experimental exports with prefix to avoid conflicts
 export * from './experimental_xmc'; // This will export all experimental types and APIs
 
@@ -26,6 +30,7 @@ const namespaceMap: Record<string, any> = {
   preview: content,
   contentTransfer: contentTransfer,
   xmapp: xmapp,
+  agent: agent
 };
 
 export const XMC: SDKModule = {
