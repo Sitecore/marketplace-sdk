@@ -9,6 +9,12 @@ import {
 import type { Xmapp } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 
+type TranslateSiteError = Xmapp.TranslateSiteError;
+
+type TranslateSiteResponse = Xmapp.TranslateSiteResponse;
+
+type TranslateSiteData = Xmapp.TranslateSiteData;
+
 type RetrieveWorkflowStatisticsError = Xmapp.RetrieveWorkflowStatisticsError;
 
 type RetrieveWorkflowStatisticsResponse = Xmapp.RetrieveWorkflowStatisticsResponse;
@@ -275,6 +281,12 @@ type ListCollectionsResponse = Xmapp.ListCollectionsResponse;
 
 type ListCollectionsData = Xmapp.ListCollectionsData;
 
+type TranslatePageError = Xmapp.TranslatePageError;
+
+type TranslatePageResponse = Xmapp.TranslatePageResponse;
+
+type TranslatePageData = Xmapp.TranslatePageData;
+
 type GetLivePageStateError = Xmapp.GetLivePageStateError;
 
 type GetLivePageStateData = Xmapp.GetLivePageStateData;
@@ -404,6 +416,27 @@ export const getLivePageState = <ThrowOnError extends boolean = false>(
   return (options.client ?? _heyApiClient).get<unknown, GetLivePageStateError, ThrowOnError>({
     url: '/api/v1/pages/{pageId}/live',
     ...options,
+  });
+};
+
+/**
+ * Translate a page
+ * Translates a page using Stream API
+ */
+export const translatePage = <ThrowOnError extends boolean = false>(
+  options: Options<TranslatePageData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    TranslatePageResponse,
+    TranslatePageError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/translate',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
   });
 };
 
@@ -1223,5 +1256,26 @@ export const retrieveWorkflowStatistics = <ThrowOnError extends boolean = false>
   >({
     url: '/api/v1/sites/{siteId}/statistics/workflow',
     ...options,
+  });
+};
+
+/**
+ * Translate a site
+ * Translates a site using Stream API
+ */
+export const translateSite = <ThrowOnError extends boolean = false>(
+  options: Options<TranslateSiteData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    TranslateSiteResponse,
+    TranslateSiteError,
+    ThrowOnError
+  >({
+    url: '/api/v1/sites/{siteId}/translate',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
   });
 };
