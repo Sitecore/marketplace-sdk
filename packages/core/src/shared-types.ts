@@ -174,7 +174,7 @@ export interface ApplicationContext {
   installationId?: string;
   MarketplaceAppTenantId?: string;
   organizationId?: string;
-  permissions?: IFramePermission;
+  permissions?: Permissions;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
@@ -182,6 +182,13 @@ export interface ApplicationContext {
   resourceAccess?: ApplicationResourceContext[];
   extensionPoints?: ApplicationExtensionPointContext[];
   [key: string]: any;
+}
+
+/**
+ * Represents a collection of permission settings for different contexts.
+ */
+export interface Permissions {
+  iframe?: IFramePermission;
 }
 
 /**
@@ -210,7 +217,7 @@ export interface ApplicationRuntimeContext {
     state: string;
     [key: string]: any;
   };
-  permissions?: IFramePermission;
+  permissions?: Permissions;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
