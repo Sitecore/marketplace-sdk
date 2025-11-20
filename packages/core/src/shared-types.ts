@@ -126,6 +126,7 @@ export interface ApplicationTouchpointMetaContext {
   iconUrl?: string;
   pictureUrl?: string;
   developerName?: string;
+  display?: string;
   [key: string]: any;
 }
 
@@ -140,6 +141,7 @@ export interface ApplicationExtensionPointMetaContext {
   iconUrl?: string;
   pictureUrl?: string;
   developerName?: string;
+  display?: string;
   [key: string]: any;
 }
 
