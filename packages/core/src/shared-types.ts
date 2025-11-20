@@ -189,6 +189,7 @@ export interface ApplicationContext {
  */
 export interface Permissions {
   iframe?: IFramePermission;
+  [key: string]: any;
 }
 
 /**
@@ -199,6 +200,7 @@ export interface IFramePermission {
   sandbox?: string[];
   /** Array of allow permissions (e.g., "clipboard-write", "clipboard-read") */
   allow?: string[];
+  [key: string]: any;
 }
 
 /**
