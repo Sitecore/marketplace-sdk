@@ -2,4 +2,4 @@
 '@sitecore-marketplace-sdk/core': patch
 ---
 
-Added Permission to ApplicationRuntimeContext to define iframe sandbox/allow permissions for controlling browser capabilities.
+Implemented a new Permission property in ApplicationRuntimeContext to configure iframe sandbox and allow attributes for stricter browser capability control. Additionally, addressed and fixed high-severity vulnerabilities identified in the glob CLI dependency.
