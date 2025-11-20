@@ -174,12 +174,32 @@ export interface ApplicationContext {
   installationId?: string;
   MarketplaceAppTenantId?: string;
   organizationId?: string;
+  permissions?: Permissions;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
   touchpoints?: ApplicationTouchpointContext[];
   resourceAccess?: ApplicationResourceContext[];
   extensionPoints?: ApplicationExtensionPointContext[];
+  [key: string]: any;
+}
+
+/**
+ * Represents a collection of permission settings for different contexts.
+ */
+export interface Permissions {
+  iframe?: IFramePermission;
+  [key: string]: any;
+}
+
+/**
+ * Represents iframe permission settings for sandbox and allow attributes.
+ */
+export interface IFramePermission {
+  /** Array of sandbox permissions (e.g., "allow-popups", "allow-popups-to-escape-sandbox") */
+  sandbox?: string[];
+  /** Array of allow permissions (e.g., "clipboard-write", "clipboard-read") */
+  allow?: string[];
   [key: string]: any;
 }
 
@@ -199,6 +219,7 @@ export interface ApplicationRuntimeContext {
     state: string;
     [key: string]: any;
   };
+  permissions?: Permissions;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
