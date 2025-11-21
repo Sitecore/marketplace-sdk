@@ -96,6 +96,8 @@ export interface NavbarItemsProps {
 
 // --- Sites and Pages types ---
 
+// Pages context types
+
 export interface PagesContext {
   siteInfo?: PagesContextSiteInfo;
   pageInfo?: PagesContextPageInfo;
@@ -206,6 +208,33 @@ interface SiteContext {
   [key: string]: any;
 }
 
+// Pages content change items types
+
+interface ContentLayoutUpdatedData extends BaseContentUpdatedData {
+  layout: Layout;
+}
+
+interface ContentFieldsUpdatedData extends BaseContentUpdatedData {
+  fields: Field[];
+}
+
+interface BaseContentUpdatedData  {
+  ItemId: string;
+  Language: string;
+  ItemVersion: number;
+};
+
+interface Field
+{
+  fieldId: string;
+  value: string;
+  originalValue?: string;
+};
+
+interface Layout  {
+  type: 'FINAL' | 'SHARED';
+};
+
 // --- Static mappings for queries and mutations ---
 
 export interface QueryMap {
@@ -224,6 +253,16 @@ export interface QueryMap {
   'pages.context': {
     params: void;
     response: PagesContext;
+    subscribe: true;
+  };
+  'pages.content.layoutUpdated': {
+    params: void;
+    response: ContentLayoutUpdatedData;
+    subscribe: true;
+  };
+  'pages.content.fieldsUpdated': {
+    params: void;
+    response: ContentFieldsUpdatedData;
     subscribe: true;
   };
   'application.context': {

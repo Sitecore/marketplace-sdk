@@ -180,6 +180,28 @@ export class ClientSDK {
       logger.debug('Processed pages.context request.');
     });
 
+    // Handle "pages.content.layoutUpdated" requests using the new on subscription.
+    this.coreSdk.on('pages.content.layoutUpdated', async (payload: any) => {
+      logger.debug('Received pages.content.layoutUpdated request:', payload);
+      if (!events.onPageContentLayoutUpdate) {
+        logger.debug('onPageContentLayoutUpdate event listener is not set.');
+        return;
+      }
+      events.onPageContentLayoutUpdate(payload);
+      logger.debug('Processed pages.content.layoutUpdated request.');
+    });
+
+    // Handle "pages.content.fieldsUpdated" requests using the new on subscription.
+    this.coreSdk.on('pages.content.fieldsUpdated', async (payload: any) => {
+      logger.debug('Received pages.content.fieldsUpdated request:', payload);
+      if (!events.onPageContentFieldsUpdate) {
+        logger.debug('onPageContentFieldsUpdate event listener is not set.');
+        return;
+      }
+      events.onPageContentFieldsUpdate(payload);
+      logger.debug('Processed pages.content.fieldsUpdated request.');
+    });
+
     this.coreSdk.on('host.route', (payload: any) => {
       if (this.config.events?.onRouteUpdate) {
         this.config.events.onRouteUpdate(payload.route);
