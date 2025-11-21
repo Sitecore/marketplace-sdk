@@ -79,6 +79,8 @@ export interface ClientSDKConfig extends CoreSDKConfig {
   events?: {
     onRouteUpdate?: (route: string) => void;
     onPageContextUpdate?: (data: any) => void;
+    onPageContentLayoutUpdate?: (data: any) => void;
+    onPageContentFieldsUpdate?: (data: any) => void;
   };
   navbarItems?: NavbarItemsProps;
 }
