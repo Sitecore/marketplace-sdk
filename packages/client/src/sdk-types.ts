@@ -1,5 +1,11 @@
 // Import shared types (e.g. User and ApplicationMetadata)
-import { ApplicationContext, UserInfo, PagesContextParams } from '@sitecore-marketplace-sdk/core';
+import {
+  ApplicationContext,
+  UserInfo,
+  PagesContextParams,
+  ContentLayoutUpdatedData, 
+  ContentFieldsUpdatedData
+} from '@sitecore-marketplace-sdk/core';
 
 // --- Host state types ---
 
@@ -95,8 +101,6 @@ export interface NavbarItemsProps {
 }
 
 // --- Sites and Pages types ---
-
-// Pages context types
 
 export interface PagesContext {
   siteInfo?: PagesContextSiteInfo;
@@ -206,32 +210,6 @@ interface SiteContext {
     [key: string]: any;
   } | null;
   [key: string]: any;
-}
-
-// Pages content change items types
-
-export interface BaseContentUpdatedData {
-  ItemId: string;
-  Language: string;
-  ItemVersion: number;
-}
-
-export interface Field {
-  fieldId: string;
-  value: string;
-  originalValue?: string;
-}
-
-export interface Layout {
-  type: 'FINAL' | 'SHARED';
-}
-
-export interface ContentLayoutUpdatedData extends BaseContentUpdatedData {
-  layout: Layout;
-}
-
-export interface ContentFieldsUpdatedData extends BaseContentUpdatedData {
-  fields: Field[];
 }
 
 // --- Static mappings for queries and mutations ---
