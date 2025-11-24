@@ -249,3 +249,30 @@ export interface PagesContextParams {
   language?: string;
   itemVersion?: number;
 }
+
+/**
+ * Parameters for Pages Content subscription events.
+ */
+export interface BaseContentUpdatedData {
+  itemId: string;
+  language: string;
+  itemVersion: number;
+}
+
+export interface Field {
+  fieldId: string;
+  value: string;
+  originalValue?: string;
+}
+
+export interface Layout {
+  type: 'FINAL' | 'SHARED';
+}
+
+export interface ContentLayoutUpdatedData extends BaseContentUpdatedData {
+  layout: Layout;
+}
+
+export interface ContentFieldsUpdatedData extends BaseContentUpdatedData {
+  fields: Field[];
+}
