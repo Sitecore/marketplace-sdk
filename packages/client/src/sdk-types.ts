@@ -210,30 +210,29 @@ interface SiteContext {
 
 // Pages content change items types
 
-interface ContentLayoutUpdatedData extends BaseContentUpdatedData {
-  layout: Layout;
-}
-
-interface ContentFieldsUpdatedData extends BaseContentUpdatedData {
-  fields: Field[];
-}
-
-interface BaseContentUpdatedData  {
+export interface BaseContentUpdatedData {
   ItemId: string;
   Language: string;
   ItemVersion: number;
-};
+}
 
-interface Field
-{
+export interface Field {
   fieldId: string;
   value: string;
   originalValue?: string;
-};
+}
 
-interface Layout  {
+export interface Layout {
   type: 'FINAL' | 'SHARED';
-};
+}
+
+export interface ContentLayoutUpdatedData extends BaseContentUpdatedData {
+  layout: Layout;
+}
+
+export interface ContentFieldsUpdatedData extends BaseContentUpdatedData {
+  fields: Field[];
+}
 
 // --- Static mappings for queries and mutations ---
 
@@ -253,16 +252,6 @@ export interface QueryMap {
   'pages.context': {
     params: void;
     response: PagesContext;
-    subscribe: true;
-  };
-  'pages.content.layoutUpdated': {
-    params: void;
-    response: ContentLayoutUpdatedData;
-    subscribe: true;
-  };
-  'pages.content.fieldsUpdated': {
-    params: void;
-    response: ContentFieldsUpdatedData;
     subscribe: true;
   };
   'application.context': {
@@ -295,9 +284,19 @@ export interface MutationMap {
   };
 }
 
+export interface SubscribeMap {
+  'pages.content.layoutUpdated': {
+    data: ContentLayoutUpdatedData;
+  };
+  'pages.content.fieldsUpdated': {
+    data: ContentFieldsUpdatedData;
+  };
+}
+
 // Utility types for keys
 export type QueryKey = keyof QueryMap;
 export type MutationKey = keyof MutationMap;
+export type SubscribeKey = keyof SubscribeMap;
 
 export interface SDKModule {
   namespace: string;

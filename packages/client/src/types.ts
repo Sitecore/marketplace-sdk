@@ -6,6 +6,8 @@ import {
   QueryKey,
   QueryMap,
   SDKModule,
+  SubscribeKey,
+  SubscribeMap,
 } from './sdk-types';
 
 export type QueryStatus = 'idle' | 'loading' | 'error' | 'success';
@@ -66,6 +68,16 @@ export interface MutationOptions<K extends MutationKey>
   extends BaseMutationOptions<MutationMap[K]['response'], Error, MutationMap[K]['params']> {}
 
 /**
+ * Options for subscribing to events
+ */
+export interface SubscribeOptions<K extends SubscribeKey> {
+  /** Called when data is received for the subscription */
+  onData: (data: SubscribeMap[K]['data']) => void;
+  /** Called when the subscription encounters an error */
+  onError?: (error: Error) => void;
+}
+
+/**
  * ClientSDKConfig is the configuration used by the Client SDK.
  * Instead of exposing a CoreSDK instance, users should provide the
  * configuration needed to initialize CoreSDK internally.
@@ -79,8 +91,6 @@ export interface ClientSDKConfig extends CoreSDKConfig {
   events?: {
     onRouteUpdate?: (route: string) => void;
     onPageContextUpdate?: (data: any) => void;
-    onPageContentLayoutUpdate?: (data: any) => void;
-    onPageContentFieldsUpdate?: (data: any) => void;
   };
   navbarItems?: NavbarItemsProps;
 }
