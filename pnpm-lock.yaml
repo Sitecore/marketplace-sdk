@@ -38,7 +38,7 @@ importers:
   packages/client:
     dependencies:
       '@sitecore-marketplace-sdk/core':
-        specifier: ^0.3.0
+        specifier: 0.3.0
         version: 0.3.0
       tslib:
         specifier: ^2.8.1
