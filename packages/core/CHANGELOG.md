@@ -4,7 +4,8 @@
 
 ### Minor Changes
 
-- d8a184a: - Added display field in extension point meta object for pages custom field
+- d8a184a: Updates pages interfaces to support new features
+  - Added display field in extension point meta object for pages custom field
   - Added subscription event interfaces for pages.content.layoutUpdated and pages.content.fieldsUpdated
 
 ## 0.2.3
