@@ -696,4 +696,151 @@ describe('ClientSDK', () => {
     await client.mutate('pages.setValue', { params });
     expect(mockRequest).toHaveBeenCalledWith('pages.setValue:mutation', params);
   });
+
+  describe('subscribe', () => {
+    it('should subscribe to an event and return unsubscribe function', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.content.layoutUpdated';
+      const mockUnsubscribe = vi.fn();
+      const mockOn = vi.fn().mockReturnValue(mockUnsubscribe);
+      client['coreSdk'] = { on: mockOn } as any;
+
+      const onData = vi.fn();
+      const unsubscribe = client.subscribe(eventKey, { onData });
+
+      expect(mockOn).toHaveBeenCalledWith(eventKey, expect.any(Function));
+      expect(unsubscribe).toBeInstanceOf(Function);
+      expect(logger.debug).toHaveBeenCalledWith(`Subscribing to event: ${eventKey}`);
+      expect(logger.info).toHaveBeenCalledWith(`Successfully subscribed to event: ${eventKey}`);
+    });
+
+    it('should call onData callback when event is received', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.content.layoutUpdated';
+      const eventData = { ItemId: '123', Language: 'en', layout: { type: 'FINAL' } };
+      let eventHandler: (data: any) => void;
+
+      const mockOn = vi.fn().mockImplementation((key, handler) => {
+        eventHandler = handler;
+        return vi.fn();
+      });
+      client['coreSdk'] = { on: mockOn } as any;
+
+      const onData = vi.fn();
+      client.subscribe(eventKey, { onData });
+
+      // Simulate event being received
+      eventHandler!(eventData);
+
+      expect(onData).toHaveBeenCalledWith(eventData);
+      expect(logger.debug).toHaveBeenCalledWith(`Received event data for ${eventKey}:`, eventData);
+    });
+
+    it('should call onError callback when error occurs in handler', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.content.layoutUpdated';
+      const eventData = { ItemId: '123' };
+      let eventHandler: (data: any) => void;
+
+      const mockOn = vi.fn().mockImplementation((key, handler) => {
+        eventHandler = handler;
+        return vi.fn();
+      });
+      client['coreSdk'] = { on: mockOn } as any;
+
+      const onData = vi.fn().mockImplementation(() => {
+        throw new Error('Handler error');
+      });
+      const onError = vi.fn();
+      client.subscribe(eventKey, { onData, onError });
+
+      // Simulate event being received
+      eventHandler!(eventData);
+
+      expect(onError).toHaveBeenCalledWith(expect.any(Error));
+      expect(logger.error).toHaveBeenCalledWith(
+        `Error in onData callback for ${eventKey}:`,
+        expect.any(Error),
+      );
+    });
+
+    it('should call onError callback when subscription fails', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.content.layoutUpdated';
+      const subscriptionError = new Error('Subscription failed');
+
+      const mockOn = vi.fn().mockImplementation(() => {
+        throw subscriptionError;
+      });
+      client['coreSdk'] = { on: mockOn } as any;
+
+      const onData = vi.fn();
+      const onError = vi.fn();
+      const unsubscribe = client.subscribe(eventKey, { onData, onError });
+
+      expect(onError).toHaveBeenCalledWith(subscriptionError);
+      expect(logger.error).toHaveBeenCalledWith(`Failed to subscribe to event ${eventKey}:`, subscriptionError);
+      expect(unsubscribe).toBeInstanceOf(Function);
+    });
+
+    it('should call unsubscribe function when unsubscribe is called', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.content.layoutUpdated';
+      const mockUnsubscribe = vi.fn();
+      const mockOn = vi.fn().mockReturnValue(mockUnsubscribe);
+      client['coreSdk'] = { on: mockOn } as any;
+
+      const onData = vi.fn();
+      const unsubscribe = client.subscribe(eventKey, { onData });
+
+      unsubscribe();
+
+      expect(mockUnsubscribe).toHaveBeenCalled();
+      expect(logger.debug).toHaveBeenCalledWith(`Unsubscribing from event: ${eventKey}`);
+    });
+
+    it('should return no-op unsubscribe function when subscription fails', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.content.layoutUpdated';
+      const subscriptionError = new Error('Subscription failed');
+
+      const mockOn = vi.fn().mockImplementation(() => {
+        throw subscriptionError;
+      });
+      client['coreSdk'] = { on: mockOn } as any;
+
+      const onData = vi.fn();
+      const unsubscribe = client.subscribe(eventKey, { onData });
+
+      // Should not throw when calling unsubscribe even if subscription failed
+      expect(() => unsubscribe()).not.toThrow();
+    });
+
+    it('should subscribe to fieldsUpdated event', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.content.fieldsUpdated';
+      const eventData = {
+        ItemId: '123',
+        Language: 'en',
+        ItemVersion: 1,
+        fields: [{ fieldId: 'field1', value: 'value1' }],
+      };
+      let eventHandler: (data: any) => void;
+
+      const mockOn = vi.fn().mockImplementation((key, handler) => {
+        eventHandler = handler;
+        return vi.fn();
+      });
+      client['coreSdk'] = { on: mockOn } as any;
+
+      const onData = vi.fn();
+      client.subscribe(eventKey, { onData });
+
+      // Simulate event being received
+      eventHandler!(eventData);
+
+      expect(onData).toHaveBeenCalledWith(eventData);
+      expect(mockOn).toHaveBeenCalledWith(eventKey, expect.any(Function));
+    });
+  });
 });
