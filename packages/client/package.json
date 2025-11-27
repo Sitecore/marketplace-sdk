@@ -38,7 +38,7 @@
     "client"
   ],
   "dependencies": {
-    "@sitecore-marketplace-sdk/core": "https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@19c17ac",
+    "@sitecore-marketplace-sdk/core": "^0.3.0",
     "tslib": "^2.8.1",
     "uuid": "^11.1.0"
   },
