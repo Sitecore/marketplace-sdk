@@ -214,8 +214,8 @@ describe('PostMessageBridge', () => {
 
       expect(consoleSpy).toHaveBeenCalledWith(
           '[client PostMessageBridge] Handling request for action: %s',
-          message,
-          'testAction'
+          'testAction',
+          message
       );
 
       consoleSpy.mockRestore();
@@ -251,8 +251,8 @@ describe('PostMessageBridge', () => {
 
       expect(consoleSpy).toHaveBeenCalledWith(
           '[client PostMessageBridge] Handling response for message ID: %s',
-          message,
-          'resp-1'
+          'resp-1',
+          message
       );
 
       consoleSpy.mockRestore();
