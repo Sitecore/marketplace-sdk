@@ -403,8 +403,9 @@ export class PostMessageBridge {
   private handleResponse(message: ResponseMessage): void {
     // Log inbound response details.
     console.debug(
-      `[${this.sdkType} PostMessageBridge] Handling response for message ID: ${message.id}`,
+      `[${this.sdkType} PostMessageBridge] Handling response for message ID: %s`,
       message,
+      message.id,
     );
 
     const pending = this.pendingRequests.get(message.id);
@@ -443,8 +444,9 @@ export class PostMessageBridge {
    */
   private async handleRequest(message: RequestMessage): Promise<void> {
     console.debug(
-      `[${this.sdkType} PostMessageBridge] Handling request for action: ${message.action}`,
+      `[${this.sdkType} PostMessageBridge] Handling request for action: %s`,
       message,
+      message.action,
     );
 
     const fullKey = message.action.split(':');
