@@ -60,7 +60,7 @@ export class EventEmitter {
       try {
         handler(data);
       } catch (error) {
-        console.error(`Error in event handler for ${event}:`, error);
+        console.error('Error in event handler for %s:', event, error);
       }
     });
 
@@ -70,7 +70,7 @@ export class EventEmitter {
         // Wildcard handler signature: (data: { event: string; payload: T }) => void
         (handler as any)({ event, payload: data });
       } catch (error) {
-        console.error(`Error in wildcard handler for ${event}:`, error);
+        console.error('Error in wildcard handler for %s:', event, error);
       }
     });
   }
