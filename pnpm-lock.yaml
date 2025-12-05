@@ -38,8 +38,8 @@ importers:
   packages/client:
     dependencies:
       '@sitecore-marketplace-sdk/core':
-        specifier: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@61a610f
-        version: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@61a610f
+        specifier: 0.3.1
+        version: 0.3.1
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -836,9 +836,8 @@ packages:
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
 
-  '@sitecore-marketplace-sdk/core@https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@61a610f':
-    resolution: {tarball: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@61a610f}
-    version: 0.3.0
+  '@sitecore-marketplace-sdk/core@0.3.1':
+    resolution: {integrity: sha512-CWtz3oVpXt2johcuwrtleLPRZ+EoooN8PBR8U9TypE046czBcJQQh9DHvsbiVXJbRb1XxBojMixZbbdTNZonbg==}
 
   '@tootallnate/once@2.0.0':
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
@@ -3149,7 +3148,7 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@sitecore-marketplace-sdk/core@https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@61a610f':
+  '@sitecore-marketplace-sdk/core@0.3.1':
     dependencies:
       tslib: 2.8.1
       uuid: 11.1.0
