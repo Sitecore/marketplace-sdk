@@ -26,6 +26,7 @@ import {
   MutationOptions,
   QueryOptions,
   QueryResult,
+  SubscribeOptions,
 } from './types'; // This might be adjusted if you merge config changes
 import { StateManager } from './state';
 import { logger } from './logger';
@@ -36,6 +37,8 @@ import type {
   MutationMap,
   NavbarItemsProps,
   SDKModule,
+  SubscribeKey,
+  SubscribeMap,
 } from './sdk-types';
 
 export class ClientSDK {
@@ -352,6 +355,65 @@ export class ClientSDK {
       logger.error(`Mutation (${key}) error:`, error);
       onError?.(error as Error);
       throw error;
+    }
+  }
+
+  /**
+   * Subscribes to events from the host application. This is a dedicated API for event-based subscriptions,
+   * separate from the query API. Use this when you want to listen to specific events like content updates.
+   *
+   * @param eventKey - The event key identifying the event to subscribe to, using format '<resource>.<eventAction>'
+   * @param options - Configuration for the subscription
+   * @param options.onData - Callback when event data is received
+   * @param options.onError - Optional callback when subscription encounters an error
+   *
+   * @returns A function to unsubscribe from the event
+   *
+   * @example
+   * ```typescript
+   * // Subscribe to specific event using format <resource>.<eventAction>
+   * const unsubscribe = client.subscribe('pages.content.layoutUpdated', {
+   *   onData: (data) => {
+   *     console.log('Layout updated:', data);
+   *   },
+   *   onError: (error) => {
+   *     console.error('Subscription error:', error);
+   *   }
+   * });
+   *
+   * // Later: cleanup subscription
+   * unsubscribe();
+   * ```
+   */
+  subscribe<K extends SubscribeKey>(eventKey: K, options: SubscribeOptions<K>): () => void {
+    const { onData, onError } = options;
+    logger.debug(`Subscribing to event: ${eventKey}`);
+
+    try {
+      // Subscribe to the event using core SDK
+      const unsubscribe = this.coreSdk.on<SubscribeMap[K]['data']>(
+          eventKey, (data: SubscribeMap[K]['data']) => {
+            try {
+              logger.debug(`Received event data for ${eventKey}:`, data);
+              onData(data);
+            } catch (error) {
+              logger.error(`Error in onData callback for ${eventKey}:`, error);
+              onError?.(error as Error);
+            }
+          });
+
+      logger.info(`Successfully subscribed to event: ${eventKey}`);
+
+      // Return unsubscribe function
+      return () => {
+        logger.debug(`Unsubscribing from event: ${eventKey}`);
+        unsubscribe();
+      };
+    } catch (error) {
+      logger.error(`Failed to subscribe to event ${eventKey}:`, error);
+      onError?.(error as Error);
+      // Return a no-op unsubscribe function if subscription fails
+      return () => {};
     }
   }
 
