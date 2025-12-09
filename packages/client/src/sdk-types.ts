@@ -1,5 +1,17 @@
 // Import shared types (e.g. User and ApplicationMetadata)
-import { ApplicationContext, UserInfo, PagesContextParams } from '@sitecore-marketplace-sdk/core';
+import {
+  ApplicationContext,
+  UserInfo,
+  PagesContextParams,
+  ContentLayoutUpdatedData, 
+  ContentFieldsUpdatedData
+} from '@sitecore-marketplace-sdk/core';
+
+// Re-export event data types from core
+export type { 
+  ContentLayoutUpdatedData, 
+  ContentFieldsUpdatedData
+} from '@sitecore-marketplace-sdk/core';
 
 // --- Host state types ---
 
@@ -298,9 +310,19 @@ export interface MutationMap {
   };
 }
 
+export interface SubscribeMap {
+  'pages.content.layoutUpdated': {
+    data: ContentLayoutUpdatedData;
+  };
+  'pages.content.fieldsUpdated': {
+    data: ContentFieldsUpdatedData;
+  };
+}
+
 // Utility types for keys
 export type QueryKey = keyof QueryMap;
 export type MutationKey = keyof MutationMap;
+export type SubscribeKey = keyof SubscribeMap;
 
 export interface SDKModule {
   namespace: string;
