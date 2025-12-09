@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.3.1
+
+### Patch Changes
+
+- 23eb7bf: Fixes format string issues found by security scan
+
 ## 0.3.0
 
 ### Minor Changes

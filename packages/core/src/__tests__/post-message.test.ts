@@ -188,6 +188,76 @@ describe('PostMessageBridge', () => {
       expect(bridge['config'].targetOrigin).toBe(null);
     });
 
+    test('logs request handling with %s specifier and action', async () => {
+      const consoleSpy = vi.spyOn(console, 'debug').mockImplementation(() => {});
+      const bridge = new PostMessageBridge({
+        target: { postMessage: vi.fn() } as unknown as Window, // <-- Fix here
+        targetOrigin: 'https://trusted-origin.com',
+        selfOrigin: 'https://self-origin.com',
+        timeout: 5000,
+      });
+
+      bridge['connected'] = true;
+      bridge['sdkType'] = 'client';
+      bridge['requestHandlers'].set('testAction', vi.fn());
+
+      const message = {
+        id: '1',
+        type: 'request',
+        action: 'testAction',
+        payload: {},
+        timestamp: Date.now(),
+        source: 'sitecore-marketplace-sdk',
+      } as const;
+
+      await bridge['handleRequest'](message);
+
+      expect(consoleSpy).toHaveBeenCalledWith(
+          '[client PostMessageBridge] Handling request for action: %s',
+          'testAction',
+          message
+      );
+
+      consoleSpy.mockRestore();
+    });
+
+    test('logs response handling with %s specifier and message id', () => {
+      const consoleSpy = vi.spyOn(console, 'debug').mockImplementation(() => {});
+      const bridge = new PostMessageBridge({
+        target: { postMessage: vi.fn() } as unknown as Window,
+        targetOrigin: 'https://trusted-origin.com',
+        selfOrigin: 'https://self-origin.com',
+        timeout: 5000,
+      });
+
+      bridge['connected'] = true;
+      bridge['sdkType'] = 'client';
+      // Simulate a pending request to avoid early return
+      const message = {
+        id: 'resp-1',
+        type: 'response',
+        success: true,
+        data: { foo: 'bar' },
+        timestamp: Date.now(),
+        source: 'sitecore-marketplace-sdk',
+      } as const;
+      bridge['pendingRequests'].set('resp-1', {
+        resolve: vi.fn(),
+        reject: vi.fn(),
+        timeout: setTimeout(() => {}, 1000),
+      });
+
+      bridge['handleResponse'](message);
+
+      expect(consoleSpy).toHaveBeenCalledWith(
+          '[client PostMessageBridge] Handling response for message ID: %s',
+          'resp-1',
+          message
+      );
+
+      consoleSpy.mockRestore();
+    });
+
     // describe('request/response', () => {
     //   beforeEach(async () => {
     //     bridge.initialize({
