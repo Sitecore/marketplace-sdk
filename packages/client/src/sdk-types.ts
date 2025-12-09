@@ -7,6 +7,12 @@ import {
   ContentFieldsUpdatedData
 } from '@sitecore-marketplace-sdk/core';
 
+// Re-export event data types from core
+export type { 
+  ContentLayoutUpdatedData, 
+  ContentFieldsUpdatedData
+} from '@sitecore-marketplace-sdk/core';
+
 // --- Host state types ---
 
 // Define the allowed app types
