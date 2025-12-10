@@ -1915,6 +1915,32 @@ Example value: DE`,
   additionalProperties: false,
 } as const;
 
+export const TranslatePageInputSchema = {
+  required: ['sourceLanguage', 'targetLanguage', 'translationStrategy'],
+  type: 'object',
+  properties: {
+    sourceLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Source language
+Example value: en`,
+      example: 'en',
+    },
+    targetLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Target language
+Example value: ja-JP`,
+      example: 'ja-JP',
+    },
+    translationStrategy: {
+      $ref: '#/components/schemas/TranslationStrategy',
+    },
+  },
+  additionalProperties: false,
+  description: 'The translations options',
+} as const;
+
 export const ThumbnailSchema = {
   type: 'object',
   properties: {
@@ -1942,6 +1968,40 @@ Example value: True`,
   },
   additionalProperties: false,
   description: 'The thumbnail response entity.',
+} as const;
+
+export const TranslateSiteInputSchema = {
+  required: ['sourceLanguage', 'targetLanguage', 'translationStrategy'],
+  type: 'object',
+  properties: {
+    sourceLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Source language
+Example value: en`,
+      example: 'en',
+    },
+    targetLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Target language
+Example value: ja-JP`,
+      example: 'ja-JP',
+    },
+    translationStrategy: {
+      $ref: '#/components/schemas/TranslationStrategy',
+    },
+  },
+  additionalProperties: false,
+  description: 'The translations options',
+} as const;
+
+export const TranslationStrategySchema = {
+  enum: ['AddVersion', 'SkipIfExists'],
+  type: 'string',
+  description:
+    'Specifies the strategy to use when translating: add a new version or skip if a version exists.',
+  format: 'int32',
 } as const;
 
 export const UpdateHostInputSchema = {

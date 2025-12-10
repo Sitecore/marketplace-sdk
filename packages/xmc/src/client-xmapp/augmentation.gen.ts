@@ -186,6 +186,12 @@ declare module '@sitecore-marketplace-sdk/client' {
       response: Awaited<ReturnType<typeof sdk.createLanguage>>;
     };
     /**
+     * Translates a page using Stream API*/
+    'xmc.xmapp.translatePage': {
+      params: Parameters<typeof sdk.translatePage>[0];
+      response: Awaited<ReturnType<typeof sdk.translatePage>>;
+    };
+    /**
      * Creates a collection by specifying a name and, optionally, a display name and description.*/
     'xmc.xmapp.createCollection': {
       params: Parameters<typeof sdk.createCollection>[0];
@@ -353,6 +359,12 @@ declare module '@sitecore-marketplace-sdk/client' {
     'xmc.xmapp.updateSitemapConfiguration': {
       params: Parameters<typeof sdk.updateSitemapConfiguration>[0];
       response: Awaited<ReturnType<typeof sdk.updateSitemapConfiguration>>;
+    };
+    /**
+     * Translates a site using Stream API*/
+    'xmc.xmapp.translateSite': {
+      params: Parameters<typeof sdk.translateSite>[0];
+      response: Awaited<ReturnType<typeof sdk.translateSite>>;
     };
   }
 }
