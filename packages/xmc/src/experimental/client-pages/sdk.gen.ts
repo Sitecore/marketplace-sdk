@@ -10,6 +10,12 @@ type DeletePageVersionsResponse = experimental_Pages.DeletePageVersionsResponse;
 
 type DeletePageVersionsData = experimental_Pages.DeletePageVersionsData;
 
+type TranslatePageError = experimental_Pages.TranslatePageError;
+
+type TranslatePageResponse = experimental_Pages.TranslatePageResponse;
+
+type TranslatePageData = experimental_Pages.TranslatePageData;
+
 type AddPageVersionError = experimental_Pages.AddPageVersionError;
 
 type AddPageVersionResponse = experimental_Pages.AddPageVersionResponse;
@@ -495,6 +501,33 @@ export const addPageVersion = <ThrowOnError extends boolean = false>(
       },
     ],
     url: '/api/v1/pages/{pageId}/version',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Translate a page
+ * Creates a new translated version of a single page using the Stream API.
+ */
+export const translatePage = <ThrowOnError extends boolean = false>(
+  options: Options<TranslatePageData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    TranslatePageResponse,
+    TranslatePageError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/pages/{pageId}/translate',
     ...options,
     headers: {
       'Content-Type': 'application/json',
