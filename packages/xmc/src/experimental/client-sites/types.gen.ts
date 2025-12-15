@@ -160,7 +160,7 @@ export namespace experimental_Sites {
      * The rendering host.
      * Example value: Default
      */
-    renderingHost?: string | null;
+    editingHost?: string | null;
     /**
      * The identifier of the home page.
      * Example value: 110d559fdea542ea9c1c8a5df7e70ef9
@@ -217,6 +217,41 @@ export namespace experimental_Sites {
     fallbackLanguageIso?: string | null;
     baseIsoCultureCode?: string | null;
     fallbackRegionDisplayName?: string | null;
+  };
+  /**
+   * The editing host response entity.
+   */
+  export type EditingHost = {
+    /**
+     * The editing host ID.
+     * Example value: 5aae1eeaea2440bf96f11f43da82c77b
+     */
+    id?: string | null;
+    /**
+     * The name of the editing host.
+     * Example value: Default
+     */
+    name?: string | null;
+    /**
+     * The name of the app.
+     * Example value: Default
+     */
+    appName?: string | null;
+    /**
+     * The server side rendering engine configuration URL.
+     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config
+     */
+    layoutServiceConfiguration?: string | null;
+    /**
+     * The server side rendering engine endpoint URL.
+     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render
+     */
+    serverSideRenderingEngineEndpointUrl?: string | null;
+    /**
+     * The server side rendering engine application URL.
+     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io/
+     */
+    serverSideRenderingEngineApplicationUrl?: string | null;
   };
   /**
    * The error page response entity.
@@ -306,7 +341,7 @@ export namespace experimental_Sites {
      * Example value: 5aae1eeaea2440bf96f11f43da82c77b
      */
     homePageId?: string | null;
-    renderingHost?: RenderingHost;
+    editingHost?: EditingHost;
     permissions?: Permissions;
     /**
      * The host settings collection.
@@ -344,41 +379,28 @@ export namespace experimental_Sites {
      */
     createdBy?: string | null;
   };
-  /**
-   * A job response entity.
-   */
   export type Job = {
-    /**
-     * The name of the job.
-     * Example value: Create site
-     */
     name?: string | null;
-    /**
-     * Whether the job has finished.
-     * Example value: True
-     */
-    done?: boolean;
-    /**
-     * A timestamp of when the job was added to the queue.
-     * Example value: 2024-06-12T01:47:37.316Z
-     */
     queueTime?: string;
-    /**
-     * The handle of the job.
-     * Example value: 4d97d35a-b605-4fc6-8a03-5bb8e403cdaf;customer-tenant-env
-     */
+    endTime?: string | null;
     handle?: string | null;
-    /**
-     * The name of the site.
-     * Example value: new-site
-     */
     site?: string | null;
-    /**
-     * The identifier or name of the site collection.
-     * Example value: {81D27BA9-F798-4190-8536-CA20203AA6EA}
-     */
     siteCollection?: string | null;
+    status?: JobStatus;
+    jobType?: string | null;
+    statistics?: JobStatisticsDto;
   };
+  export type JobStatisticsDto = {
+    itemsProcessed?: number | null;
+    pagesProcessed?: number | null;
+  };
+  export type JobStatus = 'Queued' | 'Running' | 'Completed' | 'Failed';
+  export const JobStatus = {
+    QUEUED: 'Queued',
+    RUNNING: 'Running',
+    COMPLETED: 'Completed',
+    FAILED: 'Failed',
+  } as const;
   /**
    * Language
    */
@@ -619,6 +641,7 @@ export namespace experimental_Sites {
      * Example value: Page
      */
     displayName?: string | null;
+    templateType?: TemplateType;
   };
   export type PageLocking = {
     /**
@@ -704,7 +727,7 @@ export namespace experimental_Sites {
      */
     parentId?: string | null;
     /**
-     * If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+     * If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
      * Example value: True
      */
     hasPresentation?: boolean;
@@ -859,41 +882,6 @@ export namespace experimental_Sites {
      * Example value: new-site
      */
     name: string;
-  };
-  /**
-   * The rendering host response entity.
-   */
-  export type RenderingHost = {
-    /**
-     * The rendering host ID.
-     * Example value: 5aae1eeaea2440bf96f11f43da82c77b
-     */
-    id?: string | null;
-    /**
-     * The name of the rendering host.
-     * Example value: Default
-     */
-    name?: string | null;
-    /**
-     * The name of the app.
-     * Example value: Default
-     */
-    appName?: string | null;
-    /**
-     * The server side rendering engine configuration URL.
-     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config
-     */
-    layoutServiceConfiguration?: string | null;
-    /**
-     * The server side rendering engine endpoint URL.
-     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render
-     */
-    serverSideRenderingEngineEndpointUrl?: string | null;
-    /**
-     * The server side rendering engine application URL.
-     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io/
-     */
-    serverSideRenderingEngineApplicationUrl?: string | null;
   };
   /**
    * A site response entity.
@@ -1067,7 +1055,7 @@ export namespace experimental_Sites {
      */
     name?: string | null;
     /**
-     * Whether the template is available for use in the XM Cloud Create a site UI.
+     * Whether the template is available for use in the SitecoreAI Create a site UI.
      * Example value: True
      */
     enabled?: boolean;
@@ -1245,6 +1233,17 @@ export namespace experimental_Sites {
     regionCode?: string | null;
   };
   /**
+   * The type of template.
+   */
+  export type TemplateType = 'ItemTemplate' | 'BranchTemplate';
+  /**
+   * The type of template.
+   */
+  export const TemplateType = {
+    ITEM_TEMPLATE: 'ItemTemplate',
+    BRANCH_TEMPLATE: 'BranchTemplate',
+  } as const;
+  /**
    * The thumbnail response entity.
    */
   export type Thumbnail = {
@@ -1264,6 +1263,33 @@ export namespace experimental_Sites {
      */
     autogenerated?: boolean;
   };
+  /**
+   * The translations options
+   */
+  export type TranslateSiteInput = {
+    /**
+     * Source language
+     * Example value: en
+     */
+    sourceLanguage: string;
+    /**
+     * Target language
+     * Example value: ja-JP
+     */
+    targetLanguage: string;
+    translationStrategy: TranslationStrategy;
+  };
+  /**
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
+   */
+  export type TranslationStrategy = 'AddVersion' | 'SkipIfExists';
+  /**
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
+   */
+  export const TranslationStrategy = {
+    ADD_VERSION: 'AddVersion',
+    SKIP_IF_EXISTS: 'SkipIfExists',
+  } as const;
   /**
    * A host update request.
    */
@@ -1290,7 +1316,7 @@ export namespace experimental_Sites {
      * The rendering host.
      * Example value: Default
      */
-    renderingHost?: string | null;
+    editingHost?: string | null;
     /**
      * The identifier of the home page.
      * Example value: 110d559fdea542ea9c1c8a5df7e70ef9
@@ -1375,6 +1401,14 @@ export namespace experimental_Sites {
      * Example value: True
      */
     resetThumbnail?: boolean | null;
+    /**
+     * The list of text editor profiles associated with the site.
+     * Example value: [
+     * "e2102e93-424a-4a99-a066-7750dbf41b28",
+     * "530f7907-6eec-4b7a-9fcc-98aef2719232"
+     * ]
+     */
+    editorProfiles?: Array<string> | null;
   };
   /**
    * A sitemap configuration update request
@@ -1475,6 +1509,58 @@ export namespace experimental_Sites {
      */
     workflows?: Array<WorkflowStatistics> | null;
   };
+  export type ListJobsData = {
+    body?: never;
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/jobs';
+  };
+  export type ListJobsErrors = {
+    /**
+     * Bad Request
+     */
+    400: ProblemDetails;
+  };
+  export type ListJobsError = ListJobsErrors[keyof ListJobsErrors];
+  export type ListJobsResponses = {
+    /**
+     * OK
+     */
+    200: Array<Job>;
+  };
+  export type ListJobsResponse = ListJobsResponses[keyof ListJobsResponses];
+  export type RetrieveJobData = {
+    body?: never;
+    path: {
+      jobHandle: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/jobs/{jobHandle}/status';
+  };
+  export type RetrieveJobErrors = {
+    /**
+     * Not Found
+     */
+    404: ProblemDetails;
+  };
+  export type RetrieveJobError = RetrieveJobErrors[keyof RetrieveJobErrors];
+  export type RetrieveJobResponses = {
+    /**
+     * OK
+     */
+    200: Job;
+  };
+  export type RetrieveJobResponse = RetrieveJobResponses[keyof RetrieveJobResponses];
   export type ListLanguagesData = {
     body?: never;
     path?: never;
@@ -1569,9 +1655,17 @@ export namespace experimental_Sites {
     ListSupportedLanguagesResponses[keyof ListSupportedLanguagesResponses];
   export type ListCollectionsData = {
     body?: never;
+    headers?: {
+      'x-sc-continuation'?: string;
+    };
     path?: never;
     query?: {
+      /**
+       * The identifier of the environment.
+       */
       environmentId?: string;
+      pageNumber?: number;
+      pageSize?: number;
       /**
        * The Sitecore context ID.
        */
@@ -1666,6 +1760,9 @@ export namespace experimental_Sites {
       collectionId: string;
     };
     query?: {
+      /**
+       * The identifier of the environment.
+       */
       environmentId?: string;
       /**
        * The Sitecore context ID.
@@ -1865,61 +1962,6 @@ export namespace experimental_Sites {
   };
   export type AddFavoriteSiteTemplateResponse =
     AddFavoriteSiteTemplateResponses[keyof AddFavoriteSiteTemplateResponses];
-  export type ListJobsData = {
-    body?: never;
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/jobs';
-  };
-  export type ListJobsErrors = {
-    /**
-     * Bad request
-     */
-    400: ProblemDetails;
-  };
-  export type ListJobsError = ListJobsErrors[keyof ListJobsErrors];
-  export type ListJobsResponses = {
-    /**
-     * Success
-     */
-    200: Array<Job>;
-  };
-  export type ListJobsResponse = ListJobsResponses[keyof ListJobsResponses];
-  export type RetrieveJobData = {
-    body?: never;
-    path: {
-      /**
-       * The handle of the job. If you don’t know the handle of the job, first retrieve the list of site job statuses.
-       */
-      jobHandle: string;
-    };
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/jobs/{jobHandle}/status';
-  };
-  export type RetrieveJobErrors = {
-    /**
-     * Not found
-     */
-    404: ProblemDetails;
-  };
-  export type RetrieveJobError = RetrieveJobErrors[keyof RetrieveJobErrors];
-  export type RetrieveJobResponses = {
-    /**
-     * Success
-     */
-    200: Job;
-  };
-  export type RetrieveJobResponse = RetrieveJobResponses[keyof RetrieveJobResponses];
   export type AggregateLivePageVariantsData = {
     /**
      * The collection of pages, by their identifier and language, for which to get personalization variants.
@@ -3081,7 +3123,7 @@ export namespace experimental_Sites {
     204: void;
   };
   export type UpdateHostResponse = UpdateHostResponses[keyof UpdateHostResponses];
-  export type GetRenderingHostsData = {
+  export type GetEditingHostsData = {
     body?: never;
     path: {
       /**
@@ -3099,9 +3141,9 @@ export namespace experimental_Sites {
        */
       sitecoreContextId?: string;
     };
-    url: '/api/v1/sites/{siteId}/renderinghosts';
+    url: '/api/v1/sites/{siteId}/editinghosts';
   };
-  export type GetRenderingHostsErrors = {
+  export type GetEditingHostsErrors = {
     /**
      * Bad request
      */
@@ -3111,15 +3153,14 @@ export namespace experimental_Sites {
      */
     404: ProblemDetails;
   };
-  export type GetRenderingHostsError = GetRenderingHostsErrors[keyof GetRenderingHostsErrors];
-  export type GetRenderingHostsResponses = {
+  export type GetEditingHostsError = GetEditingHostsErrors[keyof GetEditingHostsErrors];
+  export type GetEditingHostsResponses = {
     /**
      * Success
      */
-    200: Array<RenderingHost>;
+    200: Array<EditingHost>;
   };
-  export type GetRenderingHostsResponse =
-    GetRenderingHostsResponses[keyof GetRenderingHostsResponses];
+  export type GetEditingHostsResponse = GetEditingHostsResponses[keyof GetEditingHostsResponses];
   export type ListSiteTemplatesData = {
     body?: never;
     path?: never;
@@ -3365,6 +3406,47 @@ export namespace experimental_Sites {
   };
   export type RetrieveWorkflowStatisticsResponse =
     RetrieveWorkflowStatisticsResponses[keyof RetrieveWorkflowStatisticsResponses];
+  export type TranslateSiteData = {
+    /**
+     * The input model.
+     */
+    body: TranslateSiteInput;
+    path: {
+      /**
+       * The identifier of the site.
+       */
+      siteId: string;
+    };
+    query?: {
+      /**
+       * The identifier of the environment.
+       */
+      environmentId?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/sites/{siteId}/translate';
+  };
+  export type TranslateSiteErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Not found
+     */
+    404: ProblemDetails;
+  };
+  export type TranslateSiteError = TranslateSiteErrors[keyof TranslateSiteErrors];
+  export type TranslateSiteResponses = {
+    /**
+     * Success
+     */
+    200: string;
+  };
+  export type TranslateSiteResponse = TranslateSiteResponses[keyof TranslateSiteResponses];
   export type ClientOptions = {
     baseUrl: 'https://xmapps-api.sitecorecloud.io' | (string & {});
   };

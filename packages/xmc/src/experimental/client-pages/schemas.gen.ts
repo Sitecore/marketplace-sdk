@@ -48,7 +48,7 @@ Example value: 9100b830-c85b-459b-9c37-51da74fc9ecc`,
       example: '9100b830-c85b-459b-9c37-51da74fc9ecc',
     },
     pageName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -284,7 +284,7 @@ Example value: 4bc0c81a280b4b13890b7b074b9d68f4`,
     },
     hasPresentation: {
       type: 'boolean',
-      description: `If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+      description: `If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
 Example value: True`,
       example: true,
     },
@@ -429,6 +429,9 @@ Example value: 6fe7d655-1e3d-4c27-8010-5777f06c6c4f`,
 Example value: Page`,
       nullable: true,
       example: 'Page',
+    },
+    templateType: {
+      $ref: '#/components/schemas/TemplateType',
     },
   },
   additionalProperties: false,
@@ -1121,6 +1124,46 @@ Example value: 2`,
     },
   },
   additionalProperties: false,
+} as const;
+
+export const TemplateTypeSchema = {
+  enum: ['ItemTemplate', 'BranchTemplate'],
+  type: 'string',
+  description: 'The type of template.',
+} as const;
+
+export const TranslatePageInputSchema = {
+  required: ['sourceLanguage', 'targetLanguage', 'translationStrategy'],
+  type: 'object',
+  properties: {
+    sourceLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Source language
+Example value: en`,
+      example: 'en',
+    },
+    targetLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Target language
+Example value: ja-JP`,
+      example: 'ja-JP',
+    },
+    translationStrategy: {
+      $ref: '#/components/schemas/TranslationStrategy',
+    },
+  },
+  additionalProperties: false,
+  description: 'The translations options',
+} as const;
+
+export const TranslationStrategySchema = {
+  enum: ['AddVersion', 'SkipIfExists'],
+  type: 'string',
+  description:
+    'Specifies the strategy to use when translating: add a new version or skip if a version exists.',
+  format: 'int32',
 } as const;
 
 export const TypeFilterSchema = {

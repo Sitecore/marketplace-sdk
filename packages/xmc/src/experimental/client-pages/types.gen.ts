@@ -190,7 +190,7 @@ export namespace experimental_Pages {
      */
     parentId?: string | null;
     /**
-     * If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+     * If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
      * Example value: True
      */
     hasPresentation?: boolean;
@@ -284,6 +284,7 @@ export namespace experimental_Pages {
      * Example value: Page
      */
     displayName?: string | null;
+    templateType?: TemplateType;
   };
   export type PageLayout = {
     kind?: LayoutKind;
@@ -720,6 +721,44 @@ export namespace experimental_Pages {
      */
     version?: number;
   };
+  /**
+   * The type of template.
+   */
+  export type TemplateType = 'ItemTemplate' | 'BranchTemplate';
+  /**
+   * The type of template.
+   */
+  export const TemplateType = {
+    ITEM_TEMPLATE: 'ItemTemplate',
+    BRANCH_TEMPLATE: 'BranchTemplate',
+  } as const;
+  /**
+   * The translations options
+   */
+  export type TranslatePageInput = {
+    /**
+     * Source language
+     * Example value: en
+     */
+    sourceLanguage: string;
+    /**
+     * Target language
+     * Example value: ja-JP
+     */
+    targetLanguage: string;
+    translationStrategy: TranslationStrategy;
+  };
+  /**
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
+   */
+  export type TranslationStrategy = 'AddVersion' | 'SkipIfExists';
+  /**
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
+   */
+  export const TranslationStrategy = {
+    ADD_VERSION: 'AddVersion',
+    SKIP_IF_EXISTS: 'SkipIfExists',
+  } as const;
   /**
    * The search filter type.
    */
@@ -1492,6 +1531,51 @@ export namespace experimental_Pages {
     200: number;
   };
   export type AddPageVersionResponse = AddPageVersionResponses[keyof AddPageVersionResponses];
+  export type TranslatePageData = {
+    /**
+     * The input model.
+     */
+    body: TranslatePageInput;
+    path: {
+      /**
+       * The identifier of the page.
+       */
+      pageId: string;
+    };
+    query?: {
+      /**
+       * The site identifier.
+       */
+      siteId?: string;
+      /**
+       * The identifier of the environment.
+       */
+      environmentId?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/translate';
+  };
+  export type TranslatePageErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Not found
+     */
+    404: ProblemDetails;
+  };
+  export type TranslatePageError = TranslatePageErrors[keyof TranslatePageErrors];
+  export type TranslatePageResponses = {
+    /**
+     * Success
+     */
+    200: string;
+  };
+  export type TranslatePageResponse = TranslatePageResponses[keyof TranslatePageResponses];
   export type DeletePageVersionsData = {
     body?: never;
     path: {
