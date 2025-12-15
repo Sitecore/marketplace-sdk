@@ -1,0 +1,11 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Agent](../README.md) / PersonalizationGetConditionTemplatesResponse
+
+# Type Alias: PersonalizationGetConditionTemplatesResponse
+
+> **PersonalizationGetConditionTemplatesResponse** = [`PersonalizationGetConditionTemplatesResponses`](PersonalizationGetConditionTemplatesResponses.md)\[keyof [`PersonalizationGetConditionTemplatesResponses`](PersonalizationGetConditionTemplatesResponses.md)\]
+
+Defined in: [packages/xmc/src/client-agent/types.gen.ts:1762](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/types.gen.ts#L1762)

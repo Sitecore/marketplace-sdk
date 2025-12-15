@@ -1,5 +1,25 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.3.1
+
+### Patch Changes
+
+- 23eb7bf: Fixes format string issues found by security scan
+
+## 0.3.0
+
+### Minor Changes
+
+- d8a184a: Updates pages interfaces to support new features
+  - Added display field in extension point meta object for pages custom field
+  - Added subscription event interfaces for pages.content.layoutUpdated and pages.content.fieldsUpdated
+
+## 0.2.3
+
+### Patch Changes
+
+- f580406: Implemented a new Permission property in ApplicationRuntimeContext to configure iframe sandbox and allow attributes for stricter browser capability control. Additionally, addressed and fixed high-severity vulnerabilities identified in the glob CLI dependency.
+
 ## 0.2.2
 
 ### Patch Changes

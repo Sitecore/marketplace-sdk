@@ -50,6 +50,222 @@ Defined in: packages/client/dist/sdk-types.d.ts:211
 
 ***
 
+### xmc.agent.assetsUpdateAsset
+
+> **assetsUpdateAsset**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:257](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L257)
+
+Updates the metadata and properties of an existing digital asset. This allows you to modify asset information such as alt text, titles, and custom field values.
+
+#### params
+
+> **params**: `Options`\<[`AssetsUpdateAssetData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/AssetsUpdateAssetData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`UpdateAssetResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/UpdateAssetResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: UpdateAssetResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.assetsUploadAsset
+
+> **assetsUploadAsset**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:251](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L251)
+
+Uploads a new digital asset to the system. The asset will be processed and stored in the specified location with the provided metadata.
+
+#### params
+
+> **params**: `Options`\<[`AssetsUploadAssetData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/AssetsUploadAssetData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`UploadAssetResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/UploadAssetResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: UploadAssetResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.componentsCreateComponentDatasource
+
+> **componentsCreateComponentDatasource**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:245](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L245)
+
+Creates a new datasource item for a specific component with the provided field values. The datasource will be created in the appropriate location based on the component's configuration.
+
+#### params
+
+> **params**: `Options`\<[`ComponentsCreateComponentDatasourceData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/ComponentsCreateComponentDatasourceData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`CreateComponentDatasourceResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/CreateComponentDatasourceResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: CreateComponentDatasourceResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.contentCreateContentItem
+
+> **contentCreateContentItem**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:227](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L227)
+
+Creates a new content item with the specified template, fields, and location.
+
+#### params
+
+> **params**: `Options`\<[`ContentCreateContentItemData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/ContentCreateContentItemData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`CreateContentItemResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/CreateContentItemResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: CreateContentItemResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.contentDeleteContent
+
+> **contentDeleteContent**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:233](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L233)
+
+Deletes a content item and optionally all its child items.
+
+#### params
+
+> **params**: `Options`\<[`ContentDeleteContentData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/ContentDeleteContentData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`DeleteContentResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/DeleteContentResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: DeleteContentResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.contentUpdateContent
+
+> **contentUpdateContent**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:239](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L239)
+
+Updates comprehensive information about a content item including its fields and metadata.
+
+#### params
+
+> **params**: `Options`\<[`ContentUpdateContentData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/ContentUpdateContentData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`UpdateContentResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/UpdateContentResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: UpdateContentResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.jobsRevertJob
+
+> **jobsRevertJob**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:269](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L269)
+
+Reverts the operations of the specified job.
+
+#### params
+
+> **params**: `Options`\<[`JobsRevertJobData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/JobsRevertJobData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: HttpValidationError; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.pagesAddComponentOnPage
+
+> **pagesAddComponentOnPage**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:215](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L215)
+
+Adds a component to a specific placeholder on a page. You can optionally specify a datasource for the component or create a new one.
+
+#### params
+
+> **params**: `Options`\<[`PagesAddComponentOnPageData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/PagesAddComponentOnPageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`AddComponentResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/AddComponentResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: AddComponentResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.pagesAddLanguageToPage
+
+> **pagesAddLanguageToPage**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:209](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L209)
+
+Creates a language version of an existing page. This allows you to have the same page content available in multiple languages.
+
+#### params
+
+> **params**: `Options`\<[`PagesAddLanguageToPageData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/PagesAddLanguageToPageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`AddLanguageResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/AddLanguageResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: AddLanguageResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.pagesCreatePage
+
+> **pagesCreatePage**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:203](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L203)
+
+Creates a new page in the specified location with the given template, fields, and language. The page is created as a child of the specified parent page.
+
+#### params
+
+> **params**: `Options`\<[`PagesCreatePageData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/PagesCreatePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`CreatePageResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/CreatePageResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: CreatePageResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.pagesSetComponentDatasource
+
+> **pagesSetComponentDatasource**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:221](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L221)
+
+Set component datasource
+
+#### params
+
+> **params**: `Options`\<[`PagesSetComponentDatasourceData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/PagesSetComponentDatasourceData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SetComponentDatasourceResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/SetComponentDatasourceResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: SetComponentDatasourceResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.agent.personalizationCreatePersonalizationVersion
+
+> **personalizationCreatePersonalizationVersion**: `object`
+
+Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:263](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L263)
+
+Creates a new personalization definition with one or more variants.
+
+#### params
+
+> **params**: `Options`\<[`PersonalizationCreatePersonalizationVersionData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/PersonalizationCreatePersonalizationVersionData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`FlowDefinitionResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/FlowDefinitionResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: FlowDefinitionResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
 ### xmc.authoring.graphql
 
 > **graphql**: `object`

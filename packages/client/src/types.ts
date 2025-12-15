@@ -6,6 +6,8 @@ import {
   QueryKey,
   QueryMap,
   SDKModule,
+  SubscribeKey,
+  SubscribeMap,
 } from './sdk-types';
 
 export type QueryStatus = 'idle' | 'loading' | 'error' | 'success';
@@ -64,6 +66,16 @@ export interface BaseMutationOptions<TData = unknown, TError extends Error = Err
 
 export interface MutationOptions<K extends MutationKey>
   extends BaseMutationOptions<MutationMap[K]['response'], Error, MutationMap[K]['params']> {}
+
+/**
+ * Options for subscribing to events
+ */
+export interface SubscribeOptions<K extends SubscribeKey> {
+  /** Called when data is received for the subscription */
+  onData: (data: SubscribeMap[K]['data']) => void;
+  /** Called when the subscription encounters an error */
+  onError?: (error: Error) => void;
+}
 
 /**
  * ClientSDKConfig is the configuration used by the Client SDK.

@@ -1,0 +1,11 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [experimental\_Agent](../README.md) / PagesGetPageTemplateByIdResponse
+
+# Type Alias: PagesGetPageTemplateByIdResponse
+
+> **PagesGetPageTemplateByIdResponse** = [`PagesGetPageTemplateByIdResponses`](PagesGetPageTemplateByIdResponses.md)\[keyof [`PagesGetPageTemplateByIdResponses`](PagesGetPageTemplateByIdResponses.md)\]
+
+Defined in: [packages/xmc/src/experimental/client-agent/types.gen.ts:1062](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-agent/types.gen.ts#L1062)

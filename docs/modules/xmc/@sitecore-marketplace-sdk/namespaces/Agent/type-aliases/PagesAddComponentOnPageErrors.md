@@ -1,0 +1,21 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Agent](../README.md) / PagesAddComponentOnPageErrors
+
+# Type Alias: PagesAddComponentOnPageErrors
+
+> **PagesAddComponentOnPageErrors** = `object`
+
+Defined in: [packages/xmc/src/client-agent/types.gen.ts:799](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/types.gen.ts#L799)
+
+## Properties
+
+### 422
+
+> **422**: [`HttpValidationError`](HttpValidationError.md)
+
+Defined in: [packages/xmc/src/client-agent/types.gen.ts:803](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/types.gen.ts#L803)
+
+Validation Error

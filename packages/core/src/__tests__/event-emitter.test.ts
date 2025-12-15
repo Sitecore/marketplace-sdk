@@ -99,7 +99,7 @@ describe('EventEmitter', () => {
     emitter.on('*', wildcardHandler);
     emitter.emit('test', 'data');
 
-    expect(consoleSpy).toHaveBeenCalledWith('Error in wildcard handler for test:', error);
+    expect(consoleSpy).toHaveBeenCalledWith('Error in wildcard handler for %s:', 'test', error);
 
     consoleSpy.mockRestore();
   });
@@ -115,7 +115,7 @@ describe('EventEmitter', () => {
     const unsubscribe = emitter.on('test', handler);
     emitter.emit('test', 'data');
 
-    expect(consoleSpy).toHaveBeenCalledWith('Error in event handler for test:', error);
+    expect(consoleSpy).toHaveBeenCalledWith('Error in event handler for %s:', 'test', error);
 
     consoleSpy.mockRestore();
     unsubscribe();

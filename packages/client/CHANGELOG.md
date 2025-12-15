@@ -1,5 +1,12 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.3.0
+
+### Minor Changes
+
+- 3b308a9: Updated pages context response with enhanced type definitions for site and page information, adding new fields and improving structure.
+- 0a7363e: Clients can subscribe to `pages.content.layoutUpdated` and `pages.content.fieldsUpdated` events using the new `subscribe` method.
+
 ## 0.2.2
 
 ### Patch Changes

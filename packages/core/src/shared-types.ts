@@ -126,6 +126,7 @@ export interface ApplicationTouchpointMetaContext {
   iconUrl?: string;
   pictureUrl?: string;
   developerName?: string;
+  display?: string;
   [key: string]: any;
 }
 
@@ -140,6 +141,7 @@ export interface ApplicationExtensionPointMetaContext {
   iconUrl?: string;
   pictureUrl?: string;
   developerName?: string;
+  display?: string;
   [key: string]: any;
 }
 
@@ -174,12 +176,32 @@ export interface ApplicationContext {
   installationId?: string;
   MarketplaceAppTenantId?: string;
   organizationId?: string;
+  permissions?: Permissions;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
   touchpoints?: ApplicationTouchpointContext[];
   resourceAccess?: ApplicationResourceContext[];
   extensionPoints?: ApplicationExtensionPointContext[];
+  [key: string]: any;
+}
+
+/**
+ * Represents a collection of permission settings for different contexts.
+ */
+export interface Permissions {
+  iframe?: IFramePermission;
+  [key: string]: any;
+}
+
+/**
+ * Represents iframe permission settings for sandbox and allow attributes.
+ */
+export interface IFramePermission {
+  /** Array of sandbox permissions (e.g., "allow-popups", "allow-popups-to-escape-sandbox") */
+  sandbox?: string[];
+  /** Array of allow permissions (e.g., "clipboard-write", "clipboard-read") */
+  allow?: string[];
   [key: string]: any;
 }
 
@@ -199,6 +221,7 @@ export interface ApplicationRuntimeContext {
     state: string;
     [key: string]: any;
   };
+  permissions?: Permissions;
   /** @deprecated Use resourceAccess instead */
   resources?: ApplicationResourceContext[];
   /** @deprecated Use extensionPoints instead */
@@ -225,4 +248,31 @@ export interface PagesContextParams {
   itemId?: string;
   language?: string;
   itemVersion?: number;
+}
+
+/**
+ * Parameters for Pages Content subscription events.
+ */
+export interface BaseContentUpdatedData {
+  itemId: string;
+  language: string;
+  itemVersion: number;
+}
+
+export interface Field {
+  fieldId: string;
+  value: string;
+  originalValue?: string;
+}
+
+export interface Layout {
+  type: 'FINAL' | 'SHARED';
+}
+
+export interface ContentLayoutUpdatedData extends BaseContentUpdatedData {
+  layout: Layout;
+}
+
+export interface ContentFieldsUpdatedData extends BaseContentUpdatedData {
+  fields: Field[];
 }
