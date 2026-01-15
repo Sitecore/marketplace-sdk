@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.3.1
+
+### Patch Changes
+
+- 62064ff: Fixes: Use of externally-controlled format string in log
+
 ## 0.3.0
 
 ### Minor Changes
