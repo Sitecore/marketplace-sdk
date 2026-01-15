@@ -173,7 +173,7 @@ export const CopySiteInputSchema = {
   type: 'object',
   properties: {
     name: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -183,7 +183,7 @@ Example value: skate-park`,
       example: 'skate-park',
     },
     displayName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       type: 'string',
       description: `Display name for the new site.
@@ -192,7 +192,7 @@ Example value: Skate Park`,
       example: 'Skate Park',
     },
     description: {
-      maxLength: 100,
+      maxLength: 200,
       minLength: 0,
       type: 'string',
       description: `Description for the new site.
@@ -213,12 +213,36 @@ Example value: Sample showcase website description.`,
   description: 'A site duplication request.',
 } as const;
 
+export const CreateEditorProfileInputSchema = {
+  required: ['name', 'value'],
+  type: 'object',
+  properties: {
+    name: {
+      minLength: 1,
+      type: 'string',
+      description: `The profile name
+Example value: Basic Editing`,
+      example: 'Basic Editing',
+    },
+    value: {
+      minLength: 1,
+      type: 'string',
+      description: `The editor toolbar profile configuration
+Example value: {"toolbar":{"items":["bold","italic","emphasis","underline","blockQuote",{"label":"Formatting","icon":"text","items":["strikethrough","subscript","superscript","|","removeFormat"]},"fontColor","fontBackgroundColor","|","heading","|","alignment","bulletedList","numberedList","|","outdent","indent","|","link","internalLink","phoneLink","|",{"label":"Insert","withText":false,"icon":"plus","items":["sitecoreSelectMedia","insertTable","horizontalLine"]},"|","sourceEditing","|","sitecoreResetFieldValue"]}}`,
+      example:
+        '{"toolbar":{"items":["bold","italic","emphasis","underline","blockQuote",{"label":"Formatting","icon":"text","items":["strikethrough","subscript","superscript","|","removeFormat"]},"fontColor","fontBackgroundColor","|","heading","|","alignment","bulletedList","numberedList","|","outdent","indent","|","link","internalLink","phoneLink","|",{"label":"Insert","withText":false,"icon":"plus","items":["sitecoreSelectMedia","insertTable","horizontalLine"]},"|","sourceEditing","|","sitecoreResetFieldValue"]}}',
+    },
+  },
+  additionalProperties: false,
+  description: 'The profile creation request input',
+} as const;
+
 export const CreateHostInputSchema = {
   required: ['name'],
   type: 'object',
   properties: {
     name: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -248,6 +272,14 @@ Example value: www.skate-park.com`,
       example: 'www.skate-park.com',
     },
     renderingHost: {
+      type: 'string',
+      description: `The rendering host.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+      deprecated: true,
+    },
+    editingHost: {
       type: 'string',
       description: `The rendering host.
 Example value: Default`,
@@ -297,7 +329,7 @@ export const CreateSiteCollectionInputSchema = {
   type: 'object',
   properties: {
     name: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -307,7 +339,7 @@ Example value: skate-brand-sites`,
       example: 'skate-brand-sites',
     },
     displayName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       type: 'string',
       description: `A short, meaningful name for the collection.
@@ -316,7 +348,7 @@ Example value: Skate Brand Websites`,
       example: 'Skate Brand Websites',
     },
     description: {
-      maxLength: 100,
+      maxLength: 200,
       minLength: 0,
       type: 'string',
       description: `A longer, more detailed description of the collection.
@@ -371,6 +403,86 @@ export const EditLanguageInputSchema = {
     },
   },
   additionalProperties: false,
+} as const;
+
+export const EditingHostSchema = {
+  type: 'object',
+  properties: {
+    id: {
+      type: 'string',
+      description: `The editing host ID.
+Example value: 5aae1eeaea2440bf96f11f43da82c77b`,
+      nullable: true,
+      example: '5aae1eeaea2440bf96f11f43da82c77b',
+    },
+    name: {
+      type: 'string',
+      description: `The name of the editing host.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+    },
+    appName: {
+      type: 'string',
+      description: `The name of the app.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+    },
+    layoutServiceConfiguration: {
+      type: 'string',
+      description: `The server side rendering engine configuration URL.
+Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config`,
+      nullable: true,
+      example: 'https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config',
+    },
+    serverSideRenderingEngineEndpointUrl: {
+      type: 'string',
+      description: `The server side rendering engine endpoint URL.
+Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render`,
+      nullable: true,
+      example: 'https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render',
+    },
+    serverSideRenderingEngineApplicationUrl: {
+      type: 'string',
+      description: `The server side rendering engine application URL.
+Example value: https://xmc-eh-uniqueid.sitecorecloud.io/`,
+      nullable: true,
+      example: 'https://xmc-eh-uniqueid.sitecorecloud.io/',
+    },
+  },
+  additionalProperties: false,
+  description: 'The editing host response entity.',
+} as const;
+
+export const EditorProfileModelSchema = {
+  type: 'object',
+  properties: {
+    id: {
+      type: 'string',
+      description: `The identifier of the profile.
+Example value: 123e4567-e89b-12d3-a456-426614174000`,
+      nullable: true,
+      example: '123e4567-e89b-12d3-a456-426614174000',
+    },
+    name: {
+      type: 'string',
+      description: `The name of the profile.
+Example value: Basic Editing`,
+      nullable: true,
+      example: 'Basic Editing',
+    },
+    profile: {
+      type: 'string',
+      description: `The tools configured for this profile.
+Example value: {"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}`,
+      nullable: true,
+      example:
+        '{"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}',
+    },
+  },
+  additionalProperties: false,
+  description: 'The profile data model',
 } as const;
 
 export const ErrorPageSchema = {
@@ -506,6 +618,9 @@ Example value: 5aae1eeaea2440bf96f11f43da82c77b`,
     renderingHost: {
       $ref: '#/components/schemas/RenderingHost',
     },
+    editingHost: {
+      $ref: '#/components/schemas/EditingHost',
+    },
     permissions: {
       $ref: '#/components/schemas/Permissions',
     },
@@ -581,48 +696,79 @@ export const JobSchema = {
   properties: {
     name: {
       type: 'string',
-      description: `The name of the job.
-Example value: Create site`,
       nullable: true,
-      example: 'Create site',
     },
     done: {
       type: 'boolean',
-      description: `Whether the job has finished.
-Example value: True`,
-      example: true,
+      deprecated: true,
     },
     queueTime: {
       type: 'string',
-      description: `A timestamp of when the job was added to the queue.
-Example value: 2024-06-12T01:47:37.316Z`,
       format: 'date-time',
-      example: '2024-06-12T01:47:37.316Z',
+    },
+    endTime: {
+      type: 'string',
+      format: 'date-time',
+      nullable: true,
     },
     handle: {
       type: 'string',
-      description: `The handle of the job.
-Example value: 4d97d35a-b605-4fc6-8a03-5bb8e403cdaf;customer-tenant-env`,
       nullable: true,
-      example: '4d97d35a-b605-4fc6-8a03-5bb8e403cdaf;customer-tenant-env',
     },
     site: {
       type: 'string',
-      description: `The name of the site.
-Example value: new-site`,
       nullable: true,
-      example: 'new-site',
     },
     siteCollection: {
       type: 'string',
-      description: `The identifier or name of the site collection.
-Example value: {81D27BA9-F798-4190-8536-CA20203AA6EA}`,
       nullable: true,
-      example: '{81D27BA9-F798-4190-8536-CA20203AA6EA}',
+    },
+    status: {
+      $ref: '#/components/schemas/JobStatus',
+    },
+    jobType: {
+      type: 'string',
+      nullable: true,
+    },
+    statistics: {
+      $ref: '#/components/schemas/JobStatisticsDto',
     },
   },
   additionalProperties: false,
-  description: 'A job response entity.',
+} as const;
+
+export const JobResponseSchema = {
+  type: 'object',
+  properties: {
+    handle: {
+      type: 'string',
+      nullable: true,
+    },
+  },
+  additionalProperties: false,
+} as const;
+
+export const JobStatisticsDtoSchema = {
+  type: 'object',
+  properties: {
+    itemsProcessed: {
+      type: 'integer',
+      format: 'int32',
+      nullable: true,
+    },
+    pagesProcessed: {
+      type: 'integer',
+      format: 'int32',
+      nullable: true,
+    },
+  },
+  additionalProperties: false,
+} as const;
+
+export const JobStatusSchema = {
+  enum: ['Queued', 'Running', 'Completed', 'Failed'],
+  type: 'string',
+  format: 'int32',
 } as const;
 
 export const LanguageSchema = {
@@ -798,7 +944,7 @@ export const NewSiteInputSchema = {
   type: 'object',
   properties: {
     siteName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -808,7 +954,7 @@ Example value: skate-park`,
       example: 'skate-park',
     },
     displayName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       type: 'string',
       description: `The display name for the site.
@@ -862,7 +1008,7 @@ Example value: dev.skate-park.com`,
       example: 'dev.skate-park.com',
     },
     description: {
-      maxLength: 100,
+      maxLength: 200,
       minLength: 0,
       type: 'string',
       description: `Optional text that provides a meaningful description of the site.
@@ -871,7 +1017,7 @@ Example value: New site for Brand A in English-speaking countries.`,
       example: 'New site for Brand A in English-speaking countries.',
     },
     collectionName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -883,7 +1029,7 @@ Example value: Brand A`,
       example: 'Brand A',
     },
     collectionDisplayName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       type: 'string',
       description: `The display name for the collection.
@@ -1008,6 +1154,9 @@ Example value: 6fe7d655-1e3d-4c27-8010-5777f06c6c4f`,
 Example value: Page`,
       nullable: true,
       example: 'Page',
+    },
+    templateType: {
+      $ref: '#/components/schemas/TemplateType',
     },
   },
   additionalProperties: false,
@@ -1349,7 +1498,7 @@ export const RenameSiteCollectionInputSchema = {
   type: 'object',
   properties: {
     systemName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -1538,6 +1687,9 @@ Example value: [
 ]`,
       nullable: true,
       example: ['en-US', 'en-CA'],
+    },
+    errorPages: {
+      $ref: '#/components/schemas/ErrorPages',
     },
     errorPagesConfiguration: {
       $ref: '#/components/schemas/ErrorPagesConfiguration',
@@ -1993,6 +2145,12 @@ Example value: DE`,
   additionalProperties: false,
 } as const;
 
+export const TemplateTypeSchema = {
+  enum: ['ItemTemplate', 'BranchTemplate'],
+  type: 'string',
+  description: 'The type of template.',
+} as const;
+
 export const ThumbnailSchema = {
   type: 'object',
   properties: {
@@ -2022,11 +2180,68 @@ Example value: True`,
   description: 'The thumbnail response entity.',
 } as const;
 
+export const TranslateSiteInputSchema = {
+  required: ['sourceLanguage', 'targetLanguage', 'translationStrategy'],
+  type: 'object',
+  properties: {
+    sourceLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Source language
+Example value: en`,
+      example: 'en',
+    },
+    targetLanguage: {
+      minLength: 1,
+      type: 'string',
+      description: `Target language
+Example value: ja-JP`,
+      example: 'ja-JP',
+    },
+    translationStrategy: {
+      $ref: '#/components/schemas/TranslationStrategy',
+    },
+  },
+  additionalProperties: false,
+  description: 'The translations options',
+} as const;
+
+export const TranslationStrategySchema = {
+  enum: ['AddVersion', 'SkipIfExists'],
+  type: 'string',
+  description:
+    'Specifies the strategy to use when translating: add a new version or skip if a version exists.',
+  format: 'int32',
+} as const;
+
+export const UpdateEditorProfileInputSchema = {
+  type: 'object',
+  properties: {
+    name: {
+      type: 'string',
+      description: `The name of the profile.
+Example value: Advanced Editing`,
+      nullable: true,
+      example: 'Advanced Editing',
+    },
+    profile: {
+      type: 'string',
+      description: `The tools configured for this profile.
+Example value: {"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}`,
+      nullable: true,
+      example:
+        '{"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}',
+    },
+  },
+  additionalProperties: false,
+  description: 'The profile update request input',
+} as const;
+
 export const UpdateHostInputSchema = {
   type: 'object',
   properties: {
     name: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
       type: 'string',
@@ -2057,6 +2272,14 @@ Example value: www.skate-park.com`,
       example: 'www.skate-park.com',
     },
     renderingHost: {
+      type: 'string',
+      description: `The rendering host.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+      deprecated: true,
+    },
+    editingHost: {
       type: 'string',
       description: `The rendering host.
 Example value: Default`,
@@ -2105,7 +2328,7 @@ export const UpdateSiteCollectionInputSchema = {
   type: 'object',
   properties: {
     displayName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       type: 'string',
       description: `The display name for the site collection.
@@ -2115,7 +2338,7 @@ Example value: Skate Brand Websites`,
       example: 'Skate Brand Websites',
     },
     description: {
-      maxLength: 100,
+      maxLength: 200,
       minLength: 0,
       type: 'string',
       description: `The description of the site collection.
@@ -2141,7 +2364,7 @@ export const UpdateSiteInputSchema = {
   type: 'object',
   properties: {
     displayName: {
-      maxLength: 50,
+      maxLength: 100,
       minLength: 0,
       type: 'string',
       description: `The display name for the site.
@@ -2151,7 +2374,7 @@ Example value: Skate Park Site`,
       example: 'Skate Park Site',
     },
     description: {
-      maxLength: 100,
+      maxLength: 200,
       minLength: 0,
       type: 'string',
       description: `The description for the site.
@@ -2191,6 +2414,14 @@ Example value: 100`,
       nullable: true,
       example: 100,
     },
+    targetHostname: {
+      type: 'string',
+      description: `The target hostname of the site.
+Example value: skatepark.local`,
+      nullable: true,
+      example: 'skatepark.local',
+      deprecated: true,
+    },
     brandKitId: {
       type: 'string',
       description: `The identifier of the brand kit associated with this site.
@@ -2204,6 +2435,19 @@ Example value: e3f1c5a2-4b6d-4a3e-9f1b-2d3c4b5a6e7f`,
 Example value: True`,
       nullable: true,
       example: true,
+    },
+    editorProfiles: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+      description: `The list of text editor profiles associated with the site.
+Example value: [
+  "e2102e93-424a-4a99-a066-7750dbf41b28",
+  "530f7907-6eec-4b7a-9fcc-98aef2719232"
+]`,
+      nullable: true,
+      example: ['e2102e93-424a-4a99-a066-7750dbf41b28', '530f7907-6eec-4b7a-9fcc-98aef2719232'],
     },
   },
   additionalProperties: false,
