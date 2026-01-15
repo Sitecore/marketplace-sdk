@@ -46,6 +46,12 @@ type SaveLayoutResponse = experimental_Pages.SaveLayoutResponse;
 
 type SaveLayoutData = experimental_Pages.SaveLayoutData;
 
+type CreateBlueprintError = experimental_Pages.CreateBlueprintError;
+
+type CreateBlueprintResponse = experimental_Pages.CreateBlueprintResponse;
+
+type CreateBlueprintData = experimental_Pages.CreateBlueprintData;
+
 type CreatePageError = experimental_Pages.CreatePageError;
 
 type CreatePageResponse = experimental_Pages.CreatePageResponse;
@@ -384,6 +390,33 @@ export const createPage = <ThrowOnError extends boolean = false>(
       },
     },
   );
+};
+
+/**
+ * Create a page from blueprint
+ * Creates a new page from an existing blueprint.
+ */
+export const createBlueprint = <ThrowOnError extends boolean = false>(
+  options?: Options<CreateBlueprintData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).post<
+    CreateBlueprintResponse,
+    CreateBlueprintError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/pages/blueprint',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
 };
 
 /**

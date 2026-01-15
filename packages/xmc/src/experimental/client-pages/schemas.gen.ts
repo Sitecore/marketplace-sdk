@@ -36,6 +36,51 @@ Example value: Black Friday content update`,
   additionalProperties: false,
 } as const;
 
+export const CreatePageFromBlueprintInputSchema = {
+  required: ['blueprintId', 'language', 'pageName', 'parentId'],
+  type: 'object',
+  properties: {
+    parentId: {
+      minLength: 1,
+      type: 'string',
+      description: `The identifier of the parent page.
+Example value: 9100b830-c85b-459b-9c37-51da74fc9ecc`,
+      example: '9100b830-c85b-459b-9c37-51da74fc9ecc',
+    },
+    pageName: {
+      maxLength: 100,
+      minLength: 0,
+      pattern: '^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$',
+      type: 'string',
+      description: `The system name of the new page.
+Example value: about-us`,
+      example: 'about-us',
+    },
+    blueprintId: {
+      minLength: 1,
+      type: 'string',
+      description: `The identifier of the blueprint to be used for the new page.
+Example value: 2341ef32-42f4-4537-98d8-9ef741008eab`,
+      example: '2341ef32-42f4-4537-98d8-9ef741008eab',
+    },
+    language: {
+      minLength: 1,
+      type: 'string',
+      description: `The language of the new page.
+Example value: en-US`,
+      example: 'en-US',
+    },
+    displayName: {
+      type: 'string',
+      description: `The display name of the new page.
+Example value: About Us`,
+      nullable: true,
+      example: 'About Us',
+    },
+  },
+  additionalProperties: false,
+} as const;
+
 export const CreatePageInputSchema = {
   required: ['language', 'pageName', 'parentId', 'templateId'],
   type: 'object',
@@ -131,6 +176,17 @@ Example value: en-US`,
 Example value: About Us Copy`,
       nullable: true,
       example: 'About Us Copy',
+    },
+  },
+  additionalProperties: false,
+} as const;
+
+export const JobResponseSchema = {
+  type: 'object',
+  properties: {
+    handle: {
+      type: 'string',
+      nullable: true,
     },
   },
   additionalProperties: false,
@@ -284,7 +340,7 @@ Example value: 4bc0c81a280b4b13890b7b074b9d68f4`,
     },
     hasPresentation: {
       type: 'boolean',
-      description: `If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+      description: `If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
 Example value: True`,
       example: true,
     },

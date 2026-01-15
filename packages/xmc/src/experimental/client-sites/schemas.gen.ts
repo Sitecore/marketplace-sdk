@@ -213,6 +213,30 @@ Example value: Sample showcase website description.`,
   description: 'A site duplication request.',
 } as const;
 
+export const CreateEditorProfileInputSchema = {
+  required: ['name', 'value'],
+  type: 'object',
+  properties: {
+    name: {
+      minLength: 1,
+      type: 'string',
+      description: `The profile name
+Example value: Basic Editing`,
+      example: 'Basic Editing',
+    },
+    value: {
+      minLength: 1,
+      type: 'string',
+      description: `The editor toolbar profile configuration
+Example value: {"toolbar":{"items":["bold","italic","emphasis","underline","blockQuote",{"label":"Formatting","icon":"text","items":["strikethrough","subscript","superscript","|","removeFormat"]},"fontColor","fontBackgroundColor","|","heading","|","alignment","bulletedList","numberedList","|","outdent","indent","|","link","internalLink","phoneLink","|",{"label":"Insert","withText":false,"icon":"plus","items":["sitecoreSelectMedia","insertTable","horizontalLine"]},"|","sourceEditing","|","sitecoreResetFieldValue"]}}`,
+      example:
+        '{"toolbar":{"items":["bold","italic","emphasis","underline","blockQuote",{"label":"Formatting","icon":"text","items":["strikethrough","subscript","superscript","|","removeFormat"]},"fontColor","fontBackgroundColor","|","heading","|","alignment","bulletedList","numberedList","|","outdent","indent","|","link","internalLink","phoneLink","|",{"label":"Insert","withText":false,"icon":"plus","items":["sitecoreSelectMedia","insertTable","horizontalLine"]},"|","sourceEditing","|","sitecoreResetFieldValue"]}}',
+    },
+  },
+  additionalProperties: false,
+  description: 'The profile creation request input',
+} as const;
+
 export const CreateHostInputSchema = {
   required: ['name'],
   type: 'object',
@@ -246,6 +270,14 @@ Example value: [
 Example value: www.skate-park.com`,
       nullable: true,
       example: 'www.skate-park.com',
+    },
+    renderingHost: {
+      type: 'string',
+      description: `The rendering host.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+      deprecated: true,
     },
     editingHost: {
       type: 'string',
@@ -423,6 +455,36 @@ Example value: https://xmc-eh-uniqueid.sitecorecloud.io/`,
   description: 'The editing host response entity.',
 } as const;
 
+export const EditorProfileModelSchema = {
+  type: 'object',
+  properties: {
+    id: {
+      type: 'string',
+      description: `The identifier of the profile.
+Example value: 123e4567-e89b-12d3-a456-426614174000`,
+      nullable: true,
+      example: '123e4567-e89b-12d3-a456-426614174000',
+    },
+    name: {
+      type: 'string',
+      description: `The name of the profile.
+Example value: Basic Editing`,
+      nullable: true,
+      example: 'Basic Editing',
+    },
+    profile: {
+      type: 'string',
+      description: `The tools configured for this profile.
+Example value: {"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}`,
+      nullable: true,
+      example:
+        '{"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}',
+    },
+  },
+  additionalProperties: false,
+  description: 'The profile data model',
+} as const;
+
 export const ErrorPageSchema = {
   type: 'object',
   properties: {
@@ -553,6 +615,9 @@ Example value: 5aae1eeaea2440bf96f11f43da82c77b`,
       nullable: true,
       example: '5aae1eeaea2440bf96f11f43da82c77b',
     },
+    renderingHost: {
+      $ref: '#/components/schemas/RenderingHost',
+    },
     editingHost: {
       $ref: '#/components/schemas/EditingHost',
     },
@@ -633,6 +698,10 @@ export const JobSchema = {
       type: 'string',
       nullable: true,
     },
+    done: {
+      type: 'boolean',
+      deprecated: true,
+    },
     queueTime: {
       type: 'string',
       format: 'date-time',
@@ -663,6 +732,17 @@ export const JobSchema = {
     },
     statistics: {
       $ref: '#/components/schemas/JobStatisticsDto',
+    },
+  },
+  additionalProperties: false,
+} as const;
+
+export const JobResponseSchema = {
+  type: 'object',
+  properties: {
+    handle: {
+      type: 'string',
+      nullable: true,
     },
   },
   additionalProperties: false,
@@ -1212,7 +1292,7 @@ Example value: 4bc0c81a280b4b13890b7b074b9d68f4`,
     },
     hasPresentation: {
       type: 'boolean',
-      description: `If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+      description: `If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
 Example value: True`,
       example: true,
     },
@@ -1451,6 +1531,56 @@ Example value: new-site`,
   description: 'A site rename request.',
 } as const;
 
+export const RenderingHostSchema = {
+  type: 'object',
+  properties: {
+    id: {
+      type: 'string',
+      description: `The rendering host ID.
+Example value: 5aae1eeaea2440bf96f11f43da82c77b`,
+      nullable: true,
+      example: '5aae1eeaea2440bf96f11f43da82c77b',
+    },
+    name: {
+      type: 'string',
+      description: `The name of the rendering host.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+    },
+    appName: {
+      type: 'string',
+      description: `The name of the app.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+    },
+    layoutServiceConfiguration: {
+      type: 'string',
+      description: `The server side rendering engine configuration URL.
+Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config`,
+      nullable: true,
+      example: 'https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config',
+    },
+    serverSideRenderingEngineEndpointUrl: {
+      type: 'string',
+      description: `The server side rendering engine endpoint URL.
+Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render`,
+      nullable: true,
+      example: 'https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render',
+    },
+    serverSideRenderingEngineApplicationUrl: {
+      type: 'string',
+      description: `The server side rendering engine application URL.
+Example value: https://xmc-eh-uniqueid.sitecorecloud.io/`,
+      nullable: true,
+      example: 'https://xmc-eh-uniqueid.sitecorecloud.io/',
+    },
+  },
+  additionalProperties: false,
+  description: 'The rendering host response entity.',
+} as const;
+
 export const SiteSchema = {
   type: 'object',
   properties: {
@@ -1557,6 +1687,9 @@ Example value: [
 ]`,
       nullable: true,
       example: ['en-US', 'en-CA'],
+    },
+    errorPages: {
+      $ref: '#/components/schemas/ErrorPages',
     },
     errorPagesConfiguration: {
       $ref: '#/components/schemas/ErrorPagesConfiguration',
@@ -1717,7 +1850,7 @@ Example value: Basic`,
     },
     enabled: {
       type: 'boolean',
-      description: `Whether the template is available for use in the SitecoreAI Create a site UI.
+      description: `Whether the template is available for use in the XM Cloud Create a site UI.
 Example value: True`,
       example: true,
     },
@@ -2081,6 +2214,29 @@ export const TranslationStrategySchema = {
   format: 'int32',
 } as const;
 
+export const UpdateEditorProfileInputSchema = {
+  type: 'object',
+  properties: {
+    name: {
+      type: 'string',
+      description: `The name of the profile.
+Example value: Advanced Editing`,
+      nullable: true,
+      example: 'Advanced Editing',
+    },
+    profile: {
+      type: 'string',
+      description: `The tools configured for this profile.
+Example value: {"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}`,
+      nullable: true,
+      example:
+        '{"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}',
+    },
+  },
+  additionalProperties: false,
+  description: 'The profile update request input',
+} as const;
+
 export const UpdateHostInputSchema = {
   type: 'object',
   properties: {
@@ -2114,6 +2270,14 @@ Example value: [
 Example value: www.skate-park.com`,
       nullable: true,
       example: 'www.skate-park.com',
+    },
+    renderingHost: {
+      type: 'string',
+      description: `The rendering host.
+Example value: Default`,
+      nullable: true,
+      example: 'Default',
+      deprecated: true,
     },
     editingHost: {
       type: 'string',
@@ -2249,6 +2413,14 @@ Example value: 100`,
       format: 'int32',
       nullable: true,
       example: 100,
+    },
+    targetHostname: {
+      type: 'string',
+      description: `The target hostname of the site.
+Example value: skatepark.local`,
+      nullable: true,
+      example: 'skatepark.local',
+      deprecated: true,
     },
     brandKitId: {
       type: 'string',

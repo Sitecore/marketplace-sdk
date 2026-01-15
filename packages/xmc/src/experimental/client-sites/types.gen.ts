@@ -135,6 +135,21 @@ export namespace experimental_Sites {
     posMappings?: Array<AnalyticsIdentifier> | null;
   };
   /**
+   * The profile creation request input
+   */
+  export type CreateEditorProfileInput = {
+    /**
+     * The profile name
+     * Example value: Basic Editing
+     */
+    name: string;
+    /**
+     * The editor toolbar profile configuration
+     * Example value: {"toolbar":{"items":["bold","italic","emphasis","underline","blockQuote",{"label":"Formatting","icon":"text","items":["strikethrough","subscript","superscript","|","removeFormat"]},"fontColor","fontBackgroundColor","|","heading","|","alignment","bulletedList","numberedList","|","outdent","indent","|","link","internalLink","phoneLink","|",{"label":"Insert","withText":false,"icon":"plus","items":["sitecoreSelectMedia","insertTable","horizontalLine"]},"|","sourceEditing","|","sitecoreResetFieldValue"]}}
+     */
+    value: string;
+  };
+  /**
    * A host creation request
    */
   export type CreateHostInput = {
@@ -156,6 +171,12 @@ export namespace experimental_Sites {
      * Example value: www.skate-park.com
      */
     targetHostname?: string | null;
+    /**
+     * The rendering host.
+     * Example value: Default
+     * @deprecated
+     */
+    renderingHost?: string | null;
     /**
      * The rendering host.
      * Example value: Default
@@ -254,6 +275,26 @@ export namespace experimental_Sites {
     serverSideRenderingEngineApplicationUrl?: string | null;
   };
   /**
+   * The profile data model
+   */
+  export type EditorProfileModel = {
+    /**
+     * The identifier of the profile.
+     * Example value: 123e4567-e89b-12d3-a456-426614174000
+     */
+    id?: string | null;
+    /**
+     * The name of the profile.
+     * Example value: Basic Editing
+     */
+    name?: string | null;
+    /**
+     * The tools configured for this profile.
+     * Example value: {"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}
+     */
+    profile?: string | null;
+  };
+  /**
    * The error page response entity.
    */
   export type ErrorPage = {
@@ -341,6 +382,7 @@ export namespace experimental_Sites {
      * Example value: 5aae1eeaea2440bf96f11f43da82c77b
      */
     homePageId?: string | null;
+    renderingHost?: RenderingHost;
     editingHost?: EditingHost;
     permissions?: Permissions;
     /**
@@ -381,6 +423,10 @@ export namespace experimental_Sites {
   };
   export type Job = {
     name?: string | null;
+    /**
+     * @deprecated
+     */
+    done?: boolean;
     queueTime?: string;
     endTime?: string | null;
     handle?: string | null;
@@ -389,6 +435,9 @@ export namespace experimental_Sites {
     status?: JobStatus;
     jobType?: string | null;
     statistics?: JobStatisticsDto;
+  };
+  export type JobResponse = {
+    handle?: string | null;
   };
   export type JobStatisticsDto = {
     itemsProcessed?: number | null;
@@ -727,7 +776,7 @@ export namespace experimental_Sites {
      */
     parentId?: string | null;
     /**
-     * If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+     * If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
      * Example value: True
      */
     hasPresentation?: boolean;
@@ -884,6 +933,41 @@ export namespace experimental_Sites {
     name: string;
   };
   /**
+   * The rendering host response entity.
+   */
+  export type RenderingHost = {
+    /**
+     * The rendering host ID.
+     * Example value: 5aae1eeaea2440bf96f11f43da82c77b
+     */
+    id?: string | null;
+    /**
+     * The name of the rendering host.
+     * Example value: Default
+     */
+    name?: string | null;
+    /**
+     * The name of the app.
+     * Example value: Default
+     */
+    appName?: string | null;
+    /**
+     * The server side rendering engine configuration URL.
+     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/config
+     */
+    layoutServiceConfiguration?: string | null;
+    /**
+     * The server side rendering engine endpoint URL.
+     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io:443/api/editing/render
+     */
+    serverSideRenderingEngineEndpointUrl?: string | null;
+    /**
+     * The server side rendering engine application URL.
+     * Example value: https://xmc-eh-uniqueid.sitecorecloud.io/
+     */
+    serverSideRenderingEngineApplicationUrl?: string | null;
+  };
+  /**
    * A site response entity.
    */
   export type Site = {
@@ -954,6 +1038,7 @@ export namespace experimental_Sites {
      * ]
      */
     supportedLanguages?: Array<string> | null;
+    errorPages?: ErrorPages;
     errorPagesConfiguration?: ErrorPagesConfiguration;
     /**
      * The settings for the site.
@@ -1055,7 +1140,7 @@ export namespace experimental_Sites {
      */
     name?: string | null;
     /**
-     * Whether the template is available for use in the SitecoreAI Create a site UI.
+     * Whether the template is available for use in the XM Cloud Create a site UI.
      * Example value: True
      */
     enabled?: boolean;
@@ -1291,6 +1376,21 @@ export namespace experimental_Sites {
     SKIP_IF_EXISTS: 'SkipIfExists',
   } as const;
   /**
+   * The profile update request input
+   */
+  export type UpdateEditorProfileInput = {
+    /**
+     * The name of the profile.
+     * Example value: Advanced Editing
+     */
+    name?: string | null;
+    /**
+     * The tools configured for this profile.
+     * Example value: {"toolbar":{"items":["bold","italic","underline","link","bulletedList","numberedList"]}}
+     */
+    profile?: string | null;
+  };
+  /**
    * A host update request.
    */
   export type UpdateHostInput = {
@@ -1312,6 +1412,12 @@ export namespace experimental_Sites {
      * Example value: www.skate-park.com
      */
     targetHostname?: string | null;
+    /**
+     * The rendering host.
+     * Example value: Default
+     * @deprecated
+     */
+    renderingHost?: string | null;
     /**
      * The rendering host.
      * Example value: Default
@@ -1391,6 +1497,12 @@ export namespace experimental_Sites {
      * Example value: 100
      */
     sortOrder?: number | null;
+    /**
+     * The target hostname of the site.
+     * Example value: skatepark.local
+     * @deprecated
+     */
+    targetHostname?: string | null;
     /**
      * The identifier of the brand kit associated with this site.
      * Example value: e3f1c5a2-4b6d-4a3e-9f1b-2d3c4b5a6e7f
@@ -1655,17 +1767,9 @@ export namespace experimental_Sites {
     ListSupportedLanguagesResponses[keyof ListSupportedLanguagesResponses];
   export type ListCollectionsData = {
     body?: never;
-    headers?: {
-      'x-sc-continuation'?: string;
-    };
     path?: never;
     query?: {
-      /**
-       * The identifier of the environment.
-       */
       environmentId?: string;
-      pageNumber?: number;
-      pageSize?: number;
       /**
        * The Sitecore context ID.
        */
@@ -1713,7 +1817,7 @@ export namespace experimental_Sites {
     /**
      * Success
      */
-    200: string;
+    200: JobResponse;
   };
   export type CreateCollectionResponse = CreateCollectionResponses[keyof CreateCollectionResponses];
   export type DeleteCollectionData = {
@@ -1748,7 +1852,7 @@ export namespace experimental_Sites {
     /**
      * Success
      */
-    200: string;
+    200: JobResponse;
   };
   export type DeleteCollectionResponse = DeleteCollectionResponses[keyof DeleteCollectionResponses];
   export type RetrieveCollectionData = {
@@ -1760,9 +1864,6 @@ export namespace experimental_Sites {
       collectionId: string;
     };
     query?: {
-      /**
-       * The identifier of the environment.
-       */
       environmentId?: string;
       /**
        * The Sitecore context ID.
@@ -1962,6 +2063,208 @@ export namespace experimental_Sites {
   };
   export type AddFavoriteSiteTemplateResponse =
     AddFavoriteSiteTemplateResponses[keyof AddFavoriteSiteTemplateResponses];
+  export type ListProfilesData = {
+    body?: never;
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/ui/v1/editorprofiles';
+  };
+  export type ListProfilesErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Unauthorized
+     */
+    401: ProblemDetails;
+    /**
+     * Forbidden
+     */
+    403: ProblemDetails;
+  };
+  export type ListProfilesError = ListProfilesErrors[keyof ListProfilesErrors];
+  export type ListProfilesResponses = {
+    /**
+     * Success
+     */
+    200: Array<EditorProfileModel>;
+  };
+  export type ListProfilesResponse = ListProfilesResponses[keyof ListProfilesResponses];
+  export type CreateProfileData = {
+    /**
+     * Input data containing profile properties
+     */
+    body: CreateEditorProfileInput;
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/ui/v1/editorprofiles';
+  };
+  export type CreateProfileErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Unauthorized
+     */
+    401: ProblemDetails;
+    /**
+     * Forbidden
+     */
+    403: ProblemDetails;
+  };
+  export type CreateProfileError = CreateProfileErrors[keyof CreateProfileErrors];
+  export type CreateProfileResponses = {
+    /**
+     * Created
+     */
+    201: EditorProfileModel;
+  };
+  export type CreateProfileResponse = CreateProfileResponses[keyof CreateProfileResponses];
+  export type DeleteProfileData = {
+    body?: never;
+    path: {
+      /**
+       * The profile identifier.
+       */
+      id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/ui/v1/editorprofiles/{id}';
+  };
+  export type DeleteProfileErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Unauthorized
+     */
+    401: ProblemDetails;
+    /**
+     * Forbidden
+     */
+    403: ProblemDetails;
+    /**
+     * Not found
+     */
+    404: ProblemDetails;
+  };
+  export type DeleteProfileError = DeleteProfileErrors[keyof DeleteProfileErrors];
+  export type DeleteProfileResponses = {
+    /**
+     * Success
+     */
+    200: unknown;
+    /**
+     * No Content
+     */
+    204: void;
+  };
+  export type DeleteProfileResponse = DeleteProfileResponses[keyof DeleteProfileResponses];
+  export type GetProfileData = {
+    body?: never;
+    path: {
+      /**
+       * The profile identifier.
+       */
+      id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/ui/v1/editorprofiles/{id}';
+  };
+  export type GetProfileErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Unauthorized
+     */
+    401: ProblemDetails;
+    /**
+     * Forbidden
+     */
+    403: ProblemDetails;
+    /**
+     * Not found
+     */
+    404: ProblemDetails;
+  };
+  export type GetProfileError = GetProfileErrors[keyof GetProfileErrors];
+  export type GetProfileResponses = {
+    /**
+     * Success
+     */
+    200: EditorProfileModel;
+  };
+  export type GetProfileResponse = GetProfileResponses[keyof GetProfileResponses];
+  export type UpdateProfileData = {
+    /**
+     * Input data containing profile properties to update
+     */
+    body: UpdateEditorProfileInput;
+    path: {
+      /**
+       * The profile identifier.
+       */
+      id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/ui/v1/editorprofiles/{id}';
+  };
+  export type UpdateProfileErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Unauthorized
+     */
+    401: ProblemDetails;
+    /**
+     * Forbidden
+     */
+    403: ProblemDetails;
+    /**
+     * Not found
+     */
+    404: ProblemDetails;
+  };
+  export type UpdateProfileError = UpdateProfileErrors[keyof UpdateProfileErrors];
+  export type UpdateProfileResponses = {
+    /**
+     * Success
+     */
+    200: EditorProfileModel;
+  };
+  export type UpdateProfileResponse = UpdateProfileResponses[keyof UpdateProfileResponses];
   export type AggregateLivePageVariantsData = {
     /**
      * The collection of pages, by their identifier and language, for which to get personalization variants.
@@ -2056,7 +2359,7 @@ export namespace experimental_Sites {
     /**
      * Success
      */
-    200: string;
+    200: JobResponse;
   };
   export type RenameCollectionResponse = RenameCollectionResponses[keyof RenameCollectionResponses];
   export type SortCollectionsData = {
@@ -2337,7 +2640,7 @@ export namespace experimental_Sites {
     /**
      * Success
      */
-    200: string;
+    200: JobResponse;
   };
   export type CreateSiteResponse = CreateSiteResponses[keyof CreateSiteResponses];
   export type DeleteSiteData = {
@@ -2379,7 +2682,7 @@ export namespace experimental_Sites {
     /**
      * Success
      */
-    200: string;
+    200: JobResponse;
   };
   export type DeleteSiteResponse = DeleteSiteResponses[keyof DeleteSiteResponses];
   export type RetrieveSiteData = {
@@ -2499,7 +2802,7 @@ export namespace experimental_Sites {
     /**
      * Success
      */
-    200: string;
+    200: JobResponse;
   };
   export type CopySiteResponse = CopySiteResponses[keyof CopySiteResponses];
   export type RenameSiteData = {
@@ -2540,7 +2843,7 @@ export namespace experimental_Sites {
     /**
      * Success
      */
-    200: string;
+    200: JobResponse;
   };
   export type RenameSiteResponse = RenameSiteResponses[keyof RenameSiteResponses];
   export type SortSitesData = {
@@ -3123,6 +3426,45 @@ export namespace experimental_Sites {
     204: void;
   };
   export type UpdateHostResponse = UpdateHostResponses[keyof UpdateHostResponses];
+  export type GetRenderingHostsData = {
+    body?: never;
+    path: {
+      /**
+       * The identifier of the site.
+       */
+      siteId: string;
+    };
+    query?: {
+      /**
+       * The identifier of the environment
+       */
+      environmentId?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/sites/{siteId}/renderinghosts';
+  };
+  export type GetRenderingHostsErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Not found
+     */
+    404: ProblemDetails;
+  };
+  export type GetRenderingHostsError = GetRenderingHostsErrors[keyof GetRenderingHostsErrors];
+  export type GetRenderingHostsResponses = {
+    /**
+     * Success
+     */
+    200: Array<RenderingHost>;
+  };
+  export type GetRenderingHostsResponse =
+    GetRenderingHostsResponses[keyof GetRenderingHostsResponses];
   export type GetEditingHostsData = {
     body?: never;
     path: {
