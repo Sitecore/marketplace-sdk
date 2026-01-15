@@ -2,7 +2,7 @@
 
 ## 0.3.1
 
-### Minor Changes
+### Patch Changes
 
 - 62064ff: Fixes: Use of externally-controlled format string in log
 
