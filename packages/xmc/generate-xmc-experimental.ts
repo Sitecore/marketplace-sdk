@@ -3,7 +3,7 @@ import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from './plugins/namespace-transformer';
 
 createClient({
-  input: 'https://xmapps-api.sitecorecloud.io/swagger/sites-v1/swagger.yaml',
+  input: 'https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml',
   output: {
     format: 'prettier',
     lint: 'eslint',
@@ -25,7 +25,7 @@ createClient({
 });
 
 createClient({
-  input: 'https://xmapps-api.sitecorecloud.io/swagger/pages-v1/swagger.yaml',
+  input: 'https://api-docs.sitecore.com/_spec/sai/pages-api/index.yaml',
   output: {
     format: 'prettier',
     lint: 'eslint',

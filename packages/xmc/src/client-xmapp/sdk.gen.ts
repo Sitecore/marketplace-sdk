@@ -51,6 +51,12 @@ type ListSiteTemplatesResponse = Xmapp.ListSiteTemplatesResponse;
 
 type ListSiteTemplatesData = Xmapp.ListSiteTemplatesData;
 
+type GetEditingHostsError = Xmapp.GetEditingHostsError;
+
+type GetEditingHostsResponse = Xmapp.GetEditingHostsResponse;
+
+type GetEditingHostsData = Xmapp.GetEditingHostsData;
+
 type GetRenderingHostsError = Xmapp.GetRenderingHostsError;
 
 type GetRenderingHostsResponse = Xmapp.GetRenderingHostsResponse;
@@ -181,7 +187,15 @@ type ListSitesResponse = Xmapp.ListSitesResponse;
 
 type ListSitesData = Xmapp.ListSitesData;
 
+type RemoveFavoriteSiteTemplateError = Xmapp.RemoveFavoriteSiteTemplateError;
+
+type RemoveFavoriteSiteTemplateResponse = Xmapp.RemoveFavoriteSiteTemplateResponse;
+
+type RemoveFavoriteSiteTemplateData = Xmapp.RemoveFavoriteSiteTemplateData;
+
 type RemoveFavoriteSiteError = Xmapp.RemoveFavoriteSiteError;
+
+type RemoveFavoriteSiteResponse = Xmapp.RemoveFavoriteSiteResponse;
 
 type RemoveFavoriteSiteData = Xmapp.RemoveFavoriteSiteData;
 
@@ -227,17 +241,47 @@ type AggregateLivePageVariantsResponse = Xmapp.AggregateLivePageVariantsResponse
 
 type AggregateLivePageVariantsData = Xmapp.AggregateLivePageVariantsData;
 
-type RetrieveJobError = Xmapp.RetrieveJobError;
+type UpdateProfileError = Xmapp.UpdateProfileError;
 
-type RetrieveJobResponse = Xmapp.RetrieveJobResponse;
+type UpdateProfileResponse = Xmapp.UpdateProfileResponse;
 
-type RetrieveJobData = Xmapp.RetrieveJobData;
+type UpdateProfileData = Xmapp.UpdateProfileData;
 
-type ListJobsError = Xmapp.ListJobsError;
+type GetProfileError = Xmapp.GetProfileError;
 
-type ListJobsResponse = Xmapp.ListJobsResponse;
+type GetProfileResponse = Xmapp.GetProfileResponse;
 
-type ListJobsData = Xmapp.ListJobsData;
+type GetProfileData = Xmapp.GetProfileData;
+
+type DeleteProfileError = Xmapp.DeleteProfileError;
+
+type DeleteProfileResponse = Xmapp.DeleteProfileResponse;
+
+type DeleteProfileData = Xmapp.DeleteProfileData;
+
+type CreateProfileError = Xmapp.CreateProfileError;
+
+type CreateProfileResponse = Xmapp.CreateProfileResponse;
+
+type CreateProfileData = Xmapp.CreateProfileData;
+
+type ListProfilesError = Xmapp.ListProfilesError;
+
+type ListProfilesResponse = Xmapp.ListProfilesResponse;
+
+type ListProfilesData = Xmapp.ListProfilesData;
+
+type AddFavoriteSiteTemplateError = Xmapp.AddFavoriteSiteTemplateError;
+
+type AddFavoriteSiteTemplateResponse = Xmapp.AddFavoriteSiteTemplateResponse;
+
+type AddFavoriteSiteTemplateData = Xmapp.AddFavoriteSiteTemplateData;
+
+type GetFavoriteSiteTemplatesError = Xmapp.GetFavoriteSiteTemplatesError;
+
+type GetFavoriteSiteTemplatesResponse = Xmapp.GetFavoriteSiteTemplatesResponse;
+
+type GetFavoriteSiteTemplatesData = Xmapp.GetFavoriteSiteTemplatesData;
 
 type AddFavoriteSiteError = Xmapp.AddFavoriteSiteError;
 
@@ -281,22 +325,6 @@ type ListCollectionsResponse = Xmapp.ListCollectionsResponse;
 
 type ListCollectionsData = Xmapp.ListCollectionsData;
 
-type TranslatePageError = Xmapp.TranslatePageError;
-
-type TranslatePageResponse = Xmapp.TranslatePageResponse;
-
-type TranslatePageData = Xmapp.TranslatePageData;
-
-type GetLivePageStateError = Xmapp.GetLivePageStateError;
-
-type GetLivePageStateData = Xmapp.GetLivePageStateData;
-
-type ListPageVariantsError = Xmapp.ListPageVariantsError;
-
-type ListPageVariantsResponse = Xmapp.ListPageVariantsResponse;
-
-type ListPageVariantsData = Xmapp.ListPageVariantsData;
-
 type ListSupportedLanguagesError = Xmapp.ListSupportedLanguagesError;
 
 type ListSupportedLanguagesResponse = Xmapp.ListSupportedLanguagesResponse;
@@ -315,6 +343,130 @@ type ListLanguagesResponse = Xmapp.ListLanguagesResponse;
 
 type ListLanguagesData = Xmapp.ListLanguagesData;
 
+type RetrieveJobError = Xmapp.RetrieveJobError;
+
+type RetrieveJobResponse = Xmapp.RetrieveJobResponse;
+
+type RetrieveJobData = Xmapp.RetrieveJobData;
+
+type ListJobsError = Xmapp.ListJobsError;
+
+type ListJobsResponse = Xmapp.ListJobsResponse;
+
+type ListJobsData = Xmapp.ListJobsData;
+
+type DeletePageVersionsError = Xmapp.DeletePageVersionsError;
+
+type DeletePageVersionsResponse = Xmapp.DeletePageVersionsResponse;
+
+type DeletePageVersionsData = Xmapp.DeletePageVersionsData;
+
+type TranslatePageError = Xmapp.TranslatePageError;
+
+type TranslatePageResponse = Xmapp.TranslatePageResponse;
+
+type TranslatePageData = Xmapp.TranslatePageData;
+
+type AddPageVersionError = Xmapp.AddPageVersionError;
+
+type AddPageVersionResponse = Xmapp.AddPageVersionResponse;
+
+type AddPageVersionData = Xmapp.AddPageVersionData;
+
+type RenamePageError = Xmapp.RenamePageError;
+
+type RenamePageResponse = Xmapp.RenamePageResponse;
+
+type RenamePageData = Xmapp.RenamePageData;
+
+type DuplicatePageError = Xmapp.DuplicatePageError;
+
+type DuplicatePageResponse = Xmapp.DuplicatePageResponse;
+
+type DuplicatePageData = Xmapp.DuplicatePageData;
+
+type SaveFieldsError = Xmapp.SaveFieldsError;
+
+type SaveFieldsResponse = Xmapp.SaveFieldsResponse;
+
+type SaveFieldsData = Xmapp.SaveFieldsData;
+
+type SaveLayoutError = Xmapp.SaveLayoutError;
+
+type SaveLayoutResponse = Xmapp.SaveLayoutResponse;
+
+type SaveLayoutData = Xmapp.SaveLayoutData;
+
+type CreateBlueprintError = Xmapp.CreateBlueprintError;
+
+type CreateBlueprintResponse = Xmapp.CreateBlueprintResponse;
+
+type CreateBlueprintData = Xmapp.CreateBlueprintData;
+
+type CreatePageError = Xmapp.CreatePageError;
+
+type CreatePageResponse = Xmapp.CreatePageResponse;
+
+type CreatePageData = Xmapp.CreatePageData;
+
+type GetLivePageStateError = Xmapp.GetLivePageStateError;
+
+type GetLivePageStateData = Xmapp.GetLivePageStateData;
+
+type ListPageVariantsError = Xmapp.ListPageVariantsError;
+
+type ListPageVariantsResponse = Xmapp.ListPageVariantsResponse;
+
+type ListPageVariantsData = Xmapp.ListPageVariantsData;
+
+type AddPageVersionsError = Xmapp.AddPageVersionsError;
+
+type AddPageVersionsResponse = Xmapp.AddPageVersionsResponse;
+
+type AddPageVersionsData = Xmapp.AddPageVersionsData;
+
+type RetrievePageVersionsError = Xmapp.RetrievePageVersionsError;
+
+type RetrievePageVersionsResponse = Xmapp.RetrievePageVersionsResponse;
+
+type RetrievePageVersionsData = Xmapp.RetrievePageVersionsData;
+
+type RetrieveInsertOptionsError = Xmapp.RetrieveInsertOptionsError;
+
+type RetrieveInsertOptionsResponse = Xmapp.RetrieveInsertOptionsResponse;
+
+type RetrieveInsertOptionsData = Xmapp.RetrieveInsertOptionsData;
+
+type SearchError = Xmapp.SearchError;
+
+type SearchResponse = Xmapp.SearchResponse;
+
+type SearchData = Xmapp.SearchData;
+
+type RetrievePageStateError = Xmapp.RetrievePageStateError;
+
+type RetrievePageStateResponse = Xmapp.RetrievePageStateResponse;
+
+type RetrievePageStateData = Xmapp.RetrievePageStateData;
+
+type UpdateFieldsError = Xmapp.UpdateFieldsError;
+
+type UpdateFieldsResponse = Xmapp.UpdateFieldsResponse;
+
+type UpdateFieldsData = Xmapp.UpdateFieldsData;
+
+type RetrievePageError = Xmapp.RetrievePageError;
+
+type RetrievePageResponse = Xmapp.RetrievePageResponse;
+
+type RetrievePageData = Xmapp.RetrievePageData;
+
+type DeletePageError = Xmapp.DeletePageError;
+
+type DeletePageResponse = Xmapp.DeletePageResponse;
+
+type DeletePageData = Xmapp.DeletePageData;
+
 export type Options<
   TData extends TDataShape = TDataShape,
   ThrowOnError extends boolean = boolean,
@@ -330,6 +482,371 @@ export type Options<
    * used to access values that aren't defined as part of the SDK function.
    */
   meta?: Record<string, unknown>;
+};
+
+/**
+ * Delete a page
+ * Deletes a page.
+ */
+export const deletePage = <ThrowOnError extends boolean = false>(
+  options: Options<DeletePageData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).delete<
+    DeletePageResponse,
+    DeletePageError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Retrieve a page
+ * Fetches information about a page (including statistics, template, layout, publishing and workflow information).
+ */
+export const retrievePage = <ThrowOnError extends boolean = false>(
+  options: Options<RetrievePageData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    RetrievePageResponse,
+    RetrievePageError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}',
+    ...options,
+  });
+};
+
+/**
+ * Update field values
+ * Updates values of existing fields for a specific page.
+ */
+export const updateFields = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateFieldsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).patch<
+    UpdateFieldsResponse,
+    UpdateFieldsError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Retrieve a page state
+ * Fetches basic information about a page (identifier, display name and revision) and optionally workflow, layout and version data.
+ */
+export const retrievePageState = <ThrowOnError extends boolean = false>(
+  options: Options<RetrievePageStateData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    RetrievePageStateResponse,
+    RetrievePageStateError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/state',
+    ...options,
+  });
+};
+
+/**
+ * Search for pages
+ * Fetches a list of pages and folders whose name or display name match the search criteria, while applying filters and language options.
+ */
+export const search = <ThrowOnError extends boolean = false>(
+  options?: Options<SearchData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).get<SearchResponse, SearchError, ThrowOnError>({
+    url: '/api/v1/pages/search',
+    ...options,
+  });
+};
+
+/**
+ * Retrieve insert options
+ * Fetches the list of possible templates which are compatible insert options for a page.
+ */
+export const retrieveInsertOptions = <ThrowOnError extends boolean = false>(
+  options: Options<RetrieveInsertOptionsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    RetrieveInsertOptionsResponse,
+    RetrieveInsertOptionsError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/insertoptions',
+    ...options,
+  });
+};
+
+/**
+ * Retrieve page versions
+ * Fetches the list of page versions.
+ */
+export const retrievePageVersions = <ThrowOnError extends boolean = false>(
+  options: Options<RetrievePageVersionsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    RetrievePageVersionsResponse,
+    RetrievePageVersionsError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/versions',
+    ...options,
+  });
+};
+
+/**
+ * Add a version to a page
+ * Creates a new version of a page.
+ */
+export const addPageVersions = <ThrowOnError extends boolean = false>(
+  options: Options<AddPageVersionsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    AddPageVersionsResponse,
+    AddPageVersionsError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/versions',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * List live variant identifiers for a page
+ * Fetches the identifiers of currently active personalization variants for a page.
+ */
+export const listPageVariants = <ThrowOnError extends boolean = false>(
+  options: Options<ListPageVariantsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    ListPageVariantsResponse,
+    ListPageVariantsError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/live/variants',
+    ...options,
+  });
+};
+
+/**
+ * Check if a page is published to Edge
+ * Checks if the requested page is published to Edge.
+ */
+export const getLivePageState = <ThrowOnError extends boolean = false>(
+  options: Options<GetLivePageStateData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<unknown, GetLivePageStateError, ThrowOnError>({
+    url: '/api/v1/pages/{pageId}/live',
+    ...options,
+  });
+};
+
+/**
+ * Create a page
+ * Creates a new page.
+ */
+export const createPage = <ThrowOnError extends boolean = false>(
+  options?: Options<CreatePageData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).post<CreatePageResponse, CreatePageError, ThrowOnError>(
+    {
+      url: '/api/v1/pages',
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        ...options?.headers,
+      },
+    },
+  );
+};
+
+/**
+ * Create a page from blueprint
+ * Creates a new page from an existing blueprint.
+ */
+export const createBlueprint = <ThrowOnError extends boolean = false>(
+  options?: Options<CreateBlueprintData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).post<
+    CreateBlueprintResponse,
+    CreateBlueprintError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/blueprint',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Save a page layout
+ * Updates the layout of a page.
+ */
+export const saveLayout = <ThrowOnError extends boolean = false>(
+  options: Options<SaveLayoutData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<SaveLayoutResponse, SaveLayoutError, ThrowOnError>({
+    url: '/api/v1/pages/{pageId}/layout',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Save page fields
+ * Updates the fields of a page.
+ */
+export const saveFields = <ThrowOnError extends boolean = false>(
+  options: Options<SaveFieldsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<SaveFieldsResponse, SaveFieldsError, ThrowOnError>({
+    url: '/api/v1/pages/{pageId}/fields',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Duplicate a page
+ * Creates a copy of a page.
+ */
+export const duplicatePage = <ThrowOnError extends boolean = false>(
+  options: Options<DuplicatePageData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    DuplicatePageResponse,
+    DuplicatePageError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/duplicate',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Rename a page
+ * Changes the name of a page.
+ */
+export const renamePage = <ThrowOnError extends boolean = false>(
+  options: Options<RenamePageData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<RenamePageResponse, RenamePageError, ThrowOnError>({
+    url: '/api/v1/pages/{pageId}/rename',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Add a page version
+ * Creates a new version of a page.
+ */
+export const addPageVersion = <ThrowOnError extends boolean = false>(
+  options: Options<AddPageVersionData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    AddPageVersionResponse,
+    AddPageVersionError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/version',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Translate a page
+ * Creates a new translated version of a single page using the Stream API.
+ */
+export const translatePage = <ThrowOnError extends boolean = false>(
+  options: Options<TranslatePageData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    TranslatePageResponse,
+    TranslatePageError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/translate',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Delete a version of a page
+ * Deletes the specified version of a page.
+ */
+export const deletePageVersions = <ThrowOnError extends boolean = false>(
+  options: Options<DeletePageVersionsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).delete<
+    DeletePageVersionsResponse,
+    DeletePageVersionsError,
+    ThrowOnError
+  >({
+    url: '/api/v1/pages/{pageId}/versions/{versionNumber}/{language}',
+    ...options,
+  });
+};
+
+export const listJobs = <ThrowOnError extends boolean = false>(
+  options?: Options<ListJobsData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).get<ListJobsResponse, ListJobsError, ThrowOnError>({
+    url: '/api/v1/jobs',
+    ...options,
+  });
+};
+
+export const retrieveJob = <ThrowOnError extends boolean = false>(
+  options: Options<RetrieveJobData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<RetrieveJobResponse, RetrieveJobError, ThrowOnError>(
+    {
+      url: '/api/v1/jobs/{jobHandle}/status',
+      ...options,
+    },
+  );
 };
 
 /**
@@ -351,7 +868,7 @@ export const listLanguages = <ThrowOnError extends boolean = false>(
 
 /**
  * Add a language
- * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by Sitecore XM Cloud. If you do not know the language code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
+ * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by SitecoreAI. If you do not know the language code of the language, first retrieve the list of languages supported in SitecoreAI.
  * To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
  * If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.
  */
@@ -374,7 +891,7 @@ export const createLanguage = <ThrowOnError extends boolean = false>(
 
 /**
  * List supported languages
- * Retrieves the list of languages supported by Sitecore XM Cloud, and associated data.
+ * Retrieves the list of languages supported by SitecoreAI, and associated data.
  */
 export const listSupportedLanguages = <ThrowOnError extends boolean = false>(
   options?: Options<ListSupportedLanguagesData, ThrowOnError>,
@@ -386,57 +903,6 @@ export const listSupportedLanguages = <ThrowOnError extends boolean = false>(
   >({
     url: '/api/v1/languages/supported',
     ...options,
-  });
-};
-
-/**
- * List live variant identifiers for a page
- * Fetches the identifiers of currently active personalization variants for a page.
- */
-export const listPageVariants = <ThrowOnError extends boolean = false>(
-  options: Options<ListPageVariantsData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).get<
-    ListPageVariantsResponse,
-    ListPageVariantsError,
-    ThrowOnError
-  >({
-    url: '/api/v1/pages/{pageId}/live/variants',
-    ...options,
-  });
-};
-
-/**
- * Checks if a page is active
- * Checks if the requested page is active.
- */
-export const getLivePageState = <ThrowOnError extends boolean = false>(
-  options: Options<GetLivePageStateData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).get<unknown, GetLivePageStateError, ThrowOnError>({
-    url: '/api/v1/pages/{pageId}/live',
-    ...options,
-  });
-};
-
-/**
- * Translate a page
- * Translates a page using Stream API
- */
-export const translatePage = <ThrowOnError extends boolean = false>(
-  options: Options<TranslatePageData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).post<
-    TranslatePageResponse,
-    TranslatePageError,
-    ThrowOnError
-  >({
-    url: '/api/v1/pages/{pageId}/translate',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
   });
 };
 
@@ -551,7 +1017,7 @@ export const getFavoriteSites = <ThrowOnError extends boolean = false>(
 };
 
 /**
- * Adds a site to favorites
+ * Add a site to favorites
  * Adds a site to your list of favorites
  */
 export const addFavoriteSite = <ThrowOnError extends boolean = false>(
@@ -572,31 +1038,130 @@ export const addFavoriteSite = <ThrowOnError extends boolean = false>(
 };
 
 /**
- * List site job statuses
- * Fetches information about background jobs. Returns empty array if no jobs are running.
+ * List favorite site templates
+ * Fetches a list of your favorite site templates
  */
-export const listJobs = <ThrowOnError extends boolean = false>(
-  options?: Options<ListJobsData, ThrowOnError>,
+export const getFavoriteSiteTemplates = <ThrowOnError extends boolean = false>(
+  options?: Options<GetFavoriteSiteTemplatesData, ThrowOnError>,
 ) => {
-  return (options?.client ?? _heyApiClient).get<ListJobsResponse, ListJobsError, ThrowOnError>({
-    url: '/api/v1/jobs',
+  return (options?.client ?? _heyApiClient).get<
+    GetFavoriteSiteTemplatesResponse,
+    GetFavoriteSiteTemplatesError,
+    ThrowOnError
+  >({
+    url: '/api/v1/favorites/sitetemplates',
     ...options,
   });
 };
 
 /**
- * Retrieve a job status
- * Fetches information about a background job.
+ * Add a site template to favorites
+ * Adds a site template to your list of favorites
  */
-export const retrieveJob = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveJobData, ThrowOnError>,
+export const addFavoriteSiteTemplate = <ThrowOnError extends boolean = false>(
+  options: Options<AddFavoriteSiteTemplateData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).get<RetrieveJobResponse, RetrieveJobError, ThrowOnError>(
-    {
-      url: '/api/v1/jobs/{jobHandle}/status',
-      ...options,
+  return (options.client ?? _heyApiClient).post<
+    AddFavoriteSiteTemplateResponse,
+    AddFavoriteSiteTemplateError,
+    ThrowOnError
+  >({
+    url: '/api/v1/favorites/sitetemplates',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
     },
-  );
+  });
+};
+
+/**
+ * List all profiles
+ * Fetches a list of all profiles in the environment, with associated details.
+ */
+export const listProfiles = <ThrowOnError extends boolean = false>(
+  options?: Options<ListProfilesData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).get<
+    ListProfilesResponse,
+    ListProfilesError,
+    ThrowOnError
+  >({
+    url: '/api/ui/v1/editorprofiles',
+    ...options,
+  });
+};
+
+/**
+ * Create a profile
+ * Creates a new profile in the environment.
+ */
+export const createProfile = <ThrowOnError extends boolean = false>(
+  options: Options<CreateProfileData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    CreateProfileResponse,
+    CreateProfileError,
+    ThrowOnError
+  >({
+    url: '/api/ui/v1/editorprofiles',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Delete a profile
+ * Deletes a profile, including the toolbar configuration associated with that profile.
+ */
+export const deleteProfile = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteProfileData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).delete<
+    DeleteProfileResponse,
+    DeleteProfileError,
+    ThrowOnError
+  >({
+    url: '/api/ui/v1/editorprofiles/{id}',
+    ...options,
+  });
+};
+
+/**
+ * Retrieve a profile
+ * Fetches the details of a profile.
+ */
+export const getProfile = <ThrowOnError extends boolean = false>(
+  options: Options<GetProfileData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<GetProfileResponse, GetProfileError, ThrowOnError>({
+    url: '/api/ui/v1/editorprofiles/{id}',
+    ...options,
+  });
+};
+
+/**
+ * Update a profile
+ * Updates the properties of a profile.
+ */
+export const updateProfile = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateProfileData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).patch<
+    UpdateProfileResponse,
+    UpdateProfileError,
+    ThrowOnError
+  >({
+    url: '/api/ui/v1/editorprofiles/{id}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
 };
 
 /**
@@ -712,7 +1277,7 @@ export const validateCollectionName = <ThrowOnError extends boolean = false>(
 
 /**
  * Delete a language
- * Deletes a language from the XM Cloud environment.
+ * Deletes a language from the SitecoreAI environment.
  * To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
  */
 export const deleteLanguage = <ThrowOnError extends boolean = false>(
@@ -730,8 +1295,8 @@ export const deleteLanguage = <ThrowOnError extends boolean = false>(
 
 /**
  * Update a language
- * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by Sitecore XM Cloud.
- * To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
+ * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by SitecoreAI.
+ * To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in SitecoreAI.
  */
 export const updateLanguage = <ThrowOnError extends boolean = false>(
   options: Options<UpdateLanguageData, ThrowOnError>,
@@ -757,8 +1322,29 @@ export const updateLanguage = <ThrowOnError extends boolean = false>(
 export const removeFavoriteSite = <ThrowOnError extends boolean = false>(
   options: Options<RemoveFavoriteSiteData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).delete<unknown, RemoveFavoriteSiteError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).delete<
+    RemoveFavoriteSiteResponse,
+    RemoveFavoriteSiteError,
+    ThrowOnError
+  >({
     url: '/api/v1/favorites/sites/{siteId}',
+    ...options,
+  });
+};
+
+/**
+ * Remove a site template from favorites
+ * Removes a site template from your list of favorites
+ */
+export const removeFavoriteSiteTemplate = <ThrowOnError extends boolean = false>(
+  options: Options<RemoveFavoriteSiteTemplateData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).delete<
+    RemoveFavoriteSiteTemplateResponse,
+    RemoveFavoriteSiteTemplateError,
+    ThrowOnError
+  >({
+    url: '/api/v1/favorites/sitetemplates/{siteTemplateId}',
     ...options,
   });
 };
@@ -1132,7 +1718,10 @@ export const updateHost = <ThrowOnError extends boolean = false>(
 };
 
 /**
+ * @deprecated
  * List rendering hosts for a site
+ * **Deprecated:** Use GetEditingHosts endpoint instead.
+ *
  * Fetches a list of rendering hosts for a site.
  */
 export const getRenderingHosts = <ThrowOnError extends boolean = false>(
@@ -1144,6 +1733,23 @@ export const getRenderingHosts = <ThrowOnError extends boolean = false>(
     ThrowOnError
   >({
     url: '/api/v1/sites/{siteId}/renderinghosts',
+    ...options,
+  });
+};
+
+/**
+ * List editing hosts for a site
+ * Fetches a list of editing hosts for a site.
+ */
+export const getEditingHosts = <ThrowOnError extends boolean = false>(
+  options: Options<GetEditingHostsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    GetEditingHostsResponse,
+    GetEditingHostsError,
+    ThrowOnError
+  >({
+    url: '/api/v1/sites/{siteId}/editinghosts',
     ...options,
   });
 };
@@ -1167,7 +1773,7 @@ export const listSiteTemplates = <ThrowOnError extends boolean = false>(
 
 /**
  * Upload a thumbnail for a site
- * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
+ * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [SitecoreAI Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
  */
 export const uploadSiteThumbnail = <ThrowOnError extends boolean = false>(
   options: Options<UploadSiteThumbnailData, ThrowOnError>,
@@ -1261,7 +1867,7 @@ export const retrieveWorkflowStatistics = <ThrowOnError extends boolean = false>
 
 /**
  * Translate a site
- * Translates a site using Stream API
+ * Creates new translated versions of all items for a specific site using the Stream API.
  */
 export const translateSite = <ThrowOnError extends boolean = false>(
   options: Options<TranslateSiteData, ThrowOnError>,

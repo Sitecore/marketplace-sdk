@@ -220,7 +220,7 @@ export namespace experimental_Pages {
      */
     parentId?: string | null;
     /**
-     * If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+     * If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
      * Example value: True
      */
     hasPresentation?: boolean;

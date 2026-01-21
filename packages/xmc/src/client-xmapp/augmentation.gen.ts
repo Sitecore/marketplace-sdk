@@ -5,17 +5,38 @@ import * as sdk from './sdk.gen';
 declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
     /**
-     * Retrieves the list of languages added to the environment.*/
-    'xmc.xmapp.listLanguages': {
-      params: Parameters<typeof sdk.listLanguages>[0];
-      response: Awaited<ReturnType<typeof sdk.listLanguages>>;
+     * Fetches information about a page (including statistics, template, layout, publishing and workflow information).*/
+    'xmc.xmapp.retrievePage': {
+      params: Parameters<typeof sdk.retrievePage>[0];
+      response: Awaited<ReturnType<typeof sdk.retrievePage>>;
       subscribe: false;
     };
     /**
-     * Retrieves the list of languages supported by Sitecore XM Cloud, and associated data.*/
-    'xmc.xmapp.listSupportedLanguages': {
-      params: Parameters<typeof sdk.listSupportedLanguages>[0];
-      response: Awaited<ReturnType<typeof sdk.listSupportedLanguages>>;
+     * Fetches basic information about a page (identifier, display name and revision) and optionally workflow, layout and version data.*/
+    'xmc.xmapp.retrievePageState': {
+      params: Parameters<typeof sdk.retrievePageState>[0];
+      response: Awaited<ReturnType<typeof sdk.retrievePageState>>;
+      subscribe: false;
+    };
+    /**
+     * Fetches a list of pages and folders whose name or display name match the search criteria, while applying filters and language options.*/
+    'xmc.xmapp.search': {
+      params: Parameters<typeof sdk.search>[0];
+      response: Awaited<ReturnType<typeof sdk.search>>;
+      subscribe: false;
+    };
+    /**
+     * Fetches the list of possible templates which are compatible insert options for a page.*/
+    'xmc.xmapp.retrieveInsertOptions': {
+      params: Parameters<typeof sdk.retrieveInsertOptions>[0];
+      response: Awaited<ReturnType<typeof sdk.retrieveInsertOptions>>;
+      subscribe: false;
+    };
+    /**
+     * Fetches the list of page versions.*/
+    'xmc.xmapp.retrievePageVersions': {
+      params: Parameters<typeof sdk.retrievePageVersions>[0];
+      response: Awaited<ReturnType<typeof sdk.retrievePageVersions>>;
       subscribe: false;
     };
     /**
@@ -26,10 +47,38 @@ declare module '@sitecore-marketplace-sdk/client' {
       subscribe: false;
     };
     /**
-     * Checks if the requested page is active.*/
+     * Checks if the requested page is published to Edge.*/
     'xmc.xmapp.getLivePageState': {
       params: Parameters<typeof sdk.getLivePageState>[0];
       response: Awaited<ReturnType<typeof sdk.getLivePageState>>;
+      subscribe: false;
+    };
+    /**
+     * No summary available.*/
+    'xmc.xmapp.listJobs': {
+      params: Parameters<typeof sdk.listJobs>[0];
+      response: Awaited<ReturnType<typeof sdk.listJobs>>;
+      subscribe: false;
+    };
+    /**
+     * No summary available.*/
+    'xmc.xmapp.retrieveJob': {
+      params: Parameters<typeof sdk.retrieveJob>[0];
+      response: Awaited<ReturnType<typeof sdk.retrieveJob>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves the list of languages added to the environment.*/
+    'xmc.xmapp.listLanguages': {
+      params: Parameters<typeof sdk.listLanguages>[0];
+      response: Awaited<ReturnType<typeof sdk.listLanguages>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves the list of languages supported by SitecoreAI, and associated data.*/
+    'xmc.xmapp.listSupportedLanguages': {
+      params: Parameters<typeof sdk.listSupportedLanguages>[0];
+      response: Awaited<ReturnType<typeof sdk.listSupportedLanguages>>;
       subscribe: false;
     };
     /**
@@ -54,17 +103,24 @@ declare module '@sitecore-marketplace-sdk/client' {
       subscribe: false;
     };
     /**
-     * Fetches information about background jobs. Returns empty array if no jobs are running.*/
-    'xmc.xmapp.listJobs': {
-      params: Parameters<typeof sdk.listJobs>[0];
-      response: Awaited<ReturnType<typeof sdk.listJobs>>;
+     * Fetches a list of your favorite site templates*/
+    'xmc.xmapp.getFavoriteSiteTemplates': {
+      params: Parameters<typeof sdk.getFavoriteSiteTemplates>[0];
+      response: Awaited<ReturnType<typeof sdk.getFavoriteSiteTemplates>>;
       subscribe: false;
     };
     /**
-     * Fetches information about a background job.*/
-    'xmc.xmapp.retrieveJob': {
-      params: Parameters<typeof sdk.retrieveJob>[0];
-      response: Awaited<ReturnType<typeof sdk.retrieveJob>>;
+     * Fetches a list of all profiles in the environment, with associated details.*/
+    'xmc.xmapp.listProfiles': {
+      params: Parameters<typeof sdk.listProfiles>[0];
+      response: Awaited<ReturnType<typeof sdk.listProfiles>>;
+      subscribe: false;
+    };
+    /**
+     * Fetches the details of a profile.*/
+    'xmc.xmapp.getProfile': {
+      params: Parameters<typeof sdk.getProfile>[0];
+      response: Awaited<ReturnType<typeof sdk.getProfile>>;
       subscribe: false;
     };
     /**
@@ -138,10 +194,19 @@ declare module '@sitecore-marketplace-sdk/client' {
       subscribe: false;
     };
     /**
-     * Fetches a list of rendering hosts for a site.*/
+         * **Deprecated:** Use GetEditingHosts endpoint instead.
+        
+        Fetches a list of rendering hosts for a site.*/
     'xmc.xmapp.getRenderingHosts': {
       params: Parameters<typeof sdk.getRenderingHosts>[0];
       response: Awaited<ReturnType<typeof sdk.getRenderingHosts>>;
+      subscribe: false;
+    };
+    /**
+     * Fetches a list of editing hosts for a site.*/
+    'xmc.xmapp.getEditingHosts': {
+      params: Parameters<typeof sdk.getEditingHosts>[0];
+      response: Awaited<ReturnType<typeof sdk.getEditingHosts>>;
       subscribe: false;
     };
     /**
@@ -178,18 +243,84 @@ declare module '@sitecore-marketplace-sdk/client' {
 declare module '@sitecore-marketplace-sdk/client' {
   interface MutationMap {
     /**
-         * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by Sitecore XM Cloud. If you do not know the language code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
+     * Deletes a page.*/
+    'xmc.xmapp.deletePage': {
+      params: Parameters<typeof sdk.deletePage>[0];
+      response: Awaited<ReturnType<typeof sdk.deletePage>>;
+    };
+    /**
+     * Updates values of existing fields for a specific page.*/
+    'xmc.xmapp.updateFields': {
+      params: Parameters<typeof sdk.updateFields>[0];
+      response: Awaited<ReturnType<typeof sdk.updateFields>>;
+    };
+    /**
+     * Creates a new version of a page.*/
+    'xmc.xmapp.addPageVersions': {
+      params: Parameters<typeof sdk.addPageVersions>[0];
+      response: Awaited<ReturnType<typeof sdk.addPageVersions>>;
+    };
+    /**
+     * Creates a new page.*/
+    'xmc.xmapp.createPage': {
+      params: Parameters<typeof sdk.createPage>[0];
+      response: Awaited<ReturnType<typeof sdk.createPage>>;
+    };
+    /**
+     * Creates a new page from an existing blueprint.*/
+    'xmc.xmapp.createBlueprint': {
+      params: Parameters<typeof sdk.createBlueprint>[0];
+      response: Awaited<ReturnType<typeof sdk.createBlueprint>>;
+    };
+    /**
+     * Updates the layout of a page.*/
+    'xmc.xmapp.saveLayout': {
+      params: Parameters<typeof sdk.saveLayout>[0];
+      response: Awaited<ReturnType<typeof sdk.saveLayout>>;
+    };
+    /**
+     * Updates the fields of a page.*/
+    'xmc.xmapp.saveFields': {
+      params: Parameters<typeof sdk.saveFields>[0];
+      response: Awaited<ReturnType<typeof sdk.saveFields>>;
+    };
+    /**
+     * Creates a copy of a page.*/
+    'xmc.xmapp.duplicatePage': {
+      params: Parameters<typeof sdk.duplicatePage>[0];
+      response: Awaited<ReturnType<typeof sdk.duplicatePage>>;
+    };
+    /**
+     * Changes the name of a page.*/
+    'xmc.xmapp.renamePage': {
+      params: Parameters<typeof sdk.renamePage>[0];
+      response: Awaited<ReturnType<typeof sdk.renamePage>>;
+    };
+    /**
+     * Creates a new version of a page.*/
+    'xmc.xmapp.addPageVersion': {
+      params: Parameters<typeof sdk.addPageVersion>[0];
+      response: Awaited<ReturnType<typeof sdk.addPageVersion>>;
+    };
+    /**
+     * Creates a new translated version of a single page using the Stream API.*/
+    'xmc.xmapp.translatePage': {
+      params: Parameters<typeof sdk.translatePage>[0];
+      response: Awaited<ReturnType<typeof sdk.translatePage>>;
+    };
+    /**
+     * Deletes the specified version of a page.*/
+    'xmc.xmapp.deletePageVersions': {
+      params: Parameters<typeof sdk.deletePageVersions>[0];
+      response: Awaited<ReturnType<typeof sdk.deletePageVersions>>;
+    };
+    /**
+         * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by SitecoreAI. If you do not know the language code of the language, first retrieve the list of languages supported in SitecoreAI.
                     To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
                     If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.*/
     'xmc.xmapp.createLanguage': {
       params: Parameters<typeof sdk.createLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.createLanguage>>;
-    };
-    /**
-     * Translates a page using Stream API*/
-    'xmc.xmapp.translatePage': {
-      params: Parameters<typeof sdk.translatePage>[0];
-      response: Awaited<ReturnType<typeof sdk.translatePage>>;
     };
     /**
      * Creates a collection by specifying a name and, optionally, a display name and description.*/
@@ -214,6 +345,30 @@ declare module '@sitecore-marketplace-sdk/client' {
     'xmc.xmapp.addFavoriteSite': {
       params: Parameters<typeof sdk.addFavoriteSite>[0];
       response: Awaited<ReturnType<typeof sdk.addFavoriteSite>>;
+    };
+    /**
+     * Adds a site template to your list of favorites*/
+    'xmc.xmapp.addFavoriteSiteTemplate': {
+      params: Parameters<typeof sdk.addFavoriteSiteTemplate>[0];
+      response: Awaited<ReturnType<typeof sdk.addFavoriteSiteTemplate>>;
+    };
+    /**
+     * Creates a new profile in the environment.*/
+    'xmc.xmapp.createProfile': {
+      params: Parameters<typeof sdk.createProfile>[0];
+      response: Awaited<ReturnType<typeof sdk.createProfile>>;
+    };
+    /**
+     * Deletes a profile, including the toolbar configuration associated with that profile.*/
+    'xmc.xmapp.deleteProfile': {
+      params: Parameters<typeof sdk.deleteProfile>[0];
+      response: Awaited<ReturnType<typeof sdk.deleteProfile>>;
+    };
+    /**
+     * Updates the properties of a profile.*/
+    'xmc.xmapp.updateProfile': {
+      params: Parameters<typeof sdk.updateProfile>[0];
+      response: Awaited<ReturnType<typeof sdk.updateProfile>>;
     };
     /**
      * Returns currently active personalization variants for the requested pages.*/
@@ -252,15 +407,15 @@ declare module '@sitecore-marketplace-sdk/client' {
       response: Awaited<ReturnType<typeof sdk.validateCollectionName>>;
     };
     /**
-         * Deletes a language from the XM Cloud environment.
+         * Deletes a language from the SitecoreAI environment.
                     To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.*/
     'xmc.xmapp.deleteLanguage': {
       params: Parameters<typeof sdk.deleteLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.deleteLanguage>>;
     };
     /**
-         * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by Sitecore XM Cloud.
-                    To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.*/
+         * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by SitecoreAI.
+                    To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in SitecoreAI.*/
     'xmc.xmapp.updateLanguage': {
       params: Parameters<typeof sdk.updateLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.updateLanguage>>;
@@ -270,6 +425,12 @@ declare module '@sitecore-marketplace-sdk/client' {
     'xmc.xmapp.removeFavoriteSite': {
       params: Parameters<typeof sdk.removeFavoriteSite>[0];
       response: Awaited<ReturnType<typeof sdk.removeFavoriteSite>>;
+    };
+    /**
+     * Removes a site template from your list of favorites*/
+    'xmc.xmapp.removeFavoriteSiteTemplate': {
+      params: Parameters<typeof sdk.removeFavoriteSiteTemplate>[0];
+      response: Awaited<ReturnType<typeof sdk.removeFavoriteSiteTemplate>>;
     };
     /**
          * [Creates a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html) for the environment.
@@ -349,7 +510,7 @@ declare module '@sitecore-marketplace-sdk/client' {
       response: Awaited<ReturnType<typeof sdk.updateHost>>;
     };
     /**
-     * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).*/
+     * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [SitecoreAI Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).*/
     'xmc.xmapp.uploadSiteThumbnail': {
       params: Parameters<typeof sdk.uploadSiteThumbnail>[0];
       response: Awaited<ReturnType<typeof sdk.uploadSiteThumbnail>>;
@@ -361,7 +522,7 @@ declare module '@sitecore-marketplace-sdk/client' {
       response: Awaited<ReturnType<typeof sdk.updateSitemapConfiguration>>;
     };
     /**
-     * Translates a site using Stream API*/
+     * Creates new translated versions of all items for a specific site using the Stream API.*/
     'xmc.xmapp.translateSite': {
       params: Parameters<typeof sdk.translateSite>[0];
       response: Awaited<ReturnType<typeof sdk.translateSite>>;

@@ -776,7 +776,7 @@ export namespace experimental_Sites {
      */
     parentId?: string | null;
     /**
-     * If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+     * If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
      * Example value: True
      */
     hasPresentation?: boolean;
@@ -1140,7 +1140,7 @@ export namespace experimental_Sites {
      */
     name?: string | null;
     /**
-     * Whether the template is available for use in the XM Cloud Create a site UI.
+     * Whether the template is available for use in the SitecoreAI Create a site UI.
      * Example value: True
      */
     enabled?: boolean;

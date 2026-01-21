@@ -430,7 +430,7 @@ export const listLanguages = <ThrowOnError extends boolean = false>(
 
 /**
  * Add a language
- * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by Sitecore XM Cloud. If you do not know the language code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
+ * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by SitecoreAI. If you do not know the language code of the language, first retrieve the list of languages supported in SitecoreAI.
  * To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
  * If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.
  */
@@ -459,7 +459,7 @@ export const createLanguage = <ThrowOnError extends boolean = false>(
 
 /**
  * List supported languages
- * Retrieves the list of languages supported by Sitecore XM Cloud, and associated data.
+ * Retrieves the list of languages supported by SitecoreAI, and associated data.
  */
 export const listSupportedLanguages = <ThrowOnError extends boolean = false>(
   options?: Options<ListSupportedLanguagesData, ThrowOnError>,
@@ -965,7 +965,7 @@ export const validateCollectionName = <ThrowOnError extends boolean = false>(
 
 /**
  * Delete a language
- * Deletes a language from the XM Cloud environment.
+ * Deletes a language from the SitecoreAI environment.
  * To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
  */
 export const deleteLanguage = <ThrowOnError extends boolean = false>(
@@ -989,8 +989,8 @@ export const deleteLanguage = <ThrowOnError extends boolean = false>(
 
 /**
  * Update a language
- * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by Sitecore XM Cloud.
- * To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
+ * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by SitecoreAI.
+ * To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in SitecoreAI.
  */
 export const updateLanguage = <ThrowOnError extends boolean = false>(
   options: Options<UpdateLanguageData, ThrowOnError>,
@@ -1629,7 +1629,7 @@ export const listSiteTemplates = <ThrowOnError extends boolean = false>(
 
 /**
  * Upload a thumbnail for a site
- * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
+ * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [SitecoreAI Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
  */
 export const uploadSiteThumbnail = <ThrowOnError extends boolean = false>(
   options: Options<UploadSiteThumbnailData, ThrowOnError>,
