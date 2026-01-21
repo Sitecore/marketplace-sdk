@@ -1,5 +1,12 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.3.2
+
+### Patch Changes
+
+- Updated dependencies [62064ff]
+  - @sitecore-marketplace-sdk/client@0.3.1
+
 ## 0.3.1
 
 ### Patch Changes
