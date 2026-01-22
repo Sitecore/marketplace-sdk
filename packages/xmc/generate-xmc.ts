@@ -127,3 +127,53 @@ createClient({
     }),
   ],
 });
+
+createClient({
+  input: 'https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-sites',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.sites'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Sites',
+    }),
+  ],
+});
+
+createClient({
+  input: 'https://api-docs.sitecore.com/_spec/sai/pages-api/index.yaml',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-pages',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.pages'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Pages',
+    }),
+  ],
+});
