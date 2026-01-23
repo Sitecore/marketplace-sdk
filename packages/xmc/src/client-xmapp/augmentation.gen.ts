@@ -4,168 +4,192 @@ import * as sdk from './sdk.gen';
 
 declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Retrieves the list of languages added to the environment.*/
     'xmc.xmapp.listLanguages': {
       params: Parameters<typeof sdk.listLanguages>[0];
       response: Awaited<ReturnType<typeof sdk.listLanguages>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Retrieves the list of languages supported by Sitecore XM Cloud, and associated data.*/
     'xmc.xmapp.listSupportedLanguages': {
       params: Parameters<typeof sdk.listSupportedLanguages>[0];
       response: Awaited<ReturnType<typeof sdk.listSupportedLanguages>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches the identifiers of currently active personalization variants for a page.*/
     'xmc.xmapp.listPageVariants': {
       params: Parameters<typeof sdk.listPageVariants>[0];
       response: Awaited<ReturnType<typeof sdk.listPageVariants>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Checks if the requested page is active.*/
     'xmc.xmapp.getLivePageState': {
       params: Parameters<typeof sdk.getLivePageState>[0];
       response: Awaited<ReturnType<typeof sdk.getLivePageState>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches the list of site collections in the environment, with associated details.*/
     'xmc.xmapp.listCollections': {
       params: Parameters<typeof sdk.listCollections>[0];
       response: Awaited<ReturnType<typeof sdk.listCollections>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches information about a site collection.*/
     'xmc.xmapp.retrieveCollection': {
       params: Parameters<typeof sdk.retrieveCollection>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveCollection>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches a list of your favorite sites*/
     'xmc.xmapp.getFavoriteSites': {
       params: Parameters<typeof sdk.getFavoriteSites>[0];
       response: Awaited<ReturnType<typeof sdk.getFavoriteSites>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches information about background jobs. Returns empty array if no jobs are running.*/
     'xmc.xmapp.listJobs': {
       params: Parameters<typeof sdk.listJobs>[0];
       response: Awaited<ReturnType<typeof sdk.listJobs>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches information about a background job.*/
     'xmc.xmapp.retrieveJob': {
       params: Parameters<typeof sdk.retrieveJob>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveJob>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches the list of sites in the environment, with associated details.*/
     'xmc.xmapp.listSites': {
       params: Parameters<typeof sdk.listSites>[0];
       response: Awaited<ReturnType<typeof sdk.listSites>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches information about a site.*/
     'xmc.xmapp.retrieveSite': {
       params: Parameters<typeof sdk.retrieveSite>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveSite>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches a list of sites that use an [analytics identifier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html).*/
     'xmc.xmapp.listTrackedSites': {
       params: Parameters<typeof sdk.listTrackedSites>[0];
       response: Awaited<ReturnType<typeof sdk.listTrackedSites>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches a list of sites in a site collection.*/
     'xmc.xmapp.listCollectionSites': {
       params: Parameters<typeof sdk.listCollectionSites>[0];
       response: Awaited<ReturnType<typeof sdk.listCollectionSites>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches hierarchy information about the main page of a site, including its children, ancestors, and siblings.*/
     'xmc.xmapp.retrieveSiteHierarchy': {
       params: Parameters<typeof sdk.retrieveSiteHierarchy>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveSiteHierarchy>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches hierarchy information about a page, including its children, ancestors, and siblings.*/
     'xmc.xmapp.retrievePageHierarchy': {
       params: Parameters<typeof sdk.retrievePageHierarchy>[0];
       response: Awaited<ReturnType<typeof sdk.retrievePageHierarchy>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches information about the ancestors of a page.*/
     'xmc.xmapp.listPageAncestors': {
       params: Parameters<typeof sdk.listPageAncestors>[0];
       response: Awaited<ReturnType<typeof sdk.listPageAncestors>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches information about the children of a page.*/
     'xmc.xmapp.listPageChildren': {
       params: Parameters<typeof sdk.listPageChildren>[0];
       response: Awaited<ReturnType<typeof sdk.listPageChildren>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Retrieves the list of hosts for a site.*/
     'xmc.xmapp.listHosts': {
       params: Parameters<typeof sdk.listHosts>[0];
       response: Awaited<ReturnType<typeof sdk.listHosts>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches details about a site host.*/
     'xmc.xmapp.retrieveHost': {
       params: Parameters<typeof sdk.retrieveHost>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveHost>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches a list of rendering hosts for a site.*/
     'xmc.xmapp.getRenderingHosts': {
       params: Parameters<typeof sdk.getRenderingHosts>[0];
       response: Awaited<ReturnType<typeof sdk.getRenderingHosts>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Gets the site templates available in the environment that can be used for creating sites. Learn more about [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html).*/
     'xmc.xmapp.listSiteTemplates': {
       params: Parameters<typeof sdk.listSiteTemplates>[0];
       response: Awaited<ReturnType<typeof sdk.listSiteTemplates>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches localization statistics for a site, including the number of pages in each locale.*/
     'xmc.xmapp.retrieveLocalizationStatistics': {
       params: Parameters<typeof sdk.retrieveLocalizationStatistics>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveLocalizationStatistics>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.*/
     'xmc.xmapp.retrieveSitemapConfiguration': {
       params: Parameters<typeof sdk.retrieveSitemapConfiguration>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveSitemapConfiguration>>;
       subscribe: false;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Fetches the workflows defined for a site, their states, and the number of pages in each state.*/
     'xmc.xmapp.retrieveWorkflowStatistics': {
       params: Parameters<typeof sdk.retrieveWorkflowStatistics>[0];
@@ -177,7 +201,8 @@ declare module '@sitecore-marketplace-sdk/client' {
 
 declare module '@sitecore-marketplace-sdk/client' {
   interface MutationMap {
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+         *
          * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by Sitecore XM Cloud. If you do not know the language code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
                     To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
                     If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.*/
@@ -185,55 +210,64 @@ declare module '@sitecore-marketplace-sdk/client' {
       params: Parameters<typeof sdk.createLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.createLanguage>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Creates a collection by specifying a name and, optionally, a display name and description.*/
     'xmc.xmapp.createCollection': {
       params: Parameters<typeof sdk.createCollection>[0];
       response: Awaited<ReturnType<typeof sdk.createCollection>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Deletes a site collection, including sites in that collection.*/
     'xmc.xmapp.deleteCollection': {
       params: Parameters<typeof sdk.deleteCollection>[0];
       response: Awaited<ReturnType<typeof sdk.deleteCollection>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).*/
     'xmc.xmapp.updateCollection': {
       params: Parameters<typeof sdk.updateCollection>[0];
       response: Awaited<ReturnType<typeof sdk.updateCollection>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Adds a site to your list of favorites*/
     'xmc.xmapp.addFavoriteSite': {
       params: Parameters<typeof sdk.addFavoriteSite>[0];
       response: Awaited<ReturnType<typeof sdk.addFavoriteSite>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Returns currently active personalization variants for the requested pages.*/
     'xmc.xmapp.aggregateLivePageVariants': {
       params: Parameters<typeof sdk.aggregateLivePageVariants>[0];
       response: Awaited<ReturnType<typeof sdk.aggregateLivePageVariants>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Aggregates data about multiple pages and their components.*/
     'xmc.xmapp.aggregatePageData': {
       params: Parameters<typeof sdk.aggregatePageData>[0];
       response: Awaited<ReturnType<typeof sdk.aggregatePageData>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Changes the system name of a site collection.*/
     'xmc.xmapp.renameCollection': {
       params: Parameters<typeof sdk.renameCollection>[0];
       response: Awaited<ReturnType<typeof sdk.renameCollection>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.*/
     'xmc.xmapp.sortCollections': {
       params: Parameters<typeof sdk.sortCollections>[0];
       response: Awaited<ReturnType<typeof sdk.sortCollections>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+         *
          * Validates a site collection name to ensure it meets the required criteria. The validations applied to the collection name:
         - Is a string and can't be null.
         - Is unique.
@@ -245,27 +279,31 @@ declare module '@sitecore-marketplace-sdk/client' {
       params: Parameters<typeof sdk.validateCollectionName>[0];
       response: Awaited<ReturnType<typeof sdk.validateCollectionName>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+         *
          * Deletes a language from the XM Cloud environment.
                     To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.*/
     'xmc.xmapp.deleteLanguage': {
       params: Parameters<typeof sdk.deleteLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.deleteLanguage>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+         *
          * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by Sitecore XM Cloud.
                     To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.*/
     'xmc.xmapp.updateLanguage': {
       params: Parameters<typeof sdk.updateLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.updateLanguage>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Removes a site from your list of favorites*/
     'xmc.xmapp.removeFavoriteSite': {
       params: Parameters<typeof sdk.removeFavoriteSite>[0];
       response: Awaited<ReturnType<typeof sdk.removeFavoriteSite>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+         *
          * [Creates a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html) for the environment.
                     Sites are created using  [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html). Every site belongs to a [site collection](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site-collection.html). You can either create a site inside an existing collection or create a new one.
                     It is also possible to create a site by duplicating a site.*/
@@ -273,7 +311,8 @@ declare module '@sitecore-marketplace-sdk/client' {
       params: Parameters<typeof sdk.createSite>[0];
       response: Awaited<ReturnType<typeof sdk.createSite>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+         *
          * Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
                    Deleting a site affects related websites in the collection:
                    • If the site [shares](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html#share-a-site) items with other sites, this might result in broken links.
@@ -282,31 +321,36 @@ declare module '@sitecore-marketplace-sdk/client' {
       params: Parameters<typeof sdk.deleteSite>[0];
       response: Awaited<ReturnType<typeof sdk.deleteSite>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).*/
     'xmc.xmapp.updateSite': {
       params: Parameters<typeof sdk.updateSite>[0];
       response: Awaited<ReturnType<typeof sdk.updateSite>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.*/
     'xmc.xmapp.copySite': {
       params: Parameters<typeof sdk.copySite>[0];
       response: Awaited<ReturnType<typeof sdk.copySite>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Changes the system name of a site.*/
     'xmc.xmapp.renameSite': {
       params: Parameters<typeof sdk.renameSite>[0];
       response: Awaited<ReturnType<typeof sdk.renameSite>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.*/
     'xmc.xmapp.sortSites': {
       params: Parameters<typeof sdk.sortSites>[0];
       response: Awaited<ReturnType<typeof sdk.sortSites>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+         *
          * Validates a site name to ensure it meets the required criteria. The validations applied to the site name:
         - Is a string and can't be null.
         - Is unique.
@@ -318,37 +362,43 @@ declare module '@sitecore-marketplace-sdk/client' {
       params: Parameters<typeof sdk.validateSiteName>[0];
       response: Awaited<ReturnType<typeof sdk.validateSiteName>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Removes the analytics identifiers from one or more sites.*/
     'xmc.xmapp.detachAnalyticsIdentifier': {
       params: Parameters<typeof sdk.detachAnalyticsIdentifier>[0];
       response: Awaited<ReturnType<typeof sdk.detachAnalyticsIdentifier>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Creates a host for a site.*/
     'xmc.xmapp.createHost': {
       params: Parameters<typeof sdk.createHost>[0];
       response: Awaited<ReturnType<typeof sdk.createHost>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.*/
     'xmc.xmapp.deleteHost': {
       params: Parameters<typeof sdk.deleteHost>[0];
       response: Awaited<ReturnType<typeof sdk.deleteHost>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Modifies the properties of a host.*/
     'xmc.xmapp.updateHost': {
       params: Parameters<typeof sdk.updateHost>[0];
       response: Awaited<ReturnType<typeof sdk.updateHost>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).*/
     'xmc.xmapp.uploadSiteThumbnail': {
       params: Parameters<typeof sdk.uploadSiteThumbnail>[0];
       response: Awaited<ReturnType<typeof sdk.uploadSiteThumbnail>>;
     };
-    /**
+    /** @deprecated The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
+     *
      * Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.*/
     'xmc.xmapp.updateSitemapConfiguration': {
       params: Parameters<typeof sdk.updateSitemapConfiguration>[0];

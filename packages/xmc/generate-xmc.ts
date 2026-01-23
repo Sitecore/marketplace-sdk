@@ -23,6 +23,8 @@ createClient({
     },
     defineAugmentationConfig({
       namespaces: ['xmc.xmapp'],
+      deprecated: true,
+      deprecationMessage: `The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.`,
     }),
     defineClientTransformerConfig({
       namespace: 'Xmapp',

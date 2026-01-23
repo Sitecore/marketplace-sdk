@@ -60,10 +60,23 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
       );
 
       // Add documentation for the key in proper JSDoc format
-      const jsDocComment = `
+      let jsDocComment = `
  *
  * ${operation.description || operation.summary || 'No summary available.'}
 `;
+
+      // Add deprecation warning if configured
+      if (plugin.deprecated) {
+        const deprecationMessage = plugin.deprecationMessage || 
+          'This namespace is deprecated and will be removed in a future version.';
+        
+        jsDocComment = `
+ * @deprecated ${deprecationMessage}
+ * 
+ * ${operation.description || operation.summary || 'No summary available.'}
+`;
+      }
+
       ts.addSyntheticLeadingComment(
         propertySignature,
         ts.SyntaxKind.MultiLineCommentTrivia,
