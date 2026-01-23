@@ -1876,7 +1876,7 @@ export namespace Agent {
   };
   export type ClientOptions = {
     baseUrl:
-      | 'https://edge-platform.sitecorecloud.io/stream/ai-agent-api/'
+      | 'https://example.com/stream/ai-agent-api/'
       | 'https://ai-agent-api-euw.sitecorecloud.io'
       | 'https://ai-agent-api-use.sitecorecloud.io'
       | 'https://ai-agent-api-aue.sitecorecloud.io'

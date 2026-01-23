@@ -3790,6 +3790,6 @@ export namespace Sites {
   };
   export type TranslateSiteResponse = TranslateSiteResponses[keyof TranslateSiteResponses];
   export type ClientOptions = {
-    baseUrl: 'https://xmapps-api.sitecorecloud.io' | (string & {});
+    baseUrl: 'https://example.com/authoring' | (string & {});
   };
 }

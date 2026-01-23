@@ -25,7 +25,7 @@ export type CreateClientConfig<T extends DefaultClientOptions = ClientOptions> =
 
 export const client = createClient(
   createConfig<ClientOptions>({
-    baseUrl: 'https://edge-platform.sitecorecloud.io/stream/ai-agent-api/',
+    baseUrl: 'https://example.com/stream/ai-agent-api/',
     fetch: clientSdkfetch,
   }),
 );

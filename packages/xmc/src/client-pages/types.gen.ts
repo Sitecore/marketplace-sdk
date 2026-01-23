@@ -1686,6 +1686,6 @@ export namespace Pages {
   export type DeletePageVersionsResponse =
     DeletePageVersionsResponses[keyof DeletePageVersionsResponses];
   export type ClientOptions = {
-    baseUrl: 'https://xmapps-api.sitecorecloud.io' | (string & {});
+    baseUrl: 'https://example.com/authoring' | (string & {});
   };
 }

@@ -11,7 +11,9 @@ createClient({
     path: './src/client-xmapp',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/authoring',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -36,7 +38,9 @@ createClient({
     path: './src/client-authoring',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/v1/authoring',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -61,7 +65,9 @@ createClient({
     path: './src/client-content-transfer',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/authoring/transfer',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -86,7 +92,9 @@ createClient({
     path: './src/client-content',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/content/api',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -111,7 +119,9 @@ createClient({
     path: './src/client-agent',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/stream/ai-agent-api/',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -136,7 +146,9 @@ createClient({
     path: './src/client-sites',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/authoring',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -161,7 +173,9 @@ createClient({
     path: './src/client-pages',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/authoring',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',

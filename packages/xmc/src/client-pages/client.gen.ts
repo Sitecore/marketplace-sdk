@@ -25,7 +25,7 @@ export type CreateClientConfig<T extends DefaultClientOptions = ClientOptions> =
 
 export const client = createClient(
   createConfig<ClientOptions>({
-    baseUrl: 'https://xmapps-api.sitecorecloud.io',
+    baseUrl: 'https://example.com/authoring',
     fetch: clientSdkfetch,
   }),
 );

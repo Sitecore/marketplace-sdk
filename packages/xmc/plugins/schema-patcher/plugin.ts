@@ -4,6 +4,17 @@ import type { Config } from './types';
 export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
   const schema = context.ir;
 
+  // Set the base URL if provided in config
+  if (schema && schema.servers && schema.servers.length > 0) {
+    if (plugin.baseUrl) {
+      // baseUrl takes precedence - use full URL as-is
+      schema.servers[0].url = plugin.baseUrl;
+    } else if (plugin.basePath) {
+      // basePath - construct URL with edge platform domain
+      schema.servers[0].url = `https://example.com${plugin.basePath}`;
+    }
+  }
+
   // Define the sitecoreContextId parameter
   const sitecoreContextIdParam = {
     allowReserved: false,
