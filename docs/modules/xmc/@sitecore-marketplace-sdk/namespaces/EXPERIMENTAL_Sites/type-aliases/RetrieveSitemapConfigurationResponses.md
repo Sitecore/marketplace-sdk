@@ -8,7 +8,7 @@
 
 > **RetrieveSitemapConfigurationResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3273](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3273)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3656](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3656)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3273](https
 
 > **200**: [`SitemapConfiguration`](SitemapConfiguration.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3277](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3277)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3660](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3660)
 
 Success

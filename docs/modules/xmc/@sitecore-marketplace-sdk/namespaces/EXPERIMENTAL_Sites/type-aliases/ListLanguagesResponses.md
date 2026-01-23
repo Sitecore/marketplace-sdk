@@ -8,7 +8,7 @@
 
 > **ListLanguagesResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1500](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1500)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1698](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1698)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1500](https
 
 > **200**: [`Language`](Language.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1504](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1504)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1702](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1702)
 
 Success

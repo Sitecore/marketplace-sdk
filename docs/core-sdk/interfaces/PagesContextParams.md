@@ -6,7 +6,7 @@
 
 # Interface: PagesContextParams
 
-Defined in: [packages/core/src/shared-types.ts:220](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L220)
+Defined in: [packages/core/src/shared-types.ts:247](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L247)
 
 Parameters for Pages Context mutation.
 
@@ -16,7 +16,7 @@ Parameters for Pages Context mutation.
 
 > `optional` **itemId**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:221](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L221)
+Defined in: [packages/core/src/shared-types.ts:248](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L248)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/core/src/shared-types.ts:221](https://github.com/Sitecore/
 
 > `optional` **itemVersion**: `number`
 
-Defined in: [packages/core/src/shared-types.ts:223](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L223)
+Defined in: [packages/core/src/shared-types.ts:250](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L250)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: [packages/core/src/shared-types.ts:223](https://github.com/Sitecore/
 
 > `optional` **language**: `string`
 
-Defined in: [packages/core/src/shared-types.ts:222](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L222)
+Defined in: [packages/core/src/shared-types.ts:249](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L249)

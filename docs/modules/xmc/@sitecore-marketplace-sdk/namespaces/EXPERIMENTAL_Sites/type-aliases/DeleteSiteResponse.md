@@ -8,4 +8,4 @@
 
 > **DeleteSiteResponse** = [`DeleteSiteResponses`](DeleteSiteResponses.md)\[keyof [`DeleteSiteResponses`](DeleteSiteResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2342](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2342)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2687](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2687)

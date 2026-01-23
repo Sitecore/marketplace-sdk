@@ -8,7 +8,7 @@
 
 > **CopySiteData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2422](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2422)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2767](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2767)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2422](https
 
 > **body**: [`CopySiteInput`](CopySiteInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2426](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2426)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2771](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2771)
 
 Input object containing the name and description of the new site
 
@@ -26,7 +26,7 @@ Input object containing the name and description of the new site
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2427](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2427)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2772](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2772)
 
 #### siteId
 
@@ -40,7 +40,7 @@ The identifier of the site you want to duplicate.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2433](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2433)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2778](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2778)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/copy"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2443](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2443)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2788](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2788)

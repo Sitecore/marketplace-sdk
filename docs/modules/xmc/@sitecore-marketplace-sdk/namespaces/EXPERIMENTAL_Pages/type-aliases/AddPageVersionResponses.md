@@ -8,7 +8,7 @@
 
 > **AddPageVersionResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1488](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1488)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1589](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1589)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1488](https
 
 > **200**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1492](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1492)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1593](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1593)
 
 Success

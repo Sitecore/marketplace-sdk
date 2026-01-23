@@ -8,7 +8,7 @@
 
 > **RetrieveWorkflowStatisticsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3360](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3360)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3743](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3743)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3360](https
 
 > **200**: [`WorkflowsStatistics`](WorkflowsStatistics.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3364](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3364)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3747](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3747)
 
 Success

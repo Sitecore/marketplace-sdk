@@ -8,7 +8,7 @@
 
 > **CreateLanguageResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1532](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1532)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1730](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1730)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1532](https
 
 > **200**: [`Language`](Language.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1536](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1536)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1734](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1734)
 
 Success

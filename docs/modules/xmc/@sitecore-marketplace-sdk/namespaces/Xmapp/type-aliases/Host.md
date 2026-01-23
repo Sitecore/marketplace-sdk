@@ -16,7 +16,7 @@ A host response entity
 
 ### analyticsIdentifiers?
 
-> `optional` **analyticsIdentifiers**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **analyticsIdentifiers**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:303](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L303)
 
@@ -117,7 +117,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:281](https://github.com/
 
 ### properties?
 
-> `optional` **properties**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **properties**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:291](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L291)
 
@@ -135,7 +135,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:280](https://github.com/
 
 ### settings?
 
-> `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:285](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L285)
 

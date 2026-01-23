@@ -8,7 +8,7 @@
 
 > **NameValidationResult** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:484](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L484)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:555](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L555)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:484](https:
 
 > `optional` **isValid**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:488](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L488)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:559](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L559)
 
 Whether the name is valid.
 
@@ -26,6 +26,6 @@ Whether the name is valid.
 
 > `optional` **message**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:492](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L492)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:563](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L563)
 
 Details about the request.

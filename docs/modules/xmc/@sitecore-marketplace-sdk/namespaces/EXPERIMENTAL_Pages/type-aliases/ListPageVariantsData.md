@@ -8,7 +8,7 @@
 
 > **ListPageVariantsData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1183](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1183)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1252](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1252)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1183](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1184](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1184)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1253](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1253)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1184](https
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1185](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1185)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1254](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1254)
 
 #### pageId
 
@@ -38,7 +38,7 @@ The page identifier.
 
 > **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1191](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1191)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1260](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1260)
 
 #### environmentId?
 
@@ -64,4 +64,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/live/variants"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1205](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1205)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1274](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1274)

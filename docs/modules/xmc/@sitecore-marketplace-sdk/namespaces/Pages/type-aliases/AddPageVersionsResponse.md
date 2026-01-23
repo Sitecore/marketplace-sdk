@@ -1,0 +1,11 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Pages](../README.md) / AddPageVersionsResponse
+
+# Type Alias: AddPageVersionsResponse
+
+> **AddPageVersionsResponse** = [`AddPageVersionsResponses`](AddPageVersionsResponses.md)\[keyof [`AddPageVersionsResponses`](AddPageVersionsResponses.md)\]
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:1251](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L1251)

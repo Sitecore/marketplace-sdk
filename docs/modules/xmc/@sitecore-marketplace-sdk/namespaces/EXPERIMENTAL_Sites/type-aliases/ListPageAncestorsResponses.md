@@ -8,7 +8,7 @@
 
 > **ListPageAncestorsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2823](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2823)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3168](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3168)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2823](https
 
 > **200**: [`PageResponse`](PageResponse.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2827](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2827)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3172](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3172)
 
 Success

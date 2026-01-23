@@ -8,4 +8,4 @@
 
 > **RetrievePageError** = [`RetrievePageErrors`](RetrievePageErrors.md)\[keyof [`RetrievePageErrors`](RetrievePageErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:865](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L865)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:934](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L934)

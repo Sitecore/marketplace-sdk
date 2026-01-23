@@ -16,7 +16,7 @@ Sort sites request.
 
 ### sites?
 
-> `optional` **sites**: \{[`key`: `string`]: `number`; \} \| `null`
+> `optional` **sites**: \{\[`key`: `string`\]: `number`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1143](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1143)
 

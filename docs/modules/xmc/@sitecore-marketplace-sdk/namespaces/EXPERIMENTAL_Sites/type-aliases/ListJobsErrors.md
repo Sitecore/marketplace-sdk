@@ -8,7 +8,7 @@
 
 > **ListJobsErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1879](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1879)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1635](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1635)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1879](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1883](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1883)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1639](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1639)
 
-Bad request
+Bad Request

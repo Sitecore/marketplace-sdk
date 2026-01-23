@@ -8,7 +8,7 @@
 
 > **PageHierarchy** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:596](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L596)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:667](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L667)
 
 Page hierarchy response entity.
 
@@ -18,7 +18,7 @@ Page hierarchy response entity.
 
 > `optional` **ancestors**: [`PageResponse`](PageResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:605](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L605)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:676](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L676)
 
 Details of this page's ancestors.
 
@@ -28,7 +28,7 @@ Details of this page's ancestors.
 
 > `optional` **children**: [`PageResponse`](PageResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:601](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L601)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:672](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L672)
 
 Details of this page's children.
 
@@ -38,7 +38,7 @@ Details of this page's children.
 
 > `optional` **page**: [`PageResponse`](PageResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:597](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L597)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:668](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L668)
 
 ***
 
@@ -46,6 +46,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:597](https:
 
 > `optional` **siblings**: [`PageResponse`](PageResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:609](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L609)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:680](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L680)
 
 Details of this page's siblings.

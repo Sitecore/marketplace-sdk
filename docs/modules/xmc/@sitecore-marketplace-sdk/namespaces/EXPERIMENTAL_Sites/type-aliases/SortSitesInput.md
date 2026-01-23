@@ -8,7 +8,7 @@
 
 > **SortSitesInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1193](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1193)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1266](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1266)
 
 Sort sites request.
 
@@ -16,8 +16,8 @@ Sort sites request.
 
 ### sites?
 
-> `optional` **sites**: \{[`key`: `string`]: `number`; \} \| `null`
+> `optional` **sites**: \{\[`key`: `string`\]: `number`; \} \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1197](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1197)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1270](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1270)
 
 A collection containing site IDs and sort order.

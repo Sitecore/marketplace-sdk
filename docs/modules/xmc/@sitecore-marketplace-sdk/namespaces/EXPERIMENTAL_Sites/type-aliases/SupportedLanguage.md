@@ -8,7 +8,7 @@
 
 > **SupportedLanguage** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1205](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1205)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1278](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1278)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1205](https
 
 > `optional` **charSet**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1225](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1225)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1298](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1298)
 
 The character encoding, that specifies how characters are represented in a document or web page.
 Example value: iso-8859-1
@@ -27,7 +27,7 @@ Example value: iso-8859-1
 
 > `optional` **codePage**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1230](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1230)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1303](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1303)
 
 The code of the page.
 Example value: 65001
@@ -38,7 +38,7 @@ Example value: 65001
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1220](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1220)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1293](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1293)
 
 The display name of the language.
 Example value: German (Germany) : Deutsch (Deutschland)
@@ -49,7 +49,7 @@ Example value: German (Germany) : Deutsch (Deutschland)
 
 > `optional` **encoding**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1235](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1235)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1308](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1308)
 
 The encoding.
 Example value: utf-8
@@ -60,7 +60,7 @@ Example value: utf-8
 
 > `optional` **englishName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1215](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1215)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1288](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1288)
 
 The english name of the language.
 Example value: German (Germany)
@@ -71,7 +71,7 @@ Example value: German (Germany)
 
 > `optional` **languageCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1240](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1240)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1313](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1313)
 
 The code for the language.
 Example value: de
@@ -82,7 +82,7 @@ Example value: de
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1210](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1210)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1283](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1283)
 
 The full name of the language.
 Example value: de-DE
@@ -93,7 +93,7 @@ Example value: de-DE
 
 > `optional` **regionCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1245](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1245)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1318](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1318)
 
 The regional ISO code of the language. For example, US for the USA, or DK for Denmark.
 Example value: DE

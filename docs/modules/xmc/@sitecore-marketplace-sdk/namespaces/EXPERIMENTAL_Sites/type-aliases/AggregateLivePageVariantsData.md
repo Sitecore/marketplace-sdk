@@ -8,7 +8,7 @@
 
 > **AggregateLivePageVariantsData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1923](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1923)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2268](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2268)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1923](https
 
 > `optional` **body**: [`PageRequest`](PageRequest.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1927](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1927)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2272](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2272)
 
 The collection of pages, by their identifier and language, for which to get personalization variants.
 
@@ -26,7 +26,7 @@ The collection of pages, by their identifier and language, for which to get pers
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1928](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1928)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2273](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2273)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1928](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1929](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1929)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2274](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2274)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/aggregation/pages/live/variants"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1935](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1935)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2280](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2280)

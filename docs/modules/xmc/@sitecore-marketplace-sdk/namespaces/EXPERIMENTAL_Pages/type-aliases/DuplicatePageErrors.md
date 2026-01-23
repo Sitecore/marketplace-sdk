@@ -8,7 +8,7 @@
 
 > **DuplicatePageErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1395](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1395)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1496](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1496)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1395](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1399](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1399)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1500](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1500)
 
 Bad request
 
@@ -26,6 +26,6 @@ Bad request
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1403](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1403)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1504](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1504)
 
 Not found

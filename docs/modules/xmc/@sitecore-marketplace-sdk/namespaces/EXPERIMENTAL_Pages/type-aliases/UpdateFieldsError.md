@@ -8,4 +8,4 @@
 
 > **UpdateFieldsError** = [`UpdateFieldsErrors`](UpdateFieldsErrors.md)\[keyof [`UpdateFieldsErrors`](UpdateFieldsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:906](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L906)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:975](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L975)

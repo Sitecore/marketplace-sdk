@@ -8,4 +8,4 @@
 
 > **RetrieveHostResponse** = [`RetrieveHostResponses`](RetrieveHostResponses.md)\[keyof [`RetrieveHostResponses`](RetrieveHostResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3034](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3034)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3379](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3379)

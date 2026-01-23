@@ -8,4 +8,4 @@
 
 > **RetrieveCollectionError** = [`RetrieveCollectionErrors`](RetrieveCollectionErrors.md)\[keyof [`RetrieveCollectionErrors`](RetrieveCollectionErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1687](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1687)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1885](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1885)

@@ -8,7 +8,7 @@
 
 > **CreateLanguageData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1507](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1507)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1705](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1705)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1507](https
 
 > **body**: [`AddLanguageModel`](AddLanguageModel.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1511](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1511)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1709](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1709)
 
 Input parameters
 
@@ -26,7 +26,7 @@ Input parameters
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1512](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1512)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1710](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1710)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1512](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1513](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1513)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1711](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1711)
 
 #### environmentId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/languages"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1523](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1523)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1721](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1721)

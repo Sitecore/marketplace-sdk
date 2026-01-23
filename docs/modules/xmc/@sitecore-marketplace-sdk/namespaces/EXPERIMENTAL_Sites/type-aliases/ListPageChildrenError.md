@@ -8,4 +8,4 @@
 
 > **ListPageChildrenError** = [`ListPageChildrenErrors`](ListPageChildrenErrors.md)\[keyof [`ListPageChildrenErrors`](ListPageChildrenErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2865](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2865)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3210](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3210)

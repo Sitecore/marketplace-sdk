@@ -8,7 +8,7 @@
 
 > **SavePageError** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:614](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L614)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:645](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L645)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:614](https:
 
 > `optional` **errorCode**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:619](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L619)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:650](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L650)
 
 The error code.
 Example value: ItemIsProtected
@@ -27,7 +27,7 @@ Example value: ItemIsProtected
 
 > `optional` **message**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:624](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L624)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:655](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L655)
 
 The error message.
 Example value: The page item is protected.
@@ -38,7 +38,7 @@ Example value: The page item is protected.
 
 > `optional` **pageId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:629](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L629)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:660](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L660)
 
 The identifier of the page that caused the error.
 Example value: 8f0b81bc-7388-46be-b109-6e73d1114470

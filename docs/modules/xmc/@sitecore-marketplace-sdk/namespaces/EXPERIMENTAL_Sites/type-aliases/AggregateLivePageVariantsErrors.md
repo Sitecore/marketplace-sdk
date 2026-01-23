@@ -8,7 +8,7 @@
 
 > **AggregateLivePageVariantsErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1937](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1937)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2282](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2282)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1937](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1941](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1941)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2286](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2286)
 
 Bad request

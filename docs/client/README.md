@@ -16,6 +16,8 @@
 - [BaseQueryOptions](interfaces/BaseQueryOptions.md)
 - [BaseQueryResult](interfaces/BaseQueryResult.md)
 - [ClientSDKConfig](interfaces/ClientSDKConfig.md)
+- [ContentFieldsUpdatedData](interfaces/ContentFieldsUpdatedData.md)
+- [ContentLayoutUpdatedData](interfaces/ContentLayoutUpdatedData.md)
 - [MutationMap](interfaces/MutationMap.md)
 - [MutationOptions](interfaces/MutationOptions.md)
 - [NavbarItemsProps](interfaces/NavbarItemsProps.md)
@@ -26,6 +28,8 @@
 - [QueryResult](interfaces/QueryResult.md)
 - [SDKModule](interfaces/SDKModule.md)
 - [StateQueryResult](interfaces/StateQueryResult.md)
+- [SubscribeMap](interfaces/SubscribeMap.md)
+- [SubscribeOptions](interfaces/SubscribeOptions.md)
 - [UserInfo](interfaces/UserInfo.md)
 - [XmcPagesContextViewHostState](interfaces/XmcPagesContextViewHostState.md)
 - [XmcPagesContextViewTenantInfo](interfaces/XmcPagesContextViewTenantInfo.md)
@@ -40,6 +44,7 @@
 - [MutationKey](type-aliases/MutationKey.md)
 - [QueryKey](type-aliases/QueryKey.md)
 - [QueryStatus](type-aliases/QueryStatus.md)
+- [SubscribeKey](type-aliases/SubscribeKey.md)
 
 ## Functions
 

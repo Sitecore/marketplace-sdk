@@ -8,7 +8,7 @@
 
 > **UpdateSitemapConfigurationData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3281](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3281)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3664](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3664)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3281](https
 
 > **body**: [`UpdateSitemapConfigurationInput`](UpdateSitemapConfigurationInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3285](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3285)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3668](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3668)
 
 Configuration details of a sitemap.
 
@@ -26,7 +26,7 @@ Configuration details of a sitemap.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3286](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3286)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3669](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3669)
 
 #### siteId
 
@@ -40,7 +40,7 @@ The site identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3292](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3292)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3675](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3675)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/configuration/sitemap"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3302](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3302)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3685](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3685)

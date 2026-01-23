@@ -8,7 +8,7 @@
 
 > **DeleteCollectionData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1625](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1625)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1823](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1823)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1625](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1626](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1626)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1824](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1824)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1626](https
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1627](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1627)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1825](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1825)
 
 #### collectionId
 
@@ -38,7 +38,7 @@ The identifier of the site collection.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1633](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1633)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1831](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1831)
 
 #### environmentId?
 
@@ -56,4 +56,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/collections/{collectionId}"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1640](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1640)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1838](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1838)

@@ -8,7 +8,7 @@
 
 > **UpdateHostData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3035](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3035)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3380](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3380)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3035](https
 
 > **body**: [`UpdateHostInput`](UpdateHostInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3039](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3039)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3384](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3384)
 
 New parameter values for the host.
 
@@ -26,7 +26,7 @@ New parameter values for the host.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3040](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3040)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3385](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3385)
 
 #### hostId
 
@@ -46,7 +46,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3050](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3050)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3395](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3395)
 
 #### environmentId?
 
@@ -66,4 +66,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/hosts/{hostId}"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3060](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3060)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3405](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3405)

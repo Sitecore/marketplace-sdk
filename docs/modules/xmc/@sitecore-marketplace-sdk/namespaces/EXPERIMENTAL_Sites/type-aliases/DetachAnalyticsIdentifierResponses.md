@@ -8,7 +8,7 @@
 
 > **DetachAnalyticsIdentifierResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2684](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2684)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3029](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3029)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2684](https
 
 > **200**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2688](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2688)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3033](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3033)
 
 OK
 
@@ -26,6 +26,6 @@ OK
 
 > **202**: `unknown`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2692](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2692)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3037](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3037)
 
 Accepted

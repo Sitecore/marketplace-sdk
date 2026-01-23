@@ -8,7 +8,7 @@
 
 > **ListPageAncestorsErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2816](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2816)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3161](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3161)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2816](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2820](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2820)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3165](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3165)
 
 Bad request

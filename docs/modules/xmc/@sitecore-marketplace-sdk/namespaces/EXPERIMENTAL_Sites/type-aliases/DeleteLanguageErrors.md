@@ -8,7 +8,7 @@
 
 > **DeleteLanguageErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2110](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2110)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2455](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2455)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2110](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2114](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2114)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2459](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2459)
 
 Bad request

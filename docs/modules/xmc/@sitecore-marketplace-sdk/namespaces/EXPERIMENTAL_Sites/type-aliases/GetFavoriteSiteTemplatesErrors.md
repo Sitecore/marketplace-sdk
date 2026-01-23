@@ -8,7 +8,7 @@
 
 > **GetFavoriteSiteTemplatesErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1814](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1814)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2012](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2012)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1814](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1818](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1818)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2016](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2016)
 
 Bad request

@@ -8,7 +8,7 @@
 
 > **RetrievePageErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:855](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L855)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:924](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L924)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:855](https:
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:859](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L859)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:928](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L928)
 
 Bad request
 
@@ -26,6 +26,6 @@ Bad request
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:863](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L863)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:932](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L932)
 
 Not found

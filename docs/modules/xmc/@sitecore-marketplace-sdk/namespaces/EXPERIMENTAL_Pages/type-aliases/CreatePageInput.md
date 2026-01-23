@@ -8,7 +8,7 @@
 
 > **CreatePageInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L26)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L53)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:26](https:/
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L51)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:78](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L78)
 
 The display name of the new page.
 Example value: About Us
@@ -27,7 +27,7 @@ Example value: About Us
 
 > **language**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L46)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:73](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L73)
 
 The language of the new page.
 Example value: en-US
@@ -38,7 +38,7 @@ Example value: en-US
 
 > **pageName**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:36](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L36)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L63)
 
 The system name of the new page.
 Example value: about-us
@@ -49,7 +49,7 @@ Example value: about-us
 
 > **parentId**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L31)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L58)
 
 The identifier of the parent page.
 Example value: 9100b830-c85b-459b-9c37-51da74fc9ecc
@@ -60,7 +60,7 @@ Example value: 9100b830-c85b-459b-9c37-51da74fc9ecc
 
 > **templateId**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L41)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:68](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L68)
 
 The identifier of the template to be used for the new page.
 Example value: 2341ef32-42f4-4537-98d8-9ef741008eab

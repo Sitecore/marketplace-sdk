@@ -8,7 +8,7 @@
 
 > **LocaleStatistics** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:462](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L462)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:533](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L533)
 
 Represents the statistics for a locale.
 
@@ -18,7 +18,7 @@ Represents the statistics for a locale.
 
 > `optional` **data**: [`LanguageData`](LanguageData.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:463](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L463)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:534](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L534)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:463](https:
 
 > `optional` **pageCount**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:468](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L468)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:539](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L539)
 
 The number of pages in this locale.
 Example value: 60

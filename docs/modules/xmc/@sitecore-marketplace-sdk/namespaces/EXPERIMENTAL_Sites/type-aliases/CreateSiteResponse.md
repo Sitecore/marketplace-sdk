@@ -8,4 +8,4 @@
 
 > **CreateSiteResponse** = [`CreateSiteResponses`](CreateSiteResponses.md)\[keyof [`CreateSiteResponses`](CreateSiteResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2300](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2300)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2645](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2645)

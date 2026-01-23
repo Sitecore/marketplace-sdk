@@ -8,7 +8,7 @@
 
 > **AddFavoriteSiteErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1781](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1781)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1979](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1979)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1781](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1785](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1785)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1983](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1983)
 
 Bad request
 
@@ -26,6 +26,6 @@ Bad request
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1789](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1789)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1987](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1987)
 
 Not found

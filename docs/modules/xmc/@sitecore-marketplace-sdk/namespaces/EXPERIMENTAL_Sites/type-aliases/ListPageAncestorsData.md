@@ -8,7 +8,7 @@
 
 > **ListPageAncestorsData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2788](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2788)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3133](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3133)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2788](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2789](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2789)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3134](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3134)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2789](https
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2790](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2790)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3135](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3135)
 
 #### pageId
 
@@ -44,7 +44,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2800](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2800)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3145](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3145)
 
 #### environmentId?
 
@@ -70,4 +70,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/hierarchy/{pageId}/ancestors"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2814](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2814)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3159](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3159)

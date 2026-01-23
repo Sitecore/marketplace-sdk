@@ -8,7 +8,7 @@
 
 > **UpdateSiteInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1338](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1338)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1470](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1470)
 
 A site update request.
 
@@ -18,7 +18,7 @@ A site update request.
 
 > `optional` **brandKitId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1372](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1372)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1510](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1510)
 
 The identifier of the brand kit associated with this site.
 Example value: e3f1c5a2-4b6d-4a3e-9f1b-2d3c4b5a6e7f
@@ -29,7 +29,7 @@ Example value: e3f1c5a2-4b6d-4a3e-9f1b-2d3c4b5a6e7f
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1348](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1348)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1480](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1480)
 
 The description for the site.
 Example value: New site for Brand A in English-speaking countries.
@@ -40,10 +40,24 @@ Example value: New site for Brand A in English-speaking countries.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1343](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1343)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1475](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1475)
 
 The display name for the site.
 Example value: Skate Park Site
+
+***
+
+### editorProfiles?
+
+> `optional` **editorProfiles**: `string`[] \| `null`
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1523](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1523)
+
+The list of text editor profiles associated with the site.
+Example value: [
+"e2102e93-424a-4a99-a066-7750dbf41b28",
+"530f7907-6eec-4b7a-9fcc-98aef2719232"
+]
 
 ***
 
@@ -51,7 +65,7 @@ Example value: Skate Park Site
 
 > `optional` **errorPages**: [`ErrorPages`](ErrorPages.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1362](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1362)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1494](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1494)
 
 ***
 
@@ -59,7 +73,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1362](https
 
 > `optional` **resetThumbnail**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1377](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1377)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1515](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1515)
 
 Whether the thumbnail should be reset. True - thumbnail will be reset to automatic. False - thumbnail will not be reset.
 Example value: True
@@ -70,7 +84,7 @@ Example value: True
 
 > `optional` **shared**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1361](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1361)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1493](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1493)
 
 Whether the site should be marked as shared or not. True - site will be shared. False - site will not be marked as shared.
 Example value: True
@@ -81,7 +95,7 @@ Example value: True
 
 > `optional` **sortOrder**: `number` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1367](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1367)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1499](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1499)
 
 The sort order of the site.
 Example value: 100
@@ -92,10 +106,23 @@ Example value: 100
 
 > `optional` **supportedLanguages**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1356](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1356)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1488](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1488)
 
 The list of languages supported by Sitecore.
 Example value: [
 "en-US",
 "en-CA"
 ]
+
+***
+
+### ~~targetHostname?~~
+
+> `optional` **targetHostname**: `string` \| `null`
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1505](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1505)
+
+The target hostname of the site.
+Example value: skatepark.local
+
+#### Deprecated

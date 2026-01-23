@@ -8,7 +8,7 @@
 
 > **PageField** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:220](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L220)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:250](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L250)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:220](https:
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:225](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L225)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:255](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L255)
 
 The name of the field.
 Example value: Title
@@ -27,7 +27,7 @@ Example value: Title
 
 > `optional` **value**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:230](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L230)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:260](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L260)
 
 The raw value of the field. While this is passed as a string, it can represent more complex values.
 Example value: Welcome to our site

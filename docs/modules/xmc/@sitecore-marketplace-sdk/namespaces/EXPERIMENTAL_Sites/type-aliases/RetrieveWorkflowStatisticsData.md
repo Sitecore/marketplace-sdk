@@ -8,7 +8,7 @@
 
 > **RetrieveWorkflowStatisticsData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3324](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3324)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3707](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3707)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3324](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3325](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3325)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3708](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3708)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3325](https
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3326](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3326)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3709](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3709)
 
 #### siteId
 
@@ -38,7 +38,7 @@ The site identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3332](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3332)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3715](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3715)
 
 #### environmentId?
 
@@ -58,4 +58,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/statistics/workflow"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3342](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3342)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3725](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3725)

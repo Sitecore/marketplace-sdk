@@ -8,4 +8,4 @@
 
 > **ValidateSiteNameError** = [`ValidateSiteNameErrors`](ValidateSiteNameErrors.md)\[keyof [`ValidateSiteNameErrors`](ValidateSiteNameErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2564](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2564)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2909](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2909)

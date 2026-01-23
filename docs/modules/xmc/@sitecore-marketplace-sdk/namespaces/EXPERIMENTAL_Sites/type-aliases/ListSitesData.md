@@ -8,7 +8,7 @@
 
 > **ListSitesData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2240](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2240)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2585](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2585)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2240](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2241](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2241)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2586](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2586)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2241](https
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2242](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2242)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2587](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2587)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2242](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2243](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2243)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2588](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2588)
 
 #### environmentId?
 
@@ -52,4 +52,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2253](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2253)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2598](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2598)

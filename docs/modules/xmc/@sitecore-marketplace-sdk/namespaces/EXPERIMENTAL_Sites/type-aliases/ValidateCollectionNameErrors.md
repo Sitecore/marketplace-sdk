@@ -8,7 +8,7 @@
 
 > **ValidateCollectionNameErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2070](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2070)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2415](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2415)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2070](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2074](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2074)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2419](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2419)
 
 Bad request
 
@@ -26,6 +26,6 @@ Bad request
 
 > **503**: `unknown`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2078](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2078)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2423](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2423)
 
 Search service unavailable

@@ -8,7 +8,7 @@
 
 > **RetrieveInsertOptionsData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1042](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1042)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1111](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1111)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1042](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1043](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1043)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1112](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1112)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1043](https
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1044](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1044)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1113](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1113)
 
 #### pageId
 
@@ -38,7 +38,7 @@ The page identifier.
 
 > **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1050](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1050)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1119](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1119)
 
 #### environmentId?
 
@@ -76,4 +76,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/insertoptions"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1072](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1072)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1141](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1141)

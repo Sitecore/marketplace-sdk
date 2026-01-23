@@ -8,7 +8,7 @@
 
 > **SearchResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1035](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1035)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1104](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1104)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1035](https
 
 > **200**: [`PagesSearchResult`](PagesSearchResult.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1039](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1039)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1108](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1108)
 
 Success

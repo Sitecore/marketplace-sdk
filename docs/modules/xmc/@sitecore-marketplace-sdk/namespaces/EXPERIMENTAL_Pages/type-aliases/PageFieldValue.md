@@ -8,7 +8,7 @@
 
 > **PageFieldValue** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:232](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L232)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:262](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L262)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:232](https:
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:237](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L237)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:267](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L267)
 
 The identifier of the field.
 Example value: field-id-123
@@ -27,7 +27,7 @@ Example value: field-id-123
 
 > `optional` **originalValue**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:247](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L247)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:277](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L277)
 
 The original value of the field before any changes, useful for comparison or rollback scenarios.
 Example value: Original Text
@@ -38,7 +38,7 @@ Example value: Original Text
 
 > `optional` **reset**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:252](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L252)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:282](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L282)
 
 Whether the field value should be reset to its default state.
 Example value: False
@@ -49,7 +49,7 @@ Example value: False
 
 > `optional` **value**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:242](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L242)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:272](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L272)
 
 The current value of the field.
 Example value: Hello World

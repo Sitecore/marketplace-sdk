@@ -8,4 +8,4 @@
 
 > **GetFavoriteSiteTemplatesResponse** = [`GetFavoriteSiteTemplatesResponses`](GetFavoriteSiteTemplatesResponses.md)\[keyof [`GetFavoriteSiteTemplatesResponses`](GetFavoriteSiteTemplatesResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1828](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1828)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2026](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2026)

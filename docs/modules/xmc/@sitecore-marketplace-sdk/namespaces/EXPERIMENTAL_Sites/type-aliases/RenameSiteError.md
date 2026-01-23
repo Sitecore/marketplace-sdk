@@ -8,4 +8,4 @@
 
 > **RenameSiteError** = [`RenameSiteErrors`](RenameSiteErrors.md)\[keyof [`RenameSiteErrors`](RenameSiteErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2496](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2496)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2841](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2841)

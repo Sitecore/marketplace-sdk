@@ -8,4 +8,4 @@
 
 > **AddFavoriteSiteTemplateError** = [`AddFavoriteSiteTemplateErrors`](AddFavoriteSiteTemplateErrors.md)\[keyof [`AddFavoriteSiteTemplateErrors`](AddFavoriteSiteTemplateErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1858](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1858)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2056](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2056)

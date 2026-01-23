@@ -8,7 +8,7 @@
 
 > **RetrieveJobErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1909](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1909)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1662](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1662)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1909](https
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1913](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1913)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1666](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1666)
 
-Not found
+Not Found
