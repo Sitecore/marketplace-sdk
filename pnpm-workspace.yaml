@@ -2,5 +2,7 @@ packages:
   # Order matters - packages are processed in this order
   - 'packages/core'
   - 'packages/client'
+  - 'packages/internal'
   - 'packages/xmc'
+  - 'packages/ai'
   - 'packages/*'

@@ -1,7 +1,7 @@
 import { createClient } from '@hey-api/openapi-ts';
-import { defineAugmentationConfig } from './plugins/augmentation';
-import { defineClientTransformerConfig } from './plugins/client-transformer/config';
-import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
+import { defineAugmentationConfig } from '@sitecore-marketplace-sdk/internal/tools/openapi-plugins/augmentation';
+import { defineClientTransformerConfig } from '@sitecore-marketplace-sdk/internal/tools/openapi-plugins/client-transformer';
+import { defineSchemaPatcherConfig } from '@sitecore-marketplace-sdk/internal/tools/openapi-plugins/schema-patcher';
 
 createClient({
   input: './schema/xmapp.yaml',

@@ -1,6 +1,6 @@
 import { createClient } from '@hey-api/openapi-ts';
-import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
-import { defineNamespaceTransformerConfig } from './plugins/namespace-transformer';
+import { defineSchemaPatcherConfig } from '@sitecore-marketplace-sdk/internal/tools/openapi-plugins/schema-patcher';
+import { defineNamespaceTransformerConfig } from '@sitecore-marketplace-sdk/internal/tools/openapi-plugins/namespace-transformer';
 
 createClient({
   input: 'https://api-docs.sitecore.com/_spec/xmc/sites-api/index.yaml',
