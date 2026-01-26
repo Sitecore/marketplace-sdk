@@ -1,7 +1,8 @@
 {
   "name": "@sitecore-marketplace-sdk/internal",
   "version": "0.1.0",
-  "description": "Sitecore Marketplace SDK - Shared Utilities",
+  "private": true,
+  "description": "Sitecore Marketplace SDK - Internal",
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
