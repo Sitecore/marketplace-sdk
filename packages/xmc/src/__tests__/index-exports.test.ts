@@ -1,9 +1,13 @@
 import { describe, it, expect, vi } from 'vitest';
 
 // Mock the client-sdk-fetch module to prevent window.ClientSDK errors
-vi.mock('../client-sdk-fetch', () => ({
-  clientSdkfetch: vi.fn().mockResolvedValue(new Response()),
-}));
+vi.mock('@sitecore-marketplace-sdk/internal', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@sitecore-marketplace-sdk/internal')>();
+  return {
+    ...actual,
+    clientSdkfetch: vi.fn().mockResolvedValue(new Response()),
+  };
+});
 
 // Test imports from index.ts
 import { experimental_XMC, XMC } from '../index';
