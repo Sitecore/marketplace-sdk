@@ -19,6 +19,10 @@ createClient({
       enums: 'javascript',
       name: '@hey-api/typescript',
     },
+    {
+      name: '@hey-api/client-fetch',
+      baseUrl: 'https://edge-platform.sitecorecloud.io/stream/ai-skills-api/',
+    },
     defineAugmentationConfig({
       namespaces: ['ai.skills'],
     }),
