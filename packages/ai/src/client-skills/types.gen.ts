@@ -399,6 +399,6 @@ export namespace Skills {
     201: unknown;
   };
   export type ClientOptions = {
-    baseUrl: 'https://ai-skills-api-euw.sitecorecloud.io' | (string & {});
+    baseUrl: 'https://edge-platform.sitecorecloud.io/stream/ai-skills-api/' | (string & {});
   };
 }
