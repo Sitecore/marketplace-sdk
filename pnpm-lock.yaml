@@ -15,6 +15,7 @@ overrides:
   tar@<=7.5.2: '>=7.5.3'
   diff@<4.0.4: '>=4.0.4'
   tar@<=7.5.3: '>=7.5.4'
+  tar@<7.5.7: '>=7.5.7'
 
 importers:
 
@@ -2141,8 +2142,8 @@ packages:
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
 
-  tar@7.5.6:
-    resolution: {integrity: sha512-xqUeu2JAIJpXyvskvU3uvQW8PAmHrtXp2KDuMJwQqW8Sqq0CaZBAQ+dKS3RBXVhU4wC5NjAdKrmh84241gO9cA==}
+  tar@7.5.7:
+    resolution: {integrity: sha512-fov56fJiRuThVFXD6o6/Q354S7pnWMJIVlDBYijsTNx6jKSE4pvrDTs6lUnmGvNyfJwFQQwWy3owKz1ucIhveQ==}
     engines: {node: '>=18'}
 
   term-size@2.2.1:
@@ -3793,7 +3794,7 @@ snapshots:
       node-fetch-native: 1.6.6
       nypm: 0.5.4
       pathe: 2.0.3
-      tar: 7.5.6
+      tar: 7.5.7
 
   glob-parent@5.1.2:
     dependencies:
@@ -4515,7 +4516,7 @@ snapshots:
 
   symbol-tree@3.2.4: {}
 
-  tar@7.5.6:
+  tar@7.5.7:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0
