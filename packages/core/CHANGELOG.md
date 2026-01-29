@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.3.2
+
+### Patch Changes
+
+- 4ad8d6b: Fix vulnerabilities found
+
 ## 0.3.1
 
 ### Patch Changes
