@@ -50,6 +50,819 @@ Defined in: packages/client/dist/sdk-types.d.ts:253
 
 ***
 
+### sai.pages.addPageVersion
+
+> **sai.pages.addPageVersion**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L117)
+
+Creates a new version of a page.
+
+#### params
+
+> **params**: `Options`\<[`AddPageVersionData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/AddPageVersionData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.addPageVersions
+
+> **sai.pages.addPageVersions**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:75](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L75)
+
+Creates a new version of a page.
+
+#### params
+
+> **params**: `Options`\<[`AddPageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/AddPageVersionsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.createBlueprint
+
+> **sai.pages.createBlueprint**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L87)
+
+Creates a new page from an existing blueprint.
+
+#### params
+
+> **params**: `Options`\<[`CreateBlueprintData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/CreateBlueprintData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.createPage
+
+> **sai.pages.createPage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:81](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L81)
+
+Creates a new page.
+
+#### params
+
+> **params**: `Options`\<[`CreatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/CreatePageData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.deletePage
+
+> **sai.pages.deletePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L63)
+
+Deletes a page.
+
+#### params
+
+> **params**: `Options`\<[`DeletePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DeletePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `boolean`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: boolean; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.deletePageVersions
+
+> **sai.pages.deletePageVersions**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:129](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L129)
+
+Deletes the specified version of a page.
+
+#### params
+
+> **params**: `Options`\<[`DeletePageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DeletePageVersionsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.duplicatePage
+
+> **sai.pages.duplicatePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:105](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L105)
+
+Creates a copy of a page.
+
+#### params
+
+> **params**: `Options`\<[`DuplicatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DuplicatePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.renamePage
+
+> **sai.pages.renamePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:111](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L111)
+
+Changes the name of a page.
+
+#### params
+
+> **params**: `Options`\<[`RenamePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RenamePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.saveFields
+
+> **sai.pages.saveFields**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:99](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L99)
+
+Updates the fields of a page.
+
+#### params
+
+> **params**: `Options`\<[`SaveFieldsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SaveFieldsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SavePageResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SavePageResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SavePageResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.saveLayout
+
+> **sai.pages.saveLayout**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L93)
+
+Updates the layout of a page.
+
+#### params
+
+> **params**: `Options`\<[`SaveLayoutData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SaveLayoutData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SavePageResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SavePageResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SavePageResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.translatePage
+
+> **sai.pages.translatePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:123](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L123)
+
+Creates a new translated version of a single page using the Stream API.
+
+#### params
+
+> **params**: `Options`\<[`TranslatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/TranslatePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.pages.updateFields
+
+> **sai.pages.updateFields**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:69](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L69)
+
+Updates values of existing fields for a specific page.
+
+#### params
+
+> **params**: `Options`\<[`UpdateFieldsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/UpdateFieldsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.addFavoriteSite
+
+> **sai.sites.addFavoriteSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L224)
+
+Adds a site to your list of favorites
+
+#### params
+
+> **params**: `Options`\<[`AddFavoriteSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AddFavoriteSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.addFavoriteSiteTemplate
+
+> **sai.sites.addFavoriteSiteTemplate**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:230](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L230)
+
+Adds a site template to your list of favorites
+
+#### params
+
+> **params**: `Options`\<[`AddFavoriteSiteTemplateData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AddFavoriteSiteTemplateData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`FavoriteDto`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/FavoriteDto.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: FavoriteDto; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.aggregateLivePageVariants
+
+> **sai.sites.aggregateLivePageVariants**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:254](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L254)
+
+Returns currently active personalization variants for the requested pages.
+
+#### params
+
+> **params**: `Options`\<[`AggregateLivePageVariantsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AggregateLivePageVariantsData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`PageVariantsAggregationResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageVariantsAggregationResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageVariantsAggregationResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.aggregatePageData
+
+> **sai.sites.aggregatePageData**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:260](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L260)
+
+Aggregates data about multiple pages and their components.
+
+#### params
+
+> **params**: `Options`\<[`AggregatePageDataData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AggregatePageDataData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`PagesAggregationResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PagesAggregationResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PagesAggregationResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.copySite
+
+> **sai.sites.copySite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:339](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L339)
+
+You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.
+
+#### params
+
+> **params**: `Options`\<[`CopySiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CopySiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.createCollection
+
+> **sai.sites.createCollection**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:206](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L206)
+
+Creates a collection by specifying a name and, optionally, a display name and description.
+
+#### params
+
+> **params**: `Options`\<[`CreateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateCollectionData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.createHost
+
+> **sai.sites.createHost**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:375](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L375)
+
+Creates a host for a site.
+
+#### params
+
+> **params**: `Options`\<[`CreateHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateHostData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Host`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Host.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Host; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.createLanguage
+
+> **sai.sites.createLanguage**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:200](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L200)
+
+Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by SitecoreAI. If you do not know the language code of the language, first retrieve the list of languages supported in SitecoreAI.
+           To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
+           If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.
+
+#### params
+
+> **params**: `Options`\<[`CreateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateLanguageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Language`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Language.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Language; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.createProfile
+
+> **sai.sites.createProfile**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:236](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L236)
+
+Creates a new profile in the environment.
+
+#### params
+
+> **params**: `Options`\<[`CreateProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateProfileData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.createSite
+
+> **sai.sites.createSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:318](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L318)
+
+[Creates a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html) for the environment.
+           Sites are created using  [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html). Every site belongs to a [site collection](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site-collection.html). You can either create a site inside an existing collection or create a new one.
+           It is also possible to create a site by duplicating a site.
+
+#### params
+
+> **params**: `Options`\<[`CreateSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.deleteCollection
+
+> **sai.sites.deleteCollection**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L212)
+
+Deletes a site collection, including sites in that collection.
+
+#### params
+
+> **params**: `Options`\<[`DeleteCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteCollectionData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.deleteHost
+
+> **sai.sites.deleteHost**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:381](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L381)
+
+Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
+
+#### params
+
+> **params**: `Options`\<[`DeleteHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteHostData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.deleteLanguage
+
+> **sai.sites.deleteLanguage**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:291](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L291)
+
+Deletes a language from the SitecoreAI environment.
+           To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
+
+#### params
+
+> **params**: `Options`\<[`DeleteLanguageData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteLanguageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `boolean`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: boolean; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.deleteProfile
+
+> **sai.sites.deleteProfile**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:242](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L242)
+
+Deletes a profile, including the toolbar configuration associated with that profile.
+
+#### params
+
+> **params**: `Options`\<[`DeleteProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteProfileData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.deleteSite
+
+> **sai.sites.deleteSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:327](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L327)
+
+Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
+          Deleting a site affects related websites in the collection:
+          • If the site [shares](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html#share-a-site) items with other sites, this might result in broken links.
+          • Items that are cloned to other sites are turned into regular items, and the links removed.
+
+#### params
+
+> **params**: `Options`\<[`DeleteSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.detachAnalyticsIdentifier
+
+> **sai.sites.detachAnalyticsIdentifier**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:369](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L369)
+
+Removes the analytics identifiers from one or more sites.
+
+#### params
+
+> **params**: `Options`\<[`DetachAnalyticsIdentifierData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DetachAnalyticsIdentifierData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.removeFavoriteSite
+
+> **sai.sites.removeFavoriteSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:304](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L304)
+
+Removes a site from your list of favorites
+
+#### params
+
+> **params**: `Options`\<[`RemoveFavoriteSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RemoveFavoriteSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.removeFavoriteSiteTemplate
+
+> **sai.sites.removeFavoriteSiteTemplate**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:310](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L310)
+
+Removes a site template from your list of favorites
+
+#### params
+
+> **params**: `Options`\<[`RemoveFavoriteSiteTemplateData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RemoveFavoriteSiteTemplateData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.renameCollection
+
+> **sai.sites.renameCollection**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:266](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L266)
+
+Changes the system name of a site collection.
+
+#### params
+
+> **params**: `Options`\<[`RenameCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RenameCollectionData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.renameSite
+
+> **sai.sites.renameSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:345](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L345)
+
+Changes the system name of a site.
+
+#### params
+
+> **params**: `Options`\<[`RenameSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RenameSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.sortCollections
+
+> **sai.sites.sortCollections**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:272](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L272)
+
+By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
+
+#### params
+
+> **params**: `Options`\<[`SortCollectionsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SortCollectionsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.sortSites
+
+> **sai.sites.sortSites**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:351](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L351)
+
+By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
+
+#### params
+
+> **params**: `Options`\<[`SortSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SortSitesData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.translateSite
+
+> **sai.sites.translateSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:405](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L405)
+
+Creates new translated versions of all items for a specific site using the Stream API.
+
+#### params
+
+> **params**: `Options`\<[`TranslateSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/TranslateSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.updateCollection
+
+> **sai.sites.updateCollection**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:218](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L218)
+
+Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).
+
+#### params
+
+> **params**: `Options`\<[`UpdateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateCollectionData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SiteCollection`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteCollection.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteCollection; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.updateHost
+
+> **sai.sites.updateHost**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:387](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L387)
+
+Modifies the properties of a host.
+
+#### params
+
+> **params**: `Options`\<[`UpdateHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateHostData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.updateLanguage
+
+> **sai.sites.updateLanguage**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:298](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L298)
+
+Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by SitecoreAI.
+           To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in SitecoreAI.
+
+#### params
+
+> **params**: `Options`\<[`UpdateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateLanguageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: UpdateLanguageError; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.updateProfile
+
+> **sai.sites.updateProfile**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:248](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L248)
+
+Updates the properties of a profile.
+
+#### params
+
+> **params**: `Options`\<[`UpdateProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateProfileData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.updateSite
+
+> **sai.sites.updateSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:333](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L333)
+
+Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).
+
+#### params
+
+> **params**: `Options`\<[`UpdateSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.updateSitemapConfiguration
+
+> **sai.sites.updateSitemapConfiguration**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:399](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L399)
+
+Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
+
+#### params
+
+> **params**: `Options`\<[`UpdateSitemapConfigurationData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateSitemapConfigurationData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SitemapConfiguration`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SitemapConfiguration.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SitemapConfiguration; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.uploadSiteThumbnail
+
+> **sai.sites.uploadSiteThumbnail**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:393](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L393)
+
+Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [SitecoreAI Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
+
+#### params
+
+> **params**: `Options`\<[`UploadSiteThumbnailData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UploadSiteThumbnailData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`UploadMediaOutput`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UploadMediaOutput.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: UploadMediaOutput; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.validateCollectionName
+
+> **sai.sites.validateCollectionName**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:284](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L284)
+
+Validates a site collection name to ensure it meets the required criteria. The validations applied to the collection name:
+- Is a string and can't be null.
+- Is unique.
+- The length of the name is a maximum of 50 characters.
+- Can't start or end with a space.
+- Can't start with a dash.
+- Can include Latin alphanumeric characters, spaces and dashes.
+
+#### params
+
+> **params**: `Options`\<[`ValidateCollectionNameData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ValidateCollectionNameData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### sai.sites.validateSiteName
+
+> **sai.sites.validateSiteName**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:363](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L363)
+
+Validates a site name to ensure it meets the required criteria. The validations applied to the site name:
+- Is a string and can't be null.
+- Is unique.
+- The length of the name is a maximum of 50 characters.
+- Can't start or end with a space.
+- Can't start with a dash.
+- Can include Latin alphanumeric characters, spaces and dashes.
+
+#### params
+
+> **params**: `Options`\<[`ValidateSiteNameData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ValidateSiteNameData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
 ### xmc.agent.assetsUpdateAsset
 
 > **xmc.agent.assetsUpdateAsset**: `object`
@@ -374,222 +1187,6 @@ Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supp
 
 ***
 
-### xmc.pages.addPageVersion
-
-> **xmc.pages.addPageVersion**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L117)
-
-Creates a new version of a page.
-
-#### params
-
-> **params**: `Options`\<[`AddPageVersionData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/AddPageVersionData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.addPageVersions
-
-> **xmc.pages.addPageVersions**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:75](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L75)
-
-Creates a new version of a page.
-
-#### params
-
-> **params**: `Options`\<[`AddPageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/AddPageVersionsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.createBlueprint
-
-> **xmc.pages.createBlueprint**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L87)
-
-Creates a new page from an existing blueprint.
-
-#### params
-
-> **params**: `Options`\<[`CreateBlueprintData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/CreateBlueprintData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.createPage
-
-> **xmc.pages.createPage**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:81](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L81)
-
-Creates a new page.
-
-#### params
-
-> **params**: `Options`\<[`CreatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/CreatePageData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.deletePage
-
-> **xmc.pages.deletePage**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L63)
-
-Deletes a page.
-
-#### params
-
-> **params**: `Options`\<[`DeletePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DeletePageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `boolean`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: boolean; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.deletePageVersions
-
-> **xmc.pages.deletePageVersions**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:129](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L129)
-
-Deletes the specified version of a page.
-
-#### params
-
-> **params**: `Options`\<[`DeletePageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DeletePageVersionsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.duplicatePage
-
-> **xmc.pages.duplicatePage**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:105](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L105)
-
-Creates a copy of a page.
-
-#### params
-
-> **params**: `Options`\<[`DuplicatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DuplicatePageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.renamePage
-
-> **xmc.pages.renamePage**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:111](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L111)
-
-Changes the name of a page.
-
-#### params
-
-> **params**: `Options`\<[`RenamePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RenamePageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.saveFields
-
-> **xmc.pages.saveFields**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:99](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L99)
-
-Updates the fields of a page.
-
-#### params
-
-> **params**: `Options`\<[`SaveFieldsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SaveFieldsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`SavePageResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SavePageResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SavePageResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.saveLayout
-
-> **xmc.pages.saveLayout**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L93)
-
-Updates the layout of a page.
-
-#### params
-
-> **params**: `Options`\<[`SaveLayoutData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SaveLayoutData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`SavePageResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SavePageResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SavePageResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.translatePage
-
-> **xmc.pages.translatePage**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:123](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L123)
-
-Creates a new translated version of a single page using the Stream API.
-
-#### params
-
-> **params**: `Options`\<[`TranslatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/TranslatePageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.pages.updateFields
-
-> **xmc.pages.updateFields**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:69](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L69)
-
-Updates values of existing fields for a specific page.
-
-#### params
-
-> **params**: `Options`\<[`UpdateFieldsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/UpdateFieldsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
 ### xmc.preview.graphql
 
 > **xmc.preview.graphql**: `object`
@@ -608,1049 +1205,560 @@ Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supp
 
 ***
 
-### xmc.sites.addFavoriteSite
-
-> **xmc.sites.addFavoriteSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L224)
-
-Adds a site to your list of favorites
-
-#### params
-
-> **params**: `Options`\<[`AddFavoriteSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AddFavoriteSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.addFavoriteSiteTemplate
-
-> **xmc.sites.addFavoriteSiteTemplate**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:230](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L230)
-
-Adds a site template to your list of favorites
-
-#### params
-
-> **params**: `Options`\<[`AddFavoriteSiteTemplateData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AddFavoriteSiteTemplateData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`FavoriteDto`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/FavoriteDto.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: FavoriteDto; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.aggregateLivePageVariants
-
-> **xmc.sites.aggregateLivePageVariants**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:254](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L254)
-
-Returns currently active personalization variants for the requested pages.
-
-#### params
-
-> **params**: `Options`\<[`AggregateLivePageVariantsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AggregateLivePageVariantsData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`PageVariantsAggregationResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageVariantsAggregationResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageVariantsAggregationResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.aggregatePageData
-
-> **xmc.sites.aggregatePageData**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:260](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L260)
-
-Aggregates data about multiple pages and their components.
-
-#### params
-
-> **params**: `Options`\<[`AggregatePageDataData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AggregatePageDataData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`PagesAggregationResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PagesAggregationResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PagesAggregationResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.copySite
-
-> **xmc.sites.copySite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:339](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L339)
-
-You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.
-
-#### params
-
-> **params**: `Options`\<[`CopySiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CopySiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.createCollection
-
-> **xmc.sites.createCollection**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:206](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L206)
-
-Creates a collection by specifying a name and, optionally, a display name and description.
-
-#### params
-
-> **params**: `Options`\<[`CreateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateCollectionData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.createHost
-
-> **xmc.sites.createHost**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:375](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L375)
-
-Creates a host for a site.
-
-#### params
-
-> **params**: `Options`\<[`CreateHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateHostData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Host`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Host.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Host; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.createLanguage
-
-> **xmc.sites.createLanguage**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:200](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L200)
-
-Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by SitecoreAI. If you do not know the language code of the language, first retrieve the list of languages supported in SitecoreAI.
-           To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
-           If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.
-
-#### params
-
-> **params**: `Options`\<[`CreateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateLanguageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Language`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Language.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Language; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.createProfile
-
-> **xmc.sites.createProfile**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:236](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L236)
-
-Creates a new profile in the environment.
-
-#### params
-
-> **params**: `Options`\<[`CreateProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateProfileData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.createSite
-
-> **xmc.sites.createSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:318](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L318)
-
-[Creates a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html) for the environment.
-           Sites are created using  [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html). Every site belongs to a [site collection](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site-collection.html). You can either create a site inside an existing collection or create a new one.
-           It is also possible to create a site by duplicating a site.
-
-#### params
-
-> **params**: `Options`\<[`CreateSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.deleteCollection
-
-> **xmc.sites.deleteCollection**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L212)
-
-Deletes a site collection, including sites in that collection.
-
-#### params
-
-> **params**: `Options`\<[`DeleteCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteCollectionData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.deleteHost
-
-> **xmc.sites.deleteHost**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:381](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L381)
-
-Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
-
-#### params
-
-> **params**: `Options`\<[`DeleteHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteHostData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.deleteLanguage
-
-> **xmc.sites.deleteLanguage**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:291](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L291)
-
-Deletes a language from the SitecoreAI environment.
-           To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
-
-#### params
-
-> **params**: `Options`\<[`DeleteLanguageData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteLanguageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `boolean`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: boolean; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.deleteProfile
-
-> **xmc.sites.deleteProfile**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:242](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L242)
-
-Deletes a profile, including the toolbar configuration associated with that profile.
-
-#### params
-
-> **params**: `Options`\<[`DeleteProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteProfileData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.deleteSite
-
-> **xmc.sites.deleteSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:327](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L327)
-
-Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
-          Deleting a site affects related websites in the collection:
-          • If the site [shares](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html#share-a-site) items with other sites, this might result in broken links.
-          • Items that are cloned to other sites are turned into regular items, and the links removed.
-
-#### params
-
-> **params**: `Options`\<[`DeleteSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DeleteSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.detachAnalyticsIdentifier
-
-> **xmc.sites.detachAnalyticsIdentifier**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:369](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L369)
-
-Removes the analytics identifiers from one or more sites.
-
-#### params
-
-> **params**: `Options`\<[`DetachAnalyticsIdentifierData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/DetachAnalyticsIdentifierData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.removeFavoriteSite
-
-> **xmc.sites.removeFavoriteSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:304](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L304)
-
-Removes a site from your list of favorites
-
-#### params
-
-> **params**: `Options`\<[`RemoveFavoriteSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RemoveFavoriteSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.removeFavoriteSiteTemplate
-
-> **xmc.sites.removeFavoriteSiteTemplate**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:310](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L310)
-
-Removes a site template from your list of favorites
-
-#### params
-
-> **params**: `Options`\<[`RemoveFavoriteSiteTemplateData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RemoveFavoriteSiteTemplateData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.renameCollection
-
-> **xmc.sites.renameCollection**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:266](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L266)
-
-Changes the system name of a site collection.
-
-#### params
-
-> **params**: `Options`\<[`RenameCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RenameCollectionData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.renameSite
-
-> **xmc.sites.renameSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:345](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L345)
-
-Changes the system name of a site.
-
-#### params
-
-> **params**: `Options`\<[`RenameSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RenameSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.sortCollections
-
-> **xmc.sites.sortCollections**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:272](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L272)
-
-By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
-
-#### params
-
-> **params**: `Options`\<[`SortCollectionsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SortCollectionsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.sortSites
-
-> **xmc.sites.sortSites**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:351](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L351)
-
-By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
-
-#### params
-
-> **params**: `Options`\<[`SortSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SortSitesData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.translateSite
-
-> **xmc.sites.translateSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:405](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L405)
-
-Creates new translated versions of all items for a specific site using the Stream API.
-
-#### params
-
-> **params**: `Options`\<[`TranslateSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/TranslateSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.updateCollection
-
-> **xmc.sites.updateCollection**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:218](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L218)
-
-Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).
-
-#### params
-
-> **params**: `Options`\<[`UpdateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateCollectionData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`SiteCollection`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteCollection.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteCollection; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.updateHost
-
-> **xmc.sites.updateHost**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:387](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L387)
-
-Modifies the properties of a host.
-
-#### params
-
-> **params**: `Options`\<[`UpdateHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateHostData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.updateLanguage
-
-> **xmc.sites.updateLanguage**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:298](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L298)
-
-Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by SitecoreAI.
-           To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in SitecoreAI.
-
-#### params
-
-> **params**: `Options`\<[`UpdateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateLanguageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: UpdateLanguageError; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.updateProfile
-
-> **xmc.sites.updateProfile**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:248](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L248)
-
-Updates the properties of a profile.
-
-#### params
-
-> **params**: `Options`\<[`UpdateProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateProfileData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.updateSite
-
-> **xmc.sites.updateSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:333](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L333)
-
-Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).
-
-#### params
-
-> **params**: `Options`\<[`UpdateSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.updateSitemapConfiguration
-
-> **xmc.sites.updateSitemapConfiguration**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:399](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L399)
-
-Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
-
-#### params
-
-> **params**: `Options`\<[`UpdateSitemapConfigurationData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateSitemapConfigurationData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`SitemapConfiguration`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SitemapConfiguration.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SitemapConfiguration; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.uploadSiteThumbnail
-
-> **xmc.sites.uploadSiteThumbnail**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:393](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L393)
-
-Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [SitecoreAI Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
-
-#### params
-
-> **params**: `Options`\<[`UploadSiteThumbnailData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UploadSiteThumbnailData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`UploadMediaOutput`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UploadMediaOutput.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: UploadMediaOutput; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.validateCollectionName
-
-> **xmc.sites.validateCollectionName**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:284](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L284)
-
-Validates a site collection name to ensure it meets the required criteria. The validations applied to the collection name:
-- Is a string and can't be null.
-- Is unique.
-- The length of the name is a maximum of 50 characters.
-- Can't start or end with a space.
-- Can't start with a dash.
-- Can include Latin alphanumeric characters, spaces and dashes.
-
-#### params
-
-> **params**: `Options`\<[`ValidateCollectionNameData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ValidateCollectionNameData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.sites.validateSiteName
-
-> **xmc.sites.validateSiteName**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:363](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L363)
-
-Validates a site name to ensure it meets the required criteria. The validations applied to the site name:
-- Is a string and can't be null.
-- Is unique.
-- The length of the name is a maximum of 50 characters.
-- Can't start or end with a space.
-- Can't start with a dash.
-- Can include Latin alphanumeric characters, spaces and dashes.
-
-#### params
-
-> **params**: `Options`\<[`ValidateSiteNameData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ValidateSiteNameData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-***
-
-### xmc.xmapp.addFavoriteSite
+### ~~xmc.xmapp.addFavoriteSite~~
 
 > **xmc.xmapp.addFavoriteSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L208)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:237](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L237)
 
-Adds a site to your list of favorites
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`AddFavoriteSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/AddFavoriteSiteData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Adds a site to your list of favorites
+
 ***
 
-### xmc.xmapp.aggregateLivePageVariants
+### ~~xmc.xmapp.aggregateLivePageVariants~~
 
 > **xmc.xmapp.aggregateLivePageVariants**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:214](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L214)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L244)
 
-Returns currently active personalization variants for the requested pages.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`AggregateLivePageVariantsData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/AggregateLivePageVariantsData.md), `boolean`\> \| `undefined`
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: [`PageVariantsAggregationResponse`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/PageVariantsAggregationResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageVariantsAggregationResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Returns currently active personalization variants for the requested pages.
+
 ***
 
-### xmc.xmapp.aggregatePageData
+### ~~xmc.xmapp.aggregatePageData~~
 
 > **xmc.xmapp.aggregatePageData**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:220](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L220)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:251](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L251)
 
-Aggregates data about multiple pages and their components.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`AggregatePageDataData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/AggregatePageDataData.md), `boolean`\> \| `undefined`
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: [`PagesAggregationResponse`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/PagesAggregationResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PagesAggregationResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Aggregates data about multiple pages and their components.
+
 ***
 
-### xmc.xmapp.copySite
+### ~~xmc.xmapp.copySite~~
 
 > **xmc.xmapp.copySite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L293)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:334](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L334)
 
-You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`CopySiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CopySiteData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.
+
 ***
 
-### xmc.xmapp.createCollection
+### ~~xmc.xmapp.createCollection~~
 
 > **xmc.xmapp.createCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:190](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L190)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:216](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L216)
 
-Creates a collection by specifying a name and, optionally, a display name and description.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`CreateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CreateCollectionData.md), `boolean`\> \| `undefined`
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Creates a collection by specifying a name and, optionally, a display name and description.
+
 ***
 
-### xmc.xmapp.createHost
+### ~~xmc.xmapp.createHost~~
 
 > **xmc.xmapp.createHost**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:329](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L329)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:375](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L375)
 
-Creates a host for a site.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`CreateHostData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CreateHostData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: [`Host`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/Host.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Host; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Creates a host for a site.
+
 ***
 
-### xmc.xmapp.createLanguage
+### ~~xmc.xmapp.createLanguage~~
 
 > **xmc.xmapp.createLanguage**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:184](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L184)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:209](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L209)
+
+#### ~~params~~
+
+> **params**: `Options`\<[`CreateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CreateLanguageData.md), `boolean`\>
+
+#### ~~response~~
+
+> **response**: \{ `data`: [`Language`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/Language.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Language; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
 
 Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by Sitecore XM Cloud. If you do not know the language code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
            To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
            If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.
 
-#### params
-
-> **params**: `Options`\<[`CreateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CreateLanguageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Language`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/Language.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Language; error: undefined; \}) & \{ request: Request; response: Response; \}
-
 ***
 
-### xmc.xmapp.createSite
+### ~~xmc.xmapp.createSite~~
 
 > **xmc.xmapp.createSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:272](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L272)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:310](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L310)
+
+#### ~~params~~
+
+> **params**: `Options`\<[`CreateSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CreateSiteData.md), `boolean`\>
+
+#### ~~response~~
+
+> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
 
 [Creates a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html) for the environment.
            Sites are created using  [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html). Every site belongs to a [site collection](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site-collection.html). You can either create a site inside an existing collection or create a new one.
            It is also possible to create a site by duplicating a site.
 
-#### params
-
-> **params**: `Options`\<[`CreateSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CreateSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
-
 ***
 
-### xmc.xmapp.deleteCollection
+### ~~xmc.xmapp.deleteCollection~~
 
 > **xmc.xmapp.deleteCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:196](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L196)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:223](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L223)
 
-Deletes a site collection, including sites in that collection.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`DeleteCollectionData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/DeleteCollectionData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Deletes a site collection, including sites in that collection.
+
 ***
 
-### xmc.xmapp.deleteHost
+### ~~xmc.xmapp.deleteHost~~
 
 > **xmc.xmapp.deleteHost**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:335](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L335)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:382](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L382)
 
-Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`DeleteHostData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/DeleteHostData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
+
 ***
 
-### xmc.xmapp.deleteLanguage
+### ~~xmc.xmapp.deleteLanguage~~
 
 > **xmc.xmapp.deleteLanguage**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:251](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L251)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:286](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L286)
+
+#### ~~params~~
+
+> **params**: `Options`\<[`DeleteLanguageData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/DeleteLanguageData.md), `boolean`\>
+
+#### ~~response~~
+
+> **response**: \{ `data`: `boolean`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: boolean; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
 
 Deletes a language from the XM Cloud environment.
            To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
 
-#### params
-
-> **params**: `Options`\<[`DeleteLanguageData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/DeleteLanguageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `boolean`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: boolean; error: undefined; \}) & \{ request: Request; response: Response; \}
-
 ***
 
-### xmc.xmapp.deleteSite
+### ~~xmc.xmapp.deleteSite~~
 
 > **xmc.xmapp.deleteSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:281](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L281)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:320](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L320)
+
+#### ~~params~~
+
+> **params**: `Options`\<[`DeleteSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/DeleteSiteData.md), `boolean`\>
+
+#### ~~response~~
+
+> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
 
 Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.
           Deleting a site affects related websites in the collection:
           • If the site [shares](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html#share-a-site) items with other sites, this might result in broken links.
           • Items that are cloned to other sites are turned into regular items, and the links removed.
 
-#### params
-
-> **params**: `Options`\<[`DeleteSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/DeleteSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
-
 ***
 
-### xmc.xmapp.detachAnalyticsIdentifier
+### ~~xmc.xmapp.detachAnalyticsIdentifier~~
 
 > **xmc.xmapp.detachAnalyticsIdentifier**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:323](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L323)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:368](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L368)
 
-Removes the analytics identifiers from one or more sites.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`DetachAnalyticsIdentifierData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/DetachAnalyticsIdentifierData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Removes the analytics identifiers from one or more sites.
+
 ***
 
-### xmc.xmapp.removeFavoriteSite
+### ~~xmc.xmapp.removeFavoriteSite~~
 
 > **xmc.xmapp.removeFavoriteSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:264](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L264)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:301](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L301)
 
-Removes a site from your list of favorites
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`RemoveFavoriteSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/RemoveFavoriteSiteData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Removes a site from your list of favorites
+
 ***
 
-### xmc.xmapp.renameCollection
+### ~~xmc.xmapp.renameCollection~~
 
 > **xmc.xmapp.renameCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:226](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L226)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:258](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L258)
 
-Changes the system name of a site collection.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`RenameCollectionData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/RenameCollectionData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Changes the system name of a site collection.
+
 ***
 
-### xmc.xmapp.renameSite
+### ~~xmc.xmapp.renameSite~~
 
 > **xmc.xmapp.renameSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:299](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L299)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:341](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L341)
 
-Changes the system name of a site.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`RenameSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/RenameSiteData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: string; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Changes the system name of a site.
+
 ***
 
-### xmc.xmapp.sortCollections
+### ~~xmc.xmapp.sortCollections~~
 
 > **xmc.xmapp.sortCollections**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:232](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L232)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:265](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L265)
 
-By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`SortCollectionsData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/SortCollectionsData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: void; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
+
 ***
 
-### xmc.xmapp.sortSites
+### ~~xmc.xmapp.sortSites~~
 
 > **xmc.xmapp.sortSites**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:305](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L305)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:348](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L348)
 
-By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`SortSitesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/SortSitesData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: void; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.
+
 ***
 
-### xmc.xmapp.updateCollection
+### ~~xmc.xmapp.updateCollection~~
 
 > **xmc.xmapp.updateCollection**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:202](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L202)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:230](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L230)
 
-Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`UpdateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UpdateCollectionData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: [`SiteCollection`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/SiteCollection.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteCollection; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).
+
 ***
 
-### xmc.xmapp.updateHost
+### ~~xmc.xmapp.updateHost~~
 
 > **xmc.xmapp.updateHost**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:341](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L341)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:389](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L389)
 
-Modifies the properties of a host.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`UpdateHostData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UpdateHostData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: void; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Modifies the properties of a host.
+
 ***
 
-### xmc.xmapp.updateLanguage
+### ~~xmc.xmapp.updateLanguage~~
 
 > **xmc.xmapp.updateLanguage**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:258](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L258)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:294](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L294)
+
+#### ~~params~~
+
+> **params**: `Options`\<[`UpdateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UpdateLanguageData.md), `boolean`\>
+
+#### ~~response~~
+
+> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: UpdateLanguageError; \}) & \{ request: Request; response: Response; \}
+
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
 
 Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by Sitecore XM Cloud.
            To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
 
-#### params
-
-> **params**: `Options`\<[`UpdateLanguageData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UpdateLanguageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `void`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: void; error: undefined; \} \| \{ data: undefined; error: UpdateLanguageError; \}) & \{ request: Request; response: Response; \}
-
 ***
 
-### xmc.xmapp.updateSite
+### ~~xmc.xmapp.updateSite~~
 
 > **xmc.xmapp.updateSite**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:287](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L287)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:327](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L327)
 
-Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`UpdateSiteData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UpdateSiteData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/Site.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).
+
 ***
 
-### xmc.xmapp.updateSitemapConfiguration
+### ~~xmc.xmapp.updateSitemapConfiguration~~
 
 > **xmc.xmapp.updateSitemapConfiguration**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:353](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L353)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:403](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L403)
 
-Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`UpdateSitemapConfigurationData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UpdateSitemapConfigurationData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: [`SitemapConfiguration`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/SitemapConfiguration.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SitemapConfiguration; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
+
 ***
 
-### xmc.xmapp.uploadSiteThumbnail
+### ~~xmc.xmapp.uploadSiteThumbnail~~
 
 > **xmc.xmapp.uploadSiteThumbnail**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:347](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L347)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:396](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L396)
 
-Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
-
-#### params
+#### ~~params~~
 
 > **params**: `Options`\<[`UploadSiteThumbnailData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UploadSiteThumbnailData.md), `boolean`\>
 
-#### response
+#### ~~response~~
 
 > **response**: \{ `data`: [`UploadMediaOutput`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/UploadMediaOutput.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: UploadMediaOutput; error: undefined; \}) & \{ request: Request; response: Response; \}
 
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+
+Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
+
 ***
 
-### xmc.xmapp.validateCollectionName
+### ~~xmc.xmapp.validateCollectionName~~
 
 > **xmc.xmapp.validateCollectionName**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:244](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L244)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:278](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L278)
+
+#### ~~params~~
+
+> **params**: `Options`\<[`ValidateCollectionNameData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ValidateCollectionNameData.md), `boolean`\>
+
+#### ~~response~~
+
+> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
 
 Validates a site collection name to ensure it meets the required criteria. The validations applied to the collection name:
 - Is a string and can't be null.
@@ -1660,21 +1768,25 @@ Validates a site collection name to ensure it meets the required criteria. The v
 - Can't start with a dash.
 - Can include Latin alphanumeric characters, spaces and dashes.
 
-#### params
-
-> **params**: `Options`\<[`ValidateCollectionNameData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ValidateCollectionNameData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
 ***
 
-### xmc.xmapp.validateSiteName
+### ~~xmc.xmapp.validateSiteName~~
 
 > **xmc.xmapp.validateSiteName**: `object`
 
-Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:317](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L317)
+Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:361](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L361)
+
+#### ~~params~~
+
+> **params**: `Options`\<[`ValidateSiteNameData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ValidateSiteNameData.md), `boolean`\>
+
+#### ~~response~~
+
+> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### Deprecated
+
+The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
 
 Validates a site name to ensure it meets the required criteria. The validations applied to the site name:
 - Is a string and can't be null.
@@ -1683,11 +1795,3 @@ Validates a site name to ensure it meets the required criteria. The validations 
 - Can't start or end with a space.
 - Can't start with a dash.
 - Can include Latin alphanumeric characters, spaces and dashes.
-
-#### params
-
-> **params**: `Options`\<[`ValidateSiteNameData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ValidateSiteNameData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`NameValidationResult`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/NameValidationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: NameValidationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
