@@ -36,10 +36,10 @@ const config = {
 
 ## Usage
 ### Make a query
-Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For example, pass `'sai.sites.listSites'` to retrieve a list of sites:
+Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For example, pass `'xmc.sites.listSites'` to retrieve a list of sites:
 
 ```typescript
-client.query("sai.sites.listSites", {
+client.query("xmc.sites.listSites", {
    params: {
         query: {
           sitecoreContextId,
@@ -48,13 +48,13 @@ client.query("sai.sites.listSites", {
 })
   .then((res) => {
     console.log(
-      "Success retrieving sai.sites.listSites:",
+      "Success retrieving xmc.sites.listSites:",
       res.data
     );
   })
   .catch((error) => {
     console.error(
-      "Error retrieving sai.sites.listSites:",
+      "Error retrieving xmc.sites.listSites:",
       error
     );
 });

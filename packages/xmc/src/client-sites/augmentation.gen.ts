@@ -6,140 +6,140 @@ declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
     /**
      * No summary available.*/
-    'sai.sites.listJobs': {
+    'xmc.sites.listJobs': {
       params: Parameters<typeof sdk.listJobs>[0];
       response: Awaited<ReturnType<typeof sdk.listJobs>>;
       subscribe: false;
     };
     /**
      * No summary available.*/
-    'sai.sites.retrieveJob': {
+    'xmc.sites.retrieveJob': {
       params: Parameters<typeof sdk.retrieveJob>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveJob>>;
       subscribe: false;
     };
     /**
      * Retrieves the list of languages added to the environment.*/
-    'sai.sites.listLanguages': {
+    'xmc.sites.listLanguages': {
       params: Parameters<typeof sdk.listLanguages>[0];
       response: Awaited<ReturnType<typeof sdk.listLanguages>>;
       subscribe: false;
     };
     /**
      * Retrieves the list of languages supported by SitecoreAI, and associated data.*/
-    'sai.sites.listSupportedLanguages': {
+    'xmc.sites.listSupportedLanguages': {
       params: Parameters<typeof sdk.listSupportedLanguages>[0];
       response: Awaited<ReturnType<typeof sdk.listSupportedLanguages>>;
       subscribe: false;
     };
     /**
      * Fetches the list of site collections in the environment, with associated details.*/
-    'sai.sites.listCollections': {
+    'xmc.sites.listCollections': {
       params: Parameters<typeof sdk.listCollections>[0];
       response: Awaited<ReturnType<typeof sdk.listCollections>>;
       subscribe: false;
     };
     /**
      * Fetches information about a site collection.*/
-    'sai.sites.retrieveCollection': {
+    'xmc.sites.retrieveCollection': {
       params: Parameters<typeof sdk.retrieveCollection>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveCollection>>;
       subscribe: false;
     };
     /**
      * Fetches a list of your favorite sites*/
-    'sai.sites.getFavoriteSites': {
+    'xmc.sites.getFavoriteSites': {
       params: Parameters<typeof sdk.getFavoriteSites>[0];
       response: Awaited<ReturnType<typeof sdk.getFavoriteSites>>;
       subscribe: false;
     };
     /**
      * Fetches a list of your favorite site templates*/
-    'sai.sites.getFavoriteSiteTemplates': {
+    'xmc.sites.getFavoriteSiteTemplates': {
       params: Parameters<typeof sdk.getFavoriteSiteTemplates>[0];
       response: Awaited<ReturnType<typeof sdk.getFavoriteSiteTemplates>>;
       subscribe: false;
     };
     /**
      * Fetches a list of all profiles in the environment, with associated details.*/
-    'sai.sites.listProfiles': {
+    'xmc.sites.listProfiles': {
       params: Parameters<typeof sdk.listProfiles>[0];
       response: Awaited<ReturnType<typeof sdk.listProfiles>>;
       subscribe: false;
     };
     /**
      * Fetches the details of a profile.*/
-    'sai.sites.getProfile': {
+    'xmc.sites.getProfile': {
       params: Parameters<typeof sdk.getProfile>[0];
       response: Awaited<ReturnType<typeof sdk.getProfile>>;
       subscribe: false;
     };
     /**
      * Fetches the list of sites in the environment, with associated details.*/
-    'sai.sites.listSites': {
+    'xmc.sites.listSites': {
       params: Parameters<typeof sdk.listSites>[0];
       response: Awaited<ReturnType<typeof sdk.listSites>>;
       subscribe: false;
     };
     /**
      * Fetches information about a site.*/
-    'sai.sites.retrieveSite': {
+    'xmc.sites.retrieveSite': {
       params: Parameters<typeof sdk.retrieveSite>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveSite>>;
       subscribe: false;
     };
     /**
      * Fetches a list of sites that use an [analytics identifier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html).*/
-    'sai.sites.listTrackedSites': {
+    'xmc.sites.listTrackedSites': {
       params: Parameters<typeof sdk.listTrackedSites>[0];
       response: Awaited<ReturnType<typeof sdk.listTrackedSites>>;
       subscribe: false;
     };
     /**
      * Fetches a list of sites in a site collection.*/
-    'sai.sites.listCollectionSites': {
+    'xmc.sites.listCollectionSites': {
       params: Parameters<typeof sdk.listCollectionSites>[0];
       response: Awaited<ReturnType<typeof sdk.listCollectionSites>>;
       subscribe: false;
     };
     /**
      * Fetches hierarchy information about the main page of a site, including its children, ancestors, and siblings.*/
-    'sai.sites.retrieveSiteHierarchy': {
+    'xmc.sites.retrieveSiteHierarchy': {
       params: Parameters<typeof sdk.retrieveSiteHierarchy>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveSiteHierarchy>>;
       subscribe: false;
     };
     /**
      * Fetches hierarchy information about a page, including its children, ancestors, and siblings.*/
-    'sai.sites.retrievePageHierarchy': {
+    'xmc.sites.retrievePageHierarchy': {
       params: Parameters<typeof sdk.retrievePageHierarchy>[0];
       response: Awaited<ReturnType<typeof sdk.retrievePageHierarchy>>;
       subscribe: false;
     };
     /**
      * Fetches information about the ancestors of a page.*/
-    'sai.sites.listPageAncestors': {
+    'xmc.sites.listPageAncestors': {
       params: Parameters<typeof sdk.listPageAncestors>[0];
       response: Awaited<ReturnType<typeof sdk.listPageAncestors>>;
       subscribe: false;
     };
     /**
      * Fetches information about the children of a page.*/
-    'sai.sites.listPageChildren': {
+    'xmc.sites.listPageChildren': {
       params: Parameters<typeof sdk.listPageChildren>[0];
       response: Awaited<ReturnType<typeof sdk.listPageChildren>>;
       subscribe: false;
     };
     /**
      * Retrieves the list of hosts for a site.*/
-    'sai.sites.listHosts': {
+    'xmc.sites.listHosts': {
       params: Parameters<typeof sdk.listHosts>[0];
       response: Awaited<ReturnType<typeof sdk.listHosts>>;
       subscribe: false;
     };
     /**
      * Fetches details about a site host.*/
-    'sai.sites.retrieveHost': {
+    'xmc.sites.retrieveHost': {
       params: Parameters<typeof sdk.retrieveHost>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveHost>>;
       subscribe: false;
@@ -148,42 +148,42 @@ declare module '@sitecore-marketplace-sdk/client' {
          * **Deprecated:** Use GetEditingHosts endpoint instead.
         
         Fetches a list of rendering hosts for a site.*/
-    'sai.sites.getRenderingHosts': {
+    'xmc.sites.getRenderingHosts': {
       params: Parameters<typeof sdk.getRenderingHosts>[0];
       response: Awaited<ReturnType<typeof sdk.getRenderingHosts>>;
       subscribe: false;
     };
     /**
      * Fetches a list of editing hosts for a site.*/
-    'sai.sites.getEditingHosts': {
+    'xmc.sites.getEditingHosts': {
       params: Parameters<typeof sdk.getEditingHosts>[0];
       response: Awaited<ReturnType<typeof sdk.getEditingHosts>>;
       subscribe: false;
     };
     /**
      * Gets the site templates available in the environment that can be used for creating sites. Learn more about [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html).*/
-    'sai.sites.listSiteTemplates': {
+    'xmc.sites.listSiteTemplates': {
       params: Parameters<typeof sdk.listSiteTemplates>[0];
       response: Awaited<ReturnType<typeof sdk.listSiteTemplates>>;
       subscribe: false;
     };
     /**
      * Fetches localization statistics for a site, including the number of pages in each locale.*/
-    'sai.sites.retrieveLocalizationStatistics': {
+    'xmc.sites.retrieveLocalizationStatistics': {
       params: Parameters<typeof sdk.retrieveLocalizationStatistics>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveLocalizationStatistics>>;
       subscribe: false;
     };
     /**
      * Fetches a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.*/
-    'sai.sites.retrieveSitemapConfiguration': {
+    'xmc.sites.retrieveSitemapConfiguration': {
       params: Parameters<typeof sdk.retrieveSitemapConfiguration>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveSitemapConfiguration>>;
       subscribe: false;
     };
     /**
      * Fetches the workflows defined for a site, their states, and the number of pages in each state.*/
-    'sai.sites.retrieveWorkflowStatistics': {
+    'xmc.sites.retrieveWorkflowStatistics': {
       params: Parameters<typeof sdk.retrieveWorkflowStatistics>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveWorkflowStatistics>>;
       subscribe: false;
@@ -197,79 +197,79 @@ declare module '@sitecore-marketplace-sdk/client' {
          * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by SitecoreAI. If you do not know the language code of the language, first retrieve the list of languages supported in SitecoreAI.
                     To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
                     If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.*/
-    'sai.sites.createLanguage': {
+    'xmc.sites.createLanguage': {
       params: Parameters<typeof sdk.createLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.createLanguage>>;
     };
     /**
      * Creates a collection by specifying a name and, optionally, a display name and description.*/
-    'sai.sites.createCollection': {
+    'xmc.sites.createCollection': {
       params: Parameters<typeof sdk.createCollection>[0];
       response: Awaited<ReturnType<typeof sdk.createCollection>>;
     };
     /**
      * Deletes a site collection, including sites in that collection.*/
-    'sai.sites.deleteCollection': {
+    'xmc.sites.deleteCollection': {
       params: Parameters<typeof sdk.deleteCollection>[0];
       response: Awaited<ReturnType<typeof sdk.deleteCollection>>;
     };
     /**
      * Updates the display name and the description of the site collection. To change the system name of a collection, see [rename a site collection](#tag/Collections/operation/Rename).*/
-    'sai.sites.updateCollection': {
+    'xmc.sites.updateCollection': {
       params: Parameters<typeof sdk.updateCollection>[0];
       response: Awaited<ReturnType<typeof sdk.updateCollection>>;
     };
     /**
      * Adds a site to your list of favorites*/
-    'sai.sites.addFavoriteSite': {
+    'xmc.sites.addFavoriteSite': {
       params: Parameters<typeof sdk.addFavoriteSite>[0];
       response: Awaited<ReturnType<typeof sdk.addFavoriteSite>>;
     };
     /**
      * Adds a site template to your list of favorites*/
-    'sai.sites.addFavoriteSiteTemplate': {
+    'xmc.sites.addFavoriteSiteTemplate': {
       params: Parameters<typeof sdk.addFavoriteSiteTemplate>[0];
       response: Awaited<ReturnType<typeof sdk.addFavoriteSiteTemplate>>;
     };
     /**
      * Creates a new profile in the environment.*/
-    'sai.sites.createProfile': {
+    'xmc.sites.createProfile': {
       params: Parameters<typeof sdk.createProfile>[0];
       response: Awaited<ReturnType<typeof sdk.createProfile>>;
     };
     /**
      * Deletes a profile, including the toolbar configuration associated with that profile.*/
-    'sai.sites.deleteProfile': {
+    'xmc.sites.deleteProfile': {
       params: Parameters<typeof sdk.deleteProfile>[0];
       response: Awaited<ReturnType<typeof sdk.deleteProfile>>;
     };
     /**
      * Updates the properties of a profile.*/
-    'sai.sites.updateProfile': {
+    'xmc.sites.updateProfile': {
       params: Parameters<typeof sdk.updateProfile>[0];
       response: Awaited<ReturnType<typeof sdk.updateProfile>>;
     };
     /**
      * Returns currently active personalization variants for the requested pages.*/
-    'sai.sites.aggregateLivePageVariants': {
+    'xmc.sites.aggregateLivePageVariants': {
       params: Parameters<typeof sdk.aggregateLivePageVariants>[0];
       response: Awaited<ReturnType<typeof sdk.aggregateLivePageVariants>>;
     };
     /**
      * Aggregates data about multiple pages and their components.*/
-    'sai.sites.aggregatePageData': {
+    'xmc.sites.aggregatePageData': {
       params: Parameters<typeof sdk.aggregatePageData>[0];
       response: Awaited<ReturnType<typeof sdk.aggregatePageData>>;
     };
     /**
      * Changes the system name of a site collection.*/
-    'sai.sites.renameCollection': {
+    'xmc.sites.renameCollection': {
       params: Parameters<typeof sdk.renameCollection>[0];
       response: Awaited<ReturnType<typeof sdk.renameCollection>>;
     };
     /**
      * By assigning a sort value to site collection IDs, you can use this endpoint to apply an order by which collections are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.*/
-    'sai.sites.sortCollections': {
+    'xmc.sites.sortCollections': {
       params: Parameters<typeof sdk.sortCollections>[0];
       response: Awaited<ReturnType<typeof sdk.sortCollections>>;
     };
@@ -281,33 +281,33 @@ declare module '@sitecore-marketplace-sdk/client' {
         - Can't start or end with a space.
         - Can't start with a dash.
         - Can include Latin alphanumeric characters, spaces and dashes.*/
-    'sai.sites.validateCollectionName': {
+    'xmc.sites.validateCollectionName': {
       params: Parameters<typeof sdk.validateCollectionName>[0];
       response: Awaited<ReturnType<typeof sdk.validateCollectionName>>;
     };
     /**
          * Deletes a language from the SitecoreAI environment.
                     To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.*/
-    'sai.sites.deleteLanguage': {
+    'xmc.sites.deleteLanguage': {
       params: Parameters<typeof sdk.deleteLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.deleteLanguage>>;
     };
     /**
          * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by SitecoreAI.
                     To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in SitecoreAI.*/
-    'sai.sites.updateLanguage': {
+    'xmc.sites.updateLanguage': {
       params: Parameters<typeof sdk.updateLanguage>[0];
       response: Awaited<ReturnType<typeof sdk.updateLanguage>>;
     };
     /**
      * Removes a site from your list of favorites*/
-    'sai.sites.removeFavoriteSite': {
+    'xmc.sites.removeFavoriteSite': {
       params: Parameters<typeof sdk.removeFavoriteSite>[0];
       response: Awaited<ReturnType<typeof sdk.removeFavoriteSite>>;
     };
     /**
      * Removes a site template from your list of favorites*/
-    'sai.sites.removeFavoriteSiteTemplate': {
+    'xmc.sites.removeFavoriteSiteTemplate': {
       params: Parameters<typeof sdk.removeFavoriteSiteTemplate>[0];
       response: Awaited<ReturnType<typeof sdk.removeFavoriteSiteTemplate>>;
     };
@@ -315,7 +315,7 @@ declare module '@sitecore-marketplace-sdk/client' {
          * [Creates a site](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html) for the environment.
                     Sites are created using  [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html). Every site belongs to a [site collection](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site-collection.html). You can either create a site inside an existing collection or create a new one.
                     It is also possible to create a site by duplicating a site.*/
-    'sai.sites.createSite': {
+    'xmc.sites.createSite': {
       params: Parameters<typeof sdk.createSite>[0];
       response: Awaited<ReturnType<typeof sdk.createSite>>;
     };
@@ -324,31 +324,31 @@ declare module '@sitecore-marketplace-sdk/client' {
                    Deleting a site affects related websites in the collection:
                    • If the site [shares](https://doc.sitecore.com/xmc/en/users/xm-cloud/create-a-site.html#share-a-site) items with other sites, this might result in broken links.
                    • Items that are cloned to other sites are turned into regular items, and the links removed.*/
-    'sai.sites.deleteSite': {
+    'xmc.sites.deleteSite': {
       params: Parameters<typeof sdk.deleteSite>[0];
       response: Awaited<ReturnType<typeof sdk.deleteSite>>;
     };
     /**
      * Updates various parameters of a site. To change the name of a site, see [rename a site](#tag/Sites/operation/Rename).*/
-    'sai.sites.updateSite': {
+    'xmc.sites.updateSite': {
       params: Parameters<typeof sdk.updateSite>[0];
       response: Awaited<ReturnType<typeof sdk.updateSite>>;
     };
     /**
      * You can create a site by duplicating an existing one. When you duplicate a site, its content items (such as pages and images, folder structure, and links) are copied. Most of the settings are also copied, but you can change those later. The new site's path parameters and response body schema will be the same as the original site.*/
-    'sai.sites.copySite': {
+    'xmc.sites.copySite': {
       params: Parameters<typeof sdk.copySite>[0];
       response: Awaited<ReturnType<typeof sdk.copySite>>;
     };
     /**
      * Changes the system name of a site.*/
-    'sai.sites.renameSite': {
+    'xmc.sites.renameSite': {
       params: Parameters<typeof sdk.renameSite>[0];
       response: Awaited<ReturnType<typeof sdk.renameSite>>;
     };
     /**
      * By assigning a sort value to site IDs, you can use this endpoint to apply an order by which sites are sorted in the Sites user interface and in Content Editor. The lower the sort value, the higher the site appears in the interface.*/
-    'sai.sites.sortSites': {
+    'xmc.sites.sortSites': {
       params: Parameters<typeof sdk.sortSites>[0];
       response: Awaited<ReturnType<typeof sdk.sortSites>>;
     };
@@ -360,49 +360,49 @@ declare module '@sitecore-marketplace-sdk/client' {
         - Can't start or end with a space.
         - Can't start with a dash.
         - Can include Latin alphanumeric characters, spaces and dashes.*/
-    'sai.sites.validateSiteName': {
+    'xmc.sites.validateSiteName': {
       params: Parameters<typeof sdk.validateSiteName>[0];
       response: Awaited<ReturnType<typeof sdk.validateSiteName>>;
     };
     /**
      * Removes the analytics identifiers from one or more sites.*/
-    'sai.sites.detachAnalyticsIdentifier': {
+    'xmc.sites.detachAnalyticsIdentifier': {
       params: Parameters<typeof sdk.detachAnalyticsIdentifier>[0];
       response: Awaited<ReturnType<typeof sdk.detachAnalyticsIdentifier>>;
     };
     /**
      * Creates a host for a site.*/
-    'sai.sites.createHost': {
+    'xmc.sites.createHost': {
       params: Parameters<typeof sdk.createHost>[0];
       response: Awaited<ReturnType<typeof sdk.createHost>>;
     };
     /**
      * Deletes a site using a hostID. Deletes a site, including its pages, settings, media files, data sources, presentation elements, dictionaries, components, variants, and page designs. Everyone in the environment will lose access to the deleted site.*/
-    'sai.sites.deleteHost': {
+    'xmc.sites.deleteHost': {
       params: Parameters<typeof sdk.deleteHost>[0];
       response: Awaited<ReturnType<typeof sdk.deleteHost>>;
     };
     /**
      * Modifies the properties of a host.*/
-    'sai.sites.updateHost': {
+    'xmc.sites.updateHost': {
       params: Parameters<typeof sdk.updateHost>[0];
       response: Awaited<ReturnType<typeof sdk.updateHost>>;
     };
     /**
      * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [SitecoreAI Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).*/
-    'sai.sites.uploadSiteThumbnail': {
+    'xmc.sites.uploadSiteThumbnail': {
       params: Parameters<typeof sdk.uploadSiteThumbnail>[0];
       response: Awaited<ReturnType<typeof sdk.uploadSiteThumbnail>>;
     };
     /**
      * Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.*/
-    'sai.sites.updateSitemapConfiguration': {
+    'xmc.sites.updateSitemapConfiguration': {
       params: Parameters<typeof sdk.updateSitemapConfiguration>[0];
       response: Awaited<ReturnType<typeof sdk.updateSitemapConfiguration>>;
     };
     /**
      * Creates new translated versions of all items for a specific site using the Stream API.*/
-    'sai.sites.translateSite': {
+    'xmc.sites.translateSite': {
       params: Parameters<typeof sdk.translateSite>[0];
       response: Awaited<ReturnType<typeof sdk.translateSite>>;
     };

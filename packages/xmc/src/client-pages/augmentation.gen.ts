@@ -6,49 +6,49 @@ declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
     /**
      * Fetches information about a page (including statistics, template, layout, publishing and workflow information).*/
-    'sai.pages.retrievePage': {
+    'xmc.pages.retrievePage': {
       params: Parameters<typeof sdk.retrievePage>[0];
       response: Awaited<ReturnType<typeof sdk.retrievePage>>;
       subscribe: false;
     };
     /**
      * Fetches basic information about a page (identifier, display name and revision) and optionally workflow, layout and version data.*/
-    'sai.pages.retrievePageState': {
+    'xmc.pages.retrievePageState': {
       params: Parameters<typeof sdk.retrievePageState>[0];
       response: Awaited<ReturnType<typeof sdk.retrievePageState>>;
       subscribe: false;
     };
     /**
      * Fetches a list of pages and folders whose name or display name match the search criteria, while applying filters and language options.*/
-    'sai.pages.search': {
+    'xmc.pages.search': {
       params: Parameters<typeof sdk.search>[0];
       response: Awaited<ReturnType<typeof sdk.search>>;
       subscribe: false;
     };
     /**
      * Fetches the list of possible templates which are compatible insert options for a page.*/
-    'sai.pages.retrieveInsertOptions': {
+    'xmc.pages.retrieveInsertOptions': {
       params: Parameters<typeof sdk.retrieveInsertOptions>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveInsertOptions>>;
       subscribe: false;
     };
     /**
      * Fetches the list of page versions.*/
-    'sai.pages.retrievePageVersions': {
+    'xmc.pages.retrievePageVersions': {
       params: Parameters<typeof sdk.retrievePageVersions>[0];
       response: Awaited<ReturnType<typeof sdk.retrievePageVersions>>;
       subscribe: false;
     };
     /**
      * Fetches the identifiers of currently active personalization variants for a page.*/
-    'sai.pages.listPageVariants': {
+    'xmc.pages.listPageVariants': {
       params: Parameters<typeof sdk.listPageVariants>[0];
       response: Awaited<ReturnType<typeof sdk.listPageVariants>>;
       subscribe: false;
     };
     /**
      * Checks if the requested page is published to Edge.*/
-    'sai.pages.getLivePageState': {
+    'xmc.pages.getLivePageState': {
       params: Parameters<typeof sdk.getLivePageState>[0];
       response: Awaited<ReturnType<typeof sdk.getLivePageState>>;
       subscribe: false;
@@ -60,73 +60,73 @@ declare module '@sitecore-marketplace-sdk/client' {
   interface MutationMap {
     /**
      * Deletes a page.*/
-    'sai.pages.deletePage': {
+    'xmc.pages.deletePage': {
       params: Parameters<typeof sdk.deletePage>[0];
       response: Awaited<ReturnType<typeof sdk.deletePage>>;
     };
     /**
      * Updates values of existing fields for a specific page.*/
-    'sai.pages.updateFields': {
+    'xmc.pages.updateFields': {
       params: Parameters<typeof sdk.updateFields>[0];
       response: Awaited<ReturnType<typeof sdk.updateFields>>;
     };
     /**
      * Creates a new version of a page.*/
-    'sai.pages.addPageVersions': {
+    'xmc.pages.addPageVersions': {
       params: Parameters<typeof sdk.addPageVersions>[0];
       response: Awaited<ReturnType<typeof sdk.addPageVersions>>;
     };
     /**
      * Creates a new page.*/
-    'sai.pages.createPage': {
+    'xmc.pages.createPage': {
       params: Parameters<typeof sdk.createPage>[0];
       response: Awaited<ReturnType<typeof sdk.createPage>>;
     };
     /**
      * Creates a new page from an existing blueprint.*/
-    'sai.pages.createBlueprint': {
+    'xmc.pages.createBlueprint': {
       params: Parameters<typeof sdk.createBlueprint>[0];
       response: Awaited<ReturnType<typeof sdk.createBlueprint>>;
     };
     /**
      * Updates the layout of a page.*/
-    'sai.pages.saveLayout': {
+    'xmc.pages.saveLayout': {
       params: Parameters<typeof sdk.saveLayout>[0];
       response: Awaited<ReturnType<typeof sdk.saveLayout>>;
     };
     /**
      * Updates the fields of a page.*/
-    'sai.pages.saveFields': {
+    'xmc.pages.saveFields': {
       params: Parameters<typeof sdk.saveFields>[0];
       response: Awaited<ReturnType<typeof sdk.saveFields>>;
     };
     /**
      * Creates a copy of a page.*/
-    'sai.pages.duplicatePage': {
+    'xmc.pages.duplicatePage': {
       params: Parameters<typeof sdk.duplicatePage>[0];
       response: Awaited<ReturnType<typeof sdk.duplicatePage>>;
     };
     /**
      * Changes the name of a page.*/
-    'sai.pages.renamePage': {
+    'xmc.pages.renamePage': {
       params: Parameters<typeof sdk.renamePage>[0];
       response: Awaited<ReturnType<typeof sdk.renamePage>>;
     };
     /**
      * Creates a new version of a page.*/
-    'sai.pages.addPageVersion': {
+    'xmc.pages.addPageVersion': {
       params: Parameters<typeof sdk.addPageVersion>[0];
       response: Awaited<ReturnType<typeof sdk.addPageVersion>>;
     };
     /**
      * Creates a new translated version of a single page using the Stream API.*/
-    'sai.pages.translatePage': {
+    'xmc.pages.translatePage': {
       params: Parameters<typeof sdk.translatePage>[0];
       response: Awaited<ReturnType<typeof sdk.translatePage>>;
     };
     /**
      * Deletes the specified version of a page.*/
-    'sai.pages.deletePageVersions': {
+    'xmc.pages.deletePageVersions': {
       params: Parameters<typeof sdk.deletePageVersions>[0];
       response: Awaited<ReturnType<typeof sdk.deletePageVersions>>;
     };

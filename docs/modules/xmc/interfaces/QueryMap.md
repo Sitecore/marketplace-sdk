@@ -110,734 +110,6 @@ Defined in: packages/client/dist/sdk-types.d.ts:231
 
 ***
 
-### sai.pages.getLivePageState
-
-> **sai.pages.getLivePageState**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L51)
-
-Checks if the requested page is published to Edge.
-
-#### params
-
-> **params**: `Options`\<[`GetLivePageStateData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/GetLivePageStateData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.pages.listPageVariants
-
-> **sai.pages.listPageVariants**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L44)
-
-Fetches the identifiers of currently active personalization variants for a page.
-
-#### params
-
-> **params**: `Options`\<[`ListPageVariantsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/ListPageVariantsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: `string`[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string\[\]; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.pages.retrieveInsertOptions
-
-> **sai.pages.retrieveInsertOptions**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L30)
-
-Fetches the list of possible templates which are compatible insert options for a page.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveInsertOptionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrieveInsertOptionsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageInsertOption`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageInsertOption.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageInsertOption\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.pages.retrievePage
-
-> **sai.pages.retrievePage**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L9)
-
-Fetches information about a page (including statistics, template, layout, publishing and workflow information).
-
-#### params
-
-> **params**: `Options`\<[`RetrievePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrievePageData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Page`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/Page.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: Page; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.pages.retrievePageState
-
-> **sai.pages.retrievePageState**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L16)
-
-Fetches basic information about a page (identifier, display name and revision) and optionally workflow, layout and version data.
-
-#### params
-
-> **params**: `Options`\<[`RetrievePageStateData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrievePageStateData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageState`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageState.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageState; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.pages.retrievePageVersions
-
-> **sai.pages.retrievePageVersions**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L37)
-
-Fetches the list of page versions.
-
-#### params
-
-> **params**: `Options`\<[`RetrievePageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrievePageVersionsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Page`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/Page.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Page\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.pages.search
-
-> **sai.pages.search**: `object`
-
-Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L23)
-
-Fetches a list of pages and folders whose name or display name match the search criteria, while applying filters and language options.
-
-#### params
-
-> **params**: `Options`\<[`SearchData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SearchData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`PagesSearchResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PagesSearchResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: PagesSearchResult; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.getEditingHosts
-
-> **sai.sites.getEditingHosts**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:158](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L158)
-
-Fetches a list of editing hosts for a site.
-
-#### params
-
-> **params**: `Options`\<[`GetEditingHostsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetEditingHostsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`EditingHost`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditingHost.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditingHost\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.getFavoriteSites
-
-> **sai.sites.getFavoriteSites**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L51)
-
-Fetches a list of your favorite sites
-
-#### params
-
-> **params**: `Options`\<[`GetFavoriteSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetFavoriteSitesData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.getFavoriteSiteTemplates
-
-> **sai.sites.getFavoriteSiteTemplates**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L58)
-
-Fetches a list of your favorite site templates
-
-#### params
-
-> **params**: `Options`\<[`GetFavoriteSiteTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetFavoriteSiteTemplatesData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`SiteTemplate`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteTemplate.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteTemplate\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.getProfile
-
-> **sai.sites.getProfile**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:72](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L72)
-
-Fetches the details of a profile.
-
-#### params
-
-> **params**: `Options`\<[`GetProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetProfileData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.getRenderingHosts
-
-> **sai.sites.getRenderingHosts**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:151](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L151)
-
-**Deprecated:** Use GetEditingHosts endpoint instead.
-
-Fetches a list of rendering hosts for a site.
-
-#### params
-
-> **params**: `Options`\<[`GetRenderingHostsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetRenderingHostsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`RenderingHost`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RenderingHost.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: RenderingHost\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listCollections
-
-> **sai.sites.listCollections**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L37)
-
-Fetches the list of site collections in the environment, with associated details.
-
-#### params
-
-> **params**: `Options`\<[`ListCollectionsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListCollectionsData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`SiteCollection`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteCollection.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteCollection\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listCollectionSites
-
-> **sai.sites.listCollectionSites**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:100](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L100)
-
-Fetches a list of sites in a site collection.
-
-#### params
-
-> **params**: `Options`\<[`ListCollectionSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListCollectionSitesData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listHosts
-
-> **sai.sites.listHosts**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:135](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L135)
-
-Retrieves the list of hosts for a site.
-
-#### params
-
-> **params**: `Options`\<[`ListHostsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListHostsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Host`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Host.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Host\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listJobs
-
-> **sai.sites.listJobs**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L9)
-
-No summary available.
-
-#### params
-
-> **params**: `Options`\<[`ListJobsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListJobsData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`Job`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Job.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: Job\[\]; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listLanguages
-
-> **sai.sites.listLanguages**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L23)
-
-Retrieves the list of languages added to the environment.
-
-#### params
-
-> **params**: `Options`\<[`ListLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListLanguagesData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`Language`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Language.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Language\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listPageAncestors
-
-> **sai.sites.listPageAncestors**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L121)
-
-Fetches information about the ancestors of a page.
-
-#### params
-
-> **params**: `Options`\<[`ListPageAncestorsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListPageAncestorsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageResponse.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageResponse\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listPageChildren
-
-> **sai.sites.listPageChildren**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:128](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L128)
-
-Fetches information about the children of a page.
-
-#### params
-
-> **params**: `Options`\<[`ListPageChildrenData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListPageChildrenData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageResponse.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageResponse\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listProfiles
-
-> **sai.sites.listProfiles**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L65)
-
-Fetches a list of all profiles in the environment, with associated details.
-
-#### params
-
-> **params**: `Options`\<[`ListProfilesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListProfilesData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listSites
-
-> **sai.sites.listSites**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L79)
-
-Fetches the list of sites in the environment, with associated details.
-
-#### params
-
-> **params**: `Options`\<[`ListSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListSitesData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listSiteTemplates
-
-> **sai.sites.listSiteTemplates**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:165](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L165)
-
-Gets the site templates available in the environment that can be used for creating sites. Learn more about [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html).
-
-#### params
-
-> **params**: `Options`\<[`ListSiteTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListSiteTemplatesData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`SiteTemplate`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteTemplate.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteTemplate\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listSupportedLanguages
-
-> **sai.sites.listSupportedLanguages**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L30)
-
-Retrieves the list of languages supported by SitecoreAI, and associated data.
-
-#### params
-
-> **params**: `Options`\<[`ListSupportedLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListSupportedLanguagesData.md), `boolean`\> \| `undefined`
-
-#### response
-
-> **response**: \{ `data`: [`SupportedLanguage`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SupportedLanguage.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SupportedLanguage\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.listTrackedSites
-
-> **sai.sites.listTrackedSites**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L93)
-
-Fetches a list of sites that use an [analytics identifier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html).
-
-#### params
-
-> **params**: `Options`\<[`ListTrackedSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListTrackedSitesData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveCollection
-
-> **sai.sites.retrieveCollection**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L44)
-
-Fetches information about a site collection.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveCollectionData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`SiteCollection`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteCollection.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteCollection; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveHost
-
-> **sai.sites.retrieveHost**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:142](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L142)
-
-Fetches details about a site host.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveHostData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Host`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Host.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Host; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveJob
-
-> **sai.sites.retrieveJob**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L16)
-
-No summary available.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveJobData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveJobData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Job`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Job.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Job; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveLocalizationStatistics
-
-> **sai.sites.retrieveLocalizationStatistics**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:172](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L172)
-
-Fetches localization statistics for a site, including the number of pages in each locale.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveLocalizationStatisticsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveLocalizationStatisticsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`LocalizationStatistics`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/LocalizationStatistics.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: LocalizationStatistics; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrievePageHierarchy
-
-> **sai.sites.retrievePageHierarchy**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:114](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L114)
-
-Fetches hierarchy information about a page, including its children, ancestors, and siblings.
-
-#### params
-
-> **params**: `Options`\<[`RetrievePageHierarchyData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrievePageHierarchyData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageHierarchy`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageHierarchy.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageHierarchy; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveSite
-
-> **sai.sites.retrieveSite**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L86)
-
-Fetches information about a site.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveSiteData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveSiteHierarchy
-
-> **sai.sites.retrieveSiteHierarchy**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:107](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L107)
-
-Fetches hierarchy information about the main page of a site, including its children, ancestors, and siblings.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveSiteHierarchyData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveSiteHierarchyData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`PageHierarchy`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageHierarchy.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageHierarchy; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveSitemapConfiguration
-
-> **sai.sites.retrieveSitemapConfiguration**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:179](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L179)
-
-Fetches a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveSitemapConfigurationData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveSitemapConfigurationData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`SitemapConfiguration`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SitemapConfiguration.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SitemapConfiguration; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
-### sai.sites.retrieveWorkflowStatistics
-
-> **sai.sites.retrieveWorkflowStatistics**: `object`
-
-Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:186](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L186)
-
-Fetches the workflows defined for a site, their states, and the number of pages in each state.
-
-#### params
-
-> **params**: `Options`\<[`RetrieveWorkflowStatisticsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveWorkflowStatisticsData.md), `boolean`\>
-
-#### response
-
-> **response**: \{ `data`: [`WorkflowsStatistics`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/WorkflowsStatistics.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: WorkflowsStatistics; error: undefined; \}) & \{ request: Request; response: Response; \}
-
-#### subscribe
-
-> **subscribe**: `false`
-
-***
-
 ### site.context
 
 > **site.context**: `object`
@@ -1540,6 +812,734 @@ Gets the status of the created content transfer by transfer ID.
 
 ***
 
+### xmc.pages.getLivePageState
+
+> **xmc.pages.getLivePageState**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L51)
+
+Checks if the requested page is published to Edge.
+
+#### params
+
+> **params**: `Options`\<[`GetLivePageStateData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/GetLivePageStateData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `unknown`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: unknown; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.pages.listPageVariants
+
+> **xmc.pages.listPageVariants**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L44)
+
+Fetches the identifiers of currently active personalization variants for a page.
+
+#### params
+
+> **params**: `Options`\<[`ListPageVariantsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/ListPageVariantsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `string`[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string\[\]; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.pages.retrieveInsertOptions
+
+> **xmc.pages.retrieveInsertOptions**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L30)
+
+Fetches the list of possible templates which are compatible insert options for a page.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveInsertOptionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrieveInsertOptionsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageInsertOption`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageInsertOption.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageInsertOption\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.pages.retrievePage
+
+> **xmc.pages.retrievePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L9)
+
+Fetches information about a page (including statistics, template, layout, publishing and workflow information).
+
+#### params
+
+> **params**: `Options`\<[`RetrievePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrievePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Page`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/Page.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: Page; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.pages.retrievePageState
+
+> **xmc.pages.retrievePageState**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L16)
+
+Fetches basic information about a page (identifier, display name and revision) and optionally workflow, layout and version data.
+
+#### params
+
+> **params**: `Options`\<[`RetrievePageStateData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrievePageStateData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageState`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageState.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageState; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.pages.retrievePageVersions
+
+> **xmc.pages.retrievePageVersions**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L37)
+
+Fetches the list of page versions.
+
+#### params
+
+> **params**: `Options`\<[`RetrievePageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RetrievePageVersionsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Page`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/Page.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Page\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.pages.search
+
+> **xmc.pages.search**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L23)
+
+Fetches a list of pages and folders whose name or display name match the search criteria, while applying filters and language options.
+
+#### params
+
+> **params**: `Options`\<[`SearchData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SearchData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`PagesSearchResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PagesSearchResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: PagesSearchResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.getEditingHosts
+
+> **xmc.sites.getEditingHosts**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:158](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L158)
+
+Fetches a list of editing hosts for a site.
+
+#### params
+
+> **params**: `Options`\<[`GetEditingHostsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetEditingHostsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`EditingHost`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditingHost.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditingHost\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.getFavoriteSites
+
+> **xmc.sites.getFavoriteSites**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L51)
+
+Fetches a list of your favorite sites
+
+#### params
+
+> **params**: `Options`\<[`GetFavoriteSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetFavoriteSitesData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.getFavoriteSiteTemplates
+
+> **xmc.sites.getFavoriteSiteTemplates**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L58)
+
+Fetches a list of your favorite site templates
+
+#### params
+
+> **params**: `Options`\<[`GetFavoriteSiteTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetFavoriteSiteTemplatesData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`SiteTemplate`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteTemplate.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteTemplate\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.getProfile
+
+> **xmc.sites.getProfile**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:72](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L72)
+
+Fetches the details of a profile.
+
+#### params
+
+> **params**: `Options`\<[`GetProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetProfileData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.getRenderingHosts
+
+> **xmc.sites.getRenderingHosts**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:151](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L151)
+
+**Deprecated:** Use GetEditingHosts endpoint instead.
+
+Fetches a list of rendering hosts for a site.
+
+#### params
+
+> **params**: `Options`\<[`GetRenderingHostsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/GetRenderingHostsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`RenderingHost`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RenderingHost.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: RenderingHost\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listCollections
+
+> **xmc.sites.listCollections**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L37)
+
+Fetches the list of site collections in the environment, with associated details.
+
+#### params
+
+> **params**: `Options`\<[`ListCollectionsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListCollectionsData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`SiteCollection`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteCollection.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteCollection\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listCollectionSites
+
+> **xmc.sites.listCollectionSites**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:100](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L100)
+
+Fetches a list of sites in a site collection.
+
+#### params
+
+> **params**: `Options`\<[`ListCollectionSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListCollectionSitesData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listHosts
+
+> **xmc.sites.listHosts**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:135](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L135)
+
+Retrieves the list of hosts for a site.
+
+#### params
+
+> **params**: `Options`\<[`ListHostsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListHostsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Host`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Host.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Host\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listJobs
+
+> **xmc.sites.listJobs**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L9)
+
+No summary available.
+
+#### params
+
+> **params**: `Options`\<[`ListJobsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListJobsData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`Job`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Job.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: Job\[\]; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listLanguages
+
+> **xmc.sites.listLanguages**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L23)
+
+Retrieves the list of languages added to the environment.
+
+#### params
+
+> **params**: `Options`\<[`ListLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListLanguagesData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`Language`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Language.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Language\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listPageAncestors
+
+> **xmc.sites.listPageAncestors**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L121)
+
+Fetches information about the ancestors of a page.
+
+#### params
+
+> **params**: `Options`\<[`ListPageAncestorsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListPageAncestorsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageResponse.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageResponse\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listPageChildren
+
+> **xmc.sites.listPageChildren**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:128](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L128)
+
+Fetches information about the children of a page.
+
+#### params
+
+> **params**: `Options`\<[`ListPageChildrenData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListPageChildrenData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageResponse`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageResponse.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageResponse\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listProfiles
+
+> **xmc.sites.listProfiles**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L65)
+
+Fetches a list of all profiles in the environment, with associated details.
+
+#### params
+
+> **params**: `Options`\<[`ListProfilesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListProfilesData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listSites
+
+> **xmc.sites.listSites**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L79)
+
+Fetches the list of sites in the environment, with associated details.
+
+#### params
+
+> **params**: `Options`\<[`ListSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListSitesData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listSiteTemplates
+
+> **xmc.sites.listSiteTemplates**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:165](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L165)
+
+Gets the site templates available in the environment that can be used for creating sites. Learn more about [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html).
+
+#### params
+
+> **params**: `Options`\<[`ListSiteTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListSiteTemplatesData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`SiteTemplate`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteTemplate.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteTemplate\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listSupportedLanguages
+
+> **xmc.sites.listSupportedLanguages**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L30)
+
+Retrieves the list of languages supported by SitecoreAI, and associated data.
+
+#### params
+
+> **params**: `Options`\<[`ListSupportedLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListSupportedLanguagesData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`SupportedLanguage`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SupportedLanguage.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SupportedLanguage\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.listTrackedSites
+
+> **xmc.sites.listTrackedSites**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L93)
+
+Fetches a list of sites that use an [analytics identifier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html).
+
+#### params
+
+> **params**: `Options`\<[`ListTrackedSitesData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/ListTrackedSitesData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site\[\]; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveCollection
+
+> **xmc.sites.retrieveCollection**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L44)
+
+Fetches information about a site collection.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveCollectionData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SiteCollection`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SiteCollection.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SiteCollection; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveHost
+
+> **xmc.sites.retrieveHost**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:142](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L142)
+
+Fetches details about a site host.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveHostData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveHostData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Host`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Host.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Host; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveJob
+
+> **xmc.sites.retrieveJob**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L16)
+
+No summary available.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveJobData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveJobData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Job`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Job.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Job; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveLocalizationStatistics
+
+> **xmc.sites.retrieveLocalizationStatistics**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:172](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L172)
+
+Fetches localization statistics for a site, including the number of pages in each locale.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveLocalizationStatisticsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveLocalizationStatisticsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`LocalizationStatistics`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/LocalizationStatistics.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: LocalizationStatistics; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrievePageHierarchy
+
+> **xmc.sites.retrievePageHierarchy**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:114](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L114)
+
+Fetches hierarchy information about a page, including its children, ancestors, and siblings.
+
+#### params
+
+> **params**: `Options`\<[`RetrievePageHierarchyData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrievePageHierarchyData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageHierarchy`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageHierarchy.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageHierarchy; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveSite
+
+> **xmc.sites.retrieveSite**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L86)
+
+Fetches information about a site.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveSiteData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveSiteData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`Site`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/Site.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: Site; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveSiteHierarchy
+
+> **xmc.sites.retrieveSiteHierarchy**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:107](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L107)
+
+Fetches hierarchy information about the main page of a site, including its children, ancestors, and siblings.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveSiteHierarchyData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveSiteHierarchyData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageHierarchy`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/PageHierarchy.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageHierarchy; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveSitemapConfiguration
+
+> **xmc.sites.retrieveSitemapConfiguration**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:179](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L179)
+
+Fetches a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveSitemapConfigurationData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveSitemapConfigurationData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SitemapConfiguration`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/SitemapConfiguration.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SitemapConfiguration; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
+### xmc.sites.retrieveWorkflowStatistics
+
+> **xmc.sites.retrieveWorkflowStatistics**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:186](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L186)
+
+Fetches the workflows defined for a site, their states, and the number of pages in each state.
+
+#### params
+
+> **params**: `Options`\<[`RetrieveWorkflowStatisticsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/RetrieveWorkflowStatisticsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`WorkflowsStatistics`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/WorkflowsStatistics.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: WorkflowsStatistics; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
 ### ~~xmc.xmapp.getFavoriteSites~~
 
 > **xmc.xmapp.getFavoriteSites**: `object`
@@ -1560,7 +1560,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:58](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches a list of your favorite sites
 
@@ -1586,7 +1586,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:34](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Checks if the requested page is active.
 
@@ -1612,7 +1612,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:162](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches a list of rendering hosts for a site.
 
@@ -1638,7 +1638,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:42](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches the list of site collections in the environment, with associated details.
 
@@ -1664,7 +1664,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:106](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches a list of sites in a site collection.
 
@@ -1690,7 +1690,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:146](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Retrieves the list of hosts for a site.
 
@@ -1716,7 +1716,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:66](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches information about background jobs. Returns empty array if no jobs are running.
 
@@ -1742,7 +1742,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:10](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Retrieves the list of languages added to the environment.
 
@@ -1768,7 +1768,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:130](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches information about the ancestors of a page.
 
@@ -1794,7 +1794,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:138](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches information about the children of a page.
 
@@ -1820,7 +1820,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:26](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches the identifiers of currently active personalization variants for a page.
 
@@ -1846,7 +1846,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:82](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches the list of sites in the environment, with associated details.
 
@@ -1872,7 +1872,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:170](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Gets the site templates available in the environment that can be used for creating sites. Learn more about [site templates](https://doc.sitecore.com/xmc/en/developers/xm-cloud/create-a-site-template-for-the-xm-cloud-dashboard.html).
 
@@ -1898,7 +1898,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:18](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Retrieves the list of languages supported by Sitecore XM Cloud, and associated data.
 
@@ -1924,7 +1924,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:98](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches a list of sites that use an [analytics identifier](https://doc.sitecore.com/xmc/en/users/xm-cloud/manage-personalization-and-analytics-for-sites.html).
 
@@ -1950,7 +1950,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:50](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches information about a site collection.
 
@@ -1976,7 +1976,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:154](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches details about a site host.
 
@@ -2002,7 +2002,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:74](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches information about a background job.
 
@@ -2028,7 +2028,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:178](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches localization statistics for a site, including the number of pages in each locale.
 
@@ -2054,7 +2054,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:122](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches hierarchy information about a page, including its children, ancestors, and siblings.
 
@@ -2080,7 +2080,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:90](https://githu
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches information about a site.
 
@@ -2106,7 +2106,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:114](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches hierarchy information about the main page of a site, including its children, ancestors, and siblings.
 
@@ -2132,7 +2132,7 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:186](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configure-a-sitemap.html) configuration.
 
@@ -2158,6 +2158,6 @@ Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:194](https://gith
 
 #### Deprecated
 
-The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.
+The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.
 
 Fetches the workflows defined for a site, their states, and the number of pages in each state.
