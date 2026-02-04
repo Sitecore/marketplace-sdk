@@ -24,7 +24,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.xmapp'],
       deprecated: true,
-      deprecationMessage: `The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.`,
+      deprecationMessage: `The 'xmc.xmapp' namespace is deprecated. Use 'sai.sites' or 'sai.pages' instead. Will be removed in later version.`,
     }),
     defineClientTransformerConfig({
       namespace: 'Xmapp',
@@ -159,7 +159,7 @@ createClient({
       name: '@hey-api/typescript',
     },
     defineAugmentationConfig({
-      namespaces: ['xmc.sites'],
+      namespaces: ['sai.sites'],
     }),
     defineClientTransformerConfig({
       namespace: 'Sites',
@@ -186,7 +186,7 @@ createClient({
       name: '@hey-api/typescript',
     },
     defineAugmentationConfig({
-      namespaces: ['xmc.pages'],
+      namespaces: ['sai.pages'],
     }),
     defineClientTransformerConfig({
       namespace: 'Pages',
