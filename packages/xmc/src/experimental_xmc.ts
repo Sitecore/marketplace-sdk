@@ -5,6 +5,7 @@ import * as experimental_content_transfer_sdk from './experimental/client-conten
 import * as experimental_content_sdk from './experimental/client-content/sdk.gen';
 import { createClient, createConfig, type Client } from '@hey-api/client-fetch';
 import * as experimental_agent_sdk from './experimental/client-agent';
+import * as experimental_search_sdk from './experimental/client-search/sdk.gen';
 
 // Re-export experimental types for convenience
 export * from './experimental/client-sites/types.gen';
@@ -13,6 +14,7 @@ export * from './experimental/client-authoring/types.gen';
 export * from './experimental/client-content-transfer/types.gen';
 export * from './experimental/client-content/types.gen';
 export * from './experimental/client-agent/types.gen';
+export * from './experimental/client-search/types.gen';
 
 // Default headers required for API calls
 const DEFAULT_HEADERS = {
@@ -28,7 +30,7 @@ interface ApiConfig {
 }
 
 // Supported API types
-type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' | 'live' | 'agent';
+type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' | 'live' | 'agent' | 'search';
 
 // Configuration type for experimental_XMC
 export interface experimental_XMCConfig {
@@ -50,6 +52,7 @@ export type AuthoringApi = typeof experimental_authoring_sdk;
 export type ContentTransferApi = typeof experimental_content_transfer_sdk;
 export type ContentApi = typeof experimental_content_sdk;
 export type AgentApi = typeof experimental_agent_sdk;
+export type SearchApi = typeof experimental_search_sdk;
 
 export class experimental_XMC {
   public readonly sites: SitesApi;
@@ -59,6 +62,7 @@ export class experimental_XMC {
   public readonly preview: ContentApi;
   public readonly live: ContentApi;
   public readonly agent: AgentApi;
+  public readonly search: SearchApi;
 
   private readonly getAccessToken: () => Promise<string>;
   private readonly apiConfigs: Record<ApiType, ApiConfig>;
@@ -108,6 +112,11 @@ export class experimental_XMC {
         sdk: experimental_agent_sdk,
         name: 'Agent API',
       },
+      search: {
+        baseUrl: `${this.edgePlatformProxyUrl}/search`,
+        sdk: experimental_search_sdk,
+        name: 'Search API',
+      },
     };
 
     // Use default configurations
@@ -124,6 +133,7 @@ export class experimental_XMC {
     this.preview = this.createApiProxy('preview');
     this.live = this.createApiProxy('live');
     this.agent = this.createApiProxy('agent');
+    this.search = this.createApiProxy('search');
   }
 
   /**

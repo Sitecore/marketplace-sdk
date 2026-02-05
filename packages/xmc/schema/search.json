@@ -1,0 +1,224 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Config Service API",
+      "description": "APIs for managing search configs.",
+      "contact": {},
+      "version": "1.0"
+    },
+    "servers": [
+      {
+        "url": "https://edge-platform.sitecorecloud.io/search",
+        "description": "production"
+      }
+    ],
+    "paths": {
+      "/v1/config": {
+        "get": {
+          "tags": [
+            "config"
+          ],
+          "summary": "Get Configs",
+          "description": "Get all search configurations for the authenticated client",
+          "operationId": "getConfigs",
+          "parameters": [
+            {
+              "name": "context.*",
+              "in": "query",
+              "description": "Context filters",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Config"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Auth error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ErrorResponse"
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "BearerAuth": []
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Config": {
+          "type": "object",
+          "properties": {
+            "contentType": {
+              "type": "string"
+            },
+            "contentTypes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "context": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "createdBy": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Field"
+              }
+            },
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "searchClientKey": {
+              "type": "string"
+            },
+            "searchSettings": {
+              "$ref": "#/components/schemas/SearchSettings"
+            },
+            "templateId": {
+              "type": "string"
+            },
+            "templateIds": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "tenantId": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "updatedBy": {
+              "type": "string"
+            }
+          }
+        },
+        "ErrorResponse": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "integer"
+            },
+            "internal": {
+              "type": "object"
+            },
+            "message": {
+              "type": "object"
+            }
+          }
+        },
+        "Field": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "displayName": {
+              "type": "string"
+            },
+            "facet": {
+              "$ref": "#/components/schemas/SearchFeature"
+            },
+            "filter": {
+              "$ref": "#/components/schemas/SearchFeature"
+            },
+            "id": {
+              "type": "string"
+            },
+            "key": {
+              "$ref": "#/components/schemas/SearchFeature"
+            },
+            "name": {
+              "type": "string"
+            },
+            "retrieve": {
+              "$ref": "#/components/schemas/SearchFeature"
+            },
+            "search": {
+              "$ref": "#/components/schemas/SearchFeature"
+            },
+            "sort": {
+              "$ref": "#/components/schemas/SearchFeature"
+            },
+            "type": {
+              "type": "string"
+            }
+          }
+        },
+        "SearchFeature": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        },
+        "SearchSettings": {
+          "type": "object",
+          "properties": {
+            "fuzzySearch": {
+              "$ref": "#/components/schemas/SearchFeature"
+            }
+          }
+        }
+      },
+      "securitySchemes": {
+        "BearerAuth": {
+          "type": "apiKey",
+          "name": "authorization",
+          "in": "header"
+        }
+      }
+    }
+}
