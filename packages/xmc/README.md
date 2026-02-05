@@ -36,26 +36,53 @@ const config = {
 
 ## Usage
 ### Make a query
-Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For example, pass `'xmc.sites.listSites'` to retrieve a list of sites:
+Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For examples:
+
+- pass `'xmc.sites.listSites'` to retrieve a list of sites:
 
 ```typescript
 client.query("xmc.sites.listSites", {
-   params: {
+    params: {
         query: {
-          sitecoreContextId,
+            sitecoreContextId,
         },
-      },
-})
-  .then((res) => {
+    },
+}).then((res) => {
     console.log(
-      "Success retrieving xmc.sites.listSites:",
-      res.data
+        "Success retrieving xmc.sites.listSites:",
+        res.data
     );
-  })
-  .catch((error) => {
+}).catch((error) => {
     console.error(
-      "Error retrieving xmc.sites.listSites:",
-      error
+        "Error retrieving xmc.sites.listSites:",
+        error
+    );
+});
+```
+
+- pass `'xmc.pages.retrievePage'` to retrieve information about a specific page:
+
+```typescript
+client.query("xmc.pages.retrievePage", {
+    params: {
+        path: {
+            pageId,
+        },
+        query: {
+            site,
+            sitecoreContextId,
+            language,
+        },
+    },
+}).then((res) => {
+    console.log(
+        "Success retrieving xmc.pages.retrievePage:",
+        res.data
+    );
+}).catch((error) => {
+    console.error(
+        "Error retrieving xmc.pages.retrievePage:",
+        error
     );
 });
 ```
