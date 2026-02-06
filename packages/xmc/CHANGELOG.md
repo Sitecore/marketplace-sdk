@@ -11,7 +11,7 @@
 ### Patch Changes
 
 - Updated dependencies [9bd1985]
-  - @sitecore-marketplace-sdk/client@1.0.0
+  - @sitecore-marketplace-sdk/client@0.3.2
 
 ## 0.3.2
 
