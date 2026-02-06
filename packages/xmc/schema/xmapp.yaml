@@ -1575,6 +1575,7 @@ paths:
       summary: Rename a site
       description: Changes the system name of a site.
       operationId: RenameSite
+      x-sdk-method-name: renameSite
       parameters:
         - name: siteId
           in: path
