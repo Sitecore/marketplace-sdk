@@ -2,6 +2,7 @@ import { createClient } from '@hey-api/openapi-ts';
 import { defineAugmentationConfig } from './plugins/augmentation';
 import { defineClientTransformerConfig } from './plugins/client-transformer/config';
 import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
+import { defineSdkMethodNameConfig } from './plugins/sdk-method-name';
 
 createClient({
   input: './schema/xmapp.yaml',
@@ -14,6 +15,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
+    defineSdkMethodNameConfig(),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -43,6 +45,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/v1/authoring',
     }),
+    defineSdkMethodNameConfig(),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -70,6 +73,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring/transfer',
     }),
+    defineSdkMethodNameConfig(),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -97,6 +101,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/content/api',
     }),
+    defineSdkMethodNameConfig(),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -124,6 +129,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/stream/ai-agent-api/',
     }),
+    defineSdkMethodNameConfig(),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -151,6 +157,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
+    defineSdkMethodNameConfig(),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -178,6 +185,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
+    defineSdkMethodNameConfig(),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
