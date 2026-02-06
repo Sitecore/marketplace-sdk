@@ -8,7 +8,7 @@
 
 > **PageVersionInfo** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:434](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L434)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:465](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L465)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:434](https:
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:444](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L444)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:475](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L475)
 
 The display name of the page.
 Example value: Site Home
@@ -27,7 +27,7 @@ Example value: Site Home
 
 > `optional` **pageId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:439](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L439)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:470](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L470)
 
 The identifier of the page.
 Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
@@ -38,7 +38,7 @@ Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
 
 > `optional` **versionNumber**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:449](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L449)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:480](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L480)
 
 The version number of the page.
 Example value: 2

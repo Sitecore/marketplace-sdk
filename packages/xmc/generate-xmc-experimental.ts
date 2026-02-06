@@ -3,7 +3,7 @@ import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from './plugins/namespace-transformer';
 
 createClient({
-  input: 'https://api-docs.sitecore.com/_spec/xmc/sites-api/index.yaml',
+  input: 'https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml',
   output: {
     format: 'prettier',
     lint: 'eslint',
@@ -25,7 +25,7 @@ createClient({
 });
 
 createClient({
-  input: 'https://api-docs.sitecore.com/_spec/xmc/pages-api/index.yaml',
+  input: 'https://api-docs.sitecore.com/_spec/sai/pages-api/index.yaml',
   output: {
     format: 'prettier',
     lint: 'eslint',

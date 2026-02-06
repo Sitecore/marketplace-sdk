@@ -8,4 +8,4 @@
 
 > **DeleteLanguageResponse** = [`DeleteLanguageResponses`](DeleteLanguageResponses.md)\[keyof [`DeleteLanguageResponses`](DeleteLanguageResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2123](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2123)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2468](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2468)

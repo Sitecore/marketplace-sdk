@@ -8,7 +8,7 @@
 
 > **LocalizationStatistics** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:473](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L473)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:544](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L544)
 
 Represents the localization statistics for a site.
 
@@ -18,7 +18,7 @@ Represents the localization statistics for a site.
 
 > `optional` **locales**: [`LocaleStatistics`](LocaleStatistics.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:477](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L477)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:548](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L548)
 
 A collection of locales defined for the site and their statistics.
 
@@ -28,7 +28,7 @@ A collection of locales defined for the site and their statistics.
 
 > `optional` **totalPageCount**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:482](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L482)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:553](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L553)
 
 The total number of pages across all locales.
 Example value: 60

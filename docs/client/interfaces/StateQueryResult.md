@@ -6,7 +6,7 @@
 
 # Interface: StateQueryResult\<TData, TError\>
 
-Defined in: [client/src/types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L51)
+Defined in: [packages/client/src/types.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L53)
 
 ## Extends
 
@@ -23,9 +23,9 @@ Defined in: [client/src/types.ts:51](https://github.com/Sitecore/marketplace-sdk
 
 ### data
 
-> **data**: `undefined` \| `TData`
+> **data**: `TData` \| `undefined`
 
-Defined in: [client/src/types.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L31)
+Defined in: [packages/client/src/types.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L33)
 
 The current data value
 
@@ -37,9 +37,9 @@ The current data value
 
 ### error
 
-> **error**: `undefined` \| `TError`
+> **error**: `TError` \| `undefined`
 
-Defined in: [client/src/types.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L33)
+Defined in: [packages/client/src/types.ts:35](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L35)
 
 The current error if any
 
@@ -53,7 +53,7 @@ The current error if any
 
 > **isError**: `boolean`
 
-Defined in: [client/src/types.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L39)
+Defined in: [packages/client/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L41)
 
 Whether the query has errored
 
@@ -67,7 +67,7 @@ Whether the query has errored
 
 > **isLoading**: `boolean`
 
-Defined in: [client/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L37)
+Defined in: [packages/client/src/types.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L39)
 
 Whether the query is currently loading
 
@@ -81,7 +81,7 @@ Whether the query is currently loading
 
 > **isSuccess**: `boolean`
 
-Defined in: [client/src/types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L41)
+Defined in: [packages/client/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L43)
 
 Whether the query was successful
 
@@ -95,7 +95,7 @@ Whether the query was successful
 
 > **refetch**: () => `Promise`\<[`BaseQueryResult`](BaseQueryResult.md)\<`TData`, `TError`\>\>
 
-Defined in: [client/src/types.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L43)
+Defined in: [packages/client/src/types.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L45)
 
 Function to manually trigger a refetch
 
@@ -113,7 +113,7 @@ Function to manually trigger a refetch
 
 > **status**: [`QueryStatus`](../type-aliases/QueryStatus.md)
 
-Defined in: [client/src/types.ts:35](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L35)
+Defined in: [packages/client/src/types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L37)
 
 The current status of the query
 
@@ -127,7 +127,7 @@ The current status of the query
 
 > `optional` **unsubscribe**: () => `void`
 
-Defined in: [client/src/types.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L45)
+Defined in: [packages/client/src/types.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L47)
 
 Function to unsubscribe if subscribed
 

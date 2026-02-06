@@ -8,7 +8,7 @@
 
 > **ListJobsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1886](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1886)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1642](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1642)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1886](https
 
 > **200**: [`Job`](Job.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1890](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1890)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1646](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1646)
 
-Success
+OK

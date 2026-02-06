@@ -8,7 +8,7 @@
 
 > **UpdateSiteCollectionInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1318](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1318)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1450](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1450)
 
 Update site collection request
 
@@ -18,7 +18,7 @@ Update site collection request
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1328](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1328)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1460](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1460)
 
 The description of the site collection.
 Example value: Example site collection description.
@@ -29,7 +29,7 @@ Example value: Example site collection description.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1323](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1323)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1455](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1455)
 
 The display name for the site collection.
 Example value: Skate Brand Websites
@@ -40,7 +40,7 @@ Example value: Skate Brand Websites
 
 > `optional` **sortOrder**: `number` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1333](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1333)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1465](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1465)
 
 The sort order of the site collection.
 Example value: 100

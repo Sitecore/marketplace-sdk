@@ -6,7 +6,7 @@
 
 # Interface: BaseQueryOptions\<TData, TError, TParams\>
 
-Defined in: [client/src/types.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L13)
+Defined in: [packages/client/src/types.ts:15](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L15)
 
 ## Extended by
 
@@ -26,7 +26,7 @@ Defined in: [client/src/types.ts:13](https://github.com/Sitecore/marketplace-sdk
 
 > `optional` **onError**: (`error`) => `void`
 
-Defined in: [client/src/types.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L19)
+Defined in: [packages/client/src/types.ts:21](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L21)
 
 Called when the query encounters an error
 
@@ -46,7 +46,7 @@ Called when the query encounters an error
 
 > `optional` **onSuccess**: (`data`) => `void`
 
-Defined in: [client/src/types.ts:17](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L17)
+Defined in: [packages/client/src/types.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L19)
 
 Called when the query successfully completes
 
@@ -66,7 +66,7 @@ Called when the query successfully completes
 
 > `optional` **params**: `TParams`
 
-Defined in: [client/src/types.ts:21](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L21)
+Defined in: [packages/client/src/types.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L23)
 
 Additional parameters for the query; always includes headers, query and body
 
@@ -76,7 +76,7 @@ Additional parameters for the query; always includes headers, query and body
 
 > `optional` **subscribe**: `boolean`
 
-Defined in: [client/src/types.ts:15](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L15)
+Defined in: [packages/client/src/types.ts:17](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L17)
 
 Whether to subscribe to updates for this query
 
@@ -86,6 +86,6 @@ Whether to subscribe to updates for this query
 
 > `optional` **timeoutMs**: `number`
 
-Defined in: [client/src/types.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L23)
+Defined in: [packages/client/src/types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L25)
 
 Custom timeout in milliseconds

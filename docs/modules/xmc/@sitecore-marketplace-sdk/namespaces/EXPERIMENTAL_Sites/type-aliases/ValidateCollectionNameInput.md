@@ -8,7 +8,7 @@
 
 > **ValidateCollectionNameInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1424](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1424)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1570](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1570)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1424](https
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1428](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1428)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1574](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1574)
 
 The name of the site collection to validate.

@@ -8,7 +8,7 @@
 
 > **PageAggregationResponse** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:567](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L567)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:638](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L638)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:567](https:
 
 > `optional` **components**: [`ComponentAggregationResponse`](ComponentAggregationResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:591](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L591)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:662](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L662)
 
 A collection of the page components.
 
@@ -26,7 +26,7 @@ A collection of the page components.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:587](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L587)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:658](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L658)
 
 The display name of the page for the specified language.
 Example value: Home
@@ -37,7 +37,7 @@ Example value: Home
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:572](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L572)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:643](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L643)
 
 The page identifier.
 Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
@@ -48,7 +48,7 @@ Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
 
 > `optional` **language**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:577](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L577)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:648](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L648)
 
 The language of the page.
 Example value: en-US
@@ -59,7 +59,7 @@ Example value: en-US
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:582](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L582)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:653](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L653)
 
 The page name.
 Example value: Home

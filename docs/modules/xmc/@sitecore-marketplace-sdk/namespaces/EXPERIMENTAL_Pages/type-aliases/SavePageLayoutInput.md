@@ -8,7 +8,7 @@
 
 > **SavePageLayoutInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:657](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L657)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:688](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L688)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:657](https:
 
 > **language**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:664](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L664)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:695](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L695)
 
 The language of the page to save.
 Example value: en-US
@@ -27,7 +27,7 @@ Example value: en-US
 
 > **layout**: [`PageLayout`](PageLayout.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:658](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L658)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:689](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L689)
 
 ***
 
@@ -35,7 +35,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:658](https:
 
 > `optional` **originalLayout**: [`PageLayout`](PageLayout.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:659](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L659)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:690](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L690)
 
 ***
 
@@ -43,7 +43,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:659](https:
 
 > `optional` **pageVersion**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:674](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L674)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:705](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L705)
 
 The version number of the page to save.
 Example value: 2
@@ -54,7 +54,7 @@ Example value: 2
 
 > `optional` **revision**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:679](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L679)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:710](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L710)
 
 The revision identifier of the page to save.
 Example value: f7d29433-001e-4a35-a744-876759dba468
@@ -65,7 +65,7 @@ Example value: f7d29433-001e-4a35-a744-876759dba468
 
 > **site**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:669](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L669)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:700](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L700)
 
 The site name.
 Example value: my-site

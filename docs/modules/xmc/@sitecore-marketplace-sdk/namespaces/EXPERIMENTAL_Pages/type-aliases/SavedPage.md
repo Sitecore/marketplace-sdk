@@ -8,7 +8,7 @@
 
 > **SavedPage** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:697](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L697)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:728](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L728)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:697](https:
 
 > `optional` **fields**: [`PageFieldValueResult`](PageFieldValueResult.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:701](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L701)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:732](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L732)
 
 The list of updated field values.
 
@@ -26,7 +26,7 @@ The list of updated field values.
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:706](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L706)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:737](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L737)
 
 The identifier of the saved page.
 Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
@@ -37,7 +37,7 @@ Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
 
 > `optional` **language**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:711](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L711)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:742](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L742)
 
 The language of the saved page.
 Example value: en-US
@@ -48,7 +48,7 @@ Example value: en-US
 
 > `optional` **revision**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:716](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L716)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:747](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L747)
 
 The revision identifier of the saved page.
 Example value: f7d29433-001e-4a35-a744-876759dba468
@@ -59,7 +59,7 @@ Example value: f7d29433-001e-4a35-a744-876759dba468
 
 > `optional` **version**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:721](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L721)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:752](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L752)
 
 The version number of the saved page.
 Example value: 2

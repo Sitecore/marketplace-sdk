@@ -8,4 +8,4 @@
 
 > **SortCollectionsResponse** = [`SortCollectionsResponses`](SortCollectionsResponses.md)\[keyof [`SortCollectionsResponses`](SortCollectionsResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2051](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2051)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2396](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2396)

@@ -14,7 +14,7 @@ Defined in: [packages/xmc/src/experimental/client-agent/types.gen.ts:211](https:
 
 ### fields?
 
-> `optional` **fields**: \{[`key`: `string`]: `unknown`; \} \| `null`
+> `optional` **fields**: \{\[`key`: `string`\]: `unknown`; \} \| `null`
 
 Defined in: [packages/xmc/src/experimental/client-agent/types.gen.ts:216](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-agent/types.gen.ts#L216)
 

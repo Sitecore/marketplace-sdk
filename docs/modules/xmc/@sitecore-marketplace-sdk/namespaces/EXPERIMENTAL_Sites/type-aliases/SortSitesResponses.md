@@ -8,7 +8,7 @@
 
 > **SortSitesResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2533](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2533)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2878](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2878)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2533](https
 
 > **204**: `void`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2537](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2537)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2882](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2882)
 
 No content

@@ -8,7 +8,7 @@
 
 > **DeletePageInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L53)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:80](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L80)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:53](https:/
 
 > `optional` **forceDelete**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L63)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L90)
 
 Whether the page should be forcefully deleted (skipping the references check).
 Example value: True
@@ -27,7 +27,7 @@ Example value: True
 
 > `optional` **permanently**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L58)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:85](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L85)
 
 Whether the page should be permanently deleted (skipping the recycle bin).
 Example value: True

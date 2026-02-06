@@ -8,4 +8,4 @@
 
 > **ListPageAncestorsResponse** = [`ListPageAncestorsResponses`](ListPageAncestorsResponses.md)\[keyof [`ListPageAncestorsResponses`](ListPageAncestorsResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2829](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2829)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3174](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3174)

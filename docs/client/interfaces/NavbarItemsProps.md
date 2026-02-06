@@ -6,7 +6,7 @@
 
 # Interface: NavbarItemsProps
 
-Defined in: [client/src/sdk-types.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L90)
+Defined in: [packages/client/src/sdk-types.ts:102](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L102)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [client/src/sdk-types.ts:90](https://github.com/Sitecore/marketplace
 
 > **appLogo**: `string`
 
-Defined in: [client/src/sdk-types.ts:91](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L91)
+Defined in: [packages/client/src/sdk-types.ts:103](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L103)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [client/src/sdk-types.ts:91](https://github.com/Sitecore/marketplace
 
 > **appName**: `string`
 
-Defined in: [client/src/sdk-types.ts:92](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L92)
+Defined in: [packages/client/src/sdk-types.ts:104](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L104)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [client/src/sdk-types.ts:92](https://github.com/Sitecore/marketplace
 
 > **helpLinks**: `NavBarItem`[]
 
-Defined in: [client/src/sdk-types.ts:94](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L94)
+Defined in: [packages/client/src/sdk-types.ts:106](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L106)
 
 ***
 
@@ -38,4 +38,4 @@ Defined in: [client/src/sdk-types.ts:94](https://github.com/Sitecore/marketplace
 
 > **menu**: `NavBarItem`[]
 
-Defined in: [client/src/sdk-types.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L93)
+Defined in: [packages/client/src/sdk-types.ts:105](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L105)

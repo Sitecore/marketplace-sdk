@@ -6,7 +6,7 @@
 
 # Interface: BaseMutationOptions\<TData, TError, TParams\>
 
-Defined in: [client/src/types.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L54)
+Defined in: [packages/client/src/types.ts:56](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L56)
 
 ## Extended by
 
@@ -26,7 +26,7 @@ Defined in: [client/src/types.ts:54](https://github.com/Sitecore/marketplace-sdk
 
 > `optional` **onError**: (`error`) => `void`
 
-Defined in: [client/src/types.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L58)
+Defined in: [packages/client/src/types.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L60)
 
 Called when the mutation encounters an error
 
@@ -46,7 +46,7 @@ Called when the mutation encounters an error
 
 > `optional` **onSuccess**: (`data`) => `void`
 
-Defined in: [client/src/types.ts:56](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L56)
+Defined in: [packages/client/src/types.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L58)
 
 Called when the mutation successfully completes
 
@@ -66,7 +66,7 @@ Called when the mutation successfully completes
 
 > `optional` **params**: `TParams`
 
-Defined in: [client/src/types.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L60)
+Defined in: [packages/client/src/types.ts:62](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L62)
 
 Additional parameters for the mutation
 
@@ -76,6 +76,6 @@ Additional parameters for the mutation
 
 > `optional` **timeoutMs**: `number`
 
-Defined in: [client/src/types.ts:62](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L62)
+Defined in: [packages/client/src/types.ts:64](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L64)
 
 Custom timeout in milliseconds

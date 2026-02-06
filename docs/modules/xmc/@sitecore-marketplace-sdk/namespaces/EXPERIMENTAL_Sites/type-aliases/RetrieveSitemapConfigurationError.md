@@ -8,4 +8,4 @@
 
 > **RetrieveSitemapConfigurationError** = [`RetrieveSitemapConfigurationErrors`](RetrieveSitemapConfigurationErrors.md)\[keyof [`RetrieveSitemapConfigurationErrors`](RetrieveSitemapConfigurationErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3271](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3271)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3654](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3654)

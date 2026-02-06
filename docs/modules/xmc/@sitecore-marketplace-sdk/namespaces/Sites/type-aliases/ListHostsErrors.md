@@ -1,0 +1,21 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Sites](../README.md) / ListHostsErrors
+
+# Type Alias: ListHostsErrors
+
+> **ListHostsErrors** = `object`
+
+Defined in: [packages/xmc/src/client-sites/types.gen.ts:3238](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/types.gen.ts#L3238)
+
+## Properties
+
+### 400
+
+> **400**: [`ProblemDetails`](ProblemDetails.md)
+
+Defined in: [packages/xmc/src/client-sites/types.gen.ts:3242](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/types.gen.ts#L3242)
+
+Bad request

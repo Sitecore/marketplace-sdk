@@ -8,7 +8,7 @@
 
 > **RenameCollectionData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1982](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1982)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2327](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2327)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1982](https
 
 > **body**: [`RenameSiteCollectionInput`](RenameSiteCollectionInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1986](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1986)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2331](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2331)
 
 Input object containing the new system name of the site collection.
 
@@ -26,7 +26,7 @@ Input object containing the new system name of the site collection.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1987](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1987)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2332](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2332)
 
 #### collectionId
 
@@ -40,7 +40,7 @@ The identifier of the site collection.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1993](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1993)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2338](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2338)
 
 #### environmentId?
 
@@ -58,4 +58,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/collections/{collectionId}/rename"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2000](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2000)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2345](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2345)

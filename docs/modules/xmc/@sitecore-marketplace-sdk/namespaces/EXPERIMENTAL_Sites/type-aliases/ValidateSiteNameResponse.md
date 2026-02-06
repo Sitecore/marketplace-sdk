@@ -8,4 +8,4 @@
 
 > **ValidateSiteNameResponse** = [`ValidateSiteNameResponses`](ValidateSiteNameResponses.md)\[keyof [`ValidateSiteNameResponses`](ValidateSiteNameResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2571](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2571)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2916](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2916)

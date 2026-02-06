@@ -1,0 +1,31 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Sites](../README.md) / UpdateSiteErrors
+
+# Type Alias: UpdateSiteErrors
+
+> **UpdateSiteErrors** = `object`
+
+Defined in: [packages/xmc/src/client-sites/types.gen.ts:2749](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/types.gen.ts#L2749)
+
+## Properties
+
+### 400
+
+> **400**: [`ProblemDetails`](ProblemDetails.md)
+
+Defined in: [packages/xmc/src/client-sites/types.gen.ts:2753](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/types.gen.ts#L2753)
+
+Bad request
+
+***
+
+### 404
+
+> **404**: [`ProblemDetails`](ProblemDetails.md)
+
+Defined in: [packages/xmc/src/client-sites/types.gen.ts:2757](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/types.gen.ts#L2757)
+
+Not found

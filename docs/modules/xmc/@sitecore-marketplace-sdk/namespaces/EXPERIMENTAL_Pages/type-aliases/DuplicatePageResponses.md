@@ -8,7 +8,7 @@
 
 > **DuplicatePageResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1406](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1406)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1507](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1507)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1406](https
 
 > **200**: [`PageOperationResult`](PageOperationResult.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1410](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1410)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1511](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1511)
 
 Success

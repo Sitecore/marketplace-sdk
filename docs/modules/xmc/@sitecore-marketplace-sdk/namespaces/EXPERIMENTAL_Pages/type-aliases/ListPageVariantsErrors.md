@@ -8,7 +8,7 @@
 
 > **ListPageVariantsErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1207](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1207)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1276](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1276)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1207](https
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1211](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1211)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1280](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1280)
 
 Not found

@@ -8,7 +8,7 @@
 
 > **PageVariantsResponse** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:740](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L740)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:812](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L812)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:740](https:
 
 > `optional` **language**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:750](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L750)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:822](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L822)
 
 The language of the page.
 Example value: en-US
@@ -27,7 +27,7 @@ Example value: en-US
 
 > `optional` **pageId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:745](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L745)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:817](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L817)
 
 The page identifier.
 Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
@@ -38,7 +38,7 @@ Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
 
 > `optional` **variantIds**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:758](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L758)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:830](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L830)
 
 The list of page personalization variant identifiers.
 Example value: [

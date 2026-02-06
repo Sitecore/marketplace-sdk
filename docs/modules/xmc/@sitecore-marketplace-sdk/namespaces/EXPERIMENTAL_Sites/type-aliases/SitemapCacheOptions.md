@@ -8,7 +8,7 @@
 
 > **SitemapCacheOptions** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1128](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1128)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1201](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1201)
 
 Sitemap caching configuration.
 
@@ -18,7 +18,7 @@ Sitemap caching configuration.
 
 > `optional` **refreshThreshold**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1133](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1133)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1206](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1206)
 
 Threshold in minutes for refreshing the sitemap cache.
 Example value: 60

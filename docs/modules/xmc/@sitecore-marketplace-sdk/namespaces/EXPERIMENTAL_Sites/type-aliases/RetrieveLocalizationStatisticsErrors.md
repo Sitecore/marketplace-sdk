@@ -8,7 +8,7 @@
 
 > **RetrieveLocalizationStatisticsErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3217](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3217)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3600](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3600)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3217](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3221](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3221)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3604](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3604)
 
 Bad request
 
@@ -26,7 +26,7 @@ Bad request
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3225](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3225)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3608](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3608)
 
 Not found
 
@@ -36,6 +36,6 @@ Not found
 
 > **503**: `unknown`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3229](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3229)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3612](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3612)
 
 Search service unavailable

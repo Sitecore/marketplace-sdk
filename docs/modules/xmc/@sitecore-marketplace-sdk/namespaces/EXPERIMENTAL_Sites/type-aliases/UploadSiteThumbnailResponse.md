@@ -8,4 +8,4 @@
 
 > **UploadSiteThumbnailResponse** = [`UploadSiteThumbnailResponses`](UploadSiteThumbnailResponses.md)\[keyof [`UploadSiteThumbnailResponses`](UploadSiteThumbnailResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3195](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3195)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3578](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3578)

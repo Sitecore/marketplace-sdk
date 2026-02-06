@@ -8,7 +8,7 @@
 
 > **SearchData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:977](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L977)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1046](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1046)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:977](https:
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:978](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L978)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1047](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1047)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:978](https:
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:979](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L979)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1048](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1048)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:979](https:
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:980](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L980)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1049](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1049)
 
 #### continuationToken?
 
@@ -94,4 +94,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/search"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1018](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1018)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1087](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1087)

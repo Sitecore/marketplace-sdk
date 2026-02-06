@@ -8,7 +8,7 @@
 
 > **DuplicatePageInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L65)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:92](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L92)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:65](https:/
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:85](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L85)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:112](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L112)
 
 The display name for the new page.
 Example value: About Us Copy
@@ -27,7 +27,7 @@ Example value: About Us Copy
 
 > **language**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:80](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L80)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:107](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L107)
 
 The language of the duplicated page.
 Example value: en-US
@@ -38,7 +38,7 @@ Example value: en-US
 
 > **newName**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:70](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L70)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:97](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L97)
 
 The name for the new page.
 Example value: About Us Copy
@@ -49,7 +49,7 @@ Example value: About Us Copy
 
 > **site**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:75](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L75)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:102](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L102)
 
 The site name.
 Example value: my-site

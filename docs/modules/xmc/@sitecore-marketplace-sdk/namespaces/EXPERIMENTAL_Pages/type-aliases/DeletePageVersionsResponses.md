@@ -8,7 +8,7 @@
 
 > **DeletePageVersionsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1534](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1534)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1680](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1680)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1534](https
 
 > **200**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1538](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1538)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1684](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1684)
 
 Success

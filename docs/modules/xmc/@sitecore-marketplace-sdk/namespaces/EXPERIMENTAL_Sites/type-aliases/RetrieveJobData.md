@@ -8,7 +8,7 @@
 
 > **RetrieveJobData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1893](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1893)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1649](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1649)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1893](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1894](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1894)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1650](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1650)
 
 ***
 
@@ -24,13 +24,11 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1894](https
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1895](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1895)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1651](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1651)
 
 #### jobHandle
 
 > **jobHandle**: `string`
-
-The handle of the job. If you don’t know the handle of the job, first retrieve the list of site job statuses.
 
 ***
 
@@ -38,7 +36,7 @@ The handle of the job. If you don’t know the handle of the job, first retrieve
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1901](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1901)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1654](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1654)
 
 #### sitecoreContextId?
 
@@ -52,4 +50,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/jobs/{jobHandle}/status"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1907](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1907)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1660](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1660)

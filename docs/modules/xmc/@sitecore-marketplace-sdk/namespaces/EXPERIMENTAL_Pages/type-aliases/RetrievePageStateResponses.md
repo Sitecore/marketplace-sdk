@@ -8,7 +8,7 @@
 
 > **RetrievePageStateResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:969](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L969)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1038](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1038)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:969](https:
 
 > **200**: [`PageState`](PageState.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:973](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L973)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1042](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1042)
 
 Success

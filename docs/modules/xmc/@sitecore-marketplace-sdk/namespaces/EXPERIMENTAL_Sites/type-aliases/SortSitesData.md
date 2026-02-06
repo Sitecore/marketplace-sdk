@@ -8,7 +8,7 @@
 
 > **SortSitesData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2504](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2504)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2849](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2849)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2504](https
 
 > **body**: [`SortSitesInput`](SortSitesInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2508](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2508)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2853](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2853)
 
 A _sites_ JSON object of key-value pairs where the site ID (string) is the key and the sort order (integer) is the value.
 
@@ -26,7 +26,7 @@ A _sites_ JSON object of key-value pairs where the site ID (string) is the key a
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2509](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2509)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2854](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2854)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2509](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2510](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2510)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2855](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2855)
 
 #### environmentId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/sort"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2520](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2520)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2865](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2865)

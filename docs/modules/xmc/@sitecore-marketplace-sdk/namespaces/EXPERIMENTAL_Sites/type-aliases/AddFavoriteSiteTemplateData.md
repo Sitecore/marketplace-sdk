@@ -8,7 +8,7 @@
 
 > **AddFavoriteSiteTemplateData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1830](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1830)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2028](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2028)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1830](https
 
 > **body**: [`AddFavoriteSiteTemplateInput`](AddFavoriteSiteTemplateInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1834](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1834)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2032](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2032)
 
 The input model.
 
@@ -26,7 +26,7 @@ The input model.
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1835](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1835)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2033](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2033)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1835](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1836](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1836)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2034](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2034)
 
 #### environmentId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/favorites/sitetemplates"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1846](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1846)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2044](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2044)

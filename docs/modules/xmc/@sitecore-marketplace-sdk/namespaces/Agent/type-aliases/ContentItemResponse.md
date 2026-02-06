@@ -14,7 +14,7 @@ Defined in: [packages/xmc/src/client-agent/types.gen.ts:181](https://github.com/
 
 ### children?
 
-> `optional` **children**: \{[`key`: `string`]: `ContentItemResponse`[]; \} \| `null`
+> `optional` **children**: \{\[`key`: `string`\]: `ContentItemResponse`[]; \} \| `null`
 
 Defined in: [packages/xmc/src/client-agent/types.gen.ts:186](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/types.gen.ts#L186)
 
@@ -30,7 +30,7 @@ Defined in: [packages/xmc/src/client-agent/types.gen.ts:194](https://github.com/
 
 ### fields?
 
-> `optional` **fields**: \{[`key`: `string`]: `unknown`; \} \| `null`
+> `optional` **fields**: \{\[`key`: `string`\]: `unknown`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-agent/types.gen.ts:191](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/types.gen.ts#L191)
 

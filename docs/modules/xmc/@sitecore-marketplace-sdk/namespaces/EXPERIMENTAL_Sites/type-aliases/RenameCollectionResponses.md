@@ -8,14 +8,14 @@
 
 > **RenameCollectionResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2013](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2013)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2358](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2358)
 
 ## Properties
 
 ### 200
 
-> **200**: `string`
+> **200**: [`JobResponse`](JobResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2017](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2017)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2362](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2362)
 
 Success

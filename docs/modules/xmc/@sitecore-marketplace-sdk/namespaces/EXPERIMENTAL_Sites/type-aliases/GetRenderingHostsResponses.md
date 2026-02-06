@@ -8,7 +8,7 @@
 
 > **GetRenderingHostsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3115](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3115)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3460](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3460)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3115](https
 
 > **200**: [`RenderingHost`](RenderingHost.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3119](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3119)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3464](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3464)
 
 Success

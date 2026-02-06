@@ -8,4 +8,4 @@
 
 > **ListLanguagesResponse** = [`ListLanguagesResponses`](ListLanguagesResponses.md)\[keyof [`ListLanguagesResponses`](ListLanguagesResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1506](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1506)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1704](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1704)

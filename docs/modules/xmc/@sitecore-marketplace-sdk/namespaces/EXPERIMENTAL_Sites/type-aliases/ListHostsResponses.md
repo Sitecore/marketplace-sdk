@@ -8,7 +8,7 @@
 
 > **ListHostsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2900](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2900)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3245](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3245)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2900](https
 
 > **200**: [`Host`](Host.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2904](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2904)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3249](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3249)
 
 Success

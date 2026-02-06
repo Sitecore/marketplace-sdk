@@ -8,4 +8,4 @@
 
 > **RetrieveSiteHierarchyError** = [`RetrieveSiteHierarchyErrors`](RetrieveSiteHierarchyErrors.md)\[keyof [`RetrieveSiteHierarchyErrors`](RetrieveSiteHierarchyErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2730](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2730)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3075](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3075)

@@ -8,7 +8,7 @@
 
 > **UpdateHostResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3077](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3077)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3422](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3422)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3077](https
 
 > **204**: `void`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3081](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3081)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3426](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3426)
 
 No content

@@ -8,4 +8,4 @@
 
 > **ListSiteTemplatesError** = [`ListSiteTemplatesErrors`](ListSiteTemplatesErrors.md)\[keyof [`ListSiteTemplatesErrors`](ListSiteTemplatesErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3144](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3144)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3527](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3527)

@@ -8,7 +8,7 @@
 
 > **ListPageVariantsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1214](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1214)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1283](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1283)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1214](https
 
 > **200**: `string`[]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1218](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1218)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1287](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1287)
 
 Success

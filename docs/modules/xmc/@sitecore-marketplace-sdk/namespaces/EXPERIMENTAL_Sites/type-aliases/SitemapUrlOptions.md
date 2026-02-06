@@ -8,7 +8,7 @@
 
 > **SitemapUrlOptions** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1162](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1162)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1235](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1235)
 
 URL property configurations in the sitemap.
 
@@ -18,7 +18,7 @@ URL property configurations in the sitemap.
 
 > `optional` **includeChangeFreq**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1167](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1167)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1240](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1240)
 
 Whether to include change frequency attribute in the sitemap, that specifies how often the page changes its content.
 Example value: True
@@ -29,7 +29,7 @@ Example value: True
 
 > `optional` **includeLastMod**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1172](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1172)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1245](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1245)
 
 Whether to include the last modification date in the sitemap.
 Example value: True
@@ -40,7 +40,7 @@ Example value: True
 
 > `optional` **includePriority**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1177](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1177)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1250](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1250)
 
 Whether to include priority information in the sitemap. The priority is a number between 0 and 1 that represents the importance of a page.
 Example value: True

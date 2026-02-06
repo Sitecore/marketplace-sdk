@@ -8,4 +8,4 @@
 
 > **ListPageAncestorsError** = [`ListPageAncestorsErrors`](ListPageAncestorsErrors.md)\[keyof [`ListPageAncestorsErrors`](ListPageAncestorsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2822](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2822)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3167](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3167)

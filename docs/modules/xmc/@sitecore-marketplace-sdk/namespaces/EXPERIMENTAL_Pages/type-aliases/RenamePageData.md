@@ -8,7 +8,7 @@
 
 > **RenamePageData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1413](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1413)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1514](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1514)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1413](https
 
 > `optional` **body**: [`RenamePageInput`](RenamePageInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1417](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1417)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1518](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1518)
 
 Input data containing properties of the page
 
@@ -26,7 +26,7 @@ Input data containing properties of the page
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1418](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1418)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1519](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1519)
 
 #### pageId
 
@@ -40,7 +40,7 @@ The page identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1424](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1424)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1525](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1525)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/rename"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1434](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1434)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1535](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1535)

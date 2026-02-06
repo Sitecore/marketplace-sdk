@@ -8,4 +8,4 @@
 
 > **SaveLayoutError** = [`SaveLayoutErrors`](SaveLayoutErrors.md)\[keyof [`SaveLayoutErrors`](SaveLayoutErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1323](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1323)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1424](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1424)

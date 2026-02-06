@@ -8,4 +8,4 @@
 
 > **ValidateCollectionNameResponse** = [`ValidateCollectionNameResponses`](ValidateCollectionNameResponses.md)\[keyof [`ValidateCollectionNameResponses`](ValidateCollectionNameResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2088](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2088)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2433](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2433)

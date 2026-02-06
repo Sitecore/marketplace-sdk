@@ -6,7 +6,7 @@
 
 # Interface: XmcPagesContextViewTenantInfo
 
-Defined in: [client/src/sdk-types.ts:32](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L32)
+Defined in: [packages/client/src/sdk-types.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L44)
 
 ## Indexable
 
@@ -18,7 +18,7 @@ Defined in: [client/src/sdk-types.ts:32](https://github.com/Sitecore/marketplace
 
 > `optional` **aiEmbeddedTenantID**: `string`
 
-Defined in: [client/src/sdk-types.ts:36](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L36)
+Defined in: [packages/client/src/sdk-types.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L48)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [client/src/sdk-types.ts:36](https://github.com/Sitecore/marketplace
 
 > `optional` **cdpEmbeddedTenantId**: `string`
 
-Defined in: [client/src/sdk-types.ts:35](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L35)
+Defined in: [packages/client/src/sdk-types.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L47)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [client/src/sdk-types.ts:35](https://github.com/Sitecore/marketplace
 
 > `optional` **customerEnvironmentType**: `string`
 
-Defined in: [client/src/sdk-types.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L37)
+Defined in: [packages/client/src/sdk-types.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L49)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [client/src/sdk-types.ts:37](https://github.com/Sitecore/marketplace
 
 > `optional` **environmentId**: `string`
 
-Defined in: [client/src/sdk-types.ts:38](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L38)
+Defined in: [packages/client/src/sdk-types.ts:50](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L50)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [client/src/sdk-types.ts:38](https://github.com/Sitecore/marketplace
 
 > `optional` **environmentName**: `string`
 
-Defined in: [client/src/sdk-types.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L39)
+Defined in: [packages/client/src/sdk-types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L51)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [client/src/sdk-types.ts:39](https://github.com/Sitecore/marketplace
 
 > `optional` **gqlEndpointUrl**: `string`
 
-Defined in: [client/src/sdk-types.ts:34](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L34)
+Defined in: [packages/client/src/sdk-types.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L46)
 
 ***
 
@@ -66,7 +66,7 @@ Defined in: [client/src/sdk-types.ts:34](https://github.com/Sitecore/marketplace
 
 > `optional` **projectId**: `string`
 
-Defined in: [client/src/sdk-types.ts:40](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L40)
+Defined in: [packages/client/src/sdk-types.ts:52](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L52)
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [client/src/sdk-types.ts:40](https://github.com/Sitecore/marketplace
 
 > `optional` **projectName**: `string`
 
-Defined in: [client/src/sdk-types.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L41)
+Defined in: [packages/client/src/sdk-types.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L53)
 
 ***
 
@@ -82,7 +82,7 @@ Defined in: [client/src/sdk-types.ts:41](https://github.com/Sitecore/marketplace
 
 > `optional` **regionCode**: `string`
 
-Defined in: [client/src/sdk-types.ts:42](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L42)
+Defined in: [packages/client/src/sdk-types.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L54)
 
 ***
 
@@ -90,4 +90,4 @@ Defined in: [client/src/sdk-types.ts:42](https://github.com/Sitecore/marketplace
 
 > `optional` **url**: `string`
 
-Defined in: [client/src/sdk-types.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L33)
+Defined in: [packages/client/src/sdk-types.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L45)

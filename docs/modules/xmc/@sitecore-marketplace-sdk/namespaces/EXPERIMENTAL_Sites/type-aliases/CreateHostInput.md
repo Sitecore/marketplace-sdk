@@ -8,7 +8,7 @@
 
 > **CreateHostInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:140](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L140)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:155](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L155)
 
 A host creation request
 
@@ -18,9 +18,20 @@ A host creation request
 
 > `optional` **analyticsIdentifiers**: [`AnalyticsIdentifier`](AnalyticsIdentifier.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:176](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L176)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:197](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L197)
 
 The list of analytics tracker identifiers mapped to the host, per language.
+
+***
+
+### editingHost?
+
+> `optional` **editingHost**: `string` \| `null`
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:184](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L184)
+
+The rendering host.
+Example value: Default
 
 ***
 
@@ -28,7 +39,7 @@ The list of analytics tracker identifiers mapped to the host, per language.
 
 > `optional` **homePageId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:168](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L168)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:189](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L189)
 
 The identifier of the home page.
 Example value: 110d559fdea542ea9c1c8a5df7e70ef9
@@ -39,7 +50,7 @@ Example value: 110d559fdea542ea9c1c8a5df7e70ef9
 
 > `optional` **hostnames**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:153](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L153)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:168](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L168)
 
 One or more hostnames.
 Example value: [
@@ -53,7 +64,7 @@ Example value: [
 
 > `optional` **languageSettings**: [`SiteLanguageSettings`](SiteLanguageSettings.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:183](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L183)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:204](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L204)
 
 ***
 
@@ -61,29 +72,31 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:183](https:
 
 > **name**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:145](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L145)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:160](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L160)
 
 The name of the new host.
 Example value: skate-park
 
 ***
 
-### renderingHost?
+### ~~renderingHost?~~
 
 > `optional` **renderingHost**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L163)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:179](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L179)
 
 The rendering host.
 Example value: Default
+
+#### Deprecated
 
 ***
 
 ### settings?
 
-> `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:180](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L180)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:201](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L201)
 
 The host settings collection.
 
@@ -93,7 +106,7 @@ The host settings collection.
 
 > `optional` **targetHostname**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:158](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L158)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:173](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L173)
 
 The target hostname.
 Example value: www.skate-park.com
@@ -104,6 +117,6 @@ Example value: www.skate-park.com
 
 > `optional` **thumbnail**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:172](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L172)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:193](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L193)
 
 The thumbnail information.

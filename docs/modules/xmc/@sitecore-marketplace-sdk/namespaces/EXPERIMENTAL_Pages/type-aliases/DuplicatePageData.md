@@ -8,7 +8,7 @@
 
 > **DuplicatePageData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1372](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1372)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1473](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1473)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1372](https
 
 > `optional` **body**: [`DuplicatePageInput`](DuplicatePageInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1376](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1376)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1477](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1477)
 
 Input data containing properties of the page
 
@@ -26,7 +26,7 @@ Input data containing properties of the page
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1377](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1377)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1478](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1478)
 
 #### pageId
 
@@ -40,7 +40,7 @@ The page identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1383](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1383)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1484](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1484)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/duplicate"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1393](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1393)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1494](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1494)

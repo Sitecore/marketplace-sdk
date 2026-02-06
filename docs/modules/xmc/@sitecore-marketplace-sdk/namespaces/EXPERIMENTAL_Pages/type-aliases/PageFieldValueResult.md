@@ -8,7 +8,7 @@
 
 > **PageFieldValueResult** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:254](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L254)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:284](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L284)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:254](https:
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:259](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L259)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:289](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L289)
 
 The identifier of the field.
 Example value: a73d057e-20e3-4ac3-9c06-5f34bfcb6847
@@ -27,7 +27,7 @@ Example value: a73d057e-20e3-4ac3-9c06-5f34bfcb6847
 
 > `optional` **originalValue**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:269](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L269)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:299](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L299)
 
 The original value of the field.
 Example value: Welcome
@@ -38,7 +38,7 @@ Example value: Welcome
 
 > `optional` **reset**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:274](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L274)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:304](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L304)
 
 The field reset status.
 Example value: False
@@ -49,7 +49,7 @@ Example value: False
 
 > `optional` **value**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:264](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L264)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:294](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L294)
 
 The new value of the field.
 Example value: Welcome to our site

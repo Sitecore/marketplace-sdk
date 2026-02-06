@@ -8,20 +8,25 @@
 
 > **Job** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:350](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L350)
-
-A job response entity.
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:424](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L424)
 
 ## Properties
 
-### done?
+### ~~done?~~
 
 > `optional` **done**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:360](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L360)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:429](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L429)
 
-Whether the job has finished.
-Example value: True
+#### Deprecated
+
+***
+
+### endTime?
+
+> `optional` **endTime**: `string` \| `null`
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:431](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L431)
 
 ***
 
@@ -29,10 +34,15 @@ Example value: True
 
 > `optional` **handle**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:370](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L370)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:432](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L432)
 
-The handle of the job.
-Example value: 4d97d35a-b605-4fc6-8a03-5bb8e403cdaf;customer-tenant-env
+***
+
+### jobType?
+
+> `optional` **jobType**: `string` \| `null`
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:436](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L436)
 
 ***
 
@@ -40,10 +50,7 @@ Example value: 4d97d35a-b605-4fc6-8a03-5bb8e403cdaf;customer-tenant-env
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:355](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L355)
-
-The name of the job.
-Example value: Create site
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:425](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L425)
 
 ***
 
@@ -51,10 +58,7 @@ Example value: Create site
 
 > `optional` **queueTime**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:365](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L365)
-
-A timestamp of when the job was added to the queue.
-Example value: 2024-06-12T01:47:37.316Z
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:430](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L430)
 
 ***
 
@@ -62,10 +66,7 @@ Example value: 2024-06-12T01:47:37.316Z
 
 > `optional` **site**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:375](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L375)
-
-The name of the site.
-Example value: new-site
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:433](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L433)
 
 ***
 
@@ -73,7 +74,20 @@ Example value: new-site
 
 > `optional` **siteCollection**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:380](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L380)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:434](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L434)
 
-The identifier or name of the site collection.
-Example value: {81D27BA9-F798-4190-8536-CA20203AA6EA}
+***
+
+### statistics?
+
+> `optional` **statistics**: [`JobStatisticsDto`](JobStatisticsDto.md)
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:437](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L437)
+
+***
+
+### status?
+
+> `optional` **status**: [`JobStatus`](JobStatus.md)
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:435](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L435)

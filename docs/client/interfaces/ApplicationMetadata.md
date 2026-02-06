@@ -6,7 +6,7 @@
 
 # Interface: ApplicationMetadata
 
-Defined in: [client/src/sdk-types.ts:71](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L71)
+Defined in: [packages/client/src/sdk-types.ts:83](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L83)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [client/src/sdk-types.ts:71](https://github.com/Sitecore/marketplace
 
 > **appId**: `string`
 
-Defined in: [client/src/sdk-types.ts:77](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L77)
+Defined in: [packages/client/src/sdk-types.ts:89](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L89)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [client/src/sdk-types.ts:77](https://github.com/Sitecore/marketplace
 
 > **appType**: [`AppType`](../type-aliases/AppType.md)
 
-Defined in: [client/src/sdk-types.ts:78](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L78)
+Defined in: [packages/client/src/sdk-types.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L90)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [client/src/sdk-types.ts:78](https://github.com/Sitecore/marketplace
 
 > **resources**: `object`[]
 
-Defined in: [client/src/sdk-types.ts:72](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L72)
+Defined in: [packages/client/src/sdk-types.ts:84](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L84)
 
 #### contextId
 

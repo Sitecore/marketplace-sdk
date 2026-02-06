@@ -8,4 +8,4 @@
 
 > **DetachAnalyticsIdentifierError** = [`DetachAnalyticsIdentifierErrors`](DetachAnalyticsIdentifierErrors.md)\[keyof [`DetachAnalyticsIdentifierErrors`](DetachAnalyticsIdentifierErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2682](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2682)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3027](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3027)

@@ -8,4 +8,4 @@
 
 > **GetRenderingHostsResponse** = [`GetRenderingHostsResponses`](GetRenderingHostsResponses.md)\[keyof [`GetRenderingHostsResponses`](GetRenderingHostsResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3121)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3466](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3466)

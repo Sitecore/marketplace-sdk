@@ -8,4 +8,4 @@
 
 > **DeleteCollectionError** = [`DeleteCollectionErrors`](DeleteCollectionErrors.md)\[keyof [`DeleteCollectionErrors`](DeleteCollectionErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1652](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1652)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1850](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1850)

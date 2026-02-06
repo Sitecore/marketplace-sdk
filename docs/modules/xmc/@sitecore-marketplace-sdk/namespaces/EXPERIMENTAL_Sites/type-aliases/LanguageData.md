@@ -8,7 +8,7 @@
 
 > **LanguageData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:442](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L442)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:513](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L513)
 
 Data for the site locales.
 
@@ -18,7 +18,7 @@ Data for the site locales.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:447](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L447)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:518](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L518)
 
 The display name of the language.
 Example value: Japanese (Japan) : 日本語 (日本)
@@ -29,7 +29,7 @@ Example value: Japanese (Japan) : 日本語 (日本)
 
 > `optional` **englishName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:452](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L452)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:523](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L523)
 
 The language name in English, regardless of the language being described. For example, "Deutsch" would be displayed as "German."
 Example value: English (United States)
@@ -40,7 +40,7 @@ Example value: English (United States)
 
 > `optional` **locale**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:457](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L457)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:528](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L528)
 
 The language code of the locale.
 Example value: ja-JP

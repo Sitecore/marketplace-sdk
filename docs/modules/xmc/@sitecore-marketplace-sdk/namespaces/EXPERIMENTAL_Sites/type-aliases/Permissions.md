@@ -8,7 +8,7 @@
 
 > **Permissions** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:766](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L766)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:838](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L838)
 
 The access rights of the current user to the site.
 
@@ -18,7 +18,7 @@ The access rights of the current user to the site.
 
 > `optional` **canAdmin**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:771](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L771)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:843](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L843)
 
 Whether the current user has admin rights. Being an admin means that you control access permissions for other users, and have full read and write rights.
 Example value: False
@@ -29,7 +29,7 @@ Example value: False
 
 > `optional` **canCreate**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:781](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L781)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:853](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L853)
 
 Whether the current user has permission to create entities.
 Example value: False
@@ -40,7 +40,7 @@ Example value: False
 
 > `optional` **canDelete**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:786](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L786)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:858](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L858)
 
 Whether the current user has permission to delete entities.
 Example value: False
@@ -51,7 +51,7 @@ Example value: False
 
 > `optional` **canDuplicate**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:806](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L806)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:878](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L878)
 
 Whether the current user has permission to duplicate entities.
 Example value: False
@@ -62,7 +62,7 @@ Example value: False
 
 > `optional` **canPublish**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:801](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L801)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:873](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L873)
 
 Whether the current user has permission to publish sites in this environment.
 Example value: False
@@ -73,7 +73,7 @@ Example value: False
 
 > `optional` **canRead**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:796](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L796)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:868](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L868)
 
 Whether the current user has permission to see entities, including all their parameters.
 Example value: False
@@ -84,7 +84,7 @@ Example value: False
 
 > `optional` **canRename**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:791](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L791)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:863](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L863)
 
 Whether the current user has permission to rename entities.
 Example value: False
@@ -95,7 +95,7 @@ Example value: False
 
 > `optional` **canWrite**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:776](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L776)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:848](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L848)
 
 Whether the current user has permissions to edit values. Users with write access also have read access.
 Example value: False
@@ -106,7 +106,7 @@ Example value: False
 
 > `optional` **canWriteLanguage**: `boolean`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:811](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L811)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:883](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L883)
 
 Whether the current user has permission to write item language entities.
 Example value: False

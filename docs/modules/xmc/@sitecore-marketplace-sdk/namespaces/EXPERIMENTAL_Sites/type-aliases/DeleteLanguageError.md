@@ -8,4 +8,4 @@
 
 > **DeleteLanguageError** = [`DeleteLanguageErrors`](DeleteLanguageErrors.md)\[keyof [`DeleteLanguageErrors`](DeleteLanguageErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2116](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2116)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2461](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2461)

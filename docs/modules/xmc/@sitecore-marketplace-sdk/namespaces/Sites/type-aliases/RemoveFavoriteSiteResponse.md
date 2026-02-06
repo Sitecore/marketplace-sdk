@@ -1,0 +1,11 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Sites](../README.md) / RemoveFavoriteSiteResponse
+
+# Type Alias: RemoveFavoriteSiteResponse
+
+> **RemoveFavoriteSiteResponse** = [`RemoveFavoriteSiteResponses`](RemoveFavoriteSiteResponses.md)\[keyof [`RemoveFavoriteSiteResponses`](RemoveFavoriteSiteResponses.md)\]
+
+Defined in: [packages/xmc/src/client-sites/types.gen.ts:2547](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/types.gen.ts#L2547)

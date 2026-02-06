@@ -8,4 +8,4 @@
 
 > **RetrieveCollectionResponse** = [`RetrieveCollectionResponses`](RetrieveCollectionResponses.md)\[keyof [`RetrieveCollectionResponses`](RetrieveCollectionResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1694](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1694)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1892](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1892)

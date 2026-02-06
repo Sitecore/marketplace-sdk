@@ -9,6 +9,12 @@ import {
 import type { experimental_Sites } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 
+type TranslateSiteError = experimental_Sites.TranslateSiteError;
+
+type TranslateSiteResponse = experimental_Sites.TranslateSiteResponse;
+
+type TranslateSiteData = experimental_Sites.TranslateSiteData;
+
 type RetrieveWorkflowStatisticsError = experimental_Sites.RetrieveWorkflowStatisticsError;
 
 type RetrieveWorkflowStatisticsResponse = experimental_Sites.RetrieveWorkflowStatisticsResponse;
@@ -45,6 +51,12 @@ type ListSiteTemplatesError = experimental_Sites.ListSiteTemplatesError;
 type ListSiteTemplatesResponse = experimental_Sites.ListSiteTemplatesResponse;
 
 type ListSiteTemplatesData = experimental_Sites.ListSiteTemplatesData;
+
+type GetEditingHostsError = experimental_Sites.GetEditingHostsError;
+
+type GetEditingHostsResponse = experimental_Sites.GetEditingHostsResponse;
+
+type GetEditingHostsData = experimental_Sites.GetEditingHostsData;
 
 type GetRenderingHostsError = experimental_Sites.GetRenderingHostsError;
 
@@ -230,17 +242,35 @@ type AggregateLivePageVariantsResponse = experimental_Sites.AggregateLivePageVar
 
 type AggregateLivePageVariantsData = experimental_Sites.AggregateLivePageVariantsData;
 
-type RetrieveJobError = experimental_Sites.RetrieveJobError;
+type UpdateProfileError = experimental_Sites.UpdateProfileError;
 
-type RetrieveJobResponse = experimental_Sites.RetrieveJobResponse;
+type UpdateProfileResponse = experimental_Sites.UpdateProfileResponse;
 
-type RetrieveJobData = experimental_Sites.RetrieveJobData;
+type UpdateProfileData = experimental_Sites.UpdateProfileData;
 
-type ListJobsError = experimental_Sites.ListJobsError;
+type GetProfileError = experimental_Sites.GetProfileError;
 
-type ListJobsResponse = experimental_Sites.ListJobsResponse;
+type GetProfileResponse = experimental_Sites.GetProfileResponse;
 
-type ListJobsData = experimental_Sites.ListJobsData;
+type GetProfileData = experimental_Sites.GetProfileData;
+
+type DeleteProfileError = experimental_Sites.DeleteProfileError;
+
+type DeleteProfileResponse = experimental_Sites.DeleteProfileResponse;
+
+type DeleteProfileData = experimental_Sites.DeleteProfileData;
+
+type CreateProfileError = experimental_Sites.CreateProfileError;
+
+type CreateProfileResponse = experimental_Sites.CreateProfileResponse;
+
+type CreateProfileData = experimental_Sites.CreateProfileData;
+
+type ListProfilesError = experimental_Sites.ListProfilesError;
+
+type ListProfilesResponse = experimental_Sites.ListProfilesResponse;
+
+type ListProfilesData = experimental_Sites.ListProfilesData;
 
 type AddFavoriteSiteTemplateError = experimental_Sites.AddFavoriteSiteTemplateError;
 
@@ -314,6 +344,18 @@ type ListLanguagesResponse = experimental_Sites.ListLanguagesResponse;
 
 type ListLanguagesData = experimental_Sites.ListLanguagesData;
 
+type RetrieveJobError = experimental_Sites.RetrieveJobError;
+
+type RetrieveJobResponse = experimental_Sites.RetrieveJobResponse;
+
+type RetrieveJobData = experimental_Sites.RetrieveJobData;
+
+type ListJobsError = experimental_Sites.ListJobsError;
+
+type ListJobsResponse = experimental_Sites.ListJobsResponse;
+
+type ListJobsData = experimental_Sites.ListJobsData;
+
 export type Options<
   TData extends TDataShape = TDataShape,
   ThrowOnError extends boolean = boolean,
@@ -329,6 +371,38 @@ export type Options<
    * used to access values that aren't defined as part of the SDK function.
    */
   meta?: Record<string, unknown>;
+};
+
+export const listJobs = <ThrowOnError extends boolean = false>(
+  options?: Options<ListJobsData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).get<ListJobsResponse, ListJobsError, ThrowOnError>({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/jobs',
+    ...options,
+  });
+};
+
+export const retrieveJob = <ThrowOnError extends boolean = false>(
+  options: Options<RetrieveJobData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<RetrieveJobResponse, RetrieveJobError, ThrowOnError>(
+    {
+      security: [
+        {
+          scheme: 'bearer',
+          type: 'http',
+        },
+      ],
+      url: '/api/v1/jobs/{jobHandle}/status',
+      ...options,
+    },
+  );
 };
 
 /**
@@ -356,7 +430,7 @@ export const listLanguages = <ThrowOnError extends boolean = false>(
 
 /**
  * Add a language
- * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by Sitecore XM Cloud. If you do not know the language code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
+ * Adds a language to your environment, so you can create content and build websites in that language. You can choose from the language supported by SitecoreAI. If you do not know the language code of the language, first retrieve the list of languages supported in SitecoreAI.
  * To add a language to the system, you must provide the language code. You can optionally input additional parameters, such as region code and spell checker.
  * If you want to add a custom language not in the default cultures, register it as a custom culture (as described in .NET CultureInfo class) and update the LanguageDefinitions.config file.
  */
@@ -385,7 +459,7 @@ export const createLanguage = <ThrowOnError extends boolean = false>(
 
 /**
  * List supported languages
- * Retrieves the list of languages supported by Sitecore XM Cloud, and associated data.
+ * Retrieves the list of languages supported by SitecoreAI, and associated data.
  */
 export const listSupportedLanguages = <ThrowOnError extends boolean = false>(
   options?: Options<ListSupportedLanguagesData, ThrowOnError>,
@@ -630,43 +704,122 @@ export const addFavoriteSiteTemplate = <ThrowOnError extends boolean = false>(
 };
 
 /**
- * List site job statuses
- * Fetches information about background jobs. Returns empty array if no jobs are running.
+ * List all profiles
+ * Fetches a list of all profiles in the environment, with associated details.
  */
-export const listJobs = <ThrowOnError extends boolean = false>(
-  options?: Options<ListJobsData, ThrowOnError>,
+export const listProfiles = <ThrowOnError extends boolean = false>(
+  options?: Options<ListProfilesData, ThrowOnError>,
 ) => {
-  return (options?.client ?? _heyApiClient).get<ListJobsResponse, ListJobsError, ThrowOnError>({
+  return (options?.client ?? _heyApiClient).get<
+    ListProfilesResponse,
+    ListProfilesError,
+    ThrowOnError
+  >({
     security: [
       {
         scheme: 'bearer',
         type: 'http',
       },
     ],
-    url: '/api/v1/jobs',
+    url: '/api/ui/v1/editorprofiles',
     ...options,
   });
 };
 
 /**
- * Retrieve a job status
- * Fetches information about a background job.
+ * Create a profile
+ * Creates a new profile in the environment.
  */
-export const retrieveJob = <ThrowOnError extends boolean = false>(
-  options: Options<RetrieveJobData, ThrowOnError>,
+export const createProfile = <ThrowOnError extends boolean = false>(
+  options: Options<CreateProfileData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).get<RetrieveJobResponse, RetrieveJobError, ThrowOnError>(
-    {
-      security: [
-        {
-          scheme: 'bearer',
-          type: 'http',
-        },
-      ],
-      url: '/api/v1/jobs/{jobHandle}/status',
-      ...options,
+  return (options.client ?? _heyApiClient).post<
+    CreateProfileResponse,
+    CreateProfileError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/ui/v1/editorprofiles',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
     },
-  );
+  });
+};
+
+/**
+ * Delete a profile
+ * Deletes a profile, including the toolbar configuration associated with that profile.
+ */
+export const deleteProfile = <ThrowOnError extends boolean = false>(
+  options: Options<DeleteProfileData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).delete<
+    DeleteProfileResponse,
+    DeleteProfileError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/ui/v1/editorprofiles/{id}',
+    ...options,
+  });
+};
+
+/**
+ * Retrieve a profile
+ * Fetches the details of a profile.
+ */
+export const getProfile = <ThrowOnError extends boolean = false>(
+  options: Options<GetProfileData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<GetProfileResponse, GetProfileError, ThrowOnError>({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/ui/v1/editorprofiles/{id}',
+    ...options,
+  });
+};
+
+/**
+ * Update a profile
+ * Updates the properties of a profile.
+ */
+export const updateProfile = <ThrowOnError extends boolean = false>(
+  options: Options<UpdateProfileData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).patch<
+    UpdateProfileResponse,
+    UpdateProfileError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/ui/v1/editorprofiles/{id}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
 };
 
 /**
@@ -812,7 +965,7 @@ export const validateCollectionName = <ThrowOnError extends boolean = false>(
 
 /**
  * Delete a language
- * Deletes a language from the XM Cloud environment.
+ * Deletes a language from the SitecoreAI environment.
  * To delete a language from the system, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages added to the environment.
  */
 export const deleteLanguage = <ThrowOnError extends boolean = false>(
@@ -836,8 +989,8 @@ export const deleteLanguage = <ThrowOnError extends boolean = false>(
 
 /**
  * Update a language
- * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by Sitecore XM Cloud.
- * To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in Sitecore XM Cloud.
+ * Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/add-a-language-to-your-xm-cloud-environment.html#add-a-custom-language) by SitecoreAI.
+ * To update a language, you must provide the regional ISO code of the language. If you do not know the ISO code of the language, first retrieve the list of languages supported in SitecoreAI.
  */
 export const updateLanguage = <ThrowOnError extends boolean = false>(
   options: Options<UpdateLanguageData, ThrowOnError>,
@@ -1403,7 +1556,10 @@ export const updateHost = <ThrowOnError extends boolean = false>(
 };
 
 /**
+ * @deprecated
  * List rendering hosts for a site
+ * **Deprecated:** Use GetEditingHosts endpoint instead.
+ *
  * Fetches a list of rendering hosts for a site.
  */
 export const getRenderingHosts = <ThrowOnError extends boolean = false>(
@@ -1421,6 +1577,29 @@ export const getRenderingHosts = <ThrowOnError extends boolean = false>(
       },
     ],
     url: '/api/v1/sites/{siteId}/renderinghosts',
+    ...options,
+  });
+};
+
+/**
+ * List editing hosts for a site
+ * Fetches a list of editing hosts for a site.
+ */
+export const getEditingHosts = <ThrowOnError extends boolean = false>(
+  options: Options<GetEditingHostsData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).get<
+    GetEditingHostsResponse,
+    GetEditingHostsError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/sites/{siteId}/editinghosts',
     ...options,
   });
 };
@@ -1450,7 +1629,7 @@ export const listSiteTemplates = <ThrowOnError extends boolean = false>(
 
 /**
  * Upload a thumbnail for a site
- * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [XM Cloud Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
+ * Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users/ea-xm-cloud/manage-sites.html#manage-general-site-settings) for a site when it is displayed in the [SitecoreAI Sites application](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html).
  */
 export const uploadSiteThumbnail = <ThrowOnError extends boolean = false>(
   options: Options<UploadSiteThumbnailData, ThrowOnError>,
@@ -1569,5 +1748,32 @@ export const retrieveWorkflowStatistics = <ThrowOnError extends boolean = false>
     ],
     url: '/api/v1/sites/{siteId}/statistics/workflow',
     ...options,
+  });
+};
+
+/**
+ * Translate a site
+ * Creates new translated versions of all items for a specific site using the Stream API.
+ */
+export const translateSite = <ThrowOnError extends boolean = false>(
+  options: Options<TranslateSiteData, ThrowOnError>,
+) => {
+  return (options.client ?? _heyApiClient).post<
+    TranslateSiteResponse,
+    TranslateSiteError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/sites/{siteId}/translate',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
   });
 };

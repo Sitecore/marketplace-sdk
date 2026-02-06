@@ -8,7 +8,7 @@
 
 > **CreatePageData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1258](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1258)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1327](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1327)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1258](https
 
 > `optional` **body**: [`CreatePageInput`](CreatePageInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1262](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1262)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1331](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1331)
 
 Input data containing properties of the page
 
@@ -26,7 +26,7 @@ Input data containing properties of the page
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1263](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1263)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1332](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1332)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1263](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1264](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1264)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1333](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1333)
 
 #### environmentId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1274](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1274)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1343](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1343)

@@ -8,4 +8,4 @@
 
 > **RetrievePageStateResponse** = [`RetrievePageStateResponses`](RetrievePageStateResponses.md)\[keyof [`RetrievePageStateResponses`](RetrievePageStateResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:975](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L975)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1044](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1044)

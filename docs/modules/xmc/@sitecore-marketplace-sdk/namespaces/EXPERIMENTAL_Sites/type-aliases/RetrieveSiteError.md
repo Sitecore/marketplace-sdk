@@ -8,4 +8,4 @@
 
 > **RetrieveSiteError** = [`RetrieveSiteErrors`](RetrieveSiteErrors.md)\[keyof [`RetrieveSiteErrors`](RetrieveSiteErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2373](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2373)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2718](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2718)

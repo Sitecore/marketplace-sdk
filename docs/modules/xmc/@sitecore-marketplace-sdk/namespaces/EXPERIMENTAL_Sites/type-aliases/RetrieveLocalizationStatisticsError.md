@@ -8,4 +8,4 @@
 
 > **RetrieveLocalizationStatisticsError** = [`RetrieveLocalizationStatisticsErrors`](RetrieveLocalizationStatisticsErrors.md)\[keyof [`RetrieveLocalizationStatisticsErrors`](RetrieveLocalizationStatisticsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3231](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3231)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3614](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3614)

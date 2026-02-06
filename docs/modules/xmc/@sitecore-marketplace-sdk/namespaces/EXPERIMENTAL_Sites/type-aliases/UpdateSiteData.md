@@ -8,7 +8,7 @@
 
 > **UpdateSiteData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2381](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2381)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2726](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2726)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2381](https
 
 > `optional` **body**: [`UpdateSiteInput`](UpdateSiteInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2385](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2385)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2730](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2730)
 
 Various site configuration properties
 
@@ -26,7 +26,7 @@ Various site configuration properties
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2386](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2386)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2731](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2731)
 
 #### siteId
 
@@ -40,7 +40,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2392](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2392)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2737](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2737)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2402](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2402)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2747](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2747)

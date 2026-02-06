@@ -8,14 +8,14 @@
 
 > **CopySiteResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2456](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2456)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2801](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2801)
 
 ## Properties
 
 ### 200
 
-> **200**: `string`
+> **200**: [`JobResponse`](JobResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2460](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2460)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2805](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2805)
 
 Success

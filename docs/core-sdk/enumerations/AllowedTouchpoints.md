@@ -4,7 +4,7 @@
 
 [@sitecore-marketplace-sdk/core](../README.md) / AllowedTouchpoints
 
-# Enumeration: ~~AllowedTouchpoints~~
+# ~~Enumeration: AllowedTouchpoints~~
 
 Defined in: [packages/core/src/constants.ts:4](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/constants.ts#L4)
 

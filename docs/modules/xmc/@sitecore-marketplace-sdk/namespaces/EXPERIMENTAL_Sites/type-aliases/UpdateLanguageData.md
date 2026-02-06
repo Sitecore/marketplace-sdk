@@ -8,7 +8,7 @@
 
 > **UpdateLanguageData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2124](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2124)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2469](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2469)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2124](https
 
 > **body**: [`EditLanguageInput`](EditLanguageInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2128](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2128)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2473](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2473)
 
 Input parameters
 
@@ -26,7 +26,7 @@ Input parameters
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2129](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2129)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2474](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2474)
 
 #### isoCode
 
@@ -40,7 +40,7 @@ Regional ISO code of the language to update
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2135](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2135)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2480](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2480)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/languages/{isoCode}"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2145](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2145)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2490](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2490)

@@ -8,4 +8,4 @@
 
 > **DeletePageVersionsError** = [`DeletePageVersionsErrors`](DeletePageVersionsErrors.md)\[keyof [`DeletePageVersionsErrors`](DeletePageVersionsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1533](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1533)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1679](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1679)

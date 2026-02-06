@@ -8,7 +8,7 @@
 
 > **RenameSiteData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2463](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2463)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2808](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2808)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2463](https
 
 > **body**: [`RenameSiteInput`](RenameSiteInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2467](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2467)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2812](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2812)
 
 Input object containing new name of the site
 
@@ -26,7 +26,7 @@ Input object containing new name of the site
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2468](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2468)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2813](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2813)
 
 #### siteId
 
@@ -40,7 +40,7 @@ The identifier of the site you want to rename.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2474](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2474)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2819](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2819)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/rename"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2484](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2484)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2829](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2829)

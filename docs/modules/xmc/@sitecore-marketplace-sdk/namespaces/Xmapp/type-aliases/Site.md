@@ -144,7 +144,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:901](https://github.com/
 
 ### properties?
 
-> `optional` **properties**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **properties**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:932](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L932)
 
@@ -154,7 +154,7 @@ The read-only properties of the site.
 
 ### settings?
 
-> `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:926](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L926)
 

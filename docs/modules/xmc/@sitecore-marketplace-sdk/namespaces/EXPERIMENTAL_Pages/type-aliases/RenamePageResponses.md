@@ -8,7 +8,7 @@
 
 > **RenamePageResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1447](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1447)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1548](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1548)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1447](https
 
 > **200**: [`PageOperationResult`](PageOperationResult.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1451](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1451)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1552](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1552)
 
 Success

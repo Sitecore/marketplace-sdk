@@ -8,4 +8,4 @@
 
 > **DuplicatePageError** = [`DuplicatePageErrors`](DuplicatePageErrors.md)\[keyof [`DuplicatePageErrors`](DuplicatePageErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1405](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1405)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1506](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1506)

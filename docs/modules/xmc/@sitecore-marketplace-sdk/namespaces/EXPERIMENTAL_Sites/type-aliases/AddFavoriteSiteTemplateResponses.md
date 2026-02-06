@@ -8,7 +8,7 @@
 
 > **AddFavoriteSiteTemplateResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1860](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1860)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2058](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2058)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1860](https
 
 > **201**: [`FavoriteDto`](FavoriteDto.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1864](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1864)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2062](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2062)
 
 Success

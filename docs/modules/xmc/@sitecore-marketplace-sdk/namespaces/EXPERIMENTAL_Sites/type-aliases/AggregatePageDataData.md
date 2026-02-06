@@ -8,7 +8,7 @@
 
 > **AggregatePageDataData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1953](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1953)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2298](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2298)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1953](https
 
 > `optional` **body**: [`PageRequest`](PageRequest.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1957](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1957)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2302](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2302)
 
 The collection of pages, by their identifier and language, for which to get data.
 
@@ -26,7 +26,7 @@ The collection of pages, by their identifier and language, for which to get data
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1958](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1958)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2303](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2303)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1958](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1959](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1959)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2304](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2304)
 
 #### sitecoreContextId?
 
@@ -48,4 +48,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/aggregation/pages"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1965](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1965)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2310](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2310)

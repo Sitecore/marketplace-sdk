@@ -8,7 +8,7 @@
 
 > **DeleteHostResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2987](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2987)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3332](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3332)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2987](https
 
 > **202**: `unknown`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2991](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2991)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3336](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3336)
 
 Accepted

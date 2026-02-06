@@ -8,7 +8,7 @@
 
 > **UploadSiteThumbnailResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3189](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3189)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3572](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3572)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3189](https
 
 > **200**: [`UploadMediaOutput`](UploadMediaOutput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3193](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3193)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3576](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3576)
 
 Success

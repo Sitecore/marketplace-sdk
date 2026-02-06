@@ -8,7 +8,7 @@
 
 > **SaveLayoutData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1290](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1290)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1391](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1391)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1290](https
 
 > `optional` **body**: [`SavePageLayoutInput`](SavePageLayoutInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1294](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1294)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1395](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1395)
 
 Input data containing layout of the page
 
@@ -26,7 +26,7 @@ Input data containing layout of the page
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1295](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1295)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1396](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1396)
 
 #### pageId
 
@@ -40,7 +40,7 @@ The page identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1301](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1301)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1402](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1402)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/layout"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1311](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1311)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1412](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1412)

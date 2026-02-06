@@ -8,4 +8,4 @@
 
 > **SaveLayoutResponse** = [`SaveLayoutResponses`](SaveLayoutResponses.md)\[keyof [`SaveLayoutResponses`](SaveLayoutResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1330](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1330)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1431](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1431)

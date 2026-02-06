@@ -6,15 +6,15 @@
 
 # Interface: QueryMap
 
-Defined in: [client/src/sdk-types.ts:211](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L211)
+Defined in: [packages/client/src/sdk-types.ts:265](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L265)
 
 ## Properties
 
 ### application.context
 
-> **context**: `object`
+> **application.context**: `object`
 
-Defined in: [client/src/sdk-types.ts:229](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L229)
+Defined in: [packages/client/src/sdk-types.ts:283](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L283)
 
 #### params
 
@@ -32,9 +32,9 @@ Defined in: [client/src/sdk-types.ts:229](https://github.com/Sitecore/marketplac
 
 ### host.route
 
-> **route**: `object`
+> **host.route**: `object`
 
-Defined in: [client/src/sdk-types.ts:239](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L239)
+Defined in: [packages/client/src/sdk-types.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L293)
 
 #### params
 
@@ -52,9 +52,9 @@ Defined in: [client/src/sdk-types.ts:239](https://github.com/Sitecore/marketplac
 
 ### host.state
 
-> **state**: `object`
+> **host.state**: `object`
 
-Defined in: [client/src/sdk-types.ts:217](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L217)
+Defined in: [packages/client/src/sdk-types.ts:271](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L271)
 
 #### params
 
@@ -62,7 +62,7 @@ Defined in: [client/src/sdk-types.ts:217](https://github.com/Sitecore/marketplac
 
 #### response
 
-> **response**: `null` \| [`XmcXmAppsHostState`](XmcXmAppsHostState.md) \| [`XmcPagesContextViewHostState`](XmcPagesContextViewHostState.md)
+> **response**: [`XmcXmAppsHostState`](XmcXmAppsHostState.md) \| [`XmcPagesContextViewHostState`](XmcPagesContextViewHostState.md) \| `null`
 
 #### subscribe
 
@@ -72,9 +72,9 @@ Defined in: [client/src/sdk-types.ts:217](https://github.com/Sitecore/marketplac
 
 ### host.user
 
-> **user**: `object`
+> **host.user**: `object`
 
-Defined in: [client/src/sdk-types.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L212)
+Defined in: [packages/client/src/sdk-types.ts:266](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L266)
 
 #### params
 
@@ -92,9 +92,9 @@ Defined in: [client/src/sdk-types.ts:212](https://github.com/Sitecore/marketplac
 
 ### pages.context
 
-> **context**: `object`
+> **pages.context**: `object`
 
-Defined in: [client/src/sdk-types.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L224)
+Defined in: [packages/client/src/sdk-types.ts:278](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L278)
 
 #### params
 
@@ -112,9 +112,9 @@ Defined in: [client/src/sdk-types.ts:224](https://github.com/Sitecore/marketplac
 
 ### site.context
 
-> **context**: `object`
+> **site.context**: `object`
 
-Defined in: [client/src/sdk-types.ts:234](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L234)
+Defined in: [packages/client/src/sdk-types.ts:288](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L288)
 
 #### params
 

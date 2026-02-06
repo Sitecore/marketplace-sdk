@@ -30,7 +30,7 @@ Defined in: [packages/xmc/src/client-agent/types.gen.ts:5](https://github.com/Si
 
 ### fields?
 
-> `optional` **fields**: \{[`key`: `string`]: `unknown`; \} \| `null`
+> `optional` **fields**: \{\[`key`: `string`\]: `unknown`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-agent/types.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/types.gen.ts#L9)
 

@@ -8,7 +8,7 @@
 
 > **GetLivePageStateResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1252](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1252)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1321](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1321)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1252](https
 
 > **200**: `unknown`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1256](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1256)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1325](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1325)
 
 Success

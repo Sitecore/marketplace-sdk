@@ -8,7 +8,7 @@
 
 > **RenameSiteCollectionInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:846](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L846)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:918](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L918)
 
 Site collection rename request.
 
@@ -18,7 +18,7 @@ Site collection rename request.
 
 > **systemName**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:851](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L851)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:923](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L923)
 
 The new system name for the site collection.
 Example value: skate-brand-sites

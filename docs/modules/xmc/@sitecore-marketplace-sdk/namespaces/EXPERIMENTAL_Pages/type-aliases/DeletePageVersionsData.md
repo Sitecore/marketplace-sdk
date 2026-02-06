@@ -8,7 +8,7 @@
 
 > **DeletePageVersionsData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1495](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1495)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1641](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1641)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1495](https
 
 > `optional` **body**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1496](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1496)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1642](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1642)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1496](https
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1497](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1497)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1643](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1643)
 
 #### language
 
@@ -50,7 +50,7 @@ The number of the version to delete.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1511](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1511)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1657](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1657)
 
 #### environmentId?
 
@@ -70,4 +70,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/versions/{versionNumber}/{language}"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1521](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1521)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1667](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1667)
