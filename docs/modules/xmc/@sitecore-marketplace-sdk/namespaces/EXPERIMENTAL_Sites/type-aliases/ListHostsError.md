@@ -8,4 +8,4 @@
 
 > **ListHostsError** = [`ListHostsErrors`](ListHostsErrors.md)\[keyof [`ListHostsErrors`](ListHostsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2899](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2899)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3244](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3244)

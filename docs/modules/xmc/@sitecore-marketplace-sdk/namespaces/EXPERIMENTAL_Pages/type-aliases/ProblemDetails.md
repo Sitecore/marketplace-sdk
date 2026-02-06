@@ -8,7 +8,7 @@
 
 > **ProblemDetails** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:550](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L550)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:581](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L581)
 
 ## Indexable
 
@@ -20,7 +20,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:550](https:
 
 > `optional` **detail**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:566](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L566)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:597](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L597)
 
 A detailed explanation, specific to this occurrence of the problem.
 
@@ -30,7 +30,7 @@ A detailed explanation, specific to this occurrence of the problem.
 
 > `optional` **instance**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:570](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L570)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:601](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L601)
 
 If available, a URI reference that identifies the specific occurrence of the problem.
 
@@ -40,7 +40,7 @@ If available, a URI reference that identifies the specific occurrence of the pro
 
 > `optional` **status**: `number` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:562](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L562)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:593](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L593)
 
 The response status code.
 
@@ -50,7 +50,7 @@ The response status code.
 
 > `optional` **title**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:558](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L558)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:589](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L589)
 
 The title of the error response entity.
 
@@ -60,6 +60,6 @@ The title of the error response entity.
 
 > `optional` **type**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:554](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L554)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:585](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L585)
 
 The type of the error response entity.

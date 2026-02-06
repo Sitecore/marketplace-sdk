@@ -2,7 +2,8 @@
 
 The `xmc` package extends the Client SDK and provides type-safe interfaces for interacting with the following Sitecore XM Cloud APIs:
 -   [Authoring and Management GraphQL API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/sitecore-authoring-and-management-graphql-api.html) - to manage Sitecore content using GraphQL.
--   [XM Apps REST API](https://api-docs.sitecore.com/xmc/xm-apps-api) - to manage sites, site collections, pages, and languages.
+-   [Pages API](https://api-docs.sitecore.com/sai/pages-api) - to manage site pages in SitecoreAI.
+  - [Sites API](https://api-docs.sitecore.com/sai/sites-api) - to manage site collections, sites, languages and running background jobs.
 -   [Experience Edge Token API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/experience-edge-for-xm-apis.html) - to manage API keys for the Delivery API.
 -   [Experience Edge Admin API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/experience-edge-for-xm-apis.html) - to administer your Edge tenant.
 
@@ -35,26 +36,53 @@ const config = {
 
 ## Usage
 ### Make a query
-Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For example, pass `'xmc.xmapp.listSites'` to retrieve a list of sites:
+Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For examples:
+
+- pass `'xmc.sites.listSites'` to retrieve a list of sites:
 
 ```typescript
-client.query("xmc.xmapp.listSites", {
-   params: {
+client.query("xmc.sites.listSites", {
+    params: {
         query: {
-          sitecoreContextId,
+            sitecoreContextId,
         },
-      },
-})
-  .then((res) => {
+    },
+}).then((res) => {
     console.log(
-      "Success retrieving xmc.xmapp.getLivePageState:",
-      res.data
+        "Success retrieving xmc.sites.listSites:",
+        res.data
     );
-  })
-  .catch((error) => {
+}).catch((error) => {
     console.error(
-      "Error retrieving xmc.xmapp.getLivePageState:",
-      error
+        "Error retrieving xmc.sites.listSites:",
+        error
+    );
+});
+```
+
+- pass `'xmc.pages.retrievePage'` to retrieve information about a specific page:
+
+```typescript
+client.query("xmc.pages.retrievePage", {
+    params: {
+        path: {
+            pageId,
+        },
+        query: {
+            site,
+            sitecoreContextId,
+            language,
+        },
+    },
+}).then((res) => {
+    console.log(
+        "Success retrieving xmc.pages.retrievePage:",
+        res.data
+    );
+}).catch((error) => {
+    console.error(
+        "Error retrieving xmc.pages.retrievePage:",
+        error
     );
 });
 ```

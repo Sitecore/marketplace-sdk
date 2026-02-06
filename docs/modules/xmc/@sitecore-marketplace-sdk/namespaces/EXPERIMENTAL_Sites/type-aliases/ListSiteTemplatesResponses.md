@@ -8,7 +8,7 @@
 
 > **ListSiteTemplatesResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3145](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3145)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3528](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3528)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3145](https
 
 > **200**: [`SiteTemplate`](SiteTemplate.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3149](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3149)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3532](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3532)
 
 Success

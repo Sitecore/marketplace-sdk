@@ -8,7 +8,7 @@
 
 > **UpdateLanguageErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2147](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2147)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2492](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2492)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2147](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2151](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2151)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2496](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2496)
 
 Bad request
 
@@ -26,6 +26,6 @@ Bad request
 
 > **404**: [`Language`](Language.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2155](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2155)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2500](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2500)
 
 Not found

@@ -8,4 +8,4 @@
 
 > **RetrieveWorkflowStatisticsError** = [`RetrieveWorkflowStatisticsErrors`](RetrieveWorkflowStatisticsErrors.md)\[keyof [`RetrieveWorkflowStatisticsErrors`](RetrieveWorkflowStatisticsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3358](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3358)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3741](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3741)

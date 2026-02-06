@@ -8,7 +8,7 @@
 
 > **SiteCollection** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:986](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L986)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1059](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1059)
 
 Site collection response entity.
 
@@ -18,7 +18,7 @@ Site collection response entity.
 
 > `optional` **created**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1021](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1021)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1094](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1094)
 
 The date when the site collection was created.
 Example value: 2019-08-24T14:15:22Z
@@ -29,7 +29,7 @@ Example value: 2019-08-24T14:15:22Z
 
 > `optional` **createdBy**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1016](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1016)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1089](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1089)
 
 The ID of the user who created the site collection.
 Example value: L6kfw52ZVf
@@ -40,7 +40,7 @@ Example value: L6kfw52ZVf
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1001](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1001)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1074](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1074)
 
 The description of the site collection.
 Example value: Collection for all Skate Park brand websites.
@@ -51,7 +51,7 @@ Example value: Collection for all Skate Park brand websites.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1006](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1006)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1079](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1079)
 
 The display name of the site collection.
 Example value: Skate Park Websites
@@ -62,7 +62,7 @@ Example value: Skate Park Websites
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:991](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L991)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1064](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1064)
 
 The identifier of the site collection.
 Example value: 497f6eca-6276-4993-bfeb-53cbbbba6f08
@@ -73,7 +73,7 @@ Example value: 497f6eca-6276-4993-bfeb-53cbbbba6f08
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:996](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L996)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1069](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1069)
 
 The unique system name of the site collection.
 Example value: skate-park-sites
@@ -84,15 +84,15 @@ Example value: skate-park-sites
 
 > `optional` **permissions**: [`Permissions`](Permissions.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1022](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1022)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1095](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1095)
 
 ***
 
 ### settings?
 
-> `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1026](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1026)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1099](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1099)
 
 The site collection settings.
 
@@ -102,7 +102,7 @@ The site collection settings.
 
 > `optional` **sortOrder**: `number` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1011](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1011)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1084](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1084)
 
 Sort order of the site collection.
 Example value: 100

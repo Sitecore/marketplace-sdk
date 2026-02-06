@@ -8,4 +8,4 @@
 
 > **ListCollectionsError** = [`ListCollectionsErrors`](ListCollectionsErrors.md)\[keyof [`ListCollectionsErrors`](ListCollectionsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1588](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1588)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1786](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1786)

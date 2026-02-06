@@ -8,7 +8,7 @@
 
 > **SaveLayoutResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1324](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1324)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1425](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1425)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1324](https
 
 > **200**: [`SavePageResult`](SavePageResult.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1328](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1328)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1429](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1429)
 
 Success

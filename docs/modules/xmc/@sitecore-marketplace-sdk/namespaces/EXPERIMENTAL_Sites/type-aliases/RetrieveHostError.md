@@ -8,4 +8,4 @@
 
 > **RetrieveHostError** = [`RetrieveHostErrors`](RetrieveHostErrors.md)\[keyof [`RetrieveHostErrors`](RetrieveHostErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3027](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3027)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3372](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3372)

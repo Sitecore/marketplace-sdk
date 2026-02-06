@@ -8,7 +8,7 @@
 
 > **PagesAggregationResponse** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:760](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L760)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:832](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L832)
 
 ## Properties
 
@@ -16,4 +16,4 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:760](https:
 
 > `optional` **pages**: [`PageAggregationResponse`](PageAggregationResponse.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:761](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L761)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:833](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L833)

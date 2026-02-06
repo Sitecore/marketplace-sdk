@@ -1,0 +1,80 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Pages](../README.md) / PageTemplate
+
+# Type Alias: PageTemplate
+
+> **PageTemplate** = `object`
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:408](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L408)
+
+## Properties
+
+### baseTemplateIds?
+
+> `optional` **baseTemplateIds**: `string`[] \| `null`
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:431](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L431)
+
+The identifiers of the base templates.
+Example value: [
+"4cf51e95-ee7e-4ad6-a69f-e4d740b03616",
+"d9584f11-07d3-4cda-8373-7f97ceedbc09"
+]
+
+***
+
+### displayName?
+
+> `optional` **displayName**: `string` \| `null`
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:436](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L436)
+
+The display name of the page template.
+Example value: Main Page
+
+***
+
+### id?
+
+> `optional` **id**: `string` \| `null`
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:413](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L413)
+
+The identifier of the page template.
+Example value: 2341ef32-42f4-4537-98d8-9ef741008eab
+
+***
+
+### isBranchTemplate?
+
+> `optional` **isBranchTemplate**: `boolean`
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:441](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L441)
+
+Whether the template is a branch template.
+Example value: True
+
+***
+
+### name?
+
+> `optional` **name**: `string` \| `null`
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:418](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L418)
+
+The name of the page template.
+Example value: MainPage
+
+***
+
+### path?
+
+> `optional` **path**: `string` \| `null`
+
+Defined in: [packages/xmc/src/client-pages/types.gen.ts:423](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/types.gen.ts#L423)
+
+The path of the page template.
+Example value: /sitecore/templates/Standard Template

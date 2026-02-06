@@ -8,4 +8,4 @@
 
 > **CreateLanguageResponse** = [`CreateLanguageResponses`](CreateLanguageResponses.md)\[keyof [`CreateLanguageResponses`](CreateLanguageResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1538](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1538)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1736](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1736)

@@ -8,4 +8,4 @@
 
 > **UpdateFieldsResponse** = [`UpdateFieldsResponses`](UpdateFieldsResponses.md)\[keyof [`UpdateFieldsResponses`](UpdateFieldsResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:913](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L913)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:982](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L982)

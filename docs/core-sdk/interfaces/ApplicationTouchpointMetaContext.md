@@ -4,7 +4,7 @@
 
 [@sitecore-marketplace-sdk/core](../README.md) / ApplicationTouchpointMetaContext
 
-# Interface: ~~ApplicationTouchpointMetaContext~~
+# ~~Interface: ApplicationTouchpointMetaContext~~
 
 Defined in: [packages/core/src/shared-types.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L121)
 
@@ -33,6 +33,14 @@ Defined in: [packages/core/src/shared-types.ts:125](https://github.com/Sitecore/
 > `optional` **developerName**: `string`
 
 Defined in: [packages/core/src/shared-types.ts:128](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L128)
+
+***
+
+### ~~display?~~
+
+> `optional` **display**: `string`
+
+Defined in: [packages/core/src/shared-types.ts:129](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/shared-types.ts#L129)
 
 ***
 

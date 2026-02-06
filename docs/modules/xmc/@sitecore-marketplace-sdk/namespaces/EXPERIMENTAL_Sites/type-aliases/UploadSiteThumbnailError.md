@@ -8,4 +8,4 @@
 
 > **UploadSiteThumbnailError** = [`UploadSiteThumbnailErrors`](UploadSiteThumbnailErrors.md)\[keyof [`UploadSiteThumbnailErrors`](UploadSiteThumbnailErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3188](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3188)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3571](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3571)

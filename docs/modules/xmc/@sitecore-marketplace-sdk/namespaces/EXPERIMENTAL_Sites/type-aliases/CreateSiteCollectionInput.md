@@ -8,7 +8,7 @@
 
 > **CreateSiteCollectionInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:188](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L188)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:209](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L209)
 
 A site collection creation request.
 
@@ -18,7 +18,7 @@ A site collection creation request.
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:203](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L203)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L224)
 
 A longer, more detailed description of the collection.
 Example value: Collection for all Skate Park brand websites.
@@ -29,7 +29,7 @@ Example value: Collection for all Skate Park brand websites.
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:198](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L198)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:219](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L219)
 
 A short, meaningful name for the collection.
 Example value: Skate Brand Websites
@@ -40,7 +40,7 @@ Example value: Skate Brand Websites
 
 > **name**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:193](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L193)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:214](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L214)
 
 The unique system name of the new collection.
 Example value: skate-brand-sites

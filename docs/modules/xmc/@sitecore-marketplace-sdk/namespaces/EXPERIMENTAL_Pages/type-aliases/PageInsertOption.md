@@ -8,7 +8,7 @@
 
 > **PageInsertOption** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:276](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L276)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:306](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L306)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:276](https:
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:286](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L286)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:316](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L316)
 
 Template display name
 Example value: Page
@@ -27,7 +27,15 @@ Example value: Page
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:281](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L281)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:311](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L311)
 
 Template ID
 Example value: 6fe7d655-1e3d-4c27-8010-5777f06c6c4f
+
+***
+
+### templateType?
+
+> `optional` **templateType**: [`TemplateType`](TemplateType.md)
+
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:317](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L317)

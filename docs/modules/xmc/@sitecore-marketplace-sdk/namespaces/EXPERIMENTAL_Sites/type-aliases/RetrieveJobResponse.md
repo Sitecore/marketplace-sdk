@@ -8,4 +8,4 @@
 
 > **RetrieveJobResponse** = [`RetrieveJobResponses`](RetrieveJobResponses.md)\[keyof [`RetrieveJobResponses`](RetrieveJobResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1922](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1922)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1675](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1675)

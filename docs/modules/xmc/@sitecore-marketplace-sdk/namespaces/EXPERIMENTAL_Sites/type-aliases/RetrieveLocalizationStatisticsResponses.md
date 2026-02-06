@@ -8,7 +8,7 @@
 
 > **RetrieveLocalizationStatisticsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3233](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3233)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3616](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3616)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3233](https
 
 > **200**: [`LocalizationStatistics`](LocalizationStatistics.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3237](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3237)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3620](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3620)
 
 Success

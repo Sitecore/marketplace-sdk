@@ -8,7 +8,7 @@
 
 > **SiteLanguageSettings** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1033](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1033)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1106](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1106)
 
 The language settings of the host.
 
@@ -18,7 +18,7 @@ The language settings of the host.
 
 > `optional` **defaultLanguage**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1038](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1038)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1111](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1111)
 
 The default language.
 Example value: en
@@ -29,7 +29,7 @@ Example value: en
 
 > `optional` **fieldLanguageFallback**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1053](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1053)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1126](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1126)
 
 Whether field language fallback is enabled.
 Example value: False
@@ -40,7 +40,7 @@ Example value: False
 
 > `optional` **itemLanguageFallback**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1048](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1048)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1121)
 
 Whether item language fallback is enabled.
 Example value: False
@@ -51,7 +51,7 @@ Example value: False
 
 > `optional` **languageEmbedding**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1043](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1043)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1116](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1116)
 
 Whether language embedding is enabled.
 Example value: False

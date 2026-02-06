@@ -8,7 +8,7 @@
 
 > **DetachAnalyticsIdentifierData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2649](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2649)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2994](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2994)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2649](https
 
 > **body**: [`DetachFromSitesInput`](DetachFromSitesInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2653](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2653)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2998](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2998)
 
 Input containing an array of site identifiers.
 
@@ -26,7 +26,7 @@ Input containing an array of site identifiers.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2654](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2654)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2999](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2999)
 
 #### analyticsIdentifier
 
@@ -40,7 +40,7 @@ Analytics identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2660](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2660)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3005](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3005)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/analytics-identifiers/{analyticsIdentifier}/detach"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2670](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2670)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3015](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3015)

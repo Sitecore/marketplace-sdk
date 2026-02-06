@@ -8,7 +8,7 @@
 
 > **DetachFromSitesInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:208](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L208)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:229](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L229)
 
 Analytics identifier detach request.
 
@@ -18,6 +18,6 @@ Analytics identifier detach request.
 
 > **sitesIdentifiers**: `string`[]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L212)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:233](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L233)
 
 The list of sites, based on their identifier, for which the analytic identifier should be unassigned.

@@ -8,7 +8,7 @@
 
 > **WorkflowStatistics** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1458](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1458)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1604](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1604)
 
 Represents the workflow statistics.
 
@@ -18,7 +18,7 @@ Represents the workflow statistics.
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1463](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1463)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1609](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1609)
 
 The name of the workflow.
 Example value: Sample Workflow
@@ -29,6 +29,6 @@ Example value: Sample Workflow
 
 > `optional` **states**: [`WorkflowStateStatistics`](WorkflowStateStatistics.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1467](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1467)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1613](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1613)
 
 A collection of states defined for the workflow, and the number of pages in each state.

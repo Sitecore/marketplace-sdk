@@ -8,4 +8,4 @@
 
 > **RenamePageResponse** = [`RenamePageResponses`](RenamePageResponses.md)\[keyof [`RenamePageResponses`](RenamePageResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1453](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1453)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1554](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1554)

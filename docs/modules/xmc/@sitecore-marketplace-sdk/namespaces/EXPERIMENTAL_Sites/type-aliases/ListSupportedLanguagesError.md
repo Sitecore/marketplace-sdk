@@ -8,4 +8,4 @@
 
 > **ListSupportedLanguagesError** = [`ListSupportedLanguagesErrors`](ListSupportedLanguagesErrors.md)\[keyof [`ListSupportedLanguagesErrors`](ListSupportedLanguagesErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1560](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1560)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1758](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1758)

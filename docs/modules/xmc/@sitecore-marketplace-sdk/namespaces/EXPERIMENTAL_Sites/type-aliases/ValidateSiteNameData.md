@@ -8,7 +8,7 @@
 
 > **ValidateSiteNameData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2540](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2540)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2885](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2885)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2540](https
 
 > **body**: [`ValidateSiteNameInput`](ValidateSiteNameInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2544](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2544)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2889](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2889)
 
 The site name to validate.
 
@@ -26,7 +26,7 @@ The site name to validate.
 
 > `optional` **path**: `never`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2545](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2545)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2890](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2890)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2545](https
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2546](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2546)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2891](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2891)
 
 #### environmentId?
 
@@ -54,4 +54,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/name/validate"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2556](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2556)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2901](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2901)

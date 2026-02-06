@@ -8,4 +8,4 @@
 
 > **RemoveFavoriteSiteResponse** = [`RemoveFavoriteSiteResponses`](RemoveFavoriteSiteResponses.md)\[keyof [`RemoveFavoriteSiteResponses`](RemoveFavoriteSiteResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2202](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2202)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2547](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2547)

@@ -8,4 +8,4 @@
 
 > **AggregateLivePageVariantsError** = [`AggregateLivePageVariantsErrors`](AggregateLivePageVariantsErrors.md)\[keyof [`AggregateLivePageVariantsErrors`](AggregateLivePageVariantsErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1943](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1943)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2288](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2288)

@@ -6,7 +6,7 @@
 
 # Interface: ClientSDKConfig
 
-Defined in: [client/src/types.ts:73](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L73)
+Defined in: [packages/client/src/types.ts:85](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L85)
 
 ClientSDKConfig is the configuration used by the Client SDK.
 Instead of exposing a CoreSDK instance, users should provide the
@@ -22,7 +22,7 @@ configuration needed to initialize CoreSDK internally.
 
 > `optional` **events**: `object`
 
-Defined in: [client/src/types.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L79)
+Defined in: [packages/client/src/types.ts:91](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L91)
 
 Events that the SDK can listen for
 
@@ -60,7 +60,7 @@ Events that the SDK can listen for
 
 > `optional` **navbarItems**: [`NavbarItemsProps`](NavbarItemsProps.md)
 
-Defined in: [client/src/types.ts:83](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L83)
+Defined in: [packages/client/src/types.ts:95](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L95)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: [client/src/types.ts:83](https://github.com/Sitecore/marketplace-sdk
 
 > **selfOrigin**: `string`
 
-Defined in: [client/src/types.ts:77](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L77)
+Defined in: [packages/client/src/types.ts:89](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L89)
 
 Our own origin – this defaults to the value of window.location.origin
 
@@ -82,7 +82,7 @@ Our own origin – this defaults to the value of window.location.origin
 
 > `optional` **target**: `Window`
 
-Defined in: core/dist/types.d.ts:8
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:8
 
 The target window to communicate with (e.g., iframe.contentWindow)
 
@@ -96,7 +96,7 @@ The target window to communicate with (e.g., iframe.contentWindow)
 
 > `optional` **targetOrigin**: `string`
 
-Defined in: [client/src/types.ts:75](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L75)
+Defined in: [packages/client/src/types.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L87)
 
 The origin of the remote endpoint (e.g. client for the host, or host for the client)
 
@@ -110,7 +110,7 @@ The origin of the remote endpoint (e.g. client for the host, or host for the cli
 
 > `optional` **timeout**: `number`
 
-Defined in: core/dist/types.d.ts:14
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:14
 
 Optional timeout for requests in milliseconds (default: 30000)
 

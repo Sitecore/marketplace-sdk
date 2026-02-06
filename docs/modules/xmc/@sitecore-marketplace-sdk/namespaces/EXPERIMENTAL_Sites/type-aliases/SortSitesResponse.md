@@ -8,4 +8,4 @@
 
 > **SortSitesResponse** = [`SortSitesResponses`](SortSitesResponses.md)\[keyof [`SortSitesResponses`](SortSitesResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2539](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2539)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2884](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2884)

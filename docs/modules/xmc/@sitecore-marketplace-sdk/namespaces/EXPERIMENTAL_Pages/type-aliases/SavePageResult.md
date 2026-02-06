@@ -8,7 +8,7 @@
 
 > **SavePageResult** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:681](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L681)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:712](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L712)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:681](https:
 
 > `optional` **errors**: [`SavePageError`](SavePageError.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:685](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L685)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:716](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L716)
 
 The list of errors that occurred during the save operation.
 
@@ -26,7 +26,7 @@ The list of errors that occurred during the save operation.
 
 > `optional` **newCreatedVersion**: [`PageVersionInfo`](PageVersionInfo.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:695](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L695)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:726](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L726)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:695](https:
 
 > `optional` **savedPage**: [`SavedPage`](SavedPage.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:686](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L686)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:717](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L717)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:686](https:
 
 > `optional` **validationErrors**: [`PageValidationError`](PageValidationError.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:690](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L690)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:721](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L721)
 
 The list of validation errors that occurred during the save operation.
 
@@ -52,6 +52,6 @@ The list of validation errors that occurred during the save operation.
 
 > `optional` **warnings**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:694](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L694)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:725](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L725)
 
 The list of warnings that occurred during the save operation.
