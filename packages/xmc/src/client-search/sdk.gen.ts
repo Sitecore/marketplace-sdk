@@ -37,8 +37,8 @@ export const getConfigs = <ThrowOnError extends boolean = false>(
   return (options?.client ?? _heyApiClient).get<GetConfigsResponse, GetConfigsError, ThrowOnError>({
     security: [
       {
-        name: 'authorization',
-        type: 'apiKey',
+        scheme: 'bearer',
+        type: 'http',
       },
     ],
     url: '/v1/config',

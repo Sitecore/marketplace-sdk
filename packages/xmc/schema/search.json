@@ -215,9 +215,8 @@
       },
       "securitySchemes": {
         "BearerAuth": {
-          "type": "apiKey",
-          "name": "authorization",
-          "in": "header"
+          "type": "http",
+          "scheme": "Bearer"
         }
       }
     }
