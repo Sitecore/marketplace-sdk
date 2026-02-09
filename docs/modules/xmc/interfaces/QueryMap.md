@@ -6,15 +6,15 @@
 
 # Interface: QueryMap
 
-Defined in: packages/client/dist/sdk-types.d.ts:178
+Defined in: packages/client/dist/sdk-types.d.ts:220
 
 ## Properties
 
 ### application.context
 
-> **context**: `object`
+> **application.context**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:194
+Defined in: packages/client/dist/sdk-types.d.ts:236
 
 #### params
 
@@ -32,9 +32,9 @@ Defined in: packages/client/dist/sdk-types.d.ts:194
 
 ### host.route
 
-> **route**: `object`
+> **host.route**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:204
+Defined in: packages/client/dist/sdk-types.d.ts:246
 
 #### params
 
@@ -52,9 +52,9 @@ Defined in: packages/client/dist/sdk-types.d.ts:204
 
 ### host.state
 
-> **state**: `object`
+> **host.state**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:184
+Defined in: packages/client/dist/sdk-types.d.ts:226
 
 #### params
 
@@ -62,7 +62,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:184
 
 #### response
 
-> **response**: `null` \| `XmcXmAppsHostState` \| `XmcPagesContextViewHostState`
+> **response**: `XmcXmAppsHostState` \| `XmcPagesContextViewHostState` \| `null`
 
 #### subscribe
 
@@ -72,9 +72,9 @@ Defined in: packages/client/dist/sdk-types.d.ts:184
 
 ### host.user
 
-> **user**: `object`
+> **host.user**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:179
+Defined in: packages/client/dist/sdk-types.d.ts:221
 
 #### params
 
@@ -92,9 +92,9 @@ Defined in: packages/client/dist/sdk-types.d.ts:179
 
 ### pages.context
 
-> **context**: `object`
+> **pages.context**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:189
+Defined in: packages/client/dist/sdk-types.d.ts:231
 
 #### params
 
@@ -112,9 +112,9 @@ Defined in: packages/client/dist/sdk-types.d.ts:189
 
 ### site.context
 
-> **context**: `object`
+> **site.context**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:199
+Defined in: packages/client/dist/sdk-types.d.ts:241
 
 #### params
 
@@ -132,7 +132,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:199
 
 ### xmc.agent.assetsGetAssetInformation
 
-> **assetsGetAssetInformation**: `object`
+> **xmc.agent.assetsGetAssetInformation**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:149](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L149)
 
@@ -154,7 +154,7 @@ Retrieves detailed information about a specific digital asset including its meta
 
 ### xmc.agent.assetsSearchAssets
 
-> **assetsSearchAssets**: `object`
+> **xmc.agent.assetsSearchAssets**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:142](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L142)
 
@@ -162,7 +162,7 @@ Searches for digital assets based on query terms, file types, or tags. Returns a
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`AssetsSearchAssetsData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/AssetsSearchAssetsData.md), `boolean`\>
+> **params**: `Options`\<[`AssetsSearchAssetsData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/AssetsSearchAssetsData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -176,7 +176,7 @@ Searches for digital assets based on query terms, file types, or tags. Returns a
 
 ### xmc.agent.componentsGetComponent
 
-> **componentsGetComponent**: `object`
+> **xmc.agent.componentsGetComponent**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:135](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L135)
 
@@ -198,7 +198,7 @@ Retrieves detailed information about a specific component including its fields, 
 
 ### xmc.agent.componentsListComponents
 
-> **componentsListComponents**: `object`
+> **xmc.agent.componentsListComponents**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:128](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L128)
 
@@ -220,7 +220,7 @@ Retrieves a list of all available components for a specific site. This includes 
 
 ### xmc.agent.componentsSearchComponentDatasources
 
-> **componentsSearchComponentDatasources**: `object`
+> **xmc.agent.componentsSearchComponentDatasources**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L121)
 
@@ -242,7 +242,7 @@ Searches for available datasources that can be used with a specific component. T
 
 ### xmc.agent.contentGetContentItemById
 
-> **contentGetContentItemById**: `object`
+> **xmc.agent.contentGetContentItemById**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:100](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L100)
 
@@ -264,7 +264,7 @@ Retrieves detailed information about a specific content item using its unique id
 
 ### xmc.agent.contentGetContentItemByPath
 
-> **contentGetContentItemByPath**: `object`
+> **xmc.agent.contentGetContentItemByPath**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:107](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L107)
 
@@ -276,7 +276,7 @@ Retrieves detailed information about a content item using its path in the conten
 
 #### response
 
-> **response**: \{ `data`: [`ContentItemResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/ContentItemResponse.md) \| \{[`key`: `string`]: `unknown`; \}; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: ContentItemResponse \| \{ \[key: string\]: unknown; \}; error: undefined; \}) & \{ request: Request; response: Response; \}
+> **response**: \{ `data`: [`ContentItemResponse`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/ContentItemResponse.md) \| \{\[`key`: `string`\]: `unknown`; \}; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: HttpValidationError; \} \| \{ data: ContentItemResponse \| \{ \[key: string\]: unknown; \}; error: undefined; \}) & \{ request: Request; response: Response; \}
 
 #### subscribe
 
@@ -286,7 +286,7 @@ Retrieves detailed information about a content item using its path in the conten
 
 ### xmc.agent.contentListAvailableInsertoptions
 
-> **contentListAvailableInsertoptions**: `object`
+> **xmc.agent.contentListAvailableInsertoptions**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:114](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L114)
 
@@ -308,7 +308,7 @@ Retrieves the available content templates that can be inserted as child items un
 
 ### xmc.agent.environmentsListLanguages
 
-> **environmentsListLanguages**: `object`
+> **xmc.agent.environmentsListLanguages**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:156](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L156)
 
@@ -316,7 +316,7 @@ Retrieves all languages available.
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`EnvironmentsListLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/EnvironmentsListLanguagesData.md), `boolean`\>
+> **params**: `Options`\<[`EnvironmentsListLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/EnvironmentsListLanguagesData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -330,7 +330,7 @@ Retrieves all languages available.
 
 ### xmc.agent.jobsGetJob
 
-> **jobsGetJob**: `object`
+> **xmc.agent.jobsGetJob**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:184](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L184)
 
@@ -352,7 +352,7 @@ Retrieves the details of the specified job.
 
 ### xmc.agent.jobsListOperations
 
-> **jobsListOperations**: `object`
+> **xmc.agent.jobsListOperations**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:191](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L191)
 
@@ -374,7 +374,7 @@ Retrieves the operations associated with the specified job.
 
 ### xmc.agent.pagesGetAllowedComponentsByPlaceholder
 
-> **pagesGetAllowedComponentsByPlaceholder**: `object`
+> **xmc.agent.pagesGetAllowedComponentsByPlaceholder**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L93)
 
@@ -396,7 +396,7 @@ Retrieves a list of components that are allowed to be added to a specific placeh
 
 ### xmc.agent.pagesGetComponentsOnPage
 
-> **pagesGetComponentsOnPage**: `object`
+> **xmc.agent.pagesGetComponentsOnPage**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L37)
 
@@ -418,7 +418,7 @@ Retrieves a list of components that are currently added to a specific page.
 
 ### xmc.agent.pagesGetPage
 
-> **pagesGetPage**: `object`
+> **xmc.agent.pagesGetPage**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L86)
 
@@ -440,7 +440,7 @@ Retrieves comprehensive information about a page including its layout, component
 
 ### xmc.agent.pagesGetPageHtml
 
-> **pagesGetPageHtml**: `object`
+> **xmc.agent.pagesGetPageHtml**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L65)
 
@@ -462,7 +462,7 @@ Retrieves the HTML content of a specific page. This endpoint returns the raw HTM
 
 ### xmc.agent.pagesGetPagePathByLiveUrl
 
-> **pagesGetPagePathByLiveUrl**: `object`
+> **xmc.agent.pagesGetPagePathByLiveUrl**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L51)
 
@@ -484,7 +484,7 @@ Get the page item path corresponding to a live URL. You can use this endpoint to
 
 ### xmc.agent.pagesGetPagePreviewUrl
 
-> **pagesGetPagePreviewUrl**: `object`
+> **xmc.agent.pagesGetPagePreviewUrl**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:72](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L72)
 
@@ -506,7 +506,7 @@ Retrieves the preview URL of a specific page. This endpoint returns the URL that
 
 ### xmc.agent.pagesGetPageScreenshot
 
-> **pagesGetPageScreenshot**: `object`
+> **xmc.agent.pagesGetPageScreenshot**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L58)
 
@@ -528,7 +528,7 @@ Captures and returns a screenshot of the specified page. This endpoint takes a s
 
 ### xmc.agent.pagesGetPageTemplateById
 
-> **pagesGetPageTemplateById**: `object`
+> **xmc.agent.pagesGetPageTemplateById**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L79)
 
@@ -550,7 +550,7 @@ Retrieves detailed information about a specific page template, including its fie
 
 ### xmc.agent.pagesSearchSite
 
-> **pagesSearchSite**: `object`
+> **xmc.agent.pagesSearchSite**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L44)
 
@@ -572,7 +572,7 @@ Searches all pages in a specific site by title or content. The response returns 
 
 ### xmc.agent.personalizationGetConditionTemplateById
 
-> **personalizationGetConditionTemplateById**: `object`
+> **xmc.agent.personalizationGetConditionTemplateById**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:177](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L177)
 
@@ -594,7 +594,7 @@ Returns a condition template by ID and its parameters for creating a personaliza
 
 ### xmc.agent.personalizationGetConditionTemplates
 
-> **personalizationGetConditionTemplates**: `object`
+> **xmc.agent.personalizationGetConditionTemplates**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:170](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L170)
 
@@ -602,7 +602,7 @@ Retrieves all available condition templates for personalization.
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`PersonalizationGetConditionTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/PersonalizationGetConditionTemplatesData.md), `boolean`\>
+> **params**: `Options`\<[`PersonalizationGetConditionTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/PersonalizationGetConditionTemplatesData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -616,7 +616,7 @@ Retrieves all available condition templates for personalization.
 
 ### xmc.agent.personalizationGetPersonalizationVersionsByPage
 
-> **personalizationGetPersonalizationVersionsByPage**: `object`
+> **xmc.agent.personalizationGetPersonalizationVersionsByPage**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L163)
 
@@ -638,7 +638,7 @@ Retrieves all personalization versions configured for a specific page, including
 
 ### xmc.agent.sitesGetAllPagesBySite
 
-> **sitesGetAllPagesBySite**: `object`
+> **xmc.agent.sitesGetAllPagesBySite**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L23)
 
@@ -660,7 +660,7 @@ Returns a flat list of routes for the specified site and language, each with id 
 
 ### xmc.agent.sitesGetSiteDetails
 
-> **sitesGetSiteDetails**: `object`
+> **xmc.agent.sitesGetSiteDetails**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L16)
 
@@ -682,7 +682,7 @@ Retrieves detailed information about a specific site including its configuration
 
 ### xmc.agent.sitesGetSiteIdFromItem
 
-> **sitesGetSiteIdFromItem**: `object`
+> **xmc.agent.sitesGetSiteIdFromItem**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L30)
 
@@ -704,7 +704,7 @@ Returns the site root item ID for a given item by traversing ancestors to find t
 
 ### xmc.agent.sitesGetSitesList
 
-> **sitesGetSitesList**: `object`
+> **xmc.agent.sitesGetSitesList**: `object`
 
 Defined in: [packages/xmc/src/client-agent/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/augmentation.gen.ts#L9)
 
@@ -712,7 +712,7 @@ Retrieves a list of all available sites with their basic information and configu
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`SitesGetSitesListData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/SitesGetSitesListData.md), `boolean`\>
+> **params**: `Options`\<[`SitesGetSitesListData`](../@sitecore-marketplace-sdk/namespaces/Agent/type-aliases/SitesGetSitesListData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -726,7 +726,7 @@ Retrieves a list of all available sites with their basic information and configu
 
 ### xmc.contentTransfer.consumeFile
 
-> **consumeFile**: `object`
+> **xmc.contentTransfer.consumeFile**: `object`
 
 Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L23)
 
@@ -748,7 +748,7 @@ Starts consuming a `.raif` file in the specified database.
 
 ### xmc.contentTransfer.getBlobState
 
-> **getBlobState**: `object`
+> **xmc.contentTransfer.getBlobState**: `object`
 
 Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L30)
 
@@ -760,7 +760,7 @@ Retrieves the status of a consumed `.raif` file.
 
 #### response
 
-> **response**: \{ `data`: \{ `details?`: \{[`key`: `string`]: `unknown`; \}; `status?`: `string`; \}; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: \{ status?: string \| undefined; details?: \{ \[key: string\]: unknown; \} \| undefined; \}; error: undefined; \}) & \{ request: Request; response: Response; \}
+> **response**: \{ `data`: \{ `details?`: \{\[`key`: `string`\]: `unknown`; \}; `status?`: `string`; \}; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: \{ status?: string \| undefined; details?: \{ \[key: string\]: unknown; \} \| undefined; \}; error: undefined; \}) & \{ request: Request; response: Response; \}
 
 #### subscribe
 
@@ -770,7 +770,7 @@ Retrieves the status of a consumed `.raif` file.
 
 ### xmc.contentTransfer.getChunk
 
-> **getChunk**: `object`
+> **xmc.contentTransfer.getChunk**: `object`
 
 Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L16)
 
@@ -792,7 +792,7 @@ Retrieves the specified chunk from the specified chunk set in the Source environ
 
 ### xmc.contentTransfer.getContentTransferStatus
 
-> **getContentTransferStatus**: `object`
+> **xmc.contentTransfer.getContentTransferStatus**: `object`
 
 Defined in: [packages/xmc/src/client-content-transfer/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-content-transfer/augmentation.gen.ts#L9)
 
@@ -812,9 +812,31 @@ Gets the status of the created content transfer by transfer ID.
 
 ***
 
+### xmc.search.getConfigs
+
+> **xmc.search.getConfigs**: `object`
+
+Defined in: [packages/xmc/src/client-search/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/augmentation.gen.ts#L9)
+
+Get all search configurations for the authenticated client
+
+#### params
+
+> **params**: `Options`\<[`GetConfigsData`](../@sitecore-marketplace-sdk/namespaces/Search/type-aliases/GetConfigsData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`Config`](../@sitecore-marketplace-sdk/namespaces/Search/type-aliases/Config.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: Config\[\]; error: undefined; \} \| \{ data: undefined; error: ErrorResponse; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
 ### xmc.xmapp.getFavoriteSites
 
-> **getFavoriteSites**: `object`
+> **xmc.xmapp.getFavoriteSites**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L51)
 
@@ -822,7 +844,7 @@ Fetches a list of your favorite sites
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`GetFavoriteSitesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/GetFavoriteSitesData.md), `boolean`\>
+> **params**: `Options`\<[`GetFavoriteSitesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/GetFavoriteSitesData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -836,7 +858,7 @@ Fetches a list of your favorite sites
 
 ### xmc.xmapp.getLivePageState
 
-> **getLivePageState**: `object`
+> **xmc.xmapp.getLivePageState**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L30)
 
@@ -858,7 +880,7 @@ Checks if the requested page is active.
 
 ### xmc.xmapp.getRenderingHosts
 
-> **getRenderingHosts**: `object`
+> **xmc.xmapp.getRenderingHosts**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:142](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L142)
 
@@ -880,7 +902,7 @@ Fetches a list of rendering hosts for a site.
 
 ### xmc.xmapp.listCollections
 
-> **listCollections**: `object`
+> **xmc.xmapp.listCollections**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L37)
 
@@ -888,7 +910,7 @@ Fetches the list of site collections in the environment, with associated details
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`ListCollectionsData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListCollectionsData.md), `boolean`\>
+> **params**: `Options`\<[`ListCollectionsData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListCollectionsData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -902,7 +924,7 @@ Fetches the list of site collections in the environment, with associated details
 
 ### xmc.xmapp.listCollectionSites
 
-> **listCollectionSites**: `object`
+> **xmc.xmapp.listCollectionSites**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L93)
 
@@ -924,7 +946,7 @@ Fetches a list of sites in a site collection.
 
 ### xmc.xmapp.listHosts
 
-> **listHosts**: `object`
+> **xmc.xmapp.listHosts**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:128](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L128)
 
@@ -946,7 +968,7 @@ Retrieves the list of hosts for a site.
 
 ### xmc.xmapp.listJobs
 
-> **listJobs**: `object`
+> **xmc.xmapp.listJobs**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L58)
 
@@ -954,7 +976,7 @@ Fetches information about background jobs. Returns empty array if no jobs are ru
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`ListJobsData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListJobsData.md), `boolean`\>
+> **params**: `Options`\<[`ListJobsData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListJobsData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -968,7 +990,7 @@ Fetches information about background jobs. Returns empty array if no jobs are ru
 
 ### xmc.xmapp.listLanguages
 
-> **listLanguages**: `object`
+> **xmc.xmapp.listLanguages**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L9)
 
@@ -976,7 +998,7 @@ Retrieves the list of languages added to the environment.
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`ListLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListLanguagesData.md), `boolean`\>
+> **params**: `Options`\<[`ListLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListLanguagesData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -990,7 +1012,7 @@ Retrieves the list of languages added to the environment.
 
 ### xmc.xmapp.listPageAncestors
 
-> **listPageAncestors**: `object`
+> **xmc.xmapp.listPageAncestors**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:114](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L114)
 
@@ -1012,7 +1034,7 @@ Fetches information about the ancestors of a page.
 
 ### xmc.xmapp.listPageChildren
 
-> **listPageChildren**: `object`
+> **xmc.xmapp.listPageChildren**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:121](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L121)
 
@@ -1034,7 +1056,7 @@ Fetches information about the children of a page.
 
 ### xmc.xmapp.listPageVariants
 
-> **listPageVariants**: `object`
+> **xmc.xmapp.listPageVariants**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L23)
 
@@ -1056,7 +1078,7 @@ Fetches the identifiers of currently active personalization variants for a page.
 
 ### xmc.xmapp.listSites
 
-> **listSites**: `object`
+> **xmc.xmapp.listSites**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:72](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L72)
 
@@ -1064,7 +1086,7 @@ Fetches the list of sites in the environment, with associated details.
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`ListSitesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListSitesData.md), `boolean`\>
+> **params**: `Options`\<[`ListSitesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListSitesData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -1078,7 +1100,7 @@ Fetches the list of sites in the environment, with associated details.
 
 ### xmc.xmapp.listSiteTemplates
 
-> **listSiteTemplates**: `object`
+> **xmc.xmapp.listSiteTemplates**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:149](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L149)
 
@@ -1086,7 +1108,7 @@ Gets the site templates available in the environment that can be used for creati
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`ListSiteTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListSiteTemplatesData.md), `boolean`\>
+> **params**: `Options`\<[`ListSiteTemplatesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListSiteTemplatesData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -1100,7 +1122,7 @@ Gets the site templates available in the environment that can be used for creati
 
 ### xmc.xmapp.listSupportedLanguages
 
-> **listSupportedLanguages**: `object`
+> **xmc.xmapp.listSupportedLanguages**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L16)
 
@@ -1108,7 +1130,7 @@ Retrieves the list of languages supported by Sitecore XM Cloud, and associated d
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`ListSupportedLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListSupportedLanguagesData.md), `boolean`\>
+> **params**: `Options`\<[`ListSupportedLanguagesData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/ListSupportedLanguagesData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -1122,7 +1144,7 @@ Retrieves the list of languages supported by Sitecore XM Cloud, and associated d
 
 ### xmc.xmapp.listTrackedSites
 
-> **listTrackedSites**: `object`
+> **xmc.xmapp.listTrackedSites**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:86](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L86)
 
@@ -1144,7 +1166,7 @@ Fetches a list of sites that use an [analytics identifier](https://doc.sitecore.
 
 ### xmc.xmapp.retrieveCollection
 
-> **retrieveCollection**: `object`
+> **xmc.xmapp.retrieveCollection**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L44)
 
@@ -1166,7 +1188,7 @@ Fetches information about a site collection.
 
 ### xmc.xmapp.retrieveHost
 
-> **retrieveHost**: `object`
+> **xmc.xmapp.retrieveHost**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:135](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L135)
 
@@ -1188,7 +1210,7 @@ Fetches details about a site host.
 
 ### xmc.xmapp.retrieveJob
 
-> **retrieveJob**: `object`
+> **xmc.xmapp.retrieveJob**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L65)
 
@@ -1210,7 +1232,7 @@ Fetches information about a background job.
 
 ### xmc.xmapp.retrieveLocalizationStatistics
 
-> **retrieveLocalizationStatistics**: `object`
+> **xmc.xmapp.retrieveLocalizationStatistics**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:156](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L156)
 
@@ -1232,7 +1254,7 @@ Fetches localization statistics for a site, including the number of pages in eac
 
 ### xmc.xmapp.retrievePageHierarchy
 
-> **retrievePageHierarchy**: `object`
+> **xmc.xmapp.retrievePageHierarchy**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:107](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L107)
 
@@ -1254,7 +1276,7 @@ Fetches hierarchy information about a page, including its children, ancestors, a
 
 ### xmc.xmapp.retrieveSite
 
-> **retrieveSite**: `object`
+> **xmc.xmapp.retrieveSite**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L79)
 
@@ -1276,7 +1298,7 @@ Fetches information about a site.
 
 ### xmc.xmapp.retrieveSiteHierarchy
 
-> **retrieveSiteHierarchy**: `object`
+> **xmc.xmapp.retrieveSiteHierarchy**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:100](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L100)
 
@@ -1298,7 +1320,7 @@ Fetches hierarchy information about the main page of a site, including its child
 
 ### xmc.xmapp.retrieveSitemapConfiguration
 
-> **retrieveSitemapConfiguration**: `object`
+> **xmc.xmapp.retrieveSitemapConfiguration**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L163)
 
@@ -1320,7 +1342,7 @@ Fetches a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configur
 
 ### xmc.xmapp.retrieveWorkflowStatistics
 
-> **retrieveWorkflowStatistics**: `object`
+> **xmc.xmapp.retrieveWorkflowStatistics**: `object`
 
 Defined in: [packages/xmc/src/client-xmapp/augmentation.gen.ts:170](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/augmentation.gen.ts#L170)
 

@@ -15,7 +15,9 @@
 - [experimental\_Content](@sitecore-marketplace-sdk/namespaces/experimental_Content/README.md)
 - [experimental\_ContentTransfer](@sitecore-marketplace-sdk/namespaces/experimental_ContentTransfer/README.md)
 - [experimental\_Pages](@sitecore-marketplace-sdk/namespaces/experimental_Pages/README.md)
+- [experimental\_Search](@sitecore-marketplace-sdk/namespaces/experimental_Search/README.md)
 - [experimental\_Sites](@sitecore-marketplace-sdk/namespaces/experimental_Sites/README.md)
+- [Search](@sitecore-marketplace-sdk/namespaces/Search/README.md)
 - [Xmapp](@sitecore-marketplace-sdk/namespaces/Xmapp/README.md)
 
 ## Classes
@@ -35,6 +37,7 @@
 - [ContentApi](type-aliases/ContentApi.md)
 - [ContentTransferApi](type-aliases/ContentTransferApi.md)
 - [PagesApi](type-aliases/PagesApi.md)
+- [SearchApi](type-aliases/SearchApi.md)
 - [SitesApi](type-aliases/SitesApi.md)
 
 ## Variables

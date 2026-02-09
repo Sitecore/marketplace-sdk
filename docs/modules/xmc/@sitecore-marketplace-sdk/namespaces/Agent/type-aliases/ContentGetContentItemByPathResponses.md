@@ -14,7 +14,7 @@ Defined in: [packages/xmc/src/client-agent/types.gen.ts:1303](https://github.com
 
 ### 200
 
-> **200**: [`ContentItemResponse`](ContentItemResponse.md) \| \{[`key`: `string`]: `unknown`; \}
+> **200**: [`ContentItemResponse`](ContentItemResponse.md) \| \{\[`key`: `string`\]: `unknown`; \}
 
 Defined in: [packages/xmc/src/client-agent/types.gen.ts:1307](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-agent/types.gen.ts#L1307)
 

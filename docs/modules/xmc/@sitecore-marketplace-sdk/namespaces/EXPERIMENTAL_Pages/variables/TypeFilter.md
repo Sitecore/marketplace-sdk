@@ -12,7 +12,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:726](https:
 
 The search filter type.
 
-## Type declaration
+## Type Declaration
 
 ### ALL
 

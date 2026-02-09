@@ -8,4 +8,4 @@
 
 > **ContentApi** = *typeof* `experimental_content_sdk`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L51)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L53)

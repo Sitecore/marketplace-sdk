@@ -90,7 +90,7 @@ Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:975](https://github.com/
 
 ### settings?
 
-> `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:979](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L979)
 

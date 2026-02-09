@@ -32,7 +32,7 @@ Defined in: [packages/core/src/types.ts:149](https://github.com/Sitecore/marketp
 
 Defined in: [packages/core/src/types.ts:163](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/core/src/types.ts#L163)
 
-#### Type declaration
+#### Type Declaration
 
 ##### getUserInfo()
 
@@ -42,7 +42,7 @@ Defined in: [packages/core/src/types.ts:163](https://github.com/Sitecore/marketp
 
 `Promise`\<[`UserInfo`](UserInfo.md)\>
 
-#### Type declaration
+#### Type Declaration
 
 ##### getAdditionalData()
 

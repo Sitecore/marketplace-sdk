@@ -12,7 +12,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:90](https:/
 
 The type of layout (Final or Shared).
 
-## Type declaration
+## Type Declaration
 
 ### FINAL
 

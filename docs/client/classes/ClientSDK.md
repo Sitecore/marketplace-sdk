@@ -6,7 +6,7 @@
 
 # Class: ClientSDK
 
-Defined in: [client/src/client.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L41)
+Defined in: [packages/client/src/client.ts:44](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L44)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [client/src/client.ts:41](https://github.com/Sitecore/marketplace-sd
 
 > **new ClientSDK**(`config`): `ClientSDK`
 
-Defined in: [client/src/client.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L46)
+Defined in: [packages/client/src/client.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L49)
 
 #### Parameters
 
@@ -32,7 +32,7 @@ Defined in: [client/src/client.ts:46](https://github.com/Sitecore/marketplace-sd
 
 > **closeApp**(): `Promise`\<`void`\>
 
-Defined in: [client/src/client.ts:448](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L448)
+Defined in: [packages/client/src/client.ts:510](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L510)
 
 Requests the host application to close the app.
 
@@ -48,7 +48,7 @@ A Promise that resolves when the operation is complete.
 
 > **destroy**(): `void`
 
-Defined in: [client/src/client.ts:471](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L471)
+Defined in: [packages/client/src/client.ts:533](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L533)
 
 Cleans up all active subscriptions and resources.
 Call this when the SDK instance is no longer needed.
@@ -63,7 +63,7 @@ Call this when the SDK instance is no longer needed.
 
 > **emitRouteEvent**(`route`): `Promise`\<`void`\>
 
-Defined in: [client/src/client.ts:416](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L416)
+Defined in: [packages/client/src/client.ts:478](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L478)
 
 Sends a route event to consumers without triggering navigation.
 This method broadcasts route information that can be received by listeners
@@ -93,7 +93,7 @@ await client.emitRouteEvent('/products/123');
 
 > **getValue**(): `Promise`\<`any`\>
 
-Defined in: [client/src/client.ts:430](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L430)
+Defined in: [packages/client/src/client.ts:492](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L492)
 
 Requests the current value from the host application.
 
@@ -109,7 +109,7 @@ A Promise resolving to the value returned by the host.
 
 > **initialize**(): `Promise`\<`void`\>
 
-Defined in: [client/src/client.ts:114](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L114)
+Defined in: [packages/client/src/client.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L117)
 
 Initializes the client SDK by performing a handshake with the host application.
 Must be called after the client script loads (when running inside an iframe).
@@ -126,7 +126,7 @@ A Promise that resolves once the handshake is successfully completed.
 
 > **logout**(): `Promise`\<`void`\>
 
-Defined in: [client/src/client.ts:386](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L386)
+Defined in: [packages/client/src/client.ts:448](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L448)
 
 #### Returns
 
@@ -138,7 +138,7 @@ Defined in: [client/src/client.ts:386](https://github.com/Sitecore/marketplace-s
 
 > **mutate**\<`K`\>(`key`, `mutationOptions?`): `Promise`\<[`MutationMap`](../interfaces/MutationMap.md)\[`K`\]\[`"response"`\]\>
 
-Defined in: [client/src/client.ts:338](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L338)
+Defined in: [packages/client/src/client.ts:341](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L341)
 
 Executes a mutation against the host application. Mutations trigger host-side state changes or HTTP requests.
 
@@ -176,7 +176,7 @@ const response = await client.mutate('host.update', {
 
 > **navigateToExternalUrl**(`url`, `newTab`): `Promise`\<`void`\>
 
-Defined in: [client/src/client.ts:394](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L394)
+Defined in: [packages/client/src/client.ts:456](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L456)
 
 #### Parameters
 
@@ -195,7 +195,7 @@ Defined in: [client/src/client.ts:394](https://github.com/Sitecore/marketplace-s
 
 > **openProfile**(): `Promise`\<`void`\>
 
-Defined in: [client/src/client.ts:390](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L390)
+Defined in: [packages/client/src/client.ts:452](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L452)
 
 #### Returns
 
@@ -207,7 +207,7 @@ Defined in: [client/src/client.ts:390](https://github.com/Sitecore/marketplace-s
 
 > **query**\<`K`\>(`key`, `queryOptions?`): `Promise`\<[`QueryResult`](../interfaces/QueryResult.md)\<`K`\>\>
 
-Defined in: [client/src/client.ts:218](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L218)
+Defined in: [packages/client/src/client.ts:221](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L221)
 
 Executes a query against the host application. Queries can be one-off requests
 or subscriptions that receive live updates.
@@ -251,7 +251,7 @@ unsubscribe?.();
 
 > **setValue**(`value`, `canvasReload?`): `Promise`\<`void`\>
 
-Defined in: [client/src/client.ts:440](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L440)
+Defined in: [packages/client/src/client.ts:502](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L502)
 
 Sets a value in the host application.
 
@@ -270,11 +270,62 @@ A Promise that resolves when the operation is complete.
 
 ***
 
+### subscribe()
+
+> **subscribe**\<`K`\>(`eventKey`, `options`): () => `void`
+
+Defined in: [packages/client/src/client.ts:388](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L388)
+
+Subscribes to events from the host application. This is a dedicated API for event-based subscriptions,
+separate from the query API. Use this when you want to listen to specific events like content updates.
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| `K` *extends* keyof [`SubscribeMap`](../interfaces/SubscribeMap.md) |
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `eventKey` | `K` | The event key identifying the event to subscribe to, using format '<resource>.<eventAction>' |
+| `options` | [`SubscribeOptions`](../interfaces/SubscribeOptions.md)\<`K`\> | Configuration for the subscription |
+
+#### Returns
+
+A function to unsubscribe from the event
+
+> (): `void`
+
+##### Returns
+
+`void`
+
+#### Example
+
+```typescript
+// Subscribe to specific event using format <resource>.<eventAction>
+const unsubscribe = client.subscribe('pages.content.layoutUpdated', {
+  onData: (data) => {
+    console.log('Layout updated:', data);
+  },
+  onError: (error) => {
+    console.error('Subscription error:', error);
+  }
+});
+
+// Later: cleanup subscription
+unsubscribe();
+```
+
+***
+
 ### init()
 
 > `static` **init**(`config`): `Promise`\<`ClientSDK`\>
 
-Defined in: [client/src/client.ts:73](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L73)
+Defined in: [packages/client/src/client.ts:76](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L76)
 
 Creates and initializes a ClientSDK instance.
 

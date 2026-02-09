@@ -16,7 +16,7 @@ A host response entity
 
 ### analyticsIdentifiers?
 
-> `optional` **analyticsIdentifiers**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **analyticsIdentifiers**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:332](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L332)
 
@@ -117,7 +117,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:310](https:
 
 ### properties?
 
-> `optional` **properties**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **properties**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:320](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L320)
 
@@ -135,7 +135,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:309](https:
 
 ### settings?
 
-> `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:314](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L314)
 

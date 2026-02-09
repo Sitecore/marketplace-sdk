@@ -16,7 +16,7 @@ Sort collections request.
 
 ### collections?
 
-> `optional` **collections**: \{[`key`: `string`]: `number`; \} \| `null`
+> `optional` **collections**: \{\[`key`: `string`\]: `number`; \} \| `null`
 
 Defined in: [packages/xmc/src/client-xmapp/types.gen.ts:1132](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-xmapp/types.gen.ts#L1132)
 

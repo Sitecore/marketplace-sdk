@@ -81,7 +81,7 @@ Example value: Default
 
 ### settings?
 
-> `optional` **settings**: \{[`key`: `string`]: `string`; \} \| `null`
+> `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
 Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1310](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1310)
 
