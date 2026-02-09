@@ -8,7 +8,7 @@
 
 > **PageValidationError** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:412](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L412)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:443](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L443)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:412](https:
 
 > `optional` **aborted**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:417](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L417)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:448](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L448)
 
 Whether the operation was aborted.
 Example value: true
@@ -27,7 +27,7 @@ Example value: true
 
 > `optional` **errorLevel**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:422](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L422)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:453](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L453)
 
 The level of the error.
 Example value: High
@@ -38,7 +38,7 @@ Example value: High
 
 > `optional` **errorMessage**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:427](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L427)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:458](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L458)
 
 The error message.
 Example value: Field value is required.
@@ -49,7 +49,7 @@ Example value: Field value is required.
 
 > `optional` **fieldId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:432](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L432)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:463](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L463)
 
 The identifier of the field that caused the error.
 Example value: a73d057e-20e3-4ac3-9c06-5f34bfcb6847

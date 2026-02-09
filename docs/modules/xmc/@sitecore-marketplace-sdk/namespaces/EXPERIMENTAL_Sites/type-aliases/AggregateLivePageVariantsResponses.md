@@ -8,7 +8,7 @@
 
 > **AggregateLivePageVariantsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1945](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1945)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2290](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2290)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1945](https
 
 > **200**: [`PageVariantsAggregationResponse`](PageVariantsAggregationResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1949](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1949)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2294](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2294)
 
 Success

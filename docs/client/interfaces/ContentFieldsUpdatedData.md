@@ -6,7 +6,7 @@
 
 # Interface: ContentFieldsUpdatedData
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:225
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:225
 
 ## Extends
 
@@ -18,7 +18,7 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modul
 
 > **fields**: `Field`[]
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:226
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:226
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modul
 
 > **itemId**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:210
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:210
 
 #### Inherited from
 
@@ -38,7 +38,7 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modul
 
 > **itemVersion**: `number`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:212
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:212
 
 #### Inherited from
 
@@ -50,7 +50,7 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modul
 
 > **language**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:211
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:211
 
 #### Inherited from
 

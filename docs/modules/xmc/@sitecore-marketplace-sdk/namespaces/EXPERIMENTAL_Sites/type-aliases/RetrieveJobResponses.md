@@ -8,7 +8,7 @@
 
 > **RetrieveJobResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1916](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1916)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1669](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1669)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1916](https
 
 > **200**: [`Job`](Job.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1920](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1920)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1673](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1673)
 
-Success
+OK

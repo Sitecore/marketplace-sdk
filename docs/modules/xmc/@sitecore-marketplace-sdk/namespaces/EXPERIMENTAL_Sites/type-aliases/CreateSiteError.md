@@ -8,4 +8,4 @@
 
 > **CreateSiteError** = [`CreateSiteErrors`](CreateSiteErrors.md)\[keyof [`CreateSiteErrors`](CreateSiteErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2293](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2293)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2638](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2638)

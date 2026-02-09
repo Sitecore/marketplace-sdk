@@ -8,14 +8,14 @@
 
 > **CreateSiteResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2294](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2294)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2639](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2639)
 
 ## Properties
 
 ### 200
 
-> **200**: `string`
+> **200**: [`JobResponse`](JobResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2298](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2298)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2643](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2643)
 
 Success

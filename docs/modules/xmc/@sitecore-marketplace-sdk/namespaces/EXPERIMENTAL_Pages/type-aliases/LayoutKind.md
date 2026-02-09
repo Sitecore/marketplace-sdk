@@ -8,6 +8,6 @@
 
 > **LayoutKind** = `"Final"` \| `"Shared"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:90](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L90)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:120](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L120)
 
 The type of layout (Final or Shared).

@@ -8,7 +8,7 @@
 
 > **PagesSearchResult** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:489](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L489)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:520](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L520)
 
 The result of a page search, including the total count and a collection of result pages.
 
@@ -18,7 +18,7 @@ The result of a page search, including the total count and a collection of resul
 
 > `optional` **results**: [`Page`](Page.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:498](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L498)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:529](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L529)
 
 The collection of result pages returned by the search.
 
@@ -28,7 +28,7 @@ The collection of result pages returned by the search.
 
 > `optional` **totalCount**: `number`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:494](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L494)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:525](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L525)
 
 The total number of pages found by the search.
 Example value: 25

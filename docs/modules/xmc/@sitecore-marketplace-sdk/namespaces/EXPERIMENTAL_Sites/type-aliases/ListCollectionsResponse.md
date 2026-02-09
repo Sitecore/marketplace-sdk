@@ -8,4 +8,4 @@
 
 > **ListCollectionsResponse** = [`ListCollectionsResponses`](ListCollectionsResponses.md)\[keyof [`ListCollectionsResponses`](ListCollectionsResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1595](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1595)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1793](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1793)

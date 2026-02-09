@@ -8,4 +8,4 @@
 
 > **RetrieveSiteHierarchyResponse** = [`RetrieveSiteHierarchyResponses`](RetrieveSiteHierarchyResponses.md)\[keyof [`RetrieveSiteHierarchyResponses`](RetrieveSiteHierarchyResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2738](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2738)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3083](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3083)

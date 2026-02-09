@@ -5,6 +5,8 @@ import * as contentTransfer from './client-content-transfer/sdk.gen';
 import * as xmapp from './client-xmapp/sdk.gen';
 import * as agent from './client-agent/sdk.gen';
 import * as search from './client-search/sdk.gen';
+import * as pages from './client-pages/sdk.gen';
+import * as sites from './client-sites/sdk.gen';
 
 export * from './client-authoring/types.gen';
 export * from './client-authoring/augmentation.gen';
@@ -21,6 +23,12 @@ export * from './client-xmapp/augmentation.gen';
 export * from './client-agent/types.gen';
 export * from './client-agent/augmentation.gen';
 
+export * from './client-pages/types.gen';
+export * from './client-pages/augmentation.gen';
+
+export * from './client-sites/types.gen';
+export * from './client-sites/augmentation.gen';
+
 export * from './client-search/types.gen';
 export * from './client-search/augmentation.gen';
 
@@ -35,6 +43,8 @@ const namespaceMap: Record<string, any> = {
   contentTransfer: contentTransfer,
   xmapp: xmapp,
   agent: agent,
+  pages: pages,
+  sites: sites,
   search: search,
 };
 

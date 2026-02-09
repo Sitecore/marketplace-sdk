@@ -8,7 +8,7 @@
 
 > **UpdateSitemapConfigurationInput** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1382](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1382)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1528](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1528)
 
 A sitemap configuration update request
 
@@ -18,7 +18,7 @@ A sitemap configuration update request
 
 > `optional` **alternateLinksOptions**: [`SitemapAlternateLinksOptions`](SitemapAlternateLinksOptions.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1398](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1398)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1544](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1544)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1398](https
 
 > `optional` **cacheOptions**: [`SitemapCacheOptions`](SitemapCacheOptions.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1400](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1400)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1546](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1546)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1400](https
 
 > `optional` **enabled**: `boolean` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1392](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1392)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1538](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1538)
 
 Whether sitemap generation is enabled.
 Example value: True
@@ -45,7 +45,7 @@ Example value: True
 
 > **id**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1387](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1387)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1533](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1533)
 
 The identifier of the sitemap configuration item.
 Example value: da570793-3539-4923-88ca-8314ddd193f7
@@ -56,7 +56,7 @@ Example value: da570793-3539-4923-88ca-8314ddd193f7
 
 > `optional` **maxNumberOfPages**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1397](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1397)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1543](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1543)
 
 Maximum number of pages to include in a single sitemap file.
 Example value: 1000
@@ -67,4 +67,4 @@ Example value: 1000
 
 > `optional` **urlOptions**: [`SitemapUrlOptions`](SitemapUrlOptions.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1399](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1399)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1545](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1545)

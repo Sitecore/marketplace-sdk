@@ -8,7 +8,7 @@
 
 > **RetrieveSiteHierarchyResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2732](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2732)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3077](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3077)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2732](https
 
 > **200**: [`PageHierarchy`](PageHierarchy.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2736](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2736)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3081](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3081)
 
 Success

@@ -8,4 +8,4 @@
 
 > **CreatePageError** = [`CreatePageErrors`](CreatePageErrors.md)\[keyof [`CreatePageErrors`](CreatePageErrors.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1282](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1282)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1351](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1351)

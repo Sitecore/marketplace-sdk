@@ -8,4 +8,4 @@
 
 > **CopySiteResponse** = [`CopySiteResponses`](CopySiteResponses.md)\[keyof [`CopySiteResponses`](CopySiteResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2462](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2462)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2807](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2807)

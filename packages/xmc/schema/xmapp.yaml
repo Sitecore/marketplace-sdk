@@ -5076,12 +5076,12 @@ components:
       additionalProperties: false
       description: Represents the workflows statistics for a site.
   securitySchemes:
-    # Bearer:
-    #   type: http
-    #   description: Enter your bearer token in the text input below.
-    #   scheme: Bearer
+  # Bearer:
+  #   type: http
+  #   description: Enter your bearer token in the text input below.
+  #   scheme: Bearer
 security:
-  # - Bearer: []
+# - Bearer: []
 tags:
   - name: Sites
     description: "The Sites API lets you create and manage sites for an environment.\r\nLearn more about [Sites](https://doc.sitecore.com/xmc/en/users/xm-cloud/sites.html)."

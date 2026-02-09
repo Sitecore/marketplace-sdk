@@ -8,4 +8,4 @@
 
 > **UpdateSitemapConfigurationResponse** = [`UpdateSitemapConfigurationResponses`](UpdateSitemapConfigurationResponses.md)\[keyof [`UpdateSitemapConfigurationResponses`](UpdateSitemapConfigurationResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3322](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3322)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3705](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3705)

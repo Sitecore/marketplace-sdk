@@ -8,7 +8,7 @@
 
 > **Site** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:901](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L901)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:973](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L973)
 
 A site response entity.
 
@@ -18,7 +18,7 @@ A site response entity.
 
 > `optional` **brandKitId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:947](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L947)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1019](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1019)
 
 The identifier of the brand kit associated with this site.
 Example value: e3f1c5a2-4b6d-4a3e-9f1b-2d3c4b5a6e7f
@@ -29,7 +29,7 @@ Example value: e3f1c5a2-4b6d-4a3e-9f1b-2d3c4b5a6e7f
 
 > `optional` **collectionId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:927](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L927)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:999](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L999)
 
 The identifier of the collection to which the site belongs.
 Example value: 5aae1eeaea2440bf96f11f43da82c77b
@@ -40,7 +40,7 @@ Example value: 5aae1eeaea2440bf96f11f43da82c77b
 
 > `optional` **created**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:932](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L932)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1004](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1004)
 
 The date when the site was created.
 Example value: 2019-08-24T14:15:22Z
@@ -51,7 +51,7 @@ Example value: 2019-08-24T14:15:22Z
 
 > `optional` **createdBy**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:937](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L937)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1009](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1009)
 
 The ID of the user who created the site.
 Example value: L6kfw52ZVf
@@ -62,7 +62,7 @@ Example value: L6kfw52ZVf
 
 > `optional` **description**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:916](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L916)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:988](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L988)
 
 The description of the site.
 Example value: New site for Brand A in English-speaking countries
@@ -73,10 +73,18 @@ Example value: New site for Brand A in English-speaking countries
 
 > `optional` **displayName**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:921](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L921)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:993](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L993)
 
 The display name of the site.
 Example value: Skate Park Website
+
+***
+
+### errorPages?
+
+> `optional` **errorPages**: [`ErrorPages`](ErrorPages.md)
+
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1041](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1041)
 
 ***
 
@@ -84,7 +92,7 @@ Example value: Skate Park Website
 
 > `optional` **errorPagesConfiguration**: [`ErrorPagesConfiguration`](ErrorPagesConfiguration.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:969](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L969)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1042](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1042)
 
 ***
 
@@ -92,7 +100,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:969](https:
 
 > `optional` **hosts**: [`Host`](Host.md)[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:960](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L960)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1032](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1032)
 
 The list of hosts that the site resolves to.
 
@@ -102,7 +110,7 @@ The list of hosts that the site resolves to.
 
 > `optional` **id**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:906](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L906)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:978](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L978)
 
 The identifier of the site.
 Example value: 497f6eca-6276-4993-bfeb-53cbbbba6f08
@@ -113,7 +121,7 @@ Example value: 497f6eca-6276-4993-bfeb-53cbbbba6f08
 
 > `optional` **languages**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:956](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L956)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1028](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1028)
 
 The list of languages in use by the site.
 Example value: [
@@ -127,7 +135,7 @@ Example value: [
 
 > `optional` **name**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:911](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L911)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:983](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L983)
 
 The name of the site.
 Example value: skate-park
@@ -138,7 +146,7 @@ Example value: skate-park
 
 > `optional` **permissions**: [`Permissions`](Permissions.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:948](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L948)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1020](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1020)
 
 ***
 
@@ -146,7 +154,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:948](https:
 
 > `optional` **properties**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:979](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L979)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1052](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1052)
 
 The read-only properties of the site.
 
@@ -156,7 +164,7 @@ The read-only properties of the site.
 
 > `optional` **settings**: \{\[`key`: `string`\]: `string`; \} \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:973](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L973)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1046](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1046)
 
 The settings for the site.
 
@@ -166,7 +174,7 @@ The settings for the site.
 
 > `optional` **sortOrder**: `number` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:942](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L942)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1014](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1014)
 
 Sort order of the site.
 Example value: 100
@@ -177,7 +185,7 @@ Example value: 100
 
 > `optional` **supportedLanguages**: `string`[] \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:968](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L968)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:1040](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L1040)
 
 The list of languages supported by Sitecore.
 Example value: [
@@ -191,4 +199,4 @@ Example value: [
 
 > `optional` **thumbnail**: [`Thumbnail`](Thumbnail.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:922](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L922)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:994](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L994)

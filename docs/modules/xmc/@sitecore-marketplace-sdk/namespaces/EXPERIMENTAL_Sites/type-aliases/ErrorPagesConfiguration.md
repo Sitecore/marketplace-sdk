@@ -8,7 +8,7 @@
 
 > **ErrorPagesConfiguration** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:254](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L254)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:330](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L330)
 
 An object containing the site error pages
 
@@ -18,7 +18,7 @@ An object containing the site error pages
 
 > `optional` **errorPage**: [`ErrorPage`](ErrorPage.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:255](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L255)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:331](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L331)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:255](https:
 
 > `optional` **notFoundPage**: [`ErrorPage`](ErrorPage.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:256](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L256)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:332](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L332)

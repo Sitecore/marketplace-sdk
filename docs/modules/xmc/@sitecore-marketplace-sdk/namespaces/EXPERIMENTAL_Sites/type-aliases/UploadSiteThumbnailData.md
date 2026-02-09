@@ -8,7 +8,7 @@
 
 > **UploadSiteThumbnailData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3153](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3153)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3536](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3536)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3153](https
 
 > `optional` **body**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3154](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3154)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3537](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3537)
 
 #### File
 
@@ -30,7 +30,7 @@ Image file to be used as a thumbnail. Should be sent as a [form data](https://de
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3160](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3160)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3543](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3543)
 
 #### siteId
 
@@ -44,7 +44,7 @@ The identifier of the site.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3166](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3166)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3549](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3549)
 
 #### environmentId?
 
@@ -64,4 +64,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/sites/{siteId}/upload-thumbnail"`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3176](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3176)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:3559](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L3559)

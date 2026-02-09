@@ -8,14 +8,14 @@
 
 > **DeleteSiteResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2336](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2336)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2681](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2681)
 
 ## Properties
 
 ### 200
 
-> **200**: `string`
+> **200**: [`JobResponse`](JobResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2340](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2340)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:2685](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L2685)
 
 Success

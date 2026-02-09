@@ -1,0 +1,11 @@
+[**@sitecore-marketplace-sdk/xmc**](../../../../README.md)
+
+***
+
+[@sitecore-marketplace-sdk/xmc](../../../../README.md) / [Sites](../README.md) / ValidateCollectionNameResponse
+
+# Type Alias: ValidateCollectionNameResponse
+
+> **ValidateCollectionNameResponse** = [`ValidateCollectionNameResponses`](ValidateCollectionNameResponses.md)\[keyof [`ValidateCollectionNameResponses`](ValidateCollectionNameResponses.md)\]
+
+Defined in: [packages/xmc/src/client-sites/types.gen.ts:2433](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/types.gen.ts#L2433)

@@ -8,7 +8,7 @@
 
 > **AddPageVersionData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1454](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1454)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1555](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1555)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1454](https
 
 > `optional` **body**: [`AddPageVersionInput`](AddPageVersionInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1458](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1458)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1559](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1559)
 
 Input data containing properties of the page for which to create a new version.
 
@@ -26,7 +26,7 @@ Input data containing properties of the page for which to create a new version.
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1459](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1459)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1560](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1560)
 
 #### pageId
 
@@ -40,7 +40,7 @@ The page identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1465](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1465)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1566](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1566)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/version"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1475](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1475)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1576](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1576)

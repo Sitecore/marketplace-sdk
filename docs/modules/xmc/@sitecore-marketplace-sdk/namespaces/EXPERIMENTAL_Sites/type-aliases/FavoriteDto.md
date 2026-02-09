@@ -8,7 +8,7 @@
 
 > **FavoriteDto** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:261](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L261)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:337](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L337)
 
 Represents a data transfer object for a user's favorite entity.
 
@@ -18,7 +18,7 @@ Represents a data transfer object for a user's favorite entity.
 
 > `optional` **createdAt**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:265](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L265)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:341](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L341)
 
 The date and time when the favorite was created.
 
@@ -28,7 +28,7 @@ The date and time when the favorite was created.
 
 > `optional` **favoriteEntityId**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:270](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L270)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:346](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L346)
 
 The unique identifier of the favorited entity.
 Example value: 79d30e03fdaa44fda1aa03c731fe44e4
@@ -39,7 +39,7 @@ Example value: 79d30e03fdaa44fda1aa03c731fe44e4
 
 > `optional` **favoriteEntityType**: `string` \| `null`
 
-Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:275](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L275)
+Defined in: [packages/xmc/src/experimental/client-sites/types.gen.ts:351](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-sites/types.gen.ts#L351)
 
 The type of the favorited entity.
 Example value: Site

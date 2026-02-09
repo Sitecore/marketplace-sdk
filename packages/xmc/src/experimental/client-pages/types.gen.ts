@@ -23,6 +23,33 @@ export namespace experimental_Pages {
      */
     versionName?: string | null;
   };
+  export type CreatePageFromBlueprintInput = {
+    /**
+     * The identifier of the parent page.
+     * Example value: 9100b830-c85b-459b-9c37-51da74fc9ecc
+     */
+    parentId: string;
+    /**
+     * The system name of the new page.
+     * Example value: about-us
+     */
+    pageName: string;
+    /**
+     * The identifier of the blueprint to be used for the new page.
+     * Example value: 2341ef32-42f4-4537-98d8-9ef741008eab
+     */
+    blueprintId: string;
+    /**
+     * The language of the new page.
+     * Example value: en-US
+     */
+    language: string;
+    /**
+     * The display name of the new page.
+     * Example value: About Us
+     */
+    displayName?: string | null;
+  };
   export type CreatePageInput = {
     /**
      * The identifier of the parent page.
@@ -83,6 +110,9 @@ export namespace experimental_Pages {
      * Example value: About Us Copy
      */
     displayName?: string | null;
+  };
+  export type JobResponse = {
+    handle?: string | null;
   };
   /**
    * The type of layout (Final or Shared).
@@ -190,7 +220,7 @@ export namespace experimental_Pages {
      */
     parentId?: string | null;
     /**
-     * If set to true, this page can be rendered in the XM Cloud Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
+     * If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.
      * Example value: True
      */
     hasPresentation?: boolean;
@@ -284,6 +314,7 @@ export namespace experimental_Pages {
      * Example value: Page
      */
     displayName?: string | null;
+    templateType?: TemplateType;
   };
   export type PageLayout = {
     kind?: LayoutKind;
@@ -720,6 +751,44 @@ export namespace experimental_Pages {
      */
     version?: number;
   };
+  /**
+   * The type of template.
+   */
+  export type TemplateType = 'ItemTemplate' | 'BranchTemplate';
+  /**
+   * The type of template.
+   */
+  export const TemplateType = {
+    ITEM_TEMPLATE: 'ItemTemplate',
+    BRANCH_TEMPLATE: 'BranchTemplate',
+  } as const;
+  /**
+   * The translations options
+   */
+  export type TranslatePageInput = {
+    /**
+     * Source language
+     * Example value: en
+     */
+    sourceLanguage: string;
+    /**
+     * Target language
+     * Example value: ja-JP
+     */
+    targetLanguage: string;
+    translationStrategy: TranslationStrategy;
+  };
+  /**
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
+   */
+  export type TranslationStrategy = 'AddVersion' | 'SkipIfExists';
+  /**
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
+   */
+  export const TranslationStrategy = {
+    ADD_VERSION: 'AddVersion',
+    SKIP_IF_EXISTS: 'SkipIfExists',
+  } as const;
   /**
    * The search filter type.
    */
@@ -1287,6 +1356,38 @@ export namespace experimental_Pages {
     200: PageOperationResult;
   };
   export type CreatePageResponse = CreatePageResponses[keyof CreatePageResponses];
+  export type CreateBlueprintData = {
+    /**
+     * Input data containing properties of the page
+     */
+    body?: CreatePageFromBlueprintInput;
+    path?: never;
+    query?: {
+      /**
+       * The identifier of the environment.
+       */
+      environmentId?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/blueprint';
+  };
+  export type CreateBlueprintErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+  };
+  export type CreateBlueprintError = CreateBlueprintErrors[keyof CreateBlueprintErrors];
+  export type CreateBlueprintResponses = {
+    /**
+     * Success
+     */
+    200: JobResponse;
+  };
+  export type CreateBlueprintResponse = CreateBlueprintResponses[keyof CreateBlueprintResponses];
   export type SaveLayoutData = {
     /**
      * Input data containing layout of the page
@@ -1492,6 +1593,51 @@ export namespace experimental_Pages {
     200: number;
   };
   export type AddPageVersionResponse = AddPageVersionResponses[keyof AddPageVersionResponses];
+  export type TranslatePageData = {
+    /**
+     * The input model.
+     */
+    body: TranslatePageInput;
+    path: {
+      /**
+       * The identifier of the page.
+       */
+      pageId: string;
+    };
+    query?: {
+      /**
+       * The site identifier.
+       */
+      siteId?: string;
+      /**
+       * The identifier of the environment.
+       */
+      environmentId?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/translate';
+  };
+  export type TranslatePageErrors = {
+    /**
+     * Bad request
+     */
+    400: ProblemDetails;
+    /**
+     * Not found
+     */
+    404: ProblemDetails;
+  };
+  export type TranslatePageError = TranslatePageErrors[keyof TranslatePageErrors];
+  export type TranslatePageResponses = {
+    /**
+     * Success
+     */
+    200: string;
+  };
+  export type TranslatePageResponse = TranslatePageResponses[keyof TranslatePageResponses];
   export type DeletePageVersionsData = {
     body?: never;
     path: {

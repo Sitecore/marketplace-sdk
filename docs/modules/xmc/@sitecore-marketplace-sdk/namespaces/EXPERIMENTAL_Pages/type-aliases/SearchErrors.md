@@ -8,7 +8,7 @@
 
 > **SearchErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1020](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1020)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1089](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1089)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1020](https
 
 > **400**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1024](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1024)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1093](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1093)
 
 Bad request
 
@@ -26,7 +26,7 @@ Bad request
 
 > **404**: [`ProblemDetails`](ProblemDetails.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1028](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1028)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1097](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1097)
 
 Not found
 
@@ -36,6 +36,6 @@ Not found
 
 > **503**: `unknown`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1032](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1032)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1101](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1101)
 
 Search service unavailable

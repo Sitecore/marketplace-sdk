@@ -8,7 +8,7 @@
 
 > **SaveFieldsData** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1331](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1331)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1432](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1432)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1331](https
 
 > `optional` **body**: [`SavePageFieldsInput`](SavePageFieldsInput.md)
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1335](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1335)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1436](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1436)
 
 Input data containing fields of the page
 
@@ -26,7 +26,7 @@ Input data containing fields of the page
 
 > **path**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1336](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1336)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1437](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1437)
 
 #### pageId
 
@@ -40,7 +40,7 @@ The page identifier.
 
 > `optional` **query**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1342](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1342)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1443](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1443)
 
 #### environmentId?
 
@@ -60,4 +60,4 @@ The Sitecore context ID.
 
 > **url**: `"/api/v1/pages/{pageId}/fields"`
 
-Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1352](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1352)
+Defined in: [packages/xmc/src/experimental/client-pages/types.gen.ts:1453](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-pages/types.gen.ts#L1453)

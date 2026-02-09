@@ -31,7 +31,9 @@
     "marketplace",
     "sdk",
     "xmc",
-    "xmcloud"
+    "xmcloud",
+    "sai",
+    "sitecoreai"
   ],
   "dependencies": {
     "@hey-api/client-fetch": "0.8.3"

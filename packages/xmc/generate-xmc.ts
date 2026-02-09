@@ -11,7 +11,9 @@ createClient({
     path: './src/client-xmapp',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/authoring',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -21,6 +23,8 @@ createClient({
     },
     defineAugmentationConfig({
       namespaces: ['xmc.xmapp'],
+      deprecated: true,
+      deprecationMessage: `The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.`,
     }),
     defineClientTransformerConfig({
       namespace: 'Xmapp',
@@ -36,7 +40,9 @@ createClient({
     path: './src/client-authoring',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/v1/authoring',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -61,7 +67,9 @@ createClient({
     path: './src/client-content-transfer',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/authoring/transfer',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -86,7 +94,9 @@ createClient({
     path: './src/client-content',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/content/api',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -111,7 +121,9 @@ createClient({
     path: './src/client-agent',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/stream/ai-agent-api/',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',
@@ -124,6 +136,60 @@ createClient({
     }),
     defineClientTransformerConfig({
       namespace: 'Agent',
+    }),
+  ],
+});
+
+createClient({
+  input: 'https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-sites',
+  },
+  plugins: [
+    defineSchemaPatcherConfig({
+      basePath: '/authoring',
+    }),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.sites'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Sites',
+    }),
+  ],
+});
+
+createClient({
+  input: 'https://api-docs.sitecore.com/_spec/sai/pages-api/index.yaml',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-pages',
+  },
+  plugins: [
+    defineSchemaPatcherConfig({
+      basePath: '/authoring',
+    }),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.pages'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Pages',
     }),
   ],
 });
