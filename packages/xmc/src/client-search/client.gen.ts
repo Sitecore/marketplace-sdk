@@ -25,7 +25,7 @@ export type CreateClientConfig<T extends DefaultClientOptions = ClientOptions> =
 
 export const client = createClient(
   createConfig<ClientOptions>({
-    baseUrl: 'https://edge-platform.sitecorecloud.io/search',
+    baseUrl: 'https://example.com/search',
     fetch: clientSdkfetch,
   }),
 );

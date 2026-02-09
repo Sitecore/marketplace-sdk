@@ -202,7 +202,9 @@ createClient({
     path: './src/client-search',
   },
   plugins: [
-    defineSchemaPatcherConfig(),
+    defineSchemaPatcherConfig({
+      basePath: '/search',
+    }),
     '@hey-api/client-fetch',
     '@hey-api/schemas',
     '@hey-api/sdk',

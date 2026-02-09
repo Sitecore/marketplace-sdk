@@ -84,6 +84,6 @@ export namespace Search {
   };
   export type GetConfigsResponse = GetConfigsResponses[keyof GetConfigsResponses];
   export type ClientOptions = {
-    baseUrl: 'https://edge-platform.sitecorecloud.io/search' | (string & {});
+    baseUrl: 'https://example.com/search' | (string & {});
   };
 }

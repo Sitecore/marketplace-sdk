@@ -14,6 +14,6 @@ Defined in: [packages/xmc/src/client-search/types.gen.ts:86](https://github.com/
 
 ### baseUrl
 
-> **baseUrl**: `"https://edge-platform.sitecorecloud.io/search"` \| `string` & `object`
+> **baseUrl**: `"https://example.com/search"` \| `string` & `object`
 
 Defined in: [packages/xmc/src/client-search/types.gen.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L87)
