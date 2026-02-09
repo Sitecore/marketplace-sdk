@@ -82,7 +82,7 @@ Our own origin – this defaults to the value of window.location.origin
 
 > `optional` **target**: `Window`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:8
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:8
 
 The target window to communicate with (e.g., iframe.contentWindow)
 
@@ -110,7 +110,7 @@ The origin of the remote endpoint (e.g. client for the host, or host for the cli
 
 > `optional` **timeout**: `number`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:14
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:14
 
 Optional timeout for requests in milliseconds (default: 30000)
 

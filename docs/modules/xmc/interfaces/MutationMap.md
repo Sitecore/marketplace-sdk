@@ -370,7 +370,223 @@ Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supp
 
 #### response
 
-> **response**: \{ `data`: \{ `data?`: \{[`key`: `string`]: `unknown`; \}; `errors?`: `object`[]; \}; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: \{ data?: \{ \[key: string\]: unknown; \} \| undefined; errors?: \{ message?: string \| undefined; locations?: \{ line?: number \| undefined; column?: number \| undefined; \}\[\] \| undefined; path?: string\[\] \| undefined; \}\[\] \| undefined; \}; error: undefined; \}) & \{ ...; \}
+> **response**: \{ `data`: \{ `data?`: \{\[`key`: `string`\]: `unknown`; \}; `errors?`: `object`[]; \}; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: unknown; \} \| \{ data: \{ data?: \{ \[key: string\]: unknown; \} \| undefined; errors?: \{ message?: string \| undefined; locations?: \{ line?: number \| undefined; column?: number \| undefined; \}\[\] \| undefined; path?: string\[\] \| undefined; \}\[\] \| undefined; \}; error: undefined; \}) & \{ ...; \}
+
+***
+
+### xmc.pages.addPageVersion
+
+> **xmc.pages.addPageVersion**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:117](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L117)
+
+Creates a new version of a page.
+
+#### params
+
+> **params**: `Options`\<[`AddPageVersionData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/AddPageVersionData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.addPageVersions
+
+> **xmc.pages.addPageVersions**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:75](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L75)
+
+Creates a new version of a page.
+
+#### params
+
+> **params**: `Options`\<[`AddPageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/AddPageVersionsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.createBlueprint
+
+> **xmc.pages.createBlueprint**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L87)
+
+Creates a new page from an existing blueprint.
+
+#### params
+
+> **params**: `Options`\<[`CreateBlueprintData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/CreateBlueprintData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`JobResponse`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/JobResponse.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: JobResponse; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.createPage
+
+> **xmc.pages.createPage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:81](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L81)
+
+Creates a new page.
+
+#### params
+
+> **params**: `Options`\<[`CreatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/CreatePageData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.deletePage
+
+> **xmc.pages.deletePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L63)
+
+Deletes a page.
+
+#### params
+
+> **params**: `Options`\<[`DeletePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DeletePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `boolean`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: boolean; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.deletePageVersions
+
+> **xmc.pages.deletePageVersions**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:129](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L129)
+
+Deletes the specified version of a page.
+
+#### params
+
+> **params**: `Options`\<[`DeletePageVersionsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DeletePageVersionsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `number`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: number; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.duplicatePage
+
+> **xmc.pages.duplicatePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:105](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L105)
+
+Creates a copy of a page.
+
+#### params
+
+> **params**: `Options`\<[`DuplicatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/DuplicatePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.renamePage
+
+> **xmc.pages.renamePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:111](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L111)
+
+Changes the name of a page.
+
+#### params
+
+> **params**: `Options`\<[`RenamePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/RenamePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.saveFields
+
+> **xmc.pages.saveFields**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:99](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L99)
+
+Updates the fields of a page.
+
+#### params
+
+> **params**: `Options`\<[`SaveFieldsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SaveFieldsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SavePageResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SavePageResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SavePageResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.saveLayout
+
+> **xmc.pages.saveLayout**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:93](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L93)
+
+Updates the layout of a page.
+
+#### params
+
+> **params**: `Options`\<[`SaveLayoutData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SaveLayoutData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`SavePageResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/SavePageResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: SavePageResult; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.translatePage
+
+> **xmc.pages.translatePage**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:123](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L123)
+
+Creates a new translated version of a single page using the Stream API.
+
+#### params
+
+> **params**: `Options`\<[`TranslatePageData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/TranslatePageData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: `string`; `request`: `Request`; `response`: `Response`; \} \| (\{ data: string; error: undefined; \} \| \{ data: undefined; error: ProblemDetails; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.pages.updateFields
+
+> **xmc.pages.updateFields**: `object`
+
+Defined in: [packages/xmc/src/client-pages/augmentation.gen.ts:69](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-pages/augmentation.gen.ts#L69)
+
+Updates values of existing fields for a specific page.
+
+#### params
+
+> **params**: `Options`\<[`UpdateFieldsData`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/UpdateFieldsData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`PageOperationResult`](../@sitecore-marketplace-sdk/namespaces/Pages/type-aliases/PageOperationResult.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: PageOperationResult; error: undefined; \}) & \{ request: Request; response: Response; \}
 
 ***
 
@@ -394,7 +610,7 @@ Send a GraphQL query request to the Sitecore GraphQL API. Mutations are not supp
 
 ### xmc.sites.addFavoriteSite
 
-> **addFavoriteSite**: `object`
+> **xmc.sites.addFavoriteSite**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:224](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L224)
 
@@ -430,7 +646,7 @@ Adds a site template to your list of favorites
 
 ### xmc.sites.aggregateLivePageVariants
 
-> **aggregateLivePageVariants**: `object`
+> **xmc.sites.aggregateLivePageVariants**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:254](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L254)
 
@@ -438,7 +654,7 @@ Returns currently active personalization variants for the requested pages.
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`AggregateLivePageVariantsData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/AggregateLivePageVariantsData.md), `boolean`\>
+> **params**: `Options`\<[`AggregateLivePageVariantsData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AggregateLivePageVariantsData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -448,7 +664,7 @@ Returns currently active personalization variants for the requested pages.
 
 ### xmc.sites.aggregatePageData
 
-> **aggregatePageData**: `object`
+> **xmc.sites.aggregatePageData**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:260](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L260)
 
@@ -456,7 +672,7 @@ Aggregates data about multiple pages and their components.
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`AggregatePageDataData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/AggregatePageDataData.md), `boolean`\>
+> **params**: `Options`\<[`AggregatePageDataData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/AggregatePageDataData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -466,7 +682,7 @@ Aggregates data about multiple pages and their components.
 
 ### xmc.sites.copySite
 
-> **copySite**: `object`
+> **xmc.sites.copySite**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:339](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L339)
 
@@ -484,7 +700,7 @@ You can create a site by duplicating an existing one. When you duplicate a site,
 
 ### xmc.sites.createCollection
 
-> **createCollection**: `object`
+> **xmc.sites.createCollection**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:206](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L206)
 
@@ -492,7 +708,7 @@ Creates a collection by specifying a name and, optionally, a display name and de
 
 #### params
 
-> **params**: `undefined` \| `Options`\<[`CreateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Xmapp/type-aliases/CreateCollectionData.md), `boolean`\>
+> **params**: `Options`\<[`CreateCollectionData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateCollectionData.md), `boolean`\> \| `undefined`
 
 #### response
 
@@ -502,7 +718,7 @@ Creates a collection by specifying a name and, optionally, a display name and de
 
 ### xmc.sites.createHost
 
-> **createHost**: `object`
+> **xmc.sites.createHost**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:375](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L375)
 
@@ -520,7 +736,7 @@ Creates a host for a site.
 
 ### xmc.sites.createLanguage
 
-> **createLanguage**: `object`
+> **xmc.sites.createLanguage**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:200](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L200)
 
@@ -538,9 +754,27 @@ Adds a language to your environment, so you can create content and build website
 
 ***
 
-### xmc.xmapp.createSite
+### xmc.sites.createProfile
 
-> **createSite**: `object`
+> **xmc.sites.createProfile**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:236](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L236)
+
+Creates a new profile in the environment.
+
+#### params
+
+> **params**: `Options`\<[`CreateProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/CreateProfileData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.sites.createSite
+
+> **xmc.sites.createSite**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:318](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L318)
 
@@ -560,7 +794,7 @@ Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:318](https://gith
 
 ### xmc.sites.deleteCollection
 
-> **deleteCollection**: `object`
+> **xmc.sites.deleteCollection**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:212](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L212)
 
@@ -578,7 +812,7 @@ Deletes a site collection, including sites in that collection.
 
 ### xmc.sites.deleteHost
 
-> **deleteHost**: `object`
+> **xmc.sites.deleteHost**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:381](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L381)
 
@@ -596,7 +830,7 @@ Deletes a site using a hostID. Deletes a site, including its pages, settings, me
 
 ### xmc.sites.deleteLanguage
 
-> **deleteLanguage**: `object`
+> **xmc.sites.deleteLanguage**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:291](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L291)
 
@@ -633,7 +867,7 @@ Deletes a profile, including the toolbar configuration associated with that prof
 
 ### xmc.sites.deleteSite
 
-> **deleteSite**: `object`
+> **xmc.sites.deleteSite**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:327](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L327)
 
@@ -654,7 +888,7 @@ Deletes a site, including its pages, settings, media files, data sources, presen
 
 ### xmc.sites.detachAnalyticsIdentifier
 
-> **detachAnalyticsIdentifier**: `object`
+> **xmc.sites.detachAnalyticsIdentifier**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:369](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L369)
 
@@ -672,7 +906,7 @@ Removes the analytics identifiers from one or more sites.
 
 ### xmc.sites.removeFavoriteSite
 
-> **removeFavoriteSite**: `object`
+> **xmc.sites.removeFavoriteSite**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:304](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L304)
 
@@ -708,7 +942,7 @@ Removes a site template from your list of favorites
 
 ### xmc.sites.renameCollection
 
-> **renameCollection**: `object`
+> **xmc.sites.renameCollection**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:266](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L266)
 
@@ -726,7 +960,7 @@ Changes the system name of a site collection.
 
 ### xmc.sites.renameSite
 
-> **renameSite**: `object`
+> **xmc.sites.renameSite**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:345](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L345)
 
@@ -744,7 +978,7 @@ Changes the system name of a site.
 
 ### xmc.sites.sortCollections
 
-> **sortCollections**: `object`
+> **xmc.sites.sortCollections**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:272](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L272)
 
@@ -762,7 +996,7 @@ By assigning a sort value to site collection IDs, you can use this endpoint to a
 
 ### xmc.sites.sortSites
 
-> **sortSites**: `object`
+> **xmc.sites.sortSites**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:351](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L351)
 
@@ -798,7 +1032,7 @@ Creates new translated versions of all items for a specific site using the Strea
 
 ### xmc.sites.updateCollection
 
-> **updateCollection**: `object`
+> **xmc.sites.updateCollection**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:218](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L218)
 
@@ -816,7 +1050,7 @@ Updates the display name and the description of the site collection. To change t
 
 ### xmc.sites.updateHost
 
-> **updateHost**: `object`
+> **xmc.sites.updateHost**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:387](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L387)
 
@@ -834,7 +1068,7 @@ Modifies the properties of a host.
 
 ### xmc.sites.updateLanguage
 
-> **updateLanguage**: `object`
+> **xmc.sites.updateLanguage**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:298](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L298)
 
@@ -851,9 +1085,27 @@ Updates a [language supported](https://doc.sitecore.com/xmc/en/users/xm-cloud/ad
 
 ***
 
-### xmc.xmapp.updateSite
+### xmc.sites.updateProfile
 
-> **updateSite**: `object`
+> **xmc.sites.updateProfile**: `object`
+
+Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:248](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L248)
+
+Updates the properties of a profile.
+
+#### params
+
+> **params**: `Options`\<[`UpdateProfileData`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/UpdateProfileData.md), `boolean`\>
+
+#### response
+
+> **response**: \{ `data`: [`EditorProfileModel`](../@sitecore-marketplace-sdk/namespaces/Sites/type-aliases/EditorProfileModel.md); `request`: `Request`; `response`: `Response`; \} \| (\{ data: undefined; error: ProblemDetails; \} \| \{ data: EditorProfileModel; error: undefined; \}) & \{ request: Request; response: Response; \}
+
+***
+
+### xmc.sites.updateSite
+
+> **xmc.sites.updateSite**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:333](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L333)
 
@@ -871,7 +1123,7 @@ Updates various parameters of a site. To change the name of a site, see [rename 
 
 ### xmc.sites.updateSitemapConfiguration
 
-> **updateSitemapConfiguration**: `object`
+> **xmc.sites.updateSitemapConfiguration**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:399](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L399)
 
@@ -889,7 +1141,7 @@ Updates a [sitemap](https://doc.sitecore.com/xmc/en/developers/xm-cloud/configur
 
 ### xmc.sites.uploadSiteThumbnail
 
-> **uploadSiteThumbnail**: `object`
+> **xmc.sites.uploadSiteThumbnail**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:393](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L393)
 
@@ -907,7 +1159,7 @@ Uploads an image to be used as [thumbnail](https://doc.sitecore.com/xmc/en/users
 
 ### xmc.sites.validateCollectionName
 
-> **validateCollectionName**: `object`
+> **xmc.sites.validateCollectionName**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:284](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L284)
 
@@ -931,7 +1183,7 @@ Validates a site collection name to ensure it meets the required criteria. The v
 
 ### xmc.sites.validateSiteName
 
-> **validateSiteName**: `object`
+> **xmc.sites.validateSiteName**: `object`
 
 Defined in: [packages/xmc/src/client-sites/augmentation.gen.ts:363](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-sites/augmentation.gen.ts#L363)
 

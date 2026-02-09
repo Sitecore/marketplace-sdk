@@ -18,6 +18,7 @@
 - [experimental\_Search](@sitecore-marketplace-sdk/namespaces/experimental_Search/README.md)
 - [experimental\_Sites](@sitecore-marketplace-sdk/namespaces/experimental_Sites/README.md)
 - [Pages](@sitecore-marketplace-sdk/namespaces/Pages/README.md)
+- [Search](@sitecore-marketplace-sdk/namespaces/Search/README.md)
 - [Sites](@sitecore-marketplace-sdk/namespaces/Sites/README.md)
 - [Xmapp](@sitecore-marketplace-sdk/namespaces/Xmapp/README.md)
 

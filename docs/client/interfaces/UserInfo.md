@@ -6,7 +6,7 @@
 
 # Interface: UserInfo
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:1
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:1
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modul
 
 > **email**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:4
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:4
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modul
 
 > **id**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:2
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:2
 
 ***
 
@@ -30,4 +30,4 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modul
 
 > **name**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:3
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.1/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:3
