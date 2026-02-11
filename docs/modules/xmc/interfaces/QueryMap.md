@@ -966,6 +966,28 @@ Fetches a list of pages and folders whose name or display name match the search 
 
 ***
 
+### xmc.search.getConfigs
+
+> **xmc.search.getConfigs**: `object`
+
+Defined in: [packages/xmc/src/client-search/augmentation.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/augmentation.gen.ts#L9)
+
+Get all search configurations for the authenticated client
+
+#### params
+
+> **params**: `Options`\<[`GetConfigsData`](../@sitecore-marketplace-sdk/namespaces/Search/type-aliases/GetConfigsData.md), `boolean`\> \| `undefined`
+
+#### response
+
+> **response**: \{ `data`: [`Config`](../@sitecore-marketplace-sdk/namespaces/Search/type-aliases/Config.md)[]; `request`: `Request`; `response`: `Response`; \} \| (\{ data: Config\[\]; error: undefined; \} \| \{ data: undefined; error: ErrorResponse; \}) & \{ request: Request; response: Response; \}
+
+#### subscribe
+
+> **subscribe**: `false`
+
+***
+
 ### xmc.sites.getEditingHosts
 
 > **xmc.sites.getEditingHosts**: `object`

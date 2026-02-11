@@ -16,6 +16,7 @@ import type {
   AuthoringApi,
   ContentTransferApi,
   ContentApi,
+  SearchApi,
 } from '../index';
 
 // Test experimental_ namespace imports like in demo app
@@ -25,6 +26,7 @@ import {
   experimental_Authoring,
   experimental_ContentTransfer,
   experimental_Content,
+  experimental_Search,
 } from '../index';
 
 describe('Index Exports', () => {
@@ -57,6 +59,7 @@ describe('Index Exports', () => {
       expect(xmc.contentTransfer).toBeDefined();
       expect(xmc.preview).toBeDefined();
       expect(xmc.live).toBeDefined();
+      expect(xmc.search).toBeDefined();
     });
   });
 
@@ -69,6 +72,11 @@ describe('Index Exports', () => {
 
     it('should handle valid operations', () => {
       const result = XMC.invokeOperation('authoring.graphql', { query: 'test' });
+      expect(result).toBeDefined();
+    });
+
+    it('should handle search operations', () => {
+      const result = XMC.invokeOperation('search.getConfigs', {});
       expect(result).toBeDefined();
     });
 
@@ -101,6 +109,7 @@ describe('Index Exports', () => {
       const authoringApi: AuthoringApi = {} as AuthoringApi;
       const contentTransferApi: ContentTransferApi = {} as ContentTransferApi;
       const contentApi: ContentApi = {} as ContentApi;
+      const searchApi: SearchApi = {} as SearchApi;
 
       expect(config).toBeDefined();
       expect(sitesApi).toBeDefined();
@@ -108,6 +117,7 @@ describe('Index Exports', () => {
       expect(authoringApi).toBeDefined();
       expect(contentTransferApi).toBeDefined();
       expect(contentApi).toBeDefined();
+      expect(searchApi).toBeDefined();
     });
 
     it('should support all experimental_ namespaces', () => {
@@ -138,6 +148,7 @@ describe('Index Exports', () => {
       const mockContentData: experimental_Content.GraphqlResponse = {
         data: { content: 'test' },
       };
+      const mockSearchData: experimental_Search.GetConfigsResponse = [];
 
       expect(mockSitesData).toBeDefined();
       expect(mockSitesData[0].iso).toBe('en');
@@ -146,6 +157,7 @@ describe('Index Exports', () => {
       expect(mockAuthoringData.data).toBeDefined();
       expect(mockContentTransferData).toBeDefined();
       expect(mockContentData).toBeDefined();
+      expect(mockSearchData).toBeDefined();
     });
   });
 
@@ -166,6 +178,7 @@ describe('Index Exports', () => {
       expect(typeof xmc.contentTransfer.createContentTransfer).toBe('function');
       expect(typeof xmc.preview.graphql).toBe('function');
       expect(typeof xmc.live.graphql).toBe('function');
+      expect(typeof xmc.search.getConfigs).toBe('function');
 
       // Test demo app usage pattern
       const mockResponse = {

@@ -8,4 +8,4 @@
 
 > **AuthoringApi** = *typeof* `experimental_authoring_sdk`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L49)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L51)

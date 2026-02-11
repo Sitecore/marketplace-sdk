@@ -4,6 +4,7 @@ import * as content from './client-content/sdk.gen';
 import * as contentTransfer from './client-content-transfer/sdk.gen';
 import * as xmapp from './client-xmapp/sdk.gen';
 import * as agent from './client-agent/sdk.gen';
+import * as search from './client-search/sdk.gen';
 import * as pages from './client-pages/sdk.gen';
 import * as sites from './client-sites/sdk.gen';
 
@@ -28,6 +29,9 @@ export * from './client-pages/augmentation.gen';
 export * from './client-sites/types.gen';
 export * from './client-sites/augmentation.gen';
 
+export * from './client-search/types.gen';
+export * from './client-search/augmentation.gen';
+
 // Experimental exports with prefix to avoid conflicts
 export * from './experimental_xmc'; // This will export all experimental types and APIs
 
@@ -41,6 +45,7 @@ const namespaceMap: Record<string, any> = {
   agent: agent,
   pages: pages,
   sites: sites,
+  search: search,
 };
 
 export const XMC: SDKModule = {

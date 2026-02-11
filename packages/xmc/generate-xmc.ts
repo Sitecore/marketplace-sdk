@@ -193,3 +193,30 @@ createClient({
     }),
   ],
 });
+
+createClient({
+  input: './schema/search.json',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-search',
+  },
+  plugins: [
+    defineSchemaPatcherConfig({
+      basePath: '/search',
+    }),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.search'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Search',
+    }),
+  ],
+});
