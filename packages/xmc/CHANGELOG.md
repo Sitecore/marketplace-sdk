@@ -1,5 +1,19 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 1.0.0
+
+### Minor Changes
+
+- 56180f9: Add Search API support
+- 9bd1985: Update XMC SDK to support latest changes from Pages and Sites APIs
+  - Added new namespaces `xmc.pages` and `xmc.sites` for queries and mutations related to Pages and Sites APIs
+  - Deprecated all queries and mutation for `xmc.xmapps` namespace
+
+### Patch Changes
+
+- Updated dependencies [9bd1985]
+  - @sitecore-marketplace-sdk/client@1.0.0
+
 ## 0.3.2
 
 ### Patch Changes

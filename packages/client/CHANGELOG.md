@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/client
 
+## 1.0.0
+
+### Patch Changes
+
+- 9bd1985: Update core dependency to fix vulnerability issues
+
 ## 0.3.1
 
 ### Patch Changes
