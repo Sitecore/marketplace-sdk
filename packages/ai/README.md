@@ -1,51 +1,64 @@
-# @sitecore-marketplace-sdk/ai
+# Sitecore Marketplace SDK - `ai` package
 
-AI module for the Sitecore Marketplace SDK. Provides typed API access to Sitecore AI Skills.
+The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following:
+-   [AI Skills API](https://doc.sitecore.com/xmc/en/developers/xm-cloud) - AI Skills capabilities
+
+## Prerequisites
+- Node.js 16 or later. Check your installed version by using the `node --version` command.
+- npm 10 or later. Check your installed version by using the `npm --version` command.
+- A Stream subscription.
 
 ## Installation
 
 ```bash
-npm install @sitecore-marketplace-sdk/ai @sitecore-marketplace-sdk/client
+npm install @sitecore-marketplace-sdk/ai
+```
+
+## Initialization
+Before you use queries or mutations, you must initialize the AI module.
+
+1. Update the code where you initialized the Client SDK by importing `AI` and adding it to `config`:
+
+```typescript
+// utils/hooks/useMarketplaceClient.ts
+import { AI } from '@sitecore-marketplace-sdk/ai';
+
+// ...
+const config = {
+  // ...
+  modules: [AI] // Extend Client SDK with `AI`
+};
 ```
 
 ## Usage
 
-### Classic Mode (with ClientSDK)
+### Make a mutation
+Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
+
+For example, to generate a brand review using the AI Skills API:
 
 ```typescript
-import { ClientSDK } from '@sitecore-marketplace-sdk/client';
-import { AI } from '@sitecore-marketplace-sdk/ai';
-
-const clientSdk = new ClientSDK({ /* config */ });
-clientSdk.addModule(AI);
-
-// Use typed operations
-const result = await clientSdk.mutate('ai.skills.generateBrandReview', {
-  body: {
-    brandkitId: 'your-brand-kit-id',
-    input: { text: 'Content to review' },
-  },
-});
+const generateBrandReview = async () => {
+  await client?.mutate('ai.skills.generateBrandReview', {
+    body: {
+      brandkitId: 'your-brand-kit-id',
+      input: { text: 'Content to review' },
+    },
+  });
+};
 ```
 
-### Experimental Mode (Standalone)
+For an overview of all the possible values, refer to the [`MutationMap` interface](../../docs/xmc/interfaces/MutationMap.md).
 
-```typescript
-import { experimental_createAIClient } from '@sitecore-marketplace-sdk/ai';
+> [!NOTE]
+> Behind the scenes, the Host SDK (integrated via the internal `core` package) attaches the required user token and performs the HTTP request on behalf of the Marketplace app (the client).
 
-const client = await experimental_createAIClient({
-  getAccessToken: async () => 'your-access-token',
-});
+## Documentation
 
-// Use typed API methods directly
-const result = await client.skills.generateBrandReviewApiSkillsV1BrandreviewGeneratePost({
-  body: {
-    brandkitId: 'your-brand-kit-id',
-    input: { text: 'Content to review' },
-  },
-});
-```
+For more information, refer to the reference documentation in the `/docs` folder.
 
-## License
+## License 
+This package is part of the Sitecore Marketplace SDK, licensed under the Apache 2.0 License. Refer to the [LICENSE](../../LICENSE.md) file in the repository root.
 
-Apache-2.0
+## Status
+The `client` package is actively maintained as part of the Sitecore Marketplace SDK.
