@@ -4,12 +4,16 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    include: ['src/__tests__/*.test.ts', 'src/**/*.spec.ts'],
+    include: [
+      'src/__tests__/*.test.ts',
+      'src/**/*.spec.ts',
+      'plugins/**/*.test.ts',
+    ],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
-      include: ['src/**/*.ts'],
-      exclude: ['src/client-*/*.ts'],
+      include: ['src/**/*.ts', 'plugins/**/*.ts'],
+      exclude: ['src/client-*/*.ts', 'plugins/**/__tests__/*.ts'],
     },
     watch: false,
   },
