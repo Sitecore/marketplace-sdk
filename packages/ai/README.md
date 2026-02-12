@@ -1,7 +1,7 @@
 # Sitecore Marketplace SDK - `ai` package
 
-The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following:
--   [AI Skills API](https://doc.sitecore.com/xmc/en/developers/xm-cloud) - AI Skills capabilities
+The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI skills APIs:
+- [Brand Review REST API](https://api-docs.sitecore.com/ai-capabilities/ai-brand-review-admin-rest-api) - using AI-powered analysis, evaluate whether input content and assets comply with the guidelines defined in a brand kit.
 
 ## Prerequisites
 - Node.js 16 or later. Check your installed version by using the `node --version` command.
