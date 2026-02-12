@@ -37,7 +37,7 @@ type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostError =
 type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostData =
   experimental_Skills.GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostData;
 
-type GetVersionData = experimental_Skills.GetVersionData;
+type GetVersionApiVersionGetData = experimental_Skills.GetVersionApiVersionGetData;
 
 export type Options<
   TData extends TDataShape = TDataShape,
@@ -59,8 +59,8 @@ export type Options<
 /**
  * Get Version
  */
-export const getVersion = <ThrowOnError extends boolean = false>(
-  options?: Options<GetVersionData, ThrowOnError>,
+export const getVersionApiVersionGet = <ThrowOnError extends boolean = false>(
+  options?: Options<GetVersionApiVersionGetData, ThrowOnError>,
 ) => {
   return (options?.client ?? _heyApiClient).get<unknown, unknown, ThrowOnError>({
     url: '/api/version',

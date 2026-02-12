@@ -220,7 +220,7 @@ export namespace experimental_Skills {
     msg: string;
     type: string;
   };
-  export type GetVersionData = {
+  export type GetVersionApiVersionGetData = {
     body?: never;
     path?: never;
     query?: {
@@ -231,7 +231,7 @@ export namespace experimental_Skills {
     };
     url: '/api/version';
   };
-  export type GetVersionResponses = {
+  export type GetVersionApiVersionGetResponses = {
     /**
      * Successful Response
      */
@@ -399,6 +399,6 @@ export namespace experimental_Skills {
     201: unknown;
   };
   export type ClientOptions = {
-    baseUrl: `${string}://${string}` | (string & {});
+    baseUrl: 'https://ai-skills-api-euw-staging.sitecore-staging.cloud' | (string & {});
   };
 }
