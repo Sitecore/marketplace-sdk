@@ -48,7 +48,7 @@ const generateBrandReview = async () => {
 };
 ```
 
-For an overview of all the possible values, refer to the [`MutationMap` interface](../../docs/xmc/interfaces/MutationMap.md).
+For an overview of all the possible values, refer to the [`MutationMap` interface](../../docs/modules/ai/interfaces/MutationMap.md).
 
 > [!NOTE]
 > Behind the scenes, the Host SDK (integrated via the internal `core` package) attaches the required user token and performs the HTTP request on behalf of the Marketplace app (the client).
