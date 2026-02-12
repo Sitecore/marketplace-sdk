@@ -35,7 +35,7 @@ const config = {
 ### Make a mutation
 Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
 
-For example, to generate a brand review using the AI Skills API:
+For example, to generate a brand review using the AI skills API:
 
 ```typescript
 const generateBrandReview = async () => {
