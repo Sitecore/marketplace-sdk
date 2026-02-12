@@ -3,7 +3,7 @@ import { defineSchemaPatcherConfig } from '../../tools/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../../tools/plugins/namespace-transformer';
 
 createClient({
-  input: './schema/skills.json',
+  input: 'https://ai-skills-api-euw-staging.sitecore-staging.cloud/openapi.json',
   output: {
     format: 'prettier',
     lint: 'eslint',
