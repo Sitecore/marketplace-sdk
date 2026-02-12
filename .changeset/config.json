@@ -12,6 +12,6 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@sitecore-marketplace-sdk/internal"],
+  "ignore": [],
   "bumpVersionsWithWorkspaceProtocolOnly": true
 }

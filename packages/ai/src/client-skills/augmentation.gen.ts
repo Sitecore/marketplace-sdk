@@ -6,9 +6,9 @@ declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
     /**
      * Get Version*/
-    'ai.skills.getVersion': {
-      params: Parameters<typeof sdk.getVersion>[0];
-      response: Awaited<ReturnType<typeof sdk.getVersion>>;
+    'ai.skills.getVersionApiVersionGet': {
+      params: Parameters<typeof sdk.getVersionApiVersionGet>[0];
+      response: Awaited<ReturnType<typeof sdk.getVersionApiVersionGet>>;
       subscribe: false;
     };
   }

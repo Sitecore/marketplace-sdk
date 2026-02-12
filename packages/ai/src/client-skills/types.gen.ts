@@ -220,7 +220,7 @@ export namespace Skills {
     msg: string;
     type: string;
   };
-  export type GetVersionData = {
+  export type GetVersionApiVersionGetData = {
     body?: never;
     path?: never;
     query?: {
@@ -231,7 +231,7 @@ export namespace Skills {
     };
     url: '/api/version';
   };
-  export type GetVersionResponses = {
+  export type GetVersionApiVersionGetResponses = {
     /**
      * Successful Response
      */
