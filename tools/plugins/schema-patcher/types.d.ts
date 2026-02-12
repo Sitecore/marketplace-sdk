@@ -1,4 +1,4 @@
-export interface Config {
+          export interface Config {
   /**
    * Plugin name. Must be unique.
    */

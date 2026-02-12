@@ -4,15 +4,12 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    include: [
-      'src/__tests__/*.test.ts',
-      'src/**/*.spec.ts',
-    ],
+    include: ['__tests__/**/*.test.ts'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
-      include: ['src/**/*.ts'],
-      exclude: ['src/client-*/*.ts'],
+      include: ['**/*.ts'],
+      exclude: ['__tests__/**/*.ts', 'vitest.config.ts'],
     },
     watch: false,
   },

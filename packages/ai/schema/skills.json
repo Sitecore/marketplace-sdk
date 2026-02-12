@@ -1,0 +1,1317 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ai-skills",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/version": {
+      "get": {
+        "summary": "Get Version",
+        "operationId": "get_version",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        },
+        "x-sc-sdk": {
+          "generate": false
+        }
+      }
+    },
+    "/api/skills/v1/brandreview/generate": {
+      "post": {
+        "tags": [
+          "public"
+        ],
+        "summary": "Generate Brand Review",
+        "description": "Runs the input against the brand definition and generates a brand review leveraging a large language model (LLM). It considers the content of the brand kit sections and subsections to deliver compliance scores, explanations, and fix suggestions.",
+        "operationId": "generate_brand_review_api_skills_v1_brandreview_generate_post",
+        "parameters": [
+          {
+            "name": "x-sc-feature",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Feature"
+            }
+          },
+          {
+            "name": "x-sc-interaction-type",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Interaction-Type"
+            }
+          },
+          {
+            "name": "x-sc-sellable-product",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Sellable-Product"
+            }
+          },
+          {
+            "name": "x-sc-params",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Params"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateBrandReviewModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-sc-sdk": {
+          "generate": true,
+          "operationName": "generateBrandReview"
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/skills/admin/v1/brandreview/generate": {
+      "post": {
+        "summary": "Generate Brand Review (Admin)",
+        "description": "Runs the input against the brand definition and generates a brand review leveraging a large language model (LLM). It considers the content of the brand kit sections and subsections to deliver compliance scores, explanations, and fix suggestions.",
+        "operationId": "generate_brand_review_admin_api_skills_admin_v1_brandreview_generate_post",
+        "parameters": [
+          {
+            "name": "x-sc-feature",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Feature"
+            }
+          },
+          {
+            "name": "x-sc-interaction-type",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Interaction-Type"
+            }
+          },
+          {
+            "name": "x-sc-sellable-product",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Sellable-Product"
+            }
+          },
+          {
+            "name": "x-sc-params",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Params"
+            }
+          },
+          {
+            "name": "x-sc-src-tenant-id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Sc-Src-Tenant-Id"
+            }
+          },
+          {
+            "name": "x-sc-ai-tenant-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Ai-Tenant-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateBrandReviewModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateBrandReviewModelResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-sc-sdk": {
+          "generate": false
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/skills/v1/embeddings/generate": {
+      "post": {
+        "summary": "Generate Embeddings",
+        "description": "Generates embeddings for the provided content leveraging a large language model (LLM).",
+        "operationId": "generate_embeddings_api_skills_v1_embeddings_generate_post",
+        "parameters": [
+          {
+            "name": "x-sc-feature",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Feature"
+            }
+          },
+          {
+            "name": "x-sc-interaction-type",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Interaction-Type"
+            }
+          },
+          {
+            "name": "x-sc-sellable-product",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Sellable-Product"
+            }
+          },
+          {
+            "name": "x-sc-params",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Params"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateEmbeddingsModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-sc-sdk": {
+          "generate": false
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/skills/admin/v1/embeddings/generate": {
+      "post": {
+        "summary": "Generate Embeddings (Admin)",
+        "description": "Generates embeddings for the provided content leveraging a large language model (LLM).",
+        "operationId": "generate_embeddings_api_skills_admin_v1_embeddings_generate_post",
+        "parameters": [
+          {
+            "name": "x-sc-src-tenant-id",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "X-Sc-Src-Tenant-Id"
+            }
+          },
+          {
+            "name": "x-sc-ai-tenant-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Ai-Tenant-Id"
+            }
+          },
+          {
+            "name": "x-sc-feature",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Feature"
+            }
+          },
+          {
+            "name": "x-sc-interaction-type",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Interaction-Type"
+            }
+          },
+          {
+            "name": "x-sc-sellable-product",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Sellable-Product"
+            }
+          },
+          {
+            "name": "x-sc-params",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Params"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateEmbeddingsModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-sc-sdk": {
+          "generate": false
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/skills/v1/deep-research/generate": {
+      "post": {
+        "summary": "Generate Deep Research",
+        "description": "Generates deep research content leveraging a large language model (LLM) based on the provided input and context.",
+        "operationId": "generate_embeddings_api_skills_v1_deep_research_generate_post",
+        "parameters": [
+          {
+            "name": "x-sc-feature",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Feature"
+            }
+          },
+          {
+            "name": "x-sc-interaction-type",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Interaction-Type"
+            }
+          },
+          {
+            "name": "x-sc-sellable-product",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Sellable-Product"
+            }
+          },
+          {
+            "name": "x-sc-params",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Sc-Params"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeepResearchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "x-sc-sdk": {
+          "generate": false
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddedContextModel": {
+        "properties": {
+          "data": {
+            "type": "string",
+            "title": "Data"
+          },
+          "mimeType": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MimeType"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "title": "AddedContextModel"
+      },
+      "AuthenticationType": {
+        "properties": {
+          "authType": {
+            "type": "string",
+            "enum": [
+              "bearer",
+              "basic",
+              "custom"
+            ],
+            "title": "Authtype"
+          },
+          "value": {
+            "type": "string",
+            "title": "Value"
+          },
+          "customHeaderName": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customheadername",
+            "description": "Custom header name for authentication"
+          }
+        },
+        "type": "object",
+        "required": [
+          "authType",
+          "value"
+        ],
+        "title": "AuthenticationType"
+      },
+      "ContentType": {
+        "type": "string",
+        "enum": [
+          "GenericImage",
+          "ImageWithTextOverlay",
+          "TextEmbeddingForImageSearch",
+          "ShortText",
+          "LongText",
+          "RichDocument"
+        ],
+        "title": "ContentType",
+        "description": "Content type that determines the method for processing the data and creating embedding(s)"
+      },
+      "DeepResearchRequest": {
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "brandkitId": {
+            "type": "string",
+            "title": "Brandkitid"
+          },
+          "searchType": {
+            "$ref": "#/components/schemas/SearchType"
+          },
+          "additionalContext": {
+            "items": {
+              "$ref": "#/components/schemas/AddedContextModel"
+            },
+            "type": "array",
+            "title": "Additionalcontext"
+          }
+        },
+        "type": "object",
+        "required": [
+          "prompt",
+          "brandkitId"
+        ],
+        "title": "DeepResearchRequest"
+      },
+      "DocumentMimeType": {
+        "type": "string",
+        "enum": [
+          "application/pdf",
+          "text/plain"
+        ],
+        "title": "DocumentMimeType"
+      },
+      "ExtractableFile": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Name of the file"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "document",
+              "image"
+            ],
+            "title": "Type",
+            "description": "Type of the file"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url",
+            "description": "URL where the file can be downloaded or base64 encoded data"
+          },
+          "mimeType": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DocumentMimeType"
+              },
+              {
+                "$ref": "#/components/schemas/ImageMimeType"
+              }
+            ],
+            "title": "Mimetype",
+            "description": "MIME type of the file"
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "auto",
+                  "high"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail",
+            "description": "Level of processing detail",
+            "default": "auto"
+          },
+          "auth": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AuthenticationType"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Authentication details for accessing the file (not needed for base64)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "type",
+          "url",
+          "mimeType"
+        ],
+        "title": "ExtractableFile",
+        "description": "Model for files (documents, images) to be processed/analyzed for brand review."
+      },
+      "FieldReview": {
+        "properties": {
+          "fieldId": {
+            "type": "string",
+            "title": "Fieldid",
+            "description": "Unique identifier for the field"
+          },
+          "score": {
+            "type": "integer",
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "description": "Score from 1 to 5"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason",
+            "description": "Explanation for the score"
+          },
+          "suggestion": {
+            "type": "string",
+            "title": "Suggestion",
+            "description": "Recommendations for improvement"
+          }
+        },
+        "type": "object",
+        "required": [
+          "fieldId",
+          "score",
+          "reason",
+          "suggestion"
+        ],
+        "title": "FieldReview"
+      },
+      "GenerateBrandReviewModelRequest": {
+        "properties": {
+          "brandkitId": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Brandkitid"
+          },
+          "input": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "items": {
+
+                  },
+                  "type": "array"
+                },
+                {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                {
+                  "$ref": "#/components/schemas/ExtractableFile"
+                },
+                {
+                  "items": {
+                    "$ref": "#/components/schemas/ExtractableFile"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Input"
+          },
+          "sections": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/Section"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sections"
+          }
+        },
+        "type": "object",
+        "required": [
+          "brandkitId",
+          "input"
+        ],
+        "title": "GenerateBrandReviewModelRequest",
+        "examples": [
+          {
+            "brandkitId": "f6c0ae91-674a-479f-9c4f-05bdb401bb4b",
+            "input": {
+              "content": "Simple string input"
+            },
+            "sections": [
+              {
+                "fields": [
+                  "3f701d7a-5d82-4bdc-ae22-dec60fc57139"
+                ],
+                "sectionId": "f6c0ae91-674a-479f-9c4f-05bdb401bb4b"
+              }
+            ]
+          },
+          {
+            "brandkitId": "f6c0ae91-674a-479f-9c4f-05bdb401bb4b",
+            "input": {
+              "document": {
+                "auth": {
+                  "authType": "bearer",
+                  "value": "token123"
+                },
+                "detail": "high",
+                "mimeType": "application/pdf",
+                "name": "example.pdf",
+                "type": "document",
+                "url": "https://example.com/document.pdf"
+              }
+            }
+          },
+          {
+            "brandkitId": "f6c0ae91-674a-479f-9c4f-05bdb401bb4b",
+            "input": {
+              "image": {
+                "detail": "high",
+                "mimeType": "image/png",
+                "name": "logo.png",
+                "type": "image",
+                "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
+              }
+            }
+          },
+          {
+            "brandkitId": "f6c0ae91-674a-479f-9c4f-05bdb401bb4b",
+            "input": {
+              "files": [
+                {
+                  "detail": "auto",
+                  "mimeType": "application/pdf",
+                  "name": "document.pdf",
+                  "type": "document",
+                  "url": "JVBERi0xLjQKJcOkw7zDtsO8w6..."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "GenerateBrandReviewModelResponse": {
+        "properties": {
+          "reviews": {
+            "items": {
+              "$ref": "#/components/schemas/SectionReview"
+            },
+            "type": "array",
+            "title": "Reviews",
+            "description": "List of section reviews with field-level details"
+          }
+        },
+        "type": "object",
+        "required": [
+          "reviews"
+        ],
+        "title": "GenerateBrandReviewModelResponse"
+      },
+      "GenerateEmbeddingsModelRequest": {
+        "properties": {
+          "input": {
+            "items": {
+              "$ref": "#/components/schemas/InputItem"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Input",
+            "description": "List of content items for vectorization"
+          },
+          "models": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LLMModel"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The global models field overrides the default Large Language Models (LLMs) defined for creating embeddings for specific content types"
+          }
+        },
+        "type": "object",
+        "required": [
+          "input"
+        ],
+        "title": "GenerateEmbeddingsModelRequest"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ImageMimeType": {
+        "type": "string",
+        "enum": [
+          "image/jpeg",
+          "image/png",
+          "image/webp"
+        ],
+        "title": "ImageMimeType"
+      },
+      "InputItem": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The name of the content item to create embedding for"
+          },
+          "data": {
+            "type": "string",
+            "title": "Data",
+            "description": "The content data - URL | base64 | raw text"
+          },
+          "contentType": {
+            "$ref": "#/components/schemas/ContentType",
+            "description": "The type of the content to vectorize"
+          },
+          "mimeType": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DocumentMimeType"
+              },
+              {
+                "$ref": "#/components/schemas/ImageMimeType"
+              }
+            ],
+            "title": "Mimetype",
+            "description": "MIME type of the file"
+          },
+          "models": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LLMModel"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The models field overrides the default models for the particular content item"
+          },
+          "embedImg": {
+            "type": "boolean",
+            "title": "Embedimg",
+            "description": "Specifies whether to generate embeddings for all content types. If false, image embeddings (and their mean‑pooled vector) are skipped",
+            "default": true
+          },
+          "embedText": {
+            "type": "boolean",
+            "title": "Embedtext",
+            "description": "Specifies whether to generate embeddings for all content types. If false, text embeddings (and their mean‑pooled vector) are skipped",
+            "default": true
+          },
+          "chunkSize": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chunksize",
+            "description": "The size of the text chunks to create embeddings for. If not provided, the default chunk size is used",
+            "default": 256
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "data",
+          "contentType",
+          "mimeType"
+        ],
+        "title": "InputItem"
+      },
+      "LLMModel": {
+        "properties": {
+          "verbalization": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verbalization"
+          },
+          "text_embedding": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Text Embedding"
+          },
+          "image_embedding": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Embedding"
+          },
+          "dimensions": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Dimensions"
+          }
+        },
+        "type": "object",
+        "title": "LLMModel",
+        "description": "Custom LLM models in the requests that override the default LLM models."
+      },
+      "MimeType": {
+        "type": "string",
+        "enum": [
+          "image/jpeg",
+          "image/png",
+          "application/pdf"
+        ],
+        "title": "MimeType"
+      },
+      "SearchType": {
+        "type": "string",
+        "enum": [
+          "web",
+          "knowledge"
+        ],
+        "title": "SearchType"
+      },
+      "Section": {
+        "properties": {
+          "sectionId": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Sectionid"
+          },
+          "fieldIds": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Fieldids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sectionId"
+        ],
+        "title": "Section"
+      },
+      "SectionReview": {
+        "properties": {
+          "sectionId": {
+            "type": "string",
+            "title": "Sectionid",
+            "description": "Unique identifier for the section"
+          },
+          "score": {
+            "type": "integer",
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Score",
+            "description": "Overall section score from 1 to 5"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason",
+            "description": "Summary reason for the section score"
+          },
+          "suggestion": {
+            "type": "string",
+            "title": "Suggestion",
+            "description": "High-level suggestions for the section"
+          },
+          "fields": {
+            "items": {
+              "$ref": "#/components/schemas/FieldReview"
+            },
+            "type": "array",
+            "title": "Fields",
+            "description": "Individual field reviews"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sectionId",
+          "score",
+          "reason",
+          "suggestion",
+          "fields"
+        ],
+        "title": "SectionReview"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

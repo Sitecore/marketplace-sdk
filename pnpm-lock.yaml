@@ -41,6 +41,73 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/ai:
+    dependencies:
+      '@hey-api/client-fetch':
+        specifier: 0.8.3
+        version: 0.8.3
+      '@sitecore-marketplace-sdk/internal':
+        specifier: workspace:*
+        version: link:../internal
+    devDependencies:
+      '@hey-api/openapi-ts':
+        specifier: 0.66.5
+        version: 0.66.5(magicast@0.3.5)(typescript@5.9.3)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.1(rollup@4.37.0)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.4
+        version: 0.4.4(rollup@4.37.0)
+      '@rollup/plugin-typescript':
+        specifier: ^12.1.2
+        version: 12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.9.3)
+      '@sitecore-marketplace-sdk/client':
+        specifier: workspace:*
+        version: link:../client
+      '@types/node':
+        specifier: ^20.17.19
+        version: 20.17.28
+      '@vitest/coverage-v8':
+        specifier: ^3.0.6
+        version: 3.0.9(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
+      '@vitest/expect':
+        specifier: ^3.0.5
+        version: 3.0.9
+      esbuild:
+        specifier: '>=0.25.0'
+        version: 0.25.1
+      esbuild-node-externals:
+        specifier: ^1.12.0
+        version: 1.18.0(esbuild@0.25.1)
+      prettier:
+        specifier: ^3.5.1
+        version: 3.5.1
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
+      rollup:
+        specifier: ^4.34.8
+        version: 4.37.0
+      rollup-plugin-copy:
+        specifier: ^3.5.0
+        version: 3.5.0
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.2(@types/node@20.17.28)(typescript@5.9.3)
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+
   packages/client:
     dependencies:
       '@sitecore-marketplace-sdk/core':
@@ -166,11 +233,47 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
 
+  packages/internal:
+    devDependencies:
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.1(rollup@4.37.0)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.4
+        version: 0.4.4(rollup@4.37.0)
+      '@rollup/plugin-typescript':
+        specifier: ^12.1.2
+        version: 12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.9.3)
+      '@sitecore-marketplace-sdk/client':
+        specifier: workspace:*
+        version: link:../client
+      '@vitest/coverage-v8':
+        specifier: ^3.0.6
+        version: 3.0.9(vitest@3.0.9(@types/node@24.10.1)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
+      rollup:
+        specifier: ^4.34.8
+        version: 4.37.0
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@24.10.1)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+
   packages/xmc:
     dependencies:
       '@hey-api/client-fetch':
         specifier: 0.8.3
         version: 0.8.3
+      '@sitecore-marketplace-sdk/internal':
+        specifier: workspace:*
+        version: link:../internal
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.66.5
@@ -229,6 +332,21 @@ importers:
       vitest:
         specifier: ^3.0.8
         version: 3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+
+  tools/plugins:
+    devDependencies:
+      '@hey-api/openapi-ts':
+        specifier: 0.66.5
+        version: 0.66.5(magicast@0.3.5)(typescript@5.9.3)
+      '@vitest/coverage-v8':
+        specifier: ^3.0.6
+        version: 3.0.9(vitest@3.0.9(@types/node@24.10.1)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@24.10.1)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
 
 packages:
 
@@ -2904,6 +3022,16 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
+  '@hey-api/openapi-ts@0.66.5(magicast@0.3.5)(typescript@5.9.3)':
+    dependencies:
+      '@hey-api/json-schema-ref-parser': 1.0.4
+      c12: 2.0.1(magicast@0.3.5)
+      commander: 13.0.0
+      handlebars: 4.7.8
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - magicast
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -2933,14 +3061,14 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       jest-mock: 29.7.0
 
   '@jest/fake-timers@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -2954,7 +3082,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
@@ -3038,6 +3166,15 @@ snapshots:
       '@rollup/pluginutils': 5.1.4(rollup@4.37.0)
       resolve: 1.22.10
       typescript: 5.8.2
+    optionalDependencies:
+      rollup: 4.37.0
+      tslib: 2.8.1
+
+  '@rollup/plugin-typescript@12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.9.3)':
+    dependencies:
+      '@rollup/pluginutils': 5.1.4(rollup@4.37.0)
+      resolve: 1.22.10
+      typescript: 5.9.3
     optionalDependencies:
       rollup: 4.37.0
       tslib: 2.8.1
@@ -3186,7 +3323,7 @@ snapshots:
 
   '@types/jsdom@20.0.1':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       '@types/tough-cookie': 4.0.5
       parse5: 7.3.0
 
@@ -3242,6 +3379,24 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@vitest/coverage-v8@3.0.9(vitest@3.0.9(@types/node@24.10.1)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))':
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@bcoe/v8-coverage': 1.0.2
+      debug: 4.4.0
+      istanbul-lib-coverage: 3.2.2
+      istanbul-lib-report: 3.0.1
+      istanbul-lib-source-maps: 5.0.6
+      istanbul-reports: 3.1.7
+      magic-string: 0.30.17
+      magicast: 0.3.5
+      std-env: 3.8.1
+      test-exclude: 7.0.1
+      tinyrainbow: 2.0.0
+      vitest: 3.0.9(@types/node@24.10.1)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+    transitivePeerDependencies:
+      - supports-color
+
   '@vitest/expect@3.0.9':
     dependencies:
       '@vitest/spy': 3.0.9
@@ -3256,6 +3411,14 @@ snapshots:
       magic-string: 0.30.17
     optionalDependencies:
       vite: 6.4.1(@types/node@20.17.28)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+
+  '@vitest/mocker@3.0.9(vite@6.4.1(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))':
+    dependencies:
+      '@vitest/spy': 3.0.9
+      estree-walker: 3.0.3
+      magic-string: 0.30.17
+    optionalDependencies:
+      vite: 6.4.1(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
 
   '@vitest/pretty-format@3.0.9':
     dependencies:
@@ -4009,13 +4172,13 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       jest-util: 29.7.0
 
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -4604,6 +4767,24 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
+  ts-node@10.9.2(@types/node@20.17.28)(typescript@5.9.3):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.11
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.17.28
+      acorn: 8.14.1
+      acorn-walk: 8.3.4
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 8.0.3
+      make-error: 1.3.6
+      typescript: 5.9.3
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+
   tslib@2.8.1: {}
 
   tsx@4.19.3:
@@ -4716,6 +4897,27 @@ snapshots:
       - tsx
       - yaml
 
+  vite-node@3.0.9(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1):
+    dependencies:
+      cac: 6.7.14
+      debug: 4.4.0
+      es-module-lexer: 1.6.0
+      pathe: 2.0.3
+      vite: 6.4.1(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - jiti
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
   vite@6.4.1(@types/node@20.17.28)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.1
@@ -4726,6 +4928,22 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       '@types/node': 20.17.28
+      fsevents: 2.3.3
+      jiti: 2.4.2
+      terser: 5.39.0
+      tsx: 4.19.3
+      yaml: 2.8.1
+
+  vite@6.4.1(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1):
+    dependencies:
+      esbuild: 0.25.1
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
+      postcss: 8.5.6
+      rollup: 4.37.0
+      tinyglobby: 0.2.15
+    optionalDependencies:
+      '@types/node': 24.10.1
       fsevents: 2.3.3
       jiti: 2.4.2
       terser: 5.39.0
@@ -4761,6 +4979,45 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.17.28
+      jsdom: 26.0.0
+    transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
+  vitest@3.0.9(@types/node@24.10.1)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1):
+    dependencies:
+      '@vitest/expect': 3.0.9
+      '@vitest/mocker': 3.0.9(vite@6.4.1(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
+      '@vitest/pretty-format': 3.0.9
+      '@vitest/runner': 3.0.9
+      '@vitest/snapshot': 3.0.9
+      '@vitest/spy': 3.0.9
+      '@vitest/utils': 3.0.9
+      chai: 5.2.0
+      debug: 4.4.0
+      expect-type: 1.2.0
+      magic-string: 0.30.17
+      pathe: 2.0.3
+      std-env: 3.8.1
+      tinybench: 2.9.0
+      tinyexec: 0.3.2
+      tinypool: 1.0.2
+      tinyrainbow: 2.0.0
+      vite: 6.4.1(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+      vite-node: 3.0.9(@types/node@24.10.1)(jiti@2.4.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 24.10.1
       jsdom: 26.0.0
     transitivePeerDependencies:
       - jiti

@@ -7,7 +7,7 @@ import {
   createClient,
   createConfig,
 } from '@hey-api/client-fetch';
-import { clientSdkfetch } from '../client-sdk-fetch';
+import { clientSdkfetch } from '@sitecore-marketplace-sdk/internal';
 
 type ClientOptions = Sites.ClientOptions;
 

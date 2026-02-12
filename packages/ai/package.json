@@ -1,6 +1,6 @@
 {
-  "name": "@sitecore-marketplace-sdk/xmc",
-  "version": "0.4.0",
+  "name": "@sitecore-marketplace-sdk/ai",
+  "version": "0.1.0",
   "description": "",
   "type": "module",
   "main": "./dist/index.cjs.js",
@@ -13,10 +13,10 @@
     "test": "vitest",
     "build": "pnpm run clean && rollup -c",
     "clean": "rimraf dist tsconfig.tsbuildinfo",
-    "generate:module": "tsx generate-xmc.ts",
-    "generate:module:experimental": "tsx generate-xmc-experimental.ts",
+    "generate:module": "tsx generate-ai.ts",
+    "generate:module:experimental": "tsx generate-ai-experimental.ts",
     "coverage": "vitest --coverage",
-    "generate:docs": "npx typedoc --options ../../typedoc.json --out ../../docs/modules/xmc src/index.ts"
+    "generate:docs": "npx typedoc --options ../../typedoc.json --out ../../docs/modules/ai src/index.ts"
   },
   "author": {
     "name": "Sitecore Corporation"
@@ -30,9 +30,8 @@
     "sitecore",
     "marketplace",
     "sdk",
-    "xmc",
-    "xmcloud",
-    "sai",
+    "ai",
+    "skills",
     "sitecoreai"
   ],
   "dependencies": {

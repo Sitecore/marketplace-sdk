@@ -1,0 +1,16 @@
+{
+  "name": "@sitecore-marketplace-sdk/plugins",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "0.66.5",
+    "@vitest/coverage-v8": "^3.0.6",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.8"
+  }
+}

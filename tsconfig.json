@@ -21,6 +21,8 @@
   "references": [
     { "path": "packages/core" },
     { "path": "packages/client" },
+    { "path": "packages/internal" },
+    { "path": "packages/ai" },
   ],
   "files": [],
   "exclude": [
