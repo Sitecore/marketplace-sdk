@@ -235,10 +235,16 @@ importers:
       '@hey-api/client-fetch':
         specifier: 0.8.3
         version: 0.8.3
+      js-yaml:
+        specifier: ^4.1.1
+        version: 4.1.1
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.66.5
         version: 0.66.5(magicast@0.3.5)(typescript@5.8.2)
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
       typescript:
         specifier: 5.8.2
         version: 5.8.2
@@ -971,6 +977,9 @@ packages:
 
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
+
+  '@types/js-yaml@4.0.9':
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/jsdom@20.0.1':
     resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==}
@@ -3264,6 +3273,8 @@ snapshots:
   '@types/istanbul-reports@3.0.4':
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
+
+  '@types/js-yaml@4.0.9': {}
 
   '@types/jsdom@20.0.1':
     dependencies:

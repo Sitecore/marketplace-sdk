@@ -3,58 +3,16 @@
 import * as sdk from './sdk.gen';
 
 declare module '@sitecore-marketplace-sdk/client' {
-  interface QueryMap {
-    /**
-     * Get Version*/
-    'ai.skills.getVersionApiVersionGet': {
-      params: Parameters<typeof sdk.getVersionApiVersionGet>[0];
-      response: Awaited<ReturnType<typeof sdk.getVersionApiVersionGet>>;
-      subscribe: false;
-    };
-  }
+  interface QueryMap {}
 }
 
 declare module '@sitecore-marketplace-sdk/client' {
   interface MutationMap {
     /**
      * Runs the input against the brand definition and generates a brand review leveraging a large language model (LLM). It considers the content of the brand kit sections and subsections to deliver compliance scores, explanations, and fix suggestions.*/
-    'ai.skills.generateBrandReviewApiSkillsV1BrandreviewGeneratePost': {
-      params: Parameters<typeof sdk.generateBrandReviewApiSkillsV1BrandreviewGeneratePost>[0];
-      response: Awaited<
-        ReturnType<typeof sdk.generateBrandReviewApiSkillsV1BrandreviewGeneratePost>
-      >;
-    };
-    /**
-     * Runs the input against the brand definition and generates a brand review leveraging a large language model (LLM). It considers the content of the brand kit sections and subsections to deliver compliance scores, explanations, and fix suggestions.*/
-    'ai.skills.generateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePost': {
-      params: Parameters<
-        typeof sdk.generateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePost
-      >[0];
-      response: Awaited<
-        ReturnType<typeof sdk.generateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePost>
-      >;
-    };
-    /**
-     * Generates embeddings for the provided content leveraging a large language model (LLM).*/
-    'ai.skills.generateEmbeddingsApiSkillsV1EmbeddingsGeneratePost': {
-      params: Parameters<typeof sdk.generateEmbeddingsApiSkillsV1EmbeddingsGeneratePost>[0];
-      response: Awaited<ReturnType<typeof sdk.generateEmbeddingsApiSkillsV1EmbeddingsGeneratePost>>;
-    };
-    /**
-     * Generates embeddings for the provided content leveraging a large language model (LLM).*/
-    'ai.skills.generateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePost': {
-      params: Parameters<typeof sdk.generateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePost>[0];
-      response: Awaited<
-        ReturnType<typeof sdk.generateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePost>
-      >;
-    };
-    /**
-     * Generates deep research content leveraging a large language model (LLM) based on the provided input and context.*/
-    'ai.skills.generateEmbeddingsApiSkillsV1DeepResearchGeneratePost': {
-      params: Parameters<typeof sdk.generateEmbeddingsApiSkillsV1DeepResearchGeneratePost>[0];
-      response: Awaited<
-        ReturnType<typeof sdk.generateEmbeddingsApiSkillsV1DeepResearchGeneratePost>
-      >;
+    'ai.skills.generateBrandReview': {
+      params: Parameters<typeof sdk.generateBrandReview>[0];
+      response: Awaited<ReturnType<typeof sdk.generateBrandReview>>;
     };
   }
 }

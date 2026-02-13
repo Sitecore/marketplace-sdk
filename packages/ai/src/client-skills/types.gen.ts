@@ -220,24 +220,7 @@ export namespace Skills {
     msg: string;
     type: string;
   };
-  export type GetVersionApiVersionGetData = {
-    body?: never;
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/version';
-  };
-  export type GetVersionApiVersionGetResponses = {
-    /**
-     * Successful Response
-     */
-    200: unknown;
-  };
-  export type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostData = {
+  export type GenerateBrandReviewData = {
     body: GenerateBrandReviewModelRequest;
     headers?: {
       'x-sc-feature'?: string | null;
@@ -254,149 +237,18 @@ export namespace Skills {
     };
     url: '/api/skills/v1/brandreview/generate';
   };
-  export type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostErrors = {
+  export type GenerateBrandReviewErrors = {
     /**
      * Validation Error
      */
     422: HttpValidationError;
   };
-  export type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostError =
-    GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostErrors[keyof GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostErrors];
-  export type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostResponses = {
+  export type GenerateBrandReviewError = GenerateBrandReviewErrors[keyof GenerateBrandReviewErrors];
+  export type GenerateBrandReviewResponses = {
     /**
      * Successful Response
      */
     200: unknown;
-  };
-  export type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostData = {
-    body: GenerateBrandReviewModelRequest;
-    headers: {
-      'x-sc-feature'?: string | null;
-      'x-sc-interaction-type'?: string | null;
-      'x-sc-sellable-product'?: string | null;
-      'x-sc-params'?: string | null;
-      'x-sc-src-tenant-id': string;
-      'x-sc-ai-tenant-id'?: string | null;
-    };
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/skills/admin/v1/brandreview/generate';
-  };
-  export type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostError =
-    GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostErrors[keyof GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostErrors];
-  export type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostResponses = {
-    /**
-     * Successful Response
-     */
-    201: GenerateBrandReviewModelResponse;
-  };
-  export type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostResponse =
-    GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostResponses[keyof GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostResponses];
-  export type GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostData = {
-    body: GenerateEmbeddingsModelRequest;
-    headers?: {
-      'x-sc-feature'?: string | null;
-      'x-sc-interaction-type'?: string | null;
-      'x-sc-sellable-product'?: string | null;
-      'x-sc-params'?: string | null;
-    };
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/skills/v1/embeddings/generate';
-  };
-  export type GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostError =
-    GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostErrors[keyof GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostErrors];
-  export type GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostResponses = {
-    /**
-     * Successful Response
-     */
-    201: unknown;
-  };
-  export type GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostData = {
-    body: GenerateEmbeddingsModelRequest;
-    headers: {
-      'x-sc-src-tenant-id': string;
-      'x-sc-ai-tenant-id'?: string | null;
-      'x-sc-feature'?: string | null;
-      'x-sc-interaction-type'?: string | null;
-      'x-sc-sellable-product'?: string | null;
-      'x-sc-params'?: string | null;
-    };
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/skills/admin/v1/embeddings/generate';
-  };
-  export type GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostError =
-    GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostErrors[keyof GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostErrors];
-  export type GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostResponses = {
-    /**
-     * Successful Response
-     */
-    201: unknown;
-  };
-  export type GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostData = {
-    body: DeepResearchRequest;
-    headers?: {
-      'x-sc-feature'?: string | null;
-      'x-sc-interaction-type'?: string | null;
-      'x-sc-sellable-product'?: string | null;
-      'x-sc-params'?: string | null;
-    };
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/skills/v1/deep-research/generate';
-  };
-  export type GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostError =
-    GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostErrors[keyof GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostErrors];
-  export type GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostResponses = {
-    /**
-     * Successful Response
-     */
-    201: unknown;
   };
   export type ClientOptions = {
     baseUrl: 'https://example.com/stream/ai-skills-api/' | (string & {});

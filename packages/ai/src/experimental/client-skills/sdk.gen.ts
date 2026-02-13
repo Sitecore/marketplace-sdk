@@ -4,40 +4,9 @@ import type { Options as ClientOptions, TDataShape, Client } from '@hey-api/clie
 import type { experimental_Skills } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 
-type GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostError =
-  experimental_Skills.GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostError;
+type GenerateBrandReviewError = experimental_Skills.GenerateBrandReviewError;
 
-type GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostData =
-  experimental_Skills.GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostData;
-
-type GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostError =
-  experimental_Skills.GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostError;
-
-type GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostData =
-  experimental_Skills.GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostData;
-
-type GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostError =
-  experimental_Skills.GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostError;
-
-type GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostData =
-  experimental_Skills.GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostData;
-
-type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostError =
-  experimental_Skills.GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostError;
-
-type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostResponse =
-  experimental_Skills.GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostResponse;
-
-type GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostData =
-  experimental_Skills.GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostData;
-
-type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostError =
-  experimental_Skills.GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostError;
-
-type GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostData =
-  experimental_Skills.GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostData;
-
-type GetVersionApiVersionGetData = experimental_Skills.GetVersionApiVersionGetData;
+type GenerateBrandReviewData = experimental_Skills.GenerateBrandReviewData;
 
 export type Options<
   TData extends TDataShape = TDataShape,
@@ -57,31 +26,13 @@ export type Options<
 };
 
 /**
- * Get Version
- */
-export const getVersionApiVersionGet = <ThrowOnError extends boolean = false>(
-  options?: Options<GetVersionApiVersionGetData, ThrowOnError>,
-) => {
-  return (options?.client ?? _heyApiClient).get<unknown, unknown, ThrowOnError>({
-    url: '/api/version',
-    ...options,
-  });
-};
-
-/**
  * Generate Brand Review
  * Runs the input against the brand definition and generates a brand review leveraging a large language model (LLM). It considers the content of the brand kit sections and subsections to deliver compliance scores, explanations, and fix suggestions.
  */
-export const generateBrandReviewApiSkillsV1BrandreviewGeneratePost = <
-  ThrowOnError extends boolean = false,
->(
-  options: Options<GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostData, ThrowOnError>,
+export const generateBrandReview = <ThrowOnError extends boolean = false>(
+  options: Options<GenerateBrandReviewData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).post<
-    unknown,
-    GenerateBrandReviewApiSkillsV1BrandreviewGeneratePostError,
-    ThrowOnError
-  >({
+  return (options.client ?? _heyApiClient).post<unknown, GenerateBrandReviewError, ThrowOnError>({
     security: [
       {
         scheme: 'bearer',
@@ -89,125 +40,6 @@ export const generateBrandReviewApiSkillsV1BrandreviewGeneratePost = <
       },
     ],
     url: '/api/skills/v1/brandreview/generate',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * Generate Brand Review (Admin)
- * Runs the input against the brand definition and generates a brand review leveraging a large language model (LLM). It considers the content of the brand kit sections and subsections to deliver compliance scores, explanations, and fix suggestions.
- */
-export const generateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePost = <
-  ThrowOnError extends boolean = false,
->(
-  options: Options<
-    GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostData,
-    ThrowOnError
-  >,
-) => {
-  return (options.client ?? _heyApiClient).post<
-    GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostResponse,
-    GenerateBrandReviewAdminApiSkillsAdminV1BrandreviewGeneratePostError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/skills/admin/v1/brandreview/generate',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * Generate Embeddings
- * Generates embeddings for the provided content leveraging a large language model (LLM).
- */
-export const generateEmbeddingsApiSkillsV1EmbeddingsGeneratePost = <
-  ThrowOnError extends boolean = false,
->(
-  options: Options<GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).post<
-    unknown,
-    GenerateEmbeddingsApiSkillsV1EmbeddingsGeneratePostError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/skills/v1/embeddings/generate',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * Generate Embeddings (Admin)
- * Generates embeddings for the provided content leveraging a large language model (LLM).
- */
-export const generateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePost = <
-  ThrowOnError extends boolean = false,
->(
-  options: Options<GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).post<
-    unknown,
-    GenerateEmbeddingsApiSkillsAdminV1EmbeddingsGeneratePostError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/skills/admin/v1/embeddings/generate',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * Generate Deep Research
- * Generates deep research content leveraging a large language model (LLM) based on the provided input and context.
- */
-export const generateEmbeddingsApiSkillsV1DeepResearchGeneratePost = <
-  ThrowOnError extends boolean = false,
->(
-  options: Options<GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostData, ThrowOnError>,
-) => {
-  return (options.client ?? _heyApiClient).post<
-    unknown,
-    GenerateEmbeddingsApiSkillsV1DeepResearchGeneratePostError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/skills/v1/deep-research/generate',
     ...options,
     headers: {
       'Content-Type': 'application/json',

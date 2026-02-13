@@ -4,10 +4,12 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@hey-api/client-fetch": "0.8.3"
+    "@hey-api/client-fetch": "0.8.3",
+    "js-yaml": "^4.1.1"
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "0.66.5",
+    "@types/js-yaml": "^4.0.9",
     "typescript": "5.8.2",
     "vitest": "^3.0.8"
   }

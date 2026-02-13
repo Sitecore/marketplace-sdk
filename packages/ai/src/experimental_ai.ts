@@ -54,7 +54,7 @@ export class experimental_AI {
       skills: {
         baseUrl: `${this.edgePlatformProxyUrl}/stream/ai-skills-api/`,
         sdk: experimental_skills_sdk,
-        name: 'Skills API',
+        name: 'AI skills API',
       },
     };
 

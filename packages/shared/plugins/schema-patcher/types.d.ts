@@ -27,4 +27,32 @@
    * @default undefined
    */
   basePath?: string;
+  /**
+   * Only keep operations whose operationId is in this list.
+   * Mutually exclusive with `excludeOperationIds`.
+   *
+   * @default undefined
+   */
+  includeOperationIds?: string[];
+  /**
+   * Remove operations whose operationId is in this list.
+   * Mutually exclusive with `includeOperationIds`.
+   *
+   * @default undefined
+   */
+  excludeOperationIds?: string[];
+  /**
+   * Only keep operations that have at least one matching tag.
+   * Mutually exclusive with `excludeTags`.
+   *
+   * @default undefined
+   */
+  includeTags?: string[];
+  /**
+   * Remove operations that have any matching tag.
+   * Mutually exclusive with `includeTags`.
+   *
+   * @default undefined
+   */
+  excludeTags?: string[];
 }
