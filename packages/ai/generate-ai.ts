@@ -4,12 +4,12 @@ import { defineClientTransformerConfig } from '../shared/plugins/client-transfor
 import { defineSchemaPatcherConfig, preprocessInput } from '../shared/plugins/schema-patcher';
 
 async function generate() {
-  const input = await preprocessInput(
+  const skillsInput = await preprocessInput(
     'https://ai-skills-api-euw-staging.sitecore-staging.cloud/openapi.json',
   );
 
   await createClient({
-    input,
+    input: skillsInput,
     output: {
       format: 'prettier',
       lint: 'eslint',

@@ -3,12 +3,12 @@ import { defineSchemaPatcherConfig, preprocessInput } from '../shared/plugins/sc
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
 async function generate() {
-  const input = await preprocessInput(
+  const skillsInput = await preprocessInput(
     'https://ai-skills-api-euw-staging.sitecore-staging.cloud/openapi.json',
   );
 
   await createClient({
-    input,
+    input: skillsInput,
     output: {
       format: 'prettier',
       lint: 'eslint',
