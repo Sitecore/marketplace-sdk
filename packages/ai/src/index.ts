@@ -1,44 +1,18 @@
 import { SDKModule } from '@sitecore-marketplace-sdk/client';
-import * as skills from './client-skills/sdk.gen';
+import { createSDKModule } from '../../shared/src';
+// import * as skills from './client-skills/sdk.gen';
 
-export * from './client-skills/types.gen';
-export * from './client-skills/augmentation.gen';
+// export * from './client-skills/types.gen';
+// export * from './client-skills/augmentation.gen';
 
 // Experimental exports with prefix to avoid conflicts
 export * from './experimental_ai'; // This will export all experimental types and APIs
 
 // Define a map for namespaces and their corresponding SDKs
 const namespaceMap: Record<string, any> = {
-  skills: skills,
+  // skills: skills,
 };
 
-export const AI: SDKModule = {
-  namespace: 'ai',
-  invokeOperation: (operation: string, ...args: any[]) => {
-    const parts = operation.split('.', 2);
-
-    if (parts.length < 2) {
-      throw new Error(
-        `Invalid operation format: '${operation}'. Expected format 'clientNamespace.operationName'.`,
-      );
-    }
-
-    const [clientNamespace, operationName] = parts;
-
-    // Check if the namespace exists in the map
-    const sdk = namespaceMap[clientNamespace];
-    if (!sdk) {
-      throw new Error(`Namespace '${clientNamespace}' not found`);
-    }
-
-    // Check if the operation exists in the SDK
-    if (!(operationName in sdk)) {
-      throw new Error(`Operation '${operationName}' not found in namespace '${clientNamespace}'`);
-    }
-
-    // Invoke the operation
-    return sdk[operationName](...args);
-  },
-};
+export const AI: SDKModule = createSDKModule('ai', namespaceMap) as SDKModule;
 
 export { QueryMap, MutationMap } from '@sitecore-marketplace-sdk/client';

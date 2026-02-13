@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 
 // Mock the client-sdk-fetch module to prevent window.ClientSDK errors
-vi.mock('@sitecore-marketplace-sdk/internal', () => ({
+vi.mock('../client-sdk-fetch', () => ({
   clientSdkfetch: vi.fn().mockResolvedValue(new Response()),
 }));
 

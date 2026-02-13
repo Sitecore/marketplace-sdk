@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": "..",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -15,12 +15,16 @@
     "declaration": true,
     "composite": true,
     "baseUrl": ".",
+    "paths": {
+      "@hey-api/client-fetch": ["./node_modules/@hey-api/client-fetch"]
+    },
     "resolveJsonModule": true,
     "importHelpers": true
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.d.ts"
+    "src/**/*.d.ts",
+    "../shared/src/**/*.ts"
   ],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "exclude": ["node_modules", "**/*.test.ts", "../shared/src/__tests__/**"]
 }

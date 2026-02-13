@@ -97,7 +97,7 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
   }
 
   file.import({
-    module: '@sitecore-marketplace-sdk/internal',
+    module: '../client-sdk-fetch',
     name: 'clientSdkfetch',
   });
 

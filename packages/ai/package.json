@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/ai/src/index.d.ts",
   "files": [
     "dist"
   ],
@@ -42,7 +42,6 @@
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "0.66.5",
-    "@sitecore-marketplace-sdk/internal": "workspace:*",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
@@ -64,9 +63,9 @@
   },
   "exports": {
     ".": {
+      "types": "./dist/ai/src/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.cjs.js"
     }
   }
 }

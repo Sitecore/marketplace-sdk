@@ -12,6 +12,7 @@
     "clean": "turbo run clean",
     "lint": "turbo run lint",
     "test:all": "turbo run test",
+    "test:shared": "cd packages/xmc && pnpm exec vitest run --config ../shared/vitest.config.ts --root ../shared",
     "coverage": "turbo run coverage",
     "generate:module": "turbo run generate:module",
     "generate:module:experimental": "turbo run generate:module:experimental",

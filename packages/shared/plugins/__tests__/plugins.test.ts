@@ -354,7 +354,7 @@ describe('client transformer plugin', () => {
     expect(importsMap?.has('ClientOptions')).toBe(true);
 
     const sdkFetchImport = clientFile.importCalls.find(
-      (entry) => entry.module === '@sitecore-marketplace-sdk/internal' && entry.name === 'clientSdkfetch',
+      (entry) => entry.module === '../client-sdk-fetch' && entry.name === 'clientSdkfetch',
     );
     expect(sdkFetchImport).toBeDefined();
   });

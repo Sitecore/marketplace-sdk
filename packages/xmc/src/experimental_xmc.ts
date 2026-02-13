@@ -3,9 +3,14 @@ import * as experimental_pages_sdk from './experimental/client-pages/sdk.gen';
 import * as experimental_authoring_sdk from './experimental/client-authoring/sdk.gen';
 import * as experimental_content_transfer_sdk from './experimental/client-content-transfer/sdk.gen';
 import * as experimental_content_sdk from './experimental/client-content/sdk.gen';
-import { createClient, createConfig, type Client } from '@hey-api/client-fetch';
 import * as experimental_agent_sdk from './experimental/client-agent';
 import * as experimental_search_sdk from './experimental/client-search/sdk.gen';
+import {
+  getEdgePlatformProxyUrl,
+  createCustomClients,
+  createApiProxy,
+  type ApiConfig,
+} from '../../shared/src';
 
 // Re-export experimental types for convenience
 export * from './experimental/client-sites/types.gen';
@@ -15,19 +20,6 @@ export * from './experimental/client-content-transfer/types.gen';
 export * from './experimental/client-content/types.gen';
 export * from './experimental/client-agent/types.gen';
 export * from './experimental/client-search/types.gen';
-
-// Default headers required for API calls
-const DEFAULT_HEADERS = {
-  'sc-resource': 'marketplace', 
-  'sc-marketplace-auth': 'interactive/v1',
-} as const;
-
-// API configurations with better typing
-interface ApiConfig {
-  baseUrl: string;
-  sdk: any;
-  name: string;
-}
 
 // Supported API types
 type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' | 'live' | 'agent' | 'search';
@@ -64,169 +56,65 @@ export class experimental_XMC {
   public readonly agent: AgentApi;
   public readonly search: SearchApi;
 
-  private readonly getAccessToken: () => Promise<string>;
-  private readonly apiConfigs: Record<ApiType, ApiConfig>;
-  private readonly customClients: Record<ApiType, Client>;
-  private readonly edgePlatformProxyUrl: string;
-  private readonly defaultEdgePlatformProxyUrl = 'https://edge-platform.sitecorecloud.io';
-
   constructor(config: experimental_XMCConfig) {
     console.log('🔧 [experimental_XMC] Constructor called');
-    this.getAccessToken = config.getAccessToken;
-    this.edgePlatformProxyUrl = this.calculateEdgePlatformProxyUrl();
+    const edgePlatformProxyUrl = getEdgePlatformProxyUrl();
 
-    // Define default API configurations
-    const defaultApiConfigs: Record<ApiType, ApiConfig> = {
+    // Define API configurations
+    const apiConfigs: Record<ApiType, ApiConfig> = {
       sites: {
-        baseUrl: `${this.edgePlatformProxyUrl}/authoring`,
+        baseUrl: `${edgePlatformProxyUrl}/authoring`,
         sdk: experimental_sites_sdk,
         name: 'Sites API',
       },
       pages: {
-        baseUrl: `${this.edgePlatformProxyUrl}/authoring`,
+        baseUrl: `${edgePlatformProxyUrl}/authoring`,
         sdk: experimental_pages_sdk,
         name: 'Pages API',
       },
       authoring: {
-        baseUrl: `${this.edgePlatformProxyUrl}/v1/authoring`,
+        baseUrl: `${edgePlatformProxyUrl}/v1/authoring`,
         sdk: experimental_authoring_sdk,
         name: 'Authoring API',
       },
       contentTransfer: {
-        baseUrl: `${this.edgePlatformProxyUrl}/authoring/transfer`,
+        baseUrl: `${edgePlatformProxyUrl}/authoring/transfer`,
         sdk: experimental_content_transfer_sdk,
         name: 'Content Transfer API',
       },
       preview: {
-        baseUrl: `${this.edgePlatformProxyUrl}/content/api`,
+        baseUrl: `${edgePlatformProxyUrl}/content/api`,
         sdk: experimental_content_sdk,
         name: 'Preview API',
       },
       live: {
-        baseUrl: `${this.edgePlatformProxyUrl}/content/api`,
+        baseUrl: `${edgePlatformProxyUrl}/content/api`,
         sdk: experimental_content_sdk,
         name: 'Live API',
       },
       agent: {
-        baseUrl: `${this.edgePlatformProxyUrl}/stream/ai-agent-api/`,
+        baseUrl: `${edgePlatformProxyUrl}/stream/ai-agent-api/`,
         sdk: experimental_agent_sdk,
         name: 'Agent API',
       },
       search: {
-        baseUrl: `${this.edgePlatformProxyUrl}/search`,
+        baseUrl: `${edgePlatformProxyUrl}/search`,
         sdk: experimental_search_sdk,
         name: 'Search API',
       },
     };
 
-    // Use default configurations
-    this.apiConfigs = defaultApiConfigs;
-
     // Create custom clients for each API
-    this.customClients = this.createCustomClients();
+    const customClients = createCustomClients(apiConfigs, config.getAccessToken, 'experimental_XMC');
 
     // Create API proxies with separated methods and types
-    this.sites = this.createApiProxy('sites');
-    this.pages = this.createApiProxy('pages');
-    this.authoring = this.createApiProxy('authoring');
-    this.contentTransfer = this.createApiProxy('contentTransfer');
-    this.preview = this.createApiProxy('preview');
-    this.live = this.createApiProxy('live');
-    this.agent = this.createApiProxy('agent');
-    this.search = this.createApiProxy('search');
-  }
-
-  /**
-   * Creates custom clients for all APIs
-   */
-  private createCustomClients(): Record<ApiType, Client> {
-    const clients: Partial<Record<ApiType, Client>> = {};
-
-    for (const [apiType, config] of Object.entries(this.apiConfigs)) {
-      const authFunction = async () => {
-        console.log(`🔑 [experimental_XMC] Getting access token for ${apiType}`);
-        const token = await this.getAccessToken();
-        return token;
-      };
-
-      clients[apiType as ApiType] = createClient(
-        createConfig({
-          baseUrl: config.baseUrl,
-          auth: authFunction,
-        }),
-      );
-    }
-
-    return clients as Record<ApiType, Client>;
-  }
-
-  /**
-   * Creates a proxy for an API that automatically injects the custom client
-   */
-  private createApiProxy(apiType: ApiType) {
-    const apiObject = {
-      ...this.apiConfigs[apiType].sdk,
-    };
-
-    // Cache for wrapped methods to avoid recreating functions
-    const methodCache = new Map<string, Function>();
-
-    return new Proxy(apiObject, {
-      get: (target, prop) => {
-        const propKey = String(prop);
-        const originalMethod = target[prop as keyof typeof target];
-
-        if (typeof originalMethod === 'function') {
-          // Check if we already have a wrapped version
-          if (methodCache.has(propKey)) {
-            return methodCache.get(propKey);
-          }
-
-          // Create wrapped method and cache it
-          const wrappedMethod = (options?: any) => {
-            console.log(`🎭 [experimental_XMC] Calling ${apiType}.${propKey}`);
-
-            const result = originalMethod({
-              ...options,
-              client: this.customClients[apiType],
-              headers: {
-                ...options?.headers,
-                ...DEFAULT_HEADERS,
-              },
-            });
-
-            return result;
-          };
-
-          methodCache.set(propKey, wrappedMethod);
-          return wrappedMethod;
-        }
-
-        return originalMethod;
-      },
-    });
-  }
-
-  /**
-   * Calculates the edge platform proxy URL from environment or falls back to default
-   */
-  private calculateEdgePlatformProxyUrl(): string {
-    let envUrl: string | undefined;
-
-    // Check if we're in a browser environment
-    if (typeof window !== 'undefined') {
-      // Browser environment - check window.env
-      envUrl = (window as any)?.env?.EDGE_PLATFORM_PROXY_URL;
-    } else {
-      // Node.js environment - check process.env
-      envUrl = process.env.EDGE_PLATFORM_PROXY_URL;
-    }
-
-    if (envUrl) {
-      return envUrl;
-    }
-
-    // Fallback to default production URL when environment variable is not set
-    return this.defaultEdgePlatformProxyUrl;
+    this.sites = createApiProxy('sites', apiConfigs, customClients, 'experimental_XMC');
+    this.pages = createApiProxy('pages', apiConfigs, customClients, 'experimental_XMC');
+    this.authoring = createApiProxy('authoring', apiConfigs, customClients, 'experimental_XMC');
+    this.contentTransfer = createApiProxy('contentTransfer', apiConfigs, customClients, 'experimental_XMC');
+    this.preview = createApiProxy('preview', apiConfigs, customClients, 'experimental_XMC');
+    this.live = createApiProxy('live', apiConfigs, customClients, 'experimental_XMC');
+    this.agent = createApiProxy('agent', apiConfigs, customClients, 'experimental_XMC');
+    this.search = createApiProxy('search', apiConfigs, customClients, 'experimental_XMC');
   }
 }
