@@ -39,14 +39,14 @@
     "@hey-api/client-fetch": "0.8.3"
   },
   "peerDependencies": {
-    "@sitecore-marketplace-sdk/client": "workspace:*"
+    "@sitecore-marketplace-sdk/client": "^0.3.2"
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "0.66.5",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@sitecore-marketplace-sdk/client": "workspace:*",
+    "@sitecore-marketplace-sdk/client": "^0.3.2",
     "@types/node": "^20.17.19",
     "@vitest/coverage-v8": "^3.0.6",
     "@vitest/expect": "^3.0.5",
