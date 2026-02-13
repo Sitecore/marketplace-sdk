@@ -1,14 +1,8 @@
 import { defineConfig } from 'vitest/config';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   resolve: {
-    alias: {
-      '@hey-api/client-fetch': path.resolve(__dirname, '../xmc/node_modules/@hey-api/client-fetch'),
-    },
+    alias: {},
   },
   test: {
     globals: true,

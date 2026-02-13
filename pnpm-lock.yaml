@@ -33,13 +33,13 @@ importers:
         version: 2.6.1
       typedoc:
         specifier: ^0.28.14
-        version: 0.28.14(typescript@5.9.3)
+        version: 0.28.14(typescript@5.8.2)
       typedoc-plugin-markdown:
         specifier: ^4.9.0
-        version: 4.9.0(typedoc@0.28.14(typescript@5.9.3))
+        version: 4.9.0(typedoc@0.28.14(typescript@5.8.2))
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: 5.8.2
+        version: 5.8.2
 
   packages/ai:
     dependencies:
@@ -49,7 +49,7 @@ importers:
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.66.5
-        version: 0.66.5(magicast@0.3.5)(typescript@5.9.3)
+        version: 0.66.5(magicast@0.3.5)(typescript@5.8.2)
       '@rollup/plugin-node-resolve':
         specifier: ^16.0.0
         version: 16.0.1(rollup@4.37.0)
@@ -58,7 +58,7 @@ importers:
         version: 0.4.4(rollup@4.37.0)
       '@rollup/plugin-typescript':
         specifier: ^12.1.2
-        version: 12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.9.3)
+        version: 12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.8.2)
       '@sitecore-marketplace-sdk/client':
         specifier: workspace:*
         version: link:../client
@@ -91,7 +91,7 @@ importers:
         version: 3.5.0
       ts-node:
         specifier: ^10.9.1
-        version: 10.9.2(@types/node@20.17.28)(typescript@5.9.3)
+        version: 10.9.2(@types/node@20.17.28)(typescript@5.8.2)
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -99,8 +99,8 @@ importers:
         specifier: ^4.19.3
         version: 4.19.3
       typescript:
-        specifier: ^5.7.3
-        version: 5.9.3
+        specifier: 5.8.2
+        version: 5.8.2
       vitest:
         specifier: ^3.0.8
         version: 3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
@@ -230,6 +230,22 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
 
+  packages/shared:
+    dependencies:
+      '@hey-api/client-fetch':
+        specifier: 0.8.3
+        version: 0.8.3
+    devDependencies:
+      '@hey-api/openapi-ts':
+        specifier: 0.66.5
+        version: 0.66.5(magicast@0.3.5)(typescript@5.8.2)
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+
   packages/xmc:
     dependencies:
       '@hey-api/client-fetch':
@@ -288,7 +304,7 @@ importers:
         specifier: ^4.19.3
         version: 4.19.3
       typescript:
-        specifier: ^5.7.3
+        specifier: 5.8.2
         version: 5.8.2
       vitest:
         specifier: ^3.0.8
@@ -2360,11 +2376,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
@@ -2964,16 +2975,6 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@hey-api/openapi-ts@0.66.5(magicast@0.3.5)(typescript@5.9.3)':
-    dependencies:
-      '@hey-api/json-schema-ref-parser': 1.0.4
-      c12: 2.0.1(magicast@0.3.5)
-      commander: 13.0.0
-      handlebars: 4.7.8
-      typescript: 5.9.3
-    transitivePeerDependencies:
-      - magicast
-
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -3108,15 +3109,6 @@ snapshots:
       '@rollup/pluginutils': 5.1.4(rollup@4.37.0)
       resolve: 1.22.10
       typescript: 5.8.2
-    optionalDependencies:
-      rollup: 4.37.0
-      tslib: 2.8.1
-
-  '@rollup/plugin-typescript@12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.9.3)':
-    dependencies:
-      '@rollup/pluginutils': 5.1.4(rollup@4.37.0)
-      resolve: 1.22.10
-      typescript: 5.9.3
     optionalDependencies:
       rollup: 4.37.0
       tslib: 2.8.1
@@ -4679,24 +4671,6 @@ snapshots:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
-  ts-node@10.9.2(@types/node@20.17.28)(typescript@5.9.3):
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.11
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 20.17.28
-      acorn: 8.14.1
-      acorn-walk: 8.3.4
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 8.0.3
-      make-error: 1.3.6
-      typescript: 5.9.3
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-
   tslib@2.8.1: {}
 
   tsx@4.19.3:
@@ -4741,22 +4715,20 @@ snapshots:
 
   type-detect@4.0.8: {}
 
-  typedoc-plugin-markdown@4.9.0(typedoc@0.28.14(typescript@5.9.3)):
+  typedoc-plugin-markdown@4.9.0(typedoc@0.28.14(typescript@5.8.2)):
     dependencies:
-      typedoc: 0.28.14(typescript@5.9.3)
+      typedoc: 0.28.14(typescript@5.8.2)
 
-  typedoc@0.28.14(typescript@5.9.3):
+  typedoc@0.28.14(typescript@5.8.2):
     dependencies:
       '@gerrit0/mini-shiki': 3.15.0
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
-      typescript: 5.9.3
+      typescript: 5.8.2
       yaml: 2.8.1
 
   typescript@5.8.2: {}
-
-  typescript@5.9.3: {}
 
   uc.micro@2.1.0: {}
 

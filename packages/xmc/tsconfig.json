@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "rootDir": "..",
+    "rootDir": "src",
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
@@ -15,9 +15,6 @@
     "declaration": true,
     "composite": true,
     "baseUrl": ".",
-    "paths": {
-      "@hey-api/client-fetch": ["./node_modules/@hey-api/client-fetch"]
-    },
     "resolveJsonModule": true,
     "importHelpers": true
   },
