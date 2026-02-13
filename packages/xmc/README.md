@@ -87,7 +87,7 @@ client.query("xmc.pages.retrievePage", {
 });
 ```
 
-For an overview of all the possible values, refer to the [`QueryMap` interface](../../docs/xmc/interfaces/QueryMap.md).
+For an overview of all the possible values, refer to the [`QueryMap` interface](../../docs/modules/xmc/interfaces/QueryMap.md).
 
 ### Make a mutation
 Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
@@ -104,7 +104,7 @@ const openDifferentPage = () => {
 };
 ```
 
-For an overview of all the possible values, refer to the [`MutationMap` interface](../../docs/xmc/interfaces/MutationMap.md).
+For an overview of all the possible values, refer to the [`MutationMap` interface](../../docs/modules/xmc/interfaces/MutationMap.md).
 
 > [!NOTE]
 > Behind the scenes, the Host SDK (integrated via the internal `core` package) attaches the required user token and performs the HTTP request on behalf of the Marketplace app (the client).

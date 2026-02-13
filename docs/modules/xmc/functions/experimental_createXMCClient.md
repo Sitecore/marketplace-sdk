@@ -8,7 +8,7 @@
 
 > **experimental\_createXMCClient**(`config`): `Promise`\<[`experimental_XMC`](../classes/experimental_XMC.md)\>
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L41)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L33)
 
 ## Parameters
 

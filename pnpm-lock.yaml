@@ -33,13 +33,77 @@ importers:
         version: 2.6.1
       typedoc:
         specifier: ^0.28.14
-        version: 0.28.14(typescript@5.9.3)
+        version: 0.28.14(typescript@5.8.2)
       typedoc-plugin-markdown:
         specifier: ^4.9.0
-        version: 4.9.0(typedoc@0.28.14(typescript@5.9.3))
+        version: 4.9.0(typedoc@0.28.14(typescript@5.8.2))
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: 5.8.2
+        version: 5.8.2
+
+  packages/ai:
+    dependencies:
+      '@hey-api/client-fetch':
+        specifier: 0.8.3
+        version: 0.8.3
+    devDependencies:
+      '@hey-api/openapi-ts':
+        specifier: 0.66.5
+        version: 0.66.5(magicast@0.3.5)(typescript@5.8.2)
+      '@rollup/plugin-node-resolve':
+        specifier: ^16.0.0
+        version: 16.0.1(rollup@4.37.0)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.4
+        version: 0.4.4(rollup@4.37.0)
+      '@rollup/plugin-typescript':
+        specifier: ^12.1.2
+        version: 12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.8.2)
+      '@sitecore-marketplace-sdk/client':
+        specifier: workspace:*
+        version: link:../client
+      '@types/node':
+        specifier: ^20.17.19
+        version: 20.17.28
+      '@vitest/coverage-v8':
+        specifier: ^3.0.6
+        version: 3.0.9(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
+      '@vitest/expect':
+        specifier: ^3.0.5
+        version: 3.0.9
+      esbuild:
+        specifier: '>=0.25.0'
+        version: 0.25.1
+      esbuild-node-externals:
+        specifier: ^1.12.0
+        version: 1.18.0(esbuild@0.25.1)
+      prettier:
+        specifier: ^3.5.1
+        version: 3.5.1
+      rimraf:
+        specifier: ^6.0.1
+        version: 6.0.1
+      rollup:
+        specifier: ^4.34.8
+        version: 4.37.0
+      rollup-plugin-copy:
+        specifier: ^3.5.0
+        version: 3.5.0
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.2(@types/node@20.17.28)(typescript@5.8.2)
+      tslib:
+        specifier: ^2.8.1
+        version: 2.8.1
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
 
   packages/client:
     dependencies:
@@ -166,6 +230,28 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1(vitest@3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1))
 
+  packages/shared:
+    dependencies:
+      '@hey-api/client-fetch':
+        specifier: 0.8.3
+        version: 0.8.3
+      js-yaml:
+        specifier: ^4.1.1
+        version: 4.1.1
+    devDependencies:
+      '@hey-api/openapi-ts':
+        specifier: 0.66.5
+        version: 0.66.5(magicast@0.3.5)(typescript@5.8.2)
+      '@types/js-yaml':
+        specifier: ^4.0.9
+        version: 4.0.9
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@20.17.28)(jiti@2.4.2)(jsdom@26.0.0)(terser@5.39.0)(tsx@4.19.3)(yaml@2.8.1)
+
   packages/xmc:
     dependencies:
       '@hey-api/client-fetch':
@@ -185,8 +271,8 @@ importers:
         specifier: ^12.1.2
         version: 12.1.2(rollup@4.37.0)(tslib@2.8.1)(typescript@5.8.2)
       '@sitecore-marketplace-sdk/client':
-        specifier: workspace:*
-        version: link:../client
+        specifier: ^0.3.2
+        version: 0.3.2
       '@types/node':
         specifier: ^20.17.19
         version: 20.17.28
@@ -224,7 +310,7 @@ importers:
         specifier: ^4.19.3
         version: 4.19.3
       typescript:
-        specifier: ^5.7.3
+        specifier: 5.8.2
         version: 5.8.2
       vitest:
         specifier: ^3.0.8
@@ -842,6 +928,10 @@ packages:
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
 
+  '@sitecore-marketplace-sdk/client@0.3.2':
+    resolution: {integrity: sha512-jSdkeYG4I4CQtOxrzb7Tq2GzhwQEX4K/jODNHgFsYsU4YLpoVFYDot5Z4BngUlCTPN7WFM3bmWyx1hUVjH6rkw==}
+    engines: {node: '>=16'}
+
   '@sitecore-marketplace-sdk/core@0.3.2':
     resolution: {integrity: sha512-QdBsrs0Pu2PGdBvWS6UD5crOqQr7C75Ar1zgF8aAca2IZRHVSS4tczXODPtONtWxH5OGI1cW84ziUCnjN6U2VA==}
 
@@ -888,6 +978,9 @@ packages:
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
 
+  '@types/js-yaml@4.0.9':
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
+
   '@types/jsdom@20.0.1':
     resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==}
 
@@ -905,9 +998,6 @@ packages:
 
   '@types/node@20.17.28':
     resolution: {integrity: sha512-DHlH/fNL6Mho38jTy7/JT7sn2wnXI+wULR6PV4gy4VHLVvnrV/d3pHAMQHhc4gjdLmK2ZiPoMxzp6B3yRajLSQ==}
-
-  '@types/node@24.10.1':
-    resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -2299,11 +2389,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
@@ -2317,9 +2402,6 @@ packages:
 
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
-
-  undici-types@7.16.0:
-    resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
   undici@7.19.2:
     resolution: {integrity: sha512-4VQSpGEGsWzk0VYxyB/wVX/Q7qf9t5znLRgs0dzszr9w9Fej/8RVNQ+S20vdXSAyra/bJ7ZQfGv6ZMj7UEbzSg==}
@@ -2440,10 +2522,12 @@ packages:
   whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
@@ -2933,14 +3017,14 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       jest-mock: 29.7.0
 
   '@jest/fake-timers@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -2954,7 +3038,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
@@ -3140,6 +3224,12 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
+  '@sitecore-marketplace-sdk/client@0.3.2':
+    dependencies:
+      '@sitecore-marketplace-sdk/core': 0.3.2
+      tslib: 2.8.1
+      uuid: 11.1.0
+
   '@sitecore-marketplace-sdk/core@0.3.2':
     dependencies:
       tslib: 2.8.1
@@ -3184,9 +3274,11 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
 
+  '@types/js-yaml@4.0.9': {}
+
   '@types/jsdom@20.0.1':
     dependencies:
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       '@types/tough-cookie': 4.0.5
       parse5: 7.3.0
 
@@ -3205,10 +3297,6 @@ snapshots:
   '@types/node@20.17.28':
     dependencies:
       undici-types: 6.19.8
-
-  '@types/node@24.10.1':
-    dependencies:
-      undici-types: 7.16.0
 
   '@types/resolve@1.20.2': {}
 
@@ -3985,7 +4073,7 @@ snapshots:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
       '@types/jsdom': 20.0.1
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       jest-mock: 29.7.0
       jest-util: 29.7.0
       jsdom: 20.0.3
@@ -4009,13 +4097,13 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       jest-util: 29.7.0
 
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 24.10.1
+      '@types/node': 20.17.28
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -4648,22 +4736,20 @@ snapshots:
 
   type-detect@4.0.8: {}
 
-  typedoc-plugin-markdown@4.9.0(typedoc@0.28.14(typescript@5.9.3)):
+  typedoc-plugin-markdown@4.9.0(typedoc@0.28.14(typescript@5.8.2)):
     dependencies:
-      typedoc: 0.28.14(typescript@5.9.3)
+      typedoc: 0.28.14(typescript@5.8.2)
 
-  typedoc@0.28.14(typescript@5.9.3):
+  typedoc@0.28.14(typescript@5.8.2):
     dependencies:
       '@gerrit0/mini-shiki': 3.15.0
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
-      typescript: 5.9.3
+      typescript: 5.8.2
       yaml: 2.8.1
 
   typescript@5.8.2: {}
-
-  typescript@5.9.3: {}
 
   uc.micro@2.1.0: {}
 
@@ -4673,8 +4759,6 @@ snapshots:
     optional: true
 
   undici-types@6.19.8: {}
-
-  undici-types@7.16.0: {}
 
   undici@7.19.2: {}
 

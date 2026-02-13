@@ -59,7 +59,7 @@ Defined in: [packages/core/src/errors.ts:60](https://github.com/Sitecore/marketp
 
 > `optional` **cause**: `unknown`
 
-Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es2022.error.d.ts:26
+Defined in: node\_modules/.pnpm/typescript@5.8.2/node\_modules/typescript/lib/lib.es2022.error.d.ts:26
 
 #### Implementation of
 
@@ -99,7 +99,7 @@ Defined in: [packages/core/src/errors.ts:63](https://github.com/Sitecore/marketp
 
 > **message**: `string`
 
-Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1077
+Defined in: node\_modules/.pnpm/typescript@5.8.2/node\_modules/typescript/lib/lib.es5.d.ts:1077
 
 #### Implementation of
 
@@ -115,7 +115,7 @@ Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/li
 
 > **name**: `string`
 
-Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1076
+Defined in: node\_modules/.pnpm/typescript@5.8.2/node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 #### Implementation of
 
@@ -131,7 +131,7 @@ Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/li
 
 > `optional` **stack**: `string`
 
-Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1078
+Defined in: node\_modules/.pnpm/typescript@5.8.2/node\_modules/typescript/lib/lib.es5.d.ts:1078
 
 #### Implementation of
 
@@ -280,30 +280,6 @@ Creates an invalid origin error.
 #### Returns
 
 `CoreError`
-
-***
-
-### isError()
-
-> `static` **isError**(`error`): `error is Error`
-
-Defined in: node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.esnext.error.d.ts:23
-
-Indicates whether the argument provided is a built-in Error instance or not.
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `error` | `unknown` |
-
-#### Returns
-
-`error is Error`
-
-#### Inherited from
-
-`Error.isError`
 
 ***
 
