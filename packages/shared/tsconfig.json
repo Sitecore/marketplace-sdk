@@ -10,6 +10,10 @@
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "paths": {
+      "vitest/*": ["../xmc/node_modules/vitest/*"],
+      "@hey-api/client-fetch": ["../xmc/node_modules/@hey-api/client-fetch"]
+    },
     "resolveJsonModule": true,
     "importHelpers": true
   },
