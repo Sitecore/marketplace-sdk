@@ -6,7 +6,7 @@
 
 # Class: experimental\_AI
 
-Defined in: [packages/ai/src/experimental\_ai.ts:38](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/ai/src/experimental_ai.ts#L38)
+Defined in: [packages/ai/src/experimental\_ai.ts:30](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/ai/src/experimental_ai.ts#L30)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [packages/ai/src/experimental\_ai.ts:38](https://github.com/Sitecore
 
 > **new experimental\_AI**(`config`): `experimental_AI`
 
-Defined in: [packages/ai/src/experimental\_ai.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/ai/src/experimental_ai.ts#L47)
+Defined in: [packages/ai/src/experimental\_ai.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/ai/src/experimental_ai.ts#L33)
 
 #### Parameters
 
@@ -32,4 +32,4 @@ Defined in: [packages/ai/src/experimental\_ai.ts:47](https://github.com/Sitecore
 
 > `readonly` **skills**: `__module`
 
-Defined in: [packages/ai/src/experimental\_ai.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/ai/src/experimental_ai.ts#L39)
+Defined in: [packages/ai/src/experimental\_ai.ts:31](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/ai/src/experimental_ai.ts#L31)
