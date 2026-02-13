@@ -6,7 +6,7 @@
 
 # Interface: QueryMap
 
-Defined in: packages/client/dist/sdk-types.d.ts:220
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+client@0.3.2/node\_modules/@sitecore-marketplace-sdk/client/dist/sdk-types.d.ts:220
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:220
 
 > **application.context**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:236
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+client@0.3.2/node\_modules/@sitecore-marketplace-sdk/client/dist/sdk-types.d.ts:236
 
 #### params
 
@@ -34,7 +34,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:236
 
 > **host.route**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:246
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+client@0.3.2/node\_modules/@sitecore-marketplace-sdk/client/dist/sdk-types.d.ts:246
 
 #### params
 
@@ -54,7 +54,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:246
 
 > **host.state**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:226
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+client@0.3.2/node\_modules/@sitecore-marketplace-sdk/client/dist/sdk-types.d.ts:226
 
 #### params
 
@@ -74,7 +74,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:226
 
 > **host.user**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:221
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+client@0.3.2/node\_modules/@sitecore-marketplace-sdk/client/dist/sdk-types.d.ts:221
 
 #### params
 
@@ -94,7 +94,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:221
 
 > **pages.context**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:231
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+client@0.3.2/node\_modules/@sitecore-marketplace-sdk/client/dist/sdk-types.d.ts:231
 
 #### params
 
@@ -114,7 +114,7 @@ Defined in: packages/client/dist/sdk-types.d.ts:231
 
 > **site.context**: `object`
 
-Defined in: packages/client/dist/sdk-types.d.ts:241
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+client@0.3.2/node\_modules/@sitecore-marketplace-sdk/client/dist/sdk-types.d.ts:241
 
 #### params
 

@@ -6,7 +6,7 @@
 
 # Class: experimental\_XMC
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:57](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L57)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L49)
 
 ## Constructors
 
@@ -14,7 +14,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:57](https://github.com/Siteco
 
 > **new experimental\_XMC**(`config`): `experimental_XMC`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:73](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L73)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L59)
 
 #### Parameters
 
@@ -32,7 +32,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:73](https://github.com/Siteco
 
 > `readonly` **agent**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:64](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L64)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:56](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L56)
 
 ***
 
@@ -40,7 +40,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:64](https://github.com/Siteco
 
 > `readonly` **authoring**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:60](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L60)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:52](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L52)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:60](https://github.com/Siteco
 
 > `readonly` **contentTransfer**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:61](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L61)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L53)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:61](https://github.com/Siteco
 
 > `readonly` **live**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:63](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L63)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:55](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L55)
 
 ***
 
@@ -64,7 +64,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:63](https://github.com/Siteco
 
 > `readonly` **pages**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:59](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L59)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L51)
 
 ***
 
@@ -72,7 +72,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:59](https://github.com/Siteco
 
 > `readonly` **preview**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:62](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L62)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L54)
 
 ***
 
@@ -80,7 +80,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:62](https://github.com/Siteco
 
 > `readonly` **search**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:65](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L65)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:57](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L57)
 
 ***
 
@@ -88,4 +88,4 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:65](https://github.com/Siteco
 
 > `readonly` **sites**: `__module`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:58](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L58)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:50](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L50)
