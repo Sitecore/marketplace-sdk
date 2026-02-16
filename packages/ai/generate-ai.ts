@@ -5,7 +5,7 @@ import { defineSchemaPatcherConfig, preprocessInput } from '../shared/plugins/sc
 
 async function generate() {
   const skillsInput = await preprocessInput(
-    'https://ai-skills-api-euw-staging.sitecore-staging.cloud/openapi.json',
+    'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
   );
 
   await createClient({
