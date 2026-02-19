@@ -85,9 +85,9 @@ const brandReview = await ai.skills.generateBrandReview({
 });
 ```
 
-### Brand Review with File Attachments
+### Brand Review with an Image
 
-You can include documents and images for analysis:
+Send an image for brand review. The `input` record accepts `ExtractableFile` objects where `type` is `'image'` and `mimeType` is one of `'image/jpeg'`, `'image/png'`, or `'image/webp'`. Use the optional `detail` field (`'low'`, `'auto'`, or `'high'`) to control the level of processing detail.
 
 ```typescript
 const brandReview = await ai.skills.generateBrandReview({
@@ -101,10 +101,64 @@ const brandReview = await ai.skills.generateBrandReview({
         mimeType: 'image/png',
         detail: 'high',
       },
-      document: {
+    },
+  },
+  query: { sitecoreContextId: 'your-context-id' },
+});
+```
+
+You can also pass a base64-encoded image directly via the `url` field:
+
+```typescript
+const brandReview = await ai.skills.generateBrandReview({
+  body: {
+    brandkitId: 'your-brandkit-id',
+    input: {
+      logo: {
+        name: 'logo.png',
+        type: 'image',
+        url: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...',
+        mimeType: 'image/png',
+        detail: 'auto',
+      },
+    },
+  },
+  query: { sitecoreContextId: 'your-context-id' },
+});
+```
+
+### Brand Review with a Document
+
+Send a document (PDF or plain text) for brand review. Set `type` to `'document'` and `mimeType` to `'application/pdf'` or `'text/plain'`. If the file requires authentication to download, provide the `auth` object.
+
+```typescript
+const brandReview = await ai.skills.generateBrandReview({
+  body: {
+    brandkitId: 'your-brandkit-id',
+    input: {
+      pressRelease: {
         name: 'press-release.pdf',
         type: 'document',
         url: 'https://example.com/press-release.pdf',
+        mimeType: 'application/pdf',
+      },
+    },
+  },
+  query: { sitecoreContextId: 'your-context-id' },
+});
+```
+
+If the document URL requires authentication, use the `auth` field. Supported `authType` values are `'bearer'`, `'basic'`, and `'custom'` (which requires a `customHeaderName`):
+
+```typescript
+const brandReview = await ai.skills.generateBrandReview({
+  body: {
+    brandkitId: 'your-brandkit-id',
+    input: {
+      internalDoc: {
+        name: 'style-guide.pdf',
+        type: 'document',
+        url: 'https://internal.example.com/style-guide.pdf',
         mimeType: 'application/pdf',
         auth: {
           authType: 'bearer',
@@ -112,6 +166,68 @@ const brandReview = await ai.skills.generateBrandReview({
         },
       },
     },
+  },
+  query: { sitecoreContextId: 'your-context-id' },
+});
+```
+
+### Brand Review with Mixed Input
+
+The `input` field is a flexible record (`{ [key: string]: ... }`). Each key is a field name and the value can be a `string`, `number`, `boolean`, `Array`, object, `ExtractableFile`, `Array<ExtractableFile>`, or `null`. This lets you combine text, images, and documents in a single request.
+
+```typescript
+const brandReview = await ai.skills.generateBrandReview({
+  body: {
+    brandkitId: 'your-brandkit-id',
+    input: {
+      // Text fields
+      headline: 'Summer Sale - 50% Off Everything!',
+      body: 'Shop our biggest sale of the year with incredible discounts.',
+
+      // An image for review
+      banner: {
+        name: 'summer-banner.webp',
+        type: 'image',
+        url: 'https://cdn.example.com/summer-banner.webp',
+        mimeType: 'image/webp',
+        detail: 'high',
+      },
+
+      // A document for review
+      campaign: {
+        name: 'campaign-brief.pdf',
+        type: 'document',
+        url: 'https://example.com/campaign-brief.pdf',
+        mimeType: 'application/pdf',
+      },
+
+      // Multiple images as an array of ExtractableFile
+      productPhotos: [
+        {
+          name: 'product-front.jpg',
+          type: 'image',
+          url: 'https://cdn.example.com/product-front.jpg',
+          mimeType: 'image/jpeg',
+        },
+        {
+          name: 'product-back.jpg',
+          type: 'image',
+          url: 'https://cdn.example.com/product-back.jpg',
+          mimeType: 'image/jpeg',
+        },
+      ],
+
+      // Other supported value types
+      wordCount: 150,
+      isApproved: false,
+      tags: ['summer', 'sale', 'promotion'],
+      metadata: { channel: 'email', region: 'us-east' },
+    },
+    // Optionally target specific brand kit sections and fields
+    sections: [
+      { sectionId: 'tone-of-voice', fieldIds: ['headline', 'body'] },
+      { sectionId: 'visual-identity' },
+    ],
   },
   query: { sitecoreContextId: 'your-context-id' },
 });
