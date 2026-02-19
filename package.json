@@ -40,6 +40,11 @@
     "typescript": "^5.8.2"
   },
   "pnpm": {
+    "auditConfig": {
+      "ignoreCves": [
+        "CVE-2025-69873"
+      ]
+    },
     "overrides": {
       "esbuild@<=0.24.2": ">=0.25.0",
       "@eslint/plugin-kit@<0.3.3": ">=0.3.3",
