@@ -1,15 +1,11 @@
 import { createClient } from '@hey-api/openapi-ts';
 import { defineAugmentationConfig } from '../shared/plugins/augmentation';
 import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
-import { defineSchemaPatcherConfig, preprocessInput } from '../shared/plugins/schema-patcher';
+import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 async function generate() {
-  const skillsInput = await preprocessInput(
-    'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
-  );
-
   await createClient({
-    input: skillsInput,
+    input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
     output: {
       format: 'prettier',
       lint: 'eslint',

@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { handler as schemaPatcherHandler } from '../schema-patcher/plugin';
-import { preprocessInput } from '../schema-patcher/preprocess-input';
 
 // ─── Plugin handler tests (IR-level) ─────────────────────────────────────────
 
@@ -12,8 +11,8 @@ describe('schema patcher plugin - sitecoreContextId injection', () => {
     };
   }
 
-  function runHandler(schema: any, pluginOverrides: Record<string, any> = {}) {
-    const context: any = { ir: schema };
+  function runHandler(schema: any, spec?: any, pluginOverrides: Record<string, any> = {}) {
+    const context: any = { ir: schema, spec };
     schemaPatcherHandler({
       context,
       plugin: {
@@ -42,7 +41,7 @@ describe('schema patcher plugin - sitecoreContextId injection', () => {
     expect(postOp.parameters.query.sitecoreContextId).toBeDefined();
   });
 
-  it('keeps all operations (no filtering)', () => {
+  it('keeps all operations when no spec or x-sc-sdk present', () => {
     const schema = makeSchema({
       '/users': {
         get: { id: 'listUsers', parameters: {} },
@@ -61,9 +60,16 @@ describe('schema patcher plugin - sitecoreContextId injection', () => {
   });
 });
 
-// ─── preprocessInput tests (raw spec x-sc-sdk processing) ────────────────────
+// ─── Plugin handler tests (x-sc-sdk via context.spec) ────────────────────────
 
-describe('preprocessInput', () => {
+describe('schema patcher plugin - x-sc-sdk directives', () => {
+  function makeIR(paths: Record<string, any>) {
+    return {
+      servers: [{ url: 'https://api.example.com' }],
+      paths,
+    };
+  }
+
   function makeSpec(paths: Record<string, any>) {
     return {
       openapi: '3.0.0',
@@ -72,30 +78,52 @@ describe('preprocessInput', () => {
     };
   }
 
-  it('removes operations where x-sc-sdk.generate is false (operation level)', async () => {
-    const spec = makeSpec({
+  function runHandler(ir: any, spec: any, pluginOverrides: Record<string, any> = {}) {
+    const context: any = { ir, spec };
+    schemaPatcherHandler({
+      context,
+      plugin: {
+        name: '@sitecore-marketplace/schema-patcher',
+        ...pluginOverrides,
+      },
+    } as any);
+    return ir;
+  }
+
+  // ── x-sc-sdk.generate ──
+
+  it('removes operations where x-sc-sdk.generate is false (operation level)', () => {
+    const ir = makeIR({
       '/api/version': {
-        get: {
-          operationId: 'getVersion',
-          'x-sc-sdk': { generate: false },
-        },
+        get: { id: 'getVersion', parameters: {} },
       },
       '/api/data': {
-        get: {
-          operationId: 'getData',
-          'x-sc-sdk': { generate: true },
-        },
+        get: { id: 'getData', parameters: {} },
+      },
+    });
+    const spec = makeSpec({
+      '/api/version': {
+        get: { operationId: 'getVersion', 'x-sc-sdk': { generate: false } },
+      },
+      '/api/data': {
+        get: { operationId: 'getData', 'x-sc-sdk': { generate: true } },
       },
     });
 
-    const result = await preprocessInput(spec);
+    runHandler(ir, spec);
 
-    expect(result.paths['/api/version']).toBeUndefined();
-    expect(result.paths['/api/data']).toBeDefined();
-    expect(result.paths['/api/data'].get.operationId).toBe('getData');
+    expect(ir.paths['/api/version']).toBeUndefined();
+    expect(ir.paths['/api/data']).toBeDefined();
+    expect(ir.paths['/api/data'].get.id).toBe('getData');
   });
 
-  it('inherits path-level generate:false to all operations', async () => {
+  it('inherits path-level generate:false to all operations', () => {
+    const ir = makeIR({
+      '/applications': {
+        get: { id: 'listApps', parameters: {} },
+        post: { id: 'createApp', parameters: {} },
+      },
+    });
     const spec = makeSpec({
       '/applications': {
         'x-sc-sdk': { generate: false },
@@ -104,67 +132,40 @@ describe('preprocessInput', () => {
       },
     });
 
-    const result = await preprocessInput(spec);
+    runHandler(ir, spec);
 
-    expect(result.paths['/applications']).toBeUndefined();
+    expect(ir.paths['/applications']).toBeUndefined();
   });
 
-  it('operation-level generate:true overrides path-level generate:false', async () => {
+  it('operation-level generate:true overrides path-level generate:false', () => {
+    const ir = makeIR({
+      '/applications': {
+        get: { id: 'listApps', parameters: {} },
+        post: { id: 'createApp', parameters: {} },
+      },
+    });
     const spec = makeSpec({
       '/applications': {
         'x-sc-sdk': { generate: false },
-        get: {
-          operationId: 'listApps',
-          'x-sc-sdk': { generate: true, operationName: 'listApplications' },
-        },
-        post: {
-          operationId: 'createApp',
-          summary: 'Create Application',
-        },
+        get: { operationId: 'listApps', 'x-sc-sdk': { generate: true } },
+        post: { operationId: 'createApp' },
       },
     });
 
-    const result = await preprocessInput(spec);
+    runHandler(ir, spec);
 
-    expect(result.paths['/applications']).toBeDefined();
-    expect(result.paths['/applications'].get).toBeDefined();
-    expect(result.paths['/applications'].get.operationId).toBe('listApplications');
-    expect(result.paths['/applications'].post).toBeUndefined();
+    expect(ir.paths['/applications']).toBeDefined();
+    expect(ir.paths['/applications'].get).toBeDefined();
+    expect(ir.paths['/applications'].post).toBeUndefined();
   });
 
-  it('overrides operationId with x-sc-sdk.operationName', async () => {
-    const spec = makeSpec({
-      '/api/languages': {
-        get: {
-          operationId: 'ListLanguages',
-          'x-sc-sdk': { operationName: 'ListActiveLanguages' },
-        },
+  it('keeps all operations when x-sc-sdk is not present in spec', () => {
+    const ir = makeIR({
+      '/users': {
+        get: { id: 'listUsers', parameters: {} },
+        post: { id: 'createUser', parameters: {} },
       },
     });
-
-    const result = await preprocessInput(spec);
-
-    expect(result.paths['/api/languages'].get.operationId).toBe('ListActiveLanguages');
-  });
-
-  it('strips x-sc-sdk from output', async () => {
-    const spec = makeSpec({
-      '/api/data': {
-        'x-sc-sdk': { generate: true },
-        get: {
-          operationId: 'getData',
-          'x-sc-sdk': { generate: true, operationName: 'fetchData' },
-        },
-      },
-    });
-
-    const result = await preprocessInput(spec);
-
-    expect(result.paths['/api/data']['x-sc-sdk']).toBeUndefined();
-    expect(result.paths['/api/data'].get['x-sc-sdk']).toBeUndefined();
-  });
-
-  it('keeps all operations when no x-sc-sdk is present (backward compat)', async () => {
     const spec = makeSpec({
       '/users': {
         get: { operationId: 'listUsers' },
@@ -172,48 +173,73 @@ describe('preprocessInput', () => {
       },
     });
 
-    const result = await preprocessInput(spec);
+    runHandler(ir, spec);
 
-    expect(result.paths['/users'].get.operationId).toBe('listUsers');
-    expect(result.paths['/users'].post.operationId).toBe('createUser');
+    expect(ir.paths['/users'].get).toBeDefined();
+    expect(ir.paths['/users'].post).toBeDefined();
   });
 
-  it('does not mutate the original input object', async () => {
+  // ── x-sc-sdk.operationName ──
+
+  it('overrides operation id with x-sc-sdk.operationName', () => {
+    const ir = makeIR({
+      '/api/languages': {
+        get: { id: 'ListLanguages', parameters: {} },
+      },
+    });
     const spec = makeSpec({
-      '/api/data': {
-        get: {
-          operationId: 'getData',
-          'x-sc-sdk': { generate: false },
-        },
+      '/api/languages': {
+        get: { operationId: 'ListLanguages', 'x-sc-sdk': { operationName: 'listActiveLanguages' } },
       },
     });
 
-    await preprocessInput(spec);
+    runHandler(ir, spec);
 
-    // Original should still have the operation
-    expect(spec.paths['/api/data'].get).toBeDefined();
-    expect(spec.paths['/api/data'].get['x-sc-sdk']).toBeDefined();
+    expect(ir.paths['/api/languages'].get.id).toBe('listActiveLanguages');
   });
 
-  it('removes empty paths after filtering', async () => {
+  it('applies operationName and generate together', () => {
+    const ir = makeIR({
+      '/api/data': {
+        get: { id: 'old_name', parameters: {} },
+        post: { id: 'createData', parameters: {} },
+      },
+    });
     const spec = makeSpec({
       '/api/data': {
-        get: {
-          operationId: 'getData',
-          'x-sc-sdk': { generate: false },
-        },
-      },
-      '/api/other': {
-        get: {
-          operationId: 'getOther',
-          'x-sc-sdk': { generate: true },
-        },
+        get: { operationId: 'old_name', 'x-sc-sdk': { generate: true, operationName: 'fetchData' } },
+        post: { operationId: 'createData', 'x-sc-sdk': { generate: false } },
       },
     });
 
-    const result = await preprocessInput(spec);
+    runHandler(ir, spec);
 
-    expect(result.paths['/api/data']).toBeUndefined();
-    expect(result.paths['/api/other']).toBeDefined();
+    expect(ir.paths['/api/data'].get).toBeDefined();
+    expect(ir.paths['/api/data'].get.id).toBe('fetchData');
+    expect(ir.paths['/api/data'].post).toBeUndefined();
+  });
+
+  // ── still injects sitecoreContextId on surviving operations ──
+
+  it('injects sitecoreContextId on operations that survive x-sc-sdk filtering', () => {
+    const ir = makeIR({
+      '/api/data': {
+        get: { id: 'getData', parameters: {} },
+        post: { id: 'createData', parameters: {} },
+      },
+    });
+    const spec = makeSpec({
+      '/api/data': {
+        get: { operationId: 'getData' },
+        post: { operationId: 'createData', 'x-sc-sdk': { generate: false } },
+      },
+    });
+
+    runHandler(ir, spec);
+
+    expect(ir.paths['/api/data'].get.parameters.query.sitecoreContextId).toBeDefined();
+    expect(ir.paths['/api/data'].post).toBeUndefined();
   });
 });
+
+
