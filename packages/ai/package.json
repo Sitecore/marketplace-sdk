@@ -1,0 +1,71 @@
+{
+  "name": "@sitecore-marketplace-sdk/ai",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/ai/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "pnpm run clean && rollup -c",
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
+    "generate:module": "tsx generate-ai.ts",
+    "generate:module:experimental": "tsx generate-ai-experimental.ts",
+    "coverage": "vitest --coverage",
+    "generate:docs": "npx typedoc --options ../../typedoc.json --out ../../docs/modules/ai src/index.ts"
+  },
+  "author": {
+    "name": "Sitecore Corporation"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sitecore/sitecore-marketplace-sdk"
+  },
+  "keywords": [
+    "sitecore",
+    "marketplace",
+    "sdk",
+    "ai",
+    "skills",
+    "sitecoreai"
+  ],
+  "dependencies": {
+    "@hey-api/client-fetch": "0.8.3"
+  },
+  "peerDependencies": {
+    "@sitecore-marketplace-sdk/client": "^0.3.2"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "0.66.5",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@sitecore-marketplace-sdk/client": "workspace:*",
+    "@types/node": "^20.17.19",
+    "@vitest/coverage-v8": "^3.0.6",
+    "@vitest/expect": "^3.0.5",
+    "esbuild": "^0.20.0",
+    "esbuild-node-externals": "^1.12.0",
+    "prettier": "^3.5.1",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.34.8",
+    "rollup-plugin-copy": "^3.5.0",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.8.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/ai/src/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  }
+}

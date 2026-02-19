@@ -1,7 +1,7 @@
 import { createClient } from '@hey-api/openapi-ts';
-import { defineAugmentationConfig } from './plugins/augmentation';
-import { defineClientTransformerConfig } from './plugins/client-transformer/config';
-import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
+import { defineAugmentationConfig } from '../shared/plugins/augmentation';
+import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
+import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 createClient({
   input: './schema/xmapp.yaml',

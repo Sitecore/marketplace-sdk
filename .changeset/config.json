@@ -3,15 +3,10 @@
   "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
-  "linked": [
-    [
-      "@sitecore-marketplace-sdk/xmc",
-      "@sitecore-marketplace-sdk/client"
-    ]
-  ],
+  "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": [],
+  "ignore": ["@sitecore-marketplace-sdk/shared"],
   "bumpVersionsWithWorkspaceProtocolOnly": true
 }
