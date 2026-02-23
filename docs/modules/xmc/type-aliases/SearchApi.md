@@ -8,4 +8,4 @@
 
 > **SearchApi** = *typeof* `experimental_search_sdk`
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:55](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L55)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L47)

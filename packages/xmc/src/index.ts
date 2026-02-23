@@ -1,4 +1,5 @@
 import { SDKModule } from '@sitecore-marketplace-sdk/client';
+import { createSDKModule } from '../../shared/src';
 import * as authoring from './client-authoring/sdk.gen';
 import * as content from './client-content/sdk.gen';
 import * as contentTransfer from './client-content-transfer/sdk.gen';
@@ -48,33 +49,6 @@ const namespaceMap: Record<string, any> = {
   search: search,
 };
 
-export const XMC: SDKModule = {
-  namespace: 'xmc',
-  invokeOperation: (operation: string, ...args: any[]) => {
-    const parts = operation.split('.', 2);
-
-    if (parts.length < 2) {
-      throw new Error(
-        `Invalid operation format: '${operation}'. Expected format 'clientNamespace.operationName'.`,
-      );
-    }
-
-    const [clientNamespace, operationName] = parts;
-
-    // Check if the namespace exists in the map
-    const sdk = namespaceMap[clientNamespace];
-    if (!sdk) {
-      throw new Error(`Namespace '${clientNamespace}' not found`);
-    }
-
-    // Check if the operation exists in the SDK
-    if (!(operationName in sdk)) {
-      throw new Error(`Operation '${operationName}' not found in namespace '${clientNamespace}'`);
-    }
-
-    // Invoke the operation
-    return sdk[operationName](...args);
-  },
-};
+export const XMC: SDKModule = createSDKModule('xmc', namespaceMap) as SDKModule;
 
 export { QueryMap, MutationMap } from '@sitecore-marketplace-sdk/client';

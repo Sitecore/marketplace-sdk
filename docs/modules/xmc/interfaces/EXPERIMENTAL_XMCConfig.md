@@ -6,7 +6,7 @@
 
 # Interface: experimental\_XMCConfig
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:36](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L36)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:28](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L28)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [packages/xmc/src/experimental\_xmc.ts:36](https://github.com/Siteco
 
 > **getAccessToken**: () => `Promise`\<`string`\>
 
-Defined in: [packages/xmc/src/experimental\_xmc.ts:37](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L37)
+Defined in: [packages/xmc/src/experimental\_xmc.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental_xmc.ts#L29)
 
 #### Returns
 
