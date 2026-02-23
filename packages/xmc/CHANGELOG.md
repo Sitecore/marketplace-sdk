@@ -1,5 +1,12 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.4.1
+
+### Patch Changes
+
+- 66aea33: Refactor duplicate code into a shared folder
+  - Updated `@sitecore-marketplace-sdk/xmc` to depend on a versioned `@sitecore-marketplace-sdk/client` (was `workspace:*`).
+
 ## 0.4.0
 
 ### Minor Changes
