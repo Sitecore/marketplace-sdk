@@ -333,7 +333,14 @@ export class PostMessageBridge {
 
     // For client SDK, we need to validate the origin during the handshake.
     if (this.sdkType === 'client' && message.type === 'handshake' && this.isNullOrEmpty(this.config.targetOrigin)) {
-      isValidOrigin = AllowedOrigins.some(origin => event.origin.includes(origin));
+      try {
+        const { hostname } = new URL(event.origin);
+        isValidOrigin = AllowedOrigins.some(
+          allowedOrigin => hostname === allowedOrigin || hostname.endsWith('.' + allowedOrigin)
+        );
+      } catch {
+        isValidOrigin = false;
+      }
       //Once origin is confirmed, targetOrigin will not be null
       if (isValidOrigin) {
         this.config.targetOrigin = event.origin;
