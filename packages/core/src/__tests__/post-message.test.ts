@@ -3,7 +3,6 @@ import { CoreError } from '../errors';
 import type { HandshakeMessage } from '../types';
 import { afterEach, beforeEach, describe, expect, test, vi, Mock } from 'vitest';
 import { source } from './shared';
-import { AllowedOrigins } from '../allowed-origins';
 
 describe('PostMessageBridge', () => {
   const mockTarget = {
@@ -126,26 +125,23 @@ describe('PostMessageBridge', () => {
 
     test('validates origin and updates targetOrigin for client handshake with null targetOrigin', () => {
       const mockEvent = {
-        origin: 'https://allowed-origin.com',
+        origin: 'https://sitecorecloud.io',
         data: {
           type: 'handshake',
           source: 'sitecore-marketplace-sdk',
         },
       } as MessageEvent;
 
-      const mockAllowOrigins = ['https://allowed-origin.com'];
-      vi.spyOn(AllowedOrigins, 'some').mockImplementation((callback) => mockAllowOrigins.some(callback));
-
       const bridge = new PostMessageBridge({
         target: mockTarget,
-        targetOrigin: null,
+        targetOrigin: undefined,
         selfOrigin: testSelfOrigin,
         timeout: 5000,
       });
 
       bridge.initialize({
         type: 'client',
-        targetOrigin: null,
+        targetOrigin: undefined,
         selfOrigin: testSelfOrigin,
         version: '1.0.0'
       });
@@ -153,7 +149,7 @@ describe('PostMessageBridge', () => {
       const isValid = (bridge as any).isValidOrigin(mockEvent, mockEvent.data);
 
       expect(isValid).toBe(true);
-      expect(bridge['config'].targetOrigin).toBe('https://allowed-origin.com');
+      expect(bridge['config'].targetOrigin).toBe('https://sitecorecloud.io');
     });
 
     test('fail validates origin when used not allowed origin', () => {
@@ -165,19 +161,16 @@ describe('PostMessageBridge', () => {
         },
       } as MessageEvent;
 
-      const mockAllowOrigins = ['https://allowed-origin.com'];
-      vi.spyOn(AllowedOrigins, 'some').mockImplementation((callback) => mockAllowOrigins.some(callback));
-
       const bridge = new PostMessageBridge({
         target: mockTarget,
-        targetOrigin: null,
+        targetOrigin: undefined,
         selfOrigin: testSelfOrigin,
         timeout: 5000,
       });
 
       bridge.initialize({
         type: 'client',
-        targetOrigin: null,
+        targetOrigin: undefined,
         selfOrigin: testSelfOrigin,
         version: '1.0.0'
       });
@@ -185,7 +178,72 @@ describe('PostMessageBridge', () => {
       const isValid = (bridge as any).isValidOrigin(mockEvent, mockEvent.data);
 
       expect(isValid).toBe(false);
-      expect(bridge['config'].targetOrigin).toBe(null);
+      expect(bridge['config'].targetOrigin).toBeUndefined();
+    });
+
+    describe('isValidOrigin - handshake hostname validation', () => {
+      const makeClientBridge = () => {
+        const b = new PostMessageBridge({
+          target: mockTarget,
+          targetOrigin: undefined,
+          selfOrigin: testSelfOrigin,
+          timeout: 5000,
+        });
+        b.initialize({ type: 'client', targetOrigin: undefined, selfOrigin: testSelfOrigin, version: '1.0.0' });
+        return b;
+      };
+
+      const handshakeMessage = { type: 'handshake', source: 'sitecore-marketplace-sdk' };
+      const handshakeEvent = (origin: string) =>
+        ({ origin, data: handshakeMessage }) as unknown as MessageEvent;
+
+      test.each([
+        'https://sitecorecloud.io',
+        'https://sitecorecloud.app',
+        'https://sitecore-staging.cloud',
+      ])('accepts exact allowed domain: %s', (origin) => {
+        const b = makeClientBridge();
+        expect((b as any).isValidOrigin(handshakeEvent(origin), handshakeMessage)).toBe(true);
+        expect(b['config'].targetOrigin).toBe(origin);
+      });
+
+      test.each([
+        'https://app1.sitecorecloud.io',
+        'https://app1.sitecorecloud.app',
+        'https://app1.sitecore-staging.cloud',
+        'https://a.b.sitecorecloud.io',
+      ])('accepts true subdomain: %s', (origin) => {
+        const b = makeClientBridge();
+        expect((b as any).isValidOrigin(handshakeEvent(origin), handshakeMessage)).toBe(true);
+        expect(b['config'].targetOrigin).toBe(origin);
+      });
+
+      test.each([
+        'https://sitecorecloud.io.attacker.com',
+        'https://sitecorecloud.app.attacker.com',
+        'https://sitecore-staging.cloud.attacker.com',
+      ])('rejects lookalike suffix attack: %s', (origin) => {
+        const b = makeClientBridge();
+        expect((b as any).isValidOrigin(handshakeEvent(origin), handshakeMessage)).toBe(false);
+        expect(b['config'].targetOrigin).toBeUndefined();
+      });
+
+      test.each([
+        'https://evil-sitecorecloud.io',
+        'https://notsitecore-staging.cloud',
+        'https://fakesitecorecloud.app',
+      ])('rejects substring prefix attack: %s', (origin) => {
+        const b = makeClientBridge();
+        expect((b as any).isValidOrigin(handshakeEvent(origin), handshakeMessage)).toBe(false);
+        expect(b['config'].targetOrigin).toBeUndefined();
+      });
+
+      test('rejects opaque origin ("null" string)', () => {
+        const b = makeClientBridge();
+        const event = { origin: 'null', data: handshakeMessage } as unknown as MessageEvent;
+        expect((b as any).isValidOrigin(event, handshakeMessage)).toBe(false);
+        expect(b['config'].targetOrigin).toBeUndefined();
+      });
     });
 
     test('logs request handling with %s specifier and action', async () => {
