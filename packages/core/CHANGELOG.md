@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- 556ddcf: Security: fixes client SDK handshake origin validation.
+- 556ddcf: Security: Fix client SDK handshake origin validation.
 
 ## 0.3.2
 
