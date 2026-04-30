@@ -1,6 +1,6 @@
 import { createClient } from '@hey-api/openapi-ts';
-import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
-import { defineNamespaceTransformerConfig } from './plugins/namespace-transformer';
+import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
+import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
 createClient({
   input: 'https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml',
@@ -130,6 +130,28 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_Agent',
+    }),
+  ],
+});
+
+createClient({
+  input: './schema/search.json',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/experimental/client-search',
+  },
+  plugins: [
+    defineSchemaPatcherConfig(),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineNamespaceTransformerConfig({
+      namespace: 'experimental_Search',
     }),
   ],
 });

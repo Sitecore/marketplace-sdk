@@ -12,13 +12,15 @@
     "clean": "turbo run clean",
     "lint": "turbo run lint",
     "test:all": "turbo run test",
+    "test:shared": "cd packages/xmc && pnpm exec vitest run --config ../shared/vitest.config.ts --root ../shared",
     "coverage": "turbo run coverage",
     "generate:module": "turbo run generate:module",
     "generate:module:experimental": "turbo run generate:module:experimental",
     "pack:client": "cd packages/client && pnpm pack",
     "pack:core": "cd packages/core && pnpm pack",
     "pack:xmc": "cd packages/xmc && pnpm pack",
-    "pack:all": "pnpm pack:core && pnpm pack:client && pnpm pack:xmc",
+    "pack:ai": "cd packages/ai && pnpm pack",
+    "pack:all": "pnpm pack:core && pnpm pack:client && pnpm pack:xmc && pnpm pack:ai",
     "postinstall": "pnpm build:serial",
     "changeset": "changeset",
     "empty-changeset": "pnpm changeset --empty",
@@ -35,22 +37,37 @@
     "turbo": "^2.6.1",
     "typedoc": "^0.28.14",
     "typedoc-plugin-markdown": "^4.9.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.8.2"
   },
   "pnpm": {
-    "overrides": {
-      "esbuild@<=0.24.2": ">=0.25.0",
-      "@eslint/plugin-kit@<0.3.3": ">=0.3.3",
-      "form-data@>=4.0.0 <4.0.4": ">=4.0.4",
-      "glob@>=10.2.0 <10.5.0": ">=10.5.0",
-      "glob@>=11.0.0 <11.1.0": ">=11.1.0",
-      "tmp@<=0.2.3": ">=0.2.4",
-      "tar@<=7.5.2": ">=7.5.3",
-      "tar@<=7.5.3": ">=7.5.4",
-      "diff@<4.0.4": ">=4.0.4",
-      "undici@<6.23.0": ">=6.23.0",
-      "tar@<7.5.7": ">=7.5.7",
-      "@isaacs/brace-expansion@<=5.0.0": ">=5.0.1"
+    "auditConfig": {
+      "ignoreCves": [
+        "CVE-2025-69873"
+      ]
+    },
+  "overrides": {
+      "@types/node": ">=20.19.0",
+      "ajv": ">=8.18.0",
+      "brace-expansion": ">=5.0.5",
+      "@isaacs/brace-expansion": ">=5.0.1",
+      "defu": ">=6.1.5",
+      "diff": ">=4.0.4",
+      "esbuild": ">=0.25.0",
+      "@eslint/plugin-kit": ">=0.3.3",
+      "flatted": ">=3.4.2",
+      "form-data": ">=4.0.4",
+      "glob": ">=10.5.0",
+      "handlebars": ">=4.7.9",
+      "markdown-it": ">=14.1.1",
+      "minimatch": ">=10.2.3",
+      "@tootallnate/once": ">=3.0.1",
+      "picomatch": ">=4.0.4",
+      "rollup": ">=4.59.0",
+      "serialize-javascript": ">=7.0.5",
+      "tar": ">=7.5.11",
+      "tmp": ">=0.2.4",
+      "undici": ">=7.24.0",
+      "yaml": ">=2.8.3"
     }
   },
   "packageManager": "pnpm@10.6.3"

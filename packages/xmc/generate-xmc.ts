@@ -1,7 +1,7 @@
 import { createClient } from '@hey-api/openapi-ts';
-import { defineAugmentationConfig } from './plugins/augmentation';
-import { defineClientTransformerConfig } from './plugins/client-transformer/config';
-import { defineSchemaPatcherConfig } from './plugins/schema-patcher';
+import { defineAugmentationConfig } from '../shared/plugins/augmentation';
+import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
+import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 createClient({
   input: './schema/xmapp.yaml',
@@ -190,6 +190,33 @@ createClient({
     }),
     defineClientTransformerConfig({
       namespace: 'Pages',
+    }),
+  ],
+});
+
+createClient({
+  input: './schema/search.json',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-search',
+  },
+  plugins: [
+    defineSchemaPatcherConfig({
+      basePath: '/search',
+    }),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.search'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Search',
     }),
   ],
 });

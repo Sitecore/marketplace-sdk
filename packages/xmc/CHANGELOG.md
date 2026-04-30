@@ -1,9 +1,17 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.4.1
+
+### Patch Changes
+
+- 66aea33: Refactor duplicate code into a shared folder
+  - Updated `@sitecore-marketplace-sdk/xmc` to depend on a versioned `@sitecore-marketplace-sdk/client` (was `workspace:*`).
+
 ## 0.4.0
 
 ### Minor Changes
 
+- 56180f9: Add Search API support
 - 9bd1985: Update XMC SDK to support latest changes from Pages and Sites APIs
   - Added new namespaces `xmc.pages` and `xmc.sites` for queries and mutations related to Pages and Sites APIs
   - Deprecated all queries and mutation for `xmc.xmapps` namespace

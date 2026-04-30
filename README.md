@@ -6,6 +6,7 @@ This mono-repository manages the following Marketplace SDK packages:
 - `core` – an internal package that sets up secure communication between a Marketplace application (the client) and Sitecore (the host), using the web browser's [PostMessage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage). For more information, refer to the package [README](packages/core/README.md).
 - `client` – required for all Marketplace applications. This package provides secure, bidirectional communication between the Marketplace app and Sitecore. It lets you make queries and mutations. Queries support one-off data requests and subscriptions for live updates. Mutations trigger state changes or HTTP requests in Sitecore. For more information, refer to the package [README](packages/client/README.md).
 - `xmc` – extends the Client SDK and provides type-safe interfaces for interacting with Sitecore XM Cloud APIs. For more information, refer to the package [README](packages/xmc/README.md).
+- `ai` – extends the Client SDK and provides type-safe interfaces for interacting with AI skills APIs. AI skills APIs provide LLM-powered capabilities grounded in SitecoreAI data. For more information, refer to the package [README](packages/ai/README.md).
 
 The packages expose uniform, type-safe, and developer-friendly APIs to speed up your Marketplace app development work.
 
@@ -19,6 +20,12 @@ npm install @sitecore-marketplace-sdk/client
 If your app needs to interact with XM Cloud APIs, you also need to install the `xmc` package:
 ```bash
 npm install @sitecore-marketplace-sdk/xmc
+```
+
+If your app needs to interact with AI skills APIs, install the `ai` package:
+
+```bash
+npm install @sitecore-marketplace-sdk/ai
 ```
 
   > [!NOTE]
@@ -40,6 +47,7 @@ The repository is structured as follows:
 ├── packages
 │     ├── core    // Core SDK (communication layer)
 │     ├── client  // Client SDK (client application integration)
+│     ├── ai      // AI module (integration with Sitecore AI skills APIs)
 │     └── xmc     // XMC module (integration with Sitecore XM Cloud APIs)
 └── docs          // Reference documentation and project guides
 ```

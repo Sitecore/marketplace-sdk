@@ -1,9 +1,11 @@
 import { SDKModule } from '@sitecore-marketplace-sdk/client';
+import { createSDKModule } from '../../shared/src';
 import * as authoring from './client-authoring/sdk.gen';
 import * as content from './client-content/sdk.gen';
 import * as contentTransfer from './client-content-transfer/sdk.gen';
 import * as xmapp from './client-xmapp/sdk.gen';
 import * as agent from './client-agent/sdk.gen';
+import * as search from './client-search/sdk.gen';
 import * as pages from './client-pages/sdk.gen';
 import * as sites from './client-sites/sdk.gen';
 
@@ -28,6 +30,9 @@ export * from './client-pages/augmentation.gen';
 export * from './client-sites/types.gen';
 export * from './client-sites/augmentation.gen';
 
+export * from './client-search/types.gen';
+export * from './client-search/augmentation.gen';
+
 // Experimental exports with prefix to avoid conflicts
 export * from './experimental_xmc'; // This will export all experimental types and APIs
 
@@ -41,35 +46,9 @@ const namespaceMap: Record<string, any> = {
   agent: agent,
   pages: pages,
   sites: sites,
+  search: search,
 };
 
-export const XMC: SDKModule = {
-  namespace: 'xmc',
-  invokeOperation: (operation: string, ...args: any[]) => {
-    const parts = operation.split('.', 2);
-
-    if (parts.length < 2) {
-      throw new Error(
-        `Invalid operation format: '${operation}'. Expected format 'clientNamespace.operationName'.`,
-      );
-    }
-
-    const [clientNamespace, operationName] = parts;
-
-    // Check if the namespace exists in the map
-    const sdk = namespaceMap[clientNamespace];
-    if (!sdk) {
-      throw new Error(`Namespace '${clientNamespace}' not found`);
-    }
-
-    // Check if the operation exists in the SDK
-    if (!(operationName in sdk)) {
-      throw new Error(`Operation '${operationName}' not found in namespace '${clientNamespace}'`);
-    }
-
-    // Invoke the operation
-    return sdk[operationName](...args);
-  },
-};
+export const XMC: SDKModule = createSDKModule('xmc', namespaceMap) as SDKModule;
 
 export { QueryMap, MutationMap } from '@sitecore-marketplace-sdk/client';
