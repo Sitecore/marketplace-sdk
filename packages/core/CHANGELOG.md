@@ -1,11 +1,5 @@
 # @sitecore-marketplace-sdk/core
 
-## 0.3.3
-
-### Patch Changes
-
-- 556ddcf: Security: Fix client SDK handshake origin validation.
-
 ## 0.3.2
 
 ### Patch Changes
