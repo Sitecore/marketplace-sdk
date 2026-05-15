@@ -12,12 +12,58 @@ Core SDK for managing communication between host and client applications.
 Provides a high-level API for bidirectional communication through postMessage.
 
 Features:
+
 - Type-safe messaging
 - Request/response pattern
 - Event pub/sub system
 - Secure handshake protocol
 - Origin validation
-// TODO: add examples
+
+## Examples
+
+```typescript
+const hostSdk = new CoreSDK({
+  target: iframe.contentWindow!,
+  targetOrigin: 'https://marketplace-app.example.com',
+  selfOrigin: window.location.origin,
+});
+
+hostSdk.initialize({
+  type: 'host',
+  targetOrigin: 'https://marketplace-app.example.com',
+  selfOrigin: window.location.origin,
+  version: '1',
+});
+
+await hostSdk.connect();
+
+hostSdk.onRequest<{ id: string }, { id: string; name: string }>('catalog:get-item', async ({ id }) => {
+  return { id, name: 'Example Item' };
+});
+```
+
+```typescript
+const clientSdk = new CoreSDK({
+  target: window.parent,
+  targetOrigin: 'https://host.example.com',
+  selfOrigin: window.location.origin,
+});
+
+clientSdk.initialize({
+  type: 'client',
+  targetOrigin: 'https://host.example.com',
+  selfOrigin: window.location.origin,
+  version: '1',
+});
+
+await clientSdk.connect();
+
+const item = await clientSdk.request<{ id: string }, { id: string; name: string }>('catalog:get-item', {
+  id: 'sku_123',
+});
+
+clientSdk.emit('catalog:item-selected', item);
+```
 
 ## Constructors
 
