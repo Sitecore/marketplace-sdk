@@ -31,7 +31,6 @@ export class experimental_AI {
   public readonly skills: SkillsApi;
 
   constructor(config: experimental_AIConfig) {
-    console.log('🔧 [experimental_AI] Constructor called');
     const edgePlatformProxyUrl = getEdgePlatformProxyUrl();
 
     // Define API configurations
