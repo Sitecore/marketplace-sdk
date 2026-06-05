@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitest/config';
-import { GithubActionsReporter } from 'vitest/reporters';
+import { GithubActionsReporter } from 'vitest/node';
 
 export default defineConfig({
   test: {
