@@ -12,11 +12,11 @@ jobs:
         with:
           fetch-depth: 0
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
       - name: Install pnpm
-        run: npm i -g pnpm
+        run: npm install -g pnpm@10.33.4
       - name: Install dependencies
         run: pnpm i
       - name: Ensure changesets included
