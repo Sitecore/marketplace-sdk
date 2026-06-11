@@ -24,7 +24,7 @@ describe('ClientSDK', () => {
   };
 
   beforeEach(async () => {
-    vi.clearAllMocks();
+    vi.resetAllMocks();
   });
 
   afterEach(() => {
@@ -132,15 +132,11 @@ describe('ClientSDK', () => {
       ...config,
       events: { onPageContextUpdate: vi.fn() },
     };
-    (CoreSDK as any).mockImplementation(() => ({
-      connect: vi.fn(),
-      initialize: vi.fn(),
-      on: vi.fn().mockImplementation((event: string, handler: any) => {
-        if (event === 'pages.context') {
-          handler(payload);
-        }
-      }),
-    }));
+    CoreSDK.prototype.on = vi.fn().mockImplementation((event: string, handler: any) => {
+      if (event === 'pages.context') {
+        handler(payload);
+      }
+    });
 
     await ClientSDK.init(clientConfig);
 
@@ -155,15 +151,11 @@ describe('ClientSDK', () => {
       ...config,
       events: { onPageContextUpdate: undefined },
     };
-    (CoreSDK as any).mockImplementation(() => ({
-      connect: vi.fn(),
-      initialize: vi.fn(),
-      on: vi.fn().mockImplementation((event: string, handler: any) => {
-        if (event === 'pages.context') {
-          handler(payload);
-        }
-      }),
-    }));
+    CoreSDK.prototype.on = vi.fn().mockImplementation((event: string, handler: any) => {
+      if (event === 'pages.context') {
+        handler(payload);
+      }
+    });
 
     await ClientSDK.init(clientConfig);
 
