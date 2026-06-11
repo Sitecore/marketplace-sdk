@@ -17,6 +17,8 @@ jobs:
           node-version: '24'
       - name: Install pnpm
         run: npm install -g pnpm
+      - name: Check pnpm version
+        run: pnpm --version
       - name: Install dependencies
         run: pnpm i
       - name: Ensure changesets included
