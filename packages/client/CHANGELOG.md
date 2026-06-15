@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.3.3
+
+### Patch Changes
+
+- 76ac0c2: Bump `@sitecore-marketplace-sdk/core` dependency to `0.3.3`
+
 ## 0.3.2
 
 ### Patch Changes
