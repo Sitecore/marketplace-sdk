@@ -1,6 +1,6 @@
 {
   "name": "@sitecore-marketplace-sdk/xmc",
-  "version": "0.4.2",
+  "version": "0.4.1",
   "description": "",
   "type": "module",
   "main": "./dist/index.cjs.js",
@@ -50,7 +50,7 @@
     "@types/node": "^20.17.19",
     "@vitest/coverage-v8": "^4.1.8",
     "@vitest/expect": "^3.0.5",
-    "esbuild": "^0.28.1",
+    "esbuild": "^0.20.0",
     "esbuild-node-externals": "^1.12.0",
     "prettier": "^3.5.1",
     "rimraf": "^6.0.1",
