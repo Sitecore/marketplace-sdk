@@ -32,12 +32,12 @@
   "license": "Apache-2.0",
   "description": "Marketplace SDK",
   "devDependencies": {
-    "@changesets/cli": "2.29.2",
-    "jest-environment-jsdom": "^29.7.0",
+    "@changesets/cli": "2.31.0",
+    "jest-environment-jsdom": "^30.4.1",
     "turbo": "^2.6.1",
     "typedoc": "^0.28.14",
     "typedoc-plugin-markdown": "^4.9.0",
-    "typescript": "^5.8.2"
+    "typescript": "^6.0.3"
   },
   "pnpm": {
     "auditConfig": {
