@@ -41,6 +41,7 @@
     "rimraf": "^6.0.1",
     "rollup": "^4.34.8",
     "typescript": "^5.0.0",
+    "vite": "^6.4.3",
     "vitest": "^4.1.8",
     "vitest-github-actions-reporter": "^0.11.1"
   },
