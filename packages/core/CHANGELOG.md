@@ -1,5 +1,12 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.3.4
+
+### Patch Changes
+
+- 2779684: Upgrade test tooling to Vitest 4 and apply security overrides for postcss, fast-uri, ws, turbo, uuid, and tmp.
+- 78d923f: Fix security vulnerability
+
 ## 0.3.3
 
 ### Patch Changes
