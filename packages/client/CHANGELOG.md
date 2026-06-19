@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.3.5
+
+### Patch Changes
+
+- b87453a: Update core dependency to 0.3.4
+
 ## 0.3.4
 
 ### Patch Changes
