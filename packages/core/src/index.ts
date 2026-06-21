@@ -17,7 +17,40 @@ import { CoreSDKConfig, HandshakeConfig } from './types';
  * - Event pub/sub system
  * - Secure handshake protocol
  * - Origin validation
- * // TODO: add examples
+ *
+ * @example
+ * ```typescript
+ * const sdk = new CoreSDK({
+ *   target: iframe.contentWindow!,
+ *   targetOrigin: 'https://marketplace-app.example.com',
+ *   selfOrigin: window.location.origin,
+ * });
+ *
+ * sdk.initialize({
+ *   type: 'host',
+ *   targetOrigin: 'https://marketplace-app.example.com',
+ *   selfOrigin: window.location.origin,
+ *   version: '1',
+ * });
+ * ```
+ *
+ * @example
+ * ```typescript
+ * const sdk = new CoreSDK({
+ *   target: window.parent,
+ *   targetOrigin: 'https://host.example.com',
+ *   selfOrigin: window.location.origin,
+ * });
+ *
+ * sdk.initialize({
+ *   type: 'client',
+ *   targetOrigin: 'https://host.example.com',
+ *   selfOrigin: window.location.origin,
+ *   version: '1',
+ * });
+ *
+ * await sdk.connect();
+ * ```
  */
 export class CoreSDK {
   private bridge: PostMessageBridge;
