@@ -40,6 +40,9 @@ import type {
   SubscribeKey,
   SubscribeMap,
 } from './sdk-types';
+import packageJson from '../package.json';
+
+const CLIENT_SDK_VERSION = packageJson.version;
 
 export class ClientSDK {
   private stateManager: StateManager;
@@ -121,7 +124,7 @@ export class ClientSDK {
         type: 'client',
         targetOrigin: this.config.targetOrigin,
         selfOrigin: this.config.selfOrigin || window.location.origin,
-        version: '1', // TODO: update to use the npm package version from package.json
+        version: CLIENT_SDK_VERSION,
       });
 
       logger.info('Client SDK initialized, performing handshake...');
