@@ -7,9 +7,9 @@
     "@hey-api/client-fetch": "0.8.3"
   },
   "devDependencies": {
-    "@hey-api/openapi-ts": "0.66.5",
-    "typescript": "^5.8.2",
-    "vite": "^6.4.3",
-    "vitest": "^3.0.8"
+    "@hey-api/openapi-ts": "0.98.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9"
   }
 }
