@@ -5,6 +5,12 @@ export interface UserInfo {
   email: string;
 }
 
+export interface DeveloperInfo {
+  id: string;
+  name: string;
+  profileUrl: string;
+}
+
 export interface GenericRequestData {
   /**
    * An optional context ID associated with the request.
@@ -228,6 +234,7 @@ export interface ApplicationRuntimeContext {
   touchpoints?: ApplicationTouchpointContext[];
   resourceAccess?: ApplicationResourceContext[];
   extensionPoints?: ApplicationExtensionPointContext[];
+  developer?: DeveloperInfo;
   [key: string]: any;
 }
 
