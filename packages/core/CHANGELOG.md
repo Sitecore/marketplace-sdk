@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.3.5
+
+### Patch Changes
+
+- dc8a43f: Add developer information to `ApplicationRuntimeContext`
+
 ## 0.3.4
 
 ### Patch Changes
