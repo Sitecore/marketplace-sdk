@@ -3,6 +3,7 @@ import { ClientSDK } from '../client';
 import { CoreSDK } from '@sitecore-marketplace-sdk/core';
 import { StateManager } from '../state';
 import { logger } from '../logger';
+import clientPackageJson from '../../package.json';
 
 vi.mock('@sitecore-marketplace-sdk/core');
 vi.mock('../state');
@@ -51,6 +52,19 @@ describe('ClientSDK', () => {
   it('should log info on successful initialization', async () => {
     client = await ClientSDK.init(config);
     expect(logger.info).toHaveBeenCalledWith('Client handshake successful.');
+  });
+
+  it('should initialize the core SDK with the client package version', async () => {
+    client = new ClientSDK(config);
+
+    await client.initialize();
+
+    expect(CoreSDK.prototype.initialize).toHaveBeenCalledWith({
+      type: 'client',
+      targetOrigin: config.targetOrigin,
+      selfOrigin: config.selfOrigin,
+      version: clientPackageJson.version,
+    });
   });
 
   it('should register module when have module in config on initialization', async () => {

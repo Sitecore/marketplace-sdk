@@ -57,7 +57,6 @@ export class experimental_XMC {
   public readonly search: SearchApi;
 
   constructor(config: experimental_XMCConfig) {
-    console.log('🔧 [experimental_XMC] Constructor called');
     const edgePlatformProxyUrl = getEdgePlatformProxyUrl();
 
     // Define API configurations

@@ -1,3 +1,4 @@
+import json from '@rollup/plugin-json';
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
@@ -18,6 +19,7 @@ export default {
   ],
   plugins: [
     resolve(),
+    json(),
     typescript({
       tsconfig: './tsconfig.json',
       module: 'ESNext',
