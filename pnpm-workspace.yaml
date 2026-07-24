@@ -5,3 +5,8 @@ packages:
   - 'packages/xmc'
   - 'packages/ai'
   - 'packages/*'
+
+auditConfig:
+  ignoreCves:
+    - GHSA-v2hh-gcrm-f6hx
+
