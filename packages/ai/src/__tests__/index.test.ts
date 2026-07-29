@@ -18,11 +18,8 @@ describe('AI SDKModule', () => {
     );
   });
 
-  it('should dispatch skills operations correctly', () => {
-    // This test validates that the skills namespace is mapped
-    // The actual operations depend on generated code
-    const sdk = AI;
-    expect(sdk.namespace).toBe('ai');
-    expect(typeof sdk.invokeOperation).toBe('function');
+  it('should dispatch brands operations correctly', () => {
+    expect(AI.namespace).toBe('ai');
+    expect(typeof AI.invokeOperation).toBe('function');
   });
 });

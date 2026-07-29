@@ -1,12 +1,12 @@
 # Sitecore Marketplace SDK - `ai` package
 
-The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI skills APIs:
-- [Brand Review REST API](https://api-docs.sitecore.com/ai-capabilities/ai-brand-review-admin-rest-api) - using AI-powered analysis, evaluate whether input content and assets comply with the guidelines defined in a brand kit.
+The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI APIs:
+- [Brands API](https://ai-brands-api-euw.sitecorecloud.io/openapi.json) - manage brand-related content and configuration.
 
 ## Prerequisites
 - Node.js 16 or later. Check your installed version by using the `node --version` command.
 - npm 10 or later. Check your installed version by using the `npm --version` command.
-- A Stream subscription.
+- An AI subscription.
 
 ## Installation
 
@@ -35,14 +35,14 @@ const config = {
 ### Make a mutation
 Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
 
-For example, to generate a brand review using the AI skills API:
+For example, to update a brand using the AI APIs:
 
 ```typescript
-const generateBrandReview = async () => {
-  await client?.mutate('ai.skills.generateBrandReview', {
+const updateBrand = async () => {
+  await client?.mutate('ai.brands.updateBrand', {
     body: {
-      brandkitId: 'your-brand-kit-id',
-      input: { text: 'Content to review' },
+      brandId: 'your-brand-id',
+      input: { name: 'Updated Brand Name' },
     },
   });
 };
@@ -57,8 +57,8 @@ For an overview of all the possible values, refer to the [`MutationMap` interfac
 
 For more information, refer to the reference documentation in the `/docs` folder.
 
-## License 
+## License
 This package is part of the Sitecore Marketplace SDK, licensed under the Apache 2.0 License. Refer to the [LICENSE](../../LICENSE.md) file in the repository root.
 
 ## Status
-The `client` package is actively maintained as part of the Sitecore Marketplace SDK.
+The `ai` package is actively maintained as part of the Sitecore Marketplace SDK.

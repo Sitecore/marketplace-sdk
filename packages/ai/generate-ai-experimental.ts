@@ -1,18 +1,20 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { defineBrandsOperationNamePatcherConfig } from './brands-operation-name-patcher';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
 async function generate() {
   await createClient({
-    input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
+    input: 'https://ai-brands-api-euw.sitecorecloud.io/openapi.json',
     output: {
       format: 'prettier',
       lint: 'eslint',
-      path: './src/experimental/client-skills',
+      path: './src/experimental/client-brands',
     },
     plugins: [
+      defineBrandsOperationNamePatcherConfig(),
       defineSchemaPatcherConfig({
-        basePath: '/stream/ai-skills-api/',
+        basePath: '/ai-brands-api',
       }),
       '@hey-api/client-fetch',
       '@hey-api/schemas',
@@ -22,7 +24,7 @@ async function generate() {
         name: '@hey-api/typescript',
       },
       defineNamespaceTransformerConfig({
-        namespace: 'experimental_Skills',
+        namespace: 'experimental_Brands',
       }),
     ],
   });
