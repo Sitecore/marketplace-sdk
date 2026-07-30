@@ -1,4 +1,39 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+
+const mocks = vi.hoisted(() => ({
+  createClient: vi.fn(),
+  createConfig: vi.fn((config) => config),
+  generateBrandReview: vi.fn(),
+  listBrandKits: vi.fn(),
+  createBrandKit: vi.fn(),
+  experimentalGenerateBrandReview: vi.fn(),
+  experimentalListBrandKits: vi.fn(),
+  experimentalCreateBrandKit: vi.fn(),
+}));
+
+vi.mock('@hey-api/client-fetch', () => ({
+  createClient: mocks.createClient,
+  createConfig: mocks.createConfig,
+}));
+
+vi.mock('../client-skills/sdk.gen', () => ({
+  generateBrandReview: mocks.generateBrandReview,
+}));
+
+vi.mock('../client-brands/sdk.gen', () => ({
+  listBrandKits: mocks.listBrandKits,
+  createBrandKit: mocks.createBrandKit,
+}));
+
+vi.mock('../experimental/client-skills/sdk.gen', () => ({
+  generateBrandReview: mocks.experimentalGenerateBrandReview,
+}));
+
+vi.mock('../experimental/client-brands/sdk.gen', () => ({
+  listBrandKits: mocks.experimentalListBrandKits,
+  createBrandKit: mocks.experimentalCreateBrandKit,
+}));
+
 import * as aiModule from '../index';
 
 describe('AI module exports', () => {

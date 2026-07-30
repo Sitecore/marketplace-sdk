@@ -1,3 +1,4 @@
+import * as experimental_brands_sdk from './experimental/client-brands/sdk.gen';
 import * as experimental_skills_sdk from './experimental/client-skills/sdk.gen';
 import {
   getEdgePlatformProxyUrl,
@@ -7,10 +8,11 @@ import {
 } from '../../shared/src';
 
 // Re-export experimental types for convenience
+export * from './experimental/client-brands/types.gen';
 export * from './experimental/client-skills/types.gen';
 
 // Supported API types
-type ApiType = 'skills';
+type ApiType = 'skills' | 'brands';
 
 // Configuration type for experimental_AI
 export interface experimental_AIConfig {
@@ -25,9 +27,11 @@ export async function experimental_createAIClient(
 }
 
 // Type definitions for the API objects with full IntelliSense support
+export type BrandsApi = typeof experimental_brands_sdk;
 export type SkillsApi = typeof experimental_skills_sdk;
 
 export class experimental_AI {
+  public readonly brands: BrandsApi;
   public readonly skills: SkillsApi;
 
   constructor(config: experimental_AIConfig) {
@@ -41,12 +45,18 @@ export class experimental_AI {
         sdk: experimental_skills_sdk,
         name: 'AI skills API',
       },
+      brands: {
+        baseUrl: `${edgePlatformProxyUrl}/ai-brands-api`,
+        sdk: experimental_brands_sdk,
+        name: 'Brand Management API',
+      },
     };
 
     // Create custom clients for each API
     const customClients = createCustomClients(apiConfigs, config.getAccessToken, 'experimental_AI');
 
     // Create API proxies with separated methods and types
+    this.brands = createApiProxy('brands', apiConfigs, customClients, 'experimental_AI');
     this.skills = createApiProxy('skills', apiConfigs, customClients, 'experimental_AI');
   }
 }

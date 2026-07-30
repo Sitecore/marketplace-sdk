@@ -23,6 +23,13 @@ Extended Marketplace Client package with API access and experimental features.
 - [XMC Module Documentation](./modules/xmc/README.md)
 - [experimental_XMC Documentation](./experimental-xmc.md) - Server-to-server API access
 
+### AI Package
+
+Brand management and review APIs for marketplace apps.
+
+- [AI Module Documentation](./modules/ai/README.md)
+- [experimental_AI Documentation](./experimental-ai.md) - Server-to-server API access
+
 ## 🎯 Use Cases
 
 - **Client-Side Apps**: Use Client SDK for React applications
