@@ -11,6 +11,7 @@ describe('experimental_AI', () => {
   it('should create an instance with getAccessToken', () => {
     const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
     expect(client).toBeDefined();
+    expect(client.documents).toBeDefined();
     expect(client.skills).toBeDefined();
   });
 
@@ -19,9 +20,15 @@ describe('experimental_AI', () => {
     expect(client.skills).toBeDefined();
   });
 
+  it('should have a documents property', () => {
+    const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
+    expect(client.documents).toBeDefined();
+  });
+
   it('should create client via factory function', async () => {
     const client = await experimental_createAIClient({ getAccessToken: mockGetAccessToken });
     expect(client).toBeInstanceOf(experimental_AI);
+    expect(client.documents).toBeDefined();
     expect(client.skills).toBeDefined();
   });
 

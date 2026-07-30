@@ -1,5 +1,15 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import * as documents from '../client-documents/sdk.gen';
+import * as skills from '../client-skills/sdk.gen';
 import { AI } from '../index';
+
+vi.mock('../client-documents/sdk.gen', () => ({
+  getVersion: vi.fn(),
+}));
+
+vi.mock('../client-skills/sdk.gen', () => ({
+  generateBrandReview: vi.fn(),
+}));
 
 describe('AI SDKModule', () => {
   it('should have namespace "ai"', () => {
@@ -19,10 +29,16 @@ describe('AI SDKModule', () => {
   });
 
   it('should dispatch skills operations correctly', () => {
-    // This test validates that the skills namespace is mapped
-    // The actual operations depend on generated code
-    const sdk = AI;
-    expect(sdk.namespace).toBe('ai');
-    expect(typeof sdk.invokeOperation).toBe('function');
+    const result = { data: 'skills-result' };
+    vi.mocked(skills.generateBrandReview).mockReturnValue(result as never);
+
+    expect(AI.invokeOperation('skills.generateBrandReview')).toBe(result);
+  });
+
+  it('should map documents operations correctly', () => {
+    const result = { data: 'documents-result' };
+    vi.mocked(documents.getVersion).mockReturnValue(result as never);
+
+    expect(AI.invokeOperation('documents.getVersion')).toBe(result);
   });
 });
