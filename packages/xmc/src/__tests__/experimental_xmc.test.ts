@@ -33,6 +33,10 @@ vi.mock('../experimental/client-content/sdk.gen', () => ({
   graphql: vi.fn(),
 }));
 
+vi.mock('../experimental/client-featureflags/sdk.gen', () => ({
+  listFlags: vi.fn(),
+}));
+
 describe('experimental_XMC', () => {
   let mockGetAccessToken: () => Promise<string>;
   let experimentalXMC: experimental_XMC;
@@ -73,6 +77,7 @@ describe('experimental_XMC', () => {
       expect(experimentalXMC.contentTransfer).toBeDefined();
       expect(experimentalXMC.preview).toBeDefined();
       expect(experimentalXMC.live).toBeDefined();
+      expect(experimentalXMC.featureflags).toBeDefined();
     });
 
     it('should use default edge platform proxy URL when env is not set', () => {
@@ -111,6 +116,7 @@ describe('experimental_XMC', () => {
       expect(typeof experimentalXMC.preview.graphql).toBe('function');
       // Live API
       expect(typeof experimentalXMC.live.graphql).toBe('function');
+      expect(typeof experimentalXMC.featureflags.listFlags).toBe('function');
     });
   });
 
@@ -178,6 +184,7 @@ describe('experimental_XMC', () => {
       const contentTransferApi = experimentalXMC.contentTransfer;
       const previewApi = experimentalXMC.preview;
       const liveApi = experimentalXMC.live;
+      const featureflagsApi = experimentalXMC.featureflags;
 
       expect(sitesApi).toBeDefined();
       expect(pagesApi).toBeDefined();
@@ -185,6 +192,7 @@ describe('experimental_XMC', () => {
       expect(contentTransferApi).toBeDefined();
       expect(previewApi).toBeDefined();
       expect(liveApi).toBeDefined();
+      expect(featureflagsApi).toBeDefined();
     });
   });
 });

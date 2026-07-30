@@ -17,6 +17,7 @@ import type {
   ContentTransferApi,
   ContentApi,
   SearchApi,
+  FeatureflagsApi,
 } from '../index';
 
 // Test experimental_ namespace imports like in demo app
@@ -110,6 +111,7 @@ describe('Index Exports', () => {
       const contentTransferApi: ContentTransferApi = {} as ContentTransferApi;
       const contentApi: ContentApi = {} as ContentApi;
       const searchApi: SearchApi = {} as SearchApi;
+      const featureflagsApi: FeatureflagsApi = {} as FeatureflagsApi;
 
       expect(config).toBeDefined();
       expect(sitesApi).toBeDefined();
@@ -118,6 +120,7 @@ describe('Index Exports', () => {
       expect(contentTransferApi).toBeDefined();
       expect(contentApi).toBeDefined();
       expect(searchApi).toBeDefined();
+      expect(featureflagsApi).toBeDefined();
     });
 
     it('should support all experimental_ namespaces', () => {

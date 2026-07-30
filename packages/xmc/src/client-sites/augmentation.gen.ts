@@ -5,14 +5,14 @@ import * as sdk from './sdk.gen';
 declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
     /**
-     * No summary available.*/
+     * Fetches information about background jobs. Returns empty array if no jobs are running.*/
     'xmc.sites.listJobs': {
       params: Parameters<typeof sdk.listJobs>[0];
       response: Awaited<ReturnType<typeof sdk.listJobs>>;
       subscribe: false;
     };
     /**
-     * No summary available.*/
+     * Fetches information about a background job.*/
     'xmc.sites.retrieveJob': {
       params: Parameters<typeof sdk.retrieveJob>[0];
       response: Awaited<ReturnType<typeof sdk.retrieveJob>>;
@@ -248,18 +248,6 @@ declare module '@sitecore-marketplace-sdk/client' {
     'xmc.sites.updateProfile': {
       params: Parameters<typeof sdk.updateProfile>[0];
       response: Awaited<ReturnType<typeof sdk.updateProfile>>;
-    };
-    /**
-     * Returns currently active personalization variants for the requested pages.*/
-    'xmc.sites.aggregateLivePageVariants': {
-      params: Parameters<typeof sdk.aggregateLivePageVariants>[0];
-      response: Awaited<ReturnType<typeof sdk.aggregateLivePageVariants>>;
-    };
-    /**
-     * Aggregates data about multiple pages and their components.*/
-    'xmc.sites.aggregatePageData': {
-      params: Parameters<typeof sdk.aggregatePageData>[0];
-      response: Awaited<ReturnType<typeof sdk.aggregatePageData>>;
     };
     /**
      * Changes the system name of a site collection.*/

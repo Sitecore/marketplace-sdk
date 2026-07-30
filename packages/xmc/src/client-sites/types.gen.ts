@@ -88,28 +88,6 @@ export namespace Sites {
      */
     language: string;
   };
-  export type ComponentAggregationResponse = {
-    /**
-     * The component identifier.
-     * Example value: 86a03271-dff4-470a-92bd-b68c67de2e25
-     */
-    id?: string | null;
-    /**
-     * The unique identifier of the component on this page. The UID is assigned to the component when it's added to the page.
-     * Example value: 3d42bec0-60ad-45f3-a8f7-ddb6a5543c34
-     */
-    uid?: string | null;
-    /**
-     * The component name.
-     * Example value: RichText
-     */
-    name?: string | null;
-    /**
-     * The display name of the component for the specified language.
-     * Example value: Rich Text
-     */
-    displayName?: string | null;
-  };
   /**
    * A site duplication request.
    */
@@ -635,32 +613,6 @@ export namespace Sites {
      */
     posMappings?: Array<AnalyticsIdentifier> | null;
   };
-  export type PageAggregationResponse = {
-    /**
-     * The page identifier.
-     * Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
-     */
-    id?: string | null;
-    /**
-     * The language of the page.
-     * Example value: en-US
-     */
-    language?: string | null;
-    /**
-     * The page name.
-     * Example value: Home
-     */
-    name?: string | null;
-    /**
-     * The display name of the page for the specified language.
-     * Example value: Home
-     */
-    displayName?: string | null;
-    /**
-     * A collection of the page components.
-     */
-    components?: Array<ComponentAggregationResponse> | null;
-  };
   /**
    * Page hierarchy response entity.
    */
@@ -713,18 +665,6 @@ export namespace Sites {
      * Example value: False
      */
     lockedByCurrentUser?: boolean;
-  };
-  export type PageRequest = {
-    /**
-     * The page identifier.
-     * Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
-     */
-    id: string;
-    /**
-     * The language of the page.
-     * Example value: en-US
-     */
-    language: string;
   };
   export type PageResponse = {
     /**
@@ -802,35 +742,6 @@ export namespace Sites {
      * Example value: /Aboutus
      */
     route?: string | null;
-  };
-  export type PageVariantsAggregationResponse = {
-    /**
-     * Aggregated data of the currently active variants for this page.
-     */
-    pages?: Array<PageVariantsResponse> | null;
-  };
-  export type PageVariantsResponse = {
-    /**
-     * The page identifier.
-     * Example value: 8f0b81bc-7388-46be-b109-6e73d1114470
-     */
-    pageId?: string | null;
-    /**
-     * The language of the page.
-     * Example value: en-US
-     */
-    language?: string | null;
-    /**
-     * The list of page personalization variant identifiers.
-     * Example value: [
-     * "edc7cee9-14b5-4218-a7a8-13664c714bdb",
-     * "5f457136-fd9f-4a5b-be3f-2d46709f01a4"
-     * ]
-     */
-    variantIds?: Array<string> | null;
-  };
-  export type PagesAggregationResponse = {
-    pages?: Array<PageAggregationResponse> | null;
   };
   /**
    * The access rights of the current user to the site.
@@ -2265,65 +2176,6 @@ export namespace Sites {
     200: EditorProfileModel;
   };
   export type UpdateProfileResponse = UpdateProfileResponses[keyof UpdateProfileResponses];
-  export type AggregateLivePageVariantsData = {
-    /**
-     * The collection of pages, by their identifier and language, for which to get personalization variants.
-     */
-    body?: Array<PageRequest>;
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/aggregation/pages/live/variants';
-  };
-  export type AggregateLivePageVariantsErrors = {
-    /**
-     * Bad request
-     */
-    400: ProblemDetails;
-  };
-  export type AggregateLivePageVariantsError =
-    AggregateLivePageVariantsErrors[keyof AggregateLivePageVariantsErrors];
-  export type AggregateLivePageVariantsResponses = {
-    /**
-     * Success
-     */
-    200: PageVariantsAggregationResponse;
-  };
-  export type AggregateLivePageVariantsResponse =
-    AggregateLivePageVariantsResponses[keyof AggregateLivePageVariantsResponses];
-  export type AggregatePageDataData = {
-    /**
-     * The collection of pages, by their identifier and language, for which to get data.
-     */
-    body?: Array<PageRequest>;
-    path?: never;
-    query?: {
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/aggregation/pages';
-  };
-  export type AggregatePageDataErrors = {
-    /**
-     * Bad request
-     */
-    400: ProblemDetails;
-  };
-  export type AggregatePageDataError = AggregatePageDataErrors[keyof AggregatePageDataErrors];
-  export type AggregatePageDataResponses = {
-    /**
-     * Success
-     */
-    200: PagesAggregationResponse;
-  };
-  export type AggregatePageDataResponse =
-    AggregatePageDataResponses[keyof AggregatePageDataResponses];
   export type RenameCollectionData = {
     /**
      * Input object containing the new system name of the site collection.

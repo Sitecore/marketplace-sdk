@@ -229,18 +229,6 @@ type RenameCollectionResponse = Sites.RenameCollectionResponse;
 
 type RenameCollectionData = Sites.RenameCollectionData;
 
-type AggregatePageDataError = Sites.AggregatePageDataError;
-
-type AggregatePageDataResponse = Sites.AggregatePageDataResponse;
-
-type AggregatePageDataData = Sites.AggregatePageDataData;
-
-type AggregateLivePageVariantsError = Sites.AggregateLivePageVariantsError;
-
-type AggregateLivePageVariantsResponse = Sites.AggregateLivePageVariantsResponse;
-
-type AggregateLivePageVariantsData = Sites.AggregateLivePageVariantsData;
-
 type UpdateProfileError = Sites.UpdateProfileError;
 
 type UpdateProfileResponse = Sites.UpdateProfileResponse;
@@ -372,6 +360,9 @@ export type Options<
   meta?: Record<string, unknown>;
 };
 
+/**
+ * Fetches information about background jobs. Returns empty array if no jobs are running.
+ */
 export const listJobs = <ThrowOnError extends boolean = false>(
   options?: Options<ListJobsData, ThrowOnError>,
 ) => {
@@ -387,6 +378,9 @@ export const listJobs = <ThrowOnError extends boolean = false>(
   });
 };
 
+/**
+ * Fetches information about a background job.
+ */
 export const retrieveJob = <ThrowOnError extends boolean = false>(
   options: Options<RetrieveJobData, ThrowOnError>,
 ) => {
@@ -813,60 +807,6 @@ export const updateProfile = <ThrowOnError extends boolean = false>(
       },
     ],
     url: '/api/ui/v1/editorprofiles/{id}',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * Aggregate personalization variants for multiple pages
- * Returns currently active personalization variants for the requested pages.
- */
-export const aggregateLivePageVariants = <ThrowOnError extends boolean = false>(
-  options?: Options<AggregateLivePageVariantsData, ThrowOnError>,
-) => {
-  return (options?.client ?? _heyApiClient).post<
-    AggregateLivePageVariantsResponse,
-    AggregateLivePageVariantsError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/aggregation/pages/live/variants',
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options?.headers,
-    },
-  });
-};
-
-/**
- * Aggregate page data
- * Aggregates data about multiple pages and their components.
- */
-export const aggregatePageData = <ThrowOnError extends boolean = false>(
-  options?: Options<AggregatePageDataData, ThrowOnError>,
-) => {
-  return (options?.client ?? _heyApiClient).post<
-    AggregatePageDataResponse,
-    AggregatePageDataError,
-    ThrowOnError
-  >({
-    security: [
-      {
-        scheme: 'bearer',
-        type: 'http',
-      },
-    ],
-    url: '/api/v1/aggregation/pages',
     ...options,
     headers: {
       'Content-Type': 'application/json',

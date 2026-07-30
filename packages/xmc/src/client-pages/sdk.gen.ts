@@ -4,6 +4,18 @@ import type { Options as ClientOptions, TDataShape, Client } from '@hey-api/clie
 import type { Pages } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 
+type AggregatePageDataError = Pages.AggregatePageDataError;
+
+type AggregatePageDataResponse = Pages.AggregatePageDataResponse;
+
+type AggregatePageDataData = Pages.AggregatePageDataData;
+
+type AggregateLivePageVariantsError = Pages.AggregateLivePageVariantsError;
+
+type AggregateLivePageVariantsResponse = Pages.AggregateLivePageVariantsResponse;
+
+type AggregateLivePageVariantsData = Pages.AggregateLivePageVariantsData;
+
 type DeletePageVersionsError = Pages.DeletePageVersionsError;
 
 type DeletePageVersionsResponse = Pages.DeletePageVersionsResponse;
@@ -59,6 +71,8 @@ type CreatePageResponse = Pages.CreatePageResponse;
 type CreatePageData = Pages.CreatePageData;
 
 type GetLivePageStateError = Pages.GetLivePageStateError;
+
+type GetLivePageStateResponse = Pages.GetLivePageStateResponse;
 
 type GetLivePageStateData = Pages.GetLivePageStateData;
 
@@ -355,7 +369,11 @@ export const listPageVariants = <ThrowOnError extends boolean = false>(
 export const getLivePageState = <ThrowOnError extends boolean = false>(
   options: Options<GetLivePageStateData, ThrowOnError>,
 ) => {
-  return (options.client ?? _heyApiClient).get<unknown, GetLivePageStateError, ThrowOnError>({
+  return (options.client ?? _heyApiClient).get<
+    GetLivePageStateResponse,
+    GetLivePageStateError,
+    ThrowOnError
+  >({
     security: [
       {
         scheme: 'bearer',
@@ -589,5 +607,59 @@ export const deletePageVersions = <ThrowOnError extends boolean = false>(
     ],
     url: '/api/v1/pages/{pageId}/versions/{versionNumber}/{language}',
     ...options,
+  });
+};
+
+/**
+ * Aggregate personalization variants for multiple pages
+ * Returns currently active personalization variants for the requested pages.
+ */
+export const aggregateLivePageVariants = <ThrowOnError extends boolean = false>(
+  options?: Options<AggregateLivePageVariantsData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).post<
+    AggregateLivePageVariantsResponse,
+    AggregateLivePageVariantsError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/aggregation/pages/live/variants',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
+  });
+};
+
+/**
+ * Aggregate page data
+ * Aggregates data about multiple pages and their components.
+ */
+export const aggregatePageData = <ThrowOnError extends boolean = false>(
+  options?: Options<AggregatePageDataData, ThrowOnError>,
+) => {
+  return (options?.client ?? _heyApiClient).post<
+    AggregatePageDataResponse,
+    AggregatePageDataError,
+    ThrowOnError
+  >({
+    security: [
+      {
+        scheme: 'bearer',
+        type: 'http',
+      },
+    ],
+    url: '/api/v1/aggregation/pages',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options?.headers,
+    },
   });
 };

@@ -5,6 +5,7 @@ import * as experimental_content_transfer_sdk from './experimental/client-conten
 import * as experimental_content_sdk from './experimental/client-content/sdk.gen';
 import * as experimental_agent_sdk from './experimental/client-agent';
 import * as experimental_search_sdk from './experimental/client-search/sdk.gen';
+import * as experimental_featureflags_sdk from './experimental/client-featureflags/sdk.gen';
 import {
   getEdgePlatformProxyUrl,
   createCustomClients,
@@ -20,9 +21,10 @@ export * from './experimental/client-content-transfer/types.gen';
 export * from './experimental/client-content/types.gen';
 export * from './experimental/client-agent/types.gen';
 export * from './experimental/client-search/types.gen';
+export * from './experimental/client-featureflags/types.gen';
 
 // Supported API types
-type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' | 'live' | 'agent' | 'search';
+type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' | 'live' | 'agent' | 'search' | 'featureflags';
 
 // Configuration type for experimental_XMC
 export interface experimental_XMCConfig {
@@ -45,6 +47,7 @@ export type ContentTransferApi = typeof experimental_content_transfer_sdk;
 export type ContentApi = typeof experimental_content_sdk;
 export type AgentApi = typeof experimental_agent_sdk;
 export type SearchApi = typeof experimental_search_sdk;
+export type FeatureflagsApi = typeof experimental_featureflags_sdk;
 
 export class experimental_XMC {
   public readonly sites: SitesApi;
@@ -55,6 +58,7 @@ export class experimental_XMC {
   public readonly live: ContentApi;
   public readonly agent: AgentApi;
   public readonly search: SearchApi;
+  public readonly featureflags: FeatureflagsApi;
 
   constructor(config: experimental_XMCConfig) {
     console.log('🔧 [experimental_XMC] Constructor called');
@@ -102,6 +106,11 @@ export class experimental_XMC {
         sdk: experimental_search_sdk,
         name: 'Search API',
       },
+      featureflags: {
+        baseUrl: `${edgePlatformProxyUrl}/featureflags`,
+        sdk: experimental_featureflags_sdk,
+        name: 'Featureflags API',
+      },
     };
 
     // Create custom clients for each API
@@ -116,5 +125,6 @@ export class experimental_XMC {
     this.live = createApiProxy('live', apiConfigs, customClients, 'experimental_XMC');
     this.agent = createApiProxy('agent', apiConfigs, customClients, 'experimental_XMC');
     this.search = createApiProxy('search', apiConfigs, customClients, 'experimental_XMC');
+    this.featureflags = createApiProxy('featureflags', apiConfigs, customClients, 'experimental_XMC');
   }
 }

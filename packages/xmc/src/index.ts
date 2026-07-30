@@ -8,6 +8,7 @@ import * as agent from './client-agent/sdk.gen';
 import * as search from './client-search/sdk.gen';
 import * as pages from './client-pages/sdk.gen';
 import * as sites from './client-sites/sdk.gen';
+import * as featureflags from './client-featureflags/sdk.gen';
 
 export * from './client-authoring/types.gen';
 export * from './client-authoring/augmentation.gen';
@@ -33,6 +34,9 @@ export * from './client-sites/augmentation.gen';
 export * from './client-search/types.gen';
 export * from './client-search/augmentation.gen';
 
+export * from './client-featureflags/types.gen';
+export * from './client-featureflags/augmentation.gen';
+
 // Experimental exports with prefix to avoid conflicts
 export * from './experimental_xmc'; // This will export all experimental types and APIs
 
@@ -47,6 +51,7 @@ const namespaceMap: Record<string, any> = {
   pages: pages,
   sites: sites,
   search: search,
+  featureflags: featureflags,
 };
 
 export const XMC: SDKModule = createSDKModule('xmc', namespaceMap) as SDKModule;

@@ -2,65 +2,187 @@
 
 export namespace Agent {
   export type AddComponentRequest = {
+    /**
+     * The unique identifier of the component rendering definition.
+     */
     componentRenderingId: string;
+    /**
+     * The path of the placeholder where the component will be placed.
+     */
     placeholderPath: string;
+    /**
+     * The name of the component item to create.
+     */
     componentItemName: string;
+    /**
+     * The language code for the component.
+     */
     language?: string;
+    /**
+     * Field values to set on the component or its datasource.
+     */
     fields?: {
       [key: string]: unknown;
     } | null;
+    /**
+     * The unique identifier of the component before which the new component will be inserted.
+     */
+    insertBeforeComponentId?: string | null;
+    /**
+     * The unique identifier of the component after which the new component will be inserted.
+     */
+    insertAfterComponentId?: string | null;
   };
   export type AddComponentResponse = {
+    /**
+     * The unique identifier of the newly added component.
+     */
     componentId: string;
+    /**
+     * The unique identifier of the page to which the component was added.
+     */
     pageId: string;
+    /**
+     * The unique identifier of the placeholder where the component was placed.
+     */
     placeholderId?: string | null;
+    /**
+     * The unique identifier of the datasource used by the component, if applicable.
+     */
     datasourceId?: string | null;
   };
   export type AddLanguageRequest = {
+    /**
+     * The language code of the new version to add.
+     */
     language?: string;
   };
   export type AddLanguageResponse = {
+    /**
+     * Whether the language version was added successfully.
+     */
     success: boolean;
   };
   export type AllowedChildTemplateModel = {
+    /**
+     * The name of the allowed child template.
+     */
     name: string;
+    /**
+     * The unique identifier of the allowed child template.
+     */
     templateId: string;
   };
   export type AssetInformationMetadata = {
+    /**
+     * The width of the asset in pixels, or null if not applicable.
+     */
     width?: number | null;
+    /**
+     * The height of the asset in pixels, or null if not applicable.
+     */
     height?: number | null;
+    /**
+     * The file format of the asset (e.g., jpg, png), or null if not applicable.
+     */
     format?: string | null;
+    /**
+     * Alternative text for the asset, or null if not provided.
+     */
     alt_text?: string | null;
   };
   export type AssetInformationResponse = {
+    /**
+     * The unique identifier of the asset.
+     */
     id: string;
+    /**
+     * The name of the asset.
+     */
     name?: string | null;
+    /**
+     * The type of asset, for example, image or document.
+     */
     type?: string | null;
+    /**
+     * The URL where the asset can be accessed.
+     */
     url?: string | null;
+    /**
+     * The size of the asset in bytes.
+     */
     size?: number | null;
+    /**
+     * Additional metadata about the asset.
+     */
     metadata?: AssetInformationMetadata | null;
+    /**
+     * Details about the inner item if the asset is a container item.
+     */
     innerItem?: InnerItemModel | null;
   };
   export type AssetMetadataModel = {
+    /**
+     * Alternative text for the asset, or null if not provided.
+     */
     alt?: string | null;
+    /**
+     * The width of the asset in pixels, or null if not applicable.
+     */
     width?: number | null;
+    /**
+     * The height of the asset in pixels, or null if not applicable.
+     */
     height?: number | null;
+    /**
+     * The file extension of the asset (e.g., jpg, png), or null if not applicable.
+     */
     extension?: string | null;
+    /**
+     * The size of the asset in bytes, or null if not applicable.
+     */
     size?: number | null;
+    /**
+     * A description of the asset, or null if not provided.
+     */
     description?: string | null;
   };
   export type AssetSearchResultModel = {
+    /**
+     * The unique identifier of the asset.
+     */
     itemId: string;
+    /**
+     * The path of the asset in the content tree.
+     */
     path: string;
+    /**
+     * The name of the asset.
+     */
     name: string;
+    /**
+     * The display name of the asset, or null if not set.
+     */
     displayName?: string | null;
+    /**
+     * The type of asset such as image or document.
+     */
     type?: string | null;
+    /**
+     * The unique identifier of the template used by the asset.
+     */
     templateId: string;
+    /**
+     * The name of the template used by the asset.
+     */
     templateName: string;
+    /**
+     * Metadata about the asset.
+     */
     innerItem?: AssetMetadataModel | null;
   };
   export type BodyAssetsUploadAsset = {
-    file: Blob | File;
+    file: string;
     /**
      *
      * JSON string containing document creation parameters.
@@ -85,452 +207,2983 @@ export namespace Agent {
      */
     upload_request: string;
   };
-  export type ComponentDetailsModel = {
-    itemId: string;
+  export type BooleanConfig = {
+    type: 'Boolean';
+    /**
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
     name: string;
-    displayName: string;
-    path: string;
-    template: ComponentTemplateModel;
-    fields: ComponentFields;
-  };
-  export type ComponentFields = {
-    nodes: Array<FieldModel>;
-  };
-  export type ComponentGroup = {
-    title: string;
-    components: Array<ComponentInfo>;
-  };
-  export type ComponentInfo = {
-    category: string;
-    displayName: string;
-    iconUrl: string;
-    id: string;
-    componentName: string;
-  };
-  export type ComponentModel = {
-    id: string;
-    componentId: string;
-    componentName: string;
-    dataSource?: string | null;
-    placeholder?: string | null;
-    parameters?: ComponentParametersModel | null;
-    deviceId?: string | null;
-    layoutId?: string | null;
-    componentDetails?: ComponentDetailsModel | null;
-  };
-  export type ComponentParametersModel = {
-    GridParameters?: string | null;
-    FieldNames?: string | null;
-    Styles?: string | null;
-    RenderingIdentifier?: string | null;
-    CSSStyles?: string | null;
-    DynamicPlaceholderId?: string | null;
-  };
-  export type ComponentResponse = {
-    id: string;
-    name: string;
-    datasourceTemplateId: string;
-    datasourceLocations: Array<string>;
-    datasourceTemplatePath: string;
-    datasourceFields: Array<DatasourceFieldNode>;
-    datasourceAutoGenerated: boolean;
-    datasourceRequired: boolean;
-    hasDynamicPlaceholder?: boolean | null;
-  };
-  export type ComponentShortInfo = {
-    id: string;
-    name: string;
-  };
-  export type ComponentTemplateModel = {
-    templateId: string;
-    name: string;
-  };
-  export type Components = {
-    groups: Array<ComponentGroup>;
-    ungrouped?: Array<ComponentInfo>;
-  };
-  export type ComponentsResponse = {
-    components: Components;
-  };
-  export type ConditionTemplate = {
-    href: string;
-    ref: string;
-    name: string;
-    modifiedByRef: string;
-    modifiedAt: string;
-    revision: number;
-    archived: boolean;
-    friendlyId: string;
-    type: string;
-    status: string;
-    icon: string;
-    additionalFields: {
-      [key: string]: unknown;
+    /**
+     * The display label of the field, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
     };
-    templateElements: Array<{
-      [key: string]: unknown;
-    }>;
-    defaultTemplate: boolean;
-    tags: Array<string>;
-    customTemplate: boolean;
-    clientKey?: string | null;
-    description?: string | null;
-    revisionComment?: string | null;
-    render?: boolean | null;
+    /**
+     * The help text for the field, which can be localized for different languages.
+     */
+    helpText: {
+      [key: string]: string;
+    };
+    /**
+     * Whether the field is required.
+     */
+    required: boolean;
+    /**
+     * Whether the field is editable by AI.
+     */
+    aiEditable: boolean;
+    /**
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
   };
-  export type ContentItemResponse = {
-    itemId: string;
+  /**
+   * Boolean field value
+   */
+  export type BooleanFieldValue = {
+    /**
+     * The type of field in the brief type.
+     */
+    type: 'Boolean';
+    /**
+     * The value of the field.
+     */
+    value: boolean;
+  };
+  /**
+   * Model for individual brief field values.
+   */
+  export type BriefFieldValue = {
+    /**
+     * The display label for the field.
+     */
+    label?: string | null;
+    /**
+     * The type of field in the brief.
+     */
+    type: string;
+    /**
+     * The generated content for the field.
+     */
+    value: unknown;
+    [key: string]: unknown | (string | null) | string | undefined;
+  };
+  export type BriefTypeLink = {
+    type: string;
+    relatedType: string;
+    id: string;
+    uri?: string | null;
+  };
+  export type BriefTypeModel = {
+    /**
+     * The unique UUID of the brief type.
+     */
+    id: string;
+    /**
+     * The name of the brief type.
+     */
     name: string;
+    /**
+     * The label of the brief type, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
+    };
+    /**
+     * The name of the icon associated with the brief type, which is used to visually represent the brief type in the UI.
+     */
+    icon?: string | null;
+    /**
+     * The color of the icon associated with the brief type.
+     */
+    iconColor?: string | null;
+    /**
+     * The description of the brief type.
+     */
+    description?: string | null;
+    /**
+     * The list of fields that belong to this brief type, including their configurations and metadata.
+     */
+    fields: Array<
+      | ({
+          type?: 'SimpleText';
+        } & SimpleTextConfig)
+      | ({
+          type?: 'RichText';
+        } & RichTextConfig)
+      | ({
+          type?: 'Timeline';
+        } & TimelineConfig)
+      | ({
+          type?: 'Budget';
+        } & BudgetConfig)
+      | ({
+          type?: 'DateTime';
+        } & DateTimeConfig)
+      | ({
+          type?: 'Boolean';
+        } & BooleanConfig)
+    >;
+  };
+  export type BudgetConfig = {
+    type: 'Budget';
+    /**
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name: string;
+    /**
+     * The display label of the field, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
+    };
+    /**
+     * The help text for the field, which can be localized for different languages.
+     */
+    helpText: {
+      [key: string]: string;
+    };
+    /**
+     * Whether the field is required.
+     */
+    required: boolean;
+    /**
+     * Whether the field is editable by AI.
+     */
+    aiEditable: boolean;
+    /**
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * A list of allowed currencies for the budget field, specified as ISO currency codes.
+     */
+    currencies: Array<string>;
+  };
+  /**
+   * Budget field value
+   */
+  export type BudgetFieldValue = {
+    /**
+     * The type of the field value, which is always 'Budget' for this schema.
+     */
+    type: 'Budget';
+    /**
+     * The budget amount and currency.
+     */
+    value: BudgetValue;
+  };
+  /**
+   * Budget field value
+   */
+  export type BudgetValue = {
+    /**
+     * The numeric amount of the budget.
+     */
+    amount: number;
+    /**
+     * The ISO currency code for the budget amount.
+     */
+    currency: string;
+  };
+  export type ChildContentItemResponse = {
+    /**
+     * The unique identifier of the content item.
+     */
+    itemId: string;
+    /**
+     * The name of the content item.
+     */
+    name: string;
+    /**
+     * The path of the content item in the content tree.
+     */
     path: string;
+    /**
+     * The workflow information of the content item, or null if not in a workflow.
+     */
     workflow?: WorkflowModel | null;
-    children?: {
-      [key: string]: Array<ContentItemResponse>;
-    } | null;
+    /**
+     * The version number of the content item, or null if not applicable.
+     */
     version?: number | null;
+    /**
+     * The template used by the content item.
+     */
     template: ModelsContentTemplateModel;
+    /**
+     * A key-value map of field names and their values for the content item.
+     */
     fields?: {
       [key: string]: unknown;
     } | null;
+    /**
+     * The timestamp when the content item was created.
+     */
     created_at?: string | null;
+    /**
+     * The timestamp when the content item was updated.
+     */
     updated_at?: string | null;
   };
+  export type ComponentDetailsModel = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The name of the item.
+     */
+    name: string;
+    /**
+     * The display name of the item.
+     */
+    displayName: string;
+    /**
+     * The path to the item.
+     */
+    path: string;
+    /**
+     * The template used by the component.
+     */
+    template: ComponentTemplateModel;
+    /**
+     * The fields associated with the component.
+     */
+    fields: ComponentFields;
+  };
+  export type ComponentFields = {
+    /**
+     * A list of field nodes associated with the component.
+     */
+    nodes: Array<ModelsPagesFieldModel>;
+  };
+  export type ComponentGroup = {
+    /**
+     * The title of the component group.
+     */
+    title: string;
+    /**
+     * A list of components in the group.
+     */
+    components: Array<ComponentInfo>;
+  };
+  export type ComponentInfo = {
+    /**
+     * The category of the component.
+     */
+    category: string;
+    /**
+     * The display name of the component.
+     */
+    displayName: string;
+    /**
+     * The URL of the icon representing the component.
+     */
+    iconUrl: string;
+    /**
+     * The unique identifier of the component.
+     */
+    id: string;
+    /**
+     * The internal name of the component.
+     */
+    componentName: string;
+  };
+  export type ComponentModel = {
+    /**
+     * The unique identifier of the component instance.
+     */
+    id: string;
+    /**
+     * The unique identifier of the component rendering definition.
+     */
+    componentId: string;
+    /**
+     * The internal name of the component.
+     */
+    componentName: string;
+    /**
+     * The unique identifier of the datasource item used by the component, or null if not applicable.
+     */
+    dataSource?: string | null;
+    /**
+     * The path of the placeholder where the component is placed, or null if not applicable.
+     */
+    placeholder?: string | null;
+    /**
+     * Parameters configured for the component.
+     */
+    parameters?: ComponentParametersModel | null;
+    /**
+     * The unique identifier of the device definition for which the component is configured, or null if not device-specific.
+     */
+    deviceId?: string | null;
+    /**
+     * The unique identifier of the layout definition in which the component is placed, or null if not applicable.
+     */
+    layoutId?: string | null;
+    /**
+     * Detailed information about the component item.
+     */
+    componentDetails?: ComponentDetailsModel | null;
+    /**
+     * Whether the component is editable.
+     */
+    editable?: boolean | null;
+  };
+  export type ComponentParametersModel = {
+    /**
+     * Grid parameters for the component, or null if not applicable.
+     */
+    GridParameters?: string | null;
+    /**
+     * Field names associated with the component, or null if not applicable.
+     */
+    FieldNames?: string | null;
+    /**
+     * The styles for the component, or null if not applicable.
+     */
+    Styles?: string | null;
+    /**
+     * The unique identifier of the rendering, or null if not applicable.
+     */
+    RenderingIdentifier?: string | null;
+    /**
+     * CSS styles for the component, or null if not applicable.
+     */
+    CSSStyles?: string | null;
+    /**
+     * The identifier for dynamic placeholders, or null if not applicable.
+     */
+    DynamicPlaceholderId?: string | null;
+  };
+  export type ComponentResponse = {
+    /**
+     * The unique identifier of the component.
+     */
+    id: string;
+    /**
+     * The name of the component.
+     */
+    name: string;
+    /**
+     * The template ID for the component's datasource. May be None if the component has no datasource template.
+     */
+    datasourceTemplateId?: string | null;
+    /**
+     * A list of locations for the component's datasource.
+     */
+    datasourceLocations?: Array<string>;
+    /**
+     * The path to the datasource template.
+     */
+    datasourceTemplatePath?: string;
+    /**
+     * A list of fields for the datasource.
+     */
+    datasourceFields?: Array<DatasourceFieldNode>;
+    /**
+     * Whether the datasource is auto-generated.
+     */
+    datasourceAutoGenerated: boolean;
+    /**
+     * Whether the datasource is required.
+     */
+    datasourceRequired: boolean;
+    /**
+     * Whether the component has a dynamic placeholder.
+     */
+    hasDynamicPlaceholder?: boolean | null;
+  };
+  export type ComponentShortInfo = {
+    /**
+     * The unique identifier of the component.
+     */
+    id: string;
+    /**
+     * The name of the component.
+     */
+    name: string;
+  };
+  export type ComponentTemplateModel = {
+    /**
+     * The unique identifier of the template.
+     */
+    templateId: string;
+    /**
+     * The name of the template.
+     */
+    name: string;
+  };
+  export type Components = {
+    /**
+     * A list of component groups.
+     */
+    groups: Array<ComponentGroup>;
+    /**
+     * A list of ungrouped components.
+     */
+    ungrouped?: Array<ComponentInfo>;
+  };
+  export type ComponentsResponse = {
+    /**
+     * Components available for the specified site.
+     */
+    components: Components;
+  };
+  /**
+   * Represents a group of conditions with a union type
+   */
+  export type ConditionGroupInput = {
+    /**
+     * The union type for combining conditions within the group. Either 'AND' or 'OR'. The first group should not have a union type.
+     */
+    union_type?: ('AND' | 'OR') | null;
+    /**
+     * A list of conditions in this group.
+     */
+    conditions: Array<ConditionInput>;
+  };
+  /**
+   * Represents a single condition in a condition group
+   */
+  export type ConditionInput = {
+    /**
+     * The unique identifier of the condition template to apply.
+     */
+    condition_template_id: string;
+    /**
+     * A key-value map of parameters for the condition template.
+     */
+    condition_params: {
+      [key: string]: unknown;
+    };
+  };
+  export type ConditionTemplate = {
+    /**
+     * The URL of the condition template.
+     */
+    href?: string | null;
+    /**
+     * A reference identifier for the condition template.
+     */
+    ref: string;
+    /**
+     * The name of the condition template.
+     */
+    name: string;
+    /**
+     * A reference identifier for the user who last modified the condition template.
+     */
+    modifiedByRef?: string | null;
+    /**
+     * The timestamp when the condition template was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * The revision number of the condition template.
+     */
+    revision?: number | null;
+    /**
+     * Whether the condition template is archived.
+     */
+    archived: boolean;
+    /**
+     * A user-friendly identifier for the condition template.
+     */
+    friendlyId: string;
+    /**
+     * The type of the condition template.
+     */
+    type: string;
+    /**
+     * The status of the condition template.
+     */
+    status: string;
+    /**
+     * The icon representing the condition template.
+     */
+    icon?: string | null;
+    /**
+     * A key-value map of additional fields for the condition template.
+     */
+    additionalFields?: {
+      [key: string]: unknown;
+    } | null;
+    /**
+     * A list of template elements for the condition template.
+     */
+    templateElements?: Array<{
+      [key: string]: unknown;
+    }> | null;
+    /**
+     * Whether the condition template is the default.
+     */
+    defaultTemplate?: boolean | null;
+    /**
+     * A list of tags associated with the condition template.
+     */
+    tags?: Array<string> | null;
+    /**
+     * Whether the condition template is custom.
+     */
+    customTemplate?: boolean | null;
+    /**
+     * The client key for the condition template, or null if not applicable.
+     */
+    clientKey?: string | null;
+    /**
+     * A description of the condition template, or null if not provided.
+     */
+    description?: string | null;
+    /**
+     * A comment about the revision of the condition template, or null if not provided.
+     */
+    revisionComment?: string | null;
+    /**
+     * Whether to render the condition template, or null if not applicable.
+     */
+    render?: boolean | null;
+  };
+  export type ContentItemResponse = {
+    /**
+     * The unique identifier of the content item.
+     */
+    itemId: string;
+    /**
+     * The name of the content item.
+     */
+    name: string;
+    /**
+     * The path of the content item in the content tree.
+     */
+    path: string;
+    /**
+     * The workflow information of the content item, or null if not in a workflow.
+     */
+    workflow?: WorkflowModel | null;
+    /**
+     * The version number of the content item, or null if not applicable.
+     */
+    version?: number | null;
+    /**
+     * The template used by the content item.
+     */
+    template: ModelsContentTemplateModel;
+    /**
+     * A key-value map of field names and their values for the content item.
+     */
+    fields?: {
+      [key: string]: unknown;
+    } | null;
+    /**
+     * The timestamp when the content item was created.
+     */
+    created_at?: string | null;
+    /**
+     * The timestamp when the content item was updated.
+     */
+    updated_at?: string | null;
+    children?: {
+      [key: string]: Array<ChildContentItemResponse>;
+    } | null;
+  };
+  /**
+   * Request model for creating a new brief
+   */
+  export type CreateBriefRequestModel = {
+    /**
+     * The name of the brief.
+     */
+    name: string;
+    /**
+     * The locale code associated with the brief, in the format xx-XX.
+     */
+    locale: string;
+    /**
+     * The unique identifier of the brief type to use for generating a brief. To get this ID, you can use the List brief types endpoint to retrieve the list of brief types available in your organization.
+     */
+    briefTypeId: string;
+    /**
+     * Dictionary of field names to their values.
+     */
+    fields?: {
+      [key: string]:
+        | ({
+            type?: 'SimpleText';
+          } & SimpleTextFieldValue)
+        | ({
+            type?: 'RichText';
+          } & RichTextFieldValue)
+        | ({
+            type?: 'DateTime';
+          } & DateTimeFieldValue)
+        | ({
+            type?: 'Budget';
+          } & BudgetFieldValue)
+        | ({
+            type?: 'Boolean';
+          } & BooleanFieldValue)
+        | ({
+            type?: 'Timeline';
+          } & TimelineFieldValue);
+    } | null;
+  };
+  export type CreateBriefResponseModel = {
+    /**
+     * The unique identifier of the brief.
+     */
+    id: string;
+    /**
+     * The icon associated with the brief.
+     */
+    icon?: string | null;
+    /**
+     * The name of the brief.
+     */
+    name: string;
+    /**
+     * The status of the brief. Draft by default.
+     */
+    status: string;
+    /**
+     * The locale code in the format xx-XX.
+     */
+    locale: string;
+    /**
+     * Dictionary of field names to their values.
+     */
+    fields: {
+      [key: string]: unknown;
+    };
+    /**
+     * Whether the brief is a template.
+     */
+    isTemplate?: boolean | null;
+    /**
+     * List of contributor identifiers.
+     */
+    contributors?: Array<string> | null;
+    /**
+     * The user who created the brief.
+     */
+    createdBy?: ExternalLink | null;
+    /**
+     * The ISO 8601 timestamp when the brief was created.
+     */
+    createdOn?: string | null;
+    /**
+     * The user who last updated the brief.
+     */
+    updatedBy?: ExternalLink | null;
+    /**
+     * The ISO 8601 timestamp when the brief was last updated.
+     */
+    updatedOn?: string | null;
+  };
   export type CreateComponentDatasourceRequest = {
+    /**
+     * The name of the site for which the datasource is created.
+     */
     siteName: string;
+    /**
+     * A key-value map of data field names and their values for the datasource.
+     */
     dataFields: {
       [key: string]: unknown;
     };
+    /**
+     * A list of child datasource objects, or null if none.
+     */
     children?: Array<{
       [key: string]: unknown;
     }> | null;
+    /**
+     * The language code for the datasource.
+     */
     language?: string;
   };
   export type CreateComponentDatasourceResponse = {
+    /**
+     * The unique identifier of the created datasource.
+     */
     datasourceId: string;
+    /**
+     * The location path of the created datasource.
+     */
     datasourceLocation: string;
   };
   export type CreateContentItemRequest = {
+    /**
+     * The unique identifier of the template used to create the content item.
+     */
     templateId: string;
+    /**
+     * The name of the content item to create.
+     */
     name: string;
+    /**
+     * The unique identifier of the parent item.
+     */
     parentId: string;
+    /**
+     * The language code for the content item.
+     */
     language?: string;
+    /**
+     * A key-value map of field names and their values for the content item, or null if none.
+     */
     fields?: {
       [key: string]: unknown;
     } | null;
   };
   export type CreateContentItemResponse = {
+    /**
+     * The unique identifier of the created content item.
+     */
     itemId: string;
+    /**
+     * The name of the created content item.
+     */
     name: string;
+    /**
+     * The path of the created content item.
+     */
     path: string;
+    /**
+     * The unique identifier of the template used for the content item.
+     */
     templateId: string;
+    /**
+     * The version number of the created content item.
+     */
     version: number;
   };
-  export type CreatePageRequest = {
-    templateId: string;
+  export type CreateExperimentRequest = {
+    /**
+     * The unique identifier of the site.
+     */
+    site_id: string;
+    /**
+     * The unique identifier of the page where the experiment runs.
+     */
+    page_id: string;
+    /**
+     * The language code for the experiment.
+     */
+    language?: string | null;
+    /**
+     * The unique identifier of the component to experiment on.
+     */
+    component_id: string;
+    /**
+     * The name of the experiment.
+     */
     name: string;
+    /**
+     * The type of goal to optimize for in the experiment.
+     */
+    goal_type: GoalType;
+    /**
+     * A list of page paths to target for the experiment.
+     */
+    targeted_pages?: Array<string>;
+    /**
+     * A list of variants for the experiment. Traffic splits must sum to 100 and exactly one variant must be marked as control.
+     */
+    variants: Array<Variant>;
+  };
+  export type CreatePageRequest = {
+    /**
+     * The unique identifier of the page template to be used for the new page.
+     */
+    templateId: string;
+    /**
+     * The name of the page to create.
+     */
+    name: string;
+    /**
+     * The unique identifier of the parent item for the new page.
+     */
     parentId: string;
+    /**
+     * The language code for the new page.
+     */
     language?: string;
+    /**
+     * A list of field objects to set on the page, or null if none.
+     */
     fields?: Array<{
       [key: string]: unknown;
     }> | null;
   };
   export type CreatePageResponse = {
+    /**
+     * The unique identifier of the created page.
+     */
     itemId: string;
+    /**
+     * The name of the created page.
+     */
     name: string;
   };
-  export type CreatePersonalizationRequest = {
+  export type CreatePersonalizationRequestV1 = {
+    /**
+     * The name of the personalization rule.
+     */
     name: string;
+    /**
+     * The language code for the personalization rule, or null for default.
+     */
     language?: string | null;
+    /**
+     * The name of the personalization variant.
+     */
     variant_name: string;
+    /**
+     * The name of the audience for the personalization rule.
+     */
     audience_name: string;
+    /**
+     * The unique identifier of the condition template to apply.
+     */
     condition_template_id: string;
+    /**
+     * A key-value map of parameters for the condition template.
+     */
     condition_params: {
       [key: string]: unknown;
     };
   };
-  export type DatasourceFieldNode = {
+  export type CreatePersonalizationRequestV2 = {
+    /**
+     * The name of the personalization rule.
+     */
     name: string;
+    /**
+     * The language code for the personalization rule, or null for default.
+     */
+    language?: string | null;
+    /**
+     * The name of the personalization variant.
+     */
+    variant_name: string;
+    /**
+     * The name of the audience for the personalization rule.
+     */
+    audience_name: string;
+    /**
+     * List of condition groups with their conditions
+     */
+    condition_groups: Array<ConditionGroupInput>;
+  };
+  export type DatasourceFieldNode = {
+    /**
+     * The name of the datasource field.
+     */
+    name: string;
+    /**
+     * The type of datasource field.
+     */
     type: string;
+    /**
+     * Validation rules for the datasource field.
+     */
     validation: string;
   };
-  export type DeleteContentResponse = {
-    success: boolean;
-    deletedId: string;
-  };
-  export type FieldModel = {
+  export type DateTimeConfig = {
+    type: 'DateTime';
+    /**
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
     name: string;
+    /**
+     * The display label of the field, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
+    };
+    /**
+     * The help text for the field, which can be localized for different languages.
+     */
+    helpText: {
+      [key: string]: string;
+    };
+    /**
+     * Whether the field is required.
+     */
+    required: boolean;
+    /**
+     * Whether the field is editable by AI.
+     */
+    aiEditable: boolean;
+    /**
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+  };
+  /**
+   * DateTime field value
+   */
+  export type DateTimeFieldValue = {
+    /**
+     * The type of field in the brief type.
+     */
+    type: 'DateTime';
+    /**
+     * The value of the DateTime field.
+     */
     value: string;
   };
+  export type DeleteContentResponse = {
+    /**
+     * Whether the content item was deleted successfully.
+     */
+    success: boolean;
+    /**
+     * The unique identifier of the deleted content item.
+     */
+    deletedId: string;
+  };
+  export type EditablePlaceholderModel = {
+    /**
+     * The full path of the placeholder.
+     */
+    placeholderPath: string;
+    /**
+     * The name of the placeholder (last path segment).
+     */
+    placeholderName: string;
+    /**
+     * The display name of the placeholder.
+     */
+    displayName: string | null;
+  };
+  export type ExperienceFlowDefinitionSplitV1 = {
+    /**
+     * The flow definition template.
+     */
+    template: string;
+    /**
+     * The name of the variant.
+     */
+    variantName: string;
+    /**
+     * The name of the audience targeted.
+     */
+    audienceName: string;
+    /**
+     * A list of condition groups for the variant.
+     */
+    conditionGroups: Array<FlowDefinitionConditionGroupV1>;
+  };
+  export type ExperienceFlowDefinitionSplitV2 = {
+    /**
+     * The flow definition template.
+     */
+    template: string;
+    /**
+     * The name of the variant.
+     */
+    variantName: string;
+    /**
+     * The name of the audience targeted.
+     */
+    audienceName: string;
+    /**
+     * A list of condition groups for the variant.
+     */
+    conditionGroups: Array<FlowDefinitionConditionGroupV2>;
+  };
+  /**
+   * Response model for the v1 create personalization endpoint, matching the pre-AI-6608 shape.
+   */
+  export type ExperienceFlowResponseV1 = {
+    /**
+     * The client key associated with the flow definition.
+     */
+    clientKey: string;
+    /**
+     * The URL of the flow definition.
+     */
+    href?: string | null;
+    /**
+     * A reference identifier for the flow definition.
+     */
+    ref: string;
+    /**
+     * The name of the flow definition.
+     */
+    name: string;
+    /**
+     * A reference identifier for the user who last modified the flow definition.
+     */
+    modifiedByRef?: string | null;
+    /**
+     * The timestamp when the flow definition was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * The revision number of the flow definition.
+     */
+    revision?: number | null;
+    /**
+     * Whether the flow definition is archived.
+     */
+    archived: boolean;
+    /**
+     * A user-friendly identifier for the flow definition.
+     */
+    friendlyId: string;
+    /**
+     * The type of the flow definition.
+     */
+    type: string;
+    /**
+     * The subtype of the flow definition.
+     */
+    subtype: string;
+    /**
+     * A list of channels associated with the flow definition, such as web or mobile.
+     */
+    channels?: Array<string> | null;
+    /**
+     * A list of triggers for the flow definition, or null if none.
+     */
+    triggers?: Array<unknown> | null;
+    /**
+     * A list of dashboard links for the experience, or null if none.
+     */
+    dashboardLinks?: Array<unknown> | null;
+    /**
+     * A list of tags associated with the flow definition, or null if none.
+     */
+    tags?: Array<unknown> | null;
+    /**
+     * The business process associated with the flow definition.
+     */
+    businessProcess?: string | null;
+    /**
+     * The unique identifier of the site associated with the flow definition.
+     */
+    siteId: string;
+    /**
+     * The traffic distribution configuration for the personalization experience.
+     */
+    traffic: ExperienceTrafficV1;
+    /**
+     * A list of transpiled variants for the flow definition, or null if none.
+     */
+    transpiledVariants?: Array<unknown> | null;
+    /**
+     * A list of variants for the flow definition, or null if none.
+     */
+    variants?: Array<unknown> | null;
+    /**
+     * The current status of the flow definition.
+     */
+    status: string;
+    /**
+     * The schedule configuration for the flow definition.
+     */
+    schedule?: FlowDefinitionSchedule | null;
+    /**
+     * Links to the revisions of the flow definition.
+     */
+    revisions?: FlowDefinitionRevisions | null;
+    /**
+     * The sample size configuration for the flow definition.
+     */
+    sampleSizeConfig?: FlowDefinitionSampleSizeConfigV1 | null;
+    /**
+     * Whether notifications are enabled for the flow definition.
+     */
+    notificationEnabled?: boolean | null;
+  };
+  export type ExperienceFlowResponseV2 = {
+    /**
+     * The client key associated with the flow definition.
+     */
+    clientKey: string;
+    /**
+     * The URL of the flow definition.
+     */
+    href?: string | null;
+    /**
+     * A reference identifier for the flow definition.
+     */
+    ref: string;
+    /**
+     * The name of the flow definition.
+     */
+    name: string;
+    /**
+     * A reference identifier for the user who last modified the flow definition.
+     */
+    modifiedByRef?: string | null;
+    /**
+     * The timestamp when the flow definition was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * The revision number of the flow definition.
+     */
+    revision?: number | null;
+    /**
+     * Whether the flow definition is archived.
+     */
+    archived: boolean;
+    /**
+     * A user-friendly identifier for the flow definition.
+     */
+    friendlyId: string;
+    /**
+     * The type of the flow definition.
+     */
+    type: string;
+    /**
+     * A list of channels associated with the flow definition, such as web or mobile.
+     */
+    channels?: Array<string> | null;
+    /**
+     * A list of triggers for the flow definition, or null if none.
+     */
+    triggers?: Array<unknown> | null;
+    /**
+     * A list of tags associated with the flow definition, or null if none.
+     */
+    tags?: Array<unknown> | null;
+    /**
+     * The business process associated with the flow definition.
+     */
+    businessProcess?: string | null;
+    /**
+     * The unique identifier of the site associated with the flow definition.
+     */
+    siteId: string;
+    /**
+     * A list of transpiled variants for the flow definition, or null if none.
+     */
+    transpiledVariants?: Array<unknown> | null;
+    /**
+     * A list of variants for the flow definition, or null if none.
+     */
+    variants?: Array<unknown> | null;
+    /**
+     * The current status of the flow definition.
+     */
+    status: string;
+    /**
+     * The schedule configuration for the flow definition.
+     */
+    schedule?: FlowDefinitionSchedule | null;
+    /**
+     * Links to the revisions of the flow definition.
+     */
+    revisions?: FlowDefinitionRevisions | null;
+    /**
+     * The sample size configuration for the flow definition.
+     */
+    sampleSizeConfig?: FlowDefinitionSampleSizeConfigV2 | null;
+    /**
+     * Whether notifications are enabled for the flow definition.
+     */
+    notificationEnabled?: boolean | null;
+    /**
+     * The subtype of the flow definition, identifying it as a personalization experience.
+     */
+    subtype: 'EXPERIENCE';
+    /**
+     * The traffic distribution configuration for the personalization experience.
+     */
+    traffic: ExperienceTrafficV2;
+    /**
+     * A list of dashboard links for the experience, or null if none.
+     */
+    dashboardLinks?: Array<unknown> | null;
+  };
+  export type ExperienceTrafficV1 = {
+    /**
+     * The type of traffic distribution for the flow definition.
+     */
+    type: string;
+    /**
+     * The algorithm used for weighting traffic distribution.
+     */
+    weightingAlgorithm?: string | null;
+    /**
+     * The timestamp when the traffic distribution was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * A list of traffic splits for each personalization experience variant.
+     */
+    splits: Array<ExperienceFlowDefinitionSplitV1>;
+  };
+  export type ExperienceTrafficV2 = {
+    /**
+     * The type of traffic distribution for the flow definition.
+     */
+    type: string;
+    /**
+     * The algorithm used for weighting traffic distribution.
+     */
+    weightingAlgorithm?: string | null;
+    /**
+     * The timestamp when the traffic distribution was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * A list of traffic splits for each personalization experience variant.
+     */
+    splits: Array<ExperienceFlowDefinitionSplitV2>;
+  };
+  export type ExperimentFlowDefinitionSplit = {
+    /**
+     * A reference identifier for the experiment variant.
+     */
+    ref: string;
+    /**
+     * The traffic allocation percentage for this experiment variant.
+     */
+    split: number;
+  };
+  export type ExperimentFlowResponse = {
+    /**
+     * The client key associated with the flow definition.
+     */
+    clientKey: string;
+    /**
+     * The URL of the flow definition.
+     */
+    href?: string | null;
+    /**
+     * A reference identifier for the flow definition.
+     */
+    ref: string;
+    /**
+     * The name of the flow definition.
+     */
+    name: string;
+    /**
+     * A reference identifier for the user who last modified the flow definition.
+     */
+    modifiedByRef?: string | null;
+    /**
+     * The timestamp when the flow definition was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * The revision number of the flow definition.
+     */
+    revision?: number | null;
+    /**
+     * Whether the flow definition is archived.
+     */
+    archived: boolean;
+    /**
+     * A user-friendly identifier for the flow definition.
+     */
+    friendlyId: string;
+    /**
+     * The type of the flow definition.
+     */
+    type: string;
+    /**
+     * A list of channels associated with the flow definition, such as web or mobile.
+     */
+    channels?: Array<string> | null;
+    /**
+     * A list of triggers for the flow definition, or null if none.
+     */
+    triggers?: Array<unknown> | null;
+    /**
+     * A list of tags associated with the flow definition, or null if none.
+     */
+    tags?: Array<unknown> | null;
+    /**
+     * The business process associated with the flow definition.
+     */
+    businessProcess?: string | null;
+    /**
+     * The unique identifier of the site associated with the flow definition.
+     */
+    siteId: string;
+    /**
+     * A list of transpiled variants for the flow definition, or null if none.
+     */
+    transpiledVariants?: Array<unknown> | null;
+    /**
+     * A list of variants for the experiment, or null if none.
+     */
+    variants?: Array<ExperimentVariantModel> | null;
+    /**
+     * The current status of the flow definition.
+     */
+    status: string;
+    /**
+     * The schedule configuration for the flow definition.
+     */
+    schedule?: FlowDefinitionSchedule | null;
+    /**
+     * Links to the revisions of the flow definition.
+     */
+    revisions?: FlowDefinitionRevisions | null;
+    /**
+     * The sample size configuration for the flow definition.
+     */
+    sampleSizeConfig?: FlowDefinitionSampleSizeConfigV2 | null;
+    /**
+     * Whether notifications are enabled for the flow definition.
+     */
+    notificationEnabled?: boolean | null;
+    /**
+     * The subtype of the flow definition, identifying it as an A/B experiment.
+     */
+    subtype: 'EXPERIMENT';
+    /**
+     * The traffic distribution configuration for the experiment.
+     */
+    traffic: ExperimentTraffic;
+    /**
+     * The goals tracked for the experiment, keyed by goal identifier.
+     */
+    goals?: ExperimentGoalModel | null;
+  };
+  export type ExperimentGoalDefinition = {
+    /**
+     * The type of goal.
+     */
+    type: string;
+    /**
+     * The name of the goal.
+     */
+    name: string;
+    /**
+     * A user-friendly identifier for the goal.
+     */
+    friendlyId: string;
+    /**
+     * A reference identifier for the goal.
+     */
+    ref?: string | null;
+    /**
+     * A description of the goal, or null if not provided.
+     */
+    description?: string | null;
+    /**
+     * A key-value map defining the calculation method for the goal.
+     */
+    goalCalculation?: {
+      [key: string]: unknown;
+    } | null;
+    /**
+     * A list of page parameters associated with the goal.
+     */
+    pageParameters?: Array<{
+      [key: string]: unknown;
+    }>;
+  };
+  export type ExperimentGoalModel = {
+    [key: string]: ExperimentGoalDefinition;
+  };
+  export type ExperimentTaskInputModel = {
+    /**
+     * The type of task input.
+     */
+    inputType: string;
+    /**
+     * The type of task operation.
+     */
+    type: string;
+    /**
+     * The template identifier for the task.
+     */
+    template: string;
+  };
+  export type ExperimentTaskModel = {
+    /**
+     * The implementation type of the task.
+     */
+    implementation: string;
+    /**
+     * The input configuration for the task.
+     */
+    input: ExperimentTaskInputModel;
+  };
+  export type ExperimentTraffic = {
+    /**
+     * The type of traffic distribution for the flow definition.
+     */
+    type: string;
+    /**
+     * The algorithm used for weighting traffic. Either 'USER_DEFINED' or 'AUTO'.
+     */
+    weightingAlgorithm: 'USER_DEFINED' | 'AUTO';
+    /**
+     * The timestamp when the traffic distribution was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * The total traffic allocation percentage for the experiment.
+     */
+    allocation: number;
+    /**
+     * Whether the traffic splits are coupled and adjusted together.
+     */
+    coupled?: boolean;
+    /**
+     * A list of traffic splits for each experiment variant.
+     */
+    splits: Array<ExperimentFlowDefinitionSplit>;
+  };
+  export type ExperimentVariantModel = {
+    /**
+     * A reference identifier for the variant.
+     */
+    ref: string;
+    /**
+     * The name of the variant.
+     */
+    name: string;
+    /**
+     * Whether this variant is the control (baseline) variant.
+     */
+    isControl: boolean;
+    /**
+     * A list of tasks associated with the variant.
+     */
+    tasks: Array<ExperimentTaskModel>;
+  };
+  /**
+   * Represents an external link with reference to external systems
+   */
+  export type ExternalLink = {
+    type?: 'ExternalLink';
+    relatedSystem: RelatedSystem;
+    relatedType?: string | null;
+    id: string;
+  };
   export type FlowDefinitionCondition = {
+    /**
+     * The unique identifier of the condition template.
+     */
     templateId: string;
+    /**
+     * A key-value map of parameters for the condition.
+     */
     params: {
       [key: string]: string;
     };
   };
-  export type FlowDefinitionConditionGroup = {
+  export type FlowDefinitionConditionGroupV1 = {
+    /**
+     * A list of conditions in this condition group.
+     */
     conditions: Array<FlowDefinitionCondition>;
   };
-  export type FlowDefinitionResponse = {
-    clientKey: string;
-    href: string;
-    ref: string;
-    name: string;
-    modifiedByRef: string;
-    modifiedAt: string;
-    revision: number;
-    archived: boolean;
-    friendlyId: string;
-    type: string;
-    subtype: string;
-    channels: Array<string>;
-    triggers?: Array<unknown> | null;
-    dashboardLinks?: Array<unknown> | null;
-    tags?: Array<unknown> | null;
-    businessProcess: string;
-    siteId: string;
-    traffic: FlowDefinitionTraffic;
-    transpiledVariants?: Array<unknown> | null;
-    variants?: Array<unknown> | null;
-    status: string;
-    schedule: FlowDefinitionSchedule;
-    revisions: FlowDefinitionRevisions;
-    sampleSizeConfig: FlowDefinitionSampleSizeConfig;
-    notificationEnabled: boolean;
+  export type FlowDefinitionConditionGroupV2 = {
+    /**
+     * Union type for combining conditions. Either AND or OR. First group should not have a unionType.
+     */
+    unionType?: ('AND' | 'OR') | null;
+    /**
+     * A list of conditions in this condition group.
+     */
+    conditions: Array<FlowDefinitionCondition>;
   };
   export type FlowDefinitionRevisions = {
-    href: string;
+    /**
+     * The URL to access the revisions of the flow definition.
+     */
+    href?: string | null;
   };
-  export type FlowDefinitionSampleSizeConfig = {
+  export type FlowDefinitionSampleSizeConfigV1 = {
+    /**
+     * The base value used for sample size calculation.
+     */
     baseValue: number;
+    /**
+     * The minimum detectable difference for the sample size calculation.
+     */
     minimumDetectableDifference: number;
+    /**
+     * The confidence level for the sample size calculation.
+     */
     confidenceLevel: number;
   };
+  export type FlowDefinitionSampleSizeConfigV2 = {
+    /**
+     * The base value used for sample size calculation.
+     */
+    baseValue: number;
+    /**
+     * The minimum detectable difference for the sample size calculation.
+     */
+    minimumDetectableDifference: number;
+    /**
+     * The confidence level for the sample size calculation.
+     */
+    confidenceLevel: number;
+    /**
+     * The calculated sample size, or null if not yet computed.
+     */
+    sampleSize?: number | null;
+  };
   export type FlowDefinitionSchedule = {
+    /**
+     * The type of schedule for the flow definition.
+     */
     type: string;
-    startDate: string;
+    /**
+     * The start date of the schedule.
+     */
+    startDate?: string | null;
   };
-  export type FlowDefinitionSplit = {
-    template: string;
-    variantName: string;
-    audienceName: string;
-    conditionGroups: Array<FlowDefinitionConditionGroup>;
+  /**
+   * Request model for generating a content brief
+   */
+  export type GenerateBriefRequest = {
+    /**
+     * The unique identifier of the brief type to use for generating a brief. To get this ID, you can use the List brief types endpoint to retrieve the list of brief types available in your organization.
+     */
+    briefTypeId: string;
+    /**
+     * The unique identifier of the brand kit. To get this ID, you can use the List brand kits endpoint to retrieve the list of brand kits in your organization.
+     */
+    brandId: string;
+    /**
+     * The prompt for brief generation. This provides AI the context or instructions for generating the brief.
+     */
+    prompt: string;
   };
-  export type FlowDefinitionTraffic = {
-    type: string;
-    weightingAlgorithm: string;
-    modifiedAt: string;
-    splits: Array<FlowDefinitionSplit>;
+  /**
+   * Response model for generated content brief with dynamic field keys
+   */
+  export type GenerateBriefResponse = {
+    [key: string]: BriefFieldValue;
   };
-  export type GetPageComponentsResponse = {
-    pageId: string;
-    pageName: string;
-    pagePath: string;
-    version: number;
-    language: string;
-    route?: string | null;
-    layoutEditingKind?: string | null;
-    template?: ModelsPagesTemplateModel | null;
-    components?: Array<ComponentModel> | null;
-  };
-  export type GetPagePreviewUrlResponse = {
-    pageId: string;
-    previewUrl: string;
-  };
-  export type GetPageResponse = {
-    itemId: string;
-    name: string;
-    templateId: string;
-    locationPath: string;
-    insertOptions: Array<PageInsertOptionModel>;
-  };
-  export type HttpValidationError = {
-    detail?: Array<ValidationError>;
-  };
-  export type InnerItemModel = {
-    displayName?: string | null;
-    height?: number | null;
-    width?: number | null;
-  };
-  export type InsertOptionModel = {
-    name: string;
-    templateId: string;
-  };
-  export type LanguageModel = {
-    displayName: string;
-    iso: string;
-    name: string;
-  };
-  export type ListSitesResponse = {
-    sites: Array<SiteBasicModel>;
-  };
-  export type MediaItem = {
+  /**
+   * Response model for get brand kit by ID endpoint
+   */
+  export type GetBrandKitResponse = {
+    /**
+     * The unique identifier of the brand kit.
+     */
     id: string;
-    embedUrl: string;
-    size: number;
-    dimensions: string;
-    extension: string;
-  };
-  export type NonVisualContentLocationModel = {
-    itemId: string;
+    /**
+     * The brand kit description.
+     */
+    description?: string | null;
+    /**
+     * The name of the brand kit.
+     */
     name: string;
-    path: string;
-    allowed_child_content_templates: Array<AllowedChildTemplateModel>;
+    /**
+     * The name of the brand associated with the brand kit.
+     */
+    brandName?: string | null;
+    /**
+     * The name of the company associated with the brand kit.
+     */
+    companyName?: string | null;
+    /**
+     * The status of the brand kit.
+     */
+    status: string;
+    /**
+     * A list of tags associated with the brand kit.
+     */
+    tags?: Array<TagModel> | null;
+    /**
+     * A list of sections in the brand kit.
+     */
+    sections?: Array<SectionModel> | null;
   };
-  export type PageHtmlResponse = {
-    pageId: string;
-    html: string;
-  };
-  export type PageInsertOptionModel = {
-    templateId: string;
-    name: string;
-  };
-  export type PageLocationModel = {
-    itemId: string;
-    name: string;
-    path: string;
-    allowed_child_page_templates: Array<AllowedChildTemplateModel>;
-  };
-  export type PageModel = {
+  export type GetBriefResponse = {
+    /**
+     * The unique identifier of the brief.
+     */
     id: string;
-    path: string;
-  };
-  export type PagePathByLiveUrlResponse = {
-    itemId: string;
+    /**
+     * The icon associated with the brief.
+     */
+    icon?: string | null;
+    /**
+     * The name of the brief.
+     */
     name: string;
-    hasPresentation: boolean;
-    template: PagePathTemplateModel;
-    insertOptions: Array<PagePathInsertOptionModel>;
-  };
-  export type PagePathInsertOptionModel = {
-    name: string;
-    templateId: string;
-  };
-  export type PagePathTemplateModel = {
-    templateId: string;
-    name: string;
-  };
-  export type PageScreenshotResponse = {
-    type: string;
-    fullPage: boolean;
-    encoding: string;
-    timestamp: string;
-    screenshot_base64: string;
-  };
-  export type PageSearchItemModel = {
-    itemId: string;
-    name: string;
-    path: string;
-    templateId: string;
-    fields: Array<FieldModel>;
-  };
-  export type PageTemplateFieldModel = {
-    name: string;
-    type: string;
-    validation: boolean;
-  };
-  export type PageTemplateResponse = {
-    templateId: string;
-    name: string;
-    fields: Array<PageTemplateFieldModel>;
-  };
-  export type PersonalizationVariantDetailModel = {
-    page_id: string;
-    variant_name: string;
-    audience_name: string;
-    template: string;
-    condition_groups?: Array<FlowDefinitionConditionGroup>;
-  };
-  export type SearchResponse = {
-    results?: Array<SearchResult>;
-  };
-  export type SearchResult = {
-    itemId: string;
-    templateId: string;
-    name: string;
-  };
-  export type SetComponentDatasourceRequest = {
-    datasourceId: string;
-    language?: string | null;
-  };
-  export type SetComponentDatasourceResponse = {
-    success: boolean;
-    message: string;
-    componentId: string;
-    pageId: string;
-    datasourceId: string;
-  };
-  export type SiteBasicModel = {
-    id: string;
-    name: string;
-    targetHostname: string;
-    rootPath: string;
-  };
-  export type SiteIdFromItemResponse = {
-    siteRootItemId: string;
-    siteRootDisplayName: string;
-    siteRootName: string;
-  };
-  export type SiteInformationResponse = {
-    itemId: string;
-    name: string;
-    brand_information: string;
-    rootPath: string;
-    page_locations: Array<PageLocationModel>;
-    non_visual_content_locations: Array<NonVisualContentLocationModel>;
-  };
-  export type UpdateAssetRequest = {
+    /**
+     * The status of the brief. Draft by default.
+     */
+    status: string;
+    /**
+     * The locale code in the format xx-XX.
+     */
+    locale: string;
+    /**
+     * Dictionary of field names to their values.
+     */
     fields: {
       [key: string]: unknown;
     };
+    isTemplate?: boolean;
+    /**
+     * List of contributor identifiers.
+     */
+    contributors?: Array<string> | null;
+    /**
+     * The user who created the brief.
+     */
+    createdBy?: ExternalLink | null;
+    /**
+     * The ISO 8601 timestamp when the brief was created.
+     */
+    createdOn?: string | null;
+    /**
+     * The user who last updated the brief.
+     */
+    updatedBy?: ExternalLink | null;
+    /**
+     * The ISO 8601 timestamp when the brief was last updated.
+     */
+    updatedOn?: string | null;
+    briefType?: BriefTypeLink | null;
+  };
+  /**
+   * Response model for get brief type by ID — extends BriefTypeModel with audit fields
+   */
+  export type GetBriefTypeResponse = {
+    /**
+     * The unique UUID of the brief type.
+     */
+    id: string;
+    /**
+     * The name of the brief type.
+     */
+    name: string;
+    /**
+     * The label of the brief type, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
+    };
+    /**
+     * The name of the icon associated with the brief type, which is used to visually represent the brief type in the UI.
+     */
+    icon?: string | null;
+    /**
+     * The color of the icon associated with the brief type.
+     */
+    iconColor?: string | null;
+    /**
+     * The description of the brief type.
+     */
+    description?: string | null;
+    /**
+     * The list of fields that belong to this brief type, including their configurations and metadata.
+     */
+    fields: Array<
+      | ({
+          type?: 'SimpleText';
+        } & SimpleTextConfig)
+      | ({
+          type?: 'RichText';
+        } & RichTextConfig)
+      | ({
+          type?: 'Timeline';
+        } & TimelineConfig)
+      | ({
+          type?: 'Budget';
+        } & BudgetConfig)
+      | ({
+          type?: 'DateTime';
+        } & DateTimeConfig)
+      | ({
+          type?: 'Boolean';
+        } & BooleanConfig)
+    >;
+  };
+  export type GetPageComponentsResponse = {
+    /**
+     * The unique identifier of the page.
+     */
+    pageId: string;
+    /**
+     * The name of the page.
+     */
+    pageName: string;
+    /**
+     * The path to the page.
+     */
+    pagePath: string;
+    /**
+     * The version number of the page.
+     */
+    version: number;
+    /**
+     * The language code of the page.
+     */
     language: string;
+    /**
+     * The route of the page, or null if not applicable.
+     */
+    route?: string | null;
+    /**
+     * The layout editing kind of the page, or null if not applicable.
+     */
+    layoutEditingKind?: string | null;
+    /**
+     * The template used for the page, or null if not applicable.
+     */
+    template?: ModelsPagesTemplateModel | null;
+    /**
+     * A list of components on the page, or null if none.
+     */
+    components?: Array<ComponentModel> | null;
+  };
+  export type GetPagePreviewUrlResponse = {
+    /**
+     * The unique identifier of the page.
+     */
+    pageId: string;
+    /**
+     * The preview URL of the page.
+     */
+    previewUrl: string;
+  };
+  export type GetPageResponse = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The name of the page.
+     */
+    name: string;
+    /**
+     * The template ID used for the page.
+     */
+    templateId: string;
+    /**
+     * The location path of the page in the content tree.
+     */
+    locationPath: string;
+    /**
+     * A list of options for inserting the page.
+     */
+    insertOptions: Array<PageInsertOptionModel>;
+    /**
+     * Editable placeholders on the page.
+     */
+    editablePlaceholders?: Array<EditablePlaceholderModel>;
+  };
+  export type GoalType = 'pageViewGoal' | 'bouncesGoal' | 'exitsGoal';
+  export const GoalType = {
+    PAGE_VIEW_GOAL: 'pageViewGoal',
+    BOUNCES_GOAL: 'bouncesGoal',
+    EXITS_GOAL: 'exitsGoal',
+  } as const;
+  export type HttpValidationError = {
+    detail?: Array<ValidationError>;
+  };
+  /**
+   * Request model for hiding a component on the Default variant
+   */
+  export type HideComponentRequest = {
+    /**
+     * Language code for the page
+     */
+    language?: string | null;
+    /**
+     * The version of the page to use, or null for the latest version.
+     */
+    page_version?: number | null;
+  };
+  /**
+   * Response model for hide component operation
+   */
+  export type HideComponentResponse = {
+    /**
+     * The page ID where the component was hidden
+     */
+    pageId: string;
+    /**
+     * The component ID that was hidden
+     */
+    componentId: string;
+    /**
+     * The language of the page
+     */
+    language: string;
+  };
+  export type InnerItemModel = {
+    /**
+     * The display name of the inner item, or null if not set.
+     */
+    displayName?: string | null;
+    /**
+     * The height of the inner item, or null if not set.
+     */
+    height?: number | null;
+    /**
+     * The width of the inner item, or null if not set.
+     */
+    width?: number | null;
+  };
+  export type InsertOptionModel = {
+    /**
+     * The name of the insert option.
+     */
+    name: string;
+    /**
+     * The ID of the template used for the insert option.
+     */
+    templateId: string;
+  };
+  export type LanguageModel = {
+    /**
+     * The display name of the language.
+     */
+    displayName: string;
+    /**
+     * The ISO code of the language.
+     */
+    iso: string;
+    /**
+     * The name of the language.
+     */
+    name: string;
+  };
+  /**
+   * Model for brandkit summary (used in list endpoint)
+   */
+  export type ListBrandKitResponse = {
+    /**
+     * The unique identifier of the brand kit.
+     */
+    id: string;
+    /**
+     * The name of the brand kit.
+     */
+    name: string;
+    /**
+     * The brand kit description.
+     */
+    description?: string | null;
+    /**
+     * The name of the brand associated with the brand kit. Returns null if no brand name is set.
+     */
+    brandName?: string | null;
+    /**
+     * The name of the company associated with the brand kit. Returns null if no company name is set.
+     */
+    companyName?: string | null;
+    /**
+     * The status of the brand kit.
+     */
+    status: string;
+    /**
+     * A list of tags associated with the brand kit.
+     */
+    tags?: Array<TagModel> | null;
+  };
+  export type ListBriefTypesResponse = {
+    /**
+     * The total number of brief types available.
+     */
+    totalCount: number;
+    /**
+     * A list of brief types available.
+     */
+    data: Array<BriefTypeModel>;
+  };
+  export type ListBriefsResponse = {
+    totalCount: number;
+    data: Array<GetBriefResponse>;
+  };
+  export type ListSitesResponse = {
+    /**
+     * A list of sites.
+     */
+    sites: Array<SiteBasicModel>;
+  };
+  export type MediaItem = {
+    /**
+     * The unique identifier of the media item.
+     */
+    id: string;
+    /**
+     * The URL to embed or access the media item.
+     */
+    embedUrl: string;
+    /**
+     * The size of the media item in bytes.
+     */
+    size: number;
+    /**
+     * The dimensions of the media item.
+     */
+    dimensions: string;
+    /**
+     * The file extension of the media item.
+     */
+    extension: string;
+  };
+  export type NonVisualContentLocationModel = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The name of the item.
+     */
+    name: string;
+    /**
+     * The path to the item.
+     */
+    path: string;
+    /**
+     * A list of allowed child content templates.
+     */
+    allowed_child_content_templates: Array<AllowedChildTemplateModel>;
+  };
+  /**
+   * Response model containing the HTML content of a page.
+   */
+  export type PageHtmlResponse = {
+    /**
+     * The unique identifier of the page.
+     */
+    pageId: string;
+    /**
+     * The HTML content of the page.
+     */
+    html: string;
+  };
+  export type PageInsertOptionModel = {
+    /**
+     * The unique identifier of the template.
+     */
+    templateId: string;
+    /**
+     * The name of the template.
+     */
+    name: string;
+  };
+  export type PageLocationModel = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The name of the item.
+     */
+    name: string;
+    /**
+     * The path to the item.
+     */
+    path: string;
+    /**
+     * A list of allowed child page templates.
+     */
+    allowed_child_page_templates: Array<AllowedChildTemplateModel>;
+    /**
+     * True when this location is a page folder (no presentation component); False for standard renderable pages.
+     */
+    is_page_folder?: boolean;
+  };
+  export type PageModel = {
+    /**
+     * The unique identifier of the page.
+     */
+    id: string;
+    /**
+     * The path to the page.
+     */
+    path: string;
+  };
+  export type PagePathByLiveUrlResponse = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The name of the item.
+     */
+    name: string;
+    /**
+     * Whether the item has presentation details.
+     */
+    hasPresentation: boolean;
+    /**
+     * The template details of the item.
+     */
+    template: PagePathTemplateModel;
+    /**
+     * Insert options for the item.
+     */
+    insertOptions: Array<PagePathInsertOptionModel>;
+  };
+  export type PagePathInsertOptionModel = {
+    /**
+     * The name of the insert option.
+     */
+    name: string;
+    /**
+     * The unique identifier of the template.
+     */
+    templateId: string;
+  };
+  export type PagePathTemplateModel = {
+    /**
+     * The unique identifier of the template.
+     */
+    templateId: string;
+    /**
+     * The name of the template.
+     */
+    name: string;
+  };
+  export type PageScreenshotResponse = {
+    /**
+     * The type of screenshot.
+     */
+    type: string;
+    /**
+     * Whether the screenshot is of the full page.
+     */
+    fullPage: boolean;
+    /**
+     * The encoding format of the screenshot.
+     */
+    encoding: string;
+    /**
+     * The timestamp when the screenshot was taken.
+     */
+    timestamp: string;
+    /**
+     * The base64-encoded screenshot data.
+     */
+    screenshot_base64: string;
+  };
+  export type PageSearchItemModel = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The name of the item.
+     */
+    name: string;
+    /**
+     * The path of the item.
+     */
+    path: string;
+    /**
+     * The unique identifier of the template.
+     */
+    templateId: string;
+    /**
+     * A list of search fields associated with the item.
+     */
+    fields: Array<ModelsPagesFieldModel>;
+  };
+  export type PageTemplateFieldModel = {
+    /**
+     * The name of the field.
+     */
+    name: string;
+    /**
+     * The field type.
+     */
+    type: string;
+    /**
+     * Whether the field has validation rules.
+     */
+    validation: boolean;
+  };
+  export type PageTemplateResponse = {
+    /**
+     * The unique identifier of the template.
+     */
+    templateId: string;
+    /**
+     * The name of the template.
+     */
+    name: string;
+    /**
+     * A list of fields associated with the template.
+     */
+    fields: Array<PageTemplateFieldModel>;
+  };
+  export type PersonalizationVariantDetailModelV1 = {
+    /**
+     * The unique identifier of the page.
+     */
+    page_id: string;
+    /**
+     * The name of the variant.
+     */
+    variant_name: string;
+    /**
+     * The name of the audience targeted by the variant.
+     */
+    audience_name: string;
+    /**
+     * The template used for the variant.
+     */
+    template: string;
+    /**
+     * A list of condition groups for the personalization variant.
+     */
+    condition_groups?: Array<FlowDefinitionConditionGroupV1>;
+  };
+  export type PersonalizationVariantDetailModelV2 = {
+    /**
+     * The unique identifier of the page.
+     */
+    page_id: string;
+    /**
+     * The name of the variant.
+     */
+    variant_name: string;
+    /**
+     * The name of the audience targeted by the variant.
+     */
+    audience_name: string;
+    /**
+     * The template used for the variant.
+     */
+    template: string;
+    /**
+     * A list of condition groups for the personalization variant.
+     */
+    condition_groups?: Array<FlowDefinitionConditionGroupV2>;
+  };
+  /**
+   * Represents the related system reference for external links
+   */
+  export type RelatedSystem = 'contenthub' | 'mms' | 'ai' | 'xmcloud' | 'co';
+  /**
+   * Represents the related system reference for external links
+   */
+  export const RelatedSystem = {
+    CONTENTHUB: 'contenthub',
+    MMS: 'mms',
+    AI: 'ai',
+    XMCLOUD: 'xmcloud',
+    CO: 'co',
+  } as const;
+  /**
+   * Request model for resetting a component variant in a flow
+   */
+  export type ResetComponentRequest = {
+    /**
+     * Language code for the page
+     */
+    language?: string | null;
+    /**
+     * The version of the page to use, or null for the latest version.
+     */
+    page_version?: number | null;
+    /**
+     * The unique identifier of the page containing the component.
+     */
+    page_id: string;
+    /**
+     * The unique identifier of the component instance to reset.
+     */
+    component_id: string;
+    /**
+     * The full variant ID to reset. When not provided, resets the Default variant.
+     */
+    variant_id?: string | null;
+  };
+  /**
+   * Response model for reset component operation
+   */
+  export type ResetComponentResponse = {
+    /**
+     * The page ID where the component was reset
+     */
+    pageId: string;
+    /**
+     * The component ID that was reset
+     */
+    componentId: string;
+    /**
+     * The language of the page
+     */
+    language: string;
+  };
+  export type RichTextConfig = {
+    type: 'RichText';
+    /**
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name: string;
+    /**
+     * The display label of the field, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
+    };
+    /**
+     * The help text for the field, which can be localized for different languages.
+     */
+    helpText: {
+      [key: string]: string;
+    };
+    /**
+     * Whether the field is required.
+     */
+    required: boolean;
+    /**
+     * Whether the field is editable by AI.
+     */
+    aiEditable: boolean;
+    /**
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * The AI context for the field.
+     */
+    aiContext?: string | null;
+  };
+  /**
+   * Rich text field value
+   */
+  export type RichTextFieldValue = {
+    /**
+     * The type of the field value.
+     */
+    type: 'RichText';
+    /**
+     * The rich text content of the field value.
+     */
+    value: string;
+  };
+  export type SearchResponse = {
+    /**
+     * A list of search results.
+     */
+    results?: Array<SearchResult>;
+  };
+  export type SearchResult = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The unique identifier of the template associated with the item.
+     */
+    templateId: string;
+    /**
+     * The name of the item.
+     */
+    name: string;
+  };
+  /**
+   * Model for the brand kit sections.
+   */
+  export type SectionModel = {
+    /**
+     * The unique identifier of the brand kit section.
+     */
+    id: string;
+    /**
+     * The name of the brand kit section.
+     */
+    name: string;
+    /**
+     * A list of brand kit fields (subsections).
+     */
+    fields?: Array<ModelsBrandkitsFieldModel> | null;
+  };
+  export type SetComponentDatasourceRequest = {
+    /**
+     * The unique identifier of the datasource to set for the component.
+     */
+    datasourceId: string;
+    /**
+     * The language for the datasource.
+     */
+    language?: string | null;
+    /**
+     * Optional personalization variant id. When provided, the datasource is applied to the matching variant rule.
+     */
+    variantId?: string | null;
+  };
+  export type SetComponentDatasourceResponse = {
+    /**
+     * Whether the datasource was set successfully.
+     */
+    success: boolean;
+    /**
+     * A message providing additional information about the operation.
+     */
+    message: string;
+    /**
+     * The unique identifier of the component.
+     */
+    componentId: string;
+    /**
+     * The unique identifier of the page.
+     */
+    pageId: string;
+    /**
+     * The unique identifier of the datasource.
+     */
+    datasourceId: string;
+  };
+  export type SetupVariantRequest = {
+    /**
+     * The unique identifier of the page containing the component.
+     */
+    page_id: string;
+    /**
+     * The unique identifier of the component to set up as a variant.
+     */
+    component_id: string;
+    /**
+     * The strategy for the variant. Either HIDE, SWAP, or COPY.
+     */
+    variant_strategy: VariantStrategy;
+    /**
+     * The language code for the variant setup.
+     */
+    language?: string;
+    /**
+     * The version of the page to use, or null for the latest version.
+     */
+    page_version?: number | null;
+    /**
+     * The replacement component details when the variant strategy is SWAP, or null otherwise.
+     */
+    swapped_component?: SwappedComponentModel | null;
+  };
+  export type SetupVariantResponse = {
+    /**
+     * The unique identifier of the page.
+     */
+    pageId: string;
+    /**
+     * The unique identifier of the component set up as a variant.
+     */
+    componentId: string;
+    /**
+     * The unique identifier of the component rendering definition.
+     */
+    componentRenderingId: string;
+    /**
+     * The unique identifier of the flow definition associated with the variant.
+     */
+    flowId: string;
+    /**
+     * The unique identifier of the variant within the flow definition.
+     */
+    variantId: string;
+    /**
+     * The path to the datasource used by the variant, or null if not applicable.
+     */
+    datasource?: string | null;
+  };
+  export type SimpleTextConfig = {
+    type: 'SimpleText';
+    /**
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name: string;
+    /**
+     * The display label of the field, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
+    };
+    /**
+     * The help text for the field, which can be localized for different languages.
+     */
+    helpText: {
+      [key: string]: string;
+    };
+    /**
+     * Whether the field is required.
+     */
+    required: boolean;
+    /**
+     * Whether the field is editable by AI.
+     */
+    aiEditable: boolean;
+    /**
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * The AI context for the field.
+     */
+    aiContext?: string | null;
+  };
+  /**
+   * Simple text field value
+   */
+  export type SimpleTextFieldValue = {
+    /**
+     * Type of the field value.
+     */
+    type: 'SimpleText';
+    /**
+     * The text value of the field.
+     */
+    value: string;
+  };
+  export type SiteBasicModel = {
+    /**
+     * The unique identifier of the site.
+     */
+    id: string;
+    /**
+     * The name of the site.
+     */
+    name: string;
+    /**
+     * The target hostname of the site.
+     */
+    targetHostname: string;
+    /**
+     * The root path of the site.
+     */
+    rootPath: string;
+  };
+  export type SiteIdFromItemResponse = {
+    /**
+     * The unique identifier of the site root item.
+     */
+    siteRootItemId: string;
+    /**
+     * The display name of the site root.
+     */
+    siteRootDisplayName: string;
+    /**
+     * The name of the site root.
+     */
+    siteRootName: string;
+  };
+  export type SiteInformationResponse = {
+    /**
+     * The unique identifier of the item.
+     */
+    itemId: string;
+    /**
+     * The name of the site.
+     */
+    name: string;
+    /**
+     * Information about the brand associated with the site.
+     */
+    brand_information: string;
+    /**
+     * The root path of the site.
+     */
+    rootPath: string;
+    /**
+     * A list of page locations associated with the site.
+     */
+    page_locations: Array<PageLocationModel>;
+    /**
+     * A list of non-visual content locations associated with the site.
+     */
+    non_visual_content_locations: Array<NonVisualContentLocationModel>;
+  };
+  export type SwappedComponentModel = {
+    /**
+     * The unique identifier of the replacement component rendering definition.
+     */
+    componentRenderingId: string;
+    /**
+     * The path to the datasource used by the swapped component.
+     */
+    datasourcePath: string;
+  };
+  /**
+   * Model for brand kit tags with category and values
+   */
+  export type TagModel = {
+    /**
+     * The tag category.
+     */
+    category: string;
+    /**
+     * A list of tag values for the category.
+     */
+    values: Array<string>;
+  };
+  export type TimelineCalculation = 0 | 1 | 2 | 3;
+  export const TimelineCalculation = {
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+  } as const;
+  export type TimelineConfig = {
+    type: 'Timeline';
+    /**
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name: string;
+    /**
+     * The display label of the field, which can be localized for different languages.
+     */
+    label: {
+      [key: string]: string;
+    };
+    /**
+     * The help text for the field, which can be localized for different languages.
+     */
+    helpText: {
+      [key: string]: string;
+    };
+    /**
+     * Whether the field is required.
+     */
+    required: boolean;
+    /**
+     * Whether the field is editable by AI.
+     */
+    aiEditable: boolean;
+    /**
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * The timeline calculation constraint. Either `Flexible`, `Backward` or `Forward`.
+     */
+    calculation: string;
+    /**
+     * Whether to skip holidays in timeline calculations.
+     */
+    skipHolidays: boolean;
+    /**
+     * Whether to skip weekends in timeline calculations.
+     */
+    skipWeekend: boolean;
+    /**
+     * The timezone to use for timeline calculations.
+     */
+    timezone: string;
+  };
+  /**
+   * Represents a timeline event.
+   */
+  export type TimelineEvent = {
+    /**
+     * The title of the timeline event.
+     */
+    title: string;
+    /**
+     * The duration of the timeline event in the specified units.
+     */
+    duration?: number | null;
+    /**
+     * Timeline duration unit: Either Day or Week.
+     */
+    unit?: TimelineEventUnit | null;
+    /**
+     * The due date of the timeline event in yyyy-mm-dd format.
+     */
+    dueDate?: string | null;
+  };
+  /**
+   * Represents the units of time for timeline events
+   */
+  export type TimelineEventUnit = 'Day' | 'Week';
+  /**
+   * Represents the units of time for timeline events
+   */
+  export const TimelineEventUnit = {
+    DAY: 'Day',
+    WEEK: 'Week',
+  } as const;
+  /**
+   * Timeline field value
+   */
+  export type TimelineFieldValue = {
+    /**
+     * The type of the field value.
+     */
+    type: 'Timeline';
+    /**
+     * The timeline value containing start date, end date, and events.
+     */
+    value: TimelineValue;
+  };
+  export type TimelineValue = {
+    /**
+     * The start date of the timeline in yyyy-mm-dd format.
+     */
+    startDate?: string;
+    /**
+     * The end date of the timeline in yyyy-mm-dd format.
+     */
+    endDate?: string;
+    /**
+     * A list of events included in the timeline.
+     */
+    events?: Array<TimelineEvent>;
+  };
+  export type UpdateAssetRequest = {
+    /**
+     * A key-value map of metadata fields to update for the asset.
+     */
+    fields: {
+      [key: string]: unknown;
+    };
+    /**
+     * The new language code of the asset.
+     */
+    language: string;
+    /**
+     * The new name for the asset. If null, the name will not be updated.
+     */
     name?: string | null;
+    /**
+     * The new alt text for the asset. If null, the alt text will not be updated.
+     */
     altText?: string | null;
   };
   export type UpdateAssetResponse = {
+    /**
+     * The unique identifier of the asset.
+     */
     itemId: string;
+    /**
+     * The updated name of the asset.
+     */
     name: string;
+    /**
+     * The path to the asset.
+     */
     path: string;
+    /**
+     * The fields that were updated in the asset.
+     */
     updatedFields: {
       [key: string]: unknown;
     };
   };
+  /**
+   * Model for updating an existing brief
+   */
+  export type UpdateBriefRequestModel = {
+    /**
+     * The name of the brief
+     */
+    name?: string | null;
+    /**
+     * Dictionary of field names to their values
+     */
+    fields?: {
+      [key: string]:
+        | ({
+            type?: 'SimpleText';
+          } & SimpleTextFieldValue)
+        | ({
+            type?: 'RichText';
+          } & RichTextFieldValue)
+        | ({
+            type?: 'DateTime';
+          } & DateTimeFieldValue)
+        | ({
+            type?: 'Budget';
+          } & BudgetFieldValue)
+        | ({
+            type?: 'Boolean';
+          } & BooleanFieldValue)
+        | ({
+            type?: 'Timeline';
+          } & TimelineFieldValue);
+    } | null;
+  };
+  export type UpdateBriefResponse = {
+    /**
+     * The unique identifier of the brief.
+     */
+    id: string;
+    /**
+     * The icon associated with the brief.
+     */
+    icon?: string | null;
+    /**
+     * The name of the brief.
+     */
+    name: string;
+    /**
+     * The status of the brief. Draft by default.
+     */
+    status: string;
+    /**
+     * The locale code in the format xx-XX.
+     */
+    locale: string;
+    /**
+     * Dictionary of field names to their values.
+     */
+    fields: {
+      [key: string]: unknown;
+    };
+    isTemplate?: boolean;
+    /**
+     * List of contributor identifiers.
+     */
+    contributors?: Array<string> | null;
+    /**
+     * The user who created the brief.
+     */
+    createdBy?: ExternalLink | null;
+    /**
+     * The ISO 8601 timestamp when the brief was created.
+     */
+    createdOn?: string | null;
+    /**
+     * The user who last updated the brief.
+     */
+    updatedBy?: ExternalLink | null;
+    /**
+     * The ISO 8601 timestamp when the brief was last updated.
+     */
+    updatedOn?: string | null;
+    briefType?: BriefTypeLink | null;
+  };
   export type UpdateContentRequest = {
+    /**
+     * A key-value map of fields to update for the content item. If null, fields will not be updated.
+     */
     fields?: {
       [key: string]: unknown;
     } | null;
+    /**
+     * The language version of the content item to update.
+     */
     language?: string;
+    /**
+     * Whether to create a new version of the content item.
+     */
     createNewVersion?: boolean;
+    /**
+     * The unique name of the site where the content item resides.
+     */
     siteName?: string | null;
   };
   export type UpdateContentResponse = {
+    /**
+     * The unique identifier of the content item.
+     */
     itemId: string;
+    /**
+     * The name of the content item.
+     */
     name: string;
+    /**
+     * The path to the content item.
+     */
     path: string;
+    /**
+     * The fields that were updated in the content item.
+     */
     updatedFields: {
       [key: string]: unknown;
     };
   };
+  export type UpdateExperimentRequest = {
+    /**
+     * The updated name of the experiment.
+     */
+    name?: string | null;
+    /**
+     * Whether to archive the experiment.
+     */
+    archived?: boolean | null;
+    /**
+     * The updated goal type for the experiment.
+     */
+    goal_type?: GoalType | null;
+    /**
+     * The updated list of page paths to target for the experiment.
+     */
+    targeted_pages?: Array<string> | null;
+    /**
+     * The updated list of variants. Traffic splits must sum to 100 and exactly one variant must be marked as control.
+     */
+    variants?: Array<Variant> | null;
+  };
+  export type UpdatePersonalizationRequest = {
+    /**
+     * The language code for the personalization rule, or null for default.
+     */
+    language?: string | null;
+    /**
+     * The name of the personalization variant.
+     */
+    variant_name: string;
+    /**
+     * The name of the audience for the personalization rule.
+     */
+    audience_name: string;
+    /**
+     * List of condition groups with their conditions
+     */
+    condition_groups: Array<ConditionGroupInput>;
+  };
   export type UploadAssetResponse = {
+    /**
+     * Whether the asset upload was successful.
+     */
     success: boolean;
+    /**
+     * The uploaded media item details.
+     */
     mediaItem: MediaItem;
   };
   export type ValidationError = {
     loc: Array<string | number>;
     msg: string;
     type: string;
+    input?: unknown;
+    ctx?: {
+      [key: string]: unknown;
+    };
   };
+  export type Variant = {
+    /**
+     * The name of the variant.
+     */
+    name: string;
+    /**
+     * Whether this variant is the control (baseline) variant.
+     */
+    is_control: boolean;
+    /**
+     * The percentage of traffic allocated to this variant. All variant splits must sum to 100.
+     */
+    traffic_split: number;
+  };
+  export type VariantComponentModel = {
+    /**
+     * The unique identifier of the component.
+     */
+    componentId: string;
+    /**
+     * The unique identifier of the component rendering definition.
+     */
+    componentRenderingId: string;
+    /**
+     * The variant strategy applied to this component. Either HIDE, SWAP, COPY, or null.
+     */
+    variantStrategy: VariantStrategy | null;
+    /**
+     * The path to the datasource used by the variant component, or null if not applicable.
+     */
+    datasourcePath?: string | null;
+    /**
+     * The internal name of the component.
+     */
+    componentName: string;
+  };
+  export type VariantInfoResponse = {
+    /**
+     * The unique identifier of the flow definition.
+     */
+    flowId: string;
+    /**
+     * The unique identifier of the variant within the flow definition.
+     */
+    variantId: string;
+    /**
+     * A list of components associated with the variant.
+     */
+    components: Array<VariantComponentModel>;
+  };
+  export type VariantStrategy = 'HIDE' | 'SWAP' | 'COPY';
+  export const VariantStrategy = {
+    HIDE: 'HIDE',
+    SWAP: 'SWAP',
+    COPY: 'COPY',
+  } as const;
+  /**
+   * Model representing the workflow state of an item.
+   */
   export type WorkflowModel = {
+    /**
+     * The current workflow state of the content item.
+     */
     workflowState: WorkflowStateModel;
   };
   export type WorkflowStateModel = {
+    /**
+     * Whether this is a final workflow state.
+     */
     final: boolean;
+    /**
+     * The display name of the workflow state.
+     */
     displayName: string;
   };
+  /**
+   * Model for brand kit section field
+   */
+  export type ModelsBrandkitsFieldModel = {
+    /**
+     * The unique identifier of the brand kit field (subsection).
+     */
+    id: string;
+    /**
+     * The name of the brand kit field.
+     */
+    name: string;
+    /**
+     * The type of the brand kit field.
+     */
+    type: string;
+    /**
+     * The value of the brand kit field.
+     */
+    value?: unknown | null;
+    /**
+     * The intent of the brand kit field.
+     */
+    intent?: string | null;
+  };
   export type ModelsContentTemplateModel = {
+    /**
+     * The unique identifier of the template.
+     */
     templateId: string;
+    /**
+     * The name of the template.
+     */
     name: string;
   };
+  export type ModelsPagesFieldModel = {
+    /**
+     * The name of the field.
+     */
+    name: string;
+    /**
+     * The value of the field.
+     */
+    value: string;
+  };
   export type ModelsPagesTemplateModel = {
+    /**
+     * The unique identifier of the template.
+     */
     id: string;
+    /**
+     * The name of the template.
+     */
     name: string;
   };
   export type SitesGetSitesListData = {
@@ -551,10 +3204,6 @@ export namespace Agent {
     url: '/api/v1/sites';
   };
   export type SitesGetSitesListErrors = {
-    /**
-     * No sites found
-     */
-    404: unknown;
     /**
      * Validation Error
      */
@@ -754,6 +3403,7 @@ export namespace Agent {
     query?: {
       language?: string | null;
       version?: number | null;
+      variantId?: string | null;
       /**
        * The Sitecore context ID.
        */
@@ -932,6 +3582,7 @@ export namespace Agent {
       language?: string;
       width?: number;
       height?: number;
+      variantId?: string | null;
       /**
        * The Sitecore context ID.
        */
@@ -969,6 +3620,7 @@ export namespace Agent {
     query: {
       language: string;
       version?: number | null;
+      variantId?: string | null;
       /**
        * The Sitecore context ID.
        */
@@ -1004,6 +3656,7 @@ export namespace Agent {
     query?: {
       language?: string;
       version?: number | null;
+      variantId?: string | null;
       /**
        * The Sitecore context ID.
        */
@@ -1109,6 +3762,7 @@ export namespace Agent {
     };
     query?: {
       language?: string | null;
+      variantId?: string | null;
       /**
        * The Sitecore context ID.
        */
@@ -1657,8 +4311,76 @@ export namespace Agent {
   };
   export type EnvironmentsListLanguagesResponse =
     EnvironmentsListLanguagesResponses[keyof EnvironmentsListLanguagesResponses];
-  export type PersonalizationCreatePersonalizationVersionData = {
-    body: CreatePersonalizationRequest;
+  export type ExperimentsCreateComponentAbTestData = {
+    body: CreateExperimentRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/experiments/flows';
+  };
+  export type ExperimentsCreateComponentAbTestErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type ExperimentsCreateComponentAbTestError =
+    ExperimentsCreateComponentAbTestErrors[keyof ExperimentsCreateComponentAbTestErrors];
+  export type ExperimentsCreateComponentAbTestResponses = {
+    /**
+     * Successful Response
+     */
+    201: ExperimentFlowResponse;
+  };
+  export type ExperimentsCreateComponentAbTestResponse =
+    ExperimentsCreateComponentAbTestResponses[keyof ExperimentsCreateComponentAbTestResponses];
+  export type ExperimentsUpdateAbTestData = {
+    body: UpdateExperimentRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      flowId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/experiments/{flowId}';
+  };
+  export type ExperimentsUpdateAbTestErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type ExperimentsUpdateAbTestError =
+    ExperimentsUpdateAbTestErrors[keyof ExperimentsUpdateAbTestErrors];
+  export type ExperimentsUpdateAbTestResponses = {
+    /**
+     * Successful Response
+     */
+    200: ExperimentFlowResponse;
+  };
+  export type ExperimentsUpdateAbTestResponse =
+    ExperimentsUpdateAbTestResponses[keyof ExperimentsUpdateAbTestResponses];
+  export type PersonalizationCreatePersonalizationVersionV1Data = {
+    body: CreatePersonalizationRequestV1;
     headers?: {
       /**
        * Job ID for auditing purposes
@@ -1676,6 +4398,41 @@ export namespace Agent {
     };
     url: '/api/v1/personalization/{pageId}/versions';
   };
+  export type PersonalizationCreatePersonalizationVersionV1Errors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationCreatePersonalizationVersionV1Error =
+    PersonalizationCreatePersonalizationVersionV1Errors[keyof PersonalizationCreatePersonalizationVersionV1Errors];
+  export type PersonalizationCreatePersonalizationVersionV1Responses = {
+    /**
+     * Successful Response
+     */
+    201: ExperienceFlowResponseV1;
+  };
+  export type PersonalizationCreatePersonalizationVersionV1Response =
+    PersonalizationCreatePersonalizationVersionV1Responses[keyof PersonalizationCreatePersonalizationVersionV1Responses];
+  export type PersonalizationCreatePersonalizationVersionData = {
+    body: CreatePersonalizationRequestV2;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      pageId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v2/personalization/{pageId}/versions';
+  };
   export type PersonalizationCreatePersonalizationVersionErrors = {
     /**
      * Validation Error
@@ -1688,11 +4445,11 @@ export namespace Agent {
     /**
      * Successful Response
      */
-    201: FlowDefinitionResponse;
+    201: ExperienceFlowResponseV2;
   };
   export type PersonalizationCreatePersonalizationVersionResponse =
     PersonalizationCreatePersonalizationVersionResponses[keyof PersonalizationCreatePersonalizationVersionResponses];
-  export type PersonalizationGetPersonalizationVersionsByPageData = {
+  export type PersonalizationGetPersonalizationVersionsByPageV1Data = {
     body?: never;
     headers?: {
       /**
@@ -1712,6 +4469,42 @@ export namespace Agent {
     };
     url: '/api/v1/personalization/by-page/{pageId}';
   };
+  export type PersonalizationGetPersonalizationVersionsByPageV1Errors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationGetPersonalizationVersionsByPageV1Error =
+    PersonalizationGetPersonalizationVersionsByPageV1Errors[keyof PersonalizationGetPersonalizationVersionsByPageV1Errors];
+  export type PersonalizationGetPersonalizationVersionsByPageV1Responses = {
+    /**
+     * Successful Response
+     */
+    200: Array<PersonalizationVariantDetailModelV1>;
+  };
+  export type PersonalizationGetPersonalizationVersionsByPageV1Response =
+    PersonalizationGetPersonalizationVersionsByPageV1Responses[keyof PersonalizationGetPersonalizationVersionsByPageV1Responses];
+  export type PersonalizationGetPersonalizationVersionsByPageData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      pageId: string;
+    };
+    query?: {
+      language?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v2/personalization/by-page/{pageId}';
+  };
   export type PersonalizationGetPersonalizationVersionsByPageErrors = {
     /**
      * Validation Error
@@ -1724,7 +4517,7 @@ export namespace Agent {
     /**
      * Successful Response
      */
-    200: Array<PersonalizationVariantDetailModel>;
+    200: Array<PersonalizationVariantDetailModelV2>;
   };
   export type PersonalizationGetPersonalizationVersionsByPageResponse =
     PersonalizationGetPersonalizationVersionsByPageResponses[keyof PersonalizationGetPersonalizationVersionsByPageResponses];
@@ -1796,6 +4589,605 @@ export namespace Agent {
   };
   export type PersonalizationGetConditionTemplateByIdResponse =
     PersonalizationGetConditionTemplateByIdResponses[keyof PersonalizationGetConditionTemplateByIdResponses];
+  export type PersonalizationUpdatePersonalizationVersionData = {
+    body: UpdatePersonalizationRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      pageId: string;
+      variantId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/personalization/{pageId}/versions/{variantId}';
+  };
+  export type PersonalizationUpdatePersonalizationVersionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationUpdatePersonalizationVersionError =
+    PersonalizationUpdatePersonalizationVersionErrors[keyof PersonalizationUpdatePersonalizationVersionErrors];
+  export type PersonalizationUpdatePersonalizationVersionResponses = {
+    /**
+     * Successful Response
+     */
+    200: ExperienceFlowResponseV2;
+  };
+  export type PersonalizationUpdatePersonalizationVersionResponse =
+    PersonalizationUpdatePersonalizationVersionResponses[keyof PersonalizationUpdatePersonalizationVersionResponses];
+  export type PersonalizationHideComponentOnDefaultPageData = {
+    body: HideComponentRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      pageId: string;
+      componentId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/personalization/{pageId}/components/{componentId}/hide';
+  };
+  export type PersonalizationHideComponentOnDefaultPageErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationHideComponentOnDefaultPageError =
+    PersonalizationHideComponentOnDefaultPageErrors[keyof PersonalizationHideComponentOnDefaultPageErrors];
+  export type PersonalizationHideComponentOnDefaultPageResponses = {
+    /**
+     * Successful Response
+     */
+    201: HideComponentResponse;
+  };
+  export type PersonalizationHideComponentOnDefaultPageResponse =
+    PersonalizationHideComponentOnDefaultPageResponses[keyof PersonalizationHideComponentOnDefaultPageResponses];
+  export type FlowsListFlowDefinitionsByPageData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      pageId: string;
+    };
+    query?: {
+      language?: string;
+      status?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/by-page/{pageId}';
+  };
+  export type FlowsListFlowDefinitionsByPageErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsListFlowDefinitionsByPageError =
+    FlowsListFlowDefinitionsByPageErrors[keyof FlowsListFlowDefinitionsByPageErrors];
+  export type FlowsListFlowDefinitionsByPageResponses = {
+    /**
+     * Successful Response
+     */
+    200: Array<
+      | ({
+          subtype?: 'EXPERIMENT';
+        } & ExperimentFlowResponse)
+      | ({
+          subtype?: 'EXPERIENCE';
+        } & ExperienceFlowResponseV2)
+    >;
+  };
+  export type FlowsListFlowDefinitionsByPageResponse =
+    FlowsListFlowDefinitionsByPageResponses[keyof FlowsListFlowDefinitionsByPageResponses];
+  export type FlowsGetFlowDefinitionData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      flowId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}';
+  };
+  export type FlowsGetFlowDefinitionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsGetFlowDefinitionError =
+    FlowsGetFlowDefinitionErrors[keyof FlowsGetFlowDefinitionErrors];
+  export type FlowsGetFlowDefinitionResponses = {
+    /**
+     * Successful Response
+     */
+    200:
+      | ({
+          subtype?: 'EXPERIMENT';
+        } & ExperimentFlowResponse)
+      | ({
+          subtype?: 'EXPERIENCE';
+        } & ExperienceFlowResponseV2);
+  };
+  export type FlowsGetFlowDefinitionResponse =
+    FlowsGetFlowDefinitionResponses[keyof FlowsGetFlowDefinitionResponses];
+  export type FlowsResetComponentVariantData = {
+    body: ResetComponentRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      flowId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}/variants/reset';
+  };
+  export type FlowsResetComponentVariantErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsResetComponentVariantError =
+    FlowsResetComponentVariantErrors[keyof FlowsResetComponentVariantErrors];
+  export type FlowsResetComponentVariantResponses = {
+    /**
+     * Successful Response
+     */
+    201: ResetComponentResponse;
+  };
+  export type FlowsResetComponentVariantResponse =
+    FlowsResetComponentVariantResponses[keyof FlowsResetComponentVariantResponses];
+  export type FlowsGetVariantData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      flowId: string;
+      variantId: string;
+    };
+    query?: {
+      /**
+       * Language code
+       */
+      language?: string;
+      /**
+       * Page version
+       */
+      version?: number | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}/variants/{variantId}';
+  };
+  export type FlowsGetVariantErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsGetVariantError = FlowsGetVariantErrors[keyof FlowsGetVariantErrors];
+  export type FlowsGetVariantResponses = {
+    /**
+     * Successful Response
+     */
+    200: VariantInfoResponse;
+  };
+  export type FlowsGetVariantResponse = FlowsGetVariantResponses[keyof FlowsGetVariantResponses];
+  export type FlowsSetupVariantData = {
+    body: SetupVariantRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      flowId: string;
+      variantId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}/variants/{variantId}';
+  };
+  export type FlowsSetupVariantErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsSetupVariantError = FlowsSetupVariantErrors[keyof FlowsSetupVariantErrors];
+  export type FlowsSetupVariantResponses = {
+    /**
+     * Successful Response
+     */
+    201: SetupVariantResponse;
+  };
+  export type FlowsSetupVariantResponse =
+    FlowsSetupVariantResponses[keyof FlowsSetupVariantResponses];
+  export type BrandkitsListBrandkitsData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brandkits';
+  };
+  export type BrandkitsListBrandkitsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type BrandkitsListBrandkitsError =
+    BrandkitsListBrandkitsErrors[keyof BrandkitsListBrandkitsErrors];
+  export type BrandkitsListBrandkitsResponses = {
+    /**
+     * Successful Response
+     */
+    200: Array<ListBrandKitResponse>;
+  };
+  export type BrandkitsListBrandkitsResponse =
+    BrandkitsListBrandkitsResponses[keyof BrandkitsListBrandkitsResponses];
+  export type BrandkitsGetBrandkitByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      brandkitId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brandkits/{brandkitId}';
+  };
+  export type BrandkitsGetBrandkitByIdErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type BrandkitsGetBrandkitByIdError =
+    BrandkitsGetBrandkitByIdErrors[keyof BrandkitsGetBrandkitByIdErrors];
+  export type BrandkitsGetBrandkitByIdResponses = {
+    /**
+     * Successful Response
+     */
+    200: GetBrandKitResponse;
+  };
+  export type BrandkitsGetBrandkitByIdResponse =
+    BrandkitsGetBrandkitByIdResponses[keyof BrandkitsGetBrandkitByIdResponses];
+  export type ListBriefTypesData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/brief-types';
+  };
+  export type ListBriefTypesErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type ListBriefTypesError = ListBriefTypesErrors[keyof ListBriefTypesErrors];
+  export type ListBriefTypesResponses = {
+    /**
+     * Successful Response
+     */
+    200: ListBriefTypesResponse;
+  };
+  export type ListBriefTypesResponse2 = ListBriefTypesResponses[keyof ListBriefTypesResponses];
+  export type ListBriefsData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      name?: string | null;
+      status?: string | null;
+      creator_id?: string | null;
+      type_id?: string | null;
+      sort_by?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief';
+  };
+  export type ListBriefsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type ListBriefsError = ListBriefsErrors[keyof ListBriefsErrors];
+  export type ListBriefsResponses = {
+    /**
+     * Successful Response
+     */
+    200: ListBriefsResponse;
+  };
+  export type ListBriefsResponse2 = ListBriefsResponses[keyof ListBriefsResponses];
+  export type BriefCreateBriefData = {
+    body: CreateBriefRequestModel;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief';
+  };
+  export type BriefCreateBriefErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type BriefCreateBriefError = BriefCreateBriefErrors[keyof BriefCreateBriefErrors];
+  export type BriefCreateBriefResponses = {
+    /**
+     * Successful Response
+     */
+    201: CreateBriefResponseModel;
+  };
+  export type BriefCreateBriefResponse = BriefCreateBriefResponses[keyof BriefCreateBriefResponses];
+  export type BriefsGenerateBriefData = {
+    body: GenerateBriefRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/generate';
+  };
+  export type BriefsGenerateBriefErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type BriefsGenerateBriefError = BriefsGenerateBriefErrors[keyof BriefsGenerateBriefErrors];
+  export type BriefsGenerateBriefResponses = {
+    /**
+     * Successful Response
+     */
+    200: GenerateBriefResponse;
+  };
+  export type BriefsGenerateBriefResponse =
+    BriefsGenerateBriefResponses[keyof BriefsGenerateBriefResponses];
+  export type BriefsGenerateBriefDeprecatedData = {
+    body: GenerateBriefRequest;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/briefs/generate';
+  };
+  export type BriefsGenerateBriefDeprecatedErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type BriefsGenerateBriefDeprecatedError =
+    BriefsGenerateBriefDeprecatedErrors[keyof BriefsGenerateBriefDeprecatedErrors];
+  export type BriefsGenerateBriefDeprecatedResponses = {
+    /**
+     * Successful Response
+     */
+    200: GenerateBriefResponse;
+  };
+  export type BriefsGenerateBriefDeprecatedResponse =
+    BriefsGenerateBriefDeprecatedResponses[keyof BriefsGenerateBriefDeprecatedResponses];
+  export type GetBriefTypeByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      brief_type_id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/brief-types/{brief_type_id}';
+  };
+  export type GetBriefTypeByIdErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type GetBriefTypeByIdError = GetBriefTypeByIdErrors[keyof GetBriefTypeByIdErrors];
+  export type GetBriefTypeByIdResponses = {
+    /**
+     * Successful Response
+     */
+    200: GetBriefTypeResponse;
+  };
+  export type GetBriefTypeByIdResponse = GetBriefTypeByIdResponses[keyof GetBriefTypeByIdResponses];
+  export type GetBriefByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      brief_id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/{brief_id}';
+  };
+  export type GetBriefByIdErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type GetBriefByIdError = GetBriefByIdErrors[keyof GetBriefByIdErrors];
+  export type GetBriefByIdResponses = {
+    /**
+     * Successful Response
+     */
+    200: GetBriefResponse;
+  };
+  export type GetBriefByIdResponse = GetBriefByIdResponses[keyof GetBriefByIdResponses];
+  export type BriefUpdateBriefData = {
+    body: UpdateBriefRequestModel;
+    headers?: {
+      /**
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      brief_id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/{brief_id}';
+  };
+  export type BriefUpdateBriefErrors = {
+    /**
+     * Validation Error
+     */
+    422: HttpValidationError;
+  };
+  export type BriefUpdateBriefError = BriefUpdateBriefErrors[keyof BriefUpdateBriefErrors];
+  export type BriefUpdateBriefResponses = {
+    /**
+     * Successful Response
+     */
+    200: UpdateBriefResponse;
+  };
+  export type BriefUpdateBriefResponse = BriefUpdateBriefResponses[keyof BriefUpdateBriefResponses];
   export type JobsRevertJobData = {
     body?: never;
     path: {

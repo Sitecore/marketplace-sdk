@@ -6,6 +6,7 @@ The `xmc` package extends the Client SDK and provides type-safe interfaces for i
   - [Sites API](https://api-docs.sitecore.com/sai/sites-api) - to manage site collections, sites, languages and running background jobs.
 -   [Experience Edge Token API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/experience-edge-for-xm-apis.html) - to manage API keys for the Delivery API.
 -   [Experience Edge Admin API](https://doc.sitecore.com/xmc/en/developers/xm-cloud/experience-edge-for-xm-apis.html) - to administer your Edge tenant.
+-   Feature Flags API - to retrieve feature flags for the current environment.
 
 ## Prerequisites
 - Node.js 16 or later. Check your installed version by using the `node --version` command.
@@ -37,6 +38,20 @@ const config = {
 ## Usage
 ### Make a query
 Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve. For examples:
+
+- pass `'xmc.featureflags.listFlags'` to retrieve feature flags for the current environment:
+
+```typescript
+client.query('xmc.featureflags.listFlags', {
+    params: {
+        query: {
+            sitecoreContextId,
+        },
+    },
+}).then((res) => {
+    console.log('Success retrieving feature flags:', res.data);
+});
+```
 
 - pass `'xmc.sites.listSites'` to retrieve a list of sites:
 

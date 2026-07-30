@@ -220,3 +220,30 @@ createClient({
     }),
   ],
 });
+
+createClient({
+  input: 'https://edge-platform-feature-flags.sitecorecloud.io/openapi.json',
+  output: {
+    format: 'prettier',
+    lint: 'eslint',
+    path: './src/client-featureflags',
+  },
+  plugins: [
+    defineSchemaPatcherConfig({
+      basePath: '/featureflags',
+    }),
+    '@hey-api/client-fetch',
+    '@hey-api/schemas',
+    '@hey-api/sdk',
+    {
+      enums: 'javascript',
+      name: '@hey-api/typescript',
+    },
+    defineAugmentationConfig({
+      namespaces: ['xmc.featureflags'],
+    }),
+    defineClientTransformerConfig({
+      namespace: 'Featureflags',
+    }),
+  ],
+});

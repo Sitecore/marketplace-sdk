@@ -133,41 +133,6 @@ Example value: en`,
   description: 'An Analytics tracker identifer for a site.',
 } as const;
 
-export const ComponentAggregationResponseSchema = {
-  type: 'object',
-  properties: {
-    id: {
-      type: 'string',
-      description: `The component identifier.
-Example value: 86a03271-dff4-470a-92bd-b68c67de2e25`,
-      nullable: true,
-      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
-    },
-    uid: {
-      type: 'string',
-      description: `The unique identifier of the component on this page. The UID is assigned to the component when it's added to the page.
-Example value: 3d42bec0-60ad-45f3-a8f7-ddb6a5543c34`,
-      nullable: true,
-      example: '3d42bec0-60ad-45f3-a8f7-ddb6a5543c34',
-    },
-    name: {
-      type: 'string',
-      description: `The component name.
-Example value: RichText`,
-      nullable: true,
-      example: 'RichText',
-    },
-    displayName: {
-      type: 'string',
-      description: `The display name of the component for the specified language.
-Example value: Rich Text`,
-      nullable: true,
-      example: 'Rich Text',
-    },
-  },
-  additionalProperties: false,
-} as const;
-
 export const CopySiteInputSchema = {
   required: ['name'],
   type: 'object',
@@ -1060,49 +1025,6 @@ This identifier lets you control analytics and personalization for the site.`,
   description: 'A site creation request.',
 } as const;
 
-export const PageAggregationResponseSchema = {
-  type: 'object',
-  properties: {
-    id: {
-      type: 'string',
-      description: `The page identifier.
-Example value: 8f0b81bc-7388-46be-b109-6e73d1114470`,
-      nullable: true,
-      example: '8f0b81bc-7388-46be-b109-6e73d1114470',
-    },
-    language: {
-      type: 'string',
-      description: `The language of the page.
-Example value: en-US`,
-      nullable: true,
-      example: 'en-US',
-    },
-    name: {
-      type: 'string',
-      description: `The page name.
-Example value: Home`,
-      nullable: true,
-      example: 'Home',
-    },
-    displayName: {
-      type: 'string',
-      description: `The display name of the page for the specified language.
-Example value: Home`,
-      nullable: true,
-      example: 'Home',
-    },
-    components: {
-      type: 'array',
-      items: {
-        $ref: '#/components/schemas/ComponentAggregationResponse',
-      },
-      description: 'A collection of the page components.',
-      nullable: true,
-    },
-  },
-  additionalProperties: false,
-} as const;
-
 export const PageHierarchySchema = {
   type: 'object',
   properties: {
@@ -1189,28 +1111,6 @@ Example value: john.smith@skate-park.com`,
       description: `Whether the page was locked by the current user.
 Example value: False`,
       example: false,
-    },
-  },
-  additionalProperties: false,
-} as const;
-
-export const PageRequestSchema = {
-  required: ['id', 'language'],
-  type: 'object',
-  properties: {
-    id: {
-      minLength: 1,
-      type: 'string',
-      description: `The page identifier.
-Example value: 8f0b81bc-7388-46be-b109-6e73d1114470`,
-      example: '8f0b81bc-7388-46be-b109-6e73d1114470',
-    },
-    language: {
-      minLength: 1,
-      type: 'string',
-      description: `The language of the page.
-Example value: en-US`,
-      example: 'en-US',
     },
   },
   additionalProperties: false,
@@ -1327,69 +1227,6 @@ Example value: Sitecore/Content/Home/Categories/Products/MyProduct`,
 Example value: /Aboutus`,
       nullable: true,
       example: '/Aboutus',
-    },
-  },
-  additionalProperties: false,
-} as const;
-
-export const PageVariantsAggregationResponseSchema = {
-  type: 'object',
-  properties: {
-    pages: {
-      type: 'array',
-      items: {
-        $ref: '#/components/schemas/PageVariantsResponse',
-      },
-      description: 'Aggregated data of the currently active variants for this page.',
-      nullable: true,
-    },
-  },
-  additionalProperties: false,
-} as const;
-
-export const PageVariantsResponseSchema = {
-  type: 'object',
-  properties: {
-    pageId: {
-      type: 'string',
-      description: `The page identifier.
-Example value: 8f0b81bc-7388-46be-b109-6e73d1114470`,
-      nullable: true,
-      example: '8f0b81bc-7388-46be-b109-6e73d1114470',
-    },
-    language: {
-      type: 'string',
-      description: `The language of the page.
-Example value: en-US`,
-      nullable: true,
-      example: 'en-US',
-    },
-    variantIds: {
-      type: 'array',
-      items: {
-        type: 'string',
-      },
-      description: `The list of page personalization variant identifiers.
-Example value: [
-  "edc7cee9-14b5-4218-a7a8-13664c714bdb",
-  "5f457136-fd9f-4a5b-be3f-2d46709f01a4"
-]`,
-      nullable: true,
-      example: ['edc7cee9-14b5-4218-a7a8-13664c714bdb', '5f457136-fd9f-4a5b-be3f-2d46709f01a4'],
-    },
-  },
-  additionalProperties: false,
-} as const;
-
-export const PagesAggregationResponseSchema = {
-  type: 'object',
-  properties: {
-    pages: {
-      type: 'array',
-      items: {
-        $ref: '#/components/schemas/PageAggregationResponse',
-      },
-      nullable: true,
     },
   },
   additionalProperties: false,

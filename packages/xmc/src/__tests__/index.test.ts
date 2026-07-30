@@ -4,6 +4,7 @@ import * as authoring from '../client-authoring/sdk.gen';
 import * as content from '../client-content/sdk.gen';
 import * as contentTransfer from '../client-content-transfer/sdk.gen';
 import * as xmapp from '../client-xmapp/sdk.gen';
+import * as featureflags from '../client-featureflags/sdk.gen';
 
 describe('XMC', () => {
     beforeEach(() => {
@@ -61,6 +62,15 @@ describe('XMC', () => {
         xmapp['someOperation'] = mockOperation;
 
         XMC.invokeOperation('xmapp.someOperation', 'arg1', 'arg2');
+
+        expect(mockOperation).toHaveBeenCalledWith('arg1', 'arg2');
+    });
+
+    it('should invoke the correct operation in the featureflags namespace', () => {
+        const mockOperation = vi.fn();
+        featureflags['someOperation'] = mockOperation;
+
+        XMC.invokeOperation('featureflags.someOperation', 'arg1', 'arg2');
 
         expect(mockOperation).toHaveBeenCalledWith('arg1', 'arg2');
     });

@@ -5,147 +5,147 @@ import * as sdk from './sdk.gen';
 declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
     /**
-     * Retrieves a list of all available sites with their basic information and configuration.*/
+     * Retrieves a list of available sites with their basic information including name, display name, and URL.*/
     'xmc.agent.sitesGetSitesList': {
       params: Parameters<typeof sdk.sitesGetSitesList>[0];
       response: Awaited<ReturnType<typeof sdk.sitesGetSitesList>>;
       subscribe: false;
     };
     /**
-     * Retrieves detailed information about a specific site including its configuration, themes, and available languages.*/
+     * Retrieves the details of a specific site including its  ID, name, and root path.*/
     'xmc.agent.sitesGetSiteDetails': {
       params: Parameters<typeof sdk.sitesGetSiteDetails>[0];
       response: Awaited<ReturnType<typeof sdk.sitesGetSiteDetails>>;
       subscribe: false;
     };
     /**
-     * Returns a flat list of routes for the specified site and language, each with id and path.*/
+     * Retrieves a list of pages for a specific site, including each page's ID and path. You can optionally filter the pages by language.*/
     'xmc.agent.sitesGetAllPagesBySite': {
       params: Parameters<typeof sdk.sitesGetAllPagesBySite>[0];
       response: Awaited<ReturnType<typeof sdk.sitesGetAllPagesBySite>>;
       subscribe: false;
     };
     /**
-     * Returns the site root item ID for a given item by traversing ancestors to find the site root template*/
+     * Retrieves the site ID associated with a specific item ID. This is useful for determining which site an item belongs to.*/
     'xmc.agent.sitesGetSiteIdFromItem': {
       params: Parameters<typeof sdk.sitesGetSiteIdFromItem>[0];
       response: Awaited<ReturnType<typeof sdk.sitesGetSiteIdFromItem>>;
       subscribe: false;
     };
     /**
-     * Retrieves a list of components that are currently added to a specific page.*/
+     * Retrieves a list of components that are currently added to a specific page. Supply an optional variantId to resolve component content against a specific personalization or A/B testing variant.*/
     'xmc.agent.pagesGetComponentsOnPage': {
       params: Parameters<typeof sdk.pagesGetComponentsOnPage>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetComponentsOnPage>>;
       subscribe: false;
     };
     /**
-     * Searches all pages in a specific site by title or content. The response returns the matching pages with their details including id, path, display_name, and search_fields.*/
+     * Searches for all  pages in a specific site using a search term that matches page titles and content. The response returns the matching pages with their details including the page ID, path, and name.*/
     'xmc.agent.pagesSearchSite': {
       params: Parameters<typeof sdk.pagesSearchSite>[0];
       response: Awaited<ReturnType<typeof sdk.pagesSearchSite>>;
       subscribe: false;
     };
     /**
-     * Get the page item path corresponding to a live URL. You can use this endpoint to find the page item that corresponds to a specific live URL on your website.*/
+     * Retrieves the page item path that corresponds to a live URL on a website.*/
     'xmc.agent.pagesGetPagePathByLiveUrl': {
       params: Parameters<typeof sdk.pagesGetPagePathByLiveUrl>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetPagePathByLiveUrl>>;
       subscribe: false;
     };
     /**
-     * Captures and returns a screenshot of the specified page. This endpoint takes a screenshot of the live page and returns it as a base64-encoded image.*/
+     * Retrieves the screenshot of a specific page. This endpoint captures and returns a base64-encoded image of the live page. Supply an optional variantId to capture the screenshot for a specific personalization or A/B testing variant.*/
     'xmc.agent.pagesGetPageScreenshot': {
       params: Parameters<typeof sdk.pagesGetPageScreenshot>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetPageScreenshot>>;
       subscribe: false;
     };
     /**
-     * Retrieves the HTML content of a specific page. This endpoint returns the raw HTML of the page as it would appear in the browser.*/
+     * Retrieves the HTML content of a specific page. This endpoint returns the raw HTML of the page as it would appear in the browser. Supply an optional variantId to retrieve the HTML for a specific personalization or A/B testing variant.*/
     'xmc.agent.pagesGetPageHtml': {
       params: Parameters<typeof sdk.pagesGetPageHtml>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetPageHtml>>;
       subscribe: false;
     };
     /**
-     * Retrieves the preview URL of a specific page. This endpoint returns the URL that can be used to preview the page.*/
+     * Retrieves the preview URL of a specific page. This endpoint returns the URL that can be used to preview the page. Supply an optional variantId to obtain a preview URL scoped to a specific personalization or A/B testing variant.*/
     'xmc.agent.pagesGetPagePreviewUrl': {
       params: Parameters<typeof sdk.pagesGetPagePreviewUrl>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetPagePreviewUrl>>;
       subscribe: false;
     };
     /**
-     * Retrieves detailed information about a specific page template, including its fields and settings. Use this endpoint to understand the structure and available fields of a template before creating pages.*/
+     * Retrieves the details of a specific page template, including its fields and settings. Use this endpoint to understand the structure and available fields of a template before creating a page.*/
     'xmc.agent.pagesGetPageTemplateById': {
       params: Parameters<typeof sdk.pagesGetPageTemplateById>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetPageTemplateById>>;
       subscribe: false;
     };
     /**
-     * Retrieves comprehensive information about a page including its layout, components, placeholders, and available actions. This endpoint provides all the information needed to understand and modify a page.*/
+     * Retrieves the details about a page including its ID, name, and path location. This endpoint provides the information you need to understand and modify the page's structure.*/
     'xmc.agent.pagesGetPage': {
       params: Parameters<typeof sdk.pagesGetPage>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetPage>>;
       subscribe: false;
     };
     /**
-     * Retrieves a list of components that are allowed to be added to a specific placeholder on a page. This helps ensure only compatible components are added to each placeholder. You can use * to fetch all components.*/
+     * Retrieves the list of components that can be added to a specific placeholder on a page. This ensures only compatible components are used in each placeholder. You can use * to fetch all components. Supply an optional variantId to resolve allowed components against a specific personalization or A/B testing variant.*/
     'xmc.agent.pagesGetAllowedComponentsByPlaceholder': {
       params: Parameters<typeof sdk.pagesGetAllowedComponentsByPlaceholder>[0];
       response: Awaited<ReturnType<typeof sdk.pagesGetAllowedComponentsByPlaceholder>>;
       subscribe: false;
     };
     /**
-     * Retrieves detailed information about a specific content item using its unique identifier.*/
+     * Retrieves the details of a specific content item by specifying its ID.*/
     'xmc.agent.contentGetContentItemById': {
       params: Parameters<typeof sdk.contentGetContentItemById>[0];
       response: Awaited<ReturnType<typeof sdk.contentGetContentItemById>>;
       subscribe: false;
     };
     /**
-     * Retrieves detailed information about a content item using its path in the content tree.*/
+     * Retrieves the details of a content item by specifying its path in the content tree.*/
     'xmc.agent.contentGetContentItemByPath': {
       params: Parameters<typeof sdk.contentGetContentItemByPath>[0];
       response: Awaited<ReturnType<typeof sdk.contentGetContentItemByPath>>;
       subscribe: false;
     };
     /**
-     * Retrieves the available content templates that can be inserted as child items under the specified parent item.*/
+     * Retrieves a list of content templates that can be inserted as child items under the specified parent item.*/
     'xmc.agent.contentListAvailableInsertoptions': {
       params: Parameters<typeof sdk.contentListAvailableInsertoptions>[0];
       response: Awaited<ReturnType<typeof sdk.contentListAvailableInsertoptions>>;
       subscribe: false;
     };
     /**
-     * Searches for available datasources that can be used with a specific component. This helps find existing content items that can serve as datasources.*/
+     * Searches for available datasources that can be used with a specific component. This helps you find existing content to use as datasources.*/
     'xmc.agent.componentsSearchComponentDatasources': {
       params: Parameters<typeof sdk.componentsSearchComponentDatasources>[0];
       response: Awaited<ReturnType<typeof sdk.componentsSearchComponentDatasources>>;
       subscribe: false;
     };
     /**
-     * Retrieves a list of all available components for a specific site. This includes both built-in components and custom components that can be used in pages.*/
+     * Retrieves a list of components available for a specific site, including both built-in components and custom components that can be used on pages.*/
     'xmc.agent.componentsListComponents': {
       params: Parameters<typeof sdk.componentsListComponents>[0];
       response: Awaited<ReturnType<typeof sdk.componentsListComponents>>;
       subscribe: false;
     };
     /**
-     * Retrieves detailed information about a specific component including its fields, datasource requirements, and configuration options.*/
+     * Retrieves the details of a specific component, including its ID, name, and datasource options.*/
     'xmc.agent.componentsGetComponent': {
       params: Parameters<typeof sdk.componentsGetComponent>[0];
       response: Awaited<ReturnType<typeof sdk.componentsGetComponent>>;
       subscribe: false;
     };
     /**
-     * Searches for digital assets based on query terms, file types, or tags. Returns a list of matching assets with their metadata and download URLs.*/
+     * Searches for digital assets such as videos, images, and documents using query terms, file types, or tags.*/
     'xmc.agent.assetsSearchAssets': {
       params: Parameters<typeof sdk.assetsSearchAssets>[0];
       response: Awaited<ReturnType<typeof sdk.assetsSearchAssets>>;
       subscribe: false;
     };
     /**
-     * Retrieves detailed information about a specific digital asset including its metadata, file properties, and usage information.*/
+     * Retrieves the details of a specific digital asset by specifying its ID.*/
     'xmc.agent.assetsGetAssetInformation': {
       params: Parameters<typeof sdk.assetsGetAssetInformation>[0];
       response: Awaited<ReturnType<typeof sdk.assetsGetAssetInformation>>;
@@ -160,6 +160,13 @@ declare module '@sitecore-marketplace-sdk/client' {
     };
     /**
      * Retrieves all personalization versions configured for a specific page, including their targeting rules and content variations.*/
+    'xmc.agent.personalizationGetPersonalizationVersionsByPageV1': {
+      params: Parameters<typeof sdk.personalizationGetPersonalizationVersionsByPageV1>[0];
+      response: Awaited<ReturnType<typeof sdk.personalizationGetPersonalizationVersionsByPageV1>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves all personalization variants defined for a specific page, including IDs, names, creation dates, and associated variants.*/
     'xmc.agent.personalizationGetPersonalizationVersionsByPage': {
       params: Parameters<typeof sdk.personalizationGetPersonalizationVersionsByPage>[0];
       response: Awaited<ReturnType<typeof sdk.personalizationGetPersonalizationVersionsByPage>>;
@@ -173,21 +180,84 @@ declare module '@sitecore-marketplace-sdk/client' {
       subscribe: false;
     };
     /**
-     * Returns a condition template by ID and its parameters for creating a personalization variant on a page*/
+     * Retrieves a condition template by ID including its parameters for creating a personalization variant on a page.*/
     'xmc.agent.personalizationGetConditionTemplateById': {
       params: Parameters<typeof sdk.personalizationGetConditionTemplateById>[0];
       response: Awaited<ReturnType<typeof sdk.personalizationGetConditionTemplateById>>;
       subscribe: false;
     };
     /**
-     * Retrieves the details of the specified job.*/
+     * Retrieves the flow definitions for a specific page, including the structure, variants, and configuration details.*/
+    'xmc.agent.flowsListFlowDefinitionsByPage': {
+      params: Parameters<typeof sdk.flowsListFlowDefinitionsByPage>[0];
+      response: Awaited<ReturnType<typeof sdk.flowsListFlowDefinitionsByPage>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves the flow definition for a specific flow, including the structure, variants, and configuration details.*/
+    'xmc.agent.flowsGetFlowDefinition': {
+      params: Parameters<typeof sdk.flowsGetFlowDefinition>[0];
+      response: Awaited<ReturnType<typeof sdk.flowsGetFlowDefinition>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves the details of a specific variant for a given flow, including its datasource and components.*/
+    'xmc.agent.flowsGetVariant': {
+      params: Parameters<typeof sdk.flowsGetVariant>[0];
+      response: Awaited<ReturnType<typeof sdk.flowsGetVariant>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves all brand kits available within an organization.*/
+    'xmc.agent.brandkitsListBrandkits': {
+      params: Parameters<typeof sdk.brandkitsListBrandkits>[0];
+      response: Awaited<ReturnType<typeof sdk.brandkitsListBrandkits>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves a brand kit by ID, including its sections and associated fields (subsections).*/
+    'xmc.agent.brandkitsGetBrandkitById': {
+      params: Parameters<typeof sdk.brandkitsGetBrandkitById>[0];
+      response: Awaited<ReturnType<typeof sdk.brandkitsGetBrandkitById>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves a list of all available brief types, including their metadata and field definitions such as field types, labels, validation rules, and other information used by AI when generating briefs.*/
+    'xmc.agent.listBriefTypes': {
+      params: Parameters<typeof sdk.listBriefTypes>[0];
+      response: Awaited<ReturnType<typeof sdk.listBriefTypes>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves a paginated list of all briefs.*/
+    'xmc.agent.listBriefs': {
+      params: Parameters<typeof sdk.listBriefs>[0];
+      response: Awaited<ReturnType<typeof sdk.listBriefs>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves a single brief type by its ID, including its field definitions and audit metadata.*/
+    'xmc.agent.getBriefTypeById': {
+      params: Parameters<typeof sdk.getBriefTypeById>[0];
+      response: Awaited<ReturnType<typeof sdk.getBriefTypeById>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves a single brief by its ID, including its fields, type reference, and audit metadata.*/
+    'xmc.agent.getBriefById': {
+      params: Parameters<typeof sdk.getBriefById>[0];
+      response: Awaited<ReturnType<typeof sdk.getBriefById>>;
+      subscribe: false;
+    };
+    /**
+     * Retrieves the details of a specific job.*/
     'xmc.agent.jobsGetJob': {
       params: Parameters<typeof sdk.jobsGetJob>[0];
       response: Awaited<ReturnType<typeof sdk.jobsGetJob>>;
       subscribe: false;
     };
     /**
-     * Retrieves the operations associated with the specified job.*/
+     * Retrieves a list of actions associated with a specific job ID, including operation type, status, and timestamps, to support tracing and potential reversion of those actions.*/
     'xmc.agent.jobsListOperations': {
       params: Parameters<typeof sdk.jobsListOperations>[0];
       response: Awaited<ReturnType<typeof sdk.jobsListOperations>>;
@@ -199,73 +269,140 @@ declare module '@sitecore-marketplace-sdk/client' {
 declare module '@sitecore-marketplace-sdk/client' {
   interface MutationMap {
     /**
-     * Creates a new page in the specified location with the given template, fields, and language. The page is created as a child of the specified parent page.*/
+     * Creates a new page using the specified template under the parent page. You can set field values and the language for the new page.*/
     'xmc.agent.pagesCreatePage': {
       params: Parameters<typeof sdk.pagesCreatePage>[0];
       response: Awaited<ReturnType<typeof sdk.pagesCreatePage>>;
     };
     /**
-     * Creates a language version of an existing page. This allows you to have the same page content available in multiple languages.*/
+     * Adds a new language version for an existing page. This allows you to have the same page content available in multiple languages.*/
     'xmc.agent.pagesAddLanguageToPage': {
       params: Parameters<typeof sdk.pagesAddLanguageToPage>[0];
       response: Awaited<ReturnType<typeof sdk.pagesAddLanguageToPage>>;
     };
     /**
-     * Adds a component to a specific placeholder on a page. You can optionally specify a datasource for the component or create a new one.*/
+     * Adds a component to a specific placeholder on a page. You can specify the component type, placeholder location, and configure its initial settings. Optionally, you can specify its position relative to an existing component.*/
     'xmc.agent.pagesAddComponentOnPage': {
       params: Parameters<typeof sdk.pagesAddComponentOnPage>[0];
       response: Awaited<ReturnType<typeof sdk.pagesAddComponentOnPage>>;
     };
     /**
-     * Set component datasource*/
+     * Sets the datasource for a specific component on a page. Supply an optional variantId in the request body to update the datasource for a specific personalization variant rule rather than the base rendering.*/
     'xmc.agent.pagesSetComponentDatasource': {
       params: Parameters<typeof sdk.pagesSetComponentDatasource>[0];
       response: Awaited<ReturnType<typeof sdk.pagesSetComponentDatasource>>;
     };
     /**
-     * Creates a new content item with the specified template, fields, and location.*/
+     * Creates a new content item using the specified template and field values.*/
     'xmc.agent.contentCreateContentItem': {
       params: Parameters<typeof sdk.contentCreateContentItem>[0];
       response: Awaited<ReturnType<typeof sdk.contentCreateContentItem>>;
     };
     /**
-     * Deletes a content item and optionally all its child items.*/
+     * Deletes a content item and optionally all of its child items.*/
     'xmc.agent.contentDeleteContent': {
       params: Parameters<typeof sdk.contentDeleteContent>[0];
       response: Awaited<ReturnType<typeof sdk.contentDeleteContent>>;
     };
     /**
-     * Updates comprehensive information about a content item including its fields and metadata.*/
+     * Updates an existing content item, including its fields and language.*/
     'xmc.agent.contentUpdateContent': {
       params: Parameters<typeof sdk.contentUpdateContent>[0];
       response: Awaited<ReturnType<typeof sdk.contentUpdateContent>>;
     };
     /**
-     * Creates a new datasource item for a specific component with the provided field values. The datasource will be created in the appropriate location based on the component's configuration.*/
+     * Creates a new datasource item for a specific component using the provided data field values. The datasource will be created in the appropriate location based on the component's configuration.*/
     'xmc.agent.componentsCreateComponentDatasource': {
       params: Parameters<typeof sdk.componentsCreateComponentDatasource>[0];
       response: Awaited<ReturnType<typeof sdk.componentsCreateComponentDatasource>>;
     };
     /**
-     * Uploads a new digital asset to the system. The asset will be processed and stored in the specified location with the provided metadata.*/
+     * Uploads a new digital asset to the system and stores it with the provided metadata.*/
     'xmc.agent.assetsUploadAsset': {
       params: Parameters<typeof sdk.assetsUploadAsset>[0];
       response: Awaited<ReturnType<typeof sdk.assetsUploadAsset>>;
     };
     /**
-     * Updates the metadata and properties of an existing digital asset. This allows you to modify asset information such as alt text, titles, and custom field values.*/
+     * Updates the metadata and properties of an existing digital asset, such as alt text, description, and tags.*/
     'xmc.agent.assetsUpdateAsset': {
       params: Parameters<typeof sdk.assetsUpdateAsset>[0];
       response: Awaited<ReturnType<typeof sdk.assetsUpdateAsset>>;
     };
     /**
-     * Creates a new personalization definition with one or more variants.*/
+     * Creates a new A/B test for a specific component on a page. The test will allow you to compare different versions of the component to determine which performs better.*/
+    'xmc.agent.experimentsCreateComponentAbTest': {
+      params: Parameters<typeof sdk.experimentsCreateComponentAbTest>[0];
+      response: Awaited<ReturnType<typeof sdk.experimentsCreateComponentAbTest>>;
+    };
+    /**
+     * Updates an existing A/B experiment.*/
+    'xmc.agent.experimentsUpdateAbTest': {
+      params: Parameters<typeof sdk.experimentsUpdateAbTest>[0];
+      response: Awaited<ReturnType<typeof sdk.experimentsUpdateAbTest>>;
+    };
+    /**
+     * Creates a new personalization variant of a page using a single condition template and parameters.*/
+    'xmc.agent.personalizationCreatePersonalizationVersionV1': {
+      params: Parameters<typeof sdk.personalizationCreatePersonalizationVersionV1>[0];
+      response: Awaited<ReturnType<typeof sdk.personalizationCreatePersonalizationVersionV1>>;
+    };
+    /**
+     * Creates a new personalization variant of a page, enabling you to define targeting rules for different audiences.*/
     'xmc.agent.personalizationCreatePersonalizationVersion': {
       params: Parameters<typeof sdk.personalizationCreatePersonalizationVersion>[0];
       response: Awaited<ReturnType<typeof sdk.personalizationCreatePersonalizationVersion>>;
     };
     /**
-     * Reverts the operations of the specified job.*/
+     * Updates the audience name, variant name, and targeting rules of an existing personalization version.*/
+    'xmc.agent.personalizationUpdatePersonalizationVersion': {
+      params: Parameters<typeof sdk.personalizationUpdatePersonalizationVersion>[0];
+      response: Awaited<ReturnType<typeof sdk.personalizationUpdatePersonalizationVersion>>;
+    };
+    /**
+     * Hides a component on the default page variant by adding a personalization rule with HideRenderingAction. This endpoint only works with the Default variant.*/
+    'xmc.agent.personalizationHideComponentOnDefaultPage': {
+      params: Parameters<typeof sdk.personalizationHideComponentOnDefaultPage>[0];
+      response: Awaited<ReturnType<typeof sdk.personalizationHideComponentOnDefaultPage>>;
+    };
+    /**
+     * Resets all personalization and A/B test configurations for a component variant in a flow. Provide pageId, componentId, and variantId in the request body. When variantId is omitted, resets the Default variant.*/
+    'xmc.agent.flowsResetComponentVariant': {
+      params: Parameters<typeof sdk.flowsResetComponentVariant>[0];
+      response: Awaited<ReturnType<typeof sdk.flowsResetComponentVariant>>;
+    };
+    /**
+     * Sets up a specific variant for a given flow using the provided variant strategy.*/
+    'xmc.agent.flowsSetupVariant': {
+      params: Parameters<typeof sdk.flowsSetupVariant>[0];
+      response: Awaited<ReturnType<typeof sdk.flowsSetupVariant>>;
+    };
+    /**
+     * Creates a brief using the specified brief type ID, locale, and provided data fields. The new brief is saved as a draft in the Brief management tool.*/
+    'xmc.agent.briefCreateBrief': {
+      params: Parameters<typeof sdk.briefCreateBrief>[0];
+      response: Awaited<ReturnType<typeof sdk.briefCreateBrief>>;
+    };
+    /**
+     * Generates a brief and the content of its fields, using the specified brief type, brand kit, and prompt. This endpoint does not save the generated brief. You can copy the response and use the Create a brief endpoint to save it in the Brief management tool.*/
+    'xmc.agent.briefsGenerateBrief': {
+      params: Parameters<typeof sdk.briefsGenerateBrief>[0];
+      response: Awaited<ReturnType<typeof sdk.briefsGenerateBrief>>;
+    };
+    /**
+         * Generates a brief and the content of its fields, using the specified brief type, brand kit, and prompt. This endpoint does not save the generated brief. You can copy the response and use the Create a brief endpoint to save it in the Brief management tool.
+        This path is kept for backward compatibility and will be removed on 2026-09-20. Please migrate to `POST /api/v1/brief/generate`.*/
+    'xmc.agent.briefsGenerateBriefDeprecated': {
+      params: Parameters<typeof sdk.briefsGenerateBriefDeprecated>[0];
+      response: Awaited<ReturnType<typeof sdk.briefsGenerateBriefDeprecated>>;
+    };
+    /**
+     * Updates an existing brief by its ID.*/
+    'xmc.agent.briefUpdateBrief': {
+      params: Parameters<typeof sdk.briefUpdateBrief>[0];
+      response: Awaited<ReturnType<typeof sdk.briefUpdateBrief>>;
+    };
+    /**
+     * Reverts the operations linked to a specific job ID, restoring the state prior to execution. This is useful for undoing changes made by automated processes.*/
     'xmc.agent.jobsRevertJob': {
       params: Parameters<typeof sdk.jobsRevertJob>[0];
       response: Awaited<ReturnType<typeof sdk.jobsRevertJob>>;

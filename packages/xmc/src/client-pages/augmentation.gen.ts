@@ -130,5 +130,17 @@ declare module '@sitecore-marketplace-sdk/client' {
       params: Parameters<typeof sdk.deletePageVersions>[0];
       response: Awaited<ReturnType<typeof sdk.deletePageVersions>>;
     };
+    /**
+     * Returns currently active personalization variants for the requested pages.*/
+    'xmc.pages.aggregateLivePageVariants': {
+      params: Parameters<typeof sdk.aggregateLivePageVariants>[0];
+      response: Awaited<ReturnType<typeof sdk.aggregateLivePageVariants>>;
+    };
+    /**
+     * Aggregates data about multiple pages and their components.*/
+    'xmc.pages.aggregatePageData': {
+      params: Parameters<typeof sdk.aggregatePageData>[0];
+      response: Awaited<ReturnType<typeof sdk.aggregatePageData>>;
+    };
   }
 }

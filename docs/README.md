@@ -22,6 +22,7 @@ Extended Marketplace Client package with API access and experimental features.
 
 - [XMC Module Documentation](./modules/xmc/README.md)
 - [experimental_XMC Documentation](./experimental-xmc.md) - Server-to-server API access
+- XMC Feature Flags API namespace
 
 ## 🎯 Use Cases
 

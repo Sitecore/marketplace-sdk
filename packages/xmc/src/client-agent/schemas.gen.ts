@@ -6,19 +6,27 @@ export const AddComponentRequestSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Componentrenderingid',
+      description: 'The unique identifier of the component rendering definition.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
     },
     placeholderPath: {
       type: 'string',
       title: 'Placeholderpath',
+      description: 'The path of the placeholder where the component will be placed.',
+      example: '/main/content',
     },
     componentItemName: {
       type: 'string',
       title: 'Componentitemname',
+      description: 'The name of the component item to create.',
+      example: 'New sidebar component',
     },
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The language code for the component.',
       default: 'en',
+      example: 'en',
     },
     fields: {
       anyOf: [
@@ -31,6 +39,37 @@ export const AddComponentRequestSchema = {
         },
       ],
       title: 'Fields',
+      description: 'Field values to set on the component or its datasource.',
+    },
+    insertBeforeComponentId: {
+      anyOf: [
+        {
+          type: 'string',
+          format: 'uuid',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Insertbeforecomponentid',
+      description:
+        'The unique identifier of the component before which the new component will be inserted.',
+      example: '9c6d53e3-fe57-4638-af7b-6d68304c7a94',
+    },
+    insertAfterComponentId: {
+      anyOf: [
+        {
+          type: 'string',
+          format: 'uuid',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Insertaftercomponentid',
+      description:
+        'The unique identifier of the component after which the new component will be inserted.',
+      example: '9c6d53e3-fe57-4638-af7b-6d68304c7a94',
     },
   },
   type: 'object',
@@ -44,11 +83,15 @@ export const AddComponentResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Componentid',
+      description: 'The unique identifier of the newly added component.',
+      example: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
     },
     pageId: {
       type: 'string',
       format: 'uuid',
       title: 'Pageid',
+      description: 'The unique identifier of the page to which the component was added.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     placeholderId: {
       anyOf: [
@@ -60,6 +103,8 @@ export const AddComponentResponseSchema = {
         },
       ],
       title: 'Placeholderid',
+      description: 'The unique identifier of the placeholder where the component was placed.',
+      example: '123e4567-e89b-12d3-a456-426614174000',
     },
     datasourceId: {
       anyOf: [
@@ -72,6 +117,8 @@ export const AddComponentResponseSchema = {
         },
       ],
       title: 'Datasourceid',
+      description: 'The unique identifier of the datasource used by the component, if applicable.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
   },
   type: 'object',
@@ -84,7 +131,9 @@ export const AddLanguageRequestSchema = {
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The language code of the new version to add.',
       default: 'en',
+      example: 'en',
     },
   },
   type: 'object',
@@ -96,6 +145,8 @@ export const AddLanguageResponseSchema = {
     success: {
       type: 'boolean',
       title: 'Success',
+      description: 'Whether the language version was added successfully.',
+      example: true,
     },
   },
   type: 'object',
@@ -108,11 +159,15 @@ export const AllowedChildTemplateModelSchema = {
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the allowed child template.',
+      example: 'Full Width Page',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the allowed child template.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
   },
   type: 'object',
@@ -132,6 +187,8 @@ export const AssetInformationMetadataSchema = {
         },
       ],
       title: 'Width',
+      description: 'The width of the asset in pixels, or null if not applicable.',
+      example: 1920,
     },
     height: {
       anyOf: [
@@ -143,6 +200,8 @@ export const AssetInformationMetadataSchema = {
         },
       ],
       title: 'Height',
+      description: 'The height of the asset in pixels, or null if not applicable.',
+      example: 1080,
     },
     format: {
       anyOf: [
@@ -154,6 +213,8 @@ export const AssetInformationMetadataSchema = {
         },
       ],
       title: 'Format',
+      description: 'The file format of the asset (e.g., jpg, png), or null if not applicable.',
+      example: 'jpg',
     },
     alt_text: {
       anyOf: [
@@ -165,6 +226,8 @@ export const AssetInformationMetadataSchema = {
         },
       ],
       title: 'Alt Text',
+      description: 'Alternative text for the asset, or null if not provided.',
+      example: 'A beautiful sunset over the mountains.',
     },
   },
   type: 'object',
@@ -177,6 +240,8 @@ export const AssetInformationResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the asset.',
+      example: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
     },
     name: {
       anyOf: [
@@ -188,6 +253,8 @@ export const AssetInformationResponseSchema = {
         },
       ],
       title: 'Name',
+      description: 'The name of the asset.',
+      example: 'Sample Image',
     },
     type: {
       anyOf: [
@@ -199,6 +266,8 @@ export const AssetInformationResponseSchema = {
         },
       ],
       title: 'Type',
+      description: 'The type of asset, for example, image or document.',
+      example: 'image',
     },
     url: {
       anyOf: [
@@ -210,6 +279,8 @@ export const AssetInformationResponseSchema = {
         },
       ],
       title: 'Url',
+      description: 'The URL where the asset can be accessed.',
+      example: 'https://example.com/assets/a1b2c3d4-e5f6-7890-abcd-ef1234567890',
     },
     size: {
       anyOf: [
@@ -221,6 +292,8 @@ export const AssetInformationResponseSchema = {
         },
       ],
       title: 'Size',
+      description: 'The size of the asset in bytes.',
+      example: 204800,
     },
     metadata: {
       anyOf: [
@@ -231,6 +304,7 @@ export const AssetInformationResponseSchema = {
           type: 'null',
         },
       ],
+      description: 'Additional metadata about the asset.',
     },
     innerItem: {
       anyOf: [
@@ -241,6 +315,7 @@ export const AssetInformationResponseSchema = {
           type: 'null',
         },
       ],
+      description: 'Details about the inner item if the asset is a container item.',
     },
   },
   type: 'object',
@@ -260,6 +335,8 @@ export const AssetMetadataModelSchema = {
         },
       ],
       title: 'Alt',
+      description: 'Alternative text for the asset, or null if not provided.',
+      example: 'A beautiful sunset over the mountains.',
     },
     width: {
       anyOf: [
@@ -271,6 +348,8 @@ export const AssetMetadataModelSchema = {
         },
       ],
       title: 'Width',
+      description: 'The width of the asset in pixels, or null if not applicable.',
+      example: 1920,
     },
     height: {
       anyOf: [
@@ -282,6 +361,8 @@ export const AssetMetadataModelSchema = {
         },
       ],
       title: 'Height',
+      description: 'The height of the asset in pixels, or null if not applicable.',
+      example: 1080,
     },
     extension: {
       anyOf: [
@@ -293,6 +374,8 @@ export const AssetMetadataModelSchema = {
         },
       ],
       title: 'Extension',
+      description: 'The file extension of the asset (e.g., jpg, png), or null if not applicable.',
+      example: 'jpg',
     },
     size: {
       anyOf: [
@@ -304,6 +387,8 @@ export const AssetMetadataModelSchema = {
         },
       ],
       title: 'Size',
+      description: 'The size of the asset in bytes, or null if not applicable.',
+      example: 204800,
     },
     description: {
       anyOf: [
@@ -315,6 +400,8 @@ export const AssetMetadataModelSchema = {
         },
       ],
       title: 'Description',
+      description: 'A description of the asset, or null if not provided.',
+      example: 'This is a sample image used for demonstration purposes.',
     },
   },
   type: 'object',
@@ -327,14 +414,20 @@ export const AssetSearchResultModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the asset.',
+      example: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path of the asset in the content tree.',
+      example: '/sitecore/media library/Images/Sample Image',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the asset.',
+      example: 'Sample Image',
     },
     displayName: {
       anyOf: [
@@ -346,6 +439,8 @@ export const AssetSearchResultModelSchema = {
         },
       ],
       title: 'Displayname',
+      description: 'The display name of the asset, or null if not set.',
+      example: 'Sample Image Display Name',
     },
     type: {
       anyOf: [
@@ -357,15 +452,21 @@ export const AssetSearchResultModelSchema = {
         },
       ],
       title: 'Type',
+      description: 'The type of asset such as image or document.',
+      example: 'image',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template used by the asset.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     templateName: {
       type: 'string',
       title: 'Templatename',
+      description: 'The name of the template used by the asset.',
+      example: 'Image',
     },
     innerItem: {
       anyOf: [
@@ -376,6 +477,7 @@ export const AssetSearchResultModelSchema = {
           type: 'null',
         },
       ],
+      description: 'Metadata about the asset.',
     },
   },
   type: 'object',
@@ -387,7 +489,7 @@ export const Body_assets_upload_assetSchema = {
   properties: {
     file: {
       type: 'string',
-      format: 'binary',
+      contentMediaType: 'application/octet-stream',
       title: 'File',
     },
     upload_request: {
@@ -420,29 +522,518 @@ export const Body_assets_upload_assetSchema = {
   title: 'Body_assets-upload_asset',
 } as const;
 
+export const BooleanConfigSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'Boolean',
+      title: 'Type',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description:
+        'The name of the field. Must be alphanumeric with no spaces or special characters.',
+      example: 'TargetAudience',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description:
+        'The display label of the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Target audience',
+      },
+    },
+    helpText: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Helptext',
+      description: 'The help text for the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Describe the target audience for the content.',
+      },
+    },
+    required: {
+      type: 'boolean',
+      title: 'Required',
+      description: 'Whether the field is required.',
+      example: true,
+    },
+    aiEditable: {
+      type: 'boolean',
+      title: 'Aieditable',
+      description: 'Whether the field is editable by AI.',
+      example: false,
+    },
+    aiIntent: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aiintent',
+      description: 'The AI intent associated with the field.',
+      example: 'This field should be used to adapt language and tone for the intended audience.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'name', 'label', 'helpText', 'required', 'aiEditable'],
+  title: 'BooleanConfig',
+} as const;
+
+export const BooleanFieldValueSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'Boolean',
+      title: 'Type',
+      description: 'The type of field in the brief type.',
+    },
+    value: {
+      type: 'boolean',
+      title: 'Value',
+      description: 'The value of the field.',
+      example: true,
+    },
+  },
+  type: 'object',
+  required: ['type', 'value'],
+  title: 'BooleanFieldValue',
+  description: 'Boolean field value',
+} as const;
+
+export const BriefFieldValueSchema = {
+  properties: {
+    label: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Label',
+      description: 'The display label for the field.',
+      example: 'Objectives',
+    },
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of field in the brief.',
+      example: 'RichText',
+    },
+    value: {
+      title: 'Value',
+      description: 'The generated content for the field.',
+      example:
+        'The holiday campaign aims to inspire and empower audiences to embrace a healthier and more energetic lifestyle.',
+    },
+  },
+  additionalProperties: true,
+  type: 'object',
+  required: ['type', 'value'],
+  title: 'BriefFieldValue',
+  description: 'Model for individual brief field values.',
+} as const;
+
+export const BriefTypeLinkSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      title: 'Type',
+    },
+    relatedType: {
+      type: 'string',
+      title: 'Relatedtype',
+    },
+    id: {
+      type: 'string',
+      title: 'Id',
+    },
+    uri: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Uri',
+    },
+  },
+  type: 'object',
+  required: ['type', 'relatedType', 'id'],
+  title: 'BriefTypeLink',
+} as const;
+
+export const BriefTypeModelSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      title: 'Id',
+      description: 'The unique UUID of the brief type.',
+      example: 'f2657200-e881-4027-8ddf-a9810eb9d177',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brief type.',
+      example: 'travel_campaigns',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description: 'The label of the brief type, which can be localized for different languages.',
+      example: {
+        'en-us': 'Travel campaigns',
+      },
+    },
+    icon: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Icon',
+      description:
+        'The name of the icon associated with the brief type, which is used to visually represent the brief type in the UI.',
+      example: 'mdiFileDocumentOutline',
+    },
+    iconColor: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Iconcolor',
+      description: 'The color of the icon associated with the brief type.',
+      example: 'primary',
+    },
+    description: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Description',
+      description: 'The description of the brief type.',
+      example: 'Briefs used for planning and executing travel marketing campaigns.',
+    },
+    fields: {
+      items: {
+        oneOf: [
+          {
+            $ref: '#/components/schemas/SimpleTextConfig',
+          },
+          {
+            $ref: '#/components/schemas/RichTextConfig',
+          },
+          {
+            $ref: '#/components/schemas/TimelineConfig',
+          },
+          {
+            $ref: '#/components/schemas/BudgetConfig',
+          },
+          {
+            $ref: '#/components/schemas/DateTimeConfig',
+          },
+          {
+            $ref: '#/components/schemas/BooleanConfig',
+          },
+        ],
+        discriminator: {
+          propertyName: 'type',
+          mapping: {
+            Boolean: '#/components/schemas/BooleanConfig',
+            Budget: '#/components/schemas/BudgetConfig',
+            DateTime: '#/components/schemas/DateTimeConfig',
+            RichText: '#/components/schemas/RichTextConfig',
+            SimpleText: '#/components/schemas/SimpleTextConfig',
+            Timeline: '#/components/schemas/TimelineConfig',
+          },
+        },
+      },
+      type: 'array',
+      title: 'Fields',
+      description:
+        'The list of fields that belong to this brief type, including their configurations and metadata.',
+    },
+  },
+  type: 'object',
+  required: ['id', 'name', 'label', 'fields'],
+  title: 'BriefTypeModel',
+} as const;
+
+export const BudgetConfigSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'Budget',
+      title: 'Type',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description:
+        'The name of the field. Must be alphanumeric with no spaces or special characters.',
+      example: 'TargetAudience',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description:
+        'The display label of the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Target audience',
+      },
+    },
+    helpText: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Helptext',
+      description: 'The help text for the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Describe the target audience for the content.',
+      },
+    },
+    required: {
+      type: 'boolean',
+      title: 'Required',
+      description: 'Whether the field is required.',
+      example: true,
+    },
+    aiEditable: {
+      type: 'boolean',
+      title: 'Aieditable',
+      description: 'Whether the field is editable by AI.',
+      example: false,
+    },
+    aiIntent: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aiintent',
+      description: 'The AI intent associated with the field.',
+      example: 'This field should be used to adapt language and tone for the intended audience.',
+    },
+    currencies: {
+      items: {
+        type: 'string',
+      },
+      type: 'array',
+      title: 'Currencies',
+      description:
+        'A list of allowed currencies for the budget field, specified as ISO currency codes.',
+      example: ['USD', 'EUR'],
+    },
+  },
+  type: 'object',
+  required: ['type', 'name', 'label', 'helpText', 'required', 'aiEditable', 'currencies'],
+  title: 'BudgetConfig',
+} as const;
+
+export const BudgetFieldValueSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'Budget',
+      title: 'Type',
+      description: "The type of the field value, which is always 'Budget' for this schema.",
+    },
+    value: {
+      $ref: '#/components/schemas/BudgetValue',
+      description: 'The budget amount and currency.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'value'],
+  title: 'BudgetFieldValue',
+  description: 'Budget field value',
+} as const;
+
+export const BudgetValueSchema = {
+  properties: {
+    amount: {
+      type: 'number',
+      title: 'Amount',
+      description: 'The numeric amount of the budget.',
+      example: 10000,
+    },
+    currency: {
+      type: 'string',
+      title: 'Currency',
+      description: 'The ISO currency code for the budget amount.',
+      example: 'USD',
+    },
+  },
+  type: 'object',
+  required: ['amount', 'currency'],
+  title: 'BudgetValue',
+  description: 'Budget field value',
+} as const;
+
+export const ChildContentItemResponseSchema = {
+  properties: {
+    itemId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Itemid',
+      description: 'The unique identifier of the content item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the content item.',
+      example: 'New Article',
+    },
+    path: {
+      type: 'string',
+      title: 'Path',
+      description: 'The path of the content item in the content tree.',
+      example: '/sitecore/content/Skate Park/Home/New Article',
+    },
+    workflow: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/WorkflowModel',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The workflow information of the content item, or null if not in a workflow.',
+    },
+    version: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Version',
+      description: 'The version number of the content item, or null if not applicable.',
+      example: 1,
+    },
+    template: {
+      $ref: '#/components/schemas/models__content__TemplateModel',
+      description: 'The template used by the content item.',
+    },
+    fields: {
+      anyOf: [
+        {
+          additionalProperties: true,
+          type: 'object',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Fields',
+      description: 'A key-value map of field names and their values for the content item.',
+    },
+    created_at: {
+      anyOf: [
+        {
+          type: 'string',
+          format: 'date-time',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Created At',
+      description: 'The timestamp when the content item was created.',
+      example: '2025-01-15T10:30:00Z',
+    },
+    updated_at: {
+      anyOf: [
+        {
+          type: 'string',
+          format: 'date-time',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Updated At',
+      description: 'The timestamp when the content item was updated.',
+      example: '2025-01-15T10:30:00Z',
+    },
+  },
+  type: 'object',
+  required: ['itemId', 'name', 'path', 'template'],
+  title: 'ChildContentItemResponse',
+} as const;
+
 export const ComponentDetailsModelSchema = {
   properties: {
     itemId: {
       type: 'string',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the item.',
+      example: 'Promo',
     },
     displayName: {
       type: 'string',
       title: 'Displayname',
+      description: 'The display name of the item.',
+      example: 'Promotional Banner',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path to the item.',
+      example: '/sitecore/content/Home/Promotions/Banners/Promotional Banner',
     },
     template: {
       $ref: '#/components/schemas/ComponentTemplateModel',
+      description: 'The template used by the component.',
     },
     fields: {
       $ref: '#/components/schemas/ComponentFields',
+      description: 'The fields associated with the component.',
     },
   },
   type: 'object',
@@ -454,10 +1045,11 @@ export const ComponentFieldsSchema = {
   properties: {
     nodes: {
       items: {
-        $ref: '#/components/schemas/FieldModel',
+        $ref: '#/components/schemas/models__pages__FieldModel',
       },
       type: 'array',
       title: 'Nodes',
+      description: 'A list of field nodes associated with the component.',
     },
   },
   type: 'object',
@@ -470,6 +1062,8 @@ export const ComponentGroupSchema = {
     title: {
       type: 'string',
       title: 'Title',
+      description: 'The title of the component group.',
+      example: 'Dynamic Placeholders',
     },
     components: {
       items: {
@@ -477,6 +1071,7 @@ export const ComponentGroupSchema = {
       },
       type: 'array',
       title: 'Components',
+      description: 'A list of components in the group.',
     },
   },
   type: 'object',
@@ -489,23 +1084,33 @@ export const ComponentInfoSchema = {
     category: {
       type: 'string',
       title: 'Category',
+      description: 'The category of the component.',
+      example: 'Dynamic Placeholders',
     },
     displayName: {
       type: 'string',
       title: 'Displayname',
+      description: 'The display name of the component.',
+      example: 'Partial Design Dynamic Placeholder',
     },
     iconUrl: {
       type: 'string',
       title: 'Iconurl',
+      description: 'The URL of the icon representing the component.',
+      example: '/-/icon/Software/32x32/element.png.aspx',
     },
     id: {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the component.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
     },
     componentName: {
       type: 'string',
       title: 'Componentname',
+      description: 'The internal name of the component.',
+      example: 'PartialDesignDynamicPlaceholder',
     },
   },
   type: 'object',
@@ -519,15 +1124,21 @@ export const ComponentModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the component instance.',
+      example: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
     },
     componentId: {
       type: 'string',
       format: 'uuid',
       title: 'Componentid',
+      description: 'The unique identifier of the component rendering definition.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
     },
     componentName: {
       type: 'string',
       title: 'Componentname',
+      description: 'The internal name of the component.',
+      example: 'PartialDesignDynamicPlaceholder',
     },
     dataSource: {
       anyOf: [
@@ -539,6 +1150,9 @@ export const ComponentModelSchema = {
         },
       ],
       title: 'Datasource',
+      description:
+        'The unique identifier of the datasource item used by the component, or null if not applicable.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     placeholder: {
       anyOf: [
@@ -550,6 +1164,9 @@ export const ComponentModelSchema = {
         },
       ],
       title: 'Placeholder',
+      description:
+        'The path of the placeholder where the component is placed, or null if not applicable.',
+      example: '/main/content',
     },
     parameters: {
       anyOf: [
@@ -560,6 +1177,7 @@ export const ComponentModelSchema = {
           type: 'null',
         },
       ],
+      description: 'Parameters configured for the component.',
     },
     deviceId: {
       anyOf: [
@@ -572,6 +1190,9 @@ export const ComponentModelSchema = {
         },
       ],
       title: 'Deviceid',
+      description:
+        'The unique identifier of the device definition for which the component is configured, or null if not device-specific.',
+      example: '123e4567-e89b-12d3-a456-426614174000',
     },
     layoutId: {
       anyOf: [
@@ -584,6 +1205,9 @@ export const ComponentModelSchema = {
         },
       ],
       title: 'Layoutid',
+      description:
+        'The unique identifier of the layout definition in which the component is placed, or null if not applicable.',
+      example: '321e6547-e89b-12d3-a456-426614174000',
     },
     componentDetails: {
       anyOf: [
@@ -594,6 +1218,20 @@ export const ComponentModelSchema = {
           type: 'null',
         },
       ],
+      description: 'Detailed information about the component item.',
+    },
+    editable: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Editable',
+      description: 'Whether the component is editable.',
+      example: true,
     },
   },
   type: 'object',
@@ -613,6 +1251,8 @@ export const ComponentParametersModelSchema = {
         },
       ],
       title: 'Gridparameters',
+      description: 'Grid parameters for the component, or null if not applicable.',
+      example: 'col-md-6',
     },
     FieldNames: {
       anyOf: [
@@ -624,6 +1264,8 @@ export const ComponentParametersModelSchema = {
         },
       ],
       title: 'Fieldnames',
+      description: 'Field names associated with the component, or null if not applicable.',
+      example: 'Title, Description',
     },
     Styles: {
       anyOf: [
@@ -635,6 +1277,8 @@ export const ComponentParametersModelSchema = {
         },
       ],
       title: 'Styles',
+      description: 'The styles for the component, or null if not applicable.',
+      example: 'background-color: red; color: white;',
     },
     RenderingIdentifier: {
       anyOf: [
@@ -646,6 +1290,8 @@ export const ComponentParametersModelSchema = {
         },
       ],
       title: 'Renderingidentifier',
+      description: 'The unique identifier of the rendering, or null if not applicable.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
     },
     CSSStyles: {
       anyOf: [
@@ -657,6 +1303,8 @@ export const ComponentParametersModelSchema = {
         },
       ],
       title: 'Cssstyles',
+      description: 'CSS styles for the component, or null if not applicable.',
+      example: 'font-size: 16px; margin: 10px;',
     },
     DynamicPlaceholderId: {
       anyOf: [
@@ -668,6 +1316,8 @@ export const ComponentParametersModelSchema = {
         },
       ],
       title: 'Dynamicplaceholderid',
+      description: 'The identifier for dynamic placeholders, or null if not applicable.',
+      example: 'placeholder-1234',
     },
   },
   type: 'object',
@@ -680,15 +1330,29 @@ export const ComponentResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the component.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the component.',
+      example: 'Promo',
     },
     datasourceTemplateId: {
-      type: 'string',
-      format: 'uuid',
+      anyOf: [
+        {
+          type: 'string',
+          format: 'uuid',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Datasourcetemplateid',
+      description:
+        "The template ID for the component's datasource. May be None if the component has no datasource template.",
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     datasourceLocations: {
       items: {
@@ -696,10 +1360,15 @@ export const ComponentResponseSchema = {
       },
       type: 'array',
       title: 'Datasourcelocations',
+      description: "A list of locations for the component's datasource.",
+      example: ["query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']"],
     },
     datasourceTemplatePath: {
       type: 'string',
       title: 'Datasourcetemplatepath',
+      description: 'The path to the datasource template.',
+      default: '',
+      example: 'Feature/JSS Experience Accelerator/Page Content/Promo',
     },
     datasourceFields: {
       items: {
@@ -707,14 +1376,19 @@ export const ComponentResponseSchema = {
       },
       type: 'array',
       title: 'Datasourcefields',
+      description: 'A list of fields for the datasource.',
     },
     datasourceAutoGenerated: {
       type: 'boolean',
       title: 'Datasourceautogenerated',
+      description: 'Whether the datasource is auto-generated.',
+      example: false,
     },
     datasourceRequired: {
       type: 'boolean',
       title: 'Datasourcerequired',
+      description: 'Whether the datasource is required.',
+      example: true,
     },
     hasDynamicPlaceholder: {
       anyOf: [
@@ -726,19 +1400,12 @@ export const ComponentResponseSchema = {
         },
       ],
       title: 'Hasdynamicplaceholder',
+      description: 'Whether the component has a dynamic placeholder.',
+      example: true,
     },
   },
   type: 'object',
-  required: [
-    'id',
-    'name',
-    'datasourceTemplateId',
-    'datasourceLocations',
-    'datasourceTemplatePath',
-    'datasourceFields',
-    'datasourceAutoGenerated',
-    'datasourceRequired',
-  ],
+  required: ['id', 'name', 'datasourceAutoGenerated', 'datasourceRequired'],
   title: 'ComponentResponse',
 } as const;
 
@@ -748,10 +1415,14 @@ export const ComponentShortInfoSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the component.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the component.',
+      example: 'Promo',
     },
   },
   type: 'object',
@@ -765,10 +1436,14 @@ export const ComponentTemplateModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the template.',
+      example: 'Promo',
     },
   },
   type: 'object',
@@ -784,6 +1459,7 @@ export const ComponentsSchema = {
       },
       type: 'array',
       title: 'Groups',
+      description: 'A list of component groups.',
     },
     ungrouped: {
       items: {
@@ -791,6 +1467,7 @@ export const ComponentsSchema = {
       },
       type: 'array',
       title: 'Ungrouped',
+      description: 'A list of ungrouped components.',
       default: [],
     },
   },
@@ -803,6 +1480,7 @@ export const ComponentsResponseSchema = {
   properties: {
     components: {
       $ref: '#/components/schemas/Components',
+      description: 'Components available for the specified site.',
     },
   },
   type: 'object',
@@ -810,79 +1488,235 @@ export const ComponentsResponseSchema = {
   title: 'ComponentsResponse',
 } as const;
 
+export const ConditionGroupInputSchema = {
+  properties: {
+    union_type: {
+      anyOf: [
+        {
+          type: 'string',
+          enum: ['AND', 'OR'],
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Union Type',
+      description:
+        "The union type for combining conditions within the group. Either 'AND' or 'OR'. The first group should not have a union type.",
+      example: 'AND',
+    },
+    conditions: {
+      items: {
+        $ref: '#/components/schemas/ConditionInput',
+      },
+      type: 'array',
+      title: 'Conditions',
+      description: 'A list of conditions in this group.',
+    },
+  },
+  type: 'object',
+  required: ['conditions'],
+  title: 'ConditionGroupInput',
+  description: 'Represents a group of conditions with a union type',
+} as const;
+
+export const ConditionInputSchema = {
+  properties: {
+    condition_template_id: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Condition Template Id',
+      description: 'The unique identifier of the condition template to apply.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    condition_params: {
+      additionalProperties: true,
+      type: 'object',
+      title: 'Condition Params',
+      description: 'A key-value map of parameters for the condition template.',
+      example: {
+        timeOnSite: '30',
+      },
+    },
+  },
+  type: 'object',
+  required: ['condition_template_id', 'condition_params'],
+  title: 'ConditionInput',
+  description: 'Represents a single condition in a condition group',
+} as const;
+
 export const ConditionTemplateSchema = {
   properties: {
     href: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Href',
+      description: 'The URL of the condition template.',
+      example: 'https://www.example.com/condition-template',
     },
     ref: {
       type: 'string',
       title: 'Ref',
+      description: 'A reference identifier for the condition template.',
+      example: 'ConditionTemplate-12345',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the condition template.',
+      example: 'Time on Site',
     },
     modifiedByRef: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Modifiedbyref',
+      description: 'A reference identifier for the user who last modified the condition template.',
+      example: 'User-67890',
     },
     modifiedAt: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Modifiedat',
+      description: 'The timestamp when the condition template was last modified.',
+      example: '2025-01-15T10:30:00Z',
     },
     revision: {
-      type: 'integer',
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Revision',
+      description: 'The revision number of the condition template.',
+      example: 3,
     },
     archived: {
       type: 'boolean',
       title: 'Archived',
+      description: 'Whether the condition template is archived.',
+      example: false,
     },
     friendlyId: {
       type: 'string',
       title: 'Friendlyid',
+      description: 'A user-friendly identifier for the condition template.',
+      example: 'time_on_site',
     },
     type: {
       type: 'string',
       title: 'Type',
+      description: 'The type of the condition template.',
+      example: 'time-based',
     },
     status: {
       type: 'string',
       title: 'Status',
+      description: 'The status of the condition template.',
+      example: 'active',
     },
     icon: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Icon',
+      description: 'The icon representing the condition template.',
+      example: 'https://www.example.com/icons/time-on-site.png',
     },
     additionalFields: {
-      additionalProperties: true,
-      type: 'object',
+      anyOf: [
+        {
+          additionalProperties: true,
+          type: 'object',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Additionalfields',
+      description: 'A key-value map of additional fields for the condition template.',
     },
     templateElements: {
-      items: {
-        additionalProperties: true,
-        type: 'object',
-      },
-      type: 'array',
+      anyOf: [
+        {
+          items: {
+            additionalProperties: true,
+            type: 'object',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Templateelements',
+      description: 'A list of template elements for the condition template.',
     },
     defaultTemplate: {
-      type: 'boolean',
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Defaulttemplate',
+      description: 'Whether the condition template is the default.',
+      example: false,
     },
     tags: {
-      items: {
-        type: 'string',
-      },
-      type: 'array',
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Tags',
+      description: 'A list of tags associated with the condition template.',
     },
     customTemplate: {
-      type: 'boolean',
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Customtemplate',
+      description: 'Whether the condition template is custom.',
+      example: true,
     },
     clientKey: {
       anyOf: [
@@ -894,6 +1728,8 @@ export const ConditionTemplateSchema = {
         },
       ],
       title: 'Clientkey',
+      description: 'The client key for the condition template, or null if not applicable.',
+      example: 'pers123jgltUp',
     },
     description: {
       anyOf: [
@@ -905,6 +1741,8 @@ export const ConditionTemplateSchema = {
         },
       ],
       title: 'Description',
+      description: 'A description of the condition template, or null if not provided.',
+      example: 'This condition is based on the time a user spends on the site.',
     },
     revisionComment: {
       anyOf: [
@@ -916,6 +1754,9 @@ export const ConditionTemplateSchema = {
         },
       ],
       title: 'Revisioncomment',
+      description:
+        'A comment about the revision of the condition template, or null if not provided.',
+      example: 'Updated time thresholds for better accuracy.',
     },
     render: {
       anyOf: [
@@ -927,27 +1768,12 @@ export const ConditionTemplateSchema = {
         },
       ],
       title: 'Render',
+      description: 'Whether to render the condition template, or null if not applicable.',
+      example: true,
     },
   },
   type: 'object',
-  required: [
-    'href',
-    'ref',
-    'name',
-    'modifiedByRef',
-    'modifiedAt',
-    'revision',
-    'archived',
-    'friendlyId',
-    'type',
-    'status',
-    'icon',
-    'additionalFields',
-    'templateElements',
-    'defaultTemplate',
-    'tags',
-    'customTemplate',
-  ],
+  required: ['ref', 'name', 'archived', 'friendlyId', 'type', 'status'],
   title: 'ConditionTemplate',
 } as const;
 
@@ -957,14 +1783,20 @@ export const ContentItemResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the content item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the content item.',
+      example: 'New Article',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path of the content item in the content tree.',
+      example: '/sitecore/content/Skate Park/Home/New Article',
     },
     workflow: {
       anyOf: [
@@ -975,23 +1807,7 @@ export const ContentItemResponseSchema = {
           type: 'null',
         },
       ],
-    },
-    children: {
-      anyOf: [
-        {
-          additionalProperties: {
-            items: {
-              $ref: '#/components/schemas/ContentItemResponse',
-            },
-            type: 'array',
-          },
-          type: 'object',
-        },
-        {
-          type: 'null',
-        },
-      ],
-      title: 'Children',
+      description: 'The workflow information of the content item, or null if not in a workflow.',
     },
     version: {
       anyOf: [
@@ -1003,9 +1819,12 @@ export const ContentItemResponseSchema = {
         },
       ],
       title: 'Version',
+      description: 'The version number of the content item, or null if not applicable.',
+      example: 1,
     },
     template: {
       $ref: '#/components/schemas/models__content__TemplateModel',
+      description: 'The template used by the content item.',
     },
     fields: {
       anyOf: [
@@ -1018,6 +1837,7 @@ export const ContentItemResponseSchema = {
         },
       ],
       title: 'Fields',
+      description: 'A key-value map of field names and their values for the content item.',
     },
     created_at: {
       anyOf: [
@@ -1030,6 +1850,8 @@ export const ContentItemResponseSchema = {
         },
       ],
       title: 'Created At',
+      description: 'The timestamp when the content item was created.',
+      example: '2025-01-15T10:30:00Z',
     },
     updated_at: {
       anyOf: [
@@ -1042,6 +1864,25 @@ export const ContentItemResponseSchema = {
         },
       ],
       title: 'Updated At',
+      description: 'The timestamp when the content item was updated.',
+      example: '2025-01-15T10:30:00Z',
+    },
+    children: {
+      anyOf: [
+        {
+          additionalProperties: {
+            items: {
+              $ref: '#/components/schemas/ChildContentItemResponse',
+            },
+            type: 'array',
+          },
+          type: 'object',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Children',
     },
   },
   type: 'object',
@@ -1049,16 +1890,232 @@ export const ContentItemResponseSchema = {
   title: 'ContentItemResponse',
 } as const;
 
+export const CreateBriefRequestModelSchema = {
+  properties: {
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brief.',
+      example: 'New Summer Campaign Brief',
+    },
+    locale: {
+      type: 'string',
+      pattern: '^[a-zA-Z]{2}-[a-zA-Z]{2}$',
+      title: 'Locale',
+      description: 'The locale code associated with the brief, in the format xx-XX.',
+      example: 'en-us',
+    },
+    briefTypeId: {
+      type: 'string',
+      title: 'Brieftypeid',
+      description:
+        'The unique identifier of the brief type to use for generating a brief. To get this ID, you can use the List brief types endpoint to retrieve the list of brief types available in your organization.',
+      example: 'e7fe656b-178e-4ee2-86a9-ec800ff8a31d',
+    },
+    fields: {
+      anyOf: [
+        {
+          additionalProperties: {
+            oneOf: [
+              {
+                $ref: '#/components/schemas/SimpleTextFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/RichTextFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/DateTimeFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/BudgetFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/BooleanFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/TimelineFieldValue',
+              },
+            ],
+            discriminator: {
+              propertyName: 'type',
+              mapping: {
+                Boolean: '#/components/schemas/BooleanFieldValue',
+                Budget: '#/components/schemas/BudgetFieldValue',
+                DateTime: '#/components/schemas/DateTimeFieldValue',
+                RichText: '#/components/schemas/RichTextFieldValue',
+                SimpleText: '#/components/schemas/SimpleTextFieldValue',
+                Timeline: '#/components/schemas/TimelineFieldValue',
+              },
+            },
+          },
+          type: 'object',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Fields',
+      description: 'Dictionary of field names to their values.',
+      example: {
+        Objectives: {
+          type: 'RichText',
+          value: 'New product campaign launch for Summer 2026.',
+        },
+        TargetAudience: {
+          type: 'RichText',
+          value: 'Millenials',
+        },
+      },
+    },
+  },
+  type: 'object',
+  required: ['name', 'locale', 'briefTypeId'],
+  title: 'CreateBriefRequestModel',
+  description: 'Request model for creating a new brief',
+} as const;
+
+export const CreateBriefResponseModelSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      title: 'Id',
+      description: 'The unique identifier of the brief.',
+      example: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+    },
+    icon: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Icon',
+      description: 'The icon associated with the brief.',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brief.',
+      example: 'New Summer Campaign Brief',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+      description: 'The status of the brief. Draft by default.',
+      example: 'Draft',
+    },
+    locale: {
+      type: 'string',
+      title: 'Locale',
+      description: 'The locale code in the format xx-XX.',
+      example: 'en-us',
+    },
+    fields: {
+      additionalProperties: true,
+      type: 'object',
+      title: 'Fields',
+      description: 'Dictionary of field names to their values.',
+    },
+    isTemplate: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Istemplate',
+      description: 'Whether the brief is a template.',
+      example: false,
+    },
+    contributors: {
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Contributors',
+      description: 'List of contributor identifiers.',
+    },
+    createdBy: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/ExternalLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The user who created the brief.',
+    },
+    createdOn: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Createdon',
+      description: 'The ISO 8601 timestamp when the brief was created.',
+      example: '2026-01-15T10:30:00Z',
+    },
+    updatedBy: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/ExternalLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The user who last updated the brief.',
+    },
+    updatedOn: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Updatedon',
+      description: 'The ISO 8601 timestamp when the brief was last updated.',
+      example: '2026-04-01T08:00:00Z',
+    },
+  },
+  type: 'object',
+  required: ['id', 'name', 'status', 'locale', 'fields'],
+  title: 'CreateBriefResponseModel',
+} as const;
+
 export const CreateComponentDatasourceRequestSchema = {
   properties: {
     siteName: {
       type: 'string',
       title: 'Sitename',
+      description: 'The name of the site for which the datasource is created.',
+      example: 'skate-park',
     },
     dataFields: {
       additionalProperties: true,
       type: 'object',
       title: 'Datafields',
+      description: 'A key-value map of data field names and their values for the datasource.',
+      example: {
+        PromoText: 'Summer Sale',
+      },
     },
     children: {
       anyOf: [
@@ -1074,11 +2131,14 @@ export const CreateComponentDatasourceRequestSchema = {
         },
       ],
       title: 'Children',
+      description: 'A list of child datasource objects, or null if none.',
     },
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The language code for the datasource.',
       default: 'en',
+      example: 'en',
     },
   },
   type: 'object',
@@ -1092,10 +2152,14 @@ export const CreateComponentDatasourceResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Datasourceid',
+      description: 'The unique identifier of the created datasource.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     datasourceLocation: {
       type: 'string',
       title: 'Datasourcelocation',
+      description: 'The location path of the created datasource.',
+      example: '/sitecore/content/Verticals/SkatePark/Data/Promos',
     },
   },
   type: 'object',
@@ -1109,20 +2173,28 @@ export const CreateContentItemRequestSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template used to create the content item.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the content item to create.',
+      example: 'New Promo',
     },
     parentId: {
       type: 'string',
       format: 'uuid',
       title: 'Parentid',
+      description: 'The unique identifier of the parent item.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The language code for the content item.',
       default: 'en',
+      example: 'en',
     },
     fields: {
       anyOf: [
@@ -1135,6 +2207,8 @@ export const CreateContentItemRequestSchema = {
         },
       ],
       title: 'Fields',
+      description:
+        'A key-value map of field names and their values for the content item, or null if none.',
     },
   },
   type: 'object',
@@ -1148,28 +2222,107 @@ export const CreateContentItemResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the created content item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the created content item.',
+      example: 'New Promo',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path of the created content item.',
+      example:
+        '/sitecore/layout/Renderings/Feature/JSS Experience Accelerator/Page Content/Promo/New Promo',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template used for the content item.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     version: {
       type: 'integer',
       title: 'Version',
+      description: 'The version number of the created content item.',
+      example: 1,
     },
   },
   type: 'object',
   required: ['itemId', 'name', 'path', 'templateId', 'version'],
   title: 'CreateContentItemResponse',
+} as const;
+
+export const CreateExperimentRequestSchema = {
+  properties: {
+    site_id: {
+      type: 'string',
+      title: 'Site Id',
+      description: 'The unique identifier of the site.',
+      example: 'site_123',
+    },
+    page_id: {
+      type: 'string',
+      title: 'Page Id',
+      description: 'The unique identifier of the page where the experiment runs.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    language: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Language',
+      description: 'The language code for the experiment.',
+      default: 'en',
+      example: 'en',
+    },
+    component_id: {
+      type: 'string',
+      title: 'Component Id',
+      description: 'The unique identifier of the component to experiment on.',
+      example: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the experiment.',
+      example: 'Hero Banner Experiment',
+    },
+    goal_type: {
+      $ref: '#/components/schemas/GoalType',
+      description: 'The type of goal to optimize for in the experiment.',
+    },
+    targeted_pages: {
+      items: {
+        type: 'string',
+      },
+      type: 'array',
+      title: 'Targeted Pages',
+      description: 'A list of page paths to target for the experiment.',
+      example: [],
+    },
+    variants: {
+      items: {
+        $ref: '#/components/schemas/Variant',
+      },
+      type: 'array',
+      title: 'Variants',
+      description:
+        'A list of variants for the experiment. Traffic splits must sum to 100 and exactly one variant must be marked as control.',
+    },
+  },
+  type: 'object',
+  required: ['site_id', 'page_id', 'component_id', 'name', 'goal_type', 'variants'],
+  title: 'CreateExperimentRequest',
 } as const;
 
 export const CreatePageRequestSchema = {
@@ -1178,20 +2331,28 @@ export const CreatePageRequestSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the page template to be used for the new page.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the page to create.',
+      example: 'About Us',
     },
     parentId: {
       type: 'string',
       format: 'uuid',
       title: 'Parentid',
+      description: 'The unique identifier of the parent item for the new page.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The language code for the new page.',
       default: 'en',
+      example: 'en',
     },
     fields: {
       anyOf: [
@@ -1207,6 +2368,7 @@ export const CreatePageRequestSchema = {
         },
       ],
       title: 'Fields',
+      description: 'A list of field objects to set on the page, or null if none.',
     },
   },
   type: 'object',
@@ -1220,10 +2382,14 @@ export const CreatePageResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the created page.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the created page.',
+      example: 'About Us',
     },
   },
   type: 'object',
@@ -1231,11 +2397,13 @@ export const CreatePageResponseSchema = {
   title: 'CreatePageResponse',
 } as const;
 
-export const CreatePersonalizationRequestSchema = {
+export const CreatePersonalizationRequestV1Schema = {
   properties: {
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the personalization rule.',
+      example: 'Summer Sale Personalization',
     },
     language: {
       anyOf: [
@@ -1247,30 +2415,90 @@ export const CreatePersonalizationRequestSchema = {
         },
       ],
       title: 'Language',
+      description: 'The language code for the personalization rule, or null for default.',
       default: 'en',
+      example: 'en',
     },
     variant_name: {
       type: 'string',
       title: 'Variant Name',
+      description: 'The name of the personalization variant.',
+      example: 'Summer Sale Variant',
     },
     audience_name: {
       type: 'string',
       title: 'Audience Name',
+      description: 'The name of the audience for the personalization rule.',
+      example: 'Returning Customers',
     },
     condition_template_id: {
       type: 'string',
       format: 'uuid',
       title: 'Condition Template Id',
+      description: 'The unique identifier of the condition template to apply.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     condition_params: {
       additionalProperties: true,
       type: 'object',
       title: 'Condition Params',
+      description: 'A key-value map of parameters for the condition template.',
+      example: {
+        timeOnSite: '30',
+      },
     },
   },
   type: 'object',
   required: ['name', 'variant_name', 'audience_name', 'condition_template_id', 'condition_params'],
-  title: 'CreatePersonalizationRequest',
+  title: 'CreatePersonalizationRequestV1',
+} as const;
+
+export const CreatePersonalizationRequestV2Schema = {
+  properties: {
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the personalization rule.',
+      example: 'Summer Sale Personalization',
+    },
+    language: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Language',
+      description: 'The language code for the personalization rule, or null for default.',
+      default: 'en',
+      example: 'en',
+    },
+    variant_name: {
+      type: 'string',
+      title: 'Variant Name',
+      description: 'The name of the personalization variant.',
+      example: 'Summer Sale Variant',
+    },
+    audience_name: {
+      type: 'string',
+      title: 'Audience Name',
+      description: 'The name of the audience for the personalization rule.',
+      example: 'Returning Customers',
+    },
+    condition_groups: {
+      items: {
+        $ref: '#/components/schemas/ConditionGroupInput',
+      },
+      type: 'array',
+      title: 'Condition Groups',
+      description: 'List of condition groups with their conditions',
+    },
+  },
+  type: 'object',
+  required: ['name', 'variant_name', 'audience_name', 'condition_groups'],
+  title: 'CreatePersonalizationRequestV2',
 } as const;
 
 export const DatasourceFieldNodeSchema = {
@@ -1278,14 +2506,20 @@ export const DatasourceFieldNodeSchema = {
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the datasource field.',
+      example: 'PromoText',
     },
     type: {
       type: 'string',
       title: 'Type',
+      description: 'The type of datasource field.',
+      example: 'Rich Text',
     },
     validation: {
       type: 'string',
       title: 'Validation',
+      description: 'Validation rules for the datasource field.',
+      example: '',
     },
   },
   type: 'object',
@@ -1293,16 +2527,109 @@ export const DatasourceFieldNodeSchema = {
   title: 'DatasourceFieldNode',
 } as const;
 
+export const DateTimeConfigSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'DateTime',
+      title: 'Type',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description:
+        'The name of the field. Must be alphanumeric with no spaces or special characters.',
+      example: 'TargetAudience',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description:
+        'The display label of the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Target audience',
+      },
+    },
+    helpText: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Helptext',
+      description: 'The help text for the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Describe the target audience for the content.',
+      },
+    },
+    required: {
+      type: 'boolean',
+      title: 'Required',
+      description: 'Whether the field is required.',
+      example: true,
+    },
+    aiEditable: {
+      type: 'boolean',
+      title: 'Aieditable',
+      description: 'Whether the field is editable by AI.',
+      example: false,
+    },
+    aiIntent: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aiintent',
+      description: 'The AI intent associated with the field.',
+      example: 'This field should be used to adapt language and tone for the intended audience.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'name', 'label', 'helpText', 'required', 'aiEditable'],
+  title: 'DateTimeConfig',
+} as const;
+
+export const DateTimeFieldValueSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'DateTime',
+      title: 'Type',
+      description: 'The type of field in the brief type.',
+    },
+    value: {
+      type: 'string',
+      title: 'Value',
+      description: 'The value of the DateTime field.',
+      example: '2025-01-15T10:30:00Z',
+    },
+  },
+  type: 'object',
+  required: ['type', 'value'],
+  title: 'DateTimeFieldValue',
+  description: 'DateTime field value',
+} as const;
+
 export const DeleteContentResponseSchema = {
   properties: {
     success: {
       type: 'boolean',
       title: 'Success',
+      description: 'Whether the content item was deleted successfully.',
+      example: true,
     },
     deletedId: {
       type: 'string',
       format: 'uuid',
       title: 'Deletedid',
+      description: 'The unique identifier of the deleted content item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
   },
   type: 'object',
@@ -1310,108 +2637,217 @@ export const DeleteContentResponseSchema = {
   title: 'DeleteContentResponse',
 } as const;
 
-export const FieldModelSchema = {
+export const EditablePlaceholderModelSchema = {
   properties: {
-    name: {
+    placeholderPath: {
       type: 'string',
-      title: 'Name',
+      title: 'Placeholderpath',
+      description: 'The full path of the placeholder.',
+      example: '/headless-main/container-thirty-center-1',
     },
-    value: {
+    placeholderName: {
       type: 'string',
-      title: 'Value',
+      title: 'Placeholdername',
+      description: 'The name of the placeholder (last path segment).',
+      example: 'container-thirty-center-1',
+    },
+    displayName: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Displayname',
+      description: 'The display name of the placeholder.',
+      example: 'container-thirty-center-1',
     },
   },
   type: 'object',
-  required: ['name', 'value'],
-  title: 'FieldModel',
+  required: ['placeholderPath', 'placeholderName', 'displayName'],
+  title: 'EditablePlaceholderModel',
 } as const;
 
-export const FlowDefinitionConditionSchema = {
+export const ExperienceFlowDefinitionSplitV1Schema = {
   properties: {
-    templateId: {
+    template: {
       type: 'string',
-      title: 'Templateid',
+      title: 'Template',
+      description: 'The flow definition template.',
+      example: 'split-6c54-4b01-90e6-d701748f0851',
     },
-    params: {
-      additionalProperties: {
-        type: 'string',
-      },
-      type: 'object',
-      title: 'Params',
+    variantName: {
+      type: 'string',
+      title: 'Variantname',
+      description: 'The name of the variant.',
+      example: 'Variant A',
     },
-  },
-  type: 'object',
-  required: ['templateId', 'params'],
-  title: 'FlowDefinitionCondition',
-} as const;
-
-export const FlowDefinitionConditionGroupSchema = {
-  properties: {
-    conditions: {
+    audienceName: {
+      type: 'string',
+      title: 'Audiencename',
+      description: 'The name of the audience targeted.',
+      example: 'Returning Visitors',
+    },
+    conditionGroups: {
       items: {
-        $ref: '#/components/schemas/FlowDefinitionCondition',
+        $ref: '#/components/schemas/FlowDefinitionConditionGroupV1',
       },
       type: 'array',
-      title: 'Conditions',
+      title: 'Conditiongroups',
+      description: 'A list of condition groups for the variant.',
     },
   },
   type: 'object',
-  required: ['conditions'],
-  title: 'FlowDefinitionConditionGroup',
+  required: ['template', 'variantName', 'audienceName', 'conditionGroups'],
+  title: 'ExperienceFlowDefinitionSplitV1',
 } as const;
 
-export const FlowDefinitionResponseSchema = {
+export const ExperienceFlowDefinitionSplitV2Schema = {
+  properties: {
+    template: {
+      type: 'string',
+      title: 'Template',
+      description: 'The flow definition template.',
+      example: 'split-6c54-4b01-90e6-d701748f0851',
+    },
+    variantName: {
+      type: 'string',
+      title: 'Variantname',
+      description: 'The name of the variant.',
+      example: 'Variant A',
+    },
+    audienceName: {
+      type: 'string',
+      title: 'Audiencename',
+      description: 'The name of the audience targeted.',
+      example: 'Returning Visitors',
+    },
+    conditionGroups: {
+      items: {
+        $ref: '#/components/schemas/FlowDefinitionConditionGroupV2',
+      },
+      type: 'array',
+      title: 'Conditiongroups',
+      description: 'A list of condition groups for the variant.',
+    },
+  },
+  type: 'object',
+  required: ['template', 'variantName', 'audienceName', 'conditionGroups'],
+  title: 'ExperienceFlowDefinitionSplitV2',
+} as const;
+
+export const ExperienceFlowResponseV1Schema = {
   properties: {
     clientKey: {
       type: 'string',
       title: 'Clientkey',
+      description: 'The client key associated with the flow definition.',
+      example: 'pers12345',
     },
     href: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Href',
+      description: 'The URL of the flow definition.',
+      example: 'https://www.example.com/flow-definition',
     },
     ref: {
       type: 'string',
       title: 'Ref',
+      description: 'A reference identifier for the flow definition.',
+      example: 'FlowDefinition-12345',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the flow definition.',
+      example: 'User Registration Flow',
     },
     modifiedByRef: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Modifiedbyref',
+      description: 'A reference identifier for the user who last modified the flow definition.',
+      example: 'User-67890',
     },
     modifiedAt: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Modifiedat',
+      description: 'The timestamp when the flow definition was last modified.',
+      example: '2025-01-15T10:30:00Z',
     },
     revision: {
-      type: 'integer',
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Revision',
+      description: 'The revision number of the flow definition.',
+      example: 2,
     },
     archived: {
       type: 'boolean',
       title: 'Archived',
+      description: 'Whether the flow definition is archived.',
+      example: false,
     },
     friendlyId: {
       type: 'string',
       title: 'Friendlyid',
+      description: 'A user-friendly identifier for the flow definition.',
+      example: 'user_registration_flow',
     },
     type: {
       type: 'string',
       title: 'Type',
+      description: 'The type of the flow definition.',
+      example: 'INTERACTIVE_API_FLOW',
     },
     subtype: {
       type: 'string',
       title: 'Subtype',
+      description: 'The subtype of the flow definition.',
+      example: 'EXPERIENCE',
     },
     channels: {
-      items: {
-        type: 'string',
-      },
-      type: 'array',
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Channels',
+      description: 'A list of channels associated with the flow definition, such as web or mobile.',
     },
     triggers: {
       anyOf: [
@@ -1424,6 +2860,7 @@ export const FlowDefinitionResponseSchema = {
         },
       ],
       title: 'Triggers',
+      description: 'A list of triggers for the flow definition, or null if none.',
     },
     dashboardLinks: {
       anyOf: [
@@ -1436,6 +2873,7 @@ export const FlowDefinitionResponseSchema = {
         },
       ],
       title: 'Dashboardlinks',
+      description: 'A list of dashboard links for the experience, or null if none.',
     },
     tags: {
       anyOf: [
@@ -1448,17 +2886,30 @@ export const FlowDefinitionResponseSchema = {
         },
       ],
       title: 'Tags',
+      description: 'A list of tags associated with the flow definition, or null if none.',
     },
     businessProcess: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Businessprocess',
+      description: 'The business process associated with the flow definition.',
+      example: 'user_registration',
     },
     siteId: {
       type: 'string',
       title: 'Siteid',
+      description: 'The unique identifier of the site associated with the flow definition.',
+      example: 'site_123',
     },
     traffic: {
-      $ref: '#/components/schemas/FlowDefinitionTraffic',
+      $ref: '#/components/schemas/ExperienceTrafficV1',
+      description: 'The traffic distribution configuration for the personalization experience.',
     },
     transpiledVariants: {
       anyOf: [
@@ -1471,6 +2922,7 @@ export const FlowDefinitionResponseSchema = {
         },
       ],
       title: 'Transpiledvariants',
+      description: 'A list of transpiled variants for the flow definition, or null if none.',
     },
     variants: {
       anyOf: [
@@ -1483,81 +2935,1129 @@ export const FlowDefinitionResponseSchema = {
         },
       ],
       title: 'Variants',
+      description: 'A list of variants for the flow definition, or null if none.',
     },
     status: {
       type: 'string',
       title: 'Status',
+      description: 'The current status of the flow definition.',
+      example: 'DRAFT',
     },
     schedule: {
-      $ref: '#/components/schemas/FlowDefinitionSchedule',
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionSchedule',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The schedule configuration for the flow definition.',
     },
     revisions: {
-      $ref: '#/components/schemas/FlowDefinitionRevisions',
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionRevisions',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'Links to the revisions of the flow definition.',
     },
     sampleSizeConfig: {
-      $ref: '#/components/schemas/FlowDefinitionSampleSizeConfig',
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionSampleSizeConfigV1',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The sample size configuration for the flow definition.',
     },
     notificationEnabled: {
-      type: 'boolean',
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Notificationenabled',
+      description: 'Whether notifications are enabled for the flow definition.',
     },
   },
   type: 'object',
   required: [
     'clientKey',
-    'href',
     'ref',
     'name',
-    'modifiedByRef',
-    'modifiedAt',
-    'revision',
     'archived',
     'friendlyId',
     'type',
     'subtype',
-    'channels',
-    'businessProcess',
     'siteId',
     'traffic',
     'status',
-    'schedule',
-    'revisions',
-    'sampleSizeConfig',
-    'notificationEnabled',
   ],
-  title: 'FlowDefinitionResponse',
+  title: 'ExperienceFlowResponseV1',
+  description:
+    'Response model for the v1 create personalization endpoint, matching the pre-AI-6608 shape.',
+} as const;
+
+export const ExperienceFlowResponseV2Schema = {
+  properties: {
+    clientKey: {
+      type: 'string',
+      title: 'Clientkey',
+      description: 'The client key associated with the flow definition.',
+      example: 'pers12345',
+    },
+    href: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Href',
+      description: 'The URL of the flow definition.',
+      example: 'https://www.example.com/flow-definition',
+    },
+    ref: {
+      type: 'string',
+      title: 'Ref',
+      description: 'A reference identifier for the flow definition.',
+      example: 'FlowDefinition-12345',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the flow definition.',
+      example: 'User Registration Flow',
+    },
+    modifiedByRef: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Modifiedbyref',
+      description: 'A reference identifier for the user who last modified the flow definition.',
+      example: 'User-67890',
+    },
+    modifiedAt: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Modifiedat',
+      description: 'The timestamp when the flow definition was last modified.',
+      example: '2025-01-15T10:30:00Z',
+    },
+    revision: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Revision',
+      description: 'The revision number of the flow definition.',
+      example: 2,
+    },
+    archived: {
+      type: 'boolean',
+      title: 'Archived',
+      description: 'Whether the flow definition is archived.',
+      example: false,
+    },
+    friendlyId: {
+      type: 'string',
+      title: 'Friendlyid',
+      description: 'A user-friendly identifier for the flow definition.',
+      example: 'user_registration_flow',
+    },
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of the flow definition.',
+      example: 'user_registration',
+    },
+    channels: {
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Channels',
+      description: 'A list of channels associated with the flow definition, such as web or mobile.',
+    },
+    triggers: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Triggers',
+      description: 'A list of triggers for the flow definition, or null if none.',
+    },
+    tags: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Tags',
+      description: 'A list of tags associated with the flow definition, or null if none.',
+    },
+    businessProcess: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Businessprocess',
+      description: 'The business process associated with the flow definition.',
+      example: 'user_registration',
+    },
+    siteId: {
+      type: 'string',
+      title: 'Siteid',
+      description: 'The unique identifier of the site associated with the flow definition.',
+      example: 'site_123',
+    },
+    transpiledVariants: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Transpiledvariants',
+      description: 'A list of transpiled variants for the flow definition, or null if none.',
+    },
+    variants: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Variants',
+      description: 'A list of variants for the flow definition, or null if none.',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+      description: 'The current status of the flow definition.',
+      example: 'DRAFT',
+    },
+    schedule: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionSchedule',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The schedule configuration for the flow definition.',
+    },
+    revisions: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionRevisions',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'Links to the revisions of the flow definition.',
+    },
+    sampleSizeConfig: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionSampleSizeConfigV2',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The sample size configuration for the flow definition.',
+    },
+    notificationEnabled: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Notificationenabled',
+      description: 'Whether notifications are enabled for the flow definition.',
+    },
+    subtype: {
+      type: 'string',
+      const: 'EXPERIENCE',
+      title: 'Subtype',
+      description:
+        'The subtype of the flow definition, identifying it as a personalization experience.',
+      example: 'EXPERIENCE',
+    },
+    traffic: {
+      $ref: '#/components/schemas/ExperienceTrafficV2',
+      description: 'The traffic distribution configuration for the personalization experience.',
+    },
+    dashboardLinks: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Dashboardlinks',
+      description: 'A list of dashboard links for the experience, or null if none.',
+    },
+  },
+  type: 'object',
+  required: [
+    'clientKey',
+    'ref',
+    'name',
+    'archived',
+    'friendlyId',
+    'type',
+    'siteId',
+    'status',
+    'subtype',
+    'traffic',
+  ],
+  title: 'ExperienceFlowResponseV2',
+} as const;
+
+export const ExperienceTrafficV1Schema = {
+  properties: {
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of traffic distribution for the flow definition.',
+      example: 'unique',
+    },
+    weightingAlgorithm: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Weightingalgorithm',
+      description: 'The algorithm used for weighting traffic distribution.',
+      example: 'random',
+    },
+    modifiedAt: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Modifiedat',
+      description: 'The timestamp when the traffic distribution was last modified.',
+      example: '2023-01-01T00:00:00Z',
+    },
+    splits: {
+      items: {
+        $ref: '#/components/schemas/ExperienceFlowDefinitionSplitV1',
+      },
+      type: 'array',
+      title: 'Splits',
+      description: 'A list of traffic splits for each personalization experience variant.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'splits'],
+  title: 'ExperienceTrafficV1',
+} as const;
+
+export const ExperienceTrafficV2Schema = {
+  properties: {
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of traffic distribution for the flow definition.',
+      example: 'unique',
+    },
+    weightingAlgorithm: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Weightingalgorithm',
+      description: 'The algorithm used for weighting traffic distribution.',
+      example: 'random',
+    },
+    modifiedAt: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Modifiedat',
+      description: 'The timestamp when the traffic distribution was last modified.',
+      example: '2023-01-01T00:00:00Z',
+    },
+    splits: {
+      items: {
+        $ref: '#/components/schemas/ExperienceFlowDefinitionSplitV2',
+      },
+      type: 'array',
+      title: 'Splits',
+      description: 'A list of traffic splits for each personalization experience variant.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'splits'],
+  title: 'ExperienceTrafficV2',
+} as const;
+
+export const ExperimentFlowDefinitionSplitSchema = {
+  properties: {
+    ref: {
+      type: 'string',
+      title: 'Ref',
+      description: 'A reference identifier for the experiment variant.',
+      example: 'variant-abc',
+    },
+    split: {
+      type: 'integer',
+      title: 'Split',
+      description: 'The traffic allocation percentage for this experiment variant.',
+      example: 50,
+    },
+  },
+  type: 'object',
+  required: ['ref', 'split'],
+  title: 'ExperimentFlowDefinitionSplit',
+} as const;
+
+export const ExperimentFlowResponseSchema = {
+  properties: {
+    clientKey: {
+      type: 'string',
+      title: 'Clientkey',
+      description: 'The client key associated with the flow definition.',
+      example: 'pers12345',
+    },
+    href: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Href',
+      description: 'The URL of the flow definition.',
+      example: 'https://www.example.com/flow-definition',
+    },
+    ref: {
+      type: 'string',
+      title: 'Ref',
+      description: 'A reference identifier for the flow definition.',
+      example: 'FlowDefinition-12345',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the flow definition.',
+      example: 'User Registration Flow',
+    },
+    modifiedByRef: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Modifiedbyref',
+      description: 'A reference identifier for the user who last modified the flow definition.',
+      example: 'User-67890',
+    },
+    modifiedAt: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Modifiedat',
+      description: 'The timestamp when the flow definition was last modified.',
+      example: '2025-01-15T10:30:00Z',
+    },
+    revision: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Revision',
+      description: 'The revision number of the flow definition.',
+      example: 2,
+    },
+    archived: {
+      type: 'boolean',
+      title: 'Archived',
+      description: 'Whether the flow definition is archived.',
+      example: false,
+    },
+    friendlyId: {
+      type: 'string',
+      title: 'Friendlyid',
+      description: 'A user-friendly identifier for the flow definition.',
+      example: 'user_registration_flow',
+    },
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of the flow definition.',
+      example: 'user_registration',
+    },
+    channels: {
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Channels',
+      description: 'A list of channels associated with the flow definition, such as web or mobile.',
+    },
+    triggers: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Triggers',
+      description: 'A list of triggers for the flow definition, or null if none.',
+    },
+    tags: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Tags',
+      description: 'A list of tags associated with the flow definition, or null if none.',
+    },
+    businessProcess: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Businessprocess',
+      description: 'The business process associated with the flow definition.',
+      example: 'user_registration',
+    },
+    siteId: {
+      type: 'string',
+      title: 'Siteid',
+      description: 'The unique identifier of the site associated with the flow definition.',
+      example: 'site_123',
+    },
+    transpiledVariants: {
+      anyOf: [
+        {
+          items: {},
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Transpiledvariants',
+      description: 'A list of transpiled variants for the flow definition, or null if none.',
+    },
+    variants: {
+      anyOf: [
+        {
+          items: {
+            $ref: '#/components/schemas/ExperimentVariantModel',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Variants',
+      description: 'A list of variants for the experiment, or null if none.',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+      description: 'The current status of the flow definition.',
+      example: 'DRAFT',
+    },
+    schedule: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionSchedule',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The schedule configuration for the flow definition.',
+    },
+    revisions: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionRevisions',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'Links to the revisions of the flow definition.',
+    },
+    sampleSizeConfig: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/FlowDefinitionSampleSizeConfigV2',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The sample size configuration for the flow definition.',
+    },
+    notificationEnabled: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Notificationenabled',
+      description: 'Whether notifications are enabled for the flow definition.',
+    },
+    subtype: {
+      type: 'string',
+      const: 'EXPERIMENT',
+      title: 'Subtype',
+      description: 'The subtype of the flow definition, identifying it as an A/B experiment.',
+      example: 'EXPERIMENT',
+    },
+    traffic: {
+      $ref: '#/components/schemas/ExperimentTraffic',
+      description: 'The traffic distribution configuration for the experiment.',
+    },
+    goals: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/ExperimentGoalModel',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The goals tracked for the experiment, keyed by goal identifier.',
+    },
+  },
+  type: 'object',
+  required: [
+    'clientKey',
+    'ref',
+    'name',
+    'archived',
+    'friendlyId',
+    'type',
+    'siteId',
+    'status',
+    'subtype',
+    'traffic',
+  ],
+  title: 'ExperimentFlowResponse',
+} as const;
+
+export const ExperimentGoalDefinitionSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of goal.',
+      example: 'pageViewGoal',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the goal.',
+      example: 'Page View Goal',
+    },
+    friendlyId: {
+      type: 'string',
+      title: 'Friendlyid',
+      description: 'A user-friendly identifier for the goal.',
+      example: 'page_view_goal',
+    },
+    ref: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Ref',
+      description: 'A reference identifier for the goal.',
+      example: 'goal-abc',
+    },
+    description: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Description',
+      description: 'A description of the goal, or null if not provided.',
+      example: 'Track page views for the experiment.',
+    },
+    goalCalculation: {
+      anyOf: [
+        {
+          additionalProperties: true,
+          type: 'object',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Goalcalculation',
+      description: 'A key-value map defining the calculation method for the goal.',
+    },
+    pageParameters: {
+      items: {
+        additionalProperties: true,
+        type: 'object',
+      },
+      type: 'array',
+      title: 'Pageparameters',
+      description: 'A list of page parameters associated with the goal.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'name', 'friendlyId'],
+  title: 'ExperimentGoalDefinition',
+} as const;
+
+export const ExperimentGoalModelSchema = {
+  additionalProperties: {
+    $ref: '#/components/schemas/ExperimentGoalDefinition',
+  },
+  type: 'object',
+  title: 'ExperimentGoalModel',
+} as const;
+
+export const ExperimentTaskInputModelSchema = {
+  properties: {
+    inputType: {
+      type: 'string',
+      title: 'Inputtype',
+      description: 'The type of task input.',
+      example: 'component',
+    },
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of task operation.',
+      example: 'swap',
+    },
+    template: {
+      type: 'string',
+      title: 'Template',
+      description: 'The template identifier for the task.',
+      example: 'task-template-abc',
+    },
+  },
+  type: 'object',
+  required: ['inputType', 'type', 'template'],
+  title: 'ExperimentTaskInputModel',
+} as const;
+
+export const ExperimentTaskModelSchema = {
+  properties: {
+    implementation: {
+      type: 'string',
+      title: 'Implementation',
+      description: 'The implementation type of the task.',
+      example: 'swap_component',
+    },
+    input: {
+      $ref: '#/components/schemas/ExperimentTaskInputModel',
+      description: 'The input configuration for the task.',
+    },
+  },
+  type: 'object',
+  required: ['implementation', 'input'],
+  title: 'ExperimentTaskModel',
+} as const;
+
+export const ExperimentTrafficSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of traffic distribution for the flow definition.',
+      example: 'unique',
+    },
+    weightingAlgorithm: {
+      type: 'string',
+      enum: ['USER_DEFINED', 'AUTO'],
+      title: 'Weightingalgorithm',
+      description: "The algorithm used for weighting traffic. Either 'USER_DEFINED' or 'AUTO'.",
+      example: 'USER_DEFINED',
+    },
+    modifiedAt: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Modifiedat',
+      description: 'The timestamp when the traffic distribution was last modified.',
+      example: '2023-01-01T00:00:00Z',
+    },
+    allocation: {
+      type: 'integer',
+      title: 'Allocation',
+      description: 'The total traffic allocation percentage for the experiment.',
+      example: 100,
+    },
+    coupled: {
+      type: 'boolean',
+      title: 'Coupled',
+      description: 'Whether the traffic splits are coupled and adjusted together.',
+      default: false,
+      example: false,
+    },
+    splits: {
+      items: {
+        $ref: '#/components/schemas/ExperimentFlowDefinitionSplit',
+      },
+      type: 'array',
+      title: 'Splits',
+      description: 'A list of traffic splits for each experiment variant.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'weightingAlgorithm', 'allocation', 'splits'],
+  title: 'ExperimentTraffic',
+} as const;
+
+export const ExperimentVariantModelSchema = {
+  properties: {
+    ref: {
+      type: 'string',
+      title: 'Ref',
+      description: 'A reference identifier for the variant.',
+      example: 'variant-abc',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the variant.',
+      example: 'Variant A',
+    },
+    isControl: {
+      type: 'boolean',
+      title: 'Iscontrol',
+      description: 'Whether this variant is the control (baseline) variant.',
+      example: false,
+    },
+    tasks: {
+      items: {
+        $ref: '#/components/schemas/ExperimentTaskModel',
+      },
+      type: 'array',
+      title: 'Tasks',
+      description: 'A list of tasks associated with the variant.',
+    },
+  },
+  type: 'object',
+  required: ['ref', 'name', 'isControl', 'tasks'],
+  title: 'ExperimentVariantModel',
+} as const;
+
+export const ExternalLinkSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'ExternalLink',
+      title: 'Type',
+      default: 'ExternalLink',
+    },
+    relatedSystem: {
+      $ref: '#/components/schemas/RelatedSystem',
+    },
+    relatedType: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Relatedtype',
+    },
+    id: {
+      type: 'string',
+      title: 'Id',
+    },
+  },
+  type: 'object',
+  required: ['relatedSystem', 'id'],
+  title: 'ExternalLink',
+  description: 'Represents an external link with reference to external systems',
+} as const;
+
+export const FlowDefinitionConditionSchema = {
+  properties: {
+    templateId: {
+      type: 'string',
+      title: 'Templateid',
+      description: 'The unique identifier of the condition template.',
+      example: 'cond-6c54-4b01-90e6-d701748f0851',
+    },
+    params: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Params',
+      description: 'A key-value map of parameters for the condition.',
+    },
+  },
+  type: 'object',
+  required: ['templateId', 'params'],
+  title: 'FlowDefinitionCondition',
+} as const;
+
+export const FlowDefinitionConditionGroupV1Schema = {
+  properties: {
+    conditions: {
+      items: {
+        $ref: '#/components/schemas/FlowDefinitionCondition',
+      },
+      type: 'array',
+      title: 'Conditions',
+      description: 'A list of conditions in this condition group.',
+    },
+  },
+  type: 'object',
+  required: ['conditions'],
+  title: 'FlowDefinitionConditionGroupV1',
+} as const;
+
+export const FlowDefinitionConditionGroupV2Schema = {
+  properties: {
+    unionType: {
+      anyOf: [
+        {
+          type: 'string',
+          enum: ['AND', 'OR'],
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Uniontype',
+      description:
+        'Union type for combining conditions. Either AND or OR. First group should not have a unionType.',
+    },
+    conditions: {
+      items: {
+        $ref: '#/components/schemas/FlowDefinitionCondition',
+      },
+      type: 'array',
+      title: 'Conditions',
+      description: 'A list of conditions in this condition group.',
+    },
+  },
+  type: 'object',
+  required: ['conditions'],
+  title: 'FlowDefinitionConditionGroupV2',
 } as const;
 
 export const FlowDefinitionRevisionsSchema = {
   properties: {
     href: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Href',
+      description: 'The URL to access the revisions of the flow definition.',
+      example: 'https://www.example.com/flow-definition/revisions',
     },
   },
   type: 'object',
-  required: ['href'],
   title: 'FlowDefinitionRevisions',
 } as const;
 
-export const FlowDefinitionSampleSizeConfigSchema = {
+export const FlowDefinitionSampleSizeConfigV1Schema = {
   properties: {
     baseValue: {
       type: 'number',
       title: 'Basevalue',
+      description: 'The base value used for sample size calculation.',
+      example: 0.5,
     },
     minimumDetectableDifference: {
       type: 'number',
       title: 'Minimumdetectabledifference',
+      description: 'The minimum detectable difference for the sample size calculation.',
+      example: 0.1,
     },
     confidenceLevel: {
       type: 'number',
       title: 'Confidencelevel',
+      description: 'The confidence level for the sample size calculation.',
+      example: 0.95,
     },
   },
   type: 'object',
   required: ['baseValue', 'minimumDetectableDifference', 'confidenceLevel'],
-  title: 'FlowDefinitionSampleSizeConfig',
+  title: 'FlowDefinitionSampleSizeConfigV1',
+} as const;
+
+export const FlowDefinitionSampleSizeConfigV2Schema = {
+  properties: {
+    baseValue: {
+      type: 'number',
+      title: 'Basevalue',
+      description: 'The base value used for sample size calculation.',
+      example: 0.5,
+    },
+    minimumDetectableDifference: {
+      type: 'number',
+      title: 'Minimumdetectabledifference',
+      description: 'The minimum detectable difference for the sample size calculation.',
+      example: 0.1,
+    },
+    confidenceLevel: {
+      type: 'number',
+      title: 'Confidencelevel',
+      description: 'The confidence level for the sample size calculation.',
+      example: 0.95,
+    },
+    sampleSize: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Samplesize',
+      description: 'The calculated sample size, or null if not yet computed.',
+    },
+  },
+  type: 'object',
+  required: ['baseValue', 'minimumDetectableDifference', 'confidenceLevel'],
+  title: 'FlowDefinitionSampleSizeConfigV2',
 } as const;
 
 export const FlowDefinitionScheduleSchema = {
@@ -1565,69 +4065,403 @@ export const FlowDefinitionScheduleSchema = {
     type: {
       type: 'string',
       title: 'Type',
+      description: 'The type of schedule for the flow definition.',
+      example: 'immediate',
     },
     startDate: {
-      type: 'string',
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
       title: 'Startdate',
+      description: 'The start date of the schedule.',
+      example: '2023-01-01T00:00:00Z',
     },
   },
   type: 'object',
-  required: ['type', 'startDate'],
+  required: ['type'],
   title: 'FlowDefinitionSchedule',
 } as const;
 
-export const FlowDefinitionSplitSchema = {
+export const GenerateBriefRequestSchema = {
   properties: {
-    template: {
+    briefTypeId: {
       type: 'string',
-      title: 'Template',
+      title: 'Brieftypeid',
+      description:
+        'The unique identifier of the brief type to use for generating a brief. To get this ID, you can use the List brief types endpoint to retrieve the list of brief types available in your organization.',
+      example: 'e7fe656b-178e-4ee2-86a9-ec800ff8a31d',
     },
-    variantName: {
+    brandId: {
       type: 'string',
-      title: 'Variantname',
+      title: 'Brandid',
+      description:
+        'The unique identifier of the brand kit. To get this ID, you can use the List brand kits endpoint to retrieve the list of brand kits in your organization.',
+      example: 'b1234567-89ab-4cde-f012-3456789abcde',
     },
-    audienceName: {
+    prompt: {
       type: 'string',
-      title: 'Audiencename',
-    },
-    conditionGroups: {
-      items: {
-        $ref: '#/components/schemas/FlowDefinitionConditionGroup',
-      },
-      type: 'array',
-      title: 'Conditiongroups',
+      title: 'Prompt',
+      description:
+        'The prompt for brief generation. This provides AI the context or instructions for generating the brief.',
+      example: 'Generate a brief for the new holiday campaign.',
     },
   },
   type: 'object',
-  required: ['template', 'variantName', 'audienceName', 'conditionGroups'],
-  title: 'FlowDefinitionSplit',
+  required: ['briefTypeId', 'brandId', 'prompt'],
+  title: 'GenerateBriefRequest',
+  description: 'Request model for generating a content brief',
 } as const;
 
-export const FlowDefinitionTrafficSchema = {
+export const GenerateBriefResponseSchema = {
+  additionalProperties: {
+    $ref: '#/components/schemas/BriefFieldValue',
+  },
+  type: 'object',
+  title: 'GenerateBriefResponse',
+  description: 'Response model for generated content brief with dynamic field keys',
+} as const;
+
+export const GetBrandKitResponseSchema = {
   properties: {
-    type: {
+    id: {
       type: 'string',
-      title: 'Type',
+      format: 'uuid',
+      title: 'Id',
+      description: 'The unique identifier of the brand kit.',
+      example: 'b1234567-89ab-4cde-f012-3456789abcde',
     },
-    weightingAlgorithm: {
+    description: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Description',
+      description: 'The brand kit description.',
+      example: 'Brand kit for Contoso Corporation.',
+    },
+    name: {
       type: 'string',
-      title: 'Weightingalgorithm',
+      title: 'Name',
+      description: 'The name of the brand kit.',
+      example: 'Contoso Brand Kit',
     },
-    modifiedAt: {
+    brandName: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Brandname',
+      description: 'The name of the brand associated with the brand kit.',
+      example: 'Contoso',
+    },
+    companyName: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Companyname',
+      description: 'The name of the company associated with the brand kit.',
+      example: 'Contoso Corporation',
+    },
+    status: {
       type: 'string',
-      title: 'Modifiedat',
+      title: 'Status',
+      description: 'The status of the brand kit.',
+      example: 'published',
     },
-    splits: {
-      items: {
-        $ref: '#/components/schemas/FlowDefinitionSplit',
-      },
-      type: 'array',
-      title: 'Splits',
+    tags: {
+      anyOf: [
+        {
+          items: {
+            $ref: '#/components/schemas/TagModel',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Tags',
+      description: 'A list of tags associated with the brand kit.',
+      default: [],
+    },
+    sections: {
+      anyOf: [
+        {
+          items: {
+            $ref: '#/components/schemas/SectionModel',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Sections',
+      description: 'A list of sections in the brand kit.',
+      default: [],
     },
   },
   type: 'object',
-  required: ['type', 'weightingAlgorithm', 'modifiedAt', 'splits'],
-  title: 'FlowDefinitionTraffic',
+  required: ['id', 'name', 'status'],
+  title: 'GetBrandKitResponse',
+  description: 'Response model for get brand kit by ID endpoint',
+} as const;
+
+export const GetBriefResponseSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      title: 'Id',
+      description: 'The unique identifier of the brief.',
+      example: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+    },
+    icon: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Icon',
+      description: 'The icon associated with the brief.',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brief.',
+      example: 'New Summer Campaign Brief',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+      description: 'The status of the brief. Draft by default.',
+      example: 'Draft',
+    },
+    locale: {
+      type: 'string',
+      title: 'Locale',
+      description: 'The locale code in the format xx-XX.',
+      example: 'en-us',
+    },
+    fields: {
+      additionalProperties: true,
+      type: 'object',
+      title: 'Fields',
+      description: 'Dictionary of field names to their values.',
+    },
+    isTemplate: {
+      type: 'boolean',
+      title: 'Istemplate',
+      default: false,
+    },
+    contributors: {
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Contributors',
+      description: 'List of contributor identifiers.',
+    },
+    createdBy: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/ExternalLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The user who created the brief.',
+    },
+    createdOn: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Createdon',
+      description: 'The ISO 8601 timestamp when the brief was created.',
+      example: '2026-01-15T10:30:00Z',
+    },
+    updatedBy: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/ExternalLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The user who last updated the brief.',
+    },
+    updatedOn: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Updatedon',
+      description: 'The ISO 8601 timestamp when the brief was last updated.',
+      example: '2026-04-01T08:00:00Z',
+    },
+    briefType: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/BriefTypeLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+    },
+  },
+  type: 'object',
+  required: ['id', 'name', 'status', 'locale', 'fields'],
+  title: 'GetBriefResponse',
+} as const;
+
+export const GetBriefTypeResponseSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      title: 'Id',
+      description: 'The unique UUID of the brief type.',
+      example: 'f2657200-e881-4027-8ddf-a9810eb9d177',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brief type.',
+      example: 'travel_campaigns',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description: 'The label of the brief type, which can be localized for different languages.',
+      example: {
+        'en-us': 'Travel campaigns',
+      },
+    },
+    icon: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Icon',
+      description:
+        'The name of the icon associated with the brief type, which is used to visually represent the brief type in the UI.',
+      example: 'mdiFileDocumentOutline',
+    },
+    iconColor: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Iconcolor',
+      description: 'The color of the icon associated with the brief type.',
+      example: 'primary',
+    },
+    description: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Description',
+      description: 'The description of the brief type.',
+      example: 'Briefs used for planning and executing travel marketing campaigns.',
+    },
+    fields: {
+      items: {
+        oneOf: [
+          {
+            $ref: '#/components/schemas/SimpleTextConfig',
+          },
+          {
+            $ref: '#/components/schemas/RichTextConfig',
+          },
+          {
+            $ref: '#/components/schemas/TimelineConfig',
+          },
+          {
+            $ref: '#/components/schemas/BudgetConfig',
+          },
+          {
+            $ref: '#/components/schemas/DateTimeConfig',
+          },
+          {
+            $ref: '#/components/schemas/BooleanConfig',
+          },
+        ],
+        discriminator: {
+          propertyName: 'type',
+          mapping: {
+            Boolean: '#/components/schemas/BooleanConfig',
+            Budget: '#/components/schemas/BudgetConfig',
+            DateTime: '#/components/schemas/DateTimeConfig',
+            RichText: '#/components/schemas/RichTextConfig',
+            SimpleText: '#/components/schemas/SimpleTextConfig',
+            Timeline: '#/components/schemas/TimelineConfig',
+          },
+        },
+      },
+      type: 'array',
+      title: 'Fields',
+      description:
+        'The list of fields that belong to this brief type, including their configurations and metadata.',
+    },
+  },
+  type: 'object',
+  required: ['id', 'name', 'label', 'fields'],
+  title: 'GetBriefTypeResponse',
+  description: 'Response model for get brief type by ID — extends BriefTypeModel with audit fields',
 } as const;
 
 export const GetPageComponentsResponseSchema = {
@@ -1636,22 +4470,32 @@ export const GetPageComponentsResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Pageid',
+      description: 'The unique identifier of the page.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     pageName: {
       type: 'string',
       title: 'Pagename',
+      description: 'The name of the page.',
+      example: 'Home Page',
     },
     pagePath: {
       type: 'string',
       title: 'Pagepath',
+      description: 'The path to the page.',
+      example: '/sitecore/content/Home',
     },
     version: {
       type: 'integer',
       title: 'Version',
+      description: 'The version number of the page.',
+      example: 1,
     },
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The language code of the page.',
+      example: 'en',
     },
     route: {
       anyOf: [
@@ -1663,6 +4507,8 @@ export const GetPageComponentsResponseSchema = {
         },
       ],
       title: 'Route',
+      description: 'The route of the page, or null if not applicable.',
+      example: '/home',
     },
     layoutEditingKind: {
       anyOf: [
@@ -1674,6 +4520,8 @@ export const GetPageComponentsResponseSchema = {
         },
       ],
       title: 'Layouteditingkind',
+      description: 'The layout editing kind of the page, or null if not applicable.',
+      example: 'Standard',
     },
     template: {
       anyOf: [
@@ -1684,6 +4532,7 @@ export const GetPageComponentsResponseSchema = {
           type: 'null',
         },
       ],
+      description: 'The template used for the page, or null if not applicable.',
     },
     components: {
       anyOf: [
@@ -1698,6 +4547,7 @@ export const GetPageComponentsResponseSchema = {
         },
       ],
       title: 'Components',
+      description: 'A list of components on the page, or null if none.',
       default: [],
     },
   },
@@ -1712,6 +4562,8 @@ export const GetPagePreviewUrlResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Pageid',
+      description: 'The unique identifier of the page.',
+      example: 'f0b81bc-7388-46be-b109-6e73d1114470',
     },
     previewUrl: {
       type: 'string',
@@ -1719,6 +4571,8 @@ export const GetPagePreviewUrlResponseSchema = {
       minLength: 1,
       format: 'uri',
       title: 'Previewurl',
+      description: 'The preview URL of the page.',
+      example: 'https://preview.example.com/page/f0b81bc-7388-46be-b109-6e73d1114470',
     },
   },
   type: 'object',
@@ -1732,19 +4586,27 @@ export const GetPageResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the page.',
+      example: 'Home Page',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The template ID used for the page.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     locationPath: {
       type: 'string',
       title: 'Locationpath',
+      description: 'The location path of the page in the content tree.',
+      example: '/sitecore/content/Verticals/SkatePark/Home/Home Page',
     },
     insertOptions: {
       items: {
@@ -1752,11 +4614,26 @@ export const GetPageResponseSchema = {
       },
       type: 'array',
       title: 'Insertoptions',
+      description: 'A list of options for inserting the page.',
+    },
+    editablePlaceholders: {
+      items: {
+        $ref: '#/components/schemas/EditablePlaceholderModel',
+      },
+      type: 'array',
+      title: 'Editableplaceholders',
+      description: 'Editable placeholders on the page.',
     },
   },
   type: 'object',
   required: ['itemId', 'name', 'templateId', 'locationPath', 'insertOptions'],
   title: 'GetPageResponse',
+} as const;
+
+export const GoalTypeSchema = {
+  type: 'string',
+  enum: ['pageViewGoal', 'bouncesGoal', 'exitsGoal'],
+  title: 'GoalType',
 } as const;
 
 export const HTTPValidationErrorSchema = {
@@ -1773,6 +4650,70 @@ export const HTTPValidationErrorSchema = {
   title: 'HTTPValidationError',
 } as const;
 
+export const HideComponentRequestSchema = {
+  properties: {
+    language: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Language',
+      description: 'Language code for the page',
+      default: 'en',
+      example: 'en',
+    },
+    page_version: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Page Version',
+      description: 'The version of the page to use, or null for the latest version.',
+      example: 1,
+    },
+  },
+  type: 'object',
+  title: 'HideComponentRequest',
+  description: 'Request model for hiding a component on the Default variant',
+} as const;
+
+export const HideComponentResponseSchema = {
+  properties: {
+    pageId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Pageid',
+      description: 'The page ID where the component was hidden',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    componentId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Componentid',
+      description: 'The component ID that was hidden',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
+    },
+    language: {
+      type: 'string',
+      title: 'Language',
+      description: 'The language of the page',
+      example: 'en',
+    },
+  },
+  type: 'object',
+  required: ['pageId', 'componentId', 'language'],
+  title: 'HideComponentResponse',
+  description: 'Response model for hide component operation',
+} as const;
+
 export const InnerItemModelSchema = {
   properties: {
     displayName: {
@@ -1785,6 +4726,8 @@ export const InnerItemModelSchema = {
         },
       ],
       title: 'Displayname',
+      description: 'The display name of the inner item, or null if not set.',
+      example: 'Promo Image',
     },
     height: {
       anyOf: [
@@ -1796,6 +4739,8 @@ export const InnerItemModelSchema = {
         },
       ],
       title: 'Height',
+      description: 'The height of the inner item, or null if not set.',
+      example: 250,
     },
     width: {
       anyOf: [
@@ -1807,6 +4752,8 @@ export const InnerItemModelSchema = {
         },
       ],
       title: 'Width',
+      description: 'The width of the inner item, or null if not set.',
+      example: 300,
     },
   },
   type: 'object',
@@ -1818,11 +4765,15 @@ export const InsertOptionModelSchema = {
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the insert option.',
+      example: 'Full Width Page',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The ID of the template used for the insert option.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
   },
   type: 'object',
@@ -1835,19 +4786,151 @@ export const LanguageModelSchema = {
     displayName: {
       type: 'string',
       title: 'Displayname',
+      description: 'The display name of the language.',
+      example: 'English',
     },
     iso: {
       type: 'string',
       title: 'Iso',
+      description: 'The ISO code of the language.',
+      example: 'en',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the language.',
+      example: 'en',
     },
   },
   type: 'object',
   required: ['displayName', 'iso', 'name'],
   title: 'LanguageModel',
+} as const;
+
+export const ListBrandKitResponseSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Id',
+      description: 'The unique identifier of the brand kit.',
+      example: 'b1234567-89ab-4cde-f012-3456789abcde',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brand kit.',
+      example: 'Contoso Brand Kit',
+    },
+    description: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Description',
+      description: 'The brand kit description.',
+      example: 'Brand kit for Contoso Corporation.',
+    },
+    brandName: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Brandname',
+      description:
+        'The name of the brand associated with the brand kit. Returns null if no brand name is set.',
+      example: 'Contoso',
+    },
+    companyName: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Companyname',
+      description:
+        'The name of the company associated with the brand kit. Returns null if no company name is set.',
+      example: 'Contoso Corporation',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+      description: 'The status of the brand kit.',
+      example: 'published',
+    },
+    tags: {
+      anyOf: [
+        {
+          items: {
+            $ref: '#/components/schemas/TagModel',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Tags',
+      description: 'A list of tags associated with the brand kit.',
+      default: [],
+    },
+  },
+  type: 'object',
+  required: ['id', 'name', 'status'],
+  title: 'ListBrandKitResponse',
+  description: 'Model for brandkit summary (used in list endpoint)',
+} as const;
+
+export const ListBriefTypesResponseSchema = {
+  properties: {
+    totalCount: {
+      type: 'integer',
+      title: 'Totalcount',
+      description: 'The total number of brief types available.',
+      example: 5,
+    },
+    data: {
+      items: {
+        $ref: '#/components/schemas/BriefTypeModel',
+      },
+      type: 'array',
+      title: 'Data',
+      description: 'A list of brief types available.',
+    },
+  },
+  type: 'object',
+  required: ['totalCount', 'data'],
+  title: 'ListBriefTypesResponse',
+} as const;
+
+export const ListBriefsResponseSchema = {
+  properties: {
+    totalCount: {
+      type: 'integer',
+      title: 'Totalcount',
+    },
+    data: {
+      items: {
+        $ref: '#/components/schemas/GetBriefResponse',
+      },
+      type: 'array',
+      title: 'Data',
+    },
+  },
+  type: 'object',
+  required: ['totalCount', 'data'],
+  title: 'ListBriefsResponse',
 } as const;
 
 export const ListSitesResponseSchema = {
@@ -1858,6 +4941,7 @@ export const ListSitesResponseSchema = {
       },
       type: 'array',
       title: 'Sites',
+      description: 'A list of sites.',
     },
   },
   type: 'object',
@@ -1871,22 +4955,32 @@ export const MediaItemSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the media item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     embedUrl: {
       type: 'string',
       title: 'Embedurl',
+      description: 'The URL to embed or access the media item.',
+      example: 'https://example.com/media/3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     size: {
       type: 'integer',
       title: 'Size',
+      description: 'The size of the media item in bytes.',
+      example: 204800,
     },
     dimensions: {
       type: 'string',
       title: 'Dimensions',
+      description: 'The dimensions of the media item.',
+      example: '1920x1080',
     },
     extension: {
       type: 'string',
       title: 'Extension',
+      description: 'The file extension of the media item.',
+      example: 'mp4',
     },
   },
   type: 'object',
@@ -1900,14 +4994,20 @@ export const NonVisualContentLocationModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the item.',
+      example: 'Sample Item',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path to the item.',
+      example: '/content/items/3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     allowed_child_content_templates: {
       items: {
@@ -1915,6 +5015,7 @@ export const NonVisualContentLocationModelSchema = {
       },
       type: 'array',
       title: 'Allowed Child Content Templates',
+      description: 'A list of allowed child content templates.',
     },
   },
   type: 'object',
@@ -1928,15 +5029,20 @@ export const PageHtmlResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Pageid',
+      description: 'The unique identifier of the page.',
+      example: 'f0b81bc-7388-46be-b109-6e73d1114470',
     },
     html: {
       type: 'string',
       title: 'Html',
+      description: 'The HTML content of the page.',
+      example: '<html><body><h1>Webpage content</h1></body></html>',
     },
   },
   type: 'object',
   required: ['pageId', 'html'],
   title: 'PageHtmlResponse',
+  description: 'Response model containing the HTML content of a page.',
 } as const;
 
 export const PageInsertOptionModelSchema = {
@@ -1945,10 +5051,14 @@ export const PageInsertOptionModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the template.',
+      example: 'Full Width Page',
     },
   },
   type: 'object',
@@ -1962,14 +5072,20 @@ export const PageLocationModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the item.',
+      example: 'Sample Item',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path to the item.',
+      example: '/content/items/3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     allowed_child_page_templates: {
       items: {
@@ -1977,6 +5093,14 @@ export const PageLocationModelSchema = {
       },
       type: 'array',
       title: 'Allowed Child Page Templates',
+      description: 'A list of allowed child page templates.',
+    },
+    is_page_folder: {
+      type: 'boolean',
+      title: 'Is Page Folder',
+      description:
+        'True when this location is a page folder (no presentation component); False for standard renderable pages.',
+      default: false,
     },
   },
   type: 'object',
@@ -1990,10 +5114,14 @@ export const PageModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the page.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path to the page.',
+      example: '/content/pages/3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
   },
   type: 'object',
@@ -2007,17 +5135,24 @@ export const PagePathByLiveUrlResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the item.',
+      example: 'Home',
     },
     hasPresentation: {
       type: 'boolean',
       title: 'Haspresentation',
+      description: 'Whether the item has presentation details.',
+      example: true,
     },
     template: {
       $ref: '#/components/schemas/PagePathTemplateModel',
+      description: 'The template details of the item.',
     },
     insertOptions: {
       items: {
@@ -2025,6 +5160,7 @@ export const PagePathByLiveUrlResponseSchema = {
       },
       type: 'array',
       title: 'Insertoptions',
+      description: 'Insert options for the item.',
     },
   },
   type: 'object',
@@ -2037,11 +5173,15 @@ export const PagePathInsertOptionModelSchema = {
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the insert option.',
+      example: 'Full Width Page',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
   },
   type: 'object',
@@ -2055,10 +5195,14 @@ export const PagePathTemplateModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the template.',
+      example: 'Full Width Page',
     },
   },
   type: 'object',
@@ -2071,23 +5215,33 @@ export const PageScreenshotResponseSchema = {
     type: {
       type: 'string',
       title: 'Type',
+      description: 'The type of screenshot.',
+      example: 'png',
     },
     fullPage: {
       type: 'boolean',
       title: 'Fullpage',
+      description: 'Whether the screenshot is of the full page.',
+      example: true,
     },
     encoding: {
       type: 'string',
       title: 'Encoding',
+      description: 'The encoding format of the screenshot.',
+      example: 'base64',
     },
     timestamp: {
       type: 'string',
       format: 'date-time',
       title: 'Timestamp',
+      description: 'The timestamp when the screenshot was taken.',
+      example: '2023-09-01T12:00:00Z',
     },
     screenshot_base64: {
       type: 'string',
       title: 'Screenshot Base64',
+      description: 'The base64-encoded screenshot data.',
+      example: 'iVBORw0KGgoAAAANSUhEUgAA...',
     },
   },
   type: 'object',
@@ -2101,26 +5255,35 @@ export const PageSearchItemModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the item.',
+      example: 'Home',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path of the item.',
+      example: '/sitecore/content/verticals/SkatePark/home',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     fields: {
       items: {
-        $ref: '#/components/schemas/FieldModel',
+        $ref: '#/components/schemas/models__pages__FieldModel',
       },
       type: 'array',
       title: 'Fields',
+      description: 'A list of search fields associated with the item.',
     },
   },
   type: 'object',
@@ -2133,14 +5296,20 @@ export const PageTemplateFieldModelSchema = {
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the field.',
+      example: 'Content',
     },
     type: {
       type: 'string',
       title: 'Type',
+      description: 'The field type.',
+      example: 'single-line text',
     },
     validation: {
       type: 'boolean',
       title: 'Validation',
+      description: 'Whether the field has validation rules.',
+      example: false,
     },
   },
   type: 'object',
@@ -2154,10 +5323,14 @@ export const PageTemplateResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the template.',
+      example: 'Full Width Page',
     },
     fields: {
       items: {
@@ -2165,6 +5338,7 @@ export const PageTemplateResponseSchema = {
       },
       type: 'array',
       title: 'Fields',
+      description: 'A list of fields associated with the template.',
     },
   },
   type: 'object',
@@ -2172,36 +5346,289 @@ export const PageTemplateResponseSchema = {
   title: 'PageTemplateResponse',
 } as const;
 
-export const PersonalizationVariantDetailModelSchema = {
+export const PersonalizationVariantDetailModelV1Schema = {
   properties: {
     page_id: {
       type: 'string',
       title: 'Page Id',
+      description: 'The unique identifier of the page.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     variant_name: {
       type: 'string',
       title: 'Variant Name',
+      description: 'The name of the variant.',
+      example: 'Variant A',
     },
     audience_name: {
       type: 'string',
       title: 'Audience Name',
+      description: 'The name of the audience targeted by the variant.',
+      example: 'Returning Visitors',
     },
     template: {
       type: 'string',
       title: 'Template',
+      description: 'The template used for the variant.',
+      example: 'Default Template',
     },
     condition_groups: {
       items: {
-        $ref: '#/components/schemas/FlowDefinitionConditionGroup',
+        $ref: '#/components/schemas/FlowDefinitionConditionGroupV1',
       },
       type: 'array',
       title: 'Condition Groups',
+      description: 'A list of condition groups for the personalization variant.',
       default: [],
     },
   },
   type: 'object',
   required: ['page_id', 'variant_name', 'audience_name', 'template'],
-  title: 'PersonalizationVariantDetailModel',
+  title: 'PersonalizationVariantDetailModelV1',
+} as const;
+
+export const PersonalizationVariantDetailModelV2Schema = {
+  properties: {
+    page_id: {
+      type: 'string',
+      title: 'Page Id',
+      description: 'The unique identifier of the page.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    variant_name: {
+      type: 'string',
+      title: 'Variant Name',
+      description: 'The name of the variant.',
+      example: 'Variant A',
+    },
+    audience_name: {
+      type: 'string',
+      title: 'Audience Name',
+      description: 'The name of the audience targeted by the variant.',
+      example: 'Returning Visitors',
+    },
+    template: {
+      type: 'string',
+      title: 'Template',
+      description: 'The template used for the variant.',
+      example: 'Default Template',
+    },
+    condition_groups: {
+      items: {
+        $ref: '#/components/schemas/FlowDefinitionConditionGroupV2',
+      },
+      type: 'array',
+      title: 'Condition Groups',
+      description: 'A list of condition groups for the personalization variant.',
+      default: [],
+    },
+  },
+  type: 'object',
+  required: ['page_id', 'variant_name', 'audience_name', 'template'],
+  title: 'PersonalizationVariantDetailModelV2',
+} as const;
+
+export const RelatedSystemSchema = {
+  type: 'string',
+  enum: ['contenthub', 'mms', 'ai', 'xmcloud', 'co'],
+  title: 'RelatedSystem',
+  description: 'Represents the related system reference for external links',
+} as const;
+
+export const ResetComponentRequestSchema = {
+  properties: {
+    language: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Language',
+      description: 'Language code for the page',
+      default: 'en',
+      example: 'en',
+    },
+    page_version: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Page Version',
+      description: 'The version of the page to use, or null for the latest version.',
+      example: 1,
+    },
+    page_id: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Page Id',
+      description: 'The unique identifier of the page containing the component.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    component_id: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Component Id',
+      description: 'The unique identifier of the component instance to reset.',
+      example: '429e3b45-277a-4c7f-adeb-4eb8b295d9ab',
+    },
+    variant_id: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Variant Id',
+      description: 'The full variant ID to reset. When not provided, resets the Default variant.',
+      example: '429e3b45277a4c7fadeb4eb8b295d9ab_9d6f8492a3234b96b4c89878a8a1a7ab',
+    },
+  },
+  type: 'object',
+  required: ['page_id', 'component_id'],
+  title: 'ResetComponentRequest',
+  description: 'Request model for resetting a component variant in a flow',
+} as const;
+
+export const ResetComponentResponseSchema = {
+  properties: {
+    pageId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Pageid',
+      description: 'The page ID where the component was reset',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    componentId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Componentid',
+      description: 'The component ID that was reset',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
+    },
+    language: {
+      type: 'string',
+      title: 'Language',
+      description: 'The language of the page',
+      example: 'en',
+    },
+  },
+  type: 'object',
+  required: ['pageId', 'componentId', 'language'],
+  title: 'ResetComponentResponse',
+  description: 'Response model for reset component operation',
+} as const;
+
+export const RichTextConfigSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'RichText',
+      title: 'Type',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description:
+        'The name of the field. Must be alphanumeric with no spaces or special characters.',
+      example: 'TargetAudience',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description:
+        'The display label of the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Target audience',
+      },
+    },
+    helpText: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Helptext',
+      description: 'The help text for the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Describe the target audience for the content.',
+      },
+    },
+    required: {
+      type: 'boolean',
+      title: 'Required',
+      description: 'Whether the field is required.',
+      example: true,
+    },
+    aiEditable: {
+      type: 'boolean',
+      title: 'Aieditable',
+      description: 'Whether the field is editable by AI.',
+      example: false,
+    },
+    aiIntent: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aiintent',
+      description: 'The AI intent associated with the field.',
+      example: 'This field should be used to adapt language and tone for the intended audience.',
+    },
+    aiContext: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aicontext',
+      description: 'The AI context for the field.',
+      example:
+        'The content will be used in a hero banner on the homepage of an e-commerce website that sells healthy products.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'name', 'label', 'helpText', 'required', 'aiEditable'],
+  title: 'RichTextConfig',
+} as const;
+
+export const RichTextFieldValueSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'RichText',
+      title: 'Type',
+      description: 'The type of the field value.',
+    },
+    value: {
+      type: 'string',
+      title: 'Value',
+      description: 'The rich text content of the field value.',
+      example:
+        'Emphasize the product benefits and features in the hero banner to attract customers.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'value'],
+  title: 'RichTextFieldValue',
+  description: 'Rich text field value',
 } as const;
 
 export const SearchResponseSchema = {
@@ -2212,6 +5639,7 @@ export const SearchResponseSchema = {
       },
       type: 'array',
       title: 'Results',
+      description: 'A list of search results.',
       default: [],
     },
   },
@@ -2225,20 +5653,63 @@ export const SearchResultSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     templateId: {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template associated with the item.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the item.',
+      example: 'Hero Banner',
     },
   },
   type: 'object',
   required: ['itemId', 'templateId', 'name'],
   title: 'SearchResult',
+} as const;
+
+export const SectionModelSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      title: 'Id',
+      description: 'The unique identifier of the brand kit section.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brand kit section.',
+      example: 'Brand Context',
+    },
+    fields: {
+      anyOf: [
+        {
+          items: {
+            $ref: '#/components/schemas/models__brandkits__FieldModel',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Fields',
+      description: 'A list of brand kit fields (subsections).',
+      default: [],
+    },
+  },
+  type: 'object',
+  required: ['id', 'name'],
+  title: 'SectionModel',
+  description: 'Model for the brand kit sections.',
 } as const;
 
 export const SetComponentDatasourceRequestSchema = {
@@ -2247,6 +5718,8 @@ export const SetComponentDatasourceRequestSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Datasourceid',
+      description: 'The unique identifier of the datasource to set for the component.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     language: {
       anyOf: [
@@ -2258,7 +5731,23 @@ export const SetComponentDatasourceRequestSchema = {
         },
       ],
       title: 'Language',
+      description: 'The language for the datasource.',
       default: 'en',
+      example: 'en',
+    },
+    variantId: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Variantid',
+      description:
+        'Optional personalization variant id. When provided, the datasource is applied to the matching variant rule.',
+      example: '8bd7a9ec96b8490f9b894e3866fefb79_2a5c1e8c8d244f569a44d6b28cbecb05',
     },
   },
   type: 'object',
@@ -2271,30 +5760,252 @@ export const SetComponentDatasourceResponseSchema = {
     success: {
       type: 'boolean',
       title: 'Success',
+      description: 'Whether the datasource was set successfully.',
+      example: true,
     },
     message: {
       type: 'string',
       title: 'Message',
+      description: 'A message providing additional information about the operation.',
+      example: 'Datasource set successfully.',
     },
     componentId: {
       type: 'string',
       format: 'uuid',
       title: 'Componentid',
+      description: 'The unique identifier of the component.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
     },
     pageId: {
       type: 'string',
       format: 'uuid',
       title: 'Pageid',
+      description: 'The unique identifier of the page.',
+      example: '9f8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     datasourceId: {
       type: 'string',
       format: 'uuid',
       title: 'Datasourceid',
+      description: 'The unique identifier of the datasource.',
+      example: 'Hero Banner',
     },
   },
   type: 'object',
   required: ['success', 'message', 'componentId', 'pageId', 'datasourceId'],
   title: 'SetComponentDatasourceResponse',
+} as const;
+
+export const SetupVariantRequestSchema = {
+  properties: {
+    page_id: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Page Id',
+      description: 'The unique identifier of the page containing the component.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    component_id: {
+      type: 'string',
+      title: 'Component Id',
+      description: 'The unique identifier of the component to set up as a variant.',
+      example: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
+    },
+    variant_strategy: {
+      $ref: '#/components/schemas/VariantStrategy',
+      description: 'The strategy for the variant. Either HIDE, SWAP, or COPY.',
+    },
+    language: {
+      type: 'string',
+      title: 'Language',
+      description: 'The language code for the variant setup.',
+      default: 'en',
+      example: 'en',
+    },
+    page_version: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Page Version',
+      description: 'The version of the page to use, or null for the latest version.',
+      example: 1,
+    },
+    swapped_component: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/SwappedComponentModel',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description:
+        'The replacement component details when the variant strategy is SWAP, or null otherwise.',
+    },
+  },
+  type: 'object',
+  required: ['page_id', 'component_id', 'variant_strategy'],
+  title: 'SetupVariantRequest',
+} as const;
+
+export const SetupVariantResponseSchema = {
+  properties: {
+    pageId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Pageid',
+      description: 'The unique identifier of the page.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    componentId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Componentid',
+      description: 'The unique identifier of the component set up as a variant.',
+      example: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
+    },
+    componentRenderingId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Componentrenderingid',
+      description: 'The unique identifier of the component rendering definition.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
+    },
+    flowId: {
+      type: 'string',
+      title: 'Flowid',
+      description: 'The unique identifier of the flow definition associated with the variant.',
+      example: 'flow-12345',
+    },
+    variantId: {
+      type: 'string',
+      title: 'Variantid',
+      description: 'The unique identifier of the variant within the flow definition.',
+      example: 'variant-abc',
+    },
+    datasource: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Datasource',
+      description: 'The path to the datasource used by the variant, or null if not applicable.',
+      example: '/sitecore/content/Verticals/SkatePark/Data/Promos/Summer Sale',
+    },
+  },
+  type: 'object',
+  required: ['pageId', 'componentId', 'componentRenderingId', 'flowId', 'variantId'],
+  title: 'SetupVariantResponse',
+} as const;
+
+export const SimpleTextConfigSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'SimpleText',
+      title: 'Type',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description:
+        'The name of the field. Must be alphanumeric with no spaces or special characters.',
+      example: 'TargetAudience',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description:
+        'The display label of the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Target audience',
+      },
+    },
+    helpText: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Helptext',
+      description: 'The help text for the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Describe the target audience for the content.',
+      },
+    },
+    required: {
+      type: 'boolean',
+      title: 'Required',
+      description: 'Whether the field is required.',
+      example: true,
+    },
+    aiEditable: {
+      type: 'boolean',
+      title: 'Aieditable',
+      description: 'Whether the field is editable by AI.',
+      example: false,
+    },
+    aiIntent: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aiintent',
+      description: 'The AI intent associated with the field.',
+      example: 'This field should be used to adapt language and tone for the intended audience.',
+    },
+    aiContext: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aicontext',
+      description: 'The AI context for the field.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'name', 'label', 'helpText', 'required', 'aiEditable'],
+  title: 'SimpleTextConfig',
+} as const;
+
+export const SimpleTextFieldValueSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'SimpleText',
+      title: 'Type',
+      description: 'Type of the field value.',
+    },
+    value: {
+      type: 'string',
+      title: 'Value',
+      description: 'The text value of the field.',
+      example: 'Message',
+    },
+  },
+  type: 'object',
+  required: ['type', 'value'],
+  title: 'SimpleTextFieldValue',
+  description: 'Simple text field value',
 } as const;
 
 export const SiteBasicModelSchema = {
@@ -2303,18 +6014,26 @@ export const SiteBasicModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the site.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the site.',
+      example: 'skate-park',
     },
     targetHostname: {
       type: 'string',
       title: 'Targethostname',
+      description: 'The target hostname of the site.',
+      example: 'skate-park.example.com',
     },
     rootPath: {
       type: 'string',
       title: 'Rootpath',
+      description: 'The root path of the site.',
+      example: '/sitecore/content/SkatePark',
     },
   },
   type: 'object',
@@ -2328,14 +6047,20 @@ export const SiteIdFromItemResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Siterootitemid',
+      description: 'The unique identifier of the site root item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     siteRootDisplayName: {
       type: 'string',
       title: 'Siterootdisplayname',
+      description: 'The display name of the site root.',
+      example: 'Skate Park',
     },
     siteRootName: {
       type: 'string',
       title: 'Siterootname',
+      description: 'The name of the site root.',
+      example: 'Skate Park',
     },
   },
   type: 'object',
@@ -2349,18 +6074,26 @@ export const SiteInformationResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the site.',
+      example: 'skate-park',
     },
     brand_information: {
       type: 'string',
       title: 'Brand Information',
+      description: 'Information about the brand associated with the site.',
+      example: 'Skate park brand guidelines',
     },
     rootPath: {
       type: 'string',
       title: 'Rootpath',
+      description: 'The root path of the site.',
+      example: '/sitecore/content/SkatePark',
     },
     page_locations: {
       items: {
@@ -2368,6 +6101,7 @@ export const SiteInformationResponseSchema = {
       },
       type: 'array',
       title: 'Page Locations',
+      description: 'A list of page locations associated with the site.',
     },
     non_visual_content_locations: {
       items: {
@@ -2375,6 +6109,7 @@ export const SiteInformationResponseSchema = {
       },
       type: 'array',
       title: 'Non Visual Content Locations',
+      description: 'A list of non-visual content locations associated with the site.',
     },
   },
   type: 'object',
@@ -2389,16 +6124,276 @@ export const SiteInformationResponseSchema = {
   title: 'SiteInformationResponse',
 } as const;
 
+export const SwappedComponentModelSchema = {
+  properties: {
+    componentRenderingId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Componentrenderingid',
+      description: 'The unique identifier of the replacement component rendering definition.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
+    },
+    datasourcePath: {
+      type: 'string',
+      title: 'Datasourcepath',
+      description: 'The path to the datasource used by the swapped component.',
+      example: '/sitecore/content/Verticals/SkatePark/Data/Promos/Summer Sale',
+    },
+  },
+  type: 'object',
+  required: ['componentRenderingId', 'datasourcePath'],
+  title: 'SwappedComponentModel',
+} as const;
+
+export const TagModelSchema = {
+  properties: {
+    category: {
+      type: 'string',
+      title: 'Category',
+      description: 'The tag category.',
+      example: 'audience',
+    },
+    values: {
+      items: {
+        type: 'string',
+      },
+      type: 'array',
+      title: 'Values',
+      description: 'A list of tag values for the category.',
+    },
+  },
+  type: 'object',
+  required: ['category', 'values'],
+  title: 'TagModel',
+  description: 'Model for brand kit tags with category and values',
+} as const;
+
+export const TimelineCalculationSchema = {
+  type: 'integer',
+  enum: [0, 1, 2, 3],
+  title: 'TimelineCalculation',
+} as const;
+
+export const TimelineConfigSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'Timeline',
+      title: 'Type',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description:
+        'The name of the field. Must be alphanumeric with no spaces or special characters.',
+      example: 'TargetAudience',
+    },
+    label: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Label',
+      description:
+        'The display label of the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Target audience',
+      },
+    },
+    helpText: {
+      additionalProperties: {
+        type: 'string',
+      },
+      type: 'object',
+      title: 'Helptext',
+      description: 'The help text for the field, which can be localized for different languages.',
+      example: {
+        'en-us': 'Describe the target audience for the content.',
+      },
+    },
+    required: {
+      type: 'boolean',
+      title: 'Required',
+      description: 'Whether the field is required.',
+      example: true,
+    },
+    aiEditable: {
+      type: 'boolean',
+      title: 'Aieditable',
+      description: 'Whether the field is editable by AI.',
+      example: false,
+    },
+    aiIntent: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Aiintent',
+      description: 'The AI intent associated with the field.',
+      example: 'This field should be used to adapt language and tone for the intended audience.',
+    },
+    calculation: {
+      type: 'string',
+      description:
+        'The timeline calculation constraint. Either `Flexible`, `Backward` or `Forward`.',
+      example: 'Flexible',
+    },
+    skipHolidays: {
+      type: 'boolean',
+      title: 'Skipholidays',
+      description: 'Whether to skip holidays in timeline calculations.',
+      example: true,
+    },
+    skipWeekend: {
+      type: 'boolean',
+      title: 'Skipweekend',
+      description: 'Whether to skip weekends in timeline calculations.',
+      example: true,
+    },
+    timezone: {
+      type: 'string',
+      title: 'Timezone',
+      description: 'The timezone to use for timeline calculations.',
+    },
+  },
+  type: 'object',
+  required: [
+    'type',
+    'name',
+    'label',
+    'helpText',
+    'required',
+    'aiEditable',
+    'calculation',
+    'skipHolidays',
+    'skipWeekend',
+    'timezone',
+  ],
+  title: 'TimelineConfig',
+} as const;
+
+export const TimelineEventSchema = {
+  properties: {
+    title: {
+      type: 'string',
+      title: 'Title',
+      description: 'The title of the timeline event.',
+      example: 'Publish content',
+    },
+    duration: {
+      anyOf: [
+        {
+          type: 'integer',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Duration',
+      description: 'The duration of the timeline event in the specified units.',
+      example: 7,
+    },
+    unit: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/TimelineEventUnit',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'Timeline duration unit: Either Day or Week.',
+    },
+    dueDate: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Duedate',
+      description: 'The due date of the timeline event in yyyy-mm-dd format.',
+      example: '2026-01-01',
+    },
+  },
+  type: 'object',
+  required: ['title'],
+  title: 'TimelineEvent',
+  description: 'Represents a timeline event.',
+} as const;
+
+export const TimelineEventUnitSchema = {
+  type: 'string',
+  enum: ['Day', 'Week'],
+  title: 'TimelineEventUnit',
+  description: 'Represents the units of time for timeline events',
+} as const;
+
+export const TimelineFieldValueSchema = {
+  properties: {
+    type: {
+      type: 'string',
+      const: 'Timeline',
+      title: 'Type',
+      description: 'The type of the field value.',
+    },
+    value: {
+      $ref: '#/components/schemas/TimelineValue',
+      description: 'The timeline value containing start date, end date, and events.',
+    },
+  },
+  type: 'object',
+  required: ['type', 'value'],
+  title: 'TimelineFieldValue',
+  description: 'Timeline field value',
+} as const;
+
+export const TimelineValueSchema = {
+  properties: {
+    startDate: {
+      type: 'string',
+      title: 'Startdate',
+      description: 'The start date of the timeline in yyyy-mm-dd format.',
+      example: '2025-09-01',
+    },
+    endDate: {
+      type: 'string',
+      title: 'Enddate',
+      description: 'The end date of the timeline in yyyy-mm-dd format.',
+      example: '2025-09-07',
+    },
+    events: {
+      items: {
+        $ref: '#/components/schemas/TimelineEvent',
+      },
+      type: 'array',
+      title: 'Events',
+      description: 'A list of events included in the timeline.',
+    },
+  },
+  type: 'object',
+  title: 'TimelineValue',
+} as const;
+
 export const UpdateAssetRequestSchema = {
   properties: {
     fields: {
       additionalProperties: true,
       type: 'object',
       title: 'Fields',
+      description: 'A key-value map of metadata fields to update for the asset.',
     },
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The new language code of the asset.',
+      example: 'en',
     },
     name: {
       anyOf: [
@@ -2410,6 +6405,8 @@ export const UpdateAssetRequestSchema = {
         },
       ],
       title: 'Name',
+      description: 'The new name for the asset. If null, the name will not be updated.',
+      example: 'Skateboarder',
     },
     altText: {
       anyOf: [
@@ -2421,7 +6418,9 @@ export const UpdateAssetRequestSchema = {
         },
       ],
       title: 'Alttext',
+      description: 'The new alt text for the asset. If null, the alt text will not be updated.',
       default: '',
+      example: 'A skateboarder performing a trick',
     },
   },
   type: 'object',
@@ -2435,24 +6434,224 @@ export const UpdateAssetResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the asset.',
+      example: 'As8c7e6d-5b4a-4c3d-8e7f-1a2b3c4d5e6f',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The updated name of the asset.',
+      example: 'Skateboarder in action',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path to the asset.',
+      example: '/media/assets/As8c7e6d-5b4',
     },
     updatedFields: {
       additionalProperties: true,
       type: 'object',
       title: 'Updatedfields',
+      description: 'The fields that were updated in the asset.',
     },
   },
   type: 'object',
   required: ['itemId', 'name', 'path', 'updatedFields'],
   title: 'UpdateAssetResponse',
+} as const;
+
+export const UpdateBriefRequestModelSchema = {
+  properties: {
+    name: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Name',
+      description: 'The name of the brief',
+    },
+    fields: {
+      anyOf: [
+        {
+          additionalProperties: {
+            oneOf: [
+              {
+                $ref: '#/components/schemas/SimpleTextFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/RichTextFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/DateTimeFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/BudgetFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/BooleanFieldValue',
+              },
+              {
+                $ref: '#/components/schemas/TimelineFieldValue',
+              },
+            ],
+            discriminator: {
+              propertyName: 'type',
+              mapping: {
+                Boolean: '#/components/schemas/BooleanFieldValue',
+                Budget: '#/components/schemas/BudgetFieldValue',
+                DateTime: '#/components/schemas/DateTimeFieldValue',
+                RichText: '#/components/schemas/RichTextFieldValue',
+                SimpleText: '#/components/schemas/SimpleTextFieldValue',
+                Timeline: '#/components/schemas/TimelineFieldValue',
+              },
+            },
+          },
+          type: 'object',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Fields',
+      description: 'Dictionary of field names to their values',
+    },
+  },
+  type: 'object',
+  title: 'UpdateBriefRequestModel',
+  description: 'Model for updating an existing brief',
+} as const;
+
+export const UpdateBriefResponseSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      title: 'Id',
+      description: 'The unique identifier of the brief.',
+      example: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+    },
+    icon: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Icon',
+      description: 'The icon associated with the brief.',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brief.',
+      example: 'New Summer Campaign Brief',
+    },
+    status: {
+      type: 'string',
+      title: 'Status',
+      description: 'The status of the brief. Draft by default.',
+      example: 'Draft',
+    },
+    locale: {
+      type: 'string',
+      title: 'Locale',
+      description: 'The locale code in the format xx-XX.',
+      example: 'en-us',
+    },
+    fields: {
+      additionalProperties: true,
+      type: 'object',
+      title: 'Fields',
+      description: 'Dictionary of field names to their values.',
+    },
+    isTemplate: {
+      type: 'boolean',
+      title: 'Istemplate',
+      default: false,
+    },
+    contributors: {
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Contributors',
+      description: 'List of contributor identifiers.',
+    },
+    createdBy: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/ExternalLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The user who created the brief.',
+    },
+    createdOn: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Createdon',
+      description: 'The ISO 8601 timestamp when the brief was created.',
+      example: '2026-01-15T10:30:00Z',
+    },
+    updatedBy: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/ExternalLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The user who last updated the brief.',
+    },
+    updatedOn: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Updatedon',
+      description: 'The ISO 8601 timestamp when the brief was last updated.',
+      example: '2026-04-01T08:00:00Z',
+    },
+    briefType: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/BriefTypeLink',
+        },
+        {
+          type: 'null',
+        },
+      ],
+    },
+  },
+  type: 'object',
+  required: ['id', 'name', 'status', 'locale', 'fields'],
+  title: 'UpdateBriefResponse',
 } as const;
 
 export const UpdateContentRequestSchema = {
@@ -2468,15 +6667,20 @@ export const UpdateContentRequestSchema = {
         },
       ],
       title: 'Fields',
+      description:
+        'A key-value map of fields to update for the content item. If null, fields will not be updated.',
     },
     language: {
       type: 'string',
       title: 'Language',
+      description: 'The language version of the content item to update.',
       default: 'en',
+      example: 'en',
     },
     createNewVersion: {
       type: 'boolean',
       title: 'Createnewversion',
+      description: 'Whether to create a new version of the content item.',
       default: false,
     },
     siteName: {
@@ -2489,6 +6693,8 @@ export const UpdateContentRequestSchema = {
         },
       ],
       title: 'Sitename',
+      description: 'The unique name of the site where the content item resides.',
+      example: 'skate-park',
     },
   },
   type: 'object',
@@ -2501,19 +6707,26 @@ export const UpdateContentResponseSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Itemid',
+      description: 'The unique identifier of the content item.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the content item.',
+      example: 'Sample Content Item',
     },
     path: {
       type: 'string',
       title: 'Path',
+      description: 'The path to the content item.',
+      example: '/content/items/3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     updatedFields: {
       additionalProperties: true,
       type: 'object',
       title: 'Updatedfields',
+      description: 'The fields that were updated in the content item.',
     },
   },
   type: 'object',
@@ -2521,14 +6734,136 @@ export const UpdateContentResponseSchema = {
   title: 'UpdateContentResponse',
 } as const;
 
+export const UpdateExperimentRequestSchema = {
+  properties: {
+    name: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Name',
+      description: 'The updated name of the experiment.',
+      example: 'Hero Banner Experiment Updated',
+    },
+    archived: {
+      anyOf: [
+        {
+          type: 'boolean',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Archived',
+      description: 'Whether to archive the experiment.',
+      default: false,
+      example: false,
+    },
+    goal_type: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/GoalType',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description: 'The updated goal type for the experiment.',
+    },
+    targeted_pages: {
+      anyOf: [
+        {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Targeted Pages',
+      description: 'The updated list of page paths to target for the experiment.',
+      example: [],
+    },
+    variants: {
+      anyOf: [
+        {
+          items: {
+            $ref: '#/components/schemas/Variant',
+          },
+          type: 'array',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Variants',
+      description:
+        'The updated list of variants. Traffic splits must sum to 100 and exactly one variant must be marked as control.',
+    },
+  },
+  type: 'object',
+  title: 'UpdateExperimentRequest',
+} as const;
+
+export const UpdatePersonalizationRequestSchema = {
+  properties: {
+    language: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Language',
+      description: 'The language code for the personalization rule, or null for default.',
+      default: 'en',
+      example: 'en',
+    },
+    variant_name: {
+      type: 'string',
+      title: 'Variant Name',
+      description: 'The name of the personalization variant.',
+      example: 'Summer Sale Variant',
+    },
+    audience_name: {
+      type: 'string',
+      title: 'Audience Name',
+      description: 'The name of the audience for the personalization rule.',
+      example: 'Returning Customers',
+    },
+    condition_groups: {
+      items: {
+        $ref: '#/components/schemas/ConditionGroupInput',
+      },
+      type: 'array',
+      title: 'Condition Groups',
+      description: 'List of condition groups with their conditions',
+    },
+  },
+  type: 'object',
+  required: ['variant_name', 'audience_name', 'condition_groups'],
+  title: 'UpdatePersonalizationRequest',
+} as const;
+
 export const UploadAssetResponseSchema = {
   properties: {
     success: {
       type: 'boolean',
       title: 'Success',
+      description: 'Whether the asset upload was successful.',
+      example: true,
     },
     mediaItem: {
       $ref: '#/components/schemas/MediaItem',
+      description: 'The uploaded media item details.',
     },
   },
   type: 'object',
@@ -2560,21 +6895,145 @@ export const ValidationErrorSchema = {
       type: 'string',
       title: 'Error Type',
     },
+    input: {
+      title: 'Input',
+    },
+    ctx: {
+      type: 'object',
+      title: 'Context',
+    },
   },
   type: 'object',
   required: ['loc', 'msg', 'type'],
   title: 'ValidationError',
 } as const;
 
+export const VariantSchema = {
+  properties: {
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the variant.',
+      example: 'Variant A',
+    },
+    is_control: {
+      type: 'boolean',
+      title: 'Is Control',
+      description: 'Whether this variant is the control (baseline) variant.',
+      example: false,
+    },
+    traffic_split: {
+      type: 'number',
+      title: 'Traffic Split',
+      description:
+        'The percentage of traffic allocated to this variant. All variant splits must sum to 100.',
+      example: 50,
+    },
+  },
+  type: 'object',
+  required: ['name', 'is_control', 'traffic_split'],
+  title: 'Variant',
+} as const;
+
+export const VariantComponentModelSchema = {
+  properties: {
+    componentId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Componentid',
+      description: 'The unique identifier of the component.',
+      example: 'd290f1ee-6c54-4b01-90e6-d701748f0851',
+    },
+    componentRenderingId: {
+      type: 'string',
+      format: 'uuid',
+      title: 'Componentrenderingid',
+      description: 'The unique identifier of the component rendering definition.',
+      example: '86a03271-dff4-470a-92bd-b68c67de2e25',
+    },
+    variantStrategy: {
+      anyOf: [
+        {
+          $ref: '#/components/schemas/VariantStrategy',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      description:
+        'The variant strategy applied to this component. Either HIDE, SWAP, COPY, or null.',
+    },
+    datasourcePath: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Datasourcepath',
+      description:
+        'The path to the datasource used by the variant component, or null if not applicable.',
+      example: '/sitecore/content/Verticals/SkatePark/Data/Promos/Summer Sale',
+    },
+    componentName: {
+      type: 'string',
+      title: 'Componentname',
+      description: 'The internal name of the component.',
+      example: 'Promo',
+    },
+  },
+  type: 'object',
+  required: ['componentId', 'componentRenderingId', 'variantStrategy', 'componentName'],
+  title: 'VariantComponentModel',
+} as const;
+
+export const VariantInfoResponseSchema = {
+  properties: {
+    flowId: {
+      type: 'string',
+      title: 'Flowid',
+      description: 'The unique identifier of the flow definition.',
+      example: 'flow-12345',
+    },
+    variantId: {
+      type: 'string',
+      title: 'Variantid',
+      description: 'The unique identifier of the variant within the flow definition.',
+      example: 'variant-abc',
+    },
+    components: {
+      items: {
+        $ref: '#/components/schemas/VariantComponentModel',
+      },
+      type: 'array',
+      title: 'Components',
+      description: 'A list of components associated with the variant.',
+    },
+  },
+  type: 'object',
+  required: ['flowId', 'variantId', 'components'],
+  title: 'VariantInfoResponse',
+} as const;
+
+export const VariantStrategySchema = {
+  type: 'string',
+  enum: ['HIDE', 'SWAP', 'COPY'],
+  title: 'VariantStrategy',
+} as const;
+
 export const WorkflowModelSchema = {
   properties: {
     workflowState: {
       $ref: '#/components/schemas/WorkflowStateModel',
+      description: 'The current workflow state of the content item.',
     },
   },
   type: 'object',
   required: ['workflowState'],
   title: 'WorkflowModel',
+  description: 'Model representing the workflow state of an item.',
 } as const;
 
 export const WorkflowStateModelSchema = {
@@ -2582,15 +7041,71 @@ export const WorkflowStateModelSchema = {
     final: {
       type: 'boolean',
       title: 'Final',
+      description: 'Whether this is a final workflow state.',
+      example: false,
     },
     displayName: {
       type: 'string',
       title: 'Displayname',
+      description: 'The display name of the workflow state.',
+      example: 'Published',
     },
   },
   type: 'object',
   required: ['final', 'displayName'],
   title: 'WorkflowStateModel',
+} as const;
+
+export const models__brandkits__FieldModelSchema = {
+  properties: {
+    id: {
+      type: 'string',
+      title: 'Id',
+      description: 'The unique identifier of the brand kit field (subsection).',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
+    },
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the brand kit field.',
+      example: 'Brand purpose',
+    },
+    type: {
+      type: 'string',
+      title: 'Type',
+      description: 'The type of the brand kit field.',
+      example: 'text',
+    },
+    value: {
+      anyOf: [
+        {},
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Value',
+      description: 'The value of the brand kit field.',
+      example:
+        'The core reason for the brand existence is to fuel the potential of active individuals with clean, nutrient-dense energy solutions.',
+    },
+    intent: {
+      anyOf: [
+        {
+          type: 'string',
+        },
+        {
+          type: 'null',
+        },
+      ],
+      title: 'Intent',
+      description: 'The intent of the brand kit field.',
+      example: "The core reason for the brand's existence.",
+    },
+  },
+  type: 'object',
+  required: ['id', 'name', 'type'],
+  title: 'FieldModel',
+  description: 'Model for brand kit section field',
 } as const;
 
 export const models__content__TemplateModelSchema = {
@@ -2599,15 +7114,39 @@ export const models__content__TemplateModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Templateid',
+      description: 'The unique identifier of the template.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the template.',
+      example: 'Article Page',
     },
   },
   type: 'object',
   required: ['templateId', 'name'],
   title: 'TemplateModel',
+} as const;
+
+export const models__pages__FieldModelSchema = {
+  properties: {
+    name: {
+      type: 'string',
+      title: 'Name',
+      description: 'The name of the field.',
+      example: 'Title',
+    },
+    value: {
+      type: 'string',
+      title: 'Value',
+      description: 'The value of the field.',
+      example: 'Welcome to Our Site',
+    },
+  },
+  type: 'object',
+  required: ['name', 'value'],
+  title: 'FieldModel',
 } as const;
 
 export const models__pages__TemplateModelSchema = {
@@ -2616,10 +7155,14 @@ export const models__pages__TemplateModelSchema = {
       type: 'string',
       format: 'uuid',
       title: 'Id',
+      description: 'The unique identifier of the template.',
+      example: '3f2504e0-4f89-11d3-9a0c-0305e82c3301',
     },
     name: {
       type: 'string',
       title: 'Name',
+      description: 'The name of the template.',
+      example: 'Article Page',
     },
   },
   type: 'object',
