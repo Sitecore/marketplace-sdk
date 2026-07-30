@@ -4,6 +4,30 @@ import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-tr
 
 async function generate() {
   await createClient({
+    input: 'https://ai-documents-api-euw.sitecorecloud.io/openapi.json',
+    output: {
+      format: 'prettier',
+      lint: 'eslint',
+      path: './src/experimental/client-documents',
+    },
+    plugins: [
+      defineSchemaPatcherConfig({
+        basePath: '/stream/ai-documents-api',
+      }),
+      '@hey-api/client-fetch',
+      '@hey-api/schemas',
+      '@hey-api/sdk',
+      {
+        enums: 'javascript',
+        name: '@hey-api/typescript',
+      },
+      defineNamespaceTransformerConfig({
+        namespace: 'experimental_Documents',
+      }),
+    ],
+  });
+
+  await createClient({
     input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
     output: {
       format: 'prettier',

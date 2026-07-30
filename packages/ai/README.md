@@ -1,6 +1,7 @@
 # Sitecore Marketplace SDK - `ai` package
 
 The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI skills APIs:
+- [Documents API](https://ai-documents-api-euw.sitecorecloud.io/openapi.json) - use documents-related capabilities exposed by the AI platform.
 - [Brand Review REST API](https://api-docs.sitecore.com/ai-capabilities/ai-brand-review-admin-rest-api) - using AI-powered analysis, evaluate whether input content and assets comply with the guidelines defined in a brand kit.
 
 ## Prerequisites
@@ -31,6 +32,27 @@ const config = {
 ```
 
 ## Usage
+
+### Documents API
+Use the documents namespace to work with document records and their related content.
+
+For example, to list documents:
+
+```typescript
+const result = await client.query('ai.documents.listDocuments', {
+  query: 'marketing',
+});
+```
+
+For example, to create a document:
+
+```typescript
+await client?.mutate('ai.documents.createDocument', {
+  body: {
+    // request body generated from the OpenAPI schema
+  },
+});
+```
 
 ### Make a mutation
 Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.

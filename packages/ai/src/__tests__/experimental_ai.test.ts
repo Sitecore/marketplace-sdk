@@ -1,6 +1,20 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { experimental_AI, experimental_createAIClient } from '../experimental_ai';
 
+vi.mock('@hey-api/client-fetch', () => ({
+  createClient: vi.fn(() => ({})),
+  createConfig: vi.fn(() => ({})),
+}));
+
+vi.mock('../experimental/client-documents/sdk.gen', () => ({
+  listDocuments: vi.fn(),
+  createDocument: vi.fn(),
+}));
+
+vi.mock('../experimental/client-skills/sdk.gen', () => ({
+  generateBrandReview: vi.fn(),
+}));
+
 describe('experimental_AI', () => {
   const mockGetAccessToken = vi.fn().mockResolvedValue('test-token');
 
@@ -11,7 +25,13 @@ describe('experimental_AI', () => {
   it('should create an instance with getAccessToken', () => {
     const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
     expect(client).toBeDefined();
+    expect(client.documents).toBeDefined();
     expect(client.skills).toBeDefined();
+  });
+
+  it('should have a documents property', () => {
+    const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
+    expect(client.documents).toBeDefined();
   });
 
   it('should have a skills property', () => {
@@ -22,6 +42,7 @@ describe('experimental_AI', () => {
   it('should create client via factory function', async () => {
     const client = await experimental_createAIClient({ getAccessToken: mockGetAccessToken });
     expect(client).toBeInstanceOf(experimental_AI);
+    expect(client.documents).toBeDefined();
     expect(client.skills).toBeDefined();
   });
 
@@ -32,11 +53,19 @@ describe('experimental_AI', () => {
 
   it('should use EDGE_PLATFORM_PROXY_URL from window.env when available', () => {
     const customUrl = 'https://custom-proxy.example.com';
-    (window as any).env = { EDGE_PLATFORM_PROXY_URL: customUrl };
+    Object.defineProperty(window, 'env', {
+      value: { EDGE_PLATFORM_PROXY_URL: customUrl },
+      writable: true,
+      configurable: true,
+    });
 
     const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
     expect(client).toBeDefined();
 
-    delete (window as any).env;
+    Object.defineProperty(window, 'env', {
+      value: undefined,
+      writable: true,
+      configurable: true,
+    });
   });
 });

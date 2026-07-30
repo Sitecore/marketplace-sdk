@@ -5,6 +5,33 @@ import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 async function generate() {
   await createClient({
+    input: 'https://ai-documents-api-euw.sitecorecloud.io/openapi.json',
+    output: {
+      format: 'prettier',
+      lint: 'eslint',
+      path: './src/client-documents',
+    },
+    plugins: [
+      defineSchemaPatcherConfig({
+        basePath: '/stream/ai-documents-api',
+      }),
+      '@hey-api/client-fetch',
+      '@hey-api/schemas',
+      '@hey-api/sdk',
+      {
+        enums: 'javascript',
+        name: '@hey-api/typescript',
+      },
+      defineAugmentationConfig({
+        namespaces: ['ai.documents'],
+      }),
+      defineClientTransformerConfig({
+        namespace: 'Documents',
+      }),
+    ],
+  });
+
+  await createClient({
     input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
     output: {
       format: 'prettier',

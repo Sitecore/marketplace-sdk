@@ -1,7 +1,21 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { AI } from '../index';
+import * as documents from '../client-documents/sdk.gen';
+import * as skills from '../client-skills/sdk.gen';
+
+vi.mock('../client-documents/sdk.gen', () => ({
+  listDocuments: vi.fn(),
+}));
+
+vi.mock('../client-skills/sdk.gen', () => ({
+  generateBrandReview: vi.fn(),
+}));
 
 describe('AI SDKModule', () => {
+  beforeEach(() => {
+    vi.restoreAllMocks();
+  });
+
   it('should have namespace "ai"', () => {
     expect(AI.namespace).toBe('ai');
   });
@@ -18,11 +32,15 @@ describe('AI SDKModule', () => {
     );
   });
 
-  it('should dispatch skills operations correctly', () => {
-    // This test validates that the skills namespace is mapped
-    // The actual operations depend on generated code
-    const sdk = AI;
-    expect(sdk.namespace).toBe('ai');
-    expect(typeof sdk.invokeOperation).toBe('function');
+  it('should invoke a documents operation', () => {
+    AI.invokeOperation('documents.listDocuments', { query: 'test' });
+
+    expect(documents.listDocuments).toHaveBeenCalledWith({ query: 'test' });
+  });
+
+  it('should invoke a skills operation', () => {
+    AI.invokeOperation('skills.generateBrandReview', { body: { input: { text: 'test' } } });
+
+    expect(skills.generateBrandReview).toHaveBeenCalledWith({ body: { input: { text: 'test' } } });
   });
 });

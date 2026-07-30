@@ -4,6 +4,7 @@ import path from 'path';
 export default defineConfig({
   resolve: {
     alias: {
+      '@sitecore-marketplace-sdk/client': path.resolve(__dirname, '../client/src/index.ts'),
       '@hey-api/client-fetch': path.resolve(__dirname, 'node_modules/@hey-api/client-fetch'),
     },
   },
