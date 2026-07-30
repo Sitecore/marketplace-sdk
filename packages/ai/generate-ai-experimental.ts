@@ -26,6 +26,28 @@ async function generate() {
       }),
     ],
   });
+
+  await createClient({
+    input: 'https://ai-documents-api-euw.sitecorecloud.io/openapi.json',
+    output: {
+      format: 'prettier',
+      lint: 'eslint',
+      path: './src/experimental/client-documents',
+    },
+    plugins: [
+      defineSchemaPatcherConfig(),
+      '@hey-api/client-fetch',
+      '@hey-api/schemas',
+      '@hey-api/sdk',
+      {
+        enums: 'javascript',
+        name: '@hey-api/typescript',
+      },
+      defineNamespaceTransformerConfig({
+        namespace: 'experimental_Documents',
+      }),
+    ],
+  });
 }
 
 generate();

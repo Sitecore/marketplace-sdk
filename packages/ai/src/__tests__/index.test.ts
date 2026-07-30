@@ -25,4 +25,10 @@ describe('AI SDKModule', () => {
     expect(sdk.namespace).toBe('ai');
     expect(typeof sdk.invokeOperation).toBe('function');
   });
+
+  it('should register the documents namespace', () => {
+    expect(() => AI.invokeOperation('documents.listDocuments')).not.toThrow(
+      "Namespace 'documents' not found",
+    );
+  });
 });
