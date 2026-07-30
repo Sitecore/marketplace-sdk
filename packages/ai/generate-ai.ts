@@ -32,4 +32,34 @@ async function generate() {
   });
 }
 
+async function generateBrands() {
+  await createClient({
+    input: './schema/brands.openapi.json',
+    output: {
+      format: 'prettier',
+      lint: 'eslint',
+      path: './src/client-brands',
+    },
+    plugins: [
+      defineSchemaPatcherConfig({
+        basePath: '/ai-brands-api',
+      }),
+      '@hey-api/client-fetch',
+      '@hey-api/schemas',
+      '@hey-api/sdk',
+      {
+        enums: 'javascript',
+        name: '@hey-api/typescript',
+      },
+      defineAugmentationConfig({
+        namespaces: ['ai.brands'],
+      }),
+      defineClientTransformerConfig({
+        namespace: 'Brands',
+      }),
+    ],
+  });
+}
+
 generate();
+generateBrands();

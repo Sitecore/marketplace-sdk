@@ -1,6 +1,7 @@
 # Sitecore Marketplace SDK - `ai` package
 
-The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI skills APIs:
+The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI APIs:
+- [Brands API](https://ai-brands-api-euw.sitecorecloud.io/openapi.json) - manage brand guidance and review workflows for AI-assisted content operations.
 - [Brand Review REST API](https://api-docs.sitecore.com/ai-capabilities/ai-brand-review-admin-rest-api) - using AI-powered analysis, evaluate whether input content and assets comply with the guidelines defined in a brand kit.
 
 ## Prerequisites
@@ -32,6 +33,21 @@ const config = {
 
 ## Usage
 
+### Make a query
+Use the `query` method to make one-off data requests and live subscriptions.
+
+For example, to fetch data from the brands API:
+
+```typescript
+await client?.query('ai.brands.listBrandKits', {
+  params: {
+    organizationId: 'your-organization-id',
+  },
+});
+```
+
+For an overview of all the possible values, refer to the [`QueryMap` interface](../../docs/modules/ai/interfaces/QueryMap.md).
+
 ### Make a mutation
 Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
 
@@ -61,4 +77,4 @@ For more information, refer to the reference documentation in the `/docs` folder
 This package is part of the Sitecore Marketplace SDK, licensed under the Apache 2.0 License. Refer to the [LICENSE](../../LICENSE.md) file in the repository root.
 
 ## Status
-The `client` package is actively maintained as part of the Sitecore Marketplace SDK.
+The `ai` package is actively maintained as part of the Sitecore Marketplace SDK.

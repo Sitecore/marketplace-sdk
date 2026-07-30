@@ -11,17 +11,20 @@ describe('experimental_AI', () => {
   it('should create an instance with getAccessToken', () => {
     const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
     expect(client).toBeDefined();
+    expect(client.brands).toBeDefined();
     expect(client.skills).toBeDefined();
   });
 
-  it('should have a skills property', () => {
+  it('should have brands and skills properties', () => {
     const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
+    expect(client.brands).toBeDefined();
     expect(client.skills).toBeDefined();
   });
 
   it('should create client via factory function', async () => {
     const client = await experimental_createAIClient({ getAccessToken: mockGetAccessToken });
     expect(client).toBeInstanceOf(experimental_AI);
+    expect(client.brands).toBeDefined();
     expect(client.skills).toBeDefined();
   });
 
@@ -32,11 +35,19 @@ describe('experimental_AI', () => {
 
   it('should use EDGE_PLATFORM_PROXY_URL from window.env when available', () => {
     const customUrl = 'https://custom-proxy.example.com';
-    (window as any).env = { EDGE_PLATFORM_PROXY_URL: customUrl };
+    Object.defineProperty(window, 'env', {
+      value: { EDGE_PLATFORM_PROXY_URL: customUrl },
+      writable: true,
+      configurable: true,
+    });
 
     const client = new experimental_AI({ getAccessToken: mockGetAccessToken });
     expect(client).toBeDefined();
 
-    delete (window as any).env;
+    Object.defineProperty(window, 'env', {
+      value: undefined,
+      writable: true,
+      configurable: true,
+    });
   });
 });
