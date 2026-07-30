@@ -7,6 +7,7 @@ This mono-repository manages the following Marketplace SDK packages:
 - `client` – required for all Marketplace applications. This package provides secure, bidirectional communication between the Marketplace app and Sitecore. It lets you make queries and mutations. Queries support one-off data requests and subscriptions for live updates. Mutations trigger state changes or HTTP requests in Sitecore. For more information, refer to the package [README](packages/client/README.md).
 - `xmc` – extends the Client SDK and provides type-safe interfaces for interacting with Sitecore XM Cloud APIs. For more information, refer to the package [README](packages/xmc/README.md).
 - `ai` – extends the Client SDK and provides type-safe interfaces for interacting with AI skills APIs. AI skills APIs provide LLM-powered capabilities grounded in SitecoreAI data. For more information, refer to the package [README](packages/ai/README.md).
+- `ai-v2` – extends the Client SDK and provides type-safe interfaces for interacting with AI extractions APIs. For more information, refer to the package [README](packages/ai-v2/README.md).
 
 The packages expose uniform, type-safe, and developer-friendly APIs to speed up your Marketplace app development work.
 
@@ -26,6 +27,12 @@ If your app needs to interact with AI skills APIs, install the `ai` package:
 
 ```bash
 npm install @sitecore-marketplace-sdk/ai
+```
+
+If your app needs to interact with AI extractions APIs, install the `ai-v2` package:
+
+```bash
+npm install @sitecore-marketplace-sdk/ai-v2
 ```
 
   > [!NOTE]
@@ -48,6 +55,7 @@ The repository is structured as follows:
 │     ├── core    // Core SDK (communication layer)
 │     ├── client  // Client SDK (client application integration)
 │     ├── ai      // AI module (integration with Sitecore AI skills APIs)
+│     ├── ai-v2   // AI v2 module (integration with Sitecore AI extractions APIs)
 │     └── xmc     // XMC module (integration with Sitecore XM Cloud APIs)
 └── docs          // Reference documentation and project guides
 ```
