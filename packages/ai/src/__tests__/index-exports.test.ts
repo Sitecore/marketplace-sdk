@@ -17,6 +17,10 @@ describe('AI module exports', () => {
     expect(typeof aiModule.experimental_createAIClient).toBe('function');
   });
 
+  it('should keep the ai namespace export stable', () => {
+    expect(aiModule.AI.namespace).toBe('ai');
+  });
+
   it('should export QueryMap and MutationMap', () => {
     // These are type-only re-exports, so we just verify the module compiles
     expect(aiModule).toBeDefined();

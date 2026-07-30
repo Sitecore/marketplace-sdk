@@ -1,7 +1,8 @@
 # Sitecore Marketplace SDK - `ai` package
 
-The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI skills APIs:
+The `ai` package extends the Client SDK and provides type-safe interfaces for interacting with the following AI APIs:
 - [Brand Review REST API](https://api-docs.sitecore.com/ai-capabilities/ai-brand-review-admin-rest-api) - using AI-powered analysis, evaluate whether input content and assets comply with the guidelines defined in a brand kit.
+- Documents API - manage AI document content, chunks, references, and topics.
 
 ## Prerequisites
 - Node.js 16 or later. Check your installed version by using the `node --version` command.
@@ -32,17 +33,34 @@ const config = {
 
 ## Usage
 
+### Make a query
+Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve.
+
+For example, to read the Documents API version:
+
+```typescript
+client.query('ai.documents.getVersion', {
+  params: {},
+}).then((res) => {
+  console.log('Success:', res.data);
+}).catch((error) => {
+  console.error('Error:', error);
+});
+```
+
+For an overview of all the possible values, refer to the [`QueryMap` interface](../../docs/modules/ai/interfaces/QueryMap.md).
+
 ### Make a mutation
 Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
 
-For example, to generate a brand review using the AI skills API:
+For example, to create a document using the Documents API:
 
 ```typescript
-const generateBrandReview = async () => {
-  await client?.mutate('ai.skills.generateBrandReview', {
+const createDocument = async () => {
+  await client?.mutate('ai.documents.createDocument', {
     body: {
-      brandkitId: 'your-brand-kit-id',
-      input: { text: 'Content to review' },
+      title: 'New document',
+      content: 'Document body',
     },
   });
 };
@@ -61,4 +79,4 @@ For more information, refer to the reference documentation in the `/docs` folder
 This package is part of the Sitecore Marketplace SDK, licensed under the Apache 2.0 License. Refer to the [LICENSE](../../LICENSE.md) file in the repository root.
 
 ## Status
-The `client` package is actively maintained as part of the Sitecore Marketplace SDK.
+The `ai` package is actively maintained as part of the Sitecore Marketplace SDK.
