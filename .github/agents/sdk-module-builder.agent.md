@@ -13,6 +13,8 @@ You are a specialist at scaffolding and rebuilding **Sitecore Marketplace SDK** 
 - DO NOT invent schema URLs. Use exactly what the user provides. Local schemas live in `packages/<module>/schema/`.
 - DO NOT modify unrelated packages (`client`, `core`, `shared`) unless explicitly asked.
 - Keep changes minimal and idiomatic to the existing two modules (`xmc`, `ai`) — match their style exactly.
+- You ARE responsible for creating/updating 3 README files when a new module is generated: `packages/<module>/README.md`, root `README.md`, `docs/README.md`.
+- DO NOT skip README generation — they are part of the deliverable.
 - **Speed: the Templates below are authoritative — do NOT re-read `packages/xmc` or `packages/ai` source files just to copy patterns.** Write the manual files straight from the templates. Only open a reference file to resolve a specific nuance the templates flag as module-dependent (e.g. the experimental `basePath`, the `ai` `async function generate()` form, or the xmc `agent` folder-index import). Reading config (`tsconfig.json`/`vitest.config.ts`/`rollup.config.js`) from **one** existing module **once** is fine since they are copied verbatim — do not re-open the same config across multiple modules, and do not read `client`/`core`/`shared` source to "verify" the templates; trust them.
 
 ## STANDARD INPUT FORMAT (required — parse this exactly)
@@ -74,8 +76,17 @@ Create a TODO list and work through it in order. Mark each step complete before 
    - **Absolute path that resolves INSIDE this repo** (e.g. `C:\…\packages\xmc\schema\authoring.yaml`) → do NOT `read_file` then recreate it (two large tool calls). Instead either reference it relatively in `generate-*.ts` (`../xmc/schema/authoring.yaml`) or copy it in one command: `Copy-Item ..\xmc\schema\authoring.yaml .\schema\authoring.yaml`. Never bake the absolute path into the committed generator.
    - **Absolute path OUTSIDE the repo** → `Copy-Item` it into `packages/<module>/schema/<file>` and reference `./schema/<file>` so generators stay machine-independent.
    Confirm the file exists on disk before moving to generation.
-3. **Scaffold manual files** — create/patch the files in the Templates section. For a brand-new module create all of them (including `src/client-sdk-fetch.ts`, which the generated `client.gen.ts` imports); for an existing module being extended, only add the new namespace entries to `generate-*.ts`, `src/index.ts`, `src/experimental_<module>.ts`, and add/extend tests.
+3. **Scaffold manual files** — create/patch the files in the Templates section. For a brand-new module create all of them (including `src/client-sdk-fetch.ts` and `LICENSE.MD`, which the generated `client.gen.ts` imports); for an existing module being extended, only add the new namespace entries to `generate-*.ts`, `src/index.ts`, `src/experimental_<module>.ts`, and add/extend tests.
   If the user asks to regenerate a single namespace within an existing module, rerun `pnpm generate:module` and `pnpm generate:module:experimental` from `packages/<module>` without deleting any other namespace folders. Only patch the specific namespace entry in `generate-*.ts` if that namespace's schema or basePath changed, and leave unaffected manual files alone.
+3.5 **Update READMEs** — after scaffolding manual files, before install:
+   - Create `packages/<module>/README.md` from the README Template below.
+   - Edit root `README.md`:
+     - Add bullet to the package list section (after `- xmc` / `- ai` line).
+     - Add entry to the monorepo directory tree.
+     - Add installation instructions block.
+   - Edit `docs/README.md`:
+     - Add a `<Module>` section with link to `docs/modules/<module>/README.md`.
+   - The generated TypeDoc will produce `docs/modules/<module>/README.md` automatically — do NOT hand-write that one.
 4. **Install first, WITHOUT scripts (new module)** — for a BRAND-NEW package, run `pnpm install --ignore-scripts` from the repo root after the manual scaffolding is in place and before generating. Two reasons: (a) generation runs `tsx generate-<module>.ts`, and a new package has no linked `node_modules`, so `pnpm generate:module` fails with `'tsx' is not recognized` until install links the workspace deps; (b) the root `postinstall` runs `build:serial`, which would try to build the new package **before its `src/client-*` files are generated** and fail with `Could not resolve "./client-<folder>/sdk.gen"`, often blocking on a `Terminate batch job (Y/N)?` prompt that needs manual intervention. `--ignore-scripts` links deps without running that doomed build. (Extending an existing module can skip this — its deps are already installed.)
 5. **Generate** — from `packages/<module>`: run `pnpm generate:module` then `pnpm generate:module:experimental` (or from root `turbo run generate:module` / `turbo run generate:module:experimental`). This produces `src/client-*/` and `src/experimental/client-*/`.
 6. **Install (ALWAYS `--ignore-scripts`)** — from repo root run `pnpm install --ignore-scripts` again so the new generated code and any added deps are linked (also updates `pnpm-lock.yaml` with the new `packages/<module>:` importer — that diff is expected, not noise). **Do NOT run a plain `pnpm install` here.** A plain install fires the root `postinstall` → `build:serial` → `pnpm -r --stream build`, which builds EVERY package in parallel. If ANY package fails — including a pre-existing break OR a transient/ordering hiccup in the parallel `-r --stream` run that is unrelated to your module — pnpm drops to the Windows `Terminate batch job (Y/N)?` prompt and blocks forever waiting for manual input. `--ignore-scripts` links the deps without ever triggering that repo-wide build, so the new module can never be blocked by an unrelated package. (This is the same reason Step 4 uses `--ignore-scripts`.)
@@ -241,6 +252,100 @@ Copy `tsconfig.json` and `vitest.config.ts` verbatim from `packages/xmc` for a m
 ### package.json
 Copy `packages/ai/package.json`, change `name` to `@sitecore-marketplace-sdk/<module>`, the `generate:module*` script targets to `generate-<module>*.ts`, the `generate:docs` out dir to `docs/modules/<module>`, and the `keywords`. Reset `version` to `0.1.0` for a new module.
 
+### packages/\<module\>/README.md
+Placeholders: `<module>` lowercase, `<MODULE>` uppercase constant, `<Module>` Title Case, `<Display>` per-namespace Title, `<SubscriptionName>` from domain context.
+
+```markdown
+# Sitecore Marketplace SDK - `<module>` package
+
+The `<module>` package extends the Client SDK and provides type-safe interfaces for interacting with the following <Module> APIs:
+- <Display> (<link>) — <description>
+// …repeat per namespace…
+
+## Prerequisites
+- Node.js 16 or later. Check your installed version by using the `node --version` command.
+- npm 10 or later. Check your installed version by using the `npm --version` command.
+- A <SubscriptionName> subscription.
+
+## Installation
+
+```bash
+npm install @sitecore-marketplace-sdk/<module>
+```
+
+## Initialization
+Before you use queries or mutations, you must initialize the <MODULE> module.
+
+1. Update the code where you initialized the Client SDK by importing `<MODULE>` and adding it to `config`:
+
+```typescript
+// utils/hooks/useMarketplaceClient.ts
+import { <MODULE> } from '@sitecore-marketplace-sdk/<module>';
+
+// ...
+const config = {
+  // ...
+  modules: [<MODULE>] // Extend Client SDK with `<MODULE>`
+};
+```
+
+## Usage
+
+### Make a query
+Use the `query` method to make one-off data requests and live subscriptions. Pass a value to the method depending on the data you want to retrieve.
+
+For example, pass `'<module>.<key>.<operation>'` to <action>:
+
+```typescript
+client.query('<module>.<key>.<operation>', {
+    params: { … },
+}).then((res) => {
+    console.log("Success:", res.data);
+}).catch((error) => {
+    console.error("Error:", error);
+});
+```
+
+For an overview of all the possible values, refer to the [`QueryMap` interface](../../docs/modules/<module>/interfaces/QueryMap.md).
+
+### Make a mutation
+Use the `mutate` method to trigger changes in Sitecore (the host). Pass a value to the method depending on the change you want to make.
+
+For example, to <action>:
+
+```typescript
+client?.mutate('<module>.<key>.<operation>', {
+    params: { … },
+});
+```
+
+For an overview of all the possible values, refer to the [`MutationMap` interface](../../docs/modules/<module>/interfaces/MutationMap.md).
+
+> [!NOTE]
+> Behind the scenes, the Host SDK (integrated via the internal `core` package) attaches the required user token and performs the HTTP request on behalf of the Marketplace app (the client).
+
+## Documentation
+
+For more information, refer to the reference documentation in the `/docs` folder.
+
+## License
+This package is part of the Sitecore Marketplace SDK, licensed under the Apache 2.0 License. Refer to the [LICENSE](../../LICENSE.md) file in the repository root.
+
+## Status
+The `<module>` package is actively maintained as part of the Sitecore Marketplace SDK.
+```
+
+**Template rules:**
+- Pick one representative `query` operation and one `mutation` operation per-namespace for the examples. Use the first operation from `sdk.gen` if the user does not specify.
+- API links: use the OpenAPI `info.description` URL if available, otherwise omit.
+- Subscription name: infer from module domain (e.g. XM Cloud, AI Skills, CDP). Ask if ambiguous.
+
+### LICENSE.MD
+Copy from an existing module. Run from `packages/<module>/`:
+```powershell
+Copy-Item ..\xmc\LICENSE.MD .\LICENSE.MD
+```
+
 ### Tests (src/__tests__)
 Mirror the existing tests, substituting the module's namespaces.
 
@@ -277,7 +382,7 @@ Run Step 11 only when the user's `git:` block is present or they explicitly ask 
 **Safety rules**
 - Branch always from latest `main`.
 - Stage only: `packages/<module>/` (all hand-maintained and generated files) and `pnpm-lock.yaml` (updated importer entry).
-- Before committing, explicitly unstage `appsettings*.json` and `*.md` files if they appear in `git diff --staged`; note any omission in the report.
+- Before committing, explicitly unstage `appsettings*.json` and `*.md` files if they appear in `git diff --staged`; note any omission in the report. README files created/updated by Step 3.5 are intentionally left unstaged — the user stages them manually when ready.
 - Never commit secrets, credentials, or log files.
 
 **Commands (PowerShell, from repo root)**
@@ -334,3 +439,13 @@ When asked to validate the agent by deleting a module folder and rebuilding:
 
 ## Output format
 End with a concise report: module, namespaces created, files added/changed, the final `pnpm build` / `pnpm test` results (pass/fail with the key error if failing), and — when Step 11 ran — the pushed branch name and the created PR URL.
+
+Also include a README summary:
+```
+- **READMEs created/updated:**
+  - `packages/<module>/README.md` — created
+  - `README.md` — updated (package list, monorepo tree, install instructions)
+  - `docs/README.md` — updated (module documentation link)
+  > README files are NOT auto-staged by git. To include them in the PR, manually stage:
+  >   git add packages/<module>/README.md README.md docs/README.md
+```
