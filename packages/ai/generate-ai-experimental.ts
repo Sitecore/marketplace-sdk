@@ -16,13 +16,40 @@ async function generate() {
       }),
       '@hey-api/client-fetch',
       '@hey-api/schemas',
-      '@hey-api/sdk',
+      {
+        name: '@hey-api/sdk',
+        operationId: false,
+      },
       {
         enums: 'javascript',
         name: '@hey-api/typescript',
       },
       defineNamespaceTransformerConfig({
         namespace: 'experimental_Skills',
+      }),
+    ],
+  });
+
+  await createClient({
+    input: './schema/brands.openapi.json',
+    output: {
+      format: 'prettier',
+      lint: 'eslint',
+      path: './src/experimental/client-brands',
+    },
+    plugins: [
+      defineSchemaPatcherConfig({
+        basePath: '/ai-brands-api',
+      }),
+      '@hey-api/client-fetch',
+      '@hey-api/schemas',
+      '@hey-api/sdk',
+      {
+        enums: 'javascript',
+        name: '@hey-api/typescript',
+      },
+      defineNamespaceTransformerConfig({
+        namespace: 'experimental_Brands',
       }),
     ],
   });

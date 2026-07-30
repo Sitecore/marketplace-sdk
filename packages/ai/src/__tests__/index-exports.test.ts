@@ -8,6 +8,10 @@ describe('AI module exports', () => {
     expect(typeof aiModule.AI.invokeOperation).toBe('function');
   });
 
+  it('should export brands namespace types', () => {
+    expect(aiModule).toBeDefined();
+  });
+
   it('should export experimental_AI class', () => {
     expect(aiModule.experimental_AI).toBeDefined();
   });

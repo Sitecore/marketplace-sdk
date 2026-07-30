@@ -17,7 +17,10 @@ async function generate() {
       }),
       '@hey-api/client-fetch',
       '@hey-api/schemas',
-      '@hey-api/sdk',
+      {
+        name: '@hey-api/sdk',
+        operationId: false,
+      },
       {
         enums: 'javascript',
         name: '@hey-api/typescript',
@@ -27,6 +30,33 @@ async function generate() {
       }),
       defineClientTransformerConfig({
         namespace: 'Skills',
+      }),
+    ],
+  });
+
+  await createClient({
+    input: './schema/brands.openapi.json',
+    output: {
+      format: 'prettier',
+      lint: 'eslint',
+      path: './src/client-brands',
+    },
+    plugins: [
+      defineSchemaPatcherConfig({
+        basePath: '/ai-brands-api',
+      }),
+      '@hey-api/client-fetch',
+      '@hey-api/schemas',
+      '@hey-api/sdk',
+      {
+        enums: 'javascript',
+        name: '@hey-api/typescript',
+      },
+      defineAugmentationConfig({
+        namespaces: ['ai.brands'],
+      }),
+      defineClientTransformerConfig({
+        namespace: 'Brands',
       }),
     ],
   });
