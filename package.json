@@ -33,6 +33,7 @@
   "description": "Marketplace SDK",
   "devDependencies": {
     "@changesets/cli": "2.31.1",
+    "fast-uri": ">=4.1.2",
     "jest-environment-jsdom": "^30.4.1",
     "turbo": "^2.6.1",
     "typedoc": "^0.28.14",
