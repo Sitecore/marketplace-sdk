@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: pnpm-dependencies-scan
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install pnpm
         run: npm i -g pnpm
