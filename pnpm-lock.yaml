@@ -112,6 +112,12 @@ importers:
       esbuild-node-externals:
         specifier: ^2.0.0
         version: 2.0.0(esbuild@0.28.1)
+      js-yaml:
+        specifier: ^4.3.1
+        version: 4.3.1
+      nanoid:
+        specifier: ^3.3.18
+        version: 3.3.18
       prettier:
         specifier: ^3.5.1
         version: 3.9.6
@@ -188,9 +194,15 @@ importers:
       handlebars:
         specifier: '>=4.7.9'
         version: 4.7.9
+      js-yaml:
+        specifier: ^4.3.1
+        version: 4.3.1
       jsdom:
         specifier: ^30.0.1
         version: 30.0.1
+      nanoid:
+        specifier: ^3.3.18
+        version: 3.3.18
       prettier:
         specifier: ^3.5.1
         version: 3.9.6
@@ -249,9 +261,15 @@ importers:
       eslint:
         specifier: ^10.8.0
         version: 10.8.0(jiti@2.7.0)
+      js-yaml:
+        specifier: ^4.3.1
+        version: 4.3.1
       jsdom:
         specifier: ^30.0.1
         version: 30.0.1
+      nanoid:
+        specifier: ^3.3.18
+        version: 3.3.18
       prettier:
         specifier: 3.9.6
         version: 3.9.6
@@ -283,6 +301,12 @@ importers:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
         version: 0.99.0(magicast@0.5.3)(typescript@5.9.3)
+      js-yaml:
+        specifier: ^4.3.1
+        version: 4.3.1
+      nanoid:
+        specifier: ^3.3.18
+        version: 3.3.18
       typescript:
         specifier: ^5.9.2
         version: 5.9.3
@@ -329,6 +353,12 @@ importers:
       esbuild-node-externals:
         specifier: ^2.0.0
         version: 2.0.0(esbuild@0.28.1)
+      js-yaml:
+        specifier: ^4.3.1
+        version: 4.3.1
+      nanoid:
+        specifier: ^3.3.18
+        version: 3.3.18
       prettier:
         specifier: ^3.5.1
         version: 3.9.6
