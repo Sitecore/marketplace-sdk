@@ -75,8 +75,8 @@ importers:
   packages/ai:
     dependencies:
       '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.13.1
+        version: 0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -291,8 +291,8 @@ importers:
   packages/shared:
     dependencies:
       '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.13.1
+        version: 0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -316,8 +316,8 @@ importers:
   packages/xmc:
     dependencies:
       '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.13.1
+        version: 0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -765,9 +765,11 @@ packages:
   '@gerrit0/mini-shiki@3.23.0':
     resolution: {integrity: sha512-bEMORlG0cqdjVyCEuU0cDQbORWX+kYCeo0kV1lbxF5bt4r7SID2l9bqsxJEM0zndaxpOUT7riCyIVEuqq/Ynxg==}
 
-  '@hey-api/client-fetch@0.8.3':
-    resolution: {integrity: sha512-EBVa8wwUMyBSeQ32PtCz6u5bFQZIMAufvwCT1ZtpjqT3caJQEza4NokbGU50q1ZVrMsM5Ot6GuDNJOF3TMo26Q==}
+  '@hey-api/client-fetch@0.13.1':
+    resolution: {integrity: sha512-29jBRYNdxVGlx5oewFgOrkulZckpIpBIRHth3uHFn1PrL2ucMy52FvWOY3U3dVx2go1Z3kUmMi6lr07iOpUqqA==}
     deprecated: Starting with v0.73.0, this package is bundled directly inside @hey-api/openapi-ts.
+    peerDependencies:
+      '@hey-api/openapi-ts': < 2
 
   '@hey-api/codegen-core@0.9.1':
     resolution: {integrity: sha512-s97jL1dgTMuiMHv2BZ1X4Tgd99Mf9GOvGdNqNcGwIMmnR+PgYNoraj4Zvp134MKsNCap/m7k0r0vKKnl56pj4w==}
@@ -3109,7 +3111,9 @@ snapshots:
       '@shikijs/types': 3.23.0
       '@shikijs/vscode-textmate': 10.0.2
 
-  '@hey-api/client-fetch@0.8.3': {}
+  '@hey-api/client-fetch@0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))':
+    dependencies:
+      '@hey-api/openapi-ts': 0.99.0(magicast@0.5.3)(typescript@5.9.3)
 
   '@hey-api/codegen-core@0.9.1(magicast@0.5.3)':
     dependencies:
