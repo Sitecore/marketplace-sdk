@@ -28,8 +28,8 @@ export type Options<
 };
 
 /**
- * Get Configs
- * Get all search configurations for the authenticated client
+ * Retrieve configurations
+ * Retrieve all search configurations for the authenticated client.
  */
 export const getConfigs = <ThrowOnError extends boolean = false>(
   options?: Options<GetConfigsData, ThrowOnError>,

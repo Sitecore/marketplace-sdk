@@ -5,7 +5,7 @@ import * as sdk from './sdk.gen';
 declare module '@sitecore-marketplace-sdk/client' {
   interface QueryMap {
     /**
-     * Get all search configurations for the authenticated client*/
+     * Retrieve all search configurations for the authenticated client.*/
     'xmc.search.getConfigs': {
       params: Parameters<typeof sdk.getConfigs>[0];
       response: Awaited<ReturnType<typeof sdk.getConfigs>>;

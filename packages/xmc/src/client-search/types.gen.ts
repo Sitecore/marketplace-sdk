@@ -2,53 +2,179 @@
 
 export namespace Search {
   export type Config = {
-    contentType?: string;
-    contentTypes?: Array<string>;
+    connections?: Array<Connection>;
     context?: {
       [key: string]: string;
     };
-    createdAt?: string;
+    createdAt: string;
     createdBy?: string;
-    description?: string;
-    fields?: Array<Field>;
-    id?: string;
-    name?: string;
-    searchClientKey?: string;
+    deletedAt?: string;
+    deletedBy?: string;
+    description: string;
+    fields: Array<Field>;
+    hasDraft?: boolean;
+    id: string;
+    /**
+     * The SitecoreAI locale.
+     *
+     * Example values: ["en", "en-US", "el-GR"]
+     */
+    locales?: Array<string>;
+    name: string;
+    publishedAt?: string;
+    publishedBy?: string;
+    schedule?: Schedule;
+    searchClientKey: string;
     searchSettings?: SearchSettings;
+    /**
+     * Allowed values: content (XMC pull), site (crawl/pull), push (API push as system of record).
+     * Empty defaults to content.
+     */
+    sourceType?: 'content' | 'site' | 'push';
+    status?: string;
+    suggestion?: SuggestionSettings;
+    /**
+     * TemplateId is required for content sources only
+     */
     templateId?: string;
-    templateIds?: Array<string>;
-    tenantId?: string;
-    updatedAt?: string;
+    tenantId: string;
+    updatedAt: string;
     updatedBy?: string;
+    versionNumber?: number;
   };
   export type ErrorResponse = {
     code?: number;
-    internal?: {
-      [key: string]: unknown;
-    };
-    message?: {
-      [key: string]: unknown;
-    };
+    internal?: unknown;
+    message?: unknown;
+  };
+  export type Connection = {
+    id?: string;
+    name?: string;
+    sitemap?: SitemapSettings;
+    type?: string;
   };
   export type Field = {
     description?: string;
-    displayName?: string;
-    facet?: SearchFeature;
-    filter?: SearchFeature;
+    displayName: string;
+    facet: SearchFeature;
+    filter: SearchFeature;
     id?: string;
-    key?: SearchFeature;
-    name?: string;
-    retrieve?: SearchFeature;
-    search?: SearchFeature;
-    sort?: SearchFeature;
-    type?: string;
+    key: SearchFeature;
+    name: string;
+    retrieve: SearchFeature;
+    search: SearchFeature;
+    sort: SearchFeature;
+    type: string;
   };
-  export type SearchFeature = {
-    enabled?: boolean;
-    name?: string;
+  export type Schedule = {
+    /**
+     * 1–31; required for monthly
+     */
+    dayOfMonth?: number;
+    /**
+     * 0=Sun … 6=Sat; required for weekly
+     */
+    dayOfWeek?: number;
+    /**
+     * 0–23; required for daily, weekly, monthly
+     */
+    hour?: number;
+    /**
+     * Required for interval; must be greater than zero
+     */
+    intervalHours?: number;
+    /**
+     * 0–59; required for hourly, daily, weekly, monthly
+     */
+    minute?: number;
+    /**
+     * StartsAt is the earliest time a run is allowed. Past values are fine —
+     * for intervals they're the anchor the schedule counts from. We only reject
+     * a zero/empty time (a real past or future timestamp is always ok).
+     * Example (calendar): daily at 09:00, StartsAt=2026-08-01 → first run is Aug 1 at 09:00, not earlier.
+     * Example (interval): StartsAt=2024-01-01T00:00Z, every 6h → …00:00, 06:00, 12:00…; after Jul 22 10:00 → next is 12:00.
+     */
+    startsAt?: string;
+    timezone?: string;
+    type?: string;
   };
   export type SearchSettings = {
     fuzzySearch?: SearchFeature;
+    semanticRanking?: SemanticRankingSearchSetting;
+  };
+  export type SuggestionSettings = {
+    previewResults?: SuggestionModeSettings;
+    querySuggestion?: SuggestionModeSettings;
+  };
+  export type SitecrawlSettings = {
+    crawlRules?: Array<CrawlRule>;
+    defaultFieldExtractions?: Array<FieldExtraction>;
+    extractionPatterns?: Array<ExtractionPattern>;
+    fieldExtractions?: Array<FieldExtraction>;
+    maxDepth?: number;
+    maxPages?: number;
+    rateLimitRPS?: number;
+    renderJavaScript?: boolean;
+    respectRobotsTxt?: boolean;
+    sites?: Array<Site>;
+    startingUrls?: Array<string>;
+  };
+  export type SitemapSettings = {
+    crawlRules?: Array<CrawlRule>;
+    defaultFieldExtractions?: Array<FieldExtraction>;
+    extractionPatterns?: Array<ExtractionPattern>;
+    fieldExtractions?: Array<FieldExtraction>;
+    sitemapUrls?: Array<string>;
+    sites?: Array<Site>;
+  };
+  export type SearchFeature = {
+    enabled: boolean;
+    name?: string;
+  };
+  export type SemanticRankingSearchSetting = {
+    enabled?: boolean;
+  };
+  export type SuggestionModeSettings = {
+    enabled?: boolean;
+    fields?: Array<string>;
+    limit?: number;
+  };
+  export type CrawlRule = {
+    pattern?: string;
+    policy?: string;
+    rule?: string;
+  };
+  export type FieldExtraction = {
+    fieldName?: string;
+    sources?: Array<ExtractionSource>;
+  };
+  export type ExtractionPattern = {
+    fieldExtractions?: Array<FieldExtraction>;
+    name?: string;
+    urlPattern?: string;
+    urlPatternRule?: string;
+  };
+  export type Site = {
+    /**
+     * Id is the unique identifier of the site (XM Cloud site id when Origin is "xmcloud").
+     */
+    id?: string;
+    /**
+     * Name is the human-readable site name shown in the UI.
+     */
+    name?: string;
+    /**
+     * Origin is "xmcloud" for sites sourced from XM Cloud or "manual" for externally-defined sites.
+     */
+    origin?: string;
+    /**
+     * Url is the absolute root URL of the site to crawl.
+     */
+    url?: string;
+  };
+  export type ExtractionSource = {
+    selector?: string;
+    type?: string;
   };
   export type GetConfigsData = {
     body?: never;
@@ -67,18 +193,18 @@ export namespace Search {
   };
   export type GetConfigsErrors = {
     /**
-     * Auth error
+     * Bad request
      */
     400: ErrorResponse;
     /**
-     * Internal Server Error
+     * Internal server error
      */
     500: ErrorResponse;
   };
   export type GetConfigsError = GetConfigsErrors[keyof GetConfigsErrors];
   export type GetConfigsResponses = {
     /**
-     * Success response
+     * Successful operation
      */
     200: Array<Config>;
   };

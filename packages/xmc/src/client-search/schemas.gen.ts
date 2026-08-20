@@ -2,14 +2,21 @@
 
 export const ConfigSchema = {
   type: 'object',
+  required: [
+    'createdAt',
+    'description',
+    'fields',
+    'id',
+    'name',
+    'searchClientKey',
+    'tenantId',
+    'updatedAt',
+  ],
   properties: {
-    contentType: {
-      type: 'string',
-    },
-    contentTypes: {
+    connections: {
       type: 'array',
       items: {
-        type: 'string',
+        $ref: '#/components/schemas/Connection',
       },
     },
     context: {
@@ -24,6 +31,12 @@ export const ConfigSchema = {
     createdBy: {
       type: 'string',
     },
+    deletedAt: {
+      type: 'string',
+    },
+    deletedBy: {
+      type: 'string',
+    },
     description: {
       type: 'string',
     },
@@ -33,11 +46,33 @@ export const ConfigSchema = {
         $ref: '#/components/schemas/Field',
       },
     },
+    hasDraft: {
+      type: 'boolean',
+    },
     id: {
       type: 'string',
     },
+    locales: {
+      description: `The SitecoreAI locale.
+
+Example values: ["en", "en-US", "el-GR"]`,
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+      example: ['en', 'en-US', 'el-GR'],
+    },
     name: {
       type: 'string',
+    },
+    publishedAt: {
+      type: 'string',
+    },
+    publishedBy: {
+      type: 'string',
+    },
+    schedule: {
+      $ref: '#/components/schemas/Schedule',
     },
     searchClientKey: {
       type: 'string',
@@ -45,14 +80,22 @@ export const ConfigSchema = {
     searchSettings: {
       $ref: '#/components/schemas/SearchSettings',
     },
-    templateId: {
+    sourceType: {
+      description: `Allowed values: content (XMC pull), site (crawl/pull), push (API push as system of record).
+Empty defaults to content.`,
+      type: 'string',
+      enum: ['content', 'site', 'push'],
+      example: 'push',
+    },
+    status: {
       type: 'string',
     },
-    templateIds: {
-      type: 'array',
-      items: {
-        type: 'string',
-      },
+    suggestion: {
+      $ref: '#/components/schemas/SuggestionSettings',
+    },
+    templateId: {
+      description: 'TemplateId is required for content sources only',
+      type: 'string',
     },
     tenantId: {
       type: 'string',
@@ -63,6 +106,9 @@ export const ConfigSchema = {
     updatedBy: {
       type: 'string',
     },
+    versionNumber: {
+      type: 'integer',
+    },
   },
 } as const;
 
@@ -72,17 +118,32 @@ export const ErrorResponseSchema = {
     code: {
       type: 'integer',
     },
-    internal: {
-      type: 'object',
+    internal: {},
+    message: {},
+  },
+} as const;
+
+export const ConnectionSchema = {
+  type: 'object',
+  properties: {
+    id: {
+      type: 'string',
     },
-    message: {
-      type: 'object',
+    name: {
+      type: 'string',
+    },
+    sitemap: {
+      $ref: '#/components/schemas/SitemapSettings',
+    },
+    type: {
+      type: 'string',
     },
   },
 } as const;
 
 export const FieldSchema = {
   type: 'object',
+  required: ['displayName', 'facet', 'filter', 'key', 'name', 'retrieve', 'search', 'sort', 'type'],
   properties: {
     description: {
       type: 'string',
@@ -120,13 +181,43 @@ export const FieldSchema = {
   },
 } as const;
 
-export const SearchFeatureSchema = {
+export const ScheduleSchema = {
   type: 'object',
   properties: {
-    enabled: {
-      type: 'boolean',
+    dayOfMonth: {
+      description: '1–31; required for monthly',
+      type: 'integer',
     },
-    name: {
+    dayOfWeek: {
+      description: '0=Sun … 6=Sat; required for weekly',
+      type: 'integer',
+    },
+    hour: {
+      description: '0–23; required for daily, weekly, monthly',
+      type: 'integer',
+    },
+    intervalHours: {
+      description: 'Required for interval; must be greater than zero',
+      type: 'integer',
+    },
+    minute: {
+      description: '0–59; required for hourly, daily, weekly, monthly',
+      type: 'integer',
+    },
+    startsAt: {
+      description: `StartsAt is the earliest time a run is allowed. Past values are fine —
+for intervals they're the anchor the schedule counts from. We only reject
+a zero/empty time (a real past or future timestamp is always ok).
+Example (calendar): daily at 09:00, StartsAt=2026-08-01 → first run is Aug 1 at 09:00, not earlier.
+Example (interval): StartsAt=2024-01-01T00:00Z, every 6h → …00:00, 06:00, 12:00…; after Jul 22 10:00 → next is 12:00.`,
+      type: 'string',
+      format: 'date-time',
+      example: '2026-07-22T10:00:00Z',
+    },
+    timezone: {
+      type: 'string',
+    },
+    type: {
       type: 'string',
     },
   },
@@ -137,6 +228,247 @@ export const SearchSettingsSchema = {
   properties: {
     fuzzySearch: {
       $ref: '#/components/schemas/SearchFeature',
+    },
+    semanticRanking: {
+      $ref: '#/components/schemas/SemanticRankingSearchSetting',
+    },
+  },
+} as const;
+
+export const SuggestionSettingsSchema = {
+  type: 'object',
+  properties: {
+    previewResults: {
+      $ref: '#/components/schemas/SuggestionModeSettings',
+    },
+    querySuggestion: {
+      $ref: '#/components/schemas/SuggestionModeSettings',
+    },
+  },
+} as const;
+
+export const SitecrawlSettingsSchema = {
+  type: 'object',
+  properties: {
+    crawlRules: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/CrawlRule',
+      },
+    },
+    defaultFieldExtractions: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/FieldExtraction',
+      },
+    },
+    extractionPatterns: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/ExtractionPattern',
+      },
+    },
+    fieldExtractions: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/FieldExtraction',
+      },
+    },
+    maxDepth: {
+      type: 'integer',
+    },
+    maxPages: {
+      type: 'integer',
+    },
+    rateLimitRPS: {
+      type: 'integer',
+    },
+    renderJavaScript: {
+      type: 'boolean',
+    },
+    respectRobotsTxt: {
+      type: 'boolean',
+    },
+    sites: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/Site',
+      },
+    },
+    startingUrls: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+    },
+  },
+} as const;
+
+export const SitemapSettingsSchema = {
+  type: 'object',
+  properties: {
+    crawlRules: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/CrawlRule',
+      },
+    },
+    defaultFieldExtractions: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/FieldExtraction',
+      },
+    },
+    extractionPatterns: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/ExtractionPattern',
+      },
+    },
+    fieldExtractions: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/FieldExtraction',
+      },
+    },
+    sitemapUrls: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+    },
+    sites: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/Site',
+      },
+    },
+  },
+} as const;
+
+export const SearchFeatureSchema = {
+  type: 'object',
+  required: ['enabled'],
+  properties: {
+    enabled: {
+      type: 'boolean',
+    },
+    name: {
+      type: 'string',
+    },
+  },
+} as const;
+
+export const SemanticRankingSearchSettingSchema = {
+  type: 'object',
+  properties: {
+    enabled: {
+      type: 'boolean',
+    },
+  },
+} as const;
+
+export const SuggestionModeSettingsSchema = {
+  type: 'object',
+  properties: {
+    enabled: {
+      type: 'boolean',
+    },
+    fields: {
+      type: 'array',
+      items: {
+        type: 'string',
+      },
+    },
+    limit: {
+      type: 'integer',
+    },
+  },
+} as const;
+
+export const CrawlRuleSchema = {
+  type: 'object',
+  properties: {
+    pattern: {
+      type: 'string',
+    },
+    policy: {
+      type: 'string',
+    },
+    rule: {
+      type: 'string',
+    },
+  },
+} as const;
+
+export const FieldExtractionSchema = {
+  type: 'object',
+  properties: {
+    fieldName: {
+      type: 'string',
+    },
+    sources: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/ExtractionSource',
+      },
+    },
+  },
+} as const;
+
+export const ExtractionPatternSchema = {
+  type: 'object',
+  properties: {
+    fieldExtractions: {
+      type: 'array',
+      items: {
+        $ref: '#/components/schemas/FieldExtraction',
+      },
+    },
+    name: {
+      type: 'string',
+    },
+    urlPattern: {
+      type: 'string',
+    },
+    urlPatternRule: {
+      type: 'string',
+    },
+  },
+} as const;
+
+export const SiteSchema = {
+  type: 'object',
+  properties: {
+    id: {
+      description:
+        'Id is the unique identifier of the site (XM Cloud site id when Origin is "xmcloud").',
+      type: 'string',
+    },
+    name: {
+      description: 'Name is the human-readable site name shown in the UI.',
+      type: 'string',
+    },
+    origin: {
+      description:
+        'Origin is "xmcloud" for sites sourced from XM Cloud or "manual" for externally-defined sites.',
+      type: 'string',
+    },
+    url: {
+      description: 'Url is the absolute root URL of the site to crawl.',
+      type: 'string',
+    },
+  },
+} as const;
+
+export const ExtractionSourceSchema = {
+  type: 'object',
+  properties: {
+    selector: {
+      type: 'string',
+    },
+    type: {
+      type: 'string',
     },
   },
 } as const;
