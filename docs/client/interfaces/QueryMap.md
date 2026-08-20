@@ -34,7 +34,7 @@ Defined in: [packages/client/src/sdk-types.ts:283](https://github.com/Sitecore/m
 
 > **host.route**: `object`
 
-Defined in: [packages/client/src/sdk-types.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L293)
+Defined in: [packages/client/src/sdk-types.ts:298](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L298)
 
 #### params
 
@@ -107,6 +107,26 @@ Defined in: [packages/client/src/sdk-types.ts:278](https://github.com/Sitecore/m
 #### subscribe
 
 > **subscribe**: `true`
+
+***
+
+### pages.getPageHTML
+
+> **pages.getPageHTML**: `object`
+
+Defined in: [packages/client/src/sdk-types.ts:293](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L293)
+
+#### params
+
+> **params**: `void`
+
+#### response
+
+> **response**: `string`
+
+#### subscribe
+
+> **subscribe**: `false`
 
 ***
 

@@ -6,7 +6,7 @@
 
 # Interface: SubscribeMap
 
-Defined in: [packages/client/src/sdk-types.ts:313](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L313)
+Defined in: [packages/client/src/sdk-types.ts:318](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L318)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [packages/client/src/sdk-types.ts:313](https://github.com/Sitecore/m
 
 > **pages.content.fieldsUpdated**: `object`
 
-Defined in: [packages/client/src/sdk-types.ts:317](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L317)
+Defined in: [packages/client/src/sdk-types.ts:322](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L322)
 
 #### data
 
@@ -26,7 +26,7 @@ Defined in: [packages/client/src/sdk-types.ts:317](https://github.com/Sitecore/m
 
 > **pages.content.layoutUpdated**: `object`
 
-Defined in: [packages/client/src/sdk-types.ts:314](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L314)
+Defined in: [packages/client/src/sdk-types.ts:319](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L319)
 
 #### data
 

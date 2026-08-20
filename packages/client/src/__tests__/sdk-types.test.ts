@@ -131,6 +131,18 @@ describe('sdk-types', () => {
     expect(mutationMap['pages.context'].response).toBeUndefined();
   });
 
+  it('should validate pages.getPageHTML QueryMap', () => {
+    const queryMap: Pick<QueryMap, 'pages.getPageHTML'> = {
+      'pages.getPageHTML': {
+        params: undefined,
+        response: '<html>mocked</html>',
+        subscribe: false,
+      },
+    };
+
+    expect(queryMap['pages.getPageHTML'].response).toBe('<html>mocked</html>');
+  });
+
   it('should validate QueryKey', () => {
     const queryKey: QueryKey = 'host.user';
     expect(queryKey).toBe('host.user');

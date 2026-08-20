@@ -6,7 +6,7 @@
 
 # Interface: MutationMap
 
-Defined in: [packages/client/src/sdk-types.ts:300](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L300)
+Defined in: [packages/client/src/sdk-types.ts:305](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L305)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [packages/client/src/sdk-types.ts:300](https://github.com/Sitecore/m
 
 > **pages.context**: `object`
 
-Defined in: [packages/client/src/sdk-types.ts:306](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L306)
+Defined in: [packages/client/src/sdk-types.ts:311](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L311)
 
 #### params
 
@@ -34,7 +34,7 @@ Defined in: [packages/client/src/sdk-types.ts:306](https://github.com/Sitecore/m
 
 > **pages.reloadCanvas**: `object`
 
-Defined in: [packages/client/src/sdk-types.ts:301](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L301)
+Defined in: [packages/client/src/sdk-types.ts:306](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L306)
 
 #### params
 

@@ -10,13 +10,13 @@ Defined in: [packages/client/src/sdk-types.ts:111](https://github.com/Sitecore/m
 
 ## Indexable
 
-\[`key`: `string`\]: `any`
+> \[`key`: `string`\]: `any`
 
 ## Properties
 
 ### pageInfo?
 
-> `optional` **pageInfo**: `PagesContextPageInfo`
+> `optional` **pageInfo?**: `PagesContextPageInfo`
 
 Defined in: [packages/client/src/sdk-types.ts:113](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L113)
 
@@ -24,6 +24,6 @@ Defined in: [packages/client/src/sdk-types.ts:113](https://github.com/Sitecore/m
 
 ### siteInfo?
 
-> `optional` **siteInfo**: [`PagesContextSiteInfo`](PagesContextSiteInfo.md)
+> `optional` **siteInfo?**: [`PagesContextSiteInfo`](PagesContextSiteInfo.md)
 
 Defined in: [packages/client/src/sdk-types.ts:112](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L112)

@@ -494,6 +494,14 @@ export class ClientSDK {
   }
 
   /**
+   * Requests the current page HTML from the host application.
+   * @returns A Promise resolving to the page HTML returned by the host.
+   */
+  async getPageHTML(): Promise<string> {
+    return this.coreSdk.request('pages.getPageHTML', {});
+  }
+
+  /**
    * Sets a value in the host application.
    * @param value - The value to set.
    * @param canvasReload - Optional flag to trigger canvas reload in the host.

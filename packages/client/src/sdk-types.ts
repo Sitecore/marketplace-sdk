@@ -290,6 +290,11 @@ export interface QueryMap {
     response: SiteContext;
     subscribe: false;
   };
+  'pages.getPageHTML': {
+    params: void;
+    response: string;
+    subscribe: false;
+  };
   'host.route': {
     params: void;
     response: string;

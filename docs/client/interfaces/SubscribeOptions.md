@@ -18,7 +18,7 @@ Options for subscribing to events
 
 ## Properties
 
-### onData()
+### onData
 
 > **onData**: (`data`) => `void`
 
@@ -38,9 +38,9 @@ Called when data is received for the subscription
 
 ***
 
-### onError()?
+### onError?
 
-> `optional` **onError**: (`error`) => `void`
+> `optional` **onError?**: (`error`) => `void`
 
 Defined in: [packages/client/src/types.ts:77](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L77)
 
