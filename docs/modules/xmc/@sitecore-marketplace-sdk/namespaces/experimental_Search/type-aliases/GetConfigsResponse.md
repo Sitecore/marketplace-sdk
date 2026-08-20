@@ -8,4 +8,4 @@
 
 > **GetConfigsResponse** = [`GetConfigsResponses`](GetConfigsResponses.md)\[keyof [`GetConfigsResponses`](GetConfigsResponses.md)\]
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:85](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L85)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:211](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L211)

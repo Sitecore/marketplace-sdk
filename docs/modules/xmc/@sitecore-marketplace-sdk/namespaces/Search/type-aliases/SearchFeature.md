@@ -8,20 +8,20 @@
 
 > **SearchFeature** = `object`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L46)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:130](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L130)
 
 ## Properties
 
-### enabled?
+### enabled
 
-> `optional` **enabled**: `boolean`
+> **enabled**: `boolean`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L47)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:131](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L131)
 
 ***
 
 ### name?
 
-> `optional` **name**: `string`
+> `optional` **name?**: `string`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L48)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:132](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L132)
