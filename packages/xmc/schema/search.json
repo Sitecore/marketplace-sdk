@@ -1,223 +1,553 @@
 {
-    "openapi": "3.0.1",
+    "openapi": "3.0.0",
     "info": {
-      "title": "Config Service API",
-      "description": "APIs for managing search configs.",
-      "contact": {},
-      "version": "1.0"
+        "title": "Search configuration API",
+        "version": "v1.0"
     },
     "servers": [
-      {
-        "url": "https://edge-platform.sitecorecloud.io/search",
-        "description": "production"
-      }
+        {
+            "url": "https://edge-platform.sitecorecloud.io/search",
+            "description": "production"
+        }
     ],
     "paths": {
-      "/v1/config": {
-        "get": {
-          "tags": [
-            "config"
-          ],
-          "summary": "Get Configs",
-          "description": "Get all search configurations for the authenticated client",
-          "operationId": "getConfigs",
-          "parameters": [
-            {
-              "name": "context.*",
-              "in": "query",
-              "description": "Context filters",
-              "schema": {
-                "type": "string"
-              }
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "Success response",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Config"
+        "/v1/config": {
+            "get": {
+                "security": [
+                    {
+                        "BearerAuth": []
                     }
-                  }
+                ],
+                "description": "Retrieve all search configurations for the authenticated client.",
+                "tags": [
+                    "Configuration",
+                    "external"
+                ],
+                "summary": "Retrieve configurations",
+                "operationId": "getConfigs",
+                "parameters": [
+                    {
+                        "description": "Context filters",
+                        "name": "context.*",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Config"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
                 }
-              }
-            },
-            "400": {
-              "description": "Auth error",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ErrorResponse"
-                  }
-                }
-              }
-            },
-            "500": {
-              "description": "Internal Server Error",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/ErrorResponse"
-                  }
-                }
-              }
             }
-          },
-          "security": [
-            {
-              "BearerAuth": []
-            }
-          ]
         }
-      }
     },
     "components": {
-      "schemas": {
-        "Config": {
-          "type": "object",
-          "properties": {
-            "contentType": {
-              "type": "string"
+        "schemas": {
+            "Config": {
+                "type": "object",
+                "required": [
+                    "createdAt",
+                    "description",
+                    "fields",
+                    "id",
+                    "name",
+                    "searchClientKey",
+                    "tenantId",
+                    "updatedAt"
+                ],
+                "properties": {
+                    "connections": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Connection"
+                        }
+                    },
+                    "context": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "deletedAt": {
+                        "type": "string"
+                    },
+                    "deletedBy": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Field"
+                        }
+                    },
+                    "hasDraft": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "locales": {
+                        "description": "The SitecoreAI locale.\n\nExample values: [\"en\", \"en-US\", \"el-GR\"]",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "example": [
+                            "en",
+                            "en-US",
+                            "el-GR"
+                        ]
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "publishedAt": {
+                        "type": "string"
+                    },
+                    "publishedBy": {
+                        "type": "string"
+                    },
+                    "schedule": {
+                        "$ref": "#/components/schemas/Schedule"
+                    },
+                    "searchClientKey": {
+                        "type": "string"
+                    },
+                    "searchSettings": {
+                        "$ref": "#/components/schemas/SearchSettings"
+                    },
+                    "sourceType": {
+                        "description": "Allowed values: content (XMC pull), site (crawl/pull), push (API push as system of record).\nEmpty defaults to content.",
+                        "type": "string",
+                        "enum": [
+                            "content",
+                            "site",
+                            "push"
+                        ],
+                        "example": "push"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "suggestion": {
+                        "$ref": "#/components/schemas/SuggestionSettings"
+                    },
+                    "templateId": {
+                        "description": "TemplateId is required for content sources only",
+                        "type": "string"
+                    },
+                    "tenantId": {
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "type": "string"
+                    },
+                    "updatedBy": {
+                        "type": "string"
+                    },
+                    "versionNumber": {
+                        "type": "integer"
+                    }
+                }
             },
-            "contentTypes": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer"
+                    },
+                    "internal": {},
+                    "message": {}
+                }
             },
-            "context": {
-              "type": "object",
-              "additionalProperties": {
-                "type": "string"
-              }
+            "Connection": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "sitemap": {
+                        "$ref": "#/components/schemas/SitemapSettings"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
             },
-            "createdAt": {
-              "type": "string"
+            "Field": {
+                "type": "object",
+                "required": [
+                    "displayName",
+                    "facet",
+                    "filter",
+                    "key",
+                    "name",
+                    "retrieve",
+                    "search",
+                    "sort",
+                    "type"
+                ],
+                "properties": {
+                    "description": {
+                        "type": "string"
+                    },
+                    "displayName": {
+                        "type": "string"
+                    },
+                    "facet": {
+                        "$ref": "#/components/schemas/SearchFeature"
+                    },
+                    "filter": {
+                        "$ref": "#/components/schemas/SearchFeature"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "key": {
+                        "$ref": "#/components/schemas/SearchFeature"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "retrieve": {
+                        "$ref": "#/components/schemas/SearchFeature"
+                    },
+                    "search": {
+                        "$ref": "#/components/schemas/SearchFeature"
+                    },
+                    "sort": {
+                        "$ref": "#/components/schemas/SearchFeature"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
             },
-            "createdBy": {
-              "type": "string"
+            "Schedule": {
+                "type": "object",
+                "properties": {
+                    "dayOfMonth": {
+                        "description": "1–31; required for monthly",
+                        "type": "integer"
+                    },
+                    "dayOfWeek": {
+                        "description": "0=Sun … 6=Sat; required for weekly",
+                        "type": "integer"
+                    },
+                    "hour": {
+                        "description": "0–23; required for daily, weekly, monthly",
+                        "type": "integer"
+                    },
+                    "intervalHours": {
+                        "description": "Required for interval; must be greater than zero",
+                        "type": "integer"
+                    },
+                    "minute": {
+                        "description": "0–59; required for hourly, daily, weekly, monthly",
+                        "type": "integer"
+                    },
+                    "startsAt": {
+                        "description": "StartsAt is the earliest time a run is allowed. Past values are fine —\nfor intervals they're the anchor the schedule counts from. We only reject\na zero/empty time (a real past or future timestamp is always ok).\nExample (calendar): daily at 09:00, StartsAt=2026-08-01 → first run is Aug 1 at 09:00, not earlier.\nExample (interval): StartsAt=2024-01-01T00:00Z, every 6h → …00:00, 06:00, 12:00…; after Jul 22 10:00 → next is 12:00.",
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2026-07-22T10:00:00Z"
+                    },
+                    "timezone": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
             },
-            "description": {
-              "type": "string"
+            "SearchSettings": {
+                "type": "object",
+                "properties": {
+                    "fuzzySearch": {
+                        "$ref": "#/components/schemas/SearchFeature"
+                    },
+                    "semanticRanking": {
+                        "$ref": "#/components/schemas/SemanticRankingSearchSetting"
+                    }
+                }
             },
-            "fields": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Field"
-              }
+            "SuggestionSettings": {
+                "type": "object",
+                "properties": {
+                    "previewResults": {
+                        "$ref": "#/components/schemas/SuggestionModeSettings"
+                    },
+                    "querySuggestion": {
+                        "$ref": "#/components/schemas/SuggestionModeSettings"
+                    }
+                }
             },
-            "id": {
-              "type": "string"
+            "SitecrawlSettings": {
+                "type": "object",
+                "properties": {
+                    "crawlRules": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CrawlRule"
+                        }
+                    },
+                    "defaultFieldExtractions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FieldExtraction"
+                        }
+                    },
+                    "extractionPatterns": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ExtractionPattern"
+                        }
+                    },
+                    "fieldExtractions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FieldExtraction"
+                        }
+                    },
+                    "maxDepth": {
+                        "type": "integer"
+                    },
+                    "maxPages": {
+                        "type": "integer"
+                    },
+                    "rateLimitRPS": {
+                        "type": "integer"
+                    },
+                    "renderJavaScript": {
+                        "type": "boolean"
+                    },
+                    "respectRobotsTxt": {
+                        "type": "boolean"
+                    },
+                    "sites": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Site"
+                        }
+                    },
+                    "startingUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
             },
-            "name": {
-              "type": "string"
+            "SitemapSettings": {
+                "type": "object",
+                "properties": {
+                    "crawlRules": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CrawlRule"
+                        }
+                    },
+                    "defaultFieldExtractions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FieldExtraction"
+                        }
+                    },
+                    "extractionPatterns": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ExtractionPattern"
+                        }
+                    },
+                    "fieldExtractions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FieldExtraction"
+                        }
+                    },
+                    "sitemapUrls": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "sites": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Site"
+                        }
+                    }
+                }
             },
-            "searchClientKey": {
-              "type": "string"
+            "SearchFeature": {
+                "type": "object",
+                "required": [
+                    "enabled"
+                ],
+                "properties": {
+                    "enabled": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
             },
-            "searchSettings": {
-              "$ref": "#/components/schemas/SearchSettings"
+            "SemanticRankingSearchSetting": {
+                "type": "object",
+                "properties": {
+                    "enabled": {
+                        "type": "boolean"
+                    }
+                }
             },
-            "templateId": {
-              "type": "string"
+            "SuggestionModeSettings": {
+                "type": "object",
+                "properties": {
+                    "enabled": {
+                        "type": "boolean"
+                    },
+                    "fields": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "limit": {
+                        "type": "integer"
+                    }
+                }
             },
-            "templateIds": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
+            "CrawlRule": {
+                "type": "object",
+                "properties": {
+                    "pattern": {
+                        "type": "string"
+                    },
+                    "policy": {
+                        "type": "string"
+                    },
+                    "rule": {
+                        "type": "string"
+                    }
+                }
             },
-            "tenantId": {
-              "type": "string"
+            "FieldExtraction": {
+                "type": "object",
+                "properties": {
+                    "fieldName": {
+                        "type": "string"
+                    },
+                    "sources": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ExtractionSource"
+                        }
+                    }
+                }
             },
-            "updatedAt": {
-              "type": "string"
+            "ExtractionPattern": {
+                "type": "object",
+                "properties": {
+                    "fieldExtractions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/FieldExtraction"
+                        }
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "urlPattern": {
+                        "type": "string"
+                    },
+                    "urlPatternRule": {
+                        "type": "string"
+                    }
+                }
             },
-            "updatedBy": {
-              "type": "string"
+            "Site": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Id is the unique identifier of the site (XM Cloud site id when Origin is \"xmcloud\").",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name is the human-readable site name shown in the UI.",
+                        "type": "string"
+                    },
+                    "origin": {
+                        "description": "Origin is \"xmcloud\" for sites sourced from XM Cloud or \"manual\" for externally-defined sites.",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "Url is the absolute root URL of the site to crawl.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ExtractionSource": {
+                "type": "object",
+                "properties": {
+                    "selector": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                }
             }
-          }
         },
-        "ErrorResponse": {
-          "type": "object",
-          "properties": {
-            "code": {
-              "type": "integer"
-            },
-            "internal": {
-              "type": "object"
-            },
-            "message": {
-              "type": "object"
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "Bearer"
             }
-          }
-        },
-        "Field": {
-          "type": "object",
-          "properties": {
-            "description": {
-              "type": "string"
-            },
-            "displayName": {
-              "type": "string"
-            },
-            "facet": {
-              "$ref": "#/components/schemas/SearchFeature"
-            },
-            "filter": {
-              "$ref": "#/components/schemas/SearchFeature"
-            },
-            "id": {
-              "type": "string"
-            },
-            "key": {
-              "$ref": "#/components/schemas/SearchFeature"
-            },
-            "name": {
-              "type": "string"
-            },
-            "retrieve": {
-              "$ref": "#/components/schemas/SearchFeature"
-            },
-            "search": {
-              "$ref": "#/components/schemas/SearchFeature"
-            },
-            "sort": {
-              "$ref": "#/components/schemas/SearchFeature"
-            },
-            "type": {
-              "type": "string"
-            }
-          }
-        },
-        "SearchFeature": {
-          "type": "object",
-          "properties": {
-            "enabled": {
-              "type": "boolean"
-            },
-            "name": {
-              "type": "string"
-            }
-          }
-        },
-        "SearchSettings": {
-          "type": "object",
-          "properties": {
-            "fuzzySearch": {
-              "$ref": "#/components/schemas/SearchFeature"
-            }
-          }
         }
-      },
-      "securitySchemes": {
-        "BearerAuth": {
-          "type": "http",
-          "scheme": "Bearer"
-        }
-      }
     }
 }

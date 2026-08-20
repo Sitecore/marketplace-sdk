@@ -8,12 +8,20 @@
 
 > **SearchSettings** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:50](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L50)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:101](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L101)
 
 ## Properties
 
 ### fuzzySearch?
 
-> `optional` **fuzzySearch**: [`SearchFeature`](SearchFeature.md)
+> `optional` **fuzzySearch?**: [`SearchFeature`](SearchFeature.md)
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L51)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:102](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L102)
+
+***
+
+### semanticRanking?
+
+> `optional` **semanticRanking?**: [`SemanticRankingSearchSetting`](SemanticRankingSearchSetting.md)
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:103](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L103)

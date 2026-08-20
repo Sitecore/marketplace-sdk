@@ -8,36 +8,28 @@
 
 > **ErrorResponse** = `object`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:24](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L24)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L45)
 
 ## Properties
 
 ### code?
 
-> `optional` **code**: `number`
+> `optional` **code?**: `number`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L25)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L46)
 
 ***
 
 ### internal?
 
-> `optional` **internal**: `object`
+> `optional` **internal?**: `unknown`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L26)
-
-#### Index Signature
-
-\[`key`: `string`\]: `unknown`
+Defined in: [packages/xmc/src/client-search/types.gen.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L47)
 
 ***
 
 ### message?
 
-> `optional` **message**: `object`
+> `optional` **message?**: `unknown`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:29](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L29)
-
-#### Index Signature
-
-\[`key`: `string`\]: `unknown`
+Defined in: [packages/xmc/src/client-search/types.gen.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L48)

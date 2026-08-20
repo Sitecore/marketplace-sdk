@@ -12,27 +12,19 @@ Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:4](https:/
 
 ## Properties
 
-### contentType?
+### connections?
 
-> `optional` **contentType**: `string`
+> `optional` **connections?**: [`Connection`](Connection.md)[]
 
 Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:5](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L5)
 
 ***
 
-### contentTypes?
-
-> `optional` **contentTypes**: `string`[]
-
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:6](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L6)
-
-***
-
 ### context?
 
-> `optional` **context**: `object`
+> `optional` **context?**: `object`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:7](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L7)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:6](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L6)
 
 #### Index Signature
 
@@ -40,104 +32,193 @@ Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:7](https:/
 
 ***
 
-### createdAt?
+### createdAt
 
-> `optional` **createdAt**: `string`
+> **createdAt**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:10](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L10)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:9](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L9)
 
 ***
 
 ### createdBy?
 
-> `optional` **createdBy**: `string`
+> `optional` **createdBy?**: `string`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:10](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L10)
+
+***
+
+### deletedAt?
+
+> `optional` **deletedAt?**: `string`
 
 Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:11](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L11)
 
 ***
 
-### description?
+### deletedBy?
 
-> `optional` **description**: `string`
+> `optional` **deletedBy?**: `string`
 
 Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:12](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L12)
 
 ***
 
-### fields?
+### description
 
-> `optional` **fields**: [`Field`](Field.md)[]
+> **description**: `string`
 
 Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:13](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L13)
 
 ***
 
-### id?
+### fields
 
-> `optional` **id**: `string`
+> **fields**: [`Field`](Field.md)[]
 
 Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:14](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L14)
 
 ***
 
-### name?
+### hasDraft?
 
-> `optional` **name**: `string`
+> `optional` **hasDraft?**: `boolean`
 
 Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:15](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L15)
 
 ***
 
-### searchClientKey?
+### id
 
-> `optional` **searchClientKey**: `string`
+> **id**: `string`
 
 Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:16](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L16)
 
 ***
 
+### locales?
+
+> `optional` **locales?**: `string`[]
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:22](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L22)
+
+The SitecoreAI locale.
+
+Example values: ["en", "en-US", "el-GR"]
+
+***
+
+### name
+
+> **name**: `string`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L23)
+
+***
+
+### publishedAt?
+
+> `optional` **publishedAt?**: `string`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:24](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L24)
+
+***
+
+### publishedBy?
+
+> `optional` **publishedBy?**: `string`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L25)
+
+***
+
+### schedule?
+
+> `optional` **schedule?**: [`Schedule`](Schedule.md)
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:26](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L26)
+
+***
+
+### searchClientKey
+
+> **searchClientKey**: `string`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:27](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L27)
+
+***
+
 ### searchSettings?
 
-> `optional` **searchSettings**: [`SearchSettings`](SearchSettings.md)
+> `optional` **searchSettings?**: [`SearchSettings`](SearchSettings.md)
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:17](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L17)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:28](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L28)
+
+***
+
+### sourceType?
+
+> `optional` **sourceType?**: `"content"` \| `"site"` \| `"push"`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:33](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L33)
+
+Allowed values: content (XMC pull), site (crawl/pull), push (API push as system of record).
+Empty defaults to content.
+
+***
+
+### status?
+
+> `optional` **status?**: `string`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:34](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L34)
+
+***
+
+### suggestion?
+
+> `optional` **suggestion?**: [`SuggestionSettings`](SuggestionSettings.md)
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:35](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L35)
 
 ***
 
 ### templateId?
 
-> `optional` **templateId**: `string`
+> `optional` **templateId?**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:18](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L18)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L39)
 
-***
-
-### templateIds?
-
-> `optional` **templateIds**: `string`[]
-
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L19)
+TemplateId is required for content sources only
 
 ***
 
-### tenantId?
+### tenantId
 
-> `optional` **tenantId**: `string`
+> **tenantId**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:20](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L20)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:40](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L40)
 
 ***
 
-### updatedAt?
+### updatedAt
 
-> `optional` **updatedAt**: `string`
+> **updatedAt**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:21](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L21)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:41](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L41)
 
 ***
 
 ### updatedBy?
 
-> `optional` **updatedBy**: `string`
+> `optional` **updatedBy?**: `string`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:22](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L22)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:42](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L42)
+
+***
+
+### versionNumber?
+
+> `optional` **versionNumber?**: `number`
+
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:43](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L43)

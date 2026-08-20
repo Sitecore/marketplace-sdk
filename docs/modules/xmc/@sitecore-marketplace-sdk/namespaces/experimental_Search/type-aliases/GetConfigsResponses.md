@@ -8,7 +8,7 @@
 
 > **GetConfigsResponses** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:79](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L79)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:205](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L205)
 
 ## Properties
 
@@ -16,6 +16,6 @@ Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:79](https:
 
 > **200**: [`Config`](Config.md)[]
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:83](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L83)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:209](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L209)
 
-Success response
+Successful operation
