@@ -10,13 +10,13 @@ Defined in: [packages/client/src/sdk-types.ts:44](https://github.com/Sitecore/ma
 
 ## Indexable
 
-\[`key`: `string`\]: `any`
+> \[`key`: `string`\]: `any`
 
 ## Properties
 
 ### aiEmbeddedTenantID?
 
-> `optional` **aiEmbeddedTenantID**: `string`
+> `optional` **aiEmbeddedTenantID?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:48](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L48)
 
@@ -24,7 +24,7 @@ Defined in: [packages/client/src/sdk-types.ts:48](https://github.com/Sitecore/ma
 
 ### cdpEmbeddedTenantId?
 
-> `optional` **cdpEmbeddedTenantId**: `string`
+> `optional` **cdpEmbeddedTenantId?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L47)
 
@@ -32,7 +32,7 @@ Defined in: [packages/client/src/sdk-types.ts:47](https://github.com/Sitecore/ma
 
 ### customerEnvironmentType?
 
-> `optional` **customerEnvironmentType**: `string`
+> `optional` **customerEnvironmentType?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:49](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L49)
 
@@ -40,7 +40,7 @@ Defined in: [packages/client/src/sdk-types.ts:49](https://github.com/Sitecore/ma
 
 ### environmentId?
 
-> `optional` **environmentId**: `string`
+> `optional` **environmentId?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:50](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L50)
 
@@ -48,7 +48,7 @@ Defined in: [packages/client/src/sdk-types.ts:50](https://github.com/Sitecore/ma
 
 ### environmentName?
 
-> `optional` **environmentName**: `string`
+> `optional` **environmentName?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:51](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L51)
 
@@ -56,7 +56,7 @@ Defined in: [packages/client/src/sdk-types.ts:51](https://github.com/Sitecore/ma
 
 ### gqlEndpointUrl?
 
-> `optional` **gqlEndpointUrl**: `string`
+> `optional` **gqlEndpointUrl?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:46](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L46)
 
@@ -64,7 +64,7 @@ Defined in: [packages/client/src/sdk-types.ts:46](https://github.com/Sitecore/ma
 
 ### projectId?
 
-> `optional` **projectId**: `string`
+> `optional` **projectId?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:52](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L52)
 
@@ -72,7 +72,7 @@ Defined in: [packages/client/src/sdk-types.ts:52](https://github.com/Sitecore/ma
 
 ### projectName?
 
-> `optional` **projectName**: `string`
+> `optional` **projectName?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L53)
 
@@ -80,7 +80,7 @@ Defined in: [packages/client/src/sdk-types.ts:53](https://github.com/Sitecore/ma
 
 ### regionCode?
 
-> `optional` **regionCode**: `string`
+> `optional` **regionCode?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L54)
 
@@ -88,6 +88,6 @@ Defined in: [packages/client/src/sdk-types.ts:54](https://github.com/Sitecore/ma
 
 ### url?
 
-> `optional` **url**: `string`
+> `optional` **url?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:45](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L45)
