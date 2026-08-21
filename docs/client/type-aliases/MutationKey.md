@@ -8,4 +8,4 @@
 
 > **MutationKey** = keyof [`MutationMap`](../interfaces/MutationMap.md)
 
-Defined in: [packages/client/src/sdk-types.ts:329](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L329)
+Defined in: [packages/client/src/sdk-types.ts:324](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L324)

@@ -3,13 +3,13 @@ import {
   ApplicationContext,
   UserInfo,
   PagesContextParams,
-  ContentLayoutUpdatedData, 
+  ContentLayoutUpdatedData,
   ContentFieldsUpdatedData
 } from '@sitecore-marketplace-sdk/core';
 
 // Re-export event data types from core
-export type { 
-  ContentLayoutUpdatedData, 
+export type {
+  ContentLayoutUpdatedData,
   ContentFieldsUpdatedData
 } from '@sitecore-marketplace-sdk/core';
 
@@ -288,11 +288,6 @@ export interface QueryMap {
   'site.context': {
     params: void;
     response: SiteContext;
-    subscribe: false;
-  };
-  'pages.getPageHTML': {
-    params: void;
-    response: string;
     subscribe: false;
   };
   'host.route': {
