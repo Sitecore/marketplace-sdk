@@ -75,8 +75,8 @@ importers:
   packages/ai:
     dependencies:
       '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.13.1
+        version: 0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -154,8 +154,8 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       uuid:
-        specifier: '>=11.1.1'
-        version: 14.0.1
+        specifier: ^14.0.2
+        version: 14.0.2
     devDependencies:
       '@rollup/plugin-node-resolve':
         specifier: ^16.0.0
@@ -233,8 +233,8 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1
       uuid:
-        specifier: '>=11.1.1'
-        version: 14.0.1
+        specifier: ^14.0.2
+        version: 14.0.2
     devDependencies:
       '@rollup/plugin-node-resolve':
         specifier: ^16.0.0
@@ -291,8 +291,8 @@ importers:
   packages/shared:
     dependencies:
       '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.13.1
+        version: 0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -316,8 +316,8 @@ importers:
   packages/xmc:
     dependencies:
       '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
+        specifier: 0.13.1
+        version: 0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -765,9 +765,11 @@ packages:
   '@gerrit0/mini-shiki@3.23.0':
     resolution: {integrity: sha512-bEMORlG0cqdjVyCEuU0cDQbORWX+kYCeo0kV1lbxF5bt4r7SID2l9bqsxJEM0zndaxpOUT7riCyIVEuqq/Ynxg==}
 
-  '@hey-api/client-fetch@0.8.3':
-    resolution: {integrity: sha512-EBVa8wwUMyBSeQ32PtCz6u5bFQZIMAufvwCT1ZtpjqT3caJQEza4NokbGU50q1ZVrMsM5Ot6GuDNJOF3TMo26Q==}
+  '@hey-api/client-fetch@0.13.1':
+    resolution: {integrity: sha512-29jBRYNdxVGlx5oewFgOrkulZckpIpBIRHth3uHFn1PrL2ucMy52FvWOY3U3dVx2go1Z3kUmMi6lr07iOpUqqA==}
     deprecated: Starting with v0.73.0, this package is bundled directly inside @hey-api/openapi-ts.
+    peerDependencies:
+      '@hey-api/openapi-ts': < 2
 
   '@hey-api/codegen-core@0.9.1':
     resolution: {integrity: sha512-s97jL1dgTMuiMHv2BZ1X4Tgd99Mf9GOvGdNqNcGwIMmnR+PgYNoraj4Zvp134MKsNCap/m7k0r0vKKnl56pj4w==}
@@ -2545,8 +2547,8 @@ packages:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
     engines: {node: '>= 4.0.0'}
 
-  uuid@14.0.1:
-    resolution: {integrity: sha512-6ZxzVpzDXDa3bJWaHilVayA+BH/1zmxCJoVgvmqJnid/gPoKHxUrS/aC/T6LGQtNHT+XHG9fXPJB4d+IrU30Ew==}
+  uuid@14.0.2:
+    resolution: {integrity: sha512-xZe/16rV4aa+HGSOCiY2YeLT1OybRLrrkL/Rqaq7p7GMVXjFh+6wN4oMYgjFmnSnhY8t6Xpdl2l9qmnHYuMHwQ==}
     hasBin: true
 
   v8-compile-cache-lib@3.0.1:
@@ -3109,7 +3111,9 @@ snapshots:
       '@shikijs/types': 3.23.0
       '@shikijs/vscode-textmate': 10.0.2
 
-  '@hey-api/client-fetch@0.8.3': {}
+  '@hey-api/client-fetch@0.13.1(@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3))':
+    dependencies:
+      '@hey-api/openapi-ts': 0.99.0(magicast@0.5.3)(typescript@5.9.3)
 
   '@hey-api/codegen-core@0.9.1(magicast@0.5.3)':
     dependencies:
@@ -3479,12 +3483,12 @@ snapshots:
     dependencies:
       '@sitecore-marketplace-sdk/core': 0.3.5
       tslib: 2.8.1
-      uuid: 14.0.1
+      uuid: 14.0.2
 
   '@sitecore-marketplace-sdk/core@0.3.5':
     dependencies:
       tslib: 2.8.1
-      uuid: 14.0.1
+      uuid: 14.0.2
 
   '@standard-schema/spec@1.1.0': {}
 
@@ -4847,7 +4851,7 @@ snapshots:
 
   universalify@0.1.2: {}
 
-  uuid@14.0.1: {}
+  uuid@14.0.2: {}
 
   v8-compile-cache-lib@3.0.1: {}
 
