@@ -16,6 +16,12 @@ React-based SDK for building client-side marketplace applications.
 
 - [Client SDK Documentation](./client/README.md)
 
+### Analytics SDK
+
+Framework-agnostic client that batches insight events and POSTs them to the Ingestion API.
+
+- [Analytics SDK Documentation](./analytics-sdk/README.md)
+
 ### XMC Package
 
 Extended Marketplace Client package with API access and experimental features.
@@ -26,6 +32,7 @@ Extended Marketplace Client package with API access and experimental features.
 ## 🎯 Use Cases
 
 - **Client-Side Apps**: Use Client SDK for React applications
+- **Insight events**: Use Analytics SDK to send listing and invocation telemetry
 - **Server-Side Apps**: Use experimental_XMC for Node.js, serverless functions
 - **Microservices**: Direct API access for service-to-service communication
 - **Build Scripts**: Content deployment and automation scripts
