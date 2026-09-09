@@ -1,6 +1,7 @@
 packages:
   # Order matters - packages are processed in this order
   - 'packages/core'
+  - 'packages/analytics'
   - 'packages/client'
   - 'packages/xmc'
   - 'packages/ai'

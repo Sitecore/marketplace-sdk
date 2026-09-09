@@ -1,0 +1,63 @@
+{
+  "name": "@sitecore-marketplace-sdk/analytics",
+  "version": "0.1.0",
+  "description": "Marketplace analytics ingestion SDK — batches insight events and POSTs them to the telemetry API.",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run clean && rollup -c",
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage",
+    "generate:docs": "npx typedoc --options ../../typedoc.json --out ../../docs/analytics-sdk src/index.ts"
+  },
+  "author": {
+    "name": "Sitecore Corporation"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sitecore/sitecore-marketplace-sdk"
+  },
+  "keywords": [
+    "sitecore",
+    "marketplace",
+    "sdk",
+    "analytics",
+    "telemetry"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/node": "^20.0.0",
+    "@vitest/coverage-v8": "^4.1.8",
+    "jsdom": "^30.0.1",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.34.8",
+    "typescript": "^5.9.2",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.8",
+    "vitest-github-actions-reporter": "^0.11.1"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}
