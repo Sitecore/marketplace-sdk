@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.4.0
+
+### Minor Changes
+
+- cced3ac: Add `getPageHTML` method
+
 ## 0.3.6
 
 ### Patch Changes
