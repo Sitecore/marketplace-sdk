@@ -10,13 +10,13 @@ Defined in: [packages/client/src/sdk-types.ts:37](https://github.com/Sitecore/ma
 
 ## Indexable
 
-\[`key`: `string`\]: `any`
+> \[`key`: `string`\]: `any`
 
 ## Properties
 
 ### organizationId?
 
-> `optional` **organizationId**: `string`
+> `optional` **organizationId?**: `string`
 
 Defined in: [packages/client/src/sdk-types.ts:38](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L38)
 
@@ -24,7 +24,7 @@ Defined in: [packages/client/src/sdk-types.ts:38](https://github.com/Sitecore/ma
 
 ### userInfo?
 
-> `optional` **userInfo**: [`XmcPagesContextViewUserInfo`](XmcPagesContextViewUserInfo.md)
+> `optional` **userInfo?**: [`XmcPagesContextViewUserInfo`](XmcPagesContextViewUserInfo.md)
 
 Defined in: [packages/client/src/sdk-types.ts:40](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L40)
 
@@ -32,6 +32,6 @@ Defined in: [packages/client/src/sdk-types.ts:40](https://github.com/Sitecore/ma
 
 ### xmCloudTenantInfo?
 
-> `optional` **xmCloudTenantInfo**: [`XmcPagesContextViewTenantInfo`](XmcPagesContextViewTenantInfo.md)
+> `optional` **xmCloudTenantInfo?**: [`XmcPagesContextViewTenantInfo`](XmcPagesContextViewTenantInfo.md)
 
 Defined in: [packages/client/src/sdk-types.ts:39](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/sdk-types.ts#L39)

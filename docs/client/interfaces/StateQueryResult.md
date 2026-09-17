@@ -91,7 +91,7 @@ Whether the query was successful
 
 ***
 
-### refetch()
+### refetch
 
 > **refetch**: () => `Promise`\<[`BaseQueryResult`](BaseQueryResult.md)\<`TData`, `TError`\>\>
 
@@ -123,9 +123,9 @@ The current status of the query
 
 ***
 
-### unsubscribe()?
+### unsubscribe?
 
-> `optional` **unsubscribe**: () => `void`
+> `optional` **unsubscribe?**: () => `void`
 
 Defined in: [packages/client/src/types.ts:47](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L47)
 

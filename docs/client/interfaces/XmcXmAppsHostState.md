@@ -10,7 +10,7 @@ Defined in: [packages/client/src/sdk-types.ts:31](https://github.com/Sitecore/ma
 
 ## Indexable
 
-\[`key`: `string`\]: `any`
+> \[`key`: `string`\]: `any`
 
 ## Properties
 
