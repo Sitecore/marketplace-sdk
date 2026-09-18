@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+### Patch Changes
+
+- 2978fef: Update marketplace client
+
 ## 0.1.1
 
 ### Patch Changes
