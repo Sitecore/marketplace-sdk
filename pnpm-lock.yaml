@@ -99,8 +99,8 @@ importers:
         specifier: ^12.1.2
         version: 12.3.0(rollup@4.62.4)(tslib@2.8.1)(typescript@5.9.3)
       '@sitecore-marketplace-sdk/client':
-        specifier: workspace:*
-        version: link:../client
+        specifier: '*'
+        version: 0.4.0
       '@types/node':
         specifier: '>=20.19.0'
         version: 26.1.2
@@ -340,8 +340,8 @@ importers:
         specifier: ^12.1.2
         version: 12.3.0(rollup@4.62.4)(tslib@2.8.1)(typescript@5.9.3)
       '@sitecore-marketplace-sdk/client':
-        specifier: ^0.3.2
-        version: 0.3.6
+        specifier: ^0.4.0
+        version: 0.4.0
       '@types/node':
         specifier: '>=20.19.0'
         version: 26.1.2
@@ -1193,8 +1193,8 @@ packages:
   '@sinonjs/fake-timers@15.4.0':
     resolution: {integrity: sha512-DsG+8/LscQIQg68J6Ef3dv10u6nVyetYn923s3/sus5eaGfTo1of5WMZSLf0UJc9KDuKPilPH0UDJCjvNbDNCA==}
 
-  '@sitecore-marketplace-sdk/client@0.3.6':
-    resolution: {integrity: sha512-E9HoD2qJvjpyCwJhI0/D3hP6LEGQ+968qYwQuE7WPex0JcFXFwPqh+CEBi3mQCtjHFREgL38SxcUfwpAuW8rsw==}
+  '@sitecore-marketplace-sdk/client@0.4.0':
+    resolution: {integrity: sha512-UmC8i20tVRz5IQbkZ/vRdMppBFKTSFbphRt8NULZEoz/pyyKQUbEfdHNyEP9L90EoEqI6b2RRYslVZiSa42wow==}
     engines: {node: '>=16'}
 
   '@sitecore-marketplace-sdk/core@0.3.5':
@@ -3478,7 +3478,7 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@sitecore-marketplace-sdk/client@0.3.6':
+  '@sitecore-marketplace-sdk/client@0.4.0':
     dependencies:
       '@sitecore-marketplace-sdk/core': 0.3.5
       tslib: 2.8.1
