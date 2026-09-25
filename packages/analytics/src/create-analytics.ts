@@ -5,6 +5,7 @@ import type {
   AnalyticsClient,
   AnalyticsEventInput,
   AnalyticsEventType,
+  AnalyticsRejectedItem,
   AnalyticsTrackProps,
   AnalyticsWireEvent,
   CreateAnalyticsConfig,
@@ -33,6 +34,32 @@ function asEventInput(
   }
 
   return typeOrEvent;
+}
+
+function isRejectedItem(value: unknown): value is AnalyticsRejectedItem {
+  if (typeof value !== 'object' || value === null) {
+    return false;
+  }
+
+  const item = value as Partial<AnalyticsRejectedItem>;
+  return (
+    Number.isInteger(item.index) &&
+    typeof item.reason === 'string' &&
+    (item.eventId === undefined || typeof item.eventId === 'string')
+  );
+}
+
+async function readRejectedItems(response: Response): Promise<AnalyticsRejectedItem[]> {
+  if (typeof response.json !== 'function') {
+    return [];
+  }
+
+  try {
+    const body = (await response.json()) as { rejected?: unknown };
+    return Array.isArray(body?.rejected) ? body.rejected.filter(isRejectedItem) : [];
+  } catch {
+    return [];
+  }
 }
 
 function attachPageHide(flushHidden: () => void): () => void {
@@ -71,7 +98,7 @@ function attachPageHide(flushHidden: () => void): () => void {
  * @example
  * ```ts
  * const analytics = createAnalytics({
- *   endpoint: 'https://api.sitecorecloud.io/api/marketplace/v1/telemetry',
+ *   endpoint: 'https://marketplace-api.sitecorecloud.io/api/marketplace/v1/telemetry',
  *   getAccessToken: () => host.getAccessToken(),
  * });
  *
@@ -100,6 +127,14 @@ export function createAnalytics(config: CreateAnalyticsConfig): AnalyticsClient 
       config.onError?.(error, batch);
     } catch {
       // onError must never surface to the caller
+    }
+  };
+
+  const notifyRejected = (rejected: AnalyticsRejectedItem[], batch: AnalyticsWireEvent[]) => {
+    try {
+      config.onRejected?.(rejected, batch);
+    } catch {
+      // onRejected must never surface to the caller
     }
   };
 
@@ -138,7 +173,10 @@ export function createAnalytics(config: CreateAnalyticsConfig): AnalyticsClient 
     scheduleFlush();
   };
 
-  const sendBatch = async (batch: AnalyticsWireEvent[], keepalive: boolean): Promise<'ok' | 'drop' | 'retry'> => {
+  const sendBatch = async (
+    batch: AnalyticsWireEvent[],
+    keepalive: boolean,
+  ): Promise<'ok' | 'drop' | 'retry'> => {
     let token: string;
     try {
       token = await config.getAccessToken();
@@ -161,6 +199,10 @@ export function createAnalytics(config: CreateAnalyticsConfig): AnalyticsClient 
       });
 
       if (isSuccessStatus(response.status)) {
+        const rejected = await readRejectedItems(response);
+        if (rejected.length > 0) {
+          notifyRejected(rejected, batch);
+        }
         return 'ok';
       }
 

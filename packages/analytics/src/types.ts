@@ -97,6 +97,18 @@ export interface AnalyticsWireEvent {
 }
 
 /**
+ * An event rejected by the Ingestion API from an otherwise successful batch request.
+ */
+export interface AnalyticsRejectedItem {
+  /** One-based event position reported by the Ingestion API. */
+  index: number;
+  /** Idempotency key of the rejected event, when supplied by the API. */
+  eventId?: string;
+  /** Validation or processing reason reported by the Ingestion API. */
+  reason: string;
+}
+
+/**
  * Batching and in-memory queue limits.
  */
 export interface AnalyticsBatchConfig {
@@ -170,6 +182,11 @@ export interface CreateAnalyticsConfig {
    * Must not throw; the SDK swallows errors from this callback.
    */
   onError?: (error: unknown, batch?: AnalyticsWireEvent[]) => void;
+  /**
+   * Invoked when the Ingestion API accepts a request but rejects one or more events.
+   * Rejected events are not retried. Errors thrown by this callback are swallowed.
+   */
+  onRejected?: (rejected: AnalyticsRejectedItem[], batch: AnalyticsWireEvent[]) => void;
 }
 
 /**

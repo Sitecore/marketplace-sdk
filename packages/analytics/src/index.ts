@@ -10,7 +10,7 @@
  * import { createAnalytics, events } from '@sitecore-marketplace-sdk/analytics';
  *
  * const analytics = createAnalytics({
- *   endpoint: 'https://api.sitecorecloud.io/api/marketplace/v1/telemetry',
+ *   endpoint: 'https://marketplace-api.sitecorecloud.io/api/marketplace/v1/telemetry',
  *   getAccessToken: () => host.getAccessToken(),
  * });
  *
@@ -28,6 +28,7 @@ export type {
   AnalyticsEventData,
   AnalyticsEventInput,
   AnalyticsEventType,
+  AnalyticsRejectedItem,
   AnalyticsRetryConfig,
   AnalyticsShortType,
   AnalyticsTrackProps,

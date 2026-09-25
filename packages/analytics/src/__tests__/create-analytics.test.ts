@@ -4,8 +4,12 @@ import { events } from '../events';
 import { isClientErrorStatus, isSuccessStatus, postTelemetry } from '../transport';
 import type { AnalyticsWireEvent } from '../types';
 
-function jsonResponse(status: number): Response {
-  return { status, ok: status >= 200 && status < 300 } as Response;
+function jsonResponse(status: number, body: unknown = {}): Response {
+  return {
+    status,
+    ok: status >= 200 && status < 300,
+    json: vi.fn().mockResolvedValue(body),
+  } as unknown as Response;
 }
 
 describe('transport helpers', () => {
@@ -121,7 +125,11 @@ describe('createAnalytics', () => {
     fetchMock.mockRejectedValueOnce(new Error('network')).mockResolvedValueOnce(jsonResponse(202));
     const analytics = client({ batch: { maxSize: 1, maxWaitMs: 60_000 } });
 
-    await analytics.track('listing.install_click', { appId: 'app-1', eventId: 'same-id', data: { cta: 'install' } });
+    await analytics.track('listing.install_click', {
+      appId: 'app-1',
+      eventId: 'same-id',
+      data: { cta: 'install' },
+    });
     const flush = analytics.flush();
     await vi.runAllTimersAsync();
     await flush;
@@ -177,8 +185,12 @@ describe('createAnalytics', () => {
     await flush;
 
     expect(getAccessToken).toHaveBeenCalledTimes(2);
-    expect((fetchMock.mock.calls[0][1] as RequestInit).headers).toMatchObject({ Authorization: 'Bearer t1' });
-    expect((fetchMock.mock.calls[1][1] as RequestInit).headers).toMatchObject({ Authorization: 'Bearer t2' });
+    expect((fetchMock.mock.calls[0][1] as RequestInit).headers).toMatchObject({
+      Authorization: 'Bearer t1',
+    });
+    expect((fetchMock.mock.calls[1][1] as RequestInit).headers).toMatchObject({
+      Authorization: 'Bearer t2',
+    });
     await analytics.shutdown();
   });
 
@@ -214,6 +226,62 @@ describe('createAnalytics', () => {
     await analytics.track('listing.view', { appId: 'app-1' });
     await analytics.flush();
     expect(fetchMock).toHaveBeenCalledOnce();
+    await analytics.shutdown();
+  });
+
+  it('reports per-item rejects without retrying the successful batch', async () => {
+    const onRejected = vi.fn();
+    fetchMock.mockResolvedValue(
+      jsonResponse(202, {
+        accepted: 1,
+        rejected: [{ index: 2, eventId: 'rejected-id', reason: 'installationId is required' }],
+      }),
+    );
+    const analytics = client({
+      onRejected,
+      batch: { maxSize: 2, maxWaitMs: 60_000 },
+    });
+
+    await analytics.track('listing.view', { appId: 'accepted-app', eventId: 'accepted-id' });
+    await analytics.track('app.invocation', { appId: 'rejected-app', eventId: 'rejected-id' });
+    await analytics.flush();
+
+    expect(fetchMock).toHaveBeenCalledOnce();
+    expect(onRejected).toHaveBeenCalledOnce();
+    expect(onRejected).toHaveBeenCalledWith(
+      [{ index: 2, eventId: 'rejected-id', reason: 'installationId is required' }],
+      expect.arrayContaining([
+        expect.objectContaining({ eventId: 'accepted-id' }),
+        expect.objectContaining({ eventId: 'rejected-id' }),
+      ]),
+    );
+    await analytics.shutdown();
+  });
+
+  it('swallows onRejected errors and malformed success bodies', async () => {
+    const onRejected = vi.fn(() => {
+      throw new Error('onRejected boom');
+    });
+    fetchMock
+      .mockResolvedValueOnce(
+        jsonResponse(202, {
+          rejected: [{ index: 1, eventId: 'rejected-id', reason: 'invalid event' }],
+        }),
+      )
+      .mockResolvedValueOnce({
+        status: 202,
+        ok: true,
+        json: vi.fn().mockRejectedValue(new Error('invalid json')),
+      } as unknown as Response);
+    const analytics = client({ onRejected, batch: { maxSize: 1, maxWaitMs: 60_000 } });
+
+    await analytics.track('app.invocation', { appId: 'app-1', eventId: 'rejected-id' });
+    await expect(analytics.flush()).resolves.toBeUndefined();
+    await analytics.track('app.invocation', { appId: 'app-1', eventId: 'malformed-id' });
+    await expect(analytics.flush()).resolves.toBeUndefined();
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(onRejected).toHaveBeenCalledOnce();
     await analytics.shutdown();
   });
 
@@ -267,7 +335,10 @@ describe('createAnalytics', () => {
   });
 
   it('keeps events queued when the token provider fails', async () => {
-    const getAccessToken = vi.fn().mockRejectedValueOnce(new Error('stale')).mockResolvedValue('token');
+    const getAccessToken = vi
+      .fn()
+      .mockRejectedValueOnce(new Error('stale'))
+      .mockResolvedValue('token');
     const analytics = client({ getAccessToken, batch: { maxSize: 1, maxWaitMs: 60_000 } });
     await analytics.track('listing.view', { appId: 'app-1', eventId: 'keep-me' });
     const first = analytics.flush();
