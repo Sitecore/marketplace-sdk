@@ -1,0 +1,56 @@
+name: dependabot-major-teams
+
+on:
+  # Run trusted notification code without checking out or executing PR code.
+  pull_request_target:
+    types: [labeled]
+
+permissions: {}
+
+jobs:
+  notify-teams:
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.event.label.name == 'Major Package Update'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Teams notification
+        uses: actions/github-script@v8
+        env:
+          # TODO: create a Teams Workflows webhook and set the TEAMS_WEBHOOK_URL repository variable.
+          TEAMS_WEBHOOK_URL: ${{ vars.TEAMS_WEBHOOK_URL }}
+        with:
+          script: |
+            const webhookUrl = process.env.TEAMS_WEBHOOK_URL;
+            if (!webhookUrl) {
+              core.warning('TEAMS_WEBHOOK_URL is not configured; skipping notification.');
+              return;
+            }
+
+            const pullRequest = context.payload.pull_request;
+            const payload = {
+              type: 'message',
+              attachments: [{
+                contentType: 'application/vnd.microsoft.card.adaptive',
+                contentUrl: null,
+                content: {
+                  $schema: 'http://adaptivecards.io/schemas/adaptive-card.json',
+                  type: 'AdaptiveCard',
+                  version: '1.2',
+                  body: [
+                    { type: 'TextBlock', text: 'Major dependency update', weight: 'Bolder', wrap: true },
+                    { type: 'TextBlock', text: pullRequest.title, wrap: true },
+                    { type: 'TextBlock', text: `${context.repo.owner}/${context.repo.repo} - PR #${pullRequest.number}`, wrap: true }
+                  ],
+                  actions: [{ type: 'Action.OpenUrl', title: 'Review pull request', url: pullRequest.html_url }]
+                }
+              }]
+            };
+
+            const response = await fetch(webhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+              signal: AbortSignal.timeout(30000)
+            });
+            if (!response.ok) {
+              core.setFailed(`Teams notification failed with HTTP ${response.status}.`);
+            }
