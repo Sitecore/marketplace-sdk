@@ -1,6 +1,6 @@
 version: 2
 updates:
-  # Root workspace (pnpm monorepo)
+  # Root workspace (pnpm monorepo) - minor/patch updates
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -15,11 +15,52 @@ updates:
     ignore:
       # Managed manually via changeset versioning
       - dependency-name: "@sitecore-marketplace-sdk/*"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
-  # GitHub Actions
+  # Root workspace (pnpm monorepo) - major updates only, split out for visibility
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    labels:
+      - "Major Package Update"
+    groups:
+      major-dependencies:
+        patterns:
+          - "*"
+    ignore:
+      # Managed manually via changeset versioning
+      - dependency-name: "@sitecore-marketplace-sdk/*"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
+
+  # GitHub Actions - minor/patch updates
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  # GitHub Actions - major updates only, split out for visibility
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    labels:
+      - "Major Package Update"
+    groups:
+      major-actions:
+        patterns:
+          - "*"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
