@@ -1,0 +1,44 @@
+# Sitecore Marketplace SDK
+
+> TypeScript pnpm monorepo for the Sitecore Marketplace SDK. It provides a secure host-client transport layer (`core`), a public query and mutation SDK (`client`), typed XM Cloud and AI extensions (`xmc`, `ai`), and shared OpenAPI generation plugins (`shared`).
+
+Important notes:
+
+- Prefer editing hand-written source over generated output.
+- Generated API client files in `packages/xmc/src/**` and `packages/ai/src/**` are not the source of truth; use the generator scripts and shared plugins instead.
+- Follow `CONTRIBUTING.md` for PR workflow and changesets.
+- Package manager is `pnpm`.
+
+## Core Docs
+
+- [Repository README](README.md): Monorepo overview, package layout, installation, and root commands.
+- [Contribution Guide](CONTRIBUTING.md): Contribution workflow, tests, changesets, and code of conduct.
+- [Docs Overview](docs/README.md): Generated API reference entry point.
+
+## Package Guides
+
+- [Core README](packages/core/README.md): Low-level host-client communication package.
+- [Client README](packages/client/README.md): Public Marketplace SDK query and mutation layer.
+- [XMC README](packages/xmc/README.md): XM Cloud module integration and typed APIs.
+- [AI README](packages/ai/README.md): AI Skills module integration and typed APIs.
+
+## Source of Truth
+
+- [Core SDK source](packages/core/src/index.ts): Public Core SDK class and exports.
+- [Client SDK source](packages/client/src/client.ts): Main client behavior and query/mutation flow.
+- [XMC module entry point](packages/xmc/src/index.ts): Generated module exports and module wiring.
+- [AI module entry point](packages/ai/src/index.ts): Generated module exports and module wiring.
+- [Shared helpers](packages/shared/src/index.ts): Shared utilities used by module generation and experimental clients.
+
+## Generation and Codegen
+
+- [XMC generator](packages/xmc/generate-xmc.ts): Source of truth for XM Cloud generated modules.
+- [AI generator](packages/ai/generate-ai.ts): Source of truth for AI generated modules.
+- [Shared plugins](packages/shared/plugins/augmentation/plugin.ts): Augmentation generation rules.
+- [Shared plugins](packages/shared/plugins/schema-patcher/plugin.ts): Schema patching and operation filtering rules.
+
+## Optional
+
+- [Experimental XMC guide](docs/experimental-xmc.md): Direct server-to-server usage guidance.
+- [Experimental AI guide](docs/experimental-ai.md): Direct AI usage guidance.
+- [Core SDK reference docs](docs/core-sdk/README.md): Generated API reference for the core package.
