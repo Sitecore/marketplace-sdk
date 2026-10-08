@@ -20,6 +20,7 @@
   },
   "references": [
     { "path": "packages/core" },
+    { "path": "packages/analytics" },
     { "path": "packages/client" },
     { "path": "packages/ai" },
   ],
