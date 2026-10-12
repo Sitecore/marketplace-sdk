@@ -656,6 +656,14 @@ describe('ClientSDK', () => {
     expect(result).toBe('mockedValue');
   });
 
+  it('should call coreSdk.request with pages.getPageHTML in getPageHTML()', async () => {
+    client = await ClientSDK.init(config);
+    const mockRequest = vi.spyOn(client['coreSdk'], 'request').mockResolvedValue('<html>mocked</html>');
+    const result = await client.getPageHTML();
+    expect(mockRequest).toHaveBeenCalledWith('pages.getPageHTML', {});
+    expect(result).toBe('<html>mocked</html>');
+  });
+
   it.each([
     [true, { value: 'testValue', canvasReload: true }],
     [false, { value: 'testValue', canvasReload: false }],

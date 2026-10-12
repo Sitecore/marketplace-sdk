@@ -32,7 +32,7 @@ Defined in: [packages/client/src/client.ts:49](https://github.com/Sitecore/marke
 
 > **closeApp**(): `Promise`\<`void`\>
 
-Defined in: [packages/client/src/client.ts:510](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L510)
+Defined in: [packages/client/src/client.ts:518](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L518)
 
 Requests the host application to close the app.
 
@@ -48,7 +48,7 @@ A Promise that resolves when the operation is complete.
 
 > **destroy**(): `void`
 
-Defined in: [packages/client/src/client.ts:533](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L533)
+Defined in: [packages/client/src/client.ts:541](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L541)
 
 Cleans up all active subscriptions and resources.
 Call this when the SDK instance is no longer needed.
@@ -86,6 +86,22 @@ A Promise that resolves when the event has been sent
 ```typescript
 // Send a route event with additional context data
 await client.emitRouteEvent('/products/123');
+
+***
+
+### getPageHTML()
+
+> **getPageHTML**(): `Promise`\<`string`\>
+
+Defined in: [packages/client/src/client.ts:500](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L500)
+
+Requests the current page HTML from the host application.
+
+#### Returns
+
+`Promise`\<`string`\>
+
+A Promise resolving to the page HTML returned by the host.
 
 ***
 
@@ -174,7 +190,7 @@ const response = await client.mutate('host.update', {
 
 ### navigateToExternalUrl()
 
-> **navigateToExternalUrl**(`url`, `newTab`): `Promise`\<`void`\>
+> **navigateToExternalUrl**(`url`, `newTab?`): `Promise`\<`void`\>
 
 Defined in: [packages/client/src/client.ts:456](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L456)
 
@@ -251,7 +267,7 @@ unsubscribe?.();
 
 > **setValue**(`value`, `canvasReload?`): `Promise`\<`void`\>
 
-Defined in: [packages/client/src/client.ts:502](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L502)
+Defined in: [packages/client/src/client.ts:510](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/client.ts#L510)
 
 Sets a value in the host application.
 
@@ -296,11 +312,7 @@ separate from the query API. Use this when you want to listen to specific events
 
 A function to unsubscribe from the event
 
-> (): `void`
-
-##### Returns
-
-`void`
+() => `void`
 
 #### Example
 

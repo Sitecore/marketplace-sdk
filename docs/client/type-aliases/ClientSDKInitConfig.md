@@ -14,7 +14,7 @@ Defined in: [packages/client/src/types.ts:98](https://github.com/Sitecore/market
 
 ### events?
 
-> `optional` **events**: [`ClientSDKConfig`](../interfaces/ClientSDKConfig.md)\[`"events"`\]
+> `optional` **events?**: [`ClientSDKConfig`](../interfaces/ClientSDKConfig.md)\[`"events"`\]
 
 Defined in: [packages/client/src/types.ts:103](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L103)
 
@@ -22,7 +22,7 @@ Defined in: [packages/client/src/types.ts:103](https://github.com/Sitecore/marke
 
 ### modules?
 
-> `optional` **modules**: [`SDKModule`](../interfaces/SDKModule.md)[]
+> `optional` **modules?**: [`SDKModule`](../interfaces/SDKModule.md)[]
 
 Defined in: [packages/client/src/types.ts:102](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L102)
 
@@ -30,7 +30,7 @@ Defined in: [packages/client/src/types.ts:102](https://github.com/Sitecore/marke
 
 ### navbarItems?
 
-> `optional` **navbarItems**: [`NavbarItemsProps`](../interfaces/NavbarItemsProps.md)
+> `optional` **navbarItems?**: [`NavbarItemsProps`](../interfaces/NavbarItemsProps.md)
 
 Defined in: [packages/client/src/types.ts:104](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L104)
 
@@ -38,7 +38,7 @@ Defined in: [packages/client/src/types.ts:104](https://github.com/Sitecore/marke
 
 ### origin?
 
-> `optional` **origin**: `string`
+> `optional` **origin?**: `string`
 
 Defined in: [packages/client/src/types.ts:99](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L99)
 
@@ -54,6 +54,6 @@ Defined in: [packages/client/src/types.ts:100](https://github.com/Sitecore/marke
 
 ### timeout?
 
-> `optional` **timeout**: `number`
+> `optional` **timeout?**: `number`
 
 Defined in: [packages/client/src/types.ts:101](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L101)
