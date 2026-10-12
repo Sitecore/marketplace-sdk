@@ -117,14 +117,11 @@ export namespace Pages {
   /**
    * The type of layout (Final or Shared).
    */
-  export type LayoutKind = 'Final' | 'Shared';
+  export const LayoutKind = { FINAL: 'Final', SHARED: 'Shared' } as const;
   /**
    * The type of layout (Final or Shared).
    */
-  export const LayoutKind = {
-    FINAL: 'Final',
-    SHARED: 'Shared',
-  } as const;
+  export type LayoutKind = (typeof LayoutKind)[keyof typeof LayoutKind];
   export type Page = {
     /**
      * The page URL path.
@@ -599,14 +596,7 @@ export namespace Pages {
      * If available, a URI reference that identifies the specific occurrence of the problem.
      */
     instance?: string | null;
-    [key: string]:
-      | unknown
-      | (string | null)
-      | (string | null)
-      | (number | null)
-      | (string | null)
-      | (string | null)
-      | undefined;
+    [key: string]: unknown;
   };
   export type Publishing = {
     /**
@@ -754,14 +744,14 @@ export namespace Pages {
   /**
    * The type of template.
    */
-  export type TemplateType = 'ItemTemplate' | 'BranchTemplate';
-  /**
-   * The type of template.
-   */
   export const TemplateType = {
     ITEM_TEMPLATE: 'ItemTemplate',
     BRANCH_TEMPLATE: 'BranchTemplate',
   } as const;
+  /**
+   * The type of template.
+   */
+  export type TemplateType = (typeof TemplateType)[keyof typeof TemplateType];
   /**
    * The translations options
    */
@@ -781,18 +771,14 @@ export namespace Pages {
   /**
    * Specifies the strategy to use when translating: add a new version or skip if a version exists.
    */
-  export type TranslationStrategy = 'AddVersion' | 'SkipIfExists';
-  /**
-   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
-   */
   export const TranslationStrategy = {
     ADD_VERSION: 'AddVersion',
     SKIP_IF_EXISTS: 'SkipIfExists',
   } as const;
   /**
-   * The search filter type.
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
    */
-  export type TypeFilter = 'Pages' | 'Folders' | 'All';
+  export type TranslationStrategy = (typeof TranslationStrategy)[keyof typeof TranslationStrategy];
   /**
    * The search filter type.
    */
@@ -801,6 +787,10 @@ export namespace Pages {
     FOLDERS: 'Folders',
     ALL: 'All',
   } as const;
+  /**
+   * The search filter type.
+   */
+  export type TypeFilter = (typeof TypeFilter)[keyof typeof TypeFilter];
   export type UpdatePageInput = {
     /**
      * The version number of the page to update.

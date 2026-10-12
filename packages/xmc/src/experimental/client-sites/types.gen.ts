@@ -174,6 +174,7 @@ export namespace experimental_Sites {
     /**
      * The rendering host.
      * Example value: Default
+     *
      * @deprecated
      */
     renderingHost?: string | null;
@@ -443,13 +444,13 @@ export namespace experimental_Sites {
     itemsProcessed?: number | null;
     pagesProcessed?: number | null;
   };
-  export type JobStatus = 'Queued' | 'Running' | 'Completed' | 'Failed';
   export const JobStatus = {
     QUEUED: 'Queued',
     RUNNING: 'Running',
     COMPLETED: 'Completed',
     FAILED: 'Failed',
   } as const;
+  export type JobStatus = (typeof JobStatus)[keyof typeof JobStatus];
   /**
    * Language
    */
@@ -903,14 +904,7 @@ export namespace experimental_Sites {
      * If available, a URI reference that identifies the specific occurrence of the problem.
      */
     instance?: string | null;
-    [key: string]:
-      | unknown
-      | (string | null)
-      | (string | null)
-      | (number | null)
-      | (string | null)
-      | (string | null)
-      | undefined;
+    [key: string]: unknown;
   };
   /**
    * Site collection rename request.
@@ -1320,14 +1314,14 @@ export namespace experimental_Sites {
   /**
    * The type of template.
    */
-  export type TemplateType = 'ItemTemplate' | 'BranchTemplate';
-  /**
-   * The type of template.
-   */
   export const TemplateType = {
     ITEM_TEMPLATE: 'ItemTemplate',
     BRANCH_TEMPLATE: 'BranchTemplate',
   } as const;
+  /**
+   * The type of template.
+   */
+  export type TemplateType = (typeof TemplateType)[keyof typeof TemplateType];
   /**
    * The thumbnail response entity.
    */
@@ -1367,14 +1361,14 @@ export namespace experimental_Sites {
   /**
    * Specifies the strategy to use when translating: add a new version or skip if a version exists.
    */
-  export type TranslationStrategy = 'AddVersion' | 'SkipIfExists';
-  /**
-   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
-   */
   export const TranslationStrategy = {
     ADD_VERSION: 'AddVersion',
     SKIP_IF_EXISTS: 'SkipIfExists',
   } as const;
+  /**
+   * Specifies the strategy to use when translating: add a new version or skip if a version exists.
+   */
+  export type TranslationStrategy = (typeof TranslationStrategy)[keyof typeof TranslationStrategy];
   /**
    * The profile update request input
    */
@@ -1415,6 +1409,7 @@ export namespace experimental_Sites {
     /**
      * The rendering host.
      * Example value: Default
+     *
      * @deprecated
      */
     renderingHost?: string | null;
@@ -1500,6 +1495,7 @@ export namespace experimental_Sites {
     /**
      * The target hostname of the site.
      * Example value: skatepark.local
+     *
      * @deprecated
      */
     targetHostname?: string | null;

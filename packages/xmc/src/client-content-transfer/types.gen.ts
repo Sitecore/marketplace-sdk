@@ -17,10 +17,7 @@ export namespace ContentTransfer {
            * The merge strategy of the itemPath to transfer.
            */
           mergeStrategy?:
-            | 'OverrideExistingItem'
-            | 'KeepExistingItem'
-            | 'LatestWin'
-            | 'OverrideExistingTree';
+            'OverrideExistingItem' | 'KeepExistingItem' | 'LatestWin' | 'OverrideExistingTree';
         }>;
       };
       /**

@@ -1,222 +1,92 @@
-import { createClient } from '@hey-api/openapi-ts';
-import { defineAugmentationConfig } from '../shared/plugins/augmentation';
-import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
-import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
+import { generate, type GenerateConfig } from '../shared/codegen';
 
-createClient({
-  input: './schema/xmapp.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-xmapp',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/authoring',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineAugmentationConfig({
+const clients: GenerateConfig[] = [
+  {
+    input: './schema/xmapp.yaml',
+    output: './src/client-xmapp',
+    namespace: 'Xmapp',
+    basePath: '/authoring',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.xmapp'],
-      deprecated: true,
-      deprecationMessage: `The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.`,
-    }),
-    defineClientTransformerConfig({
-      namespace: 'Xmapp',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/authoring.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-authoring',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/v1/authoring',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
+      deprecated: `The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.`,
     },
-    defineAugmentationConfig({
+  },
+  {
+    input: './schema/authoring.yaml',
+    output: './src/client-authoring',
+    namespace: 'Authoring',
+    basePath: '/v1/authoring',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.authoring'],
-    }),
-    defineClientTransformerConfig({
-      namespace: 'Authoring',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/content-transfer.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-content-transfer',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/authoring/transfer',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
     },
-    defineAugmentationConfig({
+  },
+  {
+    input: './schema/content-transfer.yaml',
+    output: './src/client-content-transfer',
+    namespace: 'ContentTransfer',
+    basePath: '/authoring/transfer',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.contentTransfer'],
-    }),
-    defineClientTransformerConfig({
-      namespace: 'ContentTransfer',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/content.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-content',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/content/api',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
     },
-    defineAugmentationConfig({
+  },
+  {
+    input: './schema/content.yaml',
+    output: './src/client-content',
+    namespace: 'Content',
+    basePath: '/content/api',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.preview', 'xmc.live'],
-    }),
-    defineClientTransformerConfig({
-      namespace: 'Content',
-    }),
-  ],
-});
-
-createClient({
-  input: 'https://ai-agent-api-use.sitecorecloud.io/api/docs/openapi.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-agent',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/stream/ai-agent-api/',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
     },
-    defineAugmentationConfig({
+  },
+  {
+    // Snapshot of https://ai-agent-api-use.sitecorecloud.io/api/docs/openapi.json
+    input: './schema/agent.json',
+    output: './src/client-agent',
+    namespace: 'Agent',
+    basePath: '/stream/ai-agent-api/',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.agent'],
-    }),
-    defineClientTransformerConfig({
-      namespace: 'Agent',
-    }),
-  ],
-});
-
-createClient({
-  input: 'https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-sites',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/authoring',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
     },
-    defineAugmentationConfig({
+  },
+  {
+    // Snapshot of https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml
+    input: './schema/sites.json',
+    output: './src/client-sites',
+    namespace: 'Sites',
+    basePath: '/authoring',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.sites'],
-    }),
-    defineClientTransformerConfig({
-      namespace: 'Sites',
-    }),
-  ],
-});
-
-createClient({
-  input: 'https://api-docs.sitecore.com/_spec/sai/pages-api/index.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-pages',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/authoring',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
     },
-    defineAugmentationConfig({
+  },
+  {
+    // Snapshot of https://api-docs.sitecore.com/_spec/sai/pages-api/index.yaml
+    input: './schema/pages.json',
+    output: './src/client-pages',
+    namespace: 'Pages',
+    basePath: '/authoring',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.pages'],
-    }),
-    defineClientTransformerConfig({
-      namespace: 'Pages',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/search.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-search',
-  },
-  plugins: [
-    defineSchemaPatcherConfig({
-      basePath: '/search',
-    }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
     },
-    defineAugmentationConfig({
+  },
+  {
+    input: './schema/search.json',
+    output: './src/client-search',
+    namespace: 'Search',
+    basePath: '/search',
+    hostFetch: true,
+    augmentation: {
       namespaces: ['xmc.search'],
-    }),
-    defineClientTransformerConfig({
-      namespace: 'Search',
-    }),
-  ],
-});
+    },
+  },
+];
+
+for (const client of clients) {
+  await generate(client);
+}

@@ -20,3 +20,6 @@ packages/*/dist/
 *.npmrc
 .rollup.cache
 coverage
+
+# Scratch output of the code generator tests
+packages/shared/codegen/__tests__/.generated/

@@ -9,13 +9,13 @@ You are a specialist at scaffolding and rebuilding **Sitecore Marketplace SDK** 
 
 ## Scope & boundaries
 - ONLY operate inside this repository (`packages/<module>`). Never touch other repos.
-- DO NOT hand-write files under `src/client-*/` or `src/experimental/client-*/`. Those are produced by `pnpm generate` (hey-api). You only create the *manual* scaffolding listed below and then run generation.
-- DO NOT invent schema URLs. Use exactly what the user provides. Local schemas live in `packages/<module>/schema/`.
+- DO NOT hand-write files under `src/client-*/` or `src/experimental/client-*/`. Those are produced by `pnpm generate:module` / `pnpm generate:module:experimental` (the code generator in `packages/shared/codegen`). You only create the *manual* scaffolding listed below and then run generation.
+- DO NOT invent schema URLs. Use exactly what the user provides. Schemas are generated from snapshots committed in `packages/<module>/schema/`; the generator never reads URLs.
 - DO NOT modify unrelated packages (`client`, `core`, `shared`) unless explicitly asked.
 - Keep changes minimal and idiomatic to the existing two modules (`xmc`, `ai`) — match their style exactly.
 - You ARE responsible for creating/updating 3 README files when a new module is generated: `packages/<module>/README.md`, root `README.md`, `docs/README.md`.
 - DO NOT skip README generation — they are part of the deliverable.
-- **Speed: the Templates below are authoritative — do NOT re-read `packages/xmc` or `packages/ai` source files just to copy patterns.** Write the manual files straight from the templates. Only open a reference file to resolve a specific nuance the templates flag as module-dependent (e.g. the experimental `basePath`, the `ai` `async function generate()` form, or the xmc `agent` folder-index import). Reading config (`tsconfig.json`/`vitest.config.ts`/`rollup.config.js`) from **one** existing module **once** is fine since they are copied verbatim — do not re-open the same config across multiple modules, and do not read `client`/`core`/`shared` source to "verify" the templates; trust them.
+- **Speed: the Templates below are authoritative — do NOT re-read `packages/xmc` or `packages/ai` source files just to copy patterns.** Write the manual files straight from the templates. Only open a reference file to resolve a specific nuance the templates flag as module-dependent (e.g. the experimental `basePath` or the xmc `agent` folder-index import). Reading config (`tsconfig.json`/`vitest.config.ts`/`rollup.config.js`) from **one** existing module **once** is fine since they are copied verbatim — do not re-open the same config across multiple modules, and do not read `client`/`core`/`shared` source to "verify" the templates; trust them.
 
 ## STANDARD INPUT FORMAT (required — parse this exactly)
 The user supplies ONE fenced block in this exact YAML shape. Treat it as the single source of truth. Do not improvise field names. This format is fixed so any LLM parses it identically.
@@ -38,7 +38,7 @@ git:                             # OPTIONAL — omit to skip branch/commit/push
 Parsing & validation rules (apply deterministically, no guessing):
 - REQUIRED keys: `module`, and for every namespace `key`, `schema`, `basePath`. If any are missing, ask ONE concise question listing exactly the missing keys, then pause until the user supplies them. Do not generate files or run generation until the required keys are present. Never invent schema URLs or basePaths.
 - One `schema` may map to multiple namespaces — list each `key` separately (e.g. xmc `content` → both `preview` and `live`, same schema/basePath).
-- `experimental` defaults to `true`; `deprecated` defaults to `false`. A namespace with `deprecated: true` is production-only (excluded from experimental) and gets `deprecated: true` + a deprecationMessage in its augmentation.
+- `experimental` defaults to `true`; `deprecated` defaults to `false`. A namespace with `deprecated: true` is production-only (excluded from experimental) and gets a deprecation message (`augmentation.deprecated`) in its augmentation.
 - Everything else is DERIVED below — never ask the user for it.
 
 ### Minimal example (single namespace)
@@ -53,12 +53,12 @@ namespaces:
 ### Per-field meaning
 - `module` — short name (usually lowercase). Drives package `@sitecore-marketplace-sdk/<module>`, class `<MODULE>` / `experimental_<MODULE>`, SDK namespace.
   - **Casing rule (deterministic):** preserve the user's exact spelling for the package name (`@sitecore-marketplace-sdk/<module>`) and the SDK namespace string passed to `createSDKModule('<module>', …)` / asserted in tests. The class form `<MODULE>` is derived by splitting the module name on camelCase boundaries and digit boundaries, uppercasing each segment, then concatenating them: `ai` → `AI`, `xmc` → `XMC`, `xmcTest` → `XMCTest`, `cdpV2` → `CDPV2`. So `createSDKModule('xmcTest', …)` exports `export const XMCTest` and the test asserts `XMCTest.namespace === 'xmcTest'`.
-- `schema` — URL or `./schema/<file>`. If the user pastes file CONTENTS instead of a path, save them to `packages/<module>/schema/<file>` and reference that path. If the user gives an ABSOLUTE local path (e.g. `C:\…\schema\authoring.yaml`), do NOT bake the absolute path into the committed `generate-*.ts`; copy/reference it as a repo-relative `./schema/<file>` (or an existing in-repo schema path) so generator files stay machine-independent.
+- `schema` — URL or `./schema/<file>`. A URL is downloaded once into `packages/<module>/schema/<file>` (see Workflow step 2) and referenced with a `// Snapshot of <url>` comment. If the user pastes file CONTENTS instead of a path, save them to `packages/<module>/schema/<file>` and reference that path. If the user gives an ABSOLUTE local path (e.g. `C:\…\schema\authoring.yaml`), do NOT bake the absolute path into the committed `generate-*.ts`; copy/reference it as a repo-relative `./schema/<file>` (or an existing in-repo schema path) so generator files stay machine-independent.
 - `key` — camelCase import identifier / `namespaceMap` key.
-- `basePath` — proxy base path for the production `schema-patcher`.
+- `basePath` — proxy base path. The production client's default `baseUrl` is `https://example.com<basePath>`; the host application routes the request by its path.
 - Derived automatically (never ask):
   - `folder` = **kebab-case** of `key` (e.g. `contentTransfer` → `content-transfer`). This is the literal output directory name: `./src/client-<folder>` and `./src/experimental/client-<folder>`. The import identifier stays camelCase: `import * as contentTransfer from './client-content-transfer/sdk.gen'`.
-  - `Pascal` = PascalCase(`key`) → used by `defineClientTransformerConfig({ namespace })` and as `experimental_<Pascal>`.
+  - `Pascal` = PascalCase(`key`) → the generated types namespace (`namespace: '<Pascal>'`) and `experimental_<Pascal>`.
   - `augmentation` = `['<module>.<key>']`.
   - `Title` = Title Case of `key` with camelCase boundaries split by spaces (e.g. `contentTransfer` → `Content Transfer`, `skills` → `Skills`). Use it for the `name` field in `apiConfigs` as `<Title> API`.
 
@@ -70,8 +70,8 @@ If the user pastes only a raw schema with no block, ask once for the missing req
 Create a TODO list and work through it in order. Mark each step complete before moving on.
 
 1. **Confirm inputs** — resolve module name + namespace specs (schema, key, basePath). Echo the resolved plan back briefly.
-2. **Place local schemas (BLOCKING gate — do before any install/generate)** — generation fails with `ENOENT <file>` if the schema referenced by `generate-*.ts` is not on disk first, costing a wasted generate + error-log cleanup. Resolve the schema source deterministically:
-   - **URL** → leave as-is in `generate-*.ts`; nothing to place.
+2. **Place local schemas (BLOCKING gate — do before any install/generate)** — generation fails with `ENOENT <file>` if the schema referenced by `generate-*.ts` is not on disk first. Resolve the schema source deterministically:
+   - **URL** → download it once from `packages/<module>/`: `Invoke-WebRequest '<url>' -OutFile .\schema\<file>` (keep the `.json` / `.yaml` extension of the source). Reference `./schema/<file>` in `generate-*.ts` with a `// Snapshot of <url>` comment above `input`. Never reference the URL itself; to pick up API changes later, download the snapshot again and regenerate.
    - **Raw schema CONTENTS pasted** → write them to `packages/<module>/schema/<file>` and reference that path.
    - **Absolute path that resolves INSIDE this repo** (e.g. `C:\…\packages\xmc\schema\authoring.yaml`) → do NOT `read_file` then recreate it (two large tool calls). Instead either reference it relatively in `generate-*.ts` (`../xmc/schema/authoring.yaml`) or copy it in one command: `Copy-Item ..\xmc\schema\authoring.yaml .\schema\authoring.yaml`. Never bake the absolute path into the committed generator.
    - **Absolute path OUTSIDE the repo** → `Copy-Item` it into `packages/<module>/schema/<file>` and reference `./schema/<file>` so generators stay machine-independent.
@@ -93,12 +93,12 @@ Create a TODO list and work through it in order. Mark each step complete before 
 6. **Install (ALWAYS `--ignore-scripts`)** — from repo root run `pnpm install --ignore-scripts` again so the new generated code and any added deps are linked (also updates `pnpm-lock.yaml` with the new `packages/<module>:` importer — that diff is expected, not noise). **Do NOT run a plain `pnpm install` here.** A plain install fires the root `postinstall` → `build:serial` → `pnpm -r --stream build`, which builds EVERY package in parallel. If ANY package fails — including a pre-existing break OR a transient/ordering hiccup in the parallel `-r --stream` run that is unrelated to your module — pnpm drops to the Windows `Terminate batch job (Y/N)?` prompt and blocks forever waiting for manual input. `--ignore-scripts` links the deps without ever triggering that repo-wide build, so the new module can never be blocked by an unrelated package. (This is the same reason Step 4 uses `--ignore-scripts`.)
 7. **Build (filtered, REQUIRED)** — because Step 6 no longer builds anything, you MUST build the new module explicitly with the filtered build: `pnpm --filter @sitecore-marketplace-sdk/<module> build`. Never use the full `pnpm build` / `build:serial` chain to validate the new module — it rebuilds unrelated packages and reintroduces the blocking-prompt risk for zero added signal about your module. Fix any TypeScript/rollup errors in the manual files only, then rebuild. The most common failures are `Could not resolve "../client-sdk-fetch"` (means `src/client-sdk-fetch.ts` is missing — create it from the template) and `Could not resolve "./client-<folder>/sdk.gen"` (means generation in Step 5 was skipped or failed — run it before building).
 8. **Test** — for a new/changed module, run the **filtered test first**: `pnpm --filter @sitecore-marketplace-sdk/<module> test` (bypasses turbo cache replay and is much faster than the whole workspace). Fix failing tests in the manual `__tests__` files, then re-run until green. Run the full `pnpm test` only as a final repo-wide sanity check if explicitly wanted — turbo will replay cache for unchanged packages (`FULL TURBO`), so it adds little signal for the new module.
-9. **Clean up generator artifacts** — a failed `generate` drops `openapi-ts-error-*.log` files in `packages/<module>`. Delete any that remain before reporting so they never reach the diff. (They match the repo `.gitignore` `*.log` rule, but remove them anyway for a clean tree.)
+9. **Check the working tree** — generation writes only to the `output` directories of `generate-*.ts` and writes no log files. A namespace output directory must only contain generated files (`*.gen.ts`, `index.ts`); the generator refuses to write to a directory that contains anything else, so never add manual files there.
 10. **Report** — summarize what was created/changed and the final build/test status.
 11. **Commit and push (personal account)** — run ONLY when the user supplies a `git:` block in the input OR explicitly asks to commit/push after the Report step. See the **Git Operations** section for the full procedure.
 
 When an error appears, diagnose and fix the offending manual file rather than retrying blindly. Never edit generated `*.gen.ts` to satisfy the build — fix the generator config or the manual code.
-If `pnpm generate:module` or `pnpm generate:module:experimental` fails, inspect any `openapi-ts-error-*.log` files in `packages/<module>/` to identify the failing namespace and schema. Fix only that namespace's entry in `generate-<module>.ts` (wrong schema URL, missing local file, or schema format issue) and rerun generation. Do not modify unrelated namespace entries or run a full install cycle until the schema issue is resolved.
+If `pnpm generate:module` or `pnpm generate:module:experimental` fails, read the error: it names the schema file (`Failed to generate types for <input>`, preceded by the type generator's own error) or the unsupported construct and the operation (e.g. `Cookie parameter 'session' is not supported: GET /items`, `Operation name 'getA' collides with 'get_a': GET /b`). Fix only that namespace's entry in `generate-<module>.ts` (wrong path, missing local file) or, for an unsupported construct, report it to the user instead of editing the schema snapshot (the API owner can rename or exclude an operation with the `x-sc-sdk` extension: `operationName`, `generate: false`). Generation stops at the first failing namespace and leaves its output directory untouched. Do not modify unrelated namespace entries or run a full install cycle until the schema issue is resolved.
 
 > Capturing long output: `pnpm build` / `pnpm test` output can be truncated in the terminal. When you need the full result, redirect to a file and tail it, e.g. `pnpm test *> $env:TEMP\<module>-test.log; Get-Content $env:TEMP\<module>-test.log -Tail 40`.
 
@@ -111,50 +111,48 @@ Placeholders: `<module>` lowercase, `<MODULE>` UPPER, `<Module>` Title. Per name
 
 ### generate-<module>.ts (production)
 ```ts
-import { createClient } from '@hey-api/openapi-ts';
-import { defineAugmentationConfig } from '../shared/plugins/augmentation';
-import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
-import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
+import { generate, type GenerateConfig } from '../shared/codegen';
 
-createClient({
-  input: '<schema>',
-  output: { format: 'prettier', lint: 'eslint', path: './src/client-<folder>' },
-  plugins: [
-    defineSchemaPatcherConfig({ basePath: '<basePath>' }),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    { enums: 'javascript', name: '@hey-api/typescript' },
-    defineAugmentationConfig({ namespaces: ['<module>.<key>'] }),
-    defineClientTransformerConfig({ namespace: '<Pascal>' }),
-  ],
-});
-// …repeat createClient per namespace…
+const clients: GenerateConfig[] = [
+  {
+    // Snapshot of <schema-url>   (only when the schema came from a URL)
+    input: './schema/<file>',
+    output: './src/client-<folder>',
+    namespace: '<Pascal>',
+    basePath: '<basePath>',
+    hostFetch: true,
+    augmentation: {
+      namespaces: ['<module>.<key>'],
+    },
+  },
+  // …repeat per namespace…
+];
+
+for (const client of clients) {
+  await generate(client);
+}
 ```
-> If a module wraps each call in `async function generate(){ await createClient(...); } generate();` (as `ai` does), follow that form for that module. Multiple namespaces in one file may use top-level `createClient(...)` calls (as `xmc` does).
+> A module with a single namespace may call `await generate({ … })` directly (as `ai` does).
 
 ### generate-<module>-experimental.ts
-> **Transformer plugin differs between the two generators — do not mix them up.** The production generator (above) uses `defineClientTransformerConfig({ namespace: '<Pascal>' })`; the experimental generator (below) uses `defineNamespaceTransformerConfig({ namespace: 'experimental_<Pascal>' })`. They come from different shared plugin paths (`client-transformer/config` vs `namespace-transformer`). Using the wrong one silently produces the wrong client shape.
+> **The two generators differ — do not mix them up.** Production entries set `namespace: '<Pascal>'`, `basePath`, `hostFetch: true` (requests go through the host application with `clientSdkfetch`) and `augmentation` (QueryMap/MutationMap entries). Experimental entries set only `input`, `output` and `namespace: 'experimental_<Pascal>'`; their base URL and fetch come from `createCustomClients` at runtime.
 ```ts
-import { createClient } from '@hey-api/openapi-ts';
-import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
-import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
+import { generate, type GenerateConfig } from '../shared/codegen';
 
-createClient({
-  input: '<schema>',
-  output: { format: 'prettier', lint: 'eslint', path: './src/experimental/client-<folder>' },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    { enums: 'javascript', name: '@hey-api/typescript' },
-    defineNamespaceTransformerConfig({ namespace: 'experimental_<Pascal>' }),
-  ],
-});
-// …repeat per namespace…
+const clients: GenerateConfig[] = [
+  {
+    input: './schema/<file>',
+    output: './src/experimental/client-<folder>',
+    namespace: 'experimental_<Pascal>',
+  },
+  // …repeat per namespace…
+];
+
+for (const client of clients) {
+  await generate(client);
+}
 ```
-> **Experimental `defineSchemaPatcherConfig` — basePath is NOT uniform across modules.** Use the no-arg form for new modules and for `xmc`. Pass `defineSchemaPatcherConfig({ basePath: '/stream/ai-skills-api/' })` only when reproducing `ai`. Never copy the production `basePath` into the experimental generator.
+> **Experimental `basePath` is NOT uniform across modules.** Omit it for new modules and for `xmc`; the client's default `baseUrl` is then the first server URL of the schema. Pass `basePath: '/stream/ai-skills-api/'` only when reproducing `ai`, and set a `basePath` when generation fails with `The first server URL must be an absolute http(s) URL without variables`. Never copy the production `basePath` into the experimental generator otherwise.
 
 ### src/index.ts
 ```ts
@@ -248,7 +246,7 @@ export const clientSdkfetch = async (input: globalThis.Request): Promise<Respons
 ```
 
 ### tsconfig.json / vitest.config.ts / rollup.config.js
-Copy `tsconfig.json` and `vitest.config.ts` verbatim from `packages/xmc` for a multi-namespace module. For `rollup.config.js`, copy `packages/ai/rollup.config.js` when the module imports `@hey-api/client-fetch` because its `external` list already includes `@sitecore-marketplace-sdk/core`, `@sitecore-marketplace-sdk/client`, and `@hey-api/client-fetch`; otherwise copy `packages/xmc/rollup.config.js` and add those three entries to `external`.
+Copy `tsconfig.json` and `vitest.config.ts` verbatim from `packages/xmc` for a multi-namespace module. For `rollup.config.js`, copy `packages/ai/rollup.config.js`; its `external` list is `@sitecore-marketplace-sdk/core` and `@sitecore-marketplace-sdk/client`. The generated clients import the HTTP client from `packages/shared/src/http`, which is bundled into the module — never add it (or any `@hey-api/*` package) to `external` or to `dependencies`.
 
 ### package.json
 Copy `packages/ai/package.json`, change `name` to `@sitecore-marketplace-sdk/<module>`, the `generate:module*` script targets to `generate-<module>*.ts`, the `generate:docs` out dir to `docs/modules/<module>`, and the `keywords`. Reset `version` to `0.1.0` for a new module.
@@ -354,17 +352,17 @@ Mirror the existing tests, substituting the module's namespaces.
 
 **index-exports.test.ts** — assert `<module>Module.<MODULE>` is defined with namespace `<module>`, `experimental_<MODULE>` class exported, `experimental_create<MODULE>Client` is a function.
 
-**experimental_<module>.test.ts** — mock `@hey-api/client-fetch` and each `./experimental/client-<key>/sdk.gen`; construct `experimental_<MODULE>`, assert each `<key>` property is defined and key methods are functions; cover default and custom `EDGE_PLATFORM_PROXY_URL`.
+**experimental_<module>.test.ts** — mock the shared HTTP client (`vi.mock('../../../shared/src/http', …)`) and each `./experimental/client-<key>/sdk.gen`; construct `experimental_<MODULE>`, assert each `<key>` property is defined and key methods are functions; cover default and custom `EDGE_PLATFORM_PROXY_URL`.
 
 > jsdom env cleanup gotcha: when stubbing `window.env`, define it with `Object.defineProperty(window, 'env', { value: …, writable: true, configurable: true })` and RESET it by reassigning (define it again with `value: undefined`). Do NOT use `delete (window as any).env` — a property defined without `configurable: true` cannot be deleted in jsdom and the test will throw `Cannot delete property 'env'`.
 
 ## Module-specific nuances (reproduce exactly when rebuilding xmc/ai)
-- **xmc `content` schema → two namespaces**: `preview` and `live` both map to `./client-content` (same generated client). In `generate-xmc.ts` the content `createClient` uses `defineAugmentationConfig({ namespaces: ['xmc.preview', 'xmc.live'] })` and `defineClientTransformerConfig({ namespace: 'Content' })`. In `index.ts` both `preview: content` and `live: content`. In `experimental_xmc.ts` both `preview` and `live` use `experimental_content_sdk`.
+- **xmc `content` schema → two namespaces**: `preview` and `live` both map to `./client-content` (same generated client). In `generate-xmc.ts` the content entry uses `namespace: 'Content'` and `augmentation: { namespaces: ['xmc.preview', 'xmc.live'] }`. In `index.ts` both `preview: content` and `live: content`. In `experimental_xmc.ts` both `preview` and `live` use `experimental_content_sdk`.
 - **xmc experimental agent import**: in `experimental_xmc.ts` the agent SDK is imported from `'./experimental/client-agent'` (the folder `index`), not `…/sdk.gen`. Other namespaces import `…/sdk.gen`.
-- **xmc `xmapp`** is deprecated and **production-only**: `defineAugmentationConfig({ namespaces: ['xmc.xmapp'], deprecated: true, deprecationMessage: "…" })`. It is NOT in `generate-xmc-experimental.ts` and NOT a property on `experimental_XMC`. Generally, deprecated namespaces are excluded from the experimental build/class.
+- **xmc `xmapp`** is deprecated and **production-only**: `augmentation: { namespaces: ['xmc.xmapp'], deprecated: '…' }`. It is NOT in `generate-xmc-experimental.ts` and NOT a property on `experimental_XMC`. Generally, deprecated namespaces are excluded from the experimental build/class.
 - **kebab folders**: every generated client folder is kebab-case (`client-content-transfer`, `client-content`), even when the namespaceMap key is camelCase (`contentTransfer`).
-- **xmc namespace set**: xmapp, authoring, contentTransfer, preview+live(content), agent, sites, pages, search. Schemas: local `./schema/*.yaml|json` for xmapp/authoring/content-transfer/content/search, URLs for sites/pages/agent.
-- **ai namespace set**: single `skills` namespace, schema URL `https://ai-skills-api-euw.sitecorecloud.io/openapi.json`, basePath `/stream/ai-skills-api/`, generate files use the `async function generate(){ await createClient(...);} generate();` form.
+- **xmc namespace set**: xmapp, authoring, contentTransfer, preview+live(content), agent, sites, pages, search. Schemas: local `./schema/*.yaml|json` for all namespaces; `agent.json`, `sites.json` and `pages.json` are snapshots of URLs (see the comments in `generate-xmc.ts`). The experimental generator reads `./schema/experimental/*.yaml` for authoring, content-transfer and content.
+- **ai namespace set**: single `skills` namespace, schema `./schema/skills.json` (snapshot of `https://ai-skills-api-euw.sitecorecloud.io/openapi.json`), basePath `/stream/ai-skills-api/`; both generate files call `await generate({ … })` directly.
 
 ## Commands (PowerShell, from repo root unless noted)
 ```
@@ -434,7 +432,7 @@ gh pr create \
 ## Validation mode (rebuild from scratch)
 When asked to validate the agent by deleting a module folder and rebuilding:
 1. Note the existing structure (list `packages/<module>/src` subfolders) for later comparison; the generated `client-*` folders and manual files are the comparison target.
-2. Delete the module's `src/client-*`, `src/experimental/client-*` and manual files as instructed (keep `schema/` if it holds local schemas the rebuild needs).
+2. Delete the module's `src/client-*`, `src/experimental/client-*` and manual files as instructed (keep `schema/`; it holds the schema snapshots the rebuild needs).
 3. Run this workflow from the module's known namespace set.
 4. Compare: same set of `src/client-<key>/` and `src/experimental/client-<key>/` folders, `src/client-sdk-fetch.ts` present, `index.ts` exporting the same namespaces, `experimental_<module>.ts` exposing the same properties, and `pnpm build` + `pnpm test` green. Report any diff.
 

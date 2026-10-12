@@ -784,14 +784,7 @@ export namespace Xmapp {
      * If available, a URI reference that identifies the specific occurrence of the problem.
      */
     instance?: string | null;
-    [key: string]:
-      | unknown
-      | (string | null)
-      | (string | null)
-      | (number | null)
-      | (string | null)
-      | (string | null)
-      | undefined;
+    [key: string]: unknown;
   };
   /**
    * Site collection rename request.

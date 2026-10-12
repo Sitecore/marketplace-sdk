@@ -1,6 +1,7 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -30,6 +31,17 @@ export default {
       rootDir: path.resolve(__dirname, '..'),
     }),
     terser(), // Minify the output
+    {
+      // The bundled HTTP client is derived from MIT-licensed code, whose notice must ship with it
+      name: 'http-client-license',
+      generateBundle() {
+        this.emitFile({
+          type: 'asset',
+          fileName: 'shared/src/http/LICENSE',
+          source: fs.readFileSync(path.resolve(__dirname, '../shared/src/http/LICENSE'), 'utf8'),
+        });
+      },
+    },
   ],
-  external: ['@sitecore-marketplace-sdk/core', '@hey-api/client-fetch'],
+  external: ['@sitecore-marketplace-sdk/core'],
 };

@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "dependencies": {
-    "@hey-api/client-fetch": "0.8.3"
-  },
   "devDependencies": {
     "@hey-api/openapi-ts": "0.99.0",
+    "@types/node": "^20.17.19",
     "js-yaml": "^5.2.3",
     "nanoid": "^5.1.9",
+    "prettier": "^3.5.1",
     "typescript": "^5.9.2",
     "vite": "^8.2.1",
     "vitest": "^3.0.8"

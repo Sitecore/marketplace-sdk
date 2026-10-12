@@ -16,16 +16,6 @@ export namespace Skills {
   /**
    * Content type that determines the method for processing the data and creating embedding(s)
    */
-  export type ContentType =
-    | 'GenericImage'
-    | 'ImageWithTextOverlay'
-    | 'TextEmbeddingForImageSearch'
-    | 'ShortText'
-    | 'LongText'
-    | 'RichDocument';
-  /**
-   * Content type that determines the method for processing the data and creating embedding(s)
-   */
   export const ContentType = {
     GENERIC_IMAGE: 'GenericImage',
     IMAGE_WITH_TEXT_OVERLAY: 'ImageWithTextOverlay',
@@ -34,17 +24,21 @@ export namespace Skills {
     LONG_TEXT: 'LongText',
     RICH_DOCUMENT: 'RichDocument',
   } as const;
+  /**
+   * Content type that determines the method for processing the data and creating embedding(s)
+   */
+  export type ContentType = (typeof ContentType)[keyof typeof ContentType];
   export type DeepResearchRequest = {
     prompt: string;
     brandkitId: string;
     searchType?: SearchType;
     additionalContext?: Array<AddedContextModel>;
   };
-  export type DocumentMimeType = 'application/pdf' | 'text/plain';
   export const DocumentMimeType = {
     APPLICATION_PDF: 'application/pdf',
     TEXT_PLAIN: 'text/plain',
   } as const;
+  export type DocumentMimeType = (typeof DocumentMimeType)[keyof typeof DocumentMimeType];
   /**
    * Model for files (documents, images) to be processed/analyzed for brand review.
    */
@@ -68,7 +62,7 @@ export namespace Skills {
     /**
      * Level of processing detail
      */
-    detail?: ('low' | 'auto' | 'high') | null;
+    detail?: 'low' | 'auto' | 'high' | null;
     /**
      * Authentication details for accessing the file (not needed for base64)
      */
@@ -129,12 +123,12 @@ export namespace Skills {
   export type HttpValidationError = {
     detail?: Array<ValidationError>;
   };
-  export type ImageMimeType = 'image/jpeg' | 'image/png' | 'image/webp';
   export const ImageMimeType = {
     IMAGE_JPEG: 'image/jpeg',
     IMAGE_PNG: 'image/png',
     IMAGE_WEBP: 'image/webp',
   } as const;
+  export type ImageMimeType = (typeof ImageMimeType)[keyof typeof ImageMimeType];
   export type InputItem = {
     /**
      * The name of the content item to create embedding for
@@ -178,17 +172,14 @@ export namespace Skills {
     image_embedding?: string | null;
     dimensions?: number | null;
   };
-  export type MimeType = 'image/jpeg' | 'image/png' | 'application/pdf';
   export const MimeType = {
     IMAGE_JPEG: 'image/jpeg',
     IMAGE_PNG: 'image/png',
     APPLICATION_PDF: 'application/pdf',
   } as const;
-  export type SearchType = 'web' | 'knowledge';
-  export const SearchType = {
-    WEB: 'web',
-    KNOWLEDGE: 'knowledge',
-  } as const;
+  export type MimeType = (typeof MimeType)[keyof typeof MimeType];
+  export const SearchType = { WEB: 'web', KNOWLEDGE: 'knowledge' } as const;
+  export type SearchType = (typeof SearchType)[keyof typeof SearchType];
   export type Section = {
     sectionId: string;
     fieldIds?: Array<string> | null;

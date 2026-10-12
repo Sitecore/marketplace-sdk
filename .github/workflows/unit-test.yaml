@@ -32,6 +32,20 @@ jobs:
         run: pnpm build
       - name: Run unit tests
         run: pnpm coverage
+      - name: Run shared unit tests
+        run: pnpm test:shared
+      - name: Type-check code generator
+        run: pnpm --filter @sitecore-marketplace-sdk/shared exec tsc -p codegen/tsconfig.json
+      - name: Check generated modules are up to date
+        run: |
+          pnpm generate:module
+          pnpm generate:module:experimental
+          git diff --exit-code
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --porcelain
+            echo "Generated modules are out of date. Run pnpm generate:module and pnpm generate:module:experimental, then commit the changes."
+            exit 1
+          fi
 
       - name: Make publish-preview-packages.sh executable
         run: chmod +x ./scripts/publish-preview-packages.sh

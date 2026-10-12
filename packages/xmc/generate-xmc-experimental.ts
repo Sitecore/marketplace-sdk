@@ -1,157 +1,43 @@
-import { createClient } from '@hey-api/openapi-ts';
-import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
-import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
+import { generate, type GenerateConfig } from '../shared/codegen';
 
-createClient({
-  input: 'https://api-docs.sitecore.com/_spec/sai/sites-api/index.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-sites',
+const clients: GenerateConfig[] = [
+  {
+    input: './schema/sites.json',
+    output: './src/experimental/client-sites',
+    namespace: 'experimental_Sites',
   },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineNamespaceTransformerConfig({
-      namespace: 'experimental_Sites',
-    }),
-  ],
-});
+  {
+    input: './schema/pages.json',
+    output: './src/experimental/client-pages',
+    namespace: 'experimental_Pages',
+  },
+  {
+    input: './schema/experimental/authoring.yaml',
+    output: './src/experimental/client-authoring',
+    namespace: 'experimental_Authoring',
+  },
+  {
+    input: './schema/experimental/content-transfer.yaml',
+    output: './src/experimental/client-content-transfer',
+    namespace: 'experimental_ContentTransfer',
+  },
+  {
+    input: './schema/experimental/content.yaml',
+    output: './src/experimental/client-content',
+    namespace: 'experimental_Content',
+  },
+  {
+    input: './schema/agent.json',
+    output: './src/experimental/client-agent',
+    namespace: 'experimental_Agent',
+  },
+  {
+    input: './schema/search.json',
+    output: './src/experimental/client-search',
+    namespace: 'experimental_Search',
+  },
+];
 
-createClient({
-  input: 'https://api-docs.sitecore.com/_spec/sai/pages-api/index.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-pages',
-  },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineNamespaceTransformerConfig({
-      namespace: 'experimental_Pages',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/experimental/authoring.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-authoring',
-  },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineNamespaceTransformerConfig({
-      namespace: 'experimental_Authoring',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/experimental/content-transfer.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-content-transfer',
-  },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineNamespaceTransformerConfig({
-      namespace: 'experimental_ContentTransfer',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/experimental/content.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-content',
-  },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineNamespaceTransformerConfig({
-      namespace: 'experimental_Content',
-    }),
-  ],
-});
-
-createClient({
-  input: 'https://ai-agent-api-use.sitecorecloud.io/api/docs/openapi.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-agent',
-  },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineNamespaceTransformerConfig({
-      namespace: 'experimental_Agent',
-    }),
-  ],
-});
-
-createClient({
-  input: './schema/search.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-search',
-  },
-  plugins: [
-    defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
-    '@hey-api/schemas',
-    '@hey-api/sdk',
-    {
-      enums: 'javascript',
-      name: '@hey-api/typescript',
-    },
-    defineNamespaceTransformerConfig({
-      namespace: 'experimental_Search',
-    }),
-  ],
-});
+for (const client of clients) {
+  await generate(client);
+}
