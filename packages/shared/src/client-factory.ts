@@ -2,6 +2,31 @@ import { createClient, createConfig, type Client } from '@hey-api/client-fetch';
 import { DEFAULT_HEADERS } from './constants';
 import type { ApiConfig } from './types';
 
+function createTimeoutFetch(fetch: typeof globalThis.fetch, timeoutMs: number, streaming: boolean) {
+  return async (input: Request): Promise<Response> => {
+    const controller = new AbortController();
+    const abort = () => controller.abort(input.signal.reason);
+    if (input.signal.aborted) {
+      abort();
+    } else {
+      input.signal.addEventListener('abort', abort, { once: true });
+    }
+    const timer = setTimeout(() => {
+      controller.abort(new DOMException(`Request timed out after ${timeoutMs} ms.`, 'TimeoutError'));
+    }, timeoutMs);
+    try {
+      const response = await fetch(new Request(input, { signal: controller.signal }));
+      if (!streaming && response.body) {
+        await response.clone().arrayBuffer();
+      }
+      return response;
+    } finally {
+      clearTimeout(timer);
+      input.signal.removeEventListener('abort', abort);
+    }
+  };
+}
+
 /**
  * Creates authenticated HTTP clients for each API type.
  *
@@ -50,6 +75,7 @@ export function createApiProxy<T extends string>(
   customClients: Record<T, Client>,
   label: string,
   headers: Record<string, string> = DEFAULT_HEADERS as unknown as Record<string, string>,
+  timeout: number = 30000,
 ) {
   const apiObject = {
     ...apiConfigs[apiType].sdk,
@@ -73,9 +99,12 @@ export function createApiProxy<T extends string>(
         const wrappedMethod = (options?: any) => {
           console.log(`🎭 [${label}] Calling ${apiType}.${propKey}`);
 
+          const { timeoutMs, ...requestOptions } = options ?? {};
+          const fetch = requestOptions.fetch ?? customClients[apiType].getConfig().fetch ?? globalThis.fetch;
           const result = originalMethod({
-            ...options,
+            ...requestOptions,
             client: customClients[apiType],
+            fetch: createTimeoutFetch(fetch, timeoutMs || timeout || 30000, requestOptions.parseAs === 'stream'),
             headers: {
               ...options?.headers,
               ...headers,

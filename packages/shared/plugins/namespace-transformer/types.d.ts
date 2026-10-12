@@ -14,4 +14,5 @@ export interface Config {
    *
    */
   namespace: string;
+  timeoutOptions?: boolean;
 }

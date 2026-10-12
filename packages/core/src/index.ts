@@ -92,8 +92,8 @@ export class CoreSDK {
    * @returns Promise that resolves with the response data
    * @throws {CoreError} If not initialized or request fails
    */
-  async request<T, R>(action: string, payload?: T): Promise<R> {
-    return this.bridge.request(action, payload);
+  async request<T, R>(action: string, payload?: T, options?: { timeoutMs?: number }): Promise<R> {
+    return this.bridge.request(action, payload, options);
   }
 
   /**
