@@ -25,30 +25,24 @@ updates:
       # Managed manually via changeset versioning
       - dependency-name: "@sitecore-marketplace-sdk/*"
 
-  # GitHub Actions - minor/patch updates
+  # GitHub Actions - version updates
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
-  # GitHub Actions - major updates only, split out for visibility
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 5
-    labels:
-      - "Major Package Update"
     groups:
-      major-actions:
+      version-minor-patch:
+        applies-to: version-updates
         patterns:
           - "*"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
+        update-types:
+          - "minor"
+          - "patch"
+      version-major:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "major"
