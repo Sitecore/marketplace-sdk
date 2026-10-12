@@ -1,0 +1,116 @@
+name: Evaluate CI Scope
+description: |
+  Decide whether a pull request only touches ignored paths.
+  skip is true only when every changed file matches one pattern in ignore-paths.
+  Non-PR events always set skip=false.
+
+inputs:
+  ignore-paths:
+    description: |
+      JSON array of path patterns. skip=true only when every changed PR file matches one.
+      Forms: "dir/**" (directory and children), a glob such as "*.md" (bash "*" also matches
+      nested paths), or an exact file path.
+    required: true
+  github-token:
+    description: GitHub token used to list pull request files.
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  skip:
+    description: '"true" when every changed file matches ignore-paths; otherwise "false".'
+    value: ${{ steps.check.outputs.skip }}
+
+runs:
+  using: composite
+  steps:
+    - name: Install jq
+      shell: bash
+      run: |
+        if ! command -v jq >/dev/null 2>&1; then
+          sudo apt-get update
+          sudo apt-get install -y jq
+        fi
+
+    - name: Check whether the PR only touches ignored paths
+      id: check
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        REPO: ${{ github.repository }}
+        IGNORED_PATHS: ${{ inputs.ignore-paths }}
+      run: |
+        set -euo pipefail
+
+        if [[ -z "${PR_NUMBER}" ]]; then
+          echo "Not a pull request; running all jobs."
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+
+        if ! jq -e 'type == "array"' >/dev/null <<< "${IGNORED_PATHS}"; then
+          echo "ignore-paths is not a JSON array:"
+          printf '%s\n' "${IGNORED_PATHS}"
+          exit 1
+        fi
+
+        mapfile -t patterns < <(jq -r '.[]' <<< "${IGNORED_PATHS}")
+
+        echo "Ignored path patterns:"
+        printf '  %s\n' "${patterns[@]}"
+
+        is_ignored() {
+          local file="$1"
+          local pattern prefix
+          for pattern in "${patterns[@]}"; do
+            if [[ "${pattern}" == *'/**' ]]; then
+              prefix="${pattern%'/**'}"
+              if [[ "${file}" == "${prefix}" || "${file}" == "${prefix}"/* ]]; then
+                return 0
+              fi
+            elif [[ "${file}" == ${pattern} ]]; then
+              return 0
+            fi
+          done
+          return 1
+        }
+
+        page=1
+        files=""
+        while true; do
+          response=$(curl -sS -f \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${REPO}/pulls/${PR_NUMBER}/files?per_page=100&page=${page}")
+          page_files=$(echo "${response}" | jq -r '.[].filename')
+          if [[ -z "${page_files}" ]]; then
+            break
+          fi
+          files="${files}${page_files}"$'\n'
+          count=$(echo "${response}" | jq 'length')
+          if [[ "${count}" -lt 100 ]]; then
+            break
+          fi
+          page=$((page + 1))
+        done
+
+        if [[ -z "${files//[[:space:]]/}" ]]; then
+          echo "PR has no files; running all jobs."
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+
+        skip=true
+        while IFS= read -r file; do
+          [[ -z "${file}" ]] && continue
+          if is_ignored "${file}"; then
+            echo "ignored:  ${file}"
+          else
+            echo "relevant: ${file}"
+            skip=false
+          fi
+        done <<< "${files}"
+
+        echo "skip=${skip}"
+        echo "skip=${skip}" >> "$GITHUB_OUTPUT"

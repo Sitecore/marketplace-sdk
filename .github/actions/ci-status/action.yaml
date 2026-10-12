@@ -1,0 +1,220 @@
+name: CI Status
+description: |
+  Roll up sibling job results for branch protection. Treat skipped as passing.
+  Fail on failure/cancelled. Pass toJson(needs) with if: always() && !cancelled().
+  Optionally require check and/or artifact evidence for succeeded jobs.
+
+inputs:
+  results:
+    description: JSON object of the caller's needs context, produced with toJson.
+    required: true
+  skip:
+    description: When "true", log that remaining CI was skipped for ignored paths.
+    required: false
+    default: 'false'
+  required-reports:
+    description: |
+      JSON array of {job, check and/or artifact}. Required only when the job succeeded.
+      check = successful GitHub check run; artifact = non-empty uploaded artifact.
+      dorny/test-reporter v3 (use-actions-summary) writes a summary, not a check run. Empty array disables.
+    required: false
+    default: '[]'
+  github-token:
+    description: GitHub token used to read check runs and run artifacts.
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Install jq
+      shell: bash
+      run: |
+        if ! command -v jq >/dev/null 2>&1; then
+          sudo apt-get update
+          sudo apt-get install -y jq
+        fi
+
+    - name: Report skip
+      if: ${{ inputs.skip == 'true' }}
+      shell: bash
+      run: |
+        echo 'Skipping remaining CI - the pull request only touches ignored paths.'
+
+    - name: Require no failures
+      shell: bash
+      env:
+        RESULTS: ${{ inputs.results }}
+      run: |
+        echo "$RESULTS" | jq -r 'to_entries[] | "\(.key)=\(.value.result)"'
+        failed=$(echo "$RESULTS" | jq -r '
+          to_entries
+          | map(select(.value.result == "failure" or .value.result == "cancelled"))
+          | .[].key
+        ')
+        if [ -n "${failed}" ]; then
+          echo "Blocking merge because these jobs did not succeed:"
+          printf '%s\n' "${failed}"
+          exit 1
+        fi
+        echo "Job rollup green."
+
+    - name: Require test reports
+      if: ${{ inputs.skip != 'true' }}
+      shell: bash
+      env:
+        RESULTS: ${{ inputs.results }}
+        REQUIRED_REPORTS: ${{ inputs.required-reports }}
+        GH_TOKEN: ${{ inputs.github-token }}
+        REPO: ${{ github.repository }}
+        RUN_ID: ${{ github.run_id }}
+        # PR head SHA; github.sha is the merge commit on pull_request.
+        SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      run: |
+        set -euo pipefail
+
+        workdir=$(mktemp -d)
+        trap 'rm -rf "${workdir}"' EXIT
+        reports_file="${workdir}/required-reports.json"
+        printf '%s' "${REQUIRED_REPORTS}" > "${reports_file}"
+        results_file="${workdir}/results.json"
+        printf '%s' "${RESULTS}" > "${results_file}"
+
+        if ! jq -e 'type == "array"' >/dev/null < "${reports_file}"; then
+          echo "required-reports is not a JSON array:"
+          cat "${reports_file}"
+          exit 1
+        fi
+
+        if [[ "$(jq 'length' < "${reports_file}")" -eq 0 ]]; then
+          echo "No test evidence configured."
+          exit 0
+        fi
+
+        # Keep only small fields. Check-run output.text is huge and blows ARG_MAX.
+        collect() {
+          local url="$1" slimmer="$2" dest="$3"
+          local page=1 response_file slim_file count
+          echo '[]' > "${dest}"
+          while true; do
+            response_file="${workdir}/page-${page}.json"
+            slim_file="${workdir}/slim-${page}.json"
+            curl -sS -f \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "${url}&page=${page}" > "${response_file}"
+            jq "${slimmer}" < "${response_file}" > "${slim_file}"
+            count=$(jq 'length' < "${slim_file}")
+            [[ "${count}" -eq 0 ]] && break
+            jq -s 'add' "${dest}" "${slim_file}" > "${dest}.next"
+            mv "${dest}.next" "${dest}"
+            [[ "${count}" -lt 100 ]] && break
+            page=$((page + 1))
+          done
+        }
+
+        checks_file="${workdir}/checks.json"
+        echo '[]' > "${checks_file}"
+        if jq -e 'map(has("check")) | any' >/dev/null < "${reports_file}"; then
+          # filter=all: the default 'latest' filter hides most matrix report checks.
+          collect \
+            "https://api.github.com/repos/${REPO}/commits/${SHA}/check-runs?per_page=100&filter=all" \
+            '[.check_runs[] | {id, name, status, conclusion}]' \
+            "${checks_file}"
+          echo "Check runs on ${SHA}:"
+          if [[ "$(jq 'length' < "${checks_file}")" -eq 0 ]]; then
+            echo "  (none) - wrong commit or the token lacks checks:read."
+          else
+            jq -r '.[] | "  \(.name) status=\(.status) conclusion=\(.conclusion // "none")"' < "${checks_file}"
+          fi
+        fi
+
+        artifacts_file="${workdir}/artifacts.json"
+        echo '[]' > "${artifacts_file}"
+        if jq -e 'map(has("artifact")) | any' >/dev/null < "${reports_file}"; then
+          collect \
+            "https://api.github.com/repos/${REPO}/actions/runs/${RUN_ID}/artifacts?per_page=100" \
+            '[.artifacts[] | {id, name, size_in_bytes, expired}]' \
+            "${artifacts_file}"
+          echo "Artifacts in run ${RUN_ID}:"
+          if [[ "$(jq 'length' < "${artifacts_file}")" -eq 0 ]]; then
+            echo "  (none) - nothing uploaded or the token lacks actions:read."
+          else
+            jq -r '.[] | "  \(.name) bytes=\(.size_in_bytes) expired=\(.expired)"' < "${artifacts_file}"
+          fi
+        fi
+
+        failed=0
+        while IFS= read -r entry; do
+          [[ -z "${entry}" ]] && continue
+          printf '%s' "${entry}" > "${workdir}/entry.json"
+          job=$(jq -r '.job' < "${workdir}/entry.json")
+          check=$(jq -r '.check // ""' < "${workdir}/entry.json")
+          artifact=$(jq -r '.artifact // ""' < "${workdir}/entry.json")
+          job_result=$(jq -r --arg job "${job}" '.[$job].result // "missing"' < "${results_file}")
+
+          echo "Job '${job}' (result=${job_result})"
+
+          if [[ -z "${check}" && -z "${artifact}" ]]; then
+            echo "  entry has neither check nor artifact."
+            failed=1
+            continue
+          fi
+
+          if [[ "${job_result}" != "success" ]]; then
+            echo "  no evidence required because the job did not succeed."
+            continue
+          fi
+
+          if [[ -n "${check}" ]]; then
+            match=$(jq -c --arg expected "${check}" '
+              [.[] | select(
+                .name == $expected
+                or (.name | endswith(" / " + $expected))
+                or (.name | contains($expected))
+              )] | if length == 0 then empty else max_by(.id) end
+            ' < "${checks_file}")
+
+            if [[ -z "${match}" ]]; then
+              echo "  missing check run '${check}'."
+              failed=1
+            else
+              printf '%s' "${match}" > "${workdir}/match.json"
+              name=$(jq -r '.name' < "${workdir}/match.json")
+              status=$(jq -r '.status' < "${workdir}/match.json")
+              conclusion=$(jq -r '.conclusion // "none"' < "${workdir}/match.json")
+              echo "  check run '${name}' status=${status} conclusion=${conclusion}"
+              if [[ "${status}" != "completed" || "${conclusion}" != "success" ]]; then
+                echo "  blocking merge because the check run is not success."
+                failed=1
+              fi
+            fi
+          fi
+
+          if [[ -n "${artifact}" ]]; then
+            match=$(jq -c --arg expected "${artifact}" '
+              [.[] | select(.name == $expected or (.name | contains($expected)))]
+              | if length == 0 then empty else max_by(.id) end
+            ' < "${artifacts_file}")
+
+            if [[ -z "${match}" ]]; then
+              echo "  missing artifact '${artifact}'."
+              failed=1
+            else
+              printf '%s' "${match}" > "${workdir}/match.json"
+              name=$(jq -r '.name' < "${workdir}/match.json")
+              size=$(jq -r '.size_in_bytes' < "${workdir}/match.json")
+              expired=$(jq -r '.expired' < "${workdir}/match.json")
+              echo "  artifact '${name}' bytes=${size} expired=${expired}"
+              if [[ "${expired}" == "true" || "${size}" -le 0 ]]; then
+                echo "  blocking merge because the artifact is empty or expired."
+                failed=1
+              fi
+            fi
+          fi
+        done < <(jq -c '.[]' < "${reports_file}")
+
+        if [[ "${failed}" -ne 0 ]]; then
+          exit 1
+        fi
+        echo "Required test evidence present."
