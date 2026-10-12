@@ -54,7 +54,7 @@ The repository is structured as follows:
 
 #### Prerequisites
 
-- Node.js 16 or later. Check your installed version by using the `node --version` command.
+- Node.js 22.18 or later (required by Hey API 0.99). Check your installed version by using the `node --version` command.
 - pnpm 10 or later. Check your installed version by using the `pnpm --version` command.
 
 #### Installation
@@ -99,11 +99,27 @@ Here are the main monorepo commands defined in the root `package.json`:
   pnpm test:all
   ```
 
-- **Generate Client SDK types**  
-  Automatically generate static TypeScript types for the Client SDK based on the defined schema:
+- **Generate module SDKs**
+  Generate the AI and XMC clients, types, and SDK augmentations using Hey API 0.99.0:
 
   ```bash
-  pnpm generate:client
+  pnpm generate:module
+  pnpm generate:module:experimental
+  ```
+
+  Generation uses the runtime bundled with Hey API so the emitted SDK and fetch-client
+  interfaces stay compatible; the existing `@hey-api/client-fetch` dependency is unchanged.
+  Prettier runs through Node for cross-platform formatting. ESLint is not configured in
+  this repository and is not run during generation.
+
+  Shared plugins use `definePluginConfig`, plugin instances, and symbol metadata.
+  Namespace transformers must remain last in each plugin list: they finalize the project
+  and adapt its public file renderers to preserve the SDK's namespaced type exports.
+
+  Run the offline generator regression tests with:
+
+  ```bash
+  pnpm --filter @sitecore-marketplace-sdk/shared exec vitest run --config plugins/vitest.config.ts
   ```
 
 #### Working with individual packages

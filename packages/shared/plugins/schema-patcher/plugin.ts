@@ -1,4 +1,5 @@
-import type { Plugin } from '@hey-api/openapi-ts';
+import type { DefinePlugin } from '@hey-api/openapi-ts';
+import { buildGraph } from '@hey-api/shared';
 import type { Config } from './types';
 
 const HTTP_METHODS = ['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'] as const;
@@ -12,18 +13,20 @@ function getXScSdk(obj: Record<string, any> | undefined): XScSdk | undefined {
   return obj?.['x-sc-sdk'] as XScSdk | undefined;
 }
 
-export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
+export const handler: DefinePlugin<Config>['Handler'] = ({ plugin }) => {
+  const context = plugin.context;
+  const config = plugin.config;
   const ir = context.ir;
   const spec = (context as any).spec as Record<string, any> | undefined;
 
   // Set the base URL if provided in config
   if (ir && ir.servers && ir.servers.length > 0) {
-    if (plugin.baseUrl) {
+    if (config.baseUrl) {
       // baseUrl takes precedence - use full URL as-is
-      ir.servers[0].url = plugin.baseUrl;
-    } else if (plugin.basePath) {
+      ir.servers[0].url = config.baseUrl;
+    } else if (config.basePath) {
       // basePath - construct URL with edge platform domain
-      ir.servers[0].url = `https://example.com${plugin.basePath}`;
+      ir.servers[0].url = `https://example.com${config.basePath}`;
     }
   }
 
@@ -73,6 +76,7 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
         // x-sc-sdk.operationName → override IR operation id
         if (opSdk?.operationName) {
           operation.id = opSdk.operationName;
+          operation.operationId = opSdk.operationName;
         }
 
         // Inject sitecoreContextId parameter
@@ -92,7 +96,9 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
       }
 
       // If no HTTP methods remain, mark path for deletion
-      const hasRemainingMethods = HTTP_METHODS.some((m) => (irMethods as Record<string, any>)[m] != null);
+      const hasRemainingMethods = HTTP_METHODS.some(
+        (m) => (irMethods as Record<string, any>)[m] != null,
+      );
       if (!hasRemainingMethods) {
         pathsToDelete.push(path);
       }
@@ -102,5 +108,10 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
     for (const p of pathsToDelete) {
       delete (ir.paths as Record<string, any>)[p];
     }
+  }
+
+  // Hey API's walkers use a prebuilt graph, not the mutated IR paths directly.
+  if (context.graph) {
+    context.graph = buildGraph(ir, context.logger).graph;
   }
 };

@@ -305,6 +305,9 @@ importers:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
         version: 0.99.0(magicast@0.5.3)(typescript@5.9.3)
+      '@hey-api/shared':
+        specifier: 0.5.0
+        version: 0.5.0(magicast@0.5.3)
       js-yaml:
         specifier: ^5.2.3
         version: 5.2.3

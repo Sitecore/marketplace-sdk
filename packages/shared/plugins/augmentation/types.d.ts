@@ -1,4 +1,6 @@
-export interface Config {
+import type { Plugin } from '@hey-api/openapi-ts';
+
+export interface Config extends Plugin.UserExports {
   /**
    * Plugin name. Must be unique.
    */

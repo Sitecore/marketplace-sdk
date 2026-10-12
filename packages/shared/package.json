@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "0.99.0",
+    "@hey-api/shared": "0.5.0",
     "js-yaml": "^5.2.3",
     "nanoid": "^5.1.9",
     "typescript": "^5.9.2",

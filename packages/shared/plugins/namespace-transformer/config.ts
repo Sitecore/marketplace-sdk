@@ -1,21 +1,18 @@
-import type { Plugin } from '@hey-api/openapi-ts';
+import { definePluginConfig, type DefinePlugin } from '@hey-api/openapi-ts';
 
 import { handler } from './plugin';
 import type { Config } from './types';
 
-export const defaultNamespaceTransformerConfig: Plugin.Config<Config> = {
-  _dependencies: ['@hey-api/client-fetch', '@hey-api/typescript'],
-  _handler: handler,
-  _handlerLegacy: () => {},
+export const defaultNamespaceTransformerConfig: DefinePlugin<Config>['Config'] = {
+  dependencies: ['@hey-api/client-fetch', '@hey-api/typescript', '@hey-api/sdk'],
+  handler,
   name: '@sitecore-marketplace/namespace-transformer',
-  output: 'client',
-  namespace: '',
+  config: { output: 'client', namespace: '' },
 };
 
 /**
  * Type helper for `my-plugin` plugin, returns {@link Plugin.Config} object
  */
-export const defineNamespaceTransformerConfig: Plugin.DefineConfig<Config> = (config) => ({
-  ...defaultNamespaceTransformerConfig,
-  ...config,
-});
+export const defineNamespaceTransformerConfig = definePluginConfig(
+  defaultNamespaceTransformerConfig,
+);

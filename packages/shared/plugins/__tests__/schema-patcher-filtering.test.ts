@@ -14,10 +14,10 @@ describe('schema patcher plugin - sitecoreContextId injection', () => {
   function runHandler(schema: any, spec?: any, pluginOverrides: Record<string, any> = {}) {
     const context: any = { ir: schema, spec };
     schemaPatcherHandler({
-      context,
       plugin: {
         name: '@sitecore-marketplace/schema-patcher',
-        ...pluginOverrides,
+        context,
+        config: pluginOverrides,
       },
     } as any);
     return schema;
@@ -81,10 +81,10 @@ describe('schema patcher plugin - x-sc-sdk directives', () => {
   function runHandler(ir: any, spec: any, pluginOverrides: Record<string, any> = {}) {
     const context: any = { ir, spec };
     schemaPatcherHandler({
-      context,
       plugin: {
         name: '@sitecore-marketplace/schema-patcher',
-        ...pluginOverrides,
+        context,
+        config: pluginOverrides,
       },
     } as any);
     return ir;
@@ -241,5 +241,4 @@ describe('schema patcher plugin - x-sc-sdk directives', () => {
     expect(ir.paths['/api/data'].post).toBeUndefined();
   });
 });
-
 
