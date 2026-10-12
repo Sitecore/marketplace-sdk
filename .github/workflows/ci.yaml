@@ -23,6 +23,7 @@ jobs:
         with:
           ignore-paths: |
             [
+              ".github/actions/**",
               ".github/workflows/**"
             ]
 
