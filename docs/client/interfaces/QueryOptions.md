@@ -20,9 +20,9 @@ Defined in: [packages/client/src/types.ts:28](https://github.com/Sitecore/market
 
 ## Properties
 
-### onError()?
+### onError?
 
-> `optional` **onError**: (`error`) => `void`
+> `optional` **onError?**: (`error`) => `void`
 
 Defined in: [packages/client/src/types.ts:21](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L21)
 
@@ -44,9 +44,9 @@ Called when the query encounters an error
 
 ***
 
-### onSuccess()?
+### onSuccess?
 
-> `optional` **onSuccess**: (`data`) => `void`
+> `optional` **onSuccess?**: (`data`) => `void`
 
 Defined in: [packages/client/src/types.ts:19](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L19)
 
@@ -70,7 +70,7 @@ Called when the query successfully completes
 
 ### params?
 
-> `optional` **params**: [`QueryMap`](QueryMap.md)\[`K`\]\[`"params"`\]
+> `optional` **params?**: [`QueryMap`](QueryMap.md)\[`K`\]\[`"params"`\]
 
 Defined in: [packages/client/src/types.ts:23](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L23)
 
@@ -84,7 +84,7 @@ Additional parameters for the query; always includes headers, query and body
 
 ### subscribe?
 
-> `optional` **subscribe**: `boolean`
+> `optional` **subscribe?**: `boolean`
 
 Defined in: [packages/client/src/types.ts:17](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L17)
 
@@ -98,7 +98,7 @@ Whether to subscribe to updates for this query
 
 ### timeoutMs?
 
-> `optional` **timeoutMs**: `number`
+> `optional` **timeoutMs?**: `number`
 
 Defined in: [packages/client/src/types.ts:25](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L25)
 

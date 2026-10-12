@@ -10,7 +10,7 @@ Defined in: [packages/client/src/sdk-types.ts:327](https://github.com/Sitecore/m
 
 ## Properties
 
-### invokeOperation()
+### invokeOperation
 
 > **invokeOperation**: (`operationName`, ...`args`) => `any`
 

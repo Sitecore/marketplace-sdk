@@ -20,15 +20,15 @@ configuration needed to initialize CoreSDK internally.
 
 ### events?
 
-> `optional` **events**: `object`
+> `optional` **events?**: `object`
 
 Defined in: [packages/client/src/types.ts:91](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L91)
 
 Events that the SDK can listen for
 
-#### onPageContextUpdate()?
+#### onPageContextUpdate?
 
-> `optional` **onPageContextUpdate**: (`data`) => `void`
+> `optional` **onPageContextUpdate?**: (`data`) => `void`
 
 ##### Parameters
 
@@ -40,9 +40,9 @@ Events that the SDK can listen for
 
 `void`
 
-#### onRouteUpdate()?
+#### onRouteUpdate?
 
-> `optional` **onRouteUpdate**: (`route`) => `void`
+> `optional` **onRouteUpdate?**: (`route`) => `void`
 
 ##### Parameters
 
@@ -58,7 +58,7 @@ Events that the SDK can listen for
 
 ### navbarItems?
 
-> `optional` **navbarItems**: [`NavbarItemsProps`](NavbarItemsProps.md)
+> `optional` **navbarItems?**: [`NavbarItemsProps`](NavbarItemsProps.md)
 
 Defined in: [packages/client/src/types.ts:95](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L95)
 
@@ -80,9 +80,9 @@ Our own origin – this defaults to the value of window.location.origin
 
 ### target?
 
-> `optional` **target**: `Window`
+> `optional` **target?**: `Window`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:8
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:8
 
 The target window to communicate with (e.g., iframe.contentWindow)
 
@@ -94,7 +94,7 @@ The target window to communicate with (e.g., iframe.contentWindow)
 
 ### targetOrigin?
 
-> `optional` **targetOrigin**: `string`
+> `optional` **targetOrigin?**: `string`
 
 Defined in: [packages/client/src/types.ts:87](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/client/src/types.ts#L87)
 
@@ -108,9 +108,9 @@ The origin of the remote endpoint (e.g. client for the host, or host for the cli
 
 ### timeout?
 
-> `optional` **timeout**: `number`
+> `optional` **timeout?**: `number`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:14
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/types.d.ts:14
 
 Optional timeout for requests in milliseconds (default: 30000)
 

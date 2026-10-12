@@ -3,13 +3,13 @@ import {
   ApplicationContext,
   UserInfo,
   PagesContextParams,
-  ContentLayoutUpdatedData, 
+  ContentLayoutUpdatedData,
   ContentFieldsUpdatedData
 } from '@sitecore-marketplace-sdk/core';
 
 // Re-export event data types from core
-export type { 
-  ContentLayoutUpdatedData, 
+export type {
+  ContentLayoutUpdatedData,
   ContentFieldsUpdatedData
 } from '@sitecore-marketplace-sdk/core';
 

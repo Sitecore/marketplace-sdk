@@ -6,27 +6,27 @@
 
 # Interface: ApplicationContext
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:128
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:133
 
 ## Indexable
 
-\[`key`: `string`\]: `any`
+> \[`key`: `string`\]: `any`
 
 ## Properties
 
 ### extensionPoints?
 
-> `optional` **extensionPoints**: `ApplicationExtensionPointContext`[]
+> `optional` **extensionPoints?**: `ApplicationExtensionPointContext`[]
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:144
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:149
 
 ***
 
 ### iconUrl?
 
-> `optional` **iconUrl**: `string`
+> `optional` **iconUrl?**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:133
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:138
 
 ***
 
@@ -34,63 +34,63 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modul
 
 > **id**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:129
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:134
 
 ***
 
 ### installationId?
 
-> `optional` **installationId**: `string`
+> `optional` **installationId?**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:135
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:140
 
 ***
 
 ### MarketplaceAppTenantId?
 
-> `optional` **MarketplaceAppTenantId**: `string`
+> `optional` **MarketplaceAppTenantId?**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:136
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:141
 
 ***
 
 ### name?
 
-> `optional` **name**: `string`
+> `optional` **name?**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:131
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:136
 
 ***
 
 ### organizationId?
 
-> `optional` **organizationId**: `string`
+> `optional` **organizationId?**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:137
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:142
 
 ***
 
 ### permissions?
 
-> `optional` **permissions**: `Permissions`
+> `optional` **permissions?**: `Permissions`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:138
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:143
 
 ***
 
 ### resourceAccess?
 
-> `optional` **resourceAccess**: `ApplicationResourceContext`[]
+> `optional` **resourceAccess?**: `ApplicationResourceContext`[]
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:143
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:148
 
 ***
 
 ### ~~resources?~~
 
-> `optional` **resources**: `ApplicationResourceContext`[]
+> `optional` **resources?**: `ApplicationResourceContext`[]
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:140
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:145
 
 #### Deprecated
 
@@ -100,17 +100,17 @@ Use resourceAccess instead
 
 ### state?
 
-> `optional` **state**: `string`
+> `optional` **state?**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:134
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:139
 
 ***
 
 ### ~~touchpoints?~~
 
-> `optional` **touchpoints**: `ApplicationTouchpointContext`[]
+> `optional` **touchpoints?**: `ApplicationTouchpointContext`[]
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:142
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:147
 
 #### Deprecated
 
@@ -120,9 +120,9 @@ Use extensionPoints instead
 
 ### type?
 
-> `optional` **type**: `string`
+> `optional` **type?**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:132
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:137
 
 ***
 
@@ -130,4 +130,4 @@ Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modul
 
 > **url**: `string`
 
-Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.2/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:130
+Defined in: node\_modules/.pnpm/@sitecore-marketplace-sdk+core@0.3.5/node\_modules/@sitecore-marketplace-sdk/core/dist/shared-types.d.ts:135

@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.4.3
+
+### Patch Changes
+
+- 2978fef: Update marketplace client
+
 ## 0.4.2
 
 ### Patch Changes
