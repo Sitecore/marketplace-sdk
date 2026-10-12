@@ -24,7 +24,8 @@ jobs:
           ignore-paths: |
             [
               ".github/actions/**",
-              ".github/workflows/**"
+              ".github/workflows/**",
+              ".github/dependabot.yml"
             ]
 
   unit-test:
