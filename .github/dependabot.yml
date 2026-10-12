@@ -1,66 +1,48 @@
 version: 2
 updates:
-  # Root workspace (pnpm monorepo) - minor/patch updates
+  # Root workspace (pnpm monorepo) - security updates
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 0
     groups:
-      dev-dependencies:
-        dependency-type: "development"
-      production-dependencies:
-        dependency-type: "production"
-    ignore:
-      # Managed manually via changeset versioning
-      - dependency-name: "@sitecore-marketplace-sdk/*"
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
-  # Root workspace (pnpm monorepo) - major updates only, split out for visibility
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 10
-    labels:
-      - "Major Package Update"
-    groups:
-      major-dependencies:
+      security-minor-patch:
+        applies-to: security-updates
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      security-major:
+        applies-to: security-updates
+        patterns:
+          - "*"
+        update-types:
+          - "major"
     ignore:
       # Managed manually via changeset versioning
       - dependency-name: "@sitecore-marketplace-sdk/*"
-      - dependency-name: "*"
-        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
 
-  # GitHub Actions - minor/patch updates
+  # GitHub Actions - version updates
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
-  # GitHub Actions - major updates only, split out for visibility
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-    open-pull-requests-limit: 5
-    labels:
-      - "Major Package Update"
     groups:
-      major-actions:
+      version-minor-patch:
+        applies-to: version-updates
         patterns:
           - "*"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
+        update-types:
+          - "minor"
+          - "patch"
+      version-major:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "major"
