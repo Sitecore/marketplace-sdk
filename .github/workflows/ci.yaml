@@ -9,6 +9,7 @@ on:
 
 jobs:
   evaluate-ci-scope:
+    if: ${{ github.event_name == 'pull_request' }}
     name: Evaluate CI Scope
     runs-on: ubuntu-latest
     outputs:
@@ -33,7 +34,7 @@ jobs:
     secrets: inherit
 
   pnpm-dependencies-scan:
-    if: ${{ needs.evaluate-ci-scope.outputs.skip != 'true' }}
+    if: ${{ !cancelled() && (github.event_name != 'pull_request' || needs.evaluate-ci-scope.outputs.skip != 'true') }}
     needs:
       - evaluate-ci-scope
     uses: ./.github/workflows/pnpm-dependencies-scan.yaml
@@ -44,7 +45,7 @@ jobs:
       - evaluate-ci-scope
       - unit-test
       - pnpm-dependencies-scan
-    if: ${{ always() && !cancelled() }}
+    if: ${{ github.event_name == 'pull_request' && always() && !cancelled() }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
