@@ -8,9 +8,49 @@ on:
   workflow_dispatch:
 
 jobs:
+  evaluate-ci-scope:
+    name: Evaluate CI Scope
+    runs-on: ubuntu-latest
+    outputs:
+      skip: ${{ steps.check.outputs.skip }}
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/evaluate-ci-scope
+        id: check
+        with:
+          ignore-paths: |
+            [
+              ".github/workflows/**"
+            ]
+
   unit-test:
     uses: ./.github/workflows/unit-test.yaml
     secrets: inherit
 
   pnpm-dependencies-scan:
+    if: ${{ needs.evaluate-ci-scope.outputs.skip != 'true' }}
+    needs:
+      - evaluate-ci-scope
     uses: ./.github/workflows/pnpm-dependencies-scan.yaml
+
+  ci-status:
+    name: CI Status
+    needs:
+      - evaluate-ci-scope
+      - unit-test
+      - pnpm-dependencies-scan
+    if: ${{ always() && !cancelled() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/ci-status
+        with:
+          skip: ${{ needs.evaluate-ci-scope.outputs.skip }}
+          results: ${{ toJson(needs) }}
