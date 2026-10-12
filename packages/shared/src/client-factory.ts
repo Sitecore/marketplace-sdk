@@ -100,7 +100,10 @@ export function createApiProxy<T extends string>(
           console.log(`🎭 [${label}] Calling ${apiType}.${propKey}`);
 
           const { timeoutMs, ...requestOptions } = options ?? {};
-          const fetch = requestOptions.fetch ?? customClients[apiType].getConfig().fetch ?? globalThis.fetch;
+          const configuredFetch = typeof customClients[apiType].getConfig === 'function'
+            ? customClients[apiType].getConfig().fetch
+            : undefined;
+          const fetch = requestOptions.fetch ?? configuredFetch ?? globalThis.fetch;
           const result = originalMethod({
             ...requestOptions,
             client: customClients[apiType],
