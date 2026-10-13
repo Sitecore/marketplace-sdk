@@ -54,7 +54,7 @@ The repository is structured as follows:
 
 #### Prerequisites
 
-- Node.js 16 or later. Check your installed version by using the `node --version` command.
+- Node.js 24 LTS (used by CI and supported by Hey API 0.99 and Changesets 3). Check your installed version by using the `node --version` command.
 - pnpm 10 or later. Check your installed version by using the `pnpm --version` command.
 
 #### Installation
@@ -66,6 +66,11 @@ pnpm install
 ```
 
 This installs all dependencies across the packages and sets up the workspaces.
+
+Dependency security floors are maintained in `pnpm-workspace.yaml`. Changesets 3
+and the removal of the unused Rollup copy plugin eliminate the unpatched `braces`
+dependency; do not reintroduce that dependency chain. Check advisories with
+`corepack pnpm audit` after updating the lockfile.
 
 #### Monorepo commands
 
@@ -99,12 +104,34 @@ Here are the main monorepo commands defined in the root `package.json`:
   pnpm test:all
   ```
 
-- **Generate Client SDK types**  
-  Automatically generate static TypeScript types for the Client SDK based on the defined schema:
+- **Generate module SDKs**
+  Generate the AI and XMC clients, types, and SDK augmentations using Hey API 0.99.0:
 
   ```bash
-  pnpm generate:client
+  pnpm generate:module
+  pnpm generate:module:experimental
   ```
+
+  Generation uses the runtime bundled with Hey API so the emitted SDK and fetch-client
+  interfaces stay compatible. Normal and experimental clients use their generated Fetch
+  runtime; the deprecated standalone `@hey-api/client-fetch` package is not installed.
+  The same name in generator configuration selects Hey API's bundled Fetch plugin.
+  Prettier runs through Node for cross-platform formatting. ESLint is not configured in
+  this repository and is not run during generation.
+
+  Shared plugins use `definePluginConfig`, plugin instances, and symbol metadata.
+  Namespace transformers must remain last in each plugin list: they finalize the project
+  and adapt its public file renderers to preserve the SDK's namespaced type exports.
+
+  Run the offline generator regression tests with:
+
+  ```bash
+  pnpm --filter @sitecore-marketplace-sdk/shared exec vitest run --config plugins/vitest.config.ts
+  ```
+
+  The shared package's `test` and `coverage` scripts also run these offline tests.
+  CI's `pnpm coverage` registers the production plugin configs through real Hey API
+  generation, so incompatible handler registration fails before generated clients are published.
 
 #### Working with individual packages
 

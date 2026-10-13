@@ -1,15 +1,12 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { generatorOutput } from '../shared/generator-output';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
 async function generate() {
   await createClient({
     input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
-    output: {
-      format: 'prettier',
-      lint: 'eslint',
-      path: './src/experimental/client-skills',
-    },
+    output: generatorOutput('./src/experimental/client-skills'),
     plugins: [
       defineSchemaPatcherConfig({
         basePath: '/stream/ai-skills-api/',
