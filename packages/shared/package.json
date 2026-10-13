@@ -3,16 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
   "dependencies": {
     "@hey-api/client-fetch": "0.8.3"
   },
   "devDependencies": {
     "@hey-api/openapi-ts": "0.99.0",
     "@hey-api/shared": "0.5.0",
+    "@vitest/coverage-v8": "4.1.11",
     "js-yaml": "^5.2.3",
+    "jsdom": "^30.0.1",
     "nanoid": "^5.1.9",
     "typescript": "^5.9.2",
     "vite": "^8.2.1",
-    "vitest": "^3.0.8"
+    "vitest": "4.1.11"
   }
 }

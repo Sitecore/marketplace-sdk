@@ -54,7 +54,7 @@ The repository is structured as follows:
 
 #### Prerequisites
 
-- Node.js 22.18 or later (required by Hey API 0.99). Check your installed version by using the `node --version` command.
+- Node.js 24 LTS (used by CI and supported by Hey API 0.99 and Changesets 3). Check your installed version by using the `node --version` command.
 - pnpm 10 or later. Check your installed version by using the `pnpm --version` command.
 
 #### Installation
@@ -66,6 +66,11 @@ pnpm install
 ```
 
 This installs all dependencies across the packages and sets up the workspaces.
+
+Dependency security floors are maintained in `pnpm-workspace.yaml`. Changesets 3
+and the removal of the unused Rollup copy plugin eliminate the unpatched `braces`
+dependency; do not reintroduce that dependency chain. Check advisories with
+`corepack pnpm audit` after updating the lockfile.
 
 #### Monorepo commands
 
@@ -121,6 +126,10 @@ Here are the main monorepo commands defined in the root `package.json`:
   ```bash
   pnpm --filter @sitecore-marketplace-sdk/shared exec vitest run --config plugins/vitest.config.ts
   ```
+
+  The shared package's `test` and `coverage` scripts also run these offline tests.
+  CI's `pnpm coverage` registers the production plugin configs through real Hey API
+  generation, so incompatible handler registration fails before generated clients are published.
 
 #### Working with individual packages
 

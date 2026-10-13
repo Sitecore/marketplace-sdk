@@ -15,8 +15,8 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
-      include: ['src/**/*.ts'],
-      exclude: ['src/__tests__/**'],
+      include: ['src/**/*.ts', 'plugins/**/*.ts'],
+      exclude: ['src/__tests__/**', 'plugins/__tests__/**', 'plugins/vitest.config.ts'],
     },
     watch: false,
   },
