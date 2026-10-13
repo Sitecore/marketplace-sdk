@@ -48,6 +48,8 @@ describe('experimental generated Fetch runtimes', () => {
     expect(request.headers.get('x-sc-feature')).toBe('test-feature');
     expect(await request.json()).toEqual(body);
     expect(result.data).toEqual({ result: 'ok' });
+    expect(result.response).toBeInstanceOf(Response);
+    expect(result.response.status).toBe(200);
     expect(getAccessToken).toHaveBeenCalledOnce();
   });
 
@@ -103,6 +105,8 @@ describe('experimental generated Fetch runtimes', () => {
     expect(request.headers.get('sc-resource')).toBe('marketplace');
     expect(request.headers.get('sc-marketplace-auth')).toBe('interactive/v1');
     expect(result.data).toEqual({ result: 'ok' });
+    expect(result.response).toBeInstanceOf(Response);
+    expect(result.response.status).toBe(200);
     expect(getAccessToken).toHaveBeenCalledOnce();
   });
 
