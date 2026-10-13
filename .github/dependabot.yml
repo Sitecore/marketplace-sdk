@@ -25,23 +25,23 @@ updates:
       # Managed manually via changeset versioning
       - dependency-name: "@sitecore-marketplace-sdk/*"
 
-  # GitHub Actions - version updates
+  # GitHub Actions - security updates
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
     groups:
-      version-minor-patch:
-        applies-to: version-updates
+      security-minor-patch:
+        applies-to: security-updates
         patterns:
           - "*"
         update-types:
           - "minor"
           - "patch"
-      version-major:
-        applies-to: version-updates
+      security-major:
+        applies-to: security-updates
         patterns:
           - "*"
         update-types:
