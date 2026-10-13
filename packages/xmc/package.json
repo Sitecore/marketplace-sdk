@@ -35,9 +35,6 @@
     "sai",
     "sitecoreai"
   ],
-  "dependencies": {
-    "@hey-api/client-fetch": "0.8.3"
-  },
   "peerDependencies": {
     "@sitecore-marketplace-sdk/client": "^0.4.0"
   },

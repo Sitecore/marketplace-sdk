@@ -1,10 +1,22 @@
 /**
+ * Error interception supported by generated Fetch clients.
+ */
+export interface ApiClient {
+  interceptors: {
+    error: {
+      use: (handler: (error: unknown, response: Response | undefined) => unknown) => number;
+    };
+  };
+}
+
+/**
  * Configuration for an API endpoint used by experimental clients.
  */
-export interface ApiConfig {
+export interface ApiConfig<TClient extends ApiClient = ApiClient> {
   baseUrl: string;
   sdk: any;
   name: string;
+  createClient: (config: { baseUrl: string; auth: () => Promise<string> }) => TClient;
 }
 
 /**

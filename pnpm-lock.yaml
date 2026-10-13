@@ -82,10 +82,6 @@ importers:
         version: 5.9.3
 
   packages/ai:
-    dependencies:
-      '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -292,10 +288,6 @@ importers:
         version: 0.11.1(vitest@4.1.11)
 
   packages/shared:
-    dependencies:
-      '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -326,10 +318,6 @@ importers:
         version: 4.1.11(@types/node@26.2.0)(@vitest/coverage-v8@4.1.11)(jsdom@30.0.1)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.1)(jiti@2.7.0)(terser@5.49.2)(tsx@4.23.10)(yaml@2.9.0))
 
   packages/xmc:
-    dependencies:
-      '@hey-api/client-fetch':
-        specifier: 0.8.3
-        version: 0.8.3
     devDependencies:
       '@hey-api/openapi-ts':
         specifier: 0.99.0
@@ -783,10 +771,6 @@ packages:
 
   '@gerrit0/mini-shiki@3.23.0':
     resolution: {integrity: sha512-bEMORlG0cqdjVyCEuU0cDQbORWX+kYCeo0kV1lbxF5bt4r7SID2l9bqsxJEM0zndaxpOUT7riCyIVEuqq/Ynxg==}
-
-  '@hey-api/client-fetch@0.8.3':
-    resolution: {integrity: sha512-EBVa8wwUMyBSeQ32PtCz6u5bFQZIMAufvwCT1ZtpjqT3caJQEza4NokbGU50q1ZVrMsM5Ot6GuDNJOF3TMo26Q==}
-    deprecated: Starting with v0.73.0, this package is bundled directly inside @hey-api/openapi-ts.
 
   '@hey-api/codegen-core@0.9.1':
     resolution: {integrity: sha512-s97jL1dgTMuiMHv2BZ1X4Tgd99Mf9GOvGdNqNcGwIMmnR+PgYNoraj4Zvp134MKsNCap/m7k0r0vKKnl56pj4w==}
@@ -2906,8 +2890,6 @@ snapshots:
       '@shikijs/themes': 3.23.0
       '@shikijs/types': 3.23.0
       '@shikijs/vscode-textmate': 10.0.2
-
-  '@hey-api/client-fetch@0.8.3': {}
 
   '@hey-api/codegen-core@0.9.1(magicast@0.5.3)':
     dependencies:

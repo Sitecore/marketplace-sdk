@@ -1,4 +1,5 @@
 import * as experimental_skills_sdk from './experimental/client-skills/sdk.gen';
+import { createClient } from './experimental/client-skills/client';
 import {
   getEdgePlatformProxyUrl,
   createCustomClients,
@@ -40,6 +41,7 @@ export class experimental_AI {
         baseUrl: `${edgePlatformProxyUrl}/stream/ai-skills-api/`,
         sdk: experimental_skills_sdk,
         name: 'AI skills API',
+        createClient,
       },
     };
 

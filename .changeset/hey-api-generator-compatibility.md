@@ -4,3 +4,5 @@
 ---
 
 Restore normal and experimental module generation with Hey API 0.99 and regenerate the AI and XMC clients, preserving namespaced types and Marketplace fetch routing.
+
+Use the generated Fetch runtime for experimental authenticated clients and remove the deprecated standalone `@hey-api/client-fetch` dependency.

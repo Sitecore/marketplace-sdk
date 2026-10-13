@@ -1,6 +1,5 @@
-import { createClient, createConfig, type Client } from '@hey-api/client-fetch';
 import { DEFAULT_HEADERS } from './constants';
-import type { ApiConfig } from './types';
+import type { ApiClient, ApiConfig } from './types';
 
 /**
  * Creates authenticated HTTP clients for each API type.
@@ -9,29 +8,35 @@ import type { ApiConfig } from './types';
  * @param getAccessToken - Async function that returns a bearer token
  * @param label - Label used in log messages (e.g. 'experimental_AI')
  */
-export function createCustomClients<T extends string>(
-  apiConfigs: Record<T, ApiConfig>,
+export function createCustomClients<T extends string, TClient extends ApiClient>(
+  apiConfigs: Record<T, ApiConfig<TClient>>,
   getAccessToken: () => Promise<string>,
   label: string,
-): Record<T, Client> {
-  const clients: Partial<Record<T, Client>> = {};
+): Record<T, TClient> {
+  const clients: Partial<Record<T, TClient>> = {};
 
-  for (const [apiType, config] of Object.entries(apiConfigs) as [T, ApiConfig][]) {
+  for (const [apiType, config] of Object.entries(apiConfigs) as [T, ApiConfig<TClient>][]) {
     const authFunction = async () => {
       console.log(`🔑 [${label}] Getting access token for ${apiType}`);
       const token = await getAccessToken();
       return token;
     };
 
-    clients[apiType] = createClient(
-      createConfig({
-        baseUrl: config.baseUrl,
-        auth: authFunction,
-      }),
-    );
+    const client = config.createClient({
+      baseUrl: config.baseUrl,
+      auth: authFunction,
+    });
+    // Preserve rejection of token, network, and parsing failures from the old runtime.
+    client.interceptors.error.use((error, response) => {
+      if (!response || error instanceof Error) {
+        throw error;
+      }
+      return error;
+    });
+    clients[apiType] = client;
   }
 
-  return clients as Record<T, Client>;
+  return clients as Record<T, TClient>;
 }
 
 /**
@@ -44,10 +49,10 @@ export function createCustomClients<T extends string>(
  * @param label - Label used in log messages (e.g. 'experimental_AI')
  * @param headers - Headers to inject into every request (defaults to DEFAULT_HEADERS)
  */
-export function createApiProxy<T extends string>(
+export function createApiProxy<T extends string, TClient>(
   apiType: T,
   apiConfigs: Record<T, ApiConfig>,
-  customClients: Record<T, Client>,
+  customClients: Record<T, TClient>,
   label: string,
   headers: Record<string, string> = DEFAULT_HEADERS as unknown as Record<string, string>,
 ) {

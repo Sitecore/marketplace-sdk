@@ -1,12 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { experimental_XMC, type experimental_XMCConfig } from '../experimental_xmc';
 
-// Mock the @hey-api/client-fetch module
-vi.mock('@hey-api/client-fetch', () => ({
-  createClient: vi.fn(() => ({})),
-  createConfig: vi.fn(() => ({})),
-}));
-
 // Mock the experimental SDK modules
 vi.mock('../experimental/client-sites/sdk.gen', () => ({
   listLanguages: vi.fn(),

@@ -2,10 +2,10 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { createCustomClients, createApiProxy } from '../client-factory';
 import type { ApiConfig } from '../types';
 
-// Mock @hey-api/client-fetch
-vi.mock('@hey-api/client-fetch', () => ({
-  createClient: vi.fn(() => ({ post: vi.fn(), get: vi.fn() })),
-  createConfig: vi.fn((config: any) => config),
+const createClient = vi.fn(() => ({
+  post: vi.fn(),
+  get: vi.fn(),
+  interceptors: { error: { use: vi.fn(() => 0) } },
 }));
 
 describe('createCustomClients', () => {
@@ -17,8 +17,8 @@ describe('createCustomClients', () => {
 
   it('should create clients for all API types', () => {
     const apiConfigs: Record<string, ApiConfig> = {
-      api1: { baseUrl: 'https://api1.example.com', sdk: {}, name: 'API 1' },
-      api2: { baseUrl: 'https://api2.example.com', sdk: {}, name: 'API 2' },
+      api1: { baseUrl: 'https://api1.example.com', sdk: {}, name: 'API 1', createClient },
+      api2: { baseUrl: 'https://api2.example.com', sdk: {}, name: 'API 2', createClient },
     };
 
     const clients = createCustomClients(apiConfigs, mockGetAccessToken, 'TestLabel');
@@ -40,7 +40,7 @@ describe('createApiProxy', () => {
     const sdk = { myOperation: mockMethod };
 
     const apiConfigs: Record<string, ApiConfig> = {
-      testApi: { baseUrl: 'https://test.example.com', sdk, name: 'Test API' },
+      testApi: { baseUrl: 'https://test.example.com', sdk, name: 'Test API', createClient },
     };
 
     const clients = createCustomClients(apiConfigs, mockGetAccessToken, 'TestLabel');
@@ -65,7 +65,7 @@ describe('createApiProxy', () => {
     const sdk = { myOperation: mockMethod };
 
     const apiConfigs: Record<string, ApiConfig> = {
-      testApi: { baseUrl: 'https://test.example.com', sdk, name: 'Test API' },
+      testApi: { baseUrl: 'https://test.example.com', sdk, name: 'Test API', createClient },
     };
 
     const clients = createCustomClients(apiConfigs, mockGetAccessToken, 'TestLabel');
@@ -81,7 +81,7 @@ describe('createApiProxy', () => {
     const sdk = { version: '1.0.0', myOperation: vi.fn() };
 
     const apiConfigs: Record<string, ApiConfig> = {
-      testApi: { baseUrl: 'https://test.example.com', sdk, name: 'Test API' },
+      testApi: { baseUrl: 'https://test.example.com', sdk, name: 'Test API', createClient },
     };
 
     const clients = createCustomClients(apiConfigs, mockGetAccessToken, 'TestLabel');

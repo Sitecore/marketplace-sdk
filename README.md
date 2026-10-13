@@ -113,7 +113,9 @@ Here are the main monorepo commands defined in the root `package.json`:
   ```
 
   Generation uses the runtime bundled with Hey API so the emitted SDK and fetch-client
-  interfaces stay compatible; the existing `@hey-api/client-fetch` dependency is unchanged.
+  interfaces stay compatible. Normal and experimental clients use their generated Fetch
+  runtime; the deprecated standalone `@hey-api/client-fetch` package is not installed.
+  The same name in generator configuration selects Hey API's bundled Fetch plugin.
   Prettier runs through Node for cross-platform formatting. ESLint is not configured in
   this repository and is not run during generation.
 
