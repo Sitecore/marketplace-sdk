@@ -63,7 +63,7 @@ importers:
         version: 2.31.1(@types/node@26.2.0)
       fast-uri:
         specifier: '>=4.1.3'
-        version: 4.1.5
+        version: 4.2.2
       jest-environment-jsdom:
         specifier: ^30.4.1
         version: 30.4.1
@@ -118,7 +118,7 @@ importers:
         version: 2.0.0(esbuild@0.28.1)
       js-yaml:
         specifier: ^5.2.3
-        version: 5.2.3
+        version: 5.4.1
       nanoid:
         specifier: ^5.1.9
         version: 5.1.16
@@ -197,10 +197,10 @@ importers:
         version: 2.0.0(esbuild@0.28.1)
       handlebars:
         specifier: '>=4.7.9'
-        version: 4.7.9
+        version: 4.7.10
       js-yaml:
         specifier: ^5.2.3
-        version: 5.2.3
+        version: 5.4.1
       jsdom:
         specifier: ^30.0.1
         version: 30.0.1
@@ -267,7 +267,7 @@ importers:
         version: 10.8.0(jiti@2.7.0)
       js-yaml:
         specifier: ^5.2.3
-        version: 5.2.3
+        version: 5.4.1
       jsdom:
         specifier: ^30.0.1
         version: 30.0.1
@@ -307,7 +307,7 @@ importers:
         version: 0.99.0(magicast@0.5.3)(typescript@5.9.3)
       js-yaml:
         specifier: ^5.2.3
-        version: 5.2.3
+        version: 5.4.1
       nanoid:
         specifier: ^5.1.9
         version: 5.1.16
@@ -359,7 +359,7 @@ importers:
         version: 2.0.0(esbuild@0.28.1)
       js-yaml:
         specifier: ^5.2.3
-        version: 5.2.3
+        version: 5.4.1
       nanoid:
         specifier: ^5.1.9
         version: 5.1.16
@@ -1690,6 +1690,9 @@ packages:
   fast-uri@4.1.5:
     resolution: {integrity: sha512-vZeoMRB4epNr7QfdHxel7te/RcX16CxyXI07JCCTFWZA2s4v1azGNESRj+2EoaHSaWFL/Z3GmKT2jF6A202jLg==}
 
+  fast-uri@4.2.2:
+    resolution: {integrity: sha512-EwVpUMzLVNOmcWW0zi5G3JJwkopB6XXjnVvNBGfqrMMsVew2hkQWl5e/pe/CfYUeS6jt4cIO2MnamEW7v/7wPw==}
+
   fastq@1.20.1:
     resolution: {integrity: sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==}
 
@@ -1771,8 +1774,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  handlebars@4.7.9:
-    resolution: {integrity: sha512-4E71E0rpOaQuJR2A3xDZ+GM1HyWYv1clR58tC8emQNeQe3RH7MAzSbat+V0wG78LQBo6m6bzSG/L4pBuCsgnUQ==}
+  handlebars@4.7.10:
+    resolution: {integrity: sha512-P5VJMVM7qgBn6vjXMw8WG9uVI+ncf2pi72j4de4yz5ZULLj2RGqLYaKOYGsgyrViQ0tePOVlN1tDCCXXtFqXKg==}
     engines: {node: '>=0.4.7'}
     hasBin: true
 
@@ -1925,8 +1928,12 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
-  js-yaml@5.2.3:
-    resolution: {integrity: sha512-n+mUVyUX5bVv7G/G2zyIHOhdxfuU1dY2NOFzTQUWiMUbFss8b57NFlgCCaggU78wSw5KVS9cllzeLyzyR+n5nw==}
+  js-yaml@5.4.1:
+    resolution: {integrity: sha512-28R/k+NAjeuf7+CKlTxWZVExJGwVVLwY06DgEnOMz2gEpfNkDcD7QvyiVPT0xy0XXhU8vHsd4Ot42OOPdJG7dQ==}
+    hasBin: true
+
+  js-yaml@5.4.3:
+    resolution: {integrity: sha512-yzzNtgczwgoVHNigCyKTXcQJU4Y8t/ikU4UxXW0BvrLfHTGWZhsNcOT2s/a7vn81/4KqVnNmHjaUEPlvWnNwVw==}
     hasBin: true
 
   jsdom@26.1.0:
@@ -2266,8 +2273,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-is@19.2.8:
-    resolution: {integrity: sha512-s5un28nYxKJw5gvUHyW5PCC28CvBqLu9r3cWgzHT4Vo/5fqqkFcdRYsGcKf50WMPpjjFZS5d76fn3YCo2njKwQ==}
+  react-is@19.3.0:
+    resolution: {integrity: sha512-UpMYezM4v5/18F28aC66AEsjXIgE02kyEMH6yLdgLXu/UTfa1Ntwck/nNLrbqJsEXW7gPb0coNO9FQse9WTovA==}
 
   read-yaml-file@1.1.0:
     resolution: {integrity: sha512-VIMnQi/Z4HT2Fxuwg5KrY174U1VdUIASQVWXXyqtNRtxSr9IYkn1rsI6Tb6HsrHCmB7gVpNwX6JxPTHcH6IoTA==}
@@ -2909,7 +2916,7 @@ snapshots:
   '@changesets/parse@0.4.3':
     dependencies:
       '@changesets/types': 6.1.0
-      js-yaml: 5.2.3
+      js-yaml: 5.4.3
 
   '@changesets/pre@2.0.2':
     dependencies:
@@ -3125,7 +3132,7 @@ snapshots:
     dependencies:
       '@jsdevtools/ono': 7.1.3
       '@types/json-schema': 7.0.15
-      js-yaml: 5.2.3
+      js-yaml: 5.4.1
 
   '@hey-api/openapi-ts@0.99.0(magicast@0.5.3)(typescript@5.9.3)':
     dependencies:
@@ -3998,6 +4005,8 @@ snapshots:
 
   fast-uri@4.1.5: {}
 
+  fast-uri@4.2.2: {}
+
   fastq@1.20.1:
     dependencies:
       reusify: 1.1.0
@@ -4090,7 +4099,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  handlebars@4.7.9:
+  handlebars@4.7.10:
     dependencies:
       minimist: 1.2.8
       neo-async: 2.6.2
@@ -4242,7 +4251,11 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
-  js-yaml@5.2.3:
+  js-yaml@5.4.1:
+    dependencies:
+      argparse: 2.0.1
+
+  js-yaml@5.4.3:
     dependencies:
       argparse: 2.0.1
 
@@ -4553,7 +4566,7 @@ snapshots:
       '@jest/schemas': 30.4.1
       ansi-styles: 5.2.0
       react-is-18: react-is@18.3.1
-      react-is-19: react-is@19.2.8
+      react-is-19: react-is@19.3.0
 
   punycode.js@2.3.1: {}
 
@@ -4570,12 +4583,12 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-is@19.2.8: {}
+  react-is@19.3.0: {}
 
   read-yaml-file@1.1.0:
     dependencies:
       graceful-fs: 4.2.11
-      js-yaml: 5.2.3
+      js-yaml: 5.4.3
       pify: 4.0.1
       strip-bom: 3.0.0
 
