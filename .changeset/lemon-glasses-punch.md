@@ -2,7 +2,6 @@
 '@sitecore-marketplace-sdk/core': minor
 '@sitecore-marketplace-sdk/xmc': minor
 '@sitecore-marketplace-sdk/ai': minor
-'@sitecore-marketplace-sdk/client': patch
 ---
 
-Add request-level timeout overrides for standard and experimental clients
+Add per-request timeout support to the core bridge and the experimental XMC and AI clients

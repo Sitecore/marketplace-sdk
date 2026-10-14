@@ -31,27 +31,6 @@ describe('ClientSDK', () => {
     vi.restoreAllMocks();
   });
 
-  it('forwards module timeouts to the bridge without adding them to the HTTP payload', async () => {
-    client = await ClientSDK.init(config);
-    const bridgeRequest = vi.mocked(CoreSDK.prototype.request).mockResolvedValue({ status: 200 });
-    client['registerModule']({
-      namespace: 'timeoutTest',
-      invokeOperation: async (_operation, options) =>
-        options.fetch(new Request('https://example.com/test')),
-    });
-    const operation = client['resolveOperation']('timeoutTest.get', 'query');
-    await operation.request(operation.operation, { query: {} }, { timeoutMs: 100 });
-    expect(bridgeRequest).toHaveBeenLastCalledWith(
-      'host.request',
-      expect.not.objectContaining({ timeoutMs: expect.anything() }),
-      { timeoutMs: 100 },
-    );
-    await operation.request(operation.operation, {}, { timeoutMs: undefined });
-    expect(bridgeRequest).toHaveBeenLastCalledWith(
-      'host.request', expect.any(Object), { timeoutMs: undefined },
-    );
-  });
-
   it('should initialize ClientSDK instance', async () => {
     let consoleSpyInit: ReturnType<typeof vi.spyOn>;
     consoleSpyInit = vi.spyOn(ClientSDK.prototype, 'initialize').mockImplementation(async () => {});
