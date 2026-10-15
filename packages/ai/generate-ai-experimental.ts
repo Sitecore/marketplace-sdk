@@ -4,7 +4,7 @@ import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-tr
 
 async function generate() {
   await createClient({
-    input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
+    input: './schema/skills.json',
     output: {
       format: 'prettier',
       lint: 'eslint',

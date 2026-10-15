@@ -5,7 +5,7 @@ import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 async function generate() {
   await createClient({
-    input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
+    input: './schema/skills.json',
     output: {
       format: 'prettier',
       lint: 'eslint',
