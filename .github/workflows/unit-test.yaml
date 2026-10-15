@@ -32,6 +32,19 @@ jobs:
         run: pnpm build
       - name: Run unit tests
         run: pnpm coverage
+      - name: Run generator plugin tests
+        run: pnpm test:shared
+      - name: Check generated modules are up to date
+        run: |
+          pnpm generate:module
+          pnpm generate:module:experimental
+          git diff --exit-code -- packages/xmc/src packages/ai/src
+          untracked=$(git ls-files --others --exclude-standard -- packages/xmc/src packages/ai/src)
+          if [ -n "$untracked" ]; then
+            echo "Unexpected generated files:"
+            echo "$untracked"
+            exit 1
+          fi
 
       - name: Make publish-preview-packages.sh executable
         run: chmod +x ./scripts/publish-preview-packages.sh
