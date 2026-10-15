@@ -1,8 +1,8 @@
 import { createClient } from '@hey-api/openapi-ts';
 import { generatorOutput } from '../shared/generator-output';
 import { defineAugmentationConfig } from '../shared/plugins/augmentation';
-import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
 import { defineHttpClientConfig } from '../shared/plugins/http-client';
+import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 createClient({
@@ -12,7 +12,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -24,7 +24,7 @@ createClient({
       deprecated: true,
       deprecationMessage: `The 'xmc.xmapp' namespace is deprecated. Use 'xmc.sites' or 'xmc.pages' instead. Will be removed in later version.`,
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'Xmapp',
     }),
   ],
@@ -37,7 +37,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/v1/authoring',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -47,7 +47,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.authoring'],
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'Authoring',
     }),
   ],
@@ -60,7 +60,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring/transfer',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -70,7 +70,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.contentTransfer'],
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'ContentTransfer',
     }),
   ],
@@ -83,7 +83,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/content/api',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -93,7 +93,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.preview', 'xmc.live'],
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'Content',
     }),
   ],
@@ -106,7 +106,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/stream/ai-agent-api/',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -116,7 +116,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.agent'],
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'Agent',
     }),
   ],
@@ -129,7 +129,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -139,7 +139,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.sites'],
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'Sites',
     }),
   ],
@@ -152,7 +152,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -162,7 +162,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.pages'],
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'Pages',
     }),
   ],
@@ -175,7 +175,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/search',
     }),
-    defineHttpClientConfig(),
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -185,7 +185,7 @@ createClient({
     defineAugmentationConfig({
       namespaces: ['xmc.search'],
     }),
-    defineClientTransformerConfig({
+    defineNamespaceTransformerConfig({
       namespace: 'Search',
     }),
   ],

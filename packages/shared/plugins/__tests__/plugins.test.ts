@@ -6,10 +6,6 @@ import { join } from 'node:path';
 import ts from 'typescript';
 import { defaultAugmentationConfig, defineAugmentationConfig } from '../augmentation';
 import {
-  defaultClientTransformerConfig,
-  defineClientTransformerConfig,
-} from '../client-transformer';
-import {
   defaultNamespaceTransformerConfig,
   defineNamespaceTransformerConfig,
 } from '../namespace-transformer';
@@ -83,7 +79,6 @@ const schema = {
 describe('Hey API 0.99 plugin registration', () => {
   it.each([
     defaultAugmentationConfig,
-    defaultClientTransformerConfig,
     defaultNamespaceTransformerConfig,
     defaultSchemaPatcherConfig,
   ])('registers the current handler and dependencies for $name', (config) => {
@@ -122,7 +117,10 @@ describe('actual Hey API generation', () => {
       const output = join(root, 'generated');
       writeFileSync(
         join(root, 'client-sdk-fetch.ts'),
-        'export const clientSdkfetch: typeof fetch = fetch;',
+        [
+          'export const clientSdkfetch: typeof fetch = fetch;',
+          'export const createClientConfig = <T extends object>(config: T) => ({ ...config, fetch: clientSdkfetch });',
+        ].join('\n'),
       );
       writeFileSync(
         join(root, 'client.d.ts'),
@@ -134,7 +132,9 @@ describe('actual Hey API generation', () => {
         output: { path: output, postProcess: [], module: { resolve: resolveHttpClientModule } },
         plugins: [
           defineSchemaPatcherConfig({ baseUrl: 'https://override.example.com/authoring' }),
-          defineHttpClientConfig(),
+          defineHttpClientConfig(
+            experimental ? {} : { runtimeConfigPath: join(root, 'client-sdk-fetch') },
+          ),
           '@hey-api/schemas',
           '@hey-api/sdk',
           { name: '@hey-api/typescript', enums: 'javascript' },
@@ -147,9 +147,7 @@ describe('actual Hey API generation', () => {
                 }),
               ]
             : []),
-          experimental
-            ? defineNamespaceTransformerConfig({ namespace })
-            : defineClientTransformerConfig({ namespace }),
+          defineNamespaceTransformerConfig({ namespace }),
         ],
       });
 
@@ -164,7 +162,8 @@ describe('actual Hey API generation', () => {
       expect(sdk).not.toContain('oldCreateName');
       expect(types).toContain('sitecoreContextId?: string');
       expect(client).toContain('https://override.example.com/authoring');
-      expect(client.includes('fetch: clientSdkfetch')).toBe(!experimental);
+      expect(client.includes("from '../client-sdk-fetch'")).toBe(!experimental);
+      expect(client.includes('createClientConfig(createConfig')).toBe(!experimental);
       if (namespace) {
         expect(types).toContain(`export namespace ${namespace}`);
         expect(sdk).toContain(`import type { ${namespace} }`);
