@@ -1,6 +1,7 @@
 import { createClient } from '@hey-api/openapi-ts';
 import { defineAugmentationConfig } from '../shared/plugins/augmentation';
 import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
+import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 async function generate() {
@@ -15,7 +16,7 @@ async function generate() {
       defineSchemaPatcherConfig({
         basePath: '/stream/ai-skills-api/',
       }),
-      '@hey-api/client-fetch',
+      defineHttpClientConfig(),
       '@hey-api/schemas',
       '@hey-api/sdk',
       {

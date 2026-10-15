@@ -6,7 +6,7 @@ import {
   type ClientOptions as DefaultClientOptions,
   createClient,
   createConfig,
-} from '@hey-api/client-fetch';
+} from '../../../../shared/src/http';
 
 type ClientOptions = experimental_Authoring.ClientOptions;
 

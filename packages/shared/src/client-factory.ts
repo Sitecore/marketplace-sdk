@@ -1,4 +1,4 @@
-import { createClient, createConfig, type Client } from '@hey-api/client-fetch';
+import { createClient, createConfig, type Client } from './http';
 import { DEFAULT_HEADERS } from './constants';
 import type { ApiConfig } from './types';
 

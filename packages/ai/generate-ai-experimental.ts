@@ -1,4 +1,5 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
@@ -14,7 +15,7 @@ async function generate() {
       defineSchemaPatcherConfig({
         basePath: '/stream/ai-skills-api/',
       }),
-      '@hey-api/client-fetch',
+      defineHttpClientConfig(),
       '@hey-api/schemas',
       '@hey-api/sdk',
       {

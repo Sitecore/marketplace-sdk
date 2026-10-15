@@ -5,7 +5,7 @@ import {
   type TDataShape,
   type Client,
   formDataBodySerializer,
-} from '@hey-api/client-fetch';
+} from '../../../shared/src/http';
 import type { Sites } from './types.gen';
 import { client as _heyApiClient } from './client.gen';
 

@@ -1,4 +1,5 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
@@ -11,7 +12,7 @@ createClient({
   },
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -33,7 +34,7 @@ createClient({
   },
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -55,7 +56,7 @@ createClient({
   },
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -77,7 +78,7 @@ createClient({
   },
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -99,7 +100,7 @@ createClient({
   },
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -121,7 +122,7 @@ createClient({
   },
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -143,7 +144,7 @@ createClient({
   },
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {

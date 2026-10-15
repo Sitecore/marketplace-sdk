@@ -1,6 +1,7 @@
 import { createClient } from '@hey-api/openapi-ts';
 import { defineAugmentationConfig } from '../shared/plugins/augmentation';
 import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
+import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 createClient({
@@ -14,7 +15,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -43,7 +44,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/v1/authoring',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -70,7 +71,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring/transfer',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -97,7 +98,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/content/api',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -124,7 +125,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/stream/ai-agent-api/',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -151,7 +152,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -178,7 +179,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/authoring',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {
@@ -205,7 +206,7 @@ createClient({
     defineSchemaPatcherConfig({
       basePath: '/search',
     }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     {

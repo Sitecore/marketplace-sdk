@@ -1,10 +1,11 @@
 import type { Plugin } from '@hey-api/openapi-ts';
 
+import { httpClientPluginName } from '../http-client';
 import { handler } from './plugin';
 import type { Config } from './types';
 
 export const defaultClientTransformerConfig: Plugin.Config<Config> = {
-  _dependencies: ['@hey-api/client-fetch', '@hey-api/typescript'],
+  _dependencies: [httpClientPluginName, '@hey-api/typescript'],
   _handler: handler,
   _handlerLegacy: () => {},
   name: '@sitecore-marketplace/client-transformer',

@@ -31,5 +31,5 @@ export default {
     }),
     terser(), // Minify the output
   ],
-  external: ['@sitecore-marketplace-sdk/core', '@hey-api/client-fetch'],
+  external: ['@sitecore-marketplace-sdk/core'],
 };
