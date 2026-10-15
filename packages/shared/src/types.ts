@@ -12,6 +12,7 @@ export interface ApiConfig {
  */
 export interface ExperimentalClientConfig {
   getAccessToken: () => Promise<string>;
+  timeout?: number;
 }
 
 /**

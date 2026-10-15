@@ -204,6 +204,32 @@ describe('schema patcher plugin', () => {
 });
 
 describe('namespace transformer plugin', () => {
+  it('adds opt-in timeout options while preserving generic parameters', () => {
+    const options = ts.factory.createTypeAliasDeclaration(
+      [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
+      'Options',
+      [ts.factory.createTypeParameterDeclaration(undefined, 'ThrowOnError', undefined,
+        ts.factory.createKeywordTypeNode(ts.SyntaxKind.BooleanKeyword))],
+      ts.factory.createTypeReferenceNode('ClientOptions', [ts.factory.createTypeReferenceNode('ThrowOnError')]),
+    );
+    const sdkFile = new MockFile([options]);
+    const subscribers: SubscriberMap = {};
+    namespaceTransformerHandler({
+      context: {
+        files: { types: new MockFile(), sdk: sdkFile },
+        subscribe: (event: string, callback: () => void) => {
+          (subscribers[event] ||= []).push(callback);
+        },
+      },
+      plugin: { namespace: '', timeoutOptions: true },
+    } as any);
+    subscribers.after.forEach(callback => callback());
+    const updated = sdkFile._items[0] as ts.TypeAliasDeclaration;
+    expect(updated.typeParameters).toBe(options.typeParameters);
+    expect(printNode(updated)).toContain('timeoutMs?: number');
+    expect(printNode(updated)).toContain('ClientOptions<ThrowOnError>');
+  });
+
   it('wraps generated types in the configured namespace and re-exports aliases', () => {
     const originalInterface = ts.factory.createInterfaceDeclaration(
       undefined,
