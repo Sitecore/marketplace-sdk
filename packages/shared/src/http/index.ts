@@ -1,6 +1,7 @@
 export { createClient } from './client';
 export type {
   Client,
+  ClientMeta,
   ClientOptions,
   Config,
   CreateClientConfig,

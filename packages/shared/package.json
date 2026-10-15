@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@hey-api/openapi-ts": "0.66.5",
+    "@hey-api/openapi-ts": "0.99.0",
+    "@hey-api/shared": "0.5.0",
     "typescript": "^5.9.2",
     "vitest": "^3.0.8"
   }

@@ -58,25 +58,39 @@ export interface RequestOptions<
   url: Url;
 }
 
+/**
+ * Generated SDK functions pass responses and errors as maps keyed by status
+ * code (`{ 200: Site }`). Resolve a map to the union of its values, which is
+ * the type earlier generators passed directly.
+ */
+type ResultValue<T> = T extends Record<string, unknown> ? T[keyof T] : T;
+
 export type RequestResult<
   TData = unknown,
   TError = unknown,
   ThrowOnError extends boolean = boolean,
 > = ThrowOnError extends true
   ? Promise<{
-      data: TData;
+      data: ResultValue<TData>;
       request: Request;
       response: Response;
     }>
   : Promise<
       (
-        | { data: TData; error: undefined }
-        | { data: undefined; error: TError }
+        | { data: ResultValue<TData>; error: undefined }
+        | { data: undefined; error: ResultValue<TError> }
       ) & {
         request: Request;
         response: Response;
       }
     >;
+
+/**
+ * Extra values SDK functions accept through `meta`. Empty, so `meta` is a
+ * plain record.
+ */
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface ClientMeta {}
 
 export interface ClientOptions {
   baseUrl?: string;
@@ -140,6 +154,9 @@ type OmitKeys<T, K> = Pick<T, Exclude<keyof T, K>>;
 export type Options<
   TData extends TDataShape = TDataShape,
   ThrowOnError extends boolean = boolean,
+  // Passed by generated SDK functions; not used by this client.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  TResponse = unknown,
 > = OmitKeys<RequestOptions<ThrowOnError>, 'body' | 'path' | 'query' | 'url'> &
   Omit<TData, 'url'>;
 

@@ -1,4 +1,5 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { generatorOutput } from '../shared/generator-output';
 import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
@@ -6,11 +7,7 @@ import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-tr
 async function generate() {
   await createClient({
     input: './schema/skills.json',
-    output: {
-      format: 'prettier',
-      lint: 'eslint',
-      path: './src/experimental/client-skills',
-    },
+    output: generatorOutput('./src/experimental/client-skills'),
     plugins: [
       defineSchemaPatcherConfig({
         basePath: '/stream/ai-skills-api/',

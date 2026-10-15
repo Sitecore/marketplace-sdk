@@ -1,15 +1,12 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { generatorOutput } from '../shared/generator-output';
 import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
 createClient({
   input: './schema/sites.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-sites',
-  },
+  output: generatorOutput('./src/experimental/client-sites'),
   plugins: [
     defineSchemaPatcherConfig(),
     defineHttpClientConfig(),
@@ -27,11 +24,7 @@ createClient({
 
 createClient({
   input: './schema/pages.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-pages',
-  },
+  output: generatorOutput('./src/experimental/client-pages'),
   plugins: [
     defineSchemaPatcherConfig(),
     defineHttpClientConfig(),
@@ -49,11 +42,7 @@ createClient({
 
 createClient({
   input: './schema/experimental/authoring.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-authoring',
-  },
+  output: generatorOutput('./src/experimental/client-authoring'),
   plugins: [
     defineSchemaPatcherConfig(),
     defineHttpClientConfig(),
@@ -71,11 +60,7 @@ createClient({
 
 createClient({
   input: './schema/experimental/content-transfer.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-content-transfer',
-  },
+  output: generatorOutput('./src/experimental/client-content-transfer'),
   plugins: [
     defineSchemaPatcherConfig(),
     defineHttpClientConfig(),
@@ -93,11 +78,7 @@ createClient({
 
 createClient({
   input: './schema/experimental/content.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-content',
-  },
+  output: generatorOutput('./src/experimental/client-content'),
   plugins: [
     defineSchemaPatcherConfig(),
     defineHttpClientConfig(),
@@ -115,11 +96,7 @@ createClient({
 
 createClient({
   input: './schema/agent.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-agent',
-  },
+  output: generatorOutput('./src/experimental/client-agent'),
   plugins: [
     defineSchemaPatcherConfig(),
     defineHttpClientConfig(),
@@ -137,11 +114,7 @@ createClient({
 
 createClient({
   input: './schema/search.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/experimental/client-search',
-  },
+  output: generatorOutput('./src/experimental/client-search'),
   plugins: [
     defineSchemaPatcherConfig(),
     defineHttpClientConfig(),

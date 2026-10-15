@@ -1,4 +1,5 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { generatorOutput } from '../shared/generator-output';
 import { defineAugmentationConfig } from '../shared/plugins/augmentation';
 import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
 import { defineHttpClientConfig } from '../shared/plugins/http-client';
@@ -6,11 +7,7 @@ import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 createClient({
   input: './schema/xmapp.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-xmapp',
-  },
+  output: generatorOutput('./src/client-xmapp'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/authoring',
@@ -35,11 +32,7 @@ createClient({
 
 createClient({
   input: './schema/authoring.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-authoring',
-  },
+  output: generatorOutput('./src/client-authoring'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/v1/authoring',
@@ -62,11 +55,7 @@ createClient({
 
 createClient({
   input: './schema/content-transfer.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-content-transfer',
-  },
+  output: generatorOutput('./src/client-content-transfer'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/authoring/transfer',
@@ -89,11 +78,7 @@ createClient({
 
 createClient({
   input: './schema/content.yaml',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-content',
-  },
+  output: generatorOutput('./src/client-content'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/content/api',
@@ -116,11 +101,7 @@ createClient({
 
 createClient({
   input: './schema/agent.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-agent',
-  },
+  output: generatorOutput('./src/client-agent'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/stream/ai-agent-api/',
@@ -143,11 +124,7 @@ createClient({
 
 createClient({
   input: './schema/sites.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-sites',
-  },
+  output: generatorOutput('./src/client-sites'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/authoring',
@@ -170,11 +147,7 @@ createClient({
 
 createClient({
   input: './schema/pages.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-pages',
-  },
+  output: generatorOutput('./src/client-pages'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/authoring',
@@ -197,11 +170,7 @@ createClient({
 
 createClient({
   input: './schema/search.json',
-  output: {
-    format: 'prettier',
-    lint: 'eslint',
-    path: './src/client-search',
-  },
+  output: generatorOutput('./src/client-search'),
   plugins: [
     defineSchemaPatcherConfig({
       basePath: '/search',
