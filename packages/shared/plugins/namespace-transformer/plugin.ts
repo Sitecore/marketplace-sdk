@@ -47,6 +47,32 @@ export const handler: Plugin.Handler<Config> = ({ context, plugin }) => {
   context.subscribe('after', () => {
     const typeFile = context.files['types'];
 
+    const sdkFile = context.files['sdk'];
+    if (plugin.timeoutOptions && sdkFile) {
+      sdkFile['_items'] = sdkFile['_items'].map((item: ts.Node) => {
+        if (!ts.isTypeAliasDeclaration(item) || item.name.text !== 'Options') {
+          return item;
+        }
+        return ts.factory.updateTypeAliasDeclaration(
+          item,
+          item.modifiers,
+          item.name,
+          item.typeParameters,
+          ts.factory.createIntersectionTypeNode([
+            item.type,
+            ts.factory.createTypeLiteralNode([
+              ts.factory.createPropertySignature(
+                undefined,
+                'timeoutMs',
+                ts.factory.createToken(ts.SyntaxKind.QuestionToken),
+                ts.factory.createKeywordTypeNode(ts.SyntaxKind.NumberKeyword),
+              ),
+            ]),
+          ]),
+        );
+      });
+    }
+
     // Only wrap in namespace if one is provided
     if (plugin.namespace) {
       // Get all current items (exported types)

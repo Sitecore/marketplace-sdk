@@ -25,6 +25,8 @@ export type Options<
    * used to access values that aren't defined as part of the SDK function.
    */
   meta?: Record<string, unknown>;
+} & {
+  timeoutMs?: number;
 };
 
 /**
