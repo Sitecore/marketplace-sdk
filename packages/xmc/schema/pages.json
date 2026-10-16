@@ -1,0 +1,3198 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Pages API",
+    "description": "Use the Pages API for managing your site pages in SitecoreAI.\n\nThis API lets you interact with your pages, including:\n- Creating, updating, retrieving, and deleting pages.\n- Retrieving versions and variants.\n- Update layouts.\n\nNote the following:\n   - All API requests are made in your production environment.\n\n For more information, see the [official SitecoreAI developer documentation](https://doc.sitecore.com/xmc/en/developers/xm-cloud/getting-started-with-xm-cloud.html).\n\n# Authorization\nTo authorize your requests, use environment automation client credentials and generate a JSON Web Token (JWT).\n\nNote: To create client credentials, you must be an [Organization Admin](https://doc.sitecore.com/portal/en/developers/sitecore-cloud-portal/roles.html) or Organization Owner.\n\n## Create an automation client\n 1. In the Sitecore Cloud Portal, open SitecoreAI Deploy.\n 2. Click **Credentials** > **Environment** > **Create credentials** > **Automation**.\n 3. Fill out the automation client details, then click **Create**.\n 4. Copy the client ID and the client secret because you won't be able to view them again in SitecoreAI Deploy. You'll use them to request a JWT.\n\n## Request a JWT\n\nRun the following cURL command to request a JWT. Replace the placeholder values with your client ID and client secret.\n```curl\n  curl -X POST 'https://auth.sitecorecloud.io/oauth/token' \\\n  --header 'Content-Type: application/x-www-form-urlencoded' \\\n  --data-urlencode 'client_id={YOUR_CLIENT_ID}' \\\n  --data-urlencode 'client_secret={YOUR_CLIENT_SECRET}' \\\n  --data-urlencode 'grant_type=client_credentials' \\\n  --data-urlencode 'audience=https://api.sitecorecloud.io'\n```\n\nIn the response, the `access_token` key contains the JWT:\n\n```json\n  {\n    \"access_token\": \"{YOUR_JWT}\",\n    \"scope\": \"xmcloud.cm:admin\",\n    \"expires_in\": 86400,\n    \"token_type\": \"Bearer\"\n  }\n```\n\nThe JWT expires in 24 hours. If your requests unexpectedly return a response with status `401 Unauthorized`, request a new JWT by repeating this `POST` request.\n\nWe recommend that you cache the JWT for 24 hours to avoid repeating this `POST` request while the JWT is still valid.\n\n## Include the JWT in the request header\n\nYou can now start making REST API requests. You must include the JWT in the request header of every request. For example:\n  ```curl\n  curl -X GET '{YOUR_BASE_URL}/...' \\\n  -H 'Authorization: Bearer {YOUR_JWT}' \\\n  -H 'Accept: application/json'\n  ```",
+    "x-metadata": {
+      "product": "SitecoreAI"
+    },
+    "contact": {
+      "name": "Sitecore Corporation A/S"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://xmapps-api.sitecorecloud.io",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/v1/pages/{pageId}": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Retrieve a page",
+        "description": "Fetches information about a page (including statistics, template, layout, publishing and workflow information).",
+        "operationId": "RetrievePage",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "site",
+            "in": "query",
+            "description": "The site identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3875AC96-8ECF-44AE-8E25-851068B373CE"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "The page language.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "en-US"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "The page version number.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 2
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Update field values",
+        "description": "Updates values of existing fields for a specific page.",
+        "operationId": "UpdateFields",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing page field values",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePageInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePageInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePageInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageOperationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Delete a page",
+        "description": "Deletes a page.",
+        "operationId": "DeletePage",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePageInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePageInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePageInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/state": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Retrieve a page state",
+        "description": "Fetches basic information about a page (identifier, display name and revision) and optionally workflow, layout and version data.",
+        "operationId": "RetrievePageState",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "Site",
+            "in": "query",
+            "description": "The site name.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "my-site"
+            },
+            "example": "my-site"
+          },
+          {
+            "name": "Language",
+            "in": "query",
+            "description": "The language of the page.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "en-US"
+            },
+            "example": "en-US"
+          },
+          {
+            "name": "Version",
+            "in": "query",
+            "description": "The version number of the page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 2
+            },
+            "example": 2
+          },
+          {
+            "name": "WithWorkflow",
+            "in": "query",
+            "description": "Whether to include workflow information.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "example": true
+          },
+          {
+            "name": "WithVersions",
+            "in": "query",
+            "description": "Whether to include page versions.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "example": true
+          },
+          {
+            "name": "WithLayout",
+            "in": "query",
+            "description": "Whether to include layout information.",
+            "schema": {
+              "type": "boolean",
+              "example": true
+            },
+            "example": true
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageState"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/search": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Search for pages",
+        "description": "Fetches a list of pages and folders whose name or display name match the search criteria, while applying filters and language options.",
+        "operationId": "Search",
+        "parameters": [
+          {
+            "name": "searchText",
+            "in": "query",
+            "description": "The text by which to search for the name or display name.",
+            "schema": {
+              "type": "string",
+              "example": "Home"
+            },
+            "example": "Home"
+          },
+          {
+            "name": "rootIds",
+            "in": "query",
+            "description": "If you want to limit the search to pages or folders under a specific parent, the list of identifiers to search under.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "758852c6488045cca3947d83ff2f56e7",
+                "888852c6488045cca3947d83ff2f56e7"
+              ]
+            },
+            "example": [
+              "758852c6488045cca3947d83ff2f56e7",
+              "888852c6488045cca3947d83ff2f56e7"
+            ]
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "The search filter. Possible values are \"Pages\" (items that have a presentation layout and can be rendered), \"Folders\" (items that use 'folder' as their base template), \"All\" (both pages and folders).",
+            "schema": {
+              "$ref": "#/components/schemas/TypeFilter"
+            },
+            "example": "\"Pages\""
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "If you want to limit the search to items in a specific language, the language code of those items.",
+            "schema": {
+              "type": "string",
+              "example": "en"
+            },
+            "example": "en"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "The page size of the results to return.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "example": 10
+            },
+            "example": 10
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "description": "The page number used to paginate the results.",
+            "schema": {
+              "maximum": 2147483647,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32",
+              "example": 1
+            },
+            "example": 1
+          },
+          {
+            "name": "continuationToken",
+            "in": "query",
+            "description": "Continuation token for pagination.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagesSearchResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Search service unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/insertoptions": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Retrieve insert options",
+        "description": "Fetches the list of possible templates which are compatible insert options for a page.",
+        "operationId": "RetrieveInsertOptions",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "site",
+            "in": "query",
+            "description": "The site identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3875AC96-8ECF-44AE-8E25-851068B373CE"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "The page language.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "en-US"
+          },
+          {
+            "name": "insertOptionKind",
+            "in": "query",
+            "description": "The type of object to retrieve (Page or Folder).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Page"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PageInsertOption"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/versions": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Retrieve page versions",
+        "description": "Fetches the list of page versions.",
+        "operationId": "RetrievePageVersions",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "site",
+            "in": "query",
+            "description": "The site identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "3875AC96-8ECF-44AE-8E25-851068B373CE"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "The page language.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "en-US"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Page"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Add a version to a page",
+        "description": "Creates a new version of a page.",
+        "operationId": "AddPageVersions",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing properties of the page",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPageVersionInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPageVersionInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPageVersionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/live/variants": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "List live variant identifiers for a page",
+        "description": "Fetches the identifiers of currently active personalization variants for a page.",
+        "operationId": "ListPageVariants",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "The page language.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "en-US"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/live": {
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Check if a page is published to Edge",
+        "description": "Checks if the requested page is published to Edge.",
+        "operationId": "GetLivePageState",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "The page language.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "en-US"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Create a page",
+        "description": "Creates a new page.",
+        "operationId": "CreatePage",
+        "parameters": [
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing properties of the page",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageOperationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/blueprint": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Create a page from blueprint",
+        "description": "Creates a new page from an existing blueprint.",
+        "operationId": "CreateBlueprint",
+        "parameters": [
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing properties of the page",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageFromBlueprintInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageFromBlueprintInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePageFromBlueprintInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/layout": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Save a page layout",
+        "description": "Updates the layout of a page.",
+        "operationId": "SaveLayout",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing layout of the page",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SavePageLayoutInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SavePageLayoutInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SavePageLayoutInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavePageResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/fields": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Save page fields",
+        "description": "Updates the fields of a page.",
+        "operationId": "SaveFields",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing fields of the page",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SavePageFieldsInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SavePageFieldsInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SavePageFieldsInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavePageResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/duplicate": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Duplicate a page",
+        "description": "Creates a copy of a page.",
+        "operationId": "DuplicatePage",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing properties of the page",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DuplicatePageInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DuplicatePageInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DuplicatePageInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageOperationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/rename": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Rename a page",
+        "description": "Changes the name of a page.",
+        "operationId": "RenamePage",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing properties of the page",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RenamePageInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RenamePageInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RenamePageInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageOperationResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/version": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Add a page version",
+        "description": "Creates a new version of a page.",
+        "operationId": "AddPageVersion",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "Input data containing properties of the page for which to create a new version.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPageVersionInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPageVersionInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPageVersionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/translate": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Translate a page",
+        "description": "Creates a new translated version of a single page using the Stream API.",
+        "operationId": "TranslatePage",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The identifier of the page.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+          },
+          {
+            "name": "siteId",
+            "in": "query",
+            "description": "The site identifier.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "872fdee4-23d7-4717-9c0b-4aea5670df7b"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "requestBody": {
+          "description": "The input model.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranslatePageInput"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranslatePageInput"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranslatePageInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/pages/{pageId}/versions/{versionNumber}/{language}": {
+      "delete": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Delete a version of a page",
+        "description": "Deletes the specified version of a page.",
+        "operationId": "DeletePageVersions",
+        "parameters": [
+          {
+            "name": "pageId",
+            "in": "path",
+            "description": "The page identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          {
+            "name": "versionNumber",
+            "in": "path",
+            "description": "The number of the version to delete.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "example": 2
+          },
+          {
+            "name": "language",
+            "in": "path",
+            "description": "The language of the page version to delete.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "en-US"
+          },
+          {
+            "name": "environmentId",
+            "in": "query",
+            "description": "The identifier of the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "example": "main"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                  "title": "Bad Request",
+                  "status": 400,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem.",
+                  "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                  "errors": {
+                    "sampleProperty": [
+                      "The sampleProperty field is required"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                },
+                "example": {
+                  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                  "title": "Not Found",
+                  "status": 404,
+                  "detail": "A detailed explanation, specific to this occurrence of the problem.",
+                  "instance": "If available, a URI reference that identifies the specific occurrence of the problem."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddPageVersionInput": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "The language of the new page version.\nExample value: en-US",
+            "nullable": true,
+            "example": "en-US"
+          },
+          "site": {
+            "type": "string",
+            "description": "The site name.\nExample value: my-site",
+            "nullable": true,
+            "example": "my-site"
+          },
+          "baseVersion": {
+            "type": "integer",
+            "description": "The base version number to create the new version from.\nExample value: 1",
+            "format": "int32",
+            "nullable": true,
+            "example": 1
+          },
+          "versionName": {
+            "type": "string",
+            "description": "The name of the new version.\nExample value: Black Friday content update",
+            "nullable": true,
+            "example": "Black Friday content update"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePageFromBlueprintInput": {
+        "required": [
+          "blueprintId",
+          "language",
+          "pageName",
+          "parentId"
+        ],
+        "type": "object",
+        "properties": {
+          "parentId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The identifier of the parent page.\nExample value: 9100b830-c85b-459b-9c37-51da74fc9ecc",
+            "example": "9100b830-c85b-459b-9c37-51da74fc9ecc"
+          },
+          "pageName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "pattern": "^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$",
+            "type": "string",
+            "description": "The system name of the new page.\nExample value: about-us",
+            "example": "about-us"
+          },
+          "blueprintId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The identifier of the blueprint to be used for the new page.\nExample value: 2341ef32-42f4-4537-98d8-9ef741008eab",
+            "example": "2341ef32-42f4-4537-98d8-9ef741008eab"
+          },
+          "language": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The language of the new page.\nExample value: en-US",
+            "example": "en-US"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the new page.\nExample value: About Us",
+            "nullable": true,
+            "example": "About Us"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePageInput": {
+        "required": [
+          "language",
+          "pageName",
+          "parentId",
+          "templateId"
+        ],
+        "type": "object",
+        "properties": {
+          "parentId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The identifier of the parent page.\nExample value: 9100b830-c85b-459b-9c37-51da74fc9ecc",
+            "example": "9100b830-c85b-459b-9c37-51da74fc9ecc"
+          },
+          "pageName": {
+            "maxLength": 100,
+            "minLength": 0,
+            "pattern": "^(?![\\s-])[a-zA-Z0-9_\\s-]*(?<!\\s)$",
+            "type": "string",
+            "description": "The system name of the new page.\nExample value: about-us",
+            "example": "about-us"
+          },
+          "templateId": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The identifier of the template to be used for the new page.\nExample value: 2341ef32-42f4-4537-98d8-9ef741008eab",
+            "example": "2341ef32-42f4-4537-98d8-9ef741008eab"
+          },
+          "language": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The language of the new page.\nExample value: en-US",
+            "example": "en-US"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the new page.\nExample value: About Us",
+            "nullable": true,
+            "example": "About Us"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeletePageInput": {
+        "type": "object",
+        "properties": {
+          "permanently": {
+            "type": "boolean",
+            "description": "Whether the page should be permanently deleted (skipping the recycle bin).\nExample value: True",
+            "example": true
+          },
+          "forceDelete": {
+            "type": "boolean",
+            "description": "Whether the page should be forcefully deleted (skipping the references check).\nExample value: True",
+            "example": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DuplicatePageInput": {
+        "required": [
+          "language",
+          "newName",
+          "site"
+        ],
+        "type": "object",
+        "properties": {
+          "newName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The name for the new page.\nExample value: About Us Copy",
+            "example": "About Us Copy"
+          },
+          "site": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The site name.\nExample value: my-site",
+            "example": "my-site"
+          },
+          "language": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The language of the duplicated page.\nExample value: en-US",
+            "example": "en-US"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name for the new page.\nExample value: About Us Copy",
+            "nullable": true,
+            "example": "About Us Copy"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JobResponse": {
+        "type": "object",
+        "properties": {
+          "handle": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LayoutKind": {
+        "enum": [
+          "Final",
+          "Shared"
+        ],
+        "type": "string",
+        "description": "The type of layout (Final or Shared)."
+      },
+      "Page": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The page URL path.\nExample value: /about",
+            "nullable": true,
+            "example": "/about"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Path to the icon associated with the page.\nExample value: Applications/32x32/document_heart.png",
+            "nullable": true,
+            "example": "Applications/32x32/document_heart.png"
+          },
+          "versionName": {
+            "type": "string",
+            "description": "The name of the page version.\nExample value: Black Friday content update",
+            "nullable": true,
+            "example": "Black Friday content update"
+          },
+          "revision": {
+            "type": "string",
+            "description": "The revision of the page.\nExample value: f7d29433-001e-4a35-a744-876759dba468",
+            "nullable": true,
+            "example": "f7d29433-001e-4a35-a744-876759dba468"
+          },
+          "createdAt": {
+            "type": "string",
+            "description": "The date the page was created.\nExample value: 2025-01-27T10:33:33Z",
+            "nullable": true,
+            "example": "2025-01-27T10:33:33Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "description": "The date the page was last updated.\nExample value: 2025-01-27T10:39:02Z",
+            "nullable": true,
+            "example": "2025-01-27T10:39:02Z"
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "The user who created the page.\nExample value: john.doe@sitecore.com",
+            "nullable": true,
+            "example": "john.doe@sitecore.com"
+          },
+          "updatedBy": {
+            "type": "string",
+            "description": "The user who last updated the page.\nExample value: john.doe@sitecore.com",
+            "nullable": true,
+            "example": "john.doe@sitecore.com"
+          },
+          "template": {
+            "$ref": "#/components/schemas/PageTemplate"
+          },
+          "workflow": {
+            "$ref": "#/components/schemas/PageWorkflow"
+          },
+          "publishing": {
+            "$ref": "#/components/schemas/Publishing"
+          },
+          "finalLayout": {
+            "type": "string",
+            "description": "The final layout of the page.\nExample value: {\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[{\\\"id\\\":\\\"9c6d53e3-fe57-4638-af7b-6d68304c7a94\\\",\\\"instanceId\\\":\\\"ad5e15fb-896b-4415-8735-5e4d6b1543e1\\\",\\\"placeholderKey\\\":\\\"headless-main\\\",\\\"dataSource\\\":\\\"local:/Data/Text 1\\\",\\\"parameters\\\":{\\\"GridParameters\\\":\\\"{7465D855-992E-4DC2-9855-A03250DFA74B}\\\",\\\"FieldNames\\\":\\\"{940B57D1-13EA-429D-8C7E-2F6C1307B1B1}\\\",\\\"Styles\\\":\\\"\\\",\\\"RenderingIdentifier\\\":\\\"\\\",\\\"CSSStyles\\\":\\\"\\\",\\\"DynamicPlaceholderId\\\":\\\"1\\\"}}]}]}",
+            "nullable": true,
+            "example": "{\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[{\\\"id\\\":\\\"9c6d53e3-fe57-4638-af7b-6d68304c7a94\\\",\\\"instanceId\\\":\\\"ad5e15fb-896b-4415-8735-5e4d6b1543e1\\\",\\\"placeholderKey\\\":\\\"headless-main\\\",\\\"dataSource\\\":\\\"local:/Data/Text 1\\\",\\\"parameters\\\":{\\\"GridParameters\\\":\\\"{7465D855-992E-4DC2-9855-A03250DFA74B}\\\",\\\"FieldNames\\\":\\\"{940B57D1-13EA-429D-8C7E-2F6C1307B1B1}\\\",\\\"Styles\\\":\\\"\\\",\\\"RenderingIdentifier\\\":\\\"\\\",\\\"CSSStyles\\\":\\\"\\\",\\\"DynamicPlaceholderId\\\":\\\"1\\\"}}]}]}"
+          },
+          "sharedLayout": {
+            "type": "string",
+            "description": "The shared layout of the page.\nExample value: {\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[]}]}",
+            "nullable": true,
+            "example": "{\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[]}]}"
+          },
+          "layoutEditingKind": {
+            "type": "string",
+            "description": "The type of layout for editing (Shared of Final).\nExample value: Final",
+            "nullable": true,
+            "example": "Final"
+          },
+          "id": {
+            "type": "string",
+            "description": "The page identifier.\nExample value: 68900348a3b84eb8ac7df4d179c25727",
+            "nullable": true,
+            "example": "68900348a3b84eb8ac7df4d179c25727"
+          },
+          "name": {
+            "type": "string",
+            "description": "The page's system name.\nExample value: Home",
+            "nullable": true,
+            "example": "Home"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The page's display name.\nExample value: Site Home",
+            "nullable": true,
+            "example": "Site Home"
+          },
+          "language": {
+            "type": "string",
+            "description": "The page language.\nExample value: en-US",
+            "nullable": true,
+            "example": "en-US"
+          },
+          "version": {
+            "type": "integer",
+            "description": "The current version of the page.\nExample value: 1",
+            "format": "int32",
+            "example": 1
+          },
+          "templateId": {
+            "type": "string",
+            "description": "The identifier of the template this page is based on.\nExample value: 6fe7d6551e3d4c2780105777f06c6c4f",
+            "nullable": true,
+            "example": "6fe7d6551e3d4c2780105777f06c6c4f"
+          },
+          "parentId": {
+            "type": "string",
+            "description": "The identifier of the page's parent.\nExample value: 4bc0c81a280b4b13890b7b074b9d68f4",
+            "nullable": true,
+            "example": "4bc0c81a280b4b13890b7b074b9d68f4"
+          },
+          "hasPresentation": {
+            "type": "boolean",
+            "description": "If set to true, this page can be rendered in the SitecoreAI Pages application. This value is automatically set to false for the root item of the site, as well as for the folders if there are any.\nExample value: True",
+            "example": true
+          },
+          "hasChildren": {
+            "type": "boolean",
+            "description": "Whether the page has any child pages.\nExample value: True",
+            "example": true
+          },
+          "isLatestPublishableVersion": {
+            "type": "boolean",
+            "description": "Whether the page version is latest publishable version\nExample value: True",
+            "example": true
+          },
+          "permissions": {
+            "$ref": "#/components/schemas/Permissions"
+          },
+          "locking": {
+            "$ref": "#/components/schemas/PageLocking"
+          },
+          "path": {
+            "type": "string",
+            "description": "The path for the page.\nExample value: Sitecore/Content/Home/Categories/Products/MyProduct",
+            "nullable": true,
+            "example": "Sitecore/Content/Home/Categories/Products/MyProduct"
+          },
+          "route": {
+            "type": "string",
+            "description": "The public-facing URL path relative to the site's root.\nExample value: /Aboutus",
+            "nullable": true,
+            "example": "/Aboutus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageField": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the field.\nExample value: Title",
+            "nullable": true,
+            "example": "Title"
+          },
+          "value": {
+            "type": "string",
+            "description": "The raw value of the field. While this is passed as a string, it can represent more complex values.\nExample value: Welcome to our site",
+            "nullable": true,
+            "example": "Welcome to our site"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageFieldValue": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The identifier of the field.\nExample value: field-id-123",
+            "nullable": true,
+            "example": "field-id-123"
+          },
+          "value": {
+            "type": "string",
+            "description": "The current value of the field.\nExample value: Hello World",
+            "nullable": true,
+            "example": "Hello World"
+          },
+          "originalValue": {
+            "type": "string",
+            "description": "The original value of the field before any changes, useful for comparison or rollback scenarios.\nExample value: Original Text",
+            "nullable": true,
+            "example": "Original Text"
+          },
+          "reset": {
+            "type": "boolean",
+            "description": "Whether the field value should be reset to its default state.\nExample value: False",
+            "example": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageFieldValueResult": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The identifier of the field.\nExample value: a73d057e-20e3-4ac3-9c06-5f34bfcb6847",
+            "nullable": true,
+            "example": "a73d057e-20e3-4ac3-9c06-5f34bfcb6847"
+          },
+          "value": {
+            "type": "string",
+            "description": "The new value of the field.\nExample value: Welcome to our site",
+            "nullable": true,
+            "example": "Welcome to our site"
+          },
+          "originalValue": {
+            "type": "string",
+            "description": "The original value of the field.\nExample value: Welcome",
+            "nullable": true,
+            "example": "Welcome"
+          },
+          "reset": {
+            "type": "boolean",
+            "description": "The field reset status.\nExample value: False",
+            "example": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageInsertOption": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Template ID\nExample value: 6fe7d655-1e3d-4c27-8010-5777f06c6c4f",
+            "nullable": true,
+            "example": "6fe7d655-1e3d-4c27-8010-5777f06c6c4f"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "Template display name\nExample value: Page",
+            "nullable": true,
+            "example": "Page"
+          },
+          "templateType": {
+            "$ref": "#/components/schemas/TemplateType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageLayout": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/LayoutKind"
+          },
+          "body": {
+            "type": "string",
+            "description": "The body of the layout.\nExample value: {\"devices\":[{\"id\":\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\",\"layoutId\":\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\",\"placeholders\":[],\"renderings\":[{\"id\":\"9c6d53e3-fe57-4638-af7b-6d68304c7a94\",\"instanceId\":\"ad5e15fb-896b-4415-8735-5e4d6b1543e1\",\"placeholderKey\":\"headless-main\",\"dataSource\":\"local:/Data/Text 1\",\"parameters\":{\"GridParameters\":\"{7465D855-992E-4DC2-9855-A03250DFA74B}\",\"FieldNames\":\"{940B57D1-13EA-429D-8C7E-2F6C1307B1B1}\",\"Styles\":\"\",\"RenderingIdentifier\":\"\",\"CSSStyles\":\"\",\"DynamicPlaceholderId\":\"1\"}}]}]}",
+            "nullable": true,
+            "example": "{\"devices\":[{\"id\":\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\",\"layoutId\":\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\",\"placeholders\":[],\"renderings\":[{\"id\":\"9c6d53e3-fe57-4638-af7b-6d68304c7a94\",\"instanceId\":\"ad5e15fb-896b-4415-8735-5e4d6b1543e1\",\"placeholderKey\":\"headless-main\",\"dataSource\":\"local:/Data/Text 1\",\"parameters\":{\"GridParameters\":\"{7465D855-992E-4DC2-9855-A03250DFA74B}\",\"FieldNames\":\"{940B57D1-13EA-429D-8C7E-2F6C1307B1B1}\",\"Styles\":\"\",\"RenderingIdentifier\":\"\",\"CSSStyles\":\"\",\"DynamicPlaceholderId\":\"1\"}}]}]}"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageLocking": {
+        "type": "object",
+        "properties": {
+          "canUnlock": {
+            "type": "boolean",
+            "description": "Whether the current user can unlock the page for editing.\nExample value: False",
+            "example": false
+          },
+          "isLocked": {
+            "type": "boolean",
+            "description": "Whether the page is currently locked for editing.\nExample value: False",
+            "example": false
+          },
+          "lockedBy": {
+            "type": "string",
+            "description": "If the page is locked, the user who locked it.\nExample value: john.smith@skate-park.com",
+            "nullable": true,
+            "example": "john.smith@skate-park.com"
+          },
+          "lockedByCurrentUser": {
+            "type": "boolean",
+            "description": "Whether the page was locked by the current user.\nExample value: False",
+            "example": false
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageOperationResult": {
+        "type": "object",
+        "properties": {
+          "pageId": {
+            "type": "string",
+            "description": "The page identifier.\nExample value: 8f0b81bc-7388-46be-b109-6e73d1114470",
+            "nullable": true,
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          "name": {
+            "type": "string",
+            "description": "The system name of the page.\nExample value: Home",
+            "nullable": true,
+            "example": "Home"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the page.\nExample value: Site Home",
+            "nullable": true,
+            "example": "Site Home"
+          },
+          "path": {
+            "type": "string",
+            "description": "The path of the page.\nExample value: /sitecore/content/collection01/site01/Home/about",
+            "nullable": true,
+            "example": "/sitecore/content/collection01/site01/Home/about"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageState": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The page identifier.\nExample value: 8f0b81bc-7388-46be-b109-6e73d1114470",
+            "nullable": true,
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the page.\nExample value: Site Home",
+            "nullable": true,
+            "example": "Site Home"
+          },
+          "revision": {
+            "type": "string",
+            "description": "The revision of the page.\nExample value: f7d29433-001e-4a35-a744-876759dba468",
+            "nullable": true,
+            "example": "f7d29433-001e-4a35-a744-876759dba468"
+          },
+          "workflow": {
+            "$ref": "#/components/schemas/PageWorkflow"
+          },
+          "versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Page"
+            },
+            "description": "The versions of the page.",
+            "nullable": true
+          },
+          "finalLayout": {
+            "type": "string",
+            "description": "The final layout of the page.\nExample value: {\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[{\\\"id\\\":\\\"9c6d53e3-fe57-4638-af7b-6d68304c7a94\\\",\\\"instanceId\\\":\\\"ad5e15fb-896b-4415-8735-5e4d6b1543e1\\\",\\\"placeholderKey\\\":\\\"headless-main\\\",\\\"dataSource\\\":\\\"local:/Data/Text 1\\\",\\\"parameters\\\":{\\\"GridParameters\\\":\\\"{7465D855-992E-4DC2-9855-A03250DFA74B}\\\",\\\"FieldNames\\\":\\\"{940B57D1-13EA-429D-8C7E-2F6C1307B1B1}\\\",\\\"Styles\\\":\\\"\\\",\\\"RenderingIdentifier\\\":\\\"\\\",\\\"CSSStyles\\\":\\\"\\\",\\\"DynamicPlaceholderId\\\":\\\"1\\\"}}]}]}",
+            "nullable": true,
+            "example": "{\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[{\\\"id\\\":\\\"9c6d53e3-fe57-4638-af7b-6d68304c7a94\\\",\\\"instanceId\\\":\\\"ad5e15fb-896b-4415-8735-5e4d6b1543e1\\\",\\\"placeholderKey\\\":\\\"headless-main\\\",\\\"dataSource\\\":\\\"local:/Data/Text 1\\\",\\\"parameters\\\":{\\\"GridParameters\\\":\\\"{7465D855-992E-4DC2-9855-A03250DFA74B}\\\",\\\"FieldNames\\\":\\\"{940B57D1-13EA-429D-8C7E-2F6C1307B1B1}\\\",\\\"Styles\\\":\\\"\\\",\\\"RenderingIdentifier\\\":\\\"\\\",\\\"CSSStyles\\\":\\\"\\\",\\\"DynamicPlaceholderId\\\":\\\"1\\\"}}]}]}"
+          },
+          "sharedLayout": {
+            "type": "string",
+            "description": "The shared layout of the page.\nExample value: {\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[]}]}",
+            "nullable": true,
+            "example": "{\\\"devices\\\":[{\\\"id\\\":\\\"fe5d7fdf-89c0-4d99-9aa3-b5fbd009c9f3\\\",\\\"layoutId\\\":\\\"96e5f4ba-a2cf-4a4c-a4e7-64da88226362\\\",\\\"placeholders\\\":[],\\\"renderings\\\":[]}]}"
+          },
+          "layoutEditingKind": {
+            "type": "string",
+            "description": "The kind of layout for editing (Shared of Final).\nExample value: Final",
+            "nullable": true,
+            "example": "Final"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageTemplate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The identifier of the page template.\nExample value: 2341ef32-42f4-4537-98d8-9ef741008eab",
+            "nullable": true,
+            "example": "2341ef32-42f4-4537-98d8-9ef741008eab"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of the page template.\nExample value: MainPage",
+            "nullable": true,
+            "example": "MainPage"
+          },
+          "path": {
+            "type": "string",
+            "description": "The path of the page template.\nExample value: /sitecore/templates/Standard Template",
+            "nullable": true,
+            "example": "/sitecore/templates/Standard Template"
+          },
+          "baseTemplateIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The identifiers of the base templates.\nExample value: [\n  \"4cf51e95-ee7e-4ad6-a69f-e4d740b03616\",\n  \"d9584f11-07d3-4cda-8373-7f97ceedbc09\"\n]",
+            "nullable": true,
+            "example": [
+              "4cf51e95-ee7e-4ad6-a69f-e4d740b03616",
+              "d9584f11-07d3-4cda-8373-7f97ceedbc09"
+            ]
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the page template.\nExample value: Main Page",
+            "nullable": true,
+            "example": "Main Page"
+          },
+          "isBranchTemplate": {
+            "type": "boolean",
+            "description": "Whether the template is a branch template.\nExample value: True",
+            "example": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageValidationError": {
+        "type": "object",
+        "properties": {
+          "aborted": {
+            "type": "string",
+            "description": "Whether the operation was aborted.\nExample value: true",
+            "nullable": true,
+            "example": "true"
+          },
+          "errorLevel": {
+            "type": "string",
+            "description": "The level of the error.\nExample value: High",
+            "nullable": true,
+            "example": "High"
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "The error message.\nExample value: Field value is required.",
+            "nullable": true,
+            "example": "Field value is required."
+          },
+          "fieldId": {
+            "type": "string",
+            "description": "The identifier of the field that caused the error.\nExample value: a73d057e-20e3-4ac3-9c06-5f34bfcb6847",
+            "nullable": true,
+            "example": "a73d057e-20e3-4ac3-9c06-5f34bfcb6847"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageVersionInfo": {
+        "type": "object",
+        "properties": {
+          "pageId": {
+            "type": "string",
+            "description": "The identifier of the page.\nExample value: 8f0b81bc-7388-46be-b109-6e73d1114470",
+            "nullable": true,
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the page.\nExample value: Site Home",
+            "nullable": true,
+            "example": "Site Home"
+          },
+          "versionNumber": {
+            "type": "integer",
+            "description": "The version number of the page.\nExample value: 2",
+            "format": "int32",
+            "example": 2
+          }
+        },
+        "additionalProperties": false
+      },
+      "PageWorkflow": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The identifier of the workflow state.\nExample value: 77ac7ce9-803a-42e3-bb05-f79fca73cbce",
+            "nullable": true,
+            "example": "77ac7ce9-803a-42e3-bb05-f79fca73cbce"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the workflow.\nExample value: Page Workflow",
+            "nullable": true,
+            "example": "Page Workflow"
+          },
+          "finalState": {
+            "type": "boolean",
+            "description": "Whether the page is in the final workflow state.\nExample value: True",
+            "example": true
+          },
+          "canEdit": {
+            "type": "boolean",
+            "description": "Whether the page can be edited.\nExample value: True",
+            "example": true
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowWarning"
+            },
+            "description": "The list of warnings associated with the workflow.",
+            "nullable": true
+          },
+          "icon": {
+            "type": "string",
+            "description": "Path to the icon associated with the workflow.\nExample value: Applications/32x32/document_heart.png",
+            "nullable": true,
+            "example": "Applications/32x32/document_heart.png"
+          },
+          "commands": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowCommand"
+            },
+            "description": "The list of commands available in the current workflow state.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagesSearchResult": {
+        "type": "object",
+        "properties": {
+          "totalCount": {
+            "type": "integer",
+            "description": "The total number of pages found by the search.\nExample value: 25",
+            "format": "int32",
+            "example": 25
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Page"
+            },
+            "description": "The collection of result pages returned by the search.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "The result of a page search, including the total count and a collection of result pages."
+      },
+      "Permissions": {
+        "type": "object",
+        "properties": {
+          "canAdmin": {
+            "type": "boolean",
+            "description": "Whether the current user has admin rights. Being an admin means that you control access permissions for other users, and have full read and write rights.\nExample value: False",
+            "example": false
+          },
+          "canWrite": {
+            "type": "boolean",
+            "description": "Whether the current user has permissions to edit values. Users with write access also have read access.\nExample value: False",
+            "example": false
+          },
+          "canCreate": {
+            "type": "boolean",
+            "description": "Whether the current user has permission to create entities.\nExample value: False",
+            "example": false
+          },
+          "canDelete": {
+            "type": "boolean",
+            "description": "Whether the current user has permission to delete entities.\nExample value: False",
+            "example": false
+          },
+          "canRename": {
+            "type": "boolean",
+            "description": "Whether the current user has permission to rename entities.\nExample value: False",
+            "example": false
+          },
+          "canRead": {
+            "type": "boolean",
+            "description": "Whether the current user has permission to see entities, including all their parameters.\nExample value: False",
+            "example": false
+          },
+          "canPublish": {
+            "type": "boolean",
+            "description": "Whether the current user has permission to publish sites in this environment.\nExample value: False",
+            "example": false
+          },
+          "canDuplicate": {
+            "type": "boolean",
+            "description": "Whether the current user has permission to duplicate entities.\nExample value: False",
+            "example": false
+          },
+          "canWriteLanguage": {
+            "type": "boolean",
+            "description": "Whether the current user has permission to write item language entities.\nExample value: False",
+            "example": false
+          }
+        },
+        "additionalProperties": false,
+        "description": "The access rights of the current user to the site."
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "The type of the error response entity.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "The title of the error response entity.",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "description": "The response status code.",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "description": "A detailed explanation, specific to this occurrence of the problem.",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "description": "If available, a URI reference that identifies the specific occurrence of the problem.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": {
+          "description": "Any additional optional properties that describe the error(s)."
+        }
+      },
+      "Publishing": {
+        "type": "object",
+        "properties": {
+          "isPublishable": {
+            "type": "boolean",
+            "description": "Whether the page is publishable.\nExample value: True",
+            "example": true
+          },
+          "hasPublishableVersion": {
+            "type": "boolean",
+            "description": "Whether the page has a publishable version.\nExample value: True",
+            "example": true
+          },
+          "isAvailableToPublish": {
+            "type": "boolean",
+            "description": "Whether the page version is available to publish (version is not hidden).\nExample value: True",
+            "example": true
+          },
+          "validFromDate": {
+            "type": "string",
+            "description": "The date from which the page is available for publishing.\nExample value: 2023-10-01T00:00:00Z",
+            "nullable": true,
+            "example": "2023-10-01T00:00:00Z"
+          },
+          "validToDate": {
+            "type": "string",
+            "description": "The date until which the page is available for publishing.\nExample value: 2023-12-31T23:59:59Z",
+            "nullable": true,
+            "example": "2023-12-31T23:59:59Z"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RenamePageInput": {
+        "required": [
+          "newName"
+        ],
+        "type": "object",
+        "properties": {
+          "newName": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The new name for the page.\nExample value: About Us",
+            "example": "About Us"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SavePageError": {
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "description": "The error code.\nExample value: ItemIsProtected",
+            "nullable": true,
+            "example": "ItemIsProtected"
+          },
+          "message": {
+            "type": "string",
+            "description": "The error message.\nExample value: The page item is protected.",
+            "nullable": true,
+            "example": "The page item is protected."
+          },
+          "pageId": {
+            "type": "string",
+            "description": "The identifier of the page that caused the error.\nExample value: 8f0b81bc-7388-46be-b109-6e73d1114470",
+            "nullable": true,
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SavePageFieldsInput": {
+        "required": [
+          "fields",
+          "language",
+          "site"
+        ],
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageFieldValue"
+            },
+            "description": "The field values for the page."
+          },
+          "language": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The language of the page to save.\nExample value: en-US",
+            "example": "en-US"
+          },
+          "site": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The site name.\nExample value: my-site",
+            "example": "my-site"
+          },
+          "pageVersion": {
+            "type": "integer",
+            "description": "The version number of the page to save.\nExample value: 2",
+            "format": "int32",
+            "example": 2
+          },
+          "revision": {
+            "type": "string",
+            "description": "The revision identifier of the page to save.\nExample value: f7d29433-001e-4a35-a744-876759dba468",
+            "nullable": true,
+            "example": "f7d29433-001e-4a35-a744-876759dba468"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SavePageLayoutInput": {
+        "required": [
+          "language",
+          "layout",
+          "site"
+        ],
+        "type": "object",
+        "properties": {
+          "layout": {
+            "$ref": "#/components/schemas/PageLayout"
+          },
+          "originalLayout": {
+            "$ref": "#/components/schemas/PageLayout"
+          },
+          "language": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The language of the page to save.\nExample value: en-US",
+            "example": "en-US"
+          },
+          "site": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The site name.\nExample value: my-site",
+            "example": "my-site"
+          },
+          "pageVersion": {
+            "type": "integer",
+            "description": "The version number of the page to save.\nExample value: 2",
+            "format": "int32",
+            "example": 2
+          },
+          "revision": {
+            "type": "string",
+            "description": "The revision identifier of the page to save.\nExample value: f7d29433-001e-4a35-a744-876759dba468",
+            "nullable": true,
+            "example": "f7d29433-001e-4a35-a744-876759dba468"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SavePageResult": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SavePageError"
+            },
+            "description": "The list of errors that occurred during the save operation.",
+            "nullable": true
+          },
+          "savedPage": {
+            "$ref": "#/components/schemas/SavedPage"
+          },
+          "validationErrors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageValidationError"
+            },
+            "description": "The list of validation errors that occurred during the save operation.",
+            "nullable": true
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The list of warnings that occurred during the save operation.",
+            "nullable": true
+          },
+          "newCreatedVersion": {
+            "$ref": "#/components/schemas/PageVersionInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SavedPage": {
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageFieldValueResult"
+            },
+            "description": "The list of updated field values.",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "description": "The identifier of the saved page.\nExample value: 8f0b81bc-7388-46be-b109-6e73d1114470",
+            "nullable": true,
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          "language": {
+            "type": "string",
+            "description": "The language of the saved page.\nExample value: en-US",
+            "nullable": true,
+            "example": "en-US"
+          },
+          "revision": {
+            "type": "string",
+            "description": "The revision identifier of the saved page.\nExample value: f7d29433-001e-4a35-a744-876759dba468",
+            "nullable": true,
+            "example": "f7d29433-001e-4a35-a744-876759dba468"
+          },
+          "version": {
+            "type": "integer",
+            "description": "The version number of the saved page.\nExample value: 2",
+            "format": "int32",
+            "example": 2
+          }
+        },
+        "additionalProperties": false
+      },
+      "TemplateType": {
+        "enum": [
+          "ItemTemplate",
+          "BranchTemplate"
+        ],
+        "type": "string",
+        "description": "The type of template."
+      },
+      "TranslatePageInput": {
+        "required": [
+          "sourceLanguage",
+          "targetLanguage",
+          "translationStrategy"
+        ],
+        "type": "object",
+        "properties": {
+          "sourceLanguage": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Source language\nExample value: en",
+            "example": "en"
+          },
+          "targetLanguage": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Target language\nExample value: ja-JP",
+            "example": "ja-JP"
+          },
+          "translationStrategy": {
+            "$ref": "#/components/schemas/TranslationStrategy"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The translations options"
+      },
+      "TranslationStrategy": {
+        "enum": [
+          "AddVersion",
+          "SkipIfExists"
+        ],
+        "type": "string",
+        "description": "Specifies the strategy to use when translating: add a new version or skip if a version exists.",
+        "format": "int32"
+      },
+      "TypeFilter": {
+        "enum": [
+          "Pages",
+          "Folders",
+          "All"
+        ],
+        "type": "string",
+        "description": "The search filter type.",
+        "format": "int32"
+      },
+      "UpdatePageInput": {
+        "required": [
+          "fields"
+        ],
+        "type": "object",
+        "properties": {
+          "versionNumber": {
+            "type": "integer",
+            "description": "The version number of the page to update.\nExample value: 2",
+            "format": "int32",
+            "nullable": true,
+            "example": 2
+          },
+          "language": {
+            "type": "string",
+            "description": "The language of the page to update.\nExample value: en-US",
+            "nullable": true,
+            "example": "en-US"
+          },
+          "fields": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageField"
+            },
+            "description": "The fields to update on the page."
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The identifier of the workflow command.\nExample value: cf6a557d-0b86-4432-bf47-302a18238e74",
+            "nullable": true,
+            "example": "cf6a557d-0b86-4432-bf47-302a18238e74"
+          },
+          "displayName": {
+            "type": "string",
+            "description": "The display name of the workflow command.\nExample value: Submit",
+            "nullable": true,
+            "example": "Submit"
+          },
+          "icon": {
+            "type": "string",
+            "description": "The icon associated with the workflow command.\nExample value: office/16x16/submit.png",
+            "nullable": true,
+            "example": "office/16x16/submit.png"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WorkflowWarning": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The identifier of the page on which the warning occurred.\nExample value: 8f0b81bc-7388-46be-b109-6e73d1114470",
+            "nullable": true,
+            "example": "8f0b81bc-7388-46be-b109-6e73d1114470"
+          },
+          "errorCode": {
+            "type": "string",
+            "description": "The error code of the warning.\nExample value: SomeDatasourcesAreLocked",
+            "nullable": true,
+            "example": "SomeDatasourcesAreLocked"
+          },
+          "message": {
+            "type": "string",
+            "description": "The warning message.\nExample value: Some of the page datasources are locked.",
+            "nullable": true,
+            "example": "Some of the page datasources are locked."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter your bearer token in the text input below.",
+        "scheme": "Bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Aggregation",
+      "description": "The Aggregation API lets you fetch aggregated page data."
+    },
+    {
+      "name": "Pages",
+      "description": "The Pages API lets you create and manage the pages of your sites.\nLearn more about [Pages](https://doc.sitecore.com/xmc/en/users/xm-cloud/pages.html)."
+    }
+  ]
+}

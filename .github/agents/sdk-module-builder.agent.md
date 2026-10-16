@@ -58,7 +58,7 @@ namespaces:
 - `basePath` — proxy base path for the production `schema-patcher`.
 - Derived automatically (never ask):
   - `folder` = **kebab-case** of `key` (e.g. `contentTransfer` → `content-transfer`). This is the literal output directory name: `./src/client-<folder>` and `./src/experimental/client-<folder>`. The import identifier stays camelCase: `import * as contentTransfer from './client-content-transfer/sdk.gen'`.
-  - `Pascal` = PascalCase(`key`) → used by `defineClientTransformerConfig({ namespace })` and as `experimental_<Pascal>`.
+  - `Pascal` = PascalCase(`key`) → used by `defineNamespaceTransformerConfig({ namespace })` and as `experimental_<Pascal>`.
   - `augmentation` = `['<module>.<key>']`.
   - `Title` = Title Case of `key` with camelCase boundaries split by spaces (e.g. `contentTransfer` → `Content Transfer`, `skills` → `Skills`). Use it for the `name` field in `apiConfigs` as `<Title> API`.
 
@@ -112,40 +112,45 @@ Placeholders: `<module>` lowercase, `<MODULE>` UPPER, `<Module>` Title. Per name
 ### generate-<module>.ts (production)
 ```ts
 import { createClient } from '@hey-api/openapi-ts';
+import { generatorOutput } from '../shared/generator-output';
 import { defineAugmentationConfig } from '../shared/plugins/augmentation';
-import { defineClientTransformerConfig } from '../shared/plugins/client-transformer/config';
+import { defineHttpClientConfig } from '../shared/plugins/http-client';
+import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 
 createClient({
   input: '<schema>',
-  output: { format: 'prettier', lint: 'eslint', path: './src/client-<folder>' },
+  output: generatorOutput('./src/client-<folder>'),
   plugins: [
     defineSchemaPatcherConfig({ basePath: '<basePath>' }),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig({ runtimeConfigPath: './src/client-sdk-fetch' }),
     '@hey-api/schemas',
     '@hey-api/sdk',
     { enums: 'javascript', name: '@hey-api/typescript' },
     defineAugmentationConfig({ namespaces: ['<module>.<key>'] }),
-    defineClientTransformerConfig({ namespace: '<Pascal>' }),
+    defineNamespaceTransformerConfig({ namespace: '<Pascal>' }),
   ],
 });
 // …repeat createClient per namespace…
 ```
+> Never add the stock `'@hey-api/client-fetch'` client plugin. `defineHttpClientConfig()` makes the generated code import the shared client in `packages/shared/src/http`; `runtimeConfigPath` makes production clients send requests through the Marketplace host (`createClientConfig` in `src/client-sdk-fetch.ts`).
 > If a module wraps each call in `async function generate(){ await createClient(...); } generate();` (as `ai` does), follow that form for that module. Multiple namespaces in one file may use top-level `createClient(...)` calls (as `xmc` does).
 
 ### generate-<module>-experimental.ts
-> **Transformer plugin differs between the two generators — do not mix them up.** The production generator (above) uses `defineClientTransformerConfig({ namespace: '<Pascal>' })`; the experimental generator (below) uses `defineNamespaceTransformerConfig({ namespace: 'experimental_<Pascal>' })`. They come from different shared plugin paths (`client-transformer/config` vs `namespace-transformer`). Using the wrong one silently produces the wrong client shape.
+> **The two generators differ — do not mix them up.** The production generator (above) passes `runtimeConfigPath: './src/client-sdk-fetch'` to `defineHttpClientConfig` and uses `namespace: '<Pascal>'`; the experimental generator (below) calls `defineHttpClientConfig()` with no options (experimental clients call the APIs directly with a token) and uses `namespace: 'experimental_<Pascal>'`.
 ```ts
 import { createClient } from '@hey-api/openapi-ts';
+import { generatorOutput } from '../shared/generator-output';
+import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
 createClient({
   input: '<schema>',
-  output: { format: 'prettier', lint: 'eslint', path: './src/experimental/client-<folder>' },
+  output: generatorOutput('./src/experimental/client-<folder>'),
   plugins: [
     defineSchemaPatcherConfig(),
-    '@hey-api/client-fetch',
+    defineHttpClientConfig(),
     '@hey-api/schemas',
     '@hey-api/sdk',
     { enums: 'javascript', name: '@hey-api/typescript' },
@@ -245,10 +250,23 @@ export const clientSdkfetch = async (input: globalThis.Request): Promise<Respons
   }
   return clientSdk['_fetch'](input);
 };
+
+/**
+ * Runtime config for the generated clients (`runtimeConfigPath`): send requests
+ * through the Marketplace host.
+ */
+export const createClientConfig = <T extends object>(
+  config: T,
+): T & { fetch: typeof clientSdkfetch } => ({
+  ...config,
+  fetch: clientSdkfetch,
+});
 ```
 
 ### tsconfig.json / vitest.config.ts / rollup.config.js
-Copy `tsconfig.json` and `vitest.config.ts` verbatim from `packages/xmc` for a multi-namespace module. For `rollup.config.js`, copy `packages/ai/rollup.config.js` when the module imports `@hey-api/client-fetch` because its `external` list already includes `@sitecore-marketplace-sdk/core`, `@sitecore-marketplace-sdk/client`, and `@hey-api/client-fetch`; otherwise copy `packages/xmc/rollup.config.js` and add those three entries to `external`.
+Copy `tsconfig.json` and `vitest.config.ts` verbatim from `packages/xmc` for a multi-namespace module. For `rollup.config.js`, copy `packages/ai/rollup.config.js`: its `external` list is `@sitecore-marketplace-sdk/core` and `@sitecore-marketplace-sdk/client`. Do not add `@hey-api/client-fetch` as a dependency or external; the HTTP client in `packages/shared/src/http` is bundled.
+
+Add `THIRD-PARTY-NOTICES.md` (copy it from `packages/ai`) and list it in `files` next to `dist`, because the bundled HTTP client is MIT-licensed code from `@hey-api/client-fetch`.
 
 ### package.json
 Copy `packages/ai/package.json`, change `name` to `@sitecore-marketplace-sdk/<module>`, the `generate:module*` script targets to `generate-<module>*.ts`, the `generate:docs` out dir to `docs/modules/<module>`, and the `keywords`. Reset `version` to `0.1.0` for a new module.
@@ -354,12 +372,12 @@ Mirror the existing tests, substituting the module's namespaces.
 
 **index-exports.test.ts** — assert `<module>Module.<MODULE>` is defined with namespace `<module>`, `experimental_<MODULE>` class exported, `experimental_create<MODULE>Client` is a function.
 
-**experimental_<module>.test.ts** — mock `@hey-api/client-fetch` and each `./experimental/client-<key>/sdk.gen`; construct `experimental_<MODULE>`, assert each `<key>` property is defined and key methods are functions; cover default and custom `EDGE_PLATFORM_PROXY_URL`.
+**experimental_<module>.test.ts** — mock the shared HTTP client (`vi.mock('../../../shared/src/http', …)` with `createClient` and `createConfig`) and each `./experimental/client-<key>/sdk.gen`; construct `experimental_<MODULE>`, assert each `<key>` property is defined and key methods are functions; cover default and custom `EDGE_PLATFORM_PROXY_URL`.
 
 > jsdom env cleanup gotcha: when stubbing `window.env`, define it with `Object.defineProperty(window, 'env', { value: …, writable: true, configurable: true })` and RESET it by reassigning (define it again with `value: undefined`). Do NOT use `delete (window as any).env` — a property defined without `configurable: true` cannot be deleted in jsdom and the test will throw `Cannot delete property 'env'`.
 
 ## Module-specific nuances (reproduce exactly when rebuilding xmc/ai)
-- **xmc `content` schema → two namespaces**: `preview` and `live` both map to `./client-content` (same generated client). In `generate-xmc.ts` the content `createClient` uses `defineAugmentationConfig({ namespaces: ['xmc.preview', 'xmc.live'] })` and `defineClientTransformerConfig({ namespace: 'Content' })`. In `index.ts` both `preview: content` and `live: content`. In `experimental_xmc.ts` both `preview` and `live` use `experimental_content_sdk`.
+- **xmc `content` schema → two namespaces**: `preview` and `live` both map to `./client-content` (same generated client). In `generate-xmc.ts` the content `createClient` uses `defineAugmentationConfig({ namespaces: ['xmc.preview', 'xmc.live'] })` and `defineNamespaceTransformerConfig({ namespace: 'Content' })`. In `index.ts` both `preview: content` and `live: content`. In `experimental_xmc.ts` both `preview` and `live` use `experimental_content_sdk`.
 - **xmc experimental agent import**: in `experimental_xmc.ts` the agent SDK is imported from `'./experimental/client-agent'` (the folder `index`), not `…/sdk.gen`. Other namespaces import `…/sdk.gen`.
 - **xmc `xmapp`** is deprecated and **production-only**: `defineAugmentationConfig({ namespaces: ['xmc.xmapp'], deprecated: true, deprecationMessage: "…" })`. It is NOT in `generate-xmc-experimental.ts` and NOT a property on `experimental_XMC`. Generally, deprecated namespaces are excluded from the experimental build/class.
 - **kebab folders**: every generated client folder is kebab-case (`client-content-transfer`, `client-content`), even when the namespaceMap key is camelCase (`contentTransfer`).
