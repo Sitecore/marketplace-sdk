@@ -269,7 +269,9 @@ describe('schema patcher plugin - property-less object types', () => {
           },
         },
       },
-      components: { schemas: { Request: { type: 'object', properties: { variables: unknownMap() } } } },
+      components: {
+        schemas: { Request: { type: 'object', properties: { variables: unknownMap() } } },
+      },
     };
     const spec = {
       paths: {

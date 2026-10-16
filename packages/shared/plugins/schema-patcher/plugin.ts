@@ -15,7 +15,10 @@ function getXScSdk(obj: Record<string, any> | undefined): XScSdk | undefined {
 
 function isEmptySchema(value: unknown): boolean {
   return (
-    typeof value === 'object' && value !== null && !Array.isArray(value) && !Object.keys(value).length
+    typeof value === 'object' &&
+    value !== null &&
+    !Array.isArray(value) &&
+    !Object.keys(value).length
   );
 }
 
