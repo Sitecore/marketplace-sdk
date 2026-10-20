@@ -12,7 +12,7 @@ import {
 import { defineHttpClientConfig } from '../http-client';
 import { defaultSchemaPatcherConfig, defineSchemaPatcherConfig } from '../schema-patcher';
 import { resolveHttpClientModule } from '../../generator-output';
-import { namespaceSource } from '../namespace';
+import { addTimeoutOption, namespaceSource } from '../namespace';
 
 const temporaryDirectories: string[] = [];
 
@@ -102,41 +102,6 @@ describe('Hey API 0.99 plugin registration', () => {
   });
 });
 
-describe('namespace transformer plugin', () => {
-  it('adds opt-in timeout options while preserving generic parameters', () => {
-    const options = ts.factory.createTypeAliasDeclaration(
-      [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
-      'Options',
-      [ts.factory.createTypeParameterDeclaration(undefined, 'ThrowOnError', undefined,
-        ts.factory.createKeywordTypeNode(ts.SyntaxKind.BooleanKeyword))],
-      ts.factory.createTypeReferenceNode('ClientOptions', [ts.factory.createTypeReferenceNode('ThrowOnError')]),
-    );
-    const sdkFile = new MockFile([options]);
-    const subscribers: SubscriberMap = {};
-    namespaceTransformerHandler({
-      context: {
-        files: { types: new MockFile(), sdk: sdkFile },
-        subscribe: (event: string, callback: () => void) => {
-          (subscribers[event] ||= []).push(callback);
-        },
-      },
-      plugin: { namespace: '', timeoutOptions: true },
-    } as any);
-    subscribers.after.forEach(callback => callback());
-    const updated = sdkFile._items[0] as ts.TypeAliasDeclaration;
-    expect(updated.typeParameters).toBe(options.typeParameters);
-    expect(printNode(updated)).toContain('timeoutMs?: number');
-    expect(printNode(updated)).toContain('ClientOptions<ThrowOnError>');
-  });
-
-  it('wraps generated types in the configured namespace and re-exports aliases', () => {
-    const originalInterface = ts.factory.createInterfaceDeclaration(
-      undefined,
-      'WidgetResponse',
-      undefined,
-      undefined,
-      [],
-    );
 describe('actual Hey API generation', () => {
   it.each([
     { namespace: 'Skills', operationNamespace: 'ai.skills', experimental: false },
@@ -144,9 +109,16 @@ describe('actual Hey API generation', () => {
     { namespace: 'experimental_Skills', operationNamespace: 'ai.skills', experimental: true },
     { namespace: 'experimental_XmcTypes', operationNamespace: 'xmc.widgets', experimental: true },
     { namespace: '', operationNamespace: 'plain.widgets', experimental: false },
+    {
+      namespace: 'experimental_Skills',
+      operationNamespace: 'ai.skills',
+      experimental: true,
+      timeoutOptions: true,
+    },
+    { namespace: '', operationNamespace: 'plain.widgets', experimental: true, timeoutOptions: true },
   ])(
-    'generates and typechecks $namespace (experimental: $experimental)',
-    async ({ namespace, operationNamespace, experimental }) => {
+    'generates and typechecks $namespace (experimental: $experimental, timeoutOptions: $timeoutOptions)',
+    async ({ namespace, operationNamespace, experimental, timeoutOptions }) => {
       const root = mkdtempSync(join(tmpdir(), 'marketplace-generator-'));
       temporaryDirectories.push(root);
       const output = join(root, 'generated');
@@ -182,7 +154,7 @@ describe('actual Hey API generation', () => {
                 }),
               ]
             : []),
-          defineNamespaceTransformerConfig({ namespace }),
+          defineNamespaceTransformerConfig({ namespace, ...(timeoutOptions ? { timeoutOptions } : {}) }),
         ],
       });
 
@@ -195,6 +167,7 @@ describe('actual Hey API generation', () => {
       expect(sdk).toContain('export const includedOverride');
       expect(sdk).not.toContain('excludedOperation');
       expect(sdk).not.toContain('oldCreateName');
+      expect(sdk.includes('timeoutMs?: number')).toBe(Boolean(timeoutOptions));
       expect(types).toContain('sitecoreContextId?: string');
       expect(client).toContain('https://override.example.com/authoring');
       expect(client.includes("from '../client-sdk-fetch'")).toBe(!experimental);
@@ -236,6 +209,23 @@ describe('actual Hey API generation', () => {
     },
     30000,
   );
+});
+
+describe('timeout options renderer', () => {
+  const options =
+    'export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean> = ClientOptions<TData, ThrowOnError> & { client?: Client };';
+
+  it('adds timeoutMs while preserving generic parameters', () => {
+    const output = addTimeoutOption(options);
+    expect(output).toContain('timeoutMs?: number');
+    expect(output).toContain('ThrowOnError extends boolean = boolean');
+    expect(output).toContain('ClientOptions<TData, ThrowOnError>');
+  });
+
+  it('leaves files without an Options type unchanged', () => {
+    const source = 'export type Widget = { name: string };';
+    expect(addTimeoutOption(source)).toBe(source);
+  });
 });
 
 describe('namespace renderer', () => {
