@@ -21,7 +21,6 @@ async function generate() {
       },
       defineNamespaceTransformerConfig({
         namespace: 'experimental_Skills',
-        timeoutOptions: true,
       }),
     ],
   });

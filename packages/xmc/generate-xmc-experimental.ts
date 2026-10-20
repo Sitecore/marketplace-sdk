@@ -18,7 +18,6 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_Sites',
-      timeoutOptions: true,
     }),
   ],
 });
@@ -37,7 +36,6 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_Pages',
-      timeoutOptions: true,
     }),
   ],
 });
@@ -56,7 +54,6 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_Authoring',
-      timeoutOptions: true,
     }),
   ],
 });
@@ -75,7 +72,6 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_ContentTransfer',
-      timeoutOptions: true,
     }),
   ],
 });
@@ -94,7 +90,6 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_Content',
-      timeoutOptions: true,
     }),
   ],
 });
@@ -113,7 +108,6 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_Agent',
-      timeoutOptions: true,
     }),
   ],
 });
@@ -132,7 +126,6 @@ createClient({
     },
     defineNamespaceTransformerConfig({
       namespace: 'experimental_Search',
-      timeoutOptions: true,
     }),
   ],
 });

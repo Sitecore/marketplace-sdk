@@ -50,8 +50,6 @@ export type Options<
    * used to access values that aren't defined as part of the SDK function.
    */
   meta?: keyof ClientMeta extends never ? Record<string, unknown> : ClientMeta;
-} & {
-  timeoutMs?: number;
 };
 /**
  * Create a Content Transfer

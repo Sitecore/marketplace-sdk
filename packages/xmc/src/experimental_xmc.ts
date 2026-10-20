@@ -27,7 +27,6 @@ type ApiType = 'sites' | 'pages' | 'authoring' | 'contentTransfer' | 'preview' |
 // Configuration type for experimental_XMC
 export interface experimental_XMCConfig {
   getAccessToken: () => Promise<string>;
-  timeout?: number;
 }
 
 // Helper function to create experimental_XMC client asynchronously
@@ -109,13 +108,13 @@ export class experimental_XMC {
     const customClients = createCustomClients(apiConfigs, config.getAccessToken, 'experimental_XMC');
 
     // Create API proxies with separated methods and types
-    this.sites = createApiProxy('sites', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
-    this.pages = createApiProxy('pages', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
-    this.authoring = createApiProxy('authoring', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
-    this.contentTransfer = createApiProxy('contentTransfer', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
-    this.preview = createApiProxy('preview', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
-    this.live = createApiProxy('live', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
-    this.agent = createApiProxy('agent', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
-    this.search = createApiProxy('search', apiConfigs, customClients, 'experimental_XMC', undefined, config.timeout);
+    this.sites = createApiProxy('sites', apiConfigs, customClients, 'experimental_XMC');
+    this.pages = createApiProxy('pages', apiConfigs, customClients, 'experimental_XMC');
+    this.authoring = createApiProxy('authoring', apiConfigs, customClients, 'experimental_XMC');
+    this.contentTransfer = createApiProxy('contentTransfer', apiConfigs, customClients, 'experimental_XMC');
+    this.preview = createApiProxy('preview', apiConfigs, customClients, 'experimental_XMC');
+    this.live = createApiProxy('live', apiConfigs, customClients, 'experimental_XMC');
+    this.agent = createApiProxy('agent', apiConfigs, customClients, 'experimental_XMC');
+    this.search = createApiProxy('search', apiConfigs, customClients, 'experimental_XMC');
   }
 }
