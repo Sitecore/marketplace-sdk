@@ -1,13 +1,14 @@
 {
   "name": "@sitecore-marketplace-sdk/ai",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "",
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/ai/src/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "THIRD-PARTY-NOTICES.md"
   ],
   "scripts": {
     "test": "vitest",
@@ -34,14 +35,11 @@
     "skills",
     "sitecoreai"
   ],
-  "dependencies": {
-    "@hey-api/client-fetch": "0.8.3"
-  },
   "peerDependencies": {
     "@sitecore-marketplace-sdk/client": "^0.4.0"
   },
   "devDependencies": {
-    "@hey-api/openapi-ts": "0.66.5",
+    "@hey-api/openapi-ts": "0.99.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^1.0.0",
     "@rollup/plugin-typescript": "^12.1.2",

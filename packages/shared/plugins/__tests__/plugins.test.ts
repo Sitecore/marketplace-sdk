@@ -1,205 +1,104 @@
-import { describe, it, expect } from 'vitest';
+import { afterEach, describe, expect, it } from 'vitest';
+import { createClient } from '@hey-api/openapi-ts';
+import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import ts from 'typescript';
-import { handler as augmentationHandler } from '../augmentation/plugin';
-import { handler as clientTransformerHandler } from '../client-transformer/plugin';
-import { handler as namespaceTransformerHandler } from '../namespace-transformer/plugin';
-import { handler as schemaPatcherHandler } from '../schema-patcher/plugin';
+import { defaultAugmentationConfig, defineAugmentationConfig } from '../augmentation';
+import {
+  defaultNamespaceTransformerConfig,
+  defineNamespaceTransformerConfig,
+} from '../namespace-transformer';
+import { defineHttpClientConfig } from '../http-client';
+import { defaultSchemaPatcherConfig, defineSchemaPatcherConfig } from '../schema-patcher';
+import { resolveHttpClientModule } from '../../generator-output';
+import { namespaceSource } from '../namespace';
 
-class MockFile {
-  public _items: ts.Node[];
-  public _imports: Map<string, Map<string, unknown>>;
-  public addCalls: Array<string | ts.Node>;
-  public importCalls: Array<{ module: string; name?: string; asType?: boolean; as?: string }>;
+const temporaryDirectories: string[] = [];
 
-  constructor(items: ts.Node[] = [], imports?: Map<string, Map<string, unknown>>) {
-    this._items = items;
-    this._imports = imports ?? new Map();
-    this.addCalls = [];
-    this.importCalls = [];
+afterEach(() => {
+  for (const directory of temporaryDirectories.splice(0)) {
+    rmSync(directory, { recursive: true, force: true });
   }
-
-  add(entry: string | ts.Node): void {
-    this.addCalls.push(entry);
-  }
-
-  import(options: { module: string; name?: string; asType?: boolean; as?: string }): void {
-    this.importCalls.push(options);
-    const moduleImports = this._imports.get(options.module) ?? new Map<string, unknown>();
-    const key = options.name ?? options.as ?? options.module;
-    moduleImports.set(key, options);
-    this._imports.set(options.module, moduleImports);
-  }
-}
-
-const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed });
-const printerSourceFile = ts.createSourceFile('printer.ts', '', ts.ScriptTarget.Latest, false, ts.ScriptKind.TS);
-const printNode = (node: ts.Node): string =>
-  printer.printNode(ts.EmitHint.Unspecified, node, printerSourceFile);
-
-type SubscriberMap = Record<string, Array<(payload?: any) => void>>;
-
-const findInterface = (modules: ts.ModuleDeclaration[], name: string): ts.InterfaceDeclaration => {
-  const moduleNode = modules.find((node) => {
-    if (!node.body || !ts.isModuleBlock(node.body)) {
-      return false;
-    }
-
-    return node.body.statements.some(
-      (statement) => ts.isInterfaceDeclaration(statement) && statement.name.text === name,
-    );
-  });
-
-  if (!moduleNode || !moduleNode.body || !ts.isModuleBlock(moduleNode.body)) {
-    throw new Error(`Module for interface ${name} not found`);
-  }
-
-  const interfaceNode = moduleNode.body.statements.find(
-    (statement): statement is ts.InterfaceDeclaration =>
-      ts.isInterfaceDeclaration(statement) && statement.name.text === name,
-  );
-
-  if (!interfaceNode) {
-    throw new Error(`Interface ${name} not found`);
-  }
-
-  return interfaceNode;
-};
-
-describe('augmentation plugin', () => {
-  it('adds module augmentations for query and mutation operations', () => {
-    const file = new MockFile();
-    const subscribers: SubscriberMap = {};
-    const context: any = {
-      createFile: () => file,
-      subscribe: (event: string, callback: (payload?: any) => void) => {
-        (subscribers[event] ||= []).push(callback);
-      },
-    };
-
-    augmentationHandler({
-      context,
-      plugin: {
-        name: '@sitecore-marketplace/augmentation',
-        output: 'augmentation.ts',
-        exportFromIndex: true,
-        namespaces: ['xmc.analytics'],
-        deprecated: true,
-        deprecationMessage: 'Use the beta namespace instead.',
-      },
-    } as any);
-
-    const trigger = (event: string, payload?: any) => {
-      (subscribers[event] ?? []).forEach((callback) => callback(payload));
-    };
-
-    trigger('operation', {
-      operation: {
-        id: 'listEntries',
-        method: 'get',
-        description: 'Lists entries for analytics dashboards.',
-      },
-    });
-
-    trigger('operation', {
-      operation: {
-        id: 'createEntry',
-        method: 'post',
-        summary: 'Creates an analytics entry.',
-      },
-    });
-
-    trigger('after');
-
-    expect(file.addCalls[0]).toBe("import * as sdk from './sdk.gen'");
-
-    const moduleDeclarations = file.addCalls.slice(1) as ts.ModuleDeclaration[];
-    expect(moduleDeclarations).toHaveLength(2);
-
-    const queryInterface = findInterface(moduleDeclarations, 'QueryMap');
-    const queryProperty = queryInterface.members[0] as ts.PropertySignature;
-    expect((queryProperty.name as ts.StringLiteral).text).toBe('xmc.analytics.listEntries');
-    const queryType = queryProperty.type as ts.TypeLiteralNode;
-    const subscribeMember = queryType.members.find(
-      (member) =>
-        ts.isPropertySignature(member) &&
-        ts.isIdentifier(member.name) &&
-        member.name.text === 'subscribe',
-    );
-    expect(subscribeMember).toBeDefined();
-    expect(printNode(queryProperty)).toContain('Use the beta namespace instead.');
-
-    const mutationInterface = findInterface(moduleDeclarations, 'MutationMap');
-    const mutationProperty = mutationInterface.members[0] as ts.PropertySignature;
-    const mutationType = mutationProperty.type as ts.TypeLiteralNode;
-    const hasSubscribe = mutationType.members.some(
-      (member) =>
-        ts.isPropertySignature(member) &&
-        ts.isIdentifier(member.name) &&
-        member.name.text === 'subscribe',
-    );
-    expect(hasSubscribe).toBe(false);
-    const mutationText = printNode(mutationProperty);
-    expect(mutationText).toContain('sdk.createEntry');
-    expect(mutationText).toContain('Creates an analytics entry.');
-  });
 });
 
-describe('schema patcher plugin', () => {
-  it('prefers baseUrl when provided', () => {
-    const schema = {
-      servers: [{ url: 'https://old.example' }],
-      paths: {},
-    };
-
-    const context: any = { ir: schema };
-
-    schemaPatcherHandler({
-      context,
-      plugin: {
-        name: '@sitecore-marketplace/schema-patcher',
-        baseUrl: 'https://override.example',
-      },
-    } as any);
-
-    expect(schema.servers[0].url).toBe('https://override.example');
-  });
-
-  it('falls back to basePath and injects the sitecoreContextId parameter', () => {
-    const sharedParameter = {
-      name: 'sitecoreContextId',
-      description: 'existing parameter',
-      location: 'query',
-    };
-
-    const schema = {
-      servers: [{ url: 'https://old.example' }],
-      paths: {
-        '/search': {
-          get: { parameters: { query: {} } },
-          post: { parameters: { query: { sitecoreContextId: sharedParameter } } },
+const schema = {
+  openapi: '3.0.3',
+  info: { title: 'Marketplace generator regression', version: '1.0.0' },
+  servers: [{ url: 'https://original.example.com' }],
+  components: {
+    schemas: {
+      Widget: {
+        type: 'object',
+        properties: {
+          name: { type: 'string' },
+          status: { type: 'string', enum: ['active', 'inactive'] },
         },
       },
-    };
-
-    const context: any = { ir: schema };
-
-    schemaPatcherHandler({
-      context,
-      plugin: {
-        name: '@sitecore-marketplace/schema-patcher',
-        basePath: '/authoring',
+    },
+  },
+  paths: {
+    '/reserved': {
+      get: {
+        operationId: 'client',
+        responses: { '200': { description: 'Reserved name' } },
       },
-    } as any);
+    },
+    '/widgets': {
+      get: {
+        operationId: 'list-widgets',
+        summary: 'List widgets',
+        responses: {
+          '200': {
+            description: 'Widgets',
+            content: { 'application/json': { schema: { $ref: '#/components/schemas/Widget' } } },
+          },
+        },
+      },
+      post: {
+        operationId: 'oldCreateName',
+        'x-sc-sdk': { operationName: 'createWidget' },
+        responses: { '204': { description: 'Created' } },
+      },
+    },
+    '/excluded': {
+      'x-sc-sdk': { generate: false },
+      get: {
+        operationId: 'excludedOperation',
+        responses: { '200': { description: 'Excluded' } },
+      },
+      post: {
+        operationId: 'includedOverride',
+        'x-sc-sdk': { generate: true },
+        responses: { '204': { description: 'Included' } },
+      },
+    },
+  },
+};
 
-    expect(schema.servers[0].url).toBe('https://example.com/authoring');
+describe('Hey API 0.99 plugin registration', () => {
+  it.each([
+    defaultAugmentationConfig,
+    defaultNamespaceTransformerConfig,
+    defaultSchemaPatcherConfig,
+  ])('registers the current handler and dependencies for $name', (config) => {
+    expect(config.handler).toBeTypeOf('function');
+    expect(config.dependencies).toBeInstanceOf(Array);
+    expect(config.config).toBeDefined();
+    expect(config).not.toHaveProperty('_handler');
+    expect(config).not.toHaveProperty('_dependencies');
+    expect(config).not.toHaveProperty('_handlerLegacy');
+  });
 
-    const getParameter =
-      (schema.paths['/search'].get.parameters.query as Record<string, any>).sitecoreContextId;
-    expect(getParameter).toMatchObject({ name: 'sitecoreContextId', location: 'query' });
-
-    const postParameter =
-      (schema.paths['/search'].post.parameters.query as Record<string, any>).sitecoreContextId;
-    expect(postParameter).toBe(sharedParameter);
+  it('keeps user options inside the normalized config', () => {
+    const plugin = defineAugmentationConfig({ namespaces: ['ai.skills'], deprecated: true });
+    expect(plugin.name).toBe('@sitecore-marketplace/augmentation');
+    expect(plugin.config).toMatchObject({
+      namespaces: ['ai.skills'],
+      deprecated: true,
+      output: 'augmentation',
+      includeInEntry: false,
+    });
   });
 });
 
@@ -238,150 +137,121 @@ describe('namespace transformer plugin', () => {
       undefined,
       [],
     );
+describe('actual Hey API generation', () => {
+  it.each([
+    { namespace: 'Skills', operationNamespace: 'ai.skills', experimental: false },
+    { namespace: 'XmcTypes', operationNamespace: 'xmc.widgets', experimental: false },
+    { namespace: 'experimental_Skills', operationNamespace: 'ai.skills', experimental: true },
+    { namespace: 'experimental_XmcTypes', operationNamespace: 'xmc.widgets', experimental: true },
+    { namespace: '', operationNamespace: 'plain.widgets', experimental: false },
+  ])(
+    'generates and typechecks $namespace (experimental: $experimental)',
+    async ({ namespace, operationNamespace, experimental }) => {
+      const root = mkdtempSync(join(tmpdir(), 'marketplace-generator-'));
+      temporaryDirectories.push(root);
+      const output = join(root, 'generated');
+      writeFileSync(
+        join(root, 'client-sdk-fetch.ts'),
+        [
+          'export const clientSdkfetch: typeof fetch = fetch;',
+          'export const createClientConfig = <T extends object>(config: T) => ({ ...config, fetch: clientSdkfetch });',
+        ].join('\n'),
+      );
+      writeFileSync(
+        join(root, 'client.d.ts'),
+        "declare module '@sitecore-marketplace-sdk/client' { interface QueryMap {} interface MutationMap {} }",
+      );
 
-    const typeFile = new MockFile([originalInterface]);
-    const sdkImports = new Map<string, Map<string, unknown>>([
-      ['./types.gen', new Map<string, unknown>([['ClientOptions', {}]])],
-    ]);
-    const clientImports = new Map<string, Map<string, unknown>>([
-      ['./types.gen', new Map<string, unknown>([['WidgetResponse', {}]])],
-    ]);
-    const sdkFile = new MockFile(
-      [ts.factory.createEmptyStatement()],
-      sdkImports,
-    );
-    const clientFile = new MockFile(
-      [ts.factory.createEmptyStatement()],
-      clientImports,
-    );
+      await createClient({
+        input: structuredClone(schema),
+        output: { path: output, postProcess: [], module: { resolve: resolveHttpClientModule } },
+        plugins: [
+          defineSchemaPatcherConfig({ baseUrl: 'https://override.example.com/authoring' }),
+          defineHttpClientConfig(
+            experimental ? {} : { runtimeConfigPath: join(root, 'client-sdk-fetch') },
+          ),
+          '@hey-api/schemas',
+          '@hey-api/sdk',
+          { name: '@hey-api/typescript', enums: 'javascript' },
+          ...(!experimental
+            ? [
+                defineAugmentationConfig({
+                  namespaces: [operationNamespace],
+                  deprecated: true,
+                  deprecationMessage: 'Use the replacement namespace.',
+                }),
+              ]
+            : []),
+          defineNamespaceTransformerConfig({ namespace }),
+        ],
+      });
 
-    const subscribers: SubscriberMap = {};
-    const context: any = {
-      files: {
-        types: typeFile,
-        sdk: sdkFile,
-        client: clientFile,
-      },
-      subscribe: (event: string, callback: (payload?: any) => void) => {
-        (subscribers[event] ||= []).push(callback);
-      },
-    };
+      const sdk = readFileSync(join(output, 'sdk.gen.ts'), 'utf8');
+      const types = readFileSync(join(output, 'types.gen.ts'), 'utf8');
+      const client = readFileSync(join(output, 'client.gen.ts'), 'utf8');
+      const index = readFileSync(join(output, 'index.ts'), 'utf8');
+      expect(sdk).toContain('export const listWidgets');
+      expect(sdk).toContain('export const createWidget');
+      expect(sdk).toContain('export const includedOverride');
+      expect(sdk).not.toContain('excludedOperation');
+      expect(sdk).not.toContain('oldCreateName');
+      expect(types).toContain('sitecoreContextId?: string');
+      expect(client).toContain('https://override.example.com/authoring');
+      expect(client.includes("from '../client-sdk-fetch'")).toBe(!experimental);
+      expect(client.includes('createClientConfig(createConfig')).toBe(!experimental);
+      if (namespace) {
+        expect(types).toContain(`export namespace ${namespace}`);
+        expect(sdk).toContain(`import type { ${namespace} }`);
+        expect(index).toContain(`export { ${namespace} }`);
+      } else {
+        expect(types).not.toContain('export namespace');
+      }
+      if (!experimental) {
+        const augmentation = readFileSync(join(output, 'augmentation.gen.ts'), 'utf8');
+        expect(augmentation).toContain(`"${operationNamespace}.listWidgets"`);
+        expect(augmentation).toContain(`"${operationNamespace}.createWidget"`);
+        expect(augmentation).toContain('typeof sdk.createWidget');
+        expect(augmentation).toContain('Use the replacement namespace.');
+        expect(augmentation).not.toContain('excludedOperation');
+        expect(index).not.toContain('augmentation');
+      }
 
-    namespaceTransformerHandler({
-      context,
-      plugin: {
-        name: '@sitecore-marketplace/namespace-transformer',
-        namespace: 'XmcTypes',
-        output: 'client',
-      },
-    } as any);
-
-    (subscribers['after'] ?? []).forEach((callback) => callback());
-
-    const namespaceModule = typeFile._items[0] as ts.ModuleDeclaration;
-    const namespaceName = ts.isIdentifier(namespaceModule.name)
-      ? ts.idText(namespaceModule.name)
-      : '';
-    expect(namespaceName).toBe('XmcTypes');
-    const moduleBlock = namespaceModule.body as ts.ModuleBlock;
-    expect(moduleBlock.statements[0]).toBe(originalInterface);
-
-    const sdkAlias = sdkFile._items[0] as ts.TypeAliasDeclaration;
-    expect(sdkAlias.name.text).toBe('ClientOptions');
-    const sdkReference = sdkAlias.type as ts.TypeReferenceNode;
-    expect(ts.isQualifiedName(sdkReference.typeName)).toBe(true);
-    const sdkQualified = sdkReference.typeName as ts.QualifiedName;
-    const sdkNamespace = ts.isIdentifier(sdkQualified.left) ? ts.idText(sdkQualified.left) : '';
-    expect(sdkNamespace).toBe('XmcTypes');
-
-    const clientAlias = clientFile._items[0] as ts.TypeAliasDeclaration;
-    expect(clientAlias.name.text).toBe('WidgetResponse');
-    const clientReference = clientAlias.type as ts.TypeReferenceNode;
-    expect(ts.isQualifiedName(clientReference.typeName)).toBe(true);
-    const clientQualified = clientReference.typeName as ts.QualifiedName;
-    const clientNamespace = ts.isIdentifier(clientQualified.left)
-      ? ts.idText(clientQualified.left)
-      : '';
-    expect(clientNamespace).toBe('XmcTypes');
-
-    const sdkImportsMap = sdkFile._imports.get('./types.gen');
-    expect(sdkImportsMap?.has('XmcTypes')).toBe(true);
-    const clientImportsMap = clientFile._imports.get('./types.gen');
-    expect(clientImportsMap?.has('XmcTypes')).toBe(true);
-  });
+      const generatedFiles = readdirSync(output)
+        .filter((file) => file.endsWith('.ts'))
+        .map((file) => join(output, file));
+      const program = ts.createProgram([...generatedFiles, join(root, 'client.d.ts')], {
+        noEmit: true,
+        strict: true,
+        target: ts.ScriptTarget.ESNext,
+        module: ts.ModuleKind.ESNext,
+        moduleResolution: ts.ModuleResolutionKind.Bundler,
+        skipLibCheck: true,
+      });
+      const diagnostics = ts.getPreEmitDiagnostics(program);
+      expect(
+        diagnostics.map((diagnostic) =>
+          ts.flattenDiagnosticMessageText(diagnostic.messageText, '\n'),
+        ),
+      ).toEqual([]);
+    },
+    30000,
+  );
 });
 
-describe('client transformer plugin', () => {
-  it('injects clientSdkfetch and re-wires ClientOptions when no namespace is provided', () => {
-    const configObject = ts.factory.createObjectLiteralExpression([
-      ts.factory.createPropertyAssignment('baseUrl', ts.factory.createStringLiteral('https://api')),
-    ]);
-    const createConfigCall = ts.factory.createCallExpression(
-      ts.factory.createIdentifier('createConfig'),
-      undefined,
-      [configObject],
+describe('namespace renderer', () => {
+  it('preserves renamed imports and file-level imports', () => {
+    const sdk = namespaceSource(
+      "import type { ClientOptions as Options } from './types.gen'; export type Config = Options;",
+      'Skills',
+      false,
     );
-    const initializer = ts.factory.createCallExpression(
-      ts.factory.createIdentifier('createClient'),
-      undefined,
-      [createConfigCall],
+    expect(sdk).toContain('type Options = Skills.ClientOptions');
+    const types = namespaceSource(
+      "import type { External } from 'external'; export type Widget = External;",
+      'Skills',
+      true,
     );
-    const declaration = ts.factory.createVariableDeclaration(
-      'client',
-      undefined,
-      undefined,
-      initializer,
-    );
-    const declarationList = ts.factory.createVariableDeclarationList(
-      [declaration],
-      ts.NodeFlags.Const,
-    );
-    const clientStatement = ts.factory.createVariableStatement(undefined, declarationList);
-
-    const clientImports = new Map<string, Map<string, unknown>>([
-      ['./types.gen', new Map<string, unknown>([['ClientOptions', {}]])],
-    ]);
-
-    const clientFile = new MockFile([clientStatement], clientImports);
-
-    const context: any = {
-      files: {
-        client: clientFile,
-      },
-      subscribe: () => undefined,
-    };
-
-    clientTransformerHandler({
-      context,
-      plugin: {
-        name: '@sitecore-marketplace/client-transformer',
-        output: 'client',
-      },
-    } as any);
-
-    const updatedStatement = clientFile._items[clientFile._items.length - 1] as ts.VariableStatement;
-    const updatedDeclaration = updatedStatement.declarationList.declarations[0];
-    const updatedInitializer = updatedDeclaration.initializer as ts.CallExpression;
-    const updatedCreateConfigCall = updatedInitializer.arguments[0] as ts.CallExpression;
-    const updatedConfigObject = updatedCreateConfigCall.arguments[0] as ts.ObjectLiteralExpression;
-
-    const fetchProperty = updatedConfigObject.properties.find(
-      (property) =>
-        ts.isPropertyAssignment(property) &&
-        ts.isIdentifier(property.name) &&
-        property.name.text === 'fetch',
-    ) as ts.PropertyAssignment;
-
-    expect(fetchProperty).toBeDefined();
-    expect(ts.isIdentifier(fetchProperty.initializer)).toBe(true);
-    expect((fetchProperty.initializer as ts.Identifier).text).toBe('clientSdkfetch');
-
-    const importsMap = clientFile._imports.get('./types.gen');
-    expect(importsMap?.has('ClientOptions')).toBe(true);
-
-    const sdkFetchImport = clientFile.importCalls.find(
-      (entry) => entry.module === '../client-sdk-fetch' && entry.name === 'clientSdkfetch',
-    );
-    expect(sdkFetchImport).toBeDefined();
+    expect(types.indexOf('import type')).toBeLessThan(types.indexOf('export namespace'));
+    expect(types).toContain('export type Widget = External');
   });
 });

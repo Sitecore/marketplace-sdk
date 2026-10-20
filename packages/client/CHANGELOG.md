@@ -1,5 +1,11 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.4.1
+
+### Patch Changes
+
+- ab11188: Remove unused dependencies, including the unused `uuid` runtime dependency.
+
 ## 0.4.0
 
 ### Minor Changes

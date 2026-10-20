@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.3
+
+### Patch Changes
+
+- 46b824f: Remove the deprecated `@hey-api/client-fetch` dependency and regenerate API clients with `@hey-api/openapi-ts` 0.99. The HTTP client is now bundled; request and response types and runtime behaviour are unchanged.
+- Updated dependencies [ab11188]
+  - @sitecore-marketplace-sdk/client@0.4.1
+
 ## 0.1.2
 
 ### Patch Changes
