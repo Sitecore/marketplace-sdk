@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { handler as schemaPatcherHandler } from '../schema-patcher/plugin';
+import skillsSpec from '../../../ai/schema/skills.json';
 
 // ─── Plugin handler tests (IR-level) ─────────────────────────────────────────
 
@@ -239,6 +240,138 @@ describe('schema patcher plugin - x-sc-sdk directives', () => {
 
     expect(ir.paths['/api/data'].get.parameters.query.sitecoreContextId).toBeDefined();
     expect(ir.paths['/api/data'].post).toBeUndefined();
+  });
+
+  // ── component pruning for excluded operations ──
+
+  describe('component pruning', () => {
+    const ref = (name: string) => ({ $ref: `#/components/schemas/${name}` });
+    const jsonBody = (name: string) => ({
+      requestBody: { content: { 'application/json': { schema: ref(name) } } },
+    });
+    const errorResponse = {
+      responses: { '422': { content: { 'application/json': { schema: ref('HTTPValidationError') } } } },
+    };
+
+    function makeComponentsSpec(paths: Record<string, any>) {
+      return {
+        ...makeSpec(paths),
+        components: {
+          schemas: {
+            KeptRequest: { type: 'object', properties: { shared: ref('SharedModel') } },
+            ExcludedRequest: {
+              type: 'object',
+              properties: { shared: ref('SharedModel'), only: ref('ExcludedOnlyModel') },
+            },
+            SharedModel: { type: 'object' },
+            ExcludedOnlyModel: { type: 'object', properties: { nested: ref('ExcludedNested') } },
+            ExcludedNested: { type: 'string' },
+            HTTPValidationError: { type: 'object' },
+            Standalone: { type: 'string' },
+          },
+        },
+      };
+    }
+
+    function makeComponentsIR(spec: any) {
+      const paths: Record<string, any> = {};
+      for (const [path, item] of Object.entries<any>(spec.paths)) {
+        paths[path] = {};
+        for (const method of ['get', 'post']) {
+          if (item[method]) paths[path][method] = { id: item[method].operationId, parameters: {} };
+        }
+      }
+      return {
+        ...makeIR(paths),
+        components: { schemas: structuredClone(spec.components.schemas) },
+      };
+    }
+
+    it('removes schemas only referenced by generate:false operations (transitively)', () => {
+      const spec = makeComponentsSpec({
+        '/kept': {
+          post: { operationId: 'kept', ...jsonBody('KeptRequest'), ...errorResponse },
+        },
+        '/excluded': {
+          post: {
+            operationId: 'excluded',
+            'x-sc-sdk': { generate: false },
+            ...jsonBody('ExcludedRequest'),
+            ...errorResponse,
+          },
+        },
+      });
+      const ir = makeComponentsIR(spec);
+
+      runHandler(ir, spec);
+
+      expect(Object.keys(ir.components.schemas).sort()).toEqual(
+        ['HTTPValidationError', 'KeptRequest', 'SharedModel', 'Standalone'].sort(),
+      );
+    });
+
+    it('removes schemas of operations excluded by path-level generate:false', () => {
+      const spec = makeComponentsSpec({
+        '/kept': { post: { operationId: 'kept', ...jsonBody('KeptRequest') } },
+        '/excluded': {
+          'x-sc-sdk': { generate: false },
+          post: { operationId: 'excluded', ...jsonBody('ExcludedRequest') },
+        },
+      });
+      const ir = makeComponentsIR(spec);
+
+      runHandler(ir, spec);
+
+      expect(ir.components.schemas.ExcludedRequest).toBeUndefined();
+      expect(ir.components.schemas.ExcludedOnlyModel).toBeUndefined();
+      expect(ir.components.schemas.ExcludedNested).toBeUndefined();
+      expect(ir.components.schemas.SharedModel).toBeDefined();
+    });
+
+    it('keeps schemas of an operation that overrides path-level generate:false', () => {
+      const spec = makeComponentsSpec({
+        '/mixed': {
+          'x-sc-sdk': { generate: false },
+          get: { operationId: 'mixedGet', 'x-sc-sdk': { generate: true }, ...jsonBody('ExcludedRequest') },
+          post: { operationId: 'mixedPost', ...jsonBody('KeptRequest') },
+        },
+      });
+      const ir = makeComponentsIR(spec);
+
+      runHandler(ir, spec);
+
+      expect(ir.components.schemas.ExcludedRequest).toBeDefined();
+      expect(ir.components.schemas.ExcludedNested).toBeDefined();
+      expect(ir.components.schemas.KeptRequest).toBeUndefined();
+      expect(ir.components.schemas.SharedModel).toBeDefined();
+    });
+
+    it('leaves components untouched when no operation is excluded', () => {
+      const spec = makeComponentsSpec({
+        '/kept': { post: { operationId: 'kept', ...jsonBody('KeptRequest') } },
+        '/other': { post: { operationId: 'other', ...jsonBody('ExcludedRequest') } },
+      });
+      const ir = makeComponentsIR(spec);
+      const before = Object.keys(ir.components.schemas);
+
+      runHandler(ir, spec);
+
+      expect(Object.keys(ir.components.schemas)).toEqual(before);
+    });
+
+    it('drops DeepResearch and Embeddings types from the AI skills schema', () => {
+      const spec = structuredClone(skillsSpec) as any;
+      const ir = makeComponentsIR(spec);
+
+      runHandler(ir, spec);
+
+      expect(Object.keys(ir.paths)).toEqual(['/api/skills/v1/brandreview/generate']);
+      const schemas = Object.keys(ir.components.schemas);
+      expect(schemas).not.toContain('DeepResearchRequest');
+      expect(schemas).not.toContain('GenerateEmbeddingsModelRequest');
+      expect(schemas).toContain('GenerateBrandReviewModelRequest');
+      expect(schemas).toContain('HTTPValidationError');
+    });
   });
 });
 

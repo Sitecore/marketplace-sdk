@@ -4,16 +4,6 @@ export namespace Skills {
     baseUrl: 'https://example.com/stream/ai-skills-api/' | (string & {});
   };
   /**
-   * AddedContextModel
-   */
-  export type AddedContextModel = {
-    /**
-     * Data
-     */
-    data: string;
-    mimeType?: MimeType | null;
-  };
-  /**
    * AuthenticationType
    */
   export type AuthenticationType = {
@@ -31,43 +21,6 @@ export namespace Skills {
      * Custom header name for authentication
      */
     customHeaderName?: string | null;
-  };
-  /**
-   * ContentType
-   *
-   * Content type that determines the method for processing the data and creating embedding(s)
-   */
-  export const ContentType = {
-    GENERIC_IMAGE: 'GenericImage',
-    IMAGE_WITH_TEXT_OVERLAY: 'ImageWithTextOverlay',
-    TEXT_EMBEDDING_FOR_IMAGE_SEARCH: 'TextEmbeddingForImageSearch',
-    SHORT_TEXT: 'ShortText',
-    LONG_TEXT: 'LongText',
-    RICH_DOCUMENT: 'RichDocument',
-  } as const;
-  /**
-   * ContentType
-   *
-   * Content type that determines the method for processing the data and creating embedding(s)
-   */
-  export type ContentType = (typeof ContentType)[keyof typeof ContentType];
-  /**
-   * DeepResearchRequest
-   */
-  export type DeepResearchRequest = {
-    /**
-     * Prompt
-     */
-    prompt: string;
-    /**
-     * Brandkitid
-     */
-    brandkitId: string;
-    searchType?: SearchType;
-    /**
-     * Additionalcontext
-     */
-    additionalContext?: Array<AddedContextModel>;
   };
   /**
    * DocumentMimeType
@@ -122,35 +75,6 @@ export namespace Skills {
     auth?: AuthenticationType | null;
   };
   /**
-   * FieldReview
-   */
-  export type FieldReview = {
-    /**
-     * Fieldid
-     *
-     * Unique identifier for the field
-     */
-    fieldId: string;
-    /**
-     * Score
-     *
-     * Score from 1 to 5
-     */
-    score: number;
-    /**
-     * Reason
-     *
-     * Explanation for the score
-     */
-    reason: string;
-    /**
-     * Suggestion
-     *
-     * Recommendations for improvement
-     */
-    suggestion: string;
-  };
-  /**
    * GenerateBrandReviewModelRequest
    */
   export type GenerateBrandReviewModelRequest = {
@@ -181,32 +105,6 @@ export namespace Skills {
     sections?: Array<Section> | null;
   };
   /**
-   * GenerateBrandReviewModelResponse
-   */
-  export type GenerateBrandReviewModelResponse = {
-    /**
-     * Reviews
-     *
-     * List of section reviews with field-level details
-     */
-    reviews: Array<SectionReview>;
-  };
-  /**
-   * GenerateEmbeddingsModelRequest
-   */
-  export type GenerateEmbeddingsModelRequest = {
-    /**
-     * Input
-     *
-     * List of content items for vectorization
-     */
-    input: Array<InputItem>;
-    /**
-     * The global models field overrides the default Large Language Models (LLMs) defined for creating embeddings for specific content types
-     */
-    models?: LlmModel | null;
-  };
-  /**
    * HTTPValidationError
    */
   export type HttpValidationError = {
@@ -228,98 +126,6 @@ export namespace Skills {
    */
   export type ImageMimeType = (typeof ImageMimeType)[keyof typeof ImageMimeType];
   /**
-   * InputItem
-   */
-  export type InputItem = {
-    /**
-     * Name
-     *
-     * The name of the content item to create embedding for
-     */
-    name: string;
-    /**
-     * Data
-     *
-     * The content data - URL | base64 | raw text
-     */
-    data: string;
-    /**
-     * The type of the content to vectorize
-     */
-    contentType: ContentType;
-    /**
-     * Mimetype
-     *
-     * MIME type of the file
-     */
-    mimeType: DocumentMimeType | ImageMimeType;
-    /**
-     * The models field overrides the default models for the particular content item
-     */
-    models?: LlmModel | null;
-    /**
-     * Embedimg
-     *
-     * Specifies whether to generate embeddings for all content types. If false, image embeddings (and their mean‑pooled vector) are skipped
-     */
-    embedImg?: boolean;
-    /**
-     * Embedtext
-     *
-     * Specifies whether to generate embeddings for all content types. If false, text embeddings (and their mean‑pooled vector) are skipped
-     */
-    embedText?: boolean;
-    /**
-     * Chunksize
-     *
-     * The size of the text chunks to create embeddings for. If not provided, the default chunk size is used
-     */
-    chunkSize?: number | null;
-  };
-  /**
-   * LLMModel
-   *
-   * Custom LLM models in the requests that override the default LLM models.
-   */
-  export type LlmModel = {
-    /**
-     * Verbalization
-     */
-    verbalization?: string | null;
-    /**
-     * Text Embedding
-     */
-    text_embedding?: string | null;
-    /**
-     * Image Embedding
-     */
-    image_embedding?: string | null;
-    /**
-     * Dimensions
-     */
-    dimensions?: number | null;
-  };
-  /**
-   * MimeType
-   */
-  export const MimeType = {
-    IMAGE_JPEG: 'image/jpeg',
-    IMAGE_PNG: 'image/png',
-    APPLICATION_PDF: 'application/pdf',
-  } as const;
-  /**
-   * MimeType
-   */
-  export type MimeType = (typeof MimeType)[keyof typeof MimeType];
-  /**
-   * SearchType
-   */
-  export const SearchType = { WEB: 'web', KNOWLEDGE: 'knowledge' } as const;
-  /**
-   * SearchType
-   */
-  export type SearchType = (typeof SearchType)[keyof typeof SearchType];
-  /**
    * Section
    */
   export type Section = {
@@ -331,41 +137,6 @@ export namespace Skills {
      * Fieldids
      */
     fieldIds?: Array<string> | null;
-  };
-  /**
-   * SectionReview
-   */
-  export type SectionReview = {
-    /**
-     * Sectionid
-     *
-     * Unique identifier for the section
-     */
-    sectionId: string;
-    /**
-     * Score
-     *
-     * Overall section score from 1 to 5
-     */
-    score: number;
-    /**
-     * Reason
-     *
-     * Summary reason for the section score
-     */
-    reason: string;
-    /**
-     * Suggestion
-     *
-     * High-level suggestions for the section
-     */
-    suggestion: string;
-    /**
-     * Fields
-     *
-     * Individual field reviews
-     */
-    fields: Array<FieldReview>;
   };
   /**
    * ValidationError
