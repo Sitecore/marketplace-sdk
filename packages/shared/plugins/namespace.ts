@@ -7,13 +7,17 @@ export function addTimeoutOption(source: string): string {
   const statements = file.statements.map((statement) => {
     if (!ts.isTypeAliasDeclaration(statement) || statement.name.text !== 'Options') return statement;
     found = true;
+    // Flatten into the existing intersection; nesting it makes the printer add parentheses.
+    const members = ts.isIntersectionTypeNode(statement.type)
+      ? [...statement.type.types]
+      : [statement.type];
     return ts.factory.updateTypeAliasDeclaration(
       statement,
       statement.modifiers,
       statement.name,
       statement.typeParameters,
       ts.factory.createIntersectionTypeNode([
-        statement.type,
+        ...members,
         ts.factory.createTypeLiteralNode([
           ts.factory.createPropertySignature(
             undefined,

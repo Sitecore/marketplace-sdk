@@ -222,6 +222,22 @@ describe('timeout options renderer', () => {
     expect(output).toContain('ClientOptions<TData, ThrowOnError>');
   });
 
+  it('extends an existing intersection without adding parentheses', () => {
+    const intersection =
+      'export type Options<TData> = Base<TData> & { client?: Client; meta?: Record<string, unknown> };';
+    const output = addTimeoutOption(intersection);
+    expect(output).not.toMatch(/=\s*\(/);
+    expect(output).not.toContain(') &');
+    expect(output.match(/&/g)).toHaveLength(2);
+    expect(output).toContain('timeoutMs?: number');
+  });
+
+  it('extends a non-intersection Options type', () => {
+    const output = addTimeoutOption('export type Options<TData> = Base<TData>;');
+    expect(output).toContain('Base<TData> & {');
+    expect(output).toContain('timeoutMs?: number');
+  });
+
   it('leaves files without an Options type unchanged', () => {
     const source = 'export type Widget = { name: string };';
     expect(addTimeoutOption(source)).toBe(source);
