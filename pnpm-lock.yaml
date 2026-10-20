@@ -93,8 +93,8 @@ importers:
         specifier: ^12.1.2
         version: 12.3.0(rollup@4.62.4)(tslib@2.8.1)(typescript@5.9.3)
       '@sitecore-marketplace-sdk/client':
-        specifier: '*'
-        version: 0.4.0
+        specifier: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6
+        version: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6
       '@types/node':
         specifier: '>=20.19.0'
         version: 26.1.2
@@ -242,8 +242,8 @@ importers:
         specifier: ^12.1.2
         version: 12.3.0(rollup@4.62.4)(tslib@2.8.1)(typescript@5.9.3)
       '@sitecore-marketplace-sdk/client':
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6
+        version: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6
       '@types/node':
         specifier: '>=20.19.0'
         version: 26.1.2
@@ -979,12 +979,14 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@sitecore-marketplace-sdk/client@0.4.0':
-    resolution: {integrity: sha512-UmC8i20tVRz5IQbkZ/vRdMppBFKTSFbphRt8NULZEoz/pyyKQUbEfdHNyEP9L90EoEqI6b2RRYslVZiSa42wow==}
+  '@sitecore-marketplace-sdk/client@https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6':
+    resolution: {tarball: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6}
+    version: 0.4.1
     engines: {node: '>=16'}
 
-  '@sitecore-marketplace-sdk/core@0.3.5':
-    resolution: {integrity: sha512-crMiQFK03ucnLeuug1TxfWaVfXNLFLqWVy7WYHH3fvRLcuwVIXxuM4sP/DDDlOhjm9huJnk7xKaz0RhefT+tMw==}
+  '@sitecore-marketplace-sdk/core@https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@b55aba614f6630a8f2ff3c61ec1216545e318179':
+    resolution: {tarball: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@b55aba614f6630a8f2ff3c61ec1216545e318179}
+    version: 0.3.5
 
   '@sitecore-marketplace-sdk/core@https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@d4644d6':
     resolution: {tarball: https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@d4644d6}
@@ -2654,13 +2656,12 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@sitecore-marketplace-sdk/client@0.4.0':
+  '@sitecore-marketplace-sdk/client@https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6':
     dependencies:
-      '@sitecore-marketplace-sdk/core': 0.3.5
+      '@sitecore-marketplace-sdk/core': https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@b55aba614f6630a8f2ff3c61ec1216545e318179
       tslib: 2.8.1
-      uuid: 14.0.1
 
-  '@sitecore-marketplace-sdk/core@0.3.5':
+  '@sitecore-marketplace-sdk/core@https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/core@b55aba614f6630a8f2ff3c61ec1216545e318179':
     dependencies:
       tslib: 2.8.1
       uuid: 14.0.1
