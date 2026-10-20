@@ -1,13 +1,14 @@
 {
   "name": "@sitecore-marketplace-sdk/xmc",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "",
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/xmc/src/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "THIRD-PARTY-NOTICES.md"
   ],
   "scripts": {
     "test": "vitest",
@@ -35,9 +36,6 @@
     "sai",
     "sitecoreai"
   ],
-  "dependencies": {
-    "@hey-api/client-fetch": "0.8.3"
-  },
   "peerDependencies": {
     "@sitecore-marketplace-sdk/client": "^0.4.0"
   },

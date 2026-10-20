@@ -1,20 +1,18 @@
 import { createClient } from '@hey-api/openapi-ts';
+import { generatorOutput } from '../shared/generator-output';
+import { defineHttpClientConfig } from '../shared/plugins/http-client';
 import { defineSchemaPatcherConfig } from '../shared/plugins/schema-patcher';
 import { defineNamespaceTransformerConfig } from '../shared/plugins/namespace-transformer';
 
 async function generate() {
   await createClient({
-    input: 'https://ai-skills-api-euw.sitecorecloud.io/openapi.json',
-    output: {
-      format: 'prettier',
-      lint: 'eslint',
-      path: './src/experimental/client-skills',
-    },
+    input: './schema/skills.json',
+    output: generatorOutput('./src/experimental/client-skills'),
     plugins: [
       defineSchemaPatcherConfig({
         basePath: '/stream/ai-skills-api/',
       }),
-      '@hey-api/client-fetch',
+      defineHttpClientConfig(),
       '@hey-api/schemas',
       '@hey-api/sdk',
       {
@@ -23,7 +21,6 @@ async function generate() {
       },
       defineNamespaceTransformerConfig({
         namespace: 'experimental_Skills',
-        timeoutOptions: true,
       }),
     ],
   });

@@ -14,10 +14,10 @@ describe('schema patcher plugin - sitecoreContextId injection', () => {
   function runHandler(schema: any, spec?: any, pluginOverrides: Record<string, any> = {}) {
     const context: any = { ir: schema, spec };
     schemaPatcherHandler({
-      context,
       plugin: {
         name: '@sitecore-marketplace/schema-patcher',
-        ...pluginOverrides,
+        context,
+        config: pluginOverrides,
       },
     } as any);
     return schema;
@@ -81,10 +81,10 @@ describe('schema patcher plugin - x-sc-sdk directives', () => {
   function runHandler(ir: any, spec: any, pluginOverrides: Record<string, any> = {}) {
     const context: any = { ir, spec };
     schemaPatcherHandler({
-      context,
       plugin: {
         name: '@sitecore-marketplace/schema-patcher',
-        ...pluginOverrides,
+        context,
+        config: pluginOverrides,
       },
     } as any);
     return ir;
@@ -243,3 +243,71 @@ describe('schema patcher plugin - x-sc-sdk directives', () => {
 });
 
 
+describe('schema patcher plugin - property-less object types', () => {
+  function run(ir: any, spec: any) {
+    schemaPatcherHandler({
+      plugin: { name: '@sitecore-marketplace/schema-patcher', context: { ir, spec }, config: {} },
+    } as any);
+  }
+
+  const unknownMap = () => ({ type: 'object', additionalProperties: { type: 'unknown' } });
+
+  it('keeps additionalProperties: {} objects as {} in request bodies and components', () => {
+    const ir: any = {
+      paths: {
+        '/graphql': {
+          post: {
+            id: 'graphql',
+            parameters: {},
+            body: {
+              mediaType: 'application/json',
+              schema: {
+                type: 'object',
+                properties: { variables: unknownMap(), data: unknownMap() },
+              },
+            },
+          },
+        },
+      },
+      components: {
+        schemas: { Request: { type: 'object', properties: { variables: unknownMap() } } },
+      },
+    };
+    const spec = {
+      paths: {
+        '/graphql': {
+          post: {
+            requestBody: {
+              content: {
+                'application/json': {
+                  schema: {
+                    type: 'object',
+                    properties: {
+                      variables: { type: 'object', additionalProperties: {} },
+                      data: { type: 'object', additionalProperties: true },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      components: {
+        schemas: {
+          Request: {
+            type: 'object',
+            properties: { variables: { type: 'object', additionalProperties: {} } },
+          },
+        },
+      },
+    };
+
+    run(ir, spec);
+
+    const body = ir.paths['/graphql'].post.body.schema;
+    expect(body.properties.variables).toEqual({ type: 'object' });
+    expect(body.properties.data).toEqual(unknownMap());
+    expect(ir.components.schemas.Request.properties.variables).toEqual({ type: 'object' });
+  });
+});

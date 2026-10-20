@@ -2,9 +2,9 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { createCustomClients, createApiProxy } from '../client-factory';
 import type { ApiConfig } from '../types';
 
-// Mock @hey-api/client-fetch
-vi.mock('@hey-api/client-fetch', () => ({
-  createClient: vi.fn(() => ({ post: vi.fn(), get: vi.fn(), getConfig: () => ({}) })),
+// Mock the HTTP client
+vi.mock('../http', () => ({
+  createClient: vi.fn(() => ({ post: vi.fn(), get: vi.fn() })),
   createConfig: vi.fn((config: any) => config),
 }));
 

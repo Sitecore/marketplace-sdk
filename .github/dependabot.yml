@@ -24,6 +24,10 @@ updates:
     ignore:
       # Managed manually via changeset versioning
       - dependency-name: "@sitecore-marketplace-sdk/*"
+      # Exact-pinned: the custom generator plugins in packages/shared/plugins use
+      # generator internals (@hey-api/openapi-ts, @hey-api/shared), so upgrades
+      # need a manual migration (SBB-45474)
+      - dependency-name: "@hey-api/*"
 
   # GitHub Actions - security updates
   - package-ecosystem: "github-actions"

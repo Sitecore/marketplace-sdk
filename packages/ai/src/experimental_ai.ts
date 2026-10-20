@@ -15,7 +15,6 @@ type ApiType = 'skills';
 // Configuration type for experimental_AI
 export interface experimental_AIConfig {
   getAccessToken: () => Promise<string>;
-  timeout?: number;
 }
 
 // Helper function to create experimental_AI client asynchronously
@@ -48,6 +47,6 @@ export class experimental_AI {
     const customClients = createCustomClients(apiConfigs, config.getAccessToken, 'experimental_AI');
 
     // Create API proxies with separated methods and types
-    this.skills = createApiProxy('skills', apiConfigs, customClients, 'experimental_AI', undefined, config.timeout);
+    this.skills = createApiProxy('skills', apiConfigs, customClients, 'experimental_AI');
   }
 }

@@ -8,3 +8,14 @@ export const clientSdkfetch = async (input: globalThis.Request): Promise<Respons
   }
   return clientSdk['_fetch'](input);
 };
+
+/**
+ * Runtime config for the generated clients (`runtimeConfigPath`): send requests
+ * through the Marketplace host.
+ */
+export const createClientConfig = <T extends object>(
+  config: T,
+): T & { fetch: typeof clientSdkfetch } => ({
+  ...config,
+  fetch: clientSdkfetch,
+});

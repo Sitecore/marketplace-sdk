@@ -33,6 +33,7 @@
   "description": "Marketplace SDK",
   "devDependencies": {
     "@changesets/cli": "3.0.3",
+    "prettier": "3.9.6",
     "turbo": "^2.6.1",
     "typedoc": "^0.28.14",
     "typedoc-plugin-markdown": "^4.9.0",
