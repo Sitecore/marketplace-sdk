@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "dependencies": {
-    "@hey-api/client-fetch": "0.8.3"
-  },
   "devDependencies": {
-    "@hey-api/openapi-ts": "0.97.3",
+    "@hey-api/openapi-ts": "0.99.0",
+    "@hey-api/shared": "0.5.0",
     "typescript": "^5.9.2",
     "vitest": "^3.0.8"
   }

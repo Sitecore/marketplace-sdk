@@ -1,8 +1,8 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { experimental_XMC, type experimental_XMCConfig } from '../experimental_xmc';
 
-// Mock the @hey-api/client-fetch module
-vi.mock('@hey-api/client-fetch', () => ({
+// Mock the HTTP client
+vi.mock('../../../shared/src/http', () => ({
   createClient: vi.fn(() => ({})),
   createConfig: vi.fn(() => ({})),
 }));
