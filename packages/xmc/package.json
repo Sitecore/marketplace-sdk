@@ -44,7 +44,7 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^1.0.0",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@sitecore-marketplace-sdk/client": "https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@b55aba6",
+    "@sitecore-marketplace-sdk/client": "https://pkg.pr.new/Sitecore/marketplace-sdk/@sitecore-marketplace-sdk/client@524c8bf",
     "@types/node": "^20.17.19",
     "@vitest/coverage-v8": "^4.1.8",
     "prettier": "^3.5.1",
