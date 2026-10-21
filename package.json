@@ -37,7 +37,8 @@
     "turbo": "^2.6.1",
     "typedoc": "^0.28.14",
     "typedoc-plugin-markdown": "^4.9.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vite": "^8.2.4"
   },
   "packageManager": "pnpm@10.6.3"
 }
