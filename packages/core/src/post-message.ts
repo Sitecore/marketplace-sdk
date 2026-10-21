@@ -199,9 +199,10 @@ export class PostMessageBridge {
    * @param payload - Optional data to send with the request
    * @returns Promise that resolves with the response data
    */
-  async request<T, R>(action: string, payload?: T): Promise<R> {
+  async request<T, R>(action: string, payload?: T, options?: { timeoutMs?: number }): Promise<R> {
     this.ensureConnected();
 
+    const timeoutMs = options?.timeoutMs || this.config.timeout || DEFAULT_TIMEOUT;
     const id = this.generateId();
     const message: RequestMessage = {
       id,
@@ -224,12 +225,12 @@ export class PostMessageBridge {
           reject(
             this.formatError(
               CoreError.timeout(
-                `Request for action "${action}" timed out after ${this.config.timeout || DEFAULT_TIMEOUT} ms.`,
+                `Request for action "${action}" timed out after ${timeoutMs} ms.`,
               ),
             ),
           );
         }
-      }, this.config.timeout || DEFAULT_TIMEOUT);
+      }, timeoutMs);
 
       this.pendingRequests.set(id, { resolve, reject, timeout });
       this.postMessage(message);

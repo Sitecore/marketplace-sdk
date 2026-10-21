@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { createCustomClients, createApiProxy } from '../client-factory';
 import type { ApiConfig } from '../types';
 
@@ -33,6 +33,55 @@ describe('createApiProxy', () => {
 
   beforeEach(() => {
     vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('enforces default, global, and request-local deadlines independently', async () => {
+    vi.useFakeTimers();
+    const fetch = vi.fn((request: Request) => new Promise<Response>((_resolve, reject) => {
+      request.signal.addEventListener('abort', () => reject(request.signal.reason), { once: true });
+    }));
+    const method = vi.fn((options: any) => options.fetch(new Request('https://example.com', { signal: options.signal })));
+    const configs = { api: { baseUrl: 'https://example.com', sdk: { method }, name: 'API' } };
+    const clients = createCustomClients(configs, mockGetAccessToken, 'test');
+    const globalProxy = createApiProxy('api', configs, clients, 'test', undefined, 1000);
+    const defaultProxy = createApiProxy('api', configs, clients, 'test');
+    const short = globalProxy.method({ fetch, timeoutMs: 100 }).catch((error: Error) => error);
+    const global = globalProxy.method({ fetch }).catch((error: Error) => error);
+    const defaultRequest = defaultProxy.method({ fetch }).catch((error: Error) => error);
+    await vi.advanceTimersByTimeAsync(100);
+    expect(await short).toMatchObject({ name: 'TimeoutError' });
+    expect(fetch.mock.calls[1][0].signal.aborted).toBe(false);
+    expect(method.mock.calls[0][0]).not.toHaveProperty('timeoutMs');
+    await vi.advanceTimersByTimeAsync(900);
+    expect(await global).toMatchObject({ name: 'TimeoutError' });
+    expect(fetch.mock.calls[2][0].signal.aborted).toBe(false);
+    await vi.advanceTimersByTimeAsync(29000);
+    expect(await defaultRequest).toMatchObject({ name: 'TimeoutError' });
+    expect(vi.getTimerCount()).toBe(0);
+  });
+
+  it('preserves caller cancellation and cleans up successful request timers', async () => {
+    vi.useFakeTimers();
+    const method = (options: any) => options.fetch(new Request('https://example.com', { signal: options.signal }));
+    const configs = { api: { baseUrl: 'https://example.com', sdk: { method }, name: 'API' } };
+    const clients = createCustomClients(configs, mockGetAccessToken, 'test');
+    const proxy = createApiProxy('api', configs, clients, 'test');
+    const controller = new AbortController();
+    const fetch = vi.fn((request: Request) => new Promise<Response>((_resolve, reject) => {
+      request.signal.addEventListener('abort', () => reject(request.signal.reason), { once: true });
+    }));
+    const result = proxy.method({ fetch, signal: controller.signal }).catch((error: Error) => error);
+    const reason = new Error('cancelled');
+    controller.abort(reason);
+    expect(await result).toBe(reason);
+    expect(vi.getTimerCount()).toBe(0);
+    const response = new Response('ok');
+    expect(await proxy.method({ fetch: vi.fn().mockResolvedValue(response) })).toBe(response);
+    expect(vi.getTimerCount()).toBe(0);
   });
 
   it('should wrap SDK methods with client and headers injection', () => {

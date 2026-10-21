@@ -43,6 +43,30 @@ describe('PostMessageBridge', () => {
     await new Promise((resolve) => setTimeout(resolve, 0));
   };
 
+  test('uses request-local timeouts without changing the global timeout', async () => {
+    vi.useFakeTimers();
+    bridge.initialize({
+      type: 'host',
+      targetOrigin: mockTargetOrigin,
+      selfOrigin: testSelfOrigin,
+      version: '1.0.0',
+    });
+    bridge['connected'] = true;
+    try {
+      const shortRequest = bridge.request('short', undefined, { timeoutMs: 100 }).catch(error => error);
+      const defaultRequest = bridge.request('default').catch(error => error);
+      await vi.advanceTimersByTimeAsync(100);
+      expect(await shortRequest).toMatchObject({ code: 'TIMEOUT' });
+      expect(bridge['pendingRequests'].size).toBe(1);
+      expect(bridge['config'].timeout).toBe(5000);
+      await vi.advanceTimersByTimeAsync(4900);
+      expect(await defaultRequest).toMatchObject({ code: 'TIMEOUT' });
+      expect(bridge['pendingRequests'].size).toBe(0);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
   describe('initialization', () => {
     test('marks host as initialized without handshake', async () => {
       bridge.initialize({

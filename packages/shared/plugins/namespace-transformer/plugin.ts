@@ -3,5 +3,7 @@ import type { Config } from './types';
 import { wrapTypesInNamespace } from '../namespace';
 
 export const handler: DefinePlugin<Config>['Handler'] = ({ plugin }) => {
-  wrapTypesInNamespace(plugin, plugin.config.namespace);
+  wrapTypesInNamespace(plugin, plugin.config.namespace, {
+    timeoutOptions: plugin.config.timeoutOptions,
+  });
 };

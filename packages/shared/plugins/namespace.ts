@@ -1,6 +1,38 @@
 import type { PluginInstance } from '@hey-api/openapi-ts';
 import ts from 'typescript';
 
+export function addTimeoutOption(source: string): string {
+  const file = ts.createSourceFile('generated.ts', source, ts.ScriptTarget.Latest, true);
+  let found = false;
+  const statements = file.statements.map((statement) => {
+    if (!ts.isTypeAliasDeclaration(statement) || statement.name.text !== 'Options') return statement;
+    found = true;
+    // Flatten into the existing intersection; nesting it makes the printer add parentheses.
+    const members = ts.isIntersectionTypeNode(statement.type)
+      ? [...statement.type.types]
+      : [statement.type];
+    return ts.factory.updateTypeAliasDeclaration(
+      statement,
+      statement.modifiers,
+      statement.name,
+      statement.typeParameters,
+      ts.factory.createIntersectionTypeNode([
+        ...members,
+        ts.factory.createTypeLiteralNode([
+          ts.factory.createPropertySignature(
+            undefined,
+            'timeoutMs',
+            ts.factory.createToken(ts.SyntaxKind.QuestionToken),
+            ts.factory.createKeywordTypeNode(ts.SyntaxKind.NumberKeyword),
+          ),
+        ]),
+      ]),
+    );
+  });
+  if (!found) return source;
+  return ts.createPrinter().printFile(ts.factory.updateSourceFile(file, statements));
+}
+
 export function namespaceSource(source: string, namespace: string, isTypesFile: boolean): string {
   const file = ts.createSourceFile('generated.ts', source, ts.ScriptTarget.Latest, true);
   let statements: ts.Statement[];
@@ -89,8 +121,12 @@ export function namespaceSource(source: string, namespace: string, isTypesFile: 
   return ts.createPrinter().printFile(ts.factory.updateSourceFile(file, statements));
 }
 
-export function wrapTypesInNamespace(plugin: PluginInstance, namespace: string): void {
-  if (!namespace) return;
+export function wrapTypesInNamespace(
+  plugin: PluginInstance,
+  namespace: string,
+  options: { timeoutOptions?: boolean } = {},
+): void {
+  if (!namespace && !options.timeoutOptions) return;
 
   // Namespace transformers are finalizers: plan symbols before adapting the file renderers.
   const project = plugin.context.gen;
@@ -103,10 +139,14 @@ export function wrapTypesInNamespace(plugin: PluginInstance, namespace: string):
     foundTypes ||= isTypesFile;
     file.setRenderer({
       supports: (context) => renderer.supports(context),
-      render: (context) => namespaceSource(renderer.render(context), namespace, isTypesFile),
+      render: (context) => {
+        let source = renderer.render(context);
+        if (options.timeoutOptions && !isTypesFile) source = addTimeoutOption(source);
+        return namespace ? namespaceSource(source, namespace, isTypesFile) : source;
+      },
     });
   }
-  if (!foundTypes) {
+  if (namespace && !foundTypes) {
     throw new Error('No generated TypeScript types found to namespace');
   }
 }

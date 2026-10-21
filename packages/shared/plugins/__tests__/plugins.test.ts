@@ -12,7 +12,7 @@ import {
 import { defineHttpClientConfig } from '../http-client';
 import { defaultSchemaPatcherConfig, defineSchemaPatcherConfig } from '../schema-patcher';
 import { resolveHttpClientModule } from '../../generator-output';
-import { namespaceSource } from '../namespace';
+import { addTimeoutOption, namespaceSource } from '../namespace';
 
 const temporaryDirectories: string[] = [];
 
@@ -109,9 +109,16 @@ describe('actual Hey API generation', () => {
     { namespace: 'experimental_Skills', operationNamespace: 'ai.skills', experimental: true },
     { namespace: 'experimental_XmcTypes', operationNamespace: 'xmc.widgets', experimental: true },
     { namespace: '', operationNamespace: 'plain.widgets', experimental: false },
+    {
+      namespace: 'experimental_Skills',
+      operationNamespace: 'ai.skills',
+      experimental: true,
+      timeoutOptions: true,
+    },
+    { namespace: '', operationNamespace: 'plain.widgets', experimental: true, timeoutOptions: true },
   ])(
-    'generates and typechecks $namespace (experimental: $experimental)',
-    async ({ namespace, operationNamespace, experimental }) => {
+    'generates and typechecks $namespace (experimental: $experimental, timeoutOptions: $timeoutOptions)',
+    async ({ namespace, operationNamespace, experimental, timeoutOptions }) => {
       const root = mkdtempSync(join(tmpdir(), 'marketplace-generator-'));
       temporaryDirectories.push(root);
       const output = join(root, 'generated');
@@ -147,7 +154,7 @@ describe('actual Hey API generation', () => {
                 }),
               ]
             : []),
-          defineNamespaceTransformerConfig({ namespace }),
+          defineNamespaceTransformerConfig({ namespace, ...(timeoutOptions ? { timeoutOptions } : {}) }),
         ],
       });
 
@@ -160,6 +167,7 @@ describe('actual Hey API generation', () => {
       expect(sdk).toContain('export const includedOverride');
       expect(sdk).not.toContain('excludedOperation');
       expect(sdk).not.toContain('oldCreateName');
+      expect(sdk.includes('timeoutMs?: number')).toBe(Boolean(timeoutOptions));
       expect(types).toContain('sitecoreContextId?: string');
       expect(client).toContain('https://override.example.com/authoring');
       expect(client.includes("from '../client-sdk-fetch'")).toBe(!experimental);
@@ -201,6 +209,39 @@ describe('actual Hey API generation', () => {
     },
     30000,
   );
+});
+
+describe('timeout options renderer', () => {
+  const options =
+    'export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean> = ClientOptions<TData, ThrowOnError> & { client?: Client };';
+
+  it('adds timeoutMs while preserving generic parameters', () => {
+    const output = addTimeoutOption(options);
+    expect(output).toContain('timeoutMs?: number');
+    expect(output).toContain('ThrowOnError extends boolean = boolean');
+    expect(output).toContain('ClientOptions<TData, ThrowOnError>');
+  });
+
+  it('extends an existing intersection without adding parentheses', () => {
+    const intersection =
+      'export type Options<TData> = Base<TData> & { client?: Client; meta?: Record<string, unknown> };';
+    const output = addTimeoutOption(intersection);
+    expect(output).not.toMatch(/=\s*\(/);
+    expect(output).not.toContain(') &');
+    expect(output.match(/&/g)).toHaveLength(2);
+    expect(output).toContain('timeoutMs?: number');
+  });
+
+  it('extends a non-intersection Options type', () => {
+    const output = addTimeoutOption('export type Options<TData> = Base<TData>;');
+    expect(output).toContain('Base<TData> & {');
+    expect(output).toContain('timeoutMs?: number');
+  });
+
+  it('leaves files without an Options type unchanged', () => {
+    const source = 'export type Widget = { name: string };';
+    expect(addTimeoutOption(source)).toBe(source);
+  });
 });
 
 describe('namespace renderer', () => {
