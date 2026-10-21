@@ -1,5 +1,15 @@
 # @sitecore-marketplace-sdk/core
 
+## 0.4.0
+
+### Minor Changes
+
+- fb9da3e: Add an optional per-request timeout to the core bridge request
+
+### Patch Changes
+
+- f23c00d: fix vulnerability
+
 ## 0.3.5
 
 ### Patch Changes
