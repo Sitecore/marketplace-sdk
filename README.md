@@ -106,6 +106,47 @@ Here are the main monorepo commands defined in the root `package.json`:
   pnpm generate:client
   ```
 
+- **Generate module clients from OpenAPI schemas**
+  Generate the stable and experimental API clients (for example, `xmc` and `ai`) from their OpenAPI schemas:
+
+  ```bash
+  pnpm generate:module
+  pnpm generate:module:experimental
+  ```
+
+#### Controlling client generation with `x-sc-sdk`
+
+Module clients are generated from OpenAPI schemas by the shared `schema-patcher` plugin (`packages/shared/plugins/schema-patcher`). Add the `x-sc-sdk` vendor extension to a path or an operation in the schema to control what gets generated. The same rules apply to both stable and experimental clients.
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `generate` | `boolean` | Set to `false` to exclude the operation from the generated client. Defaults to `true`. |
+| `operationName` | `string` | Overrides the operation ID, which determines the generated function name. Operation level only. |
+
+Rules:
+
+- Operation-level `x-sc-sdk` overrides path-level `x-sc-sdk`. For example, `generate: true` on an operation keeps it even if its path has `generate: false`.
+- A path with no remaining operations is removed.
+- Component schemas that are only referenced (directly or transitively) by excluded operations are removed from the intermediate representation, so their TypeScript types are not emitted. Schemas still used by a generated operation are kept. Runtime definitions in `schemas.gen.ts` are not cleaned up by this step.
+- `x-sc-sdk` at the document root or on component schemas is ignored.
+
+```json
+"paths": {
+  "/api/skills/v1/brandreview/generate": {
+    "post": {
+      "operationId": "generate_brand_review_post",
+      "x-sc-sdk": { "generate": true, "operationName": "generateBrandReview" }
+    }
+  },
+  "/api/skills/v1/embeddings/generate": {
+    "post": {
+      "operationId": "generate_embeddings_post",
+      "x-sc-sdk": { "generate": false }
+    }
+  }
+}
+```
+
 #### Working with individual packages
 
 Each package is inside the `packages/` directory. For example, to work with the Core SDK:
