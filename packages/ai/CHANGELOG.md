@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4
+
+### Patch Changes
+
+- bb3a693: Remove unused AI types referenced only by operations excluded through `x-sc-sdk.generate: false` from both stable and experimental clients.
+
 ## 0.1.3
 
 ### Patch Changes
