@@ -3,6 +3,7 @@ export * from './types';
 export * from './errors';
 export * from './shared-types';
 export * from './constants';
+export * from './url-state';
 
 import { PostMessageBridge } from './post-message';
 import { CoreSDKConfig, HandshakeConfig } from './types';

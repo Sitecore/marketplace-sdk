@@ -497,15 +497,42 @@ export class PostMessageBridge {
         id: message.id,
         type: 'response',
         success: false,
-        error: {
-          code: ErrorCode.EXECUTION_ERROR,
-          message: err?.message || 'Error processing request',
-          details: err,
-        },
+        error: this.isCoreError(err)
+          ? {
+              code: err.code,
+              message: err.message || 'Error processing request',
+              details: this.publicDetails(err.details),
+            }
+          : {
+              code: ErrorCode.EXECUTION_ERROR,
+              message: err?.message || 'Error processing request',
+              details: err,
+            },
         timestamp: Date.now(),
       };
       this.postMessage(response);
     }
+  }
+
+  /**
+   * Matches CoreErrors from any bundled copy of core, not only this module's class.
+   */
+  private isCoreError(err: unknown): err is CoreError {
+    if (err instanceof CoreError) return true;
+    const candidate = err as Partial<CoreError> | null;
+    return (
+      candidate?.name === 'CoreError' &&
+      Object.values(ErrorCode).includes(candidate.code as ErrorCode)
+    );
+  }
+
+  /**
+   * Only a string `details.reason` crosses to the other window. Other details can hold data it
+   * must not see, such as request headers.
+   */
+  private publicDetails(details: unknown): { reason: string } | undefined {
+    const reason = (details as { reason?: unknown } | null)?.reason;
+    return typeof reason === 'string' ? { reason } : undefined;
   }
 
   /**

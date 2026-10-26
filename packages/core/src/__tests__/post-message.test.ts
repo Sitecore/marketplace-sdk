@@ -1,5 +1,5 @@
 import { PostMessageBridge } from '../post-message';
-import { CoreError } from '../errors';
+import { CoreError, ErrorCode } from '../errors';
 import type { HandshakeMessage } from '../types';
 import { afterEach, beforeEach, describe, expect, test, vi, Mock } from 'vitest';
 import { source } from './shared';
@@ -530,5 +530,87 @@ describe('PostMessageBridge', () => {
     //     );
     //   });
     // });
+  });
+
+  describe('request handler errors', () => {
+    const respondTo = async (handler: () => unknown) => {
+      bridge['requestHandlers'].set('testAction', handler);
+      await bridge['handleRequest']({
+        id: 'req-1',
+        type: 'request',
+        action: 'testAction',
+        payload: {},
+        timestamp: Date.now(),
+        source,
+      });
+      const calls = (mockTarget.postMessage as Mock).mock.calls;
+      return calls[calls.length - 1][0].error;
+    };
+
+    test('passes a CoreError code, message and details to the requester', async () => {
+      const error = await respondTo(() => {
+        throw new CoreError(ErrorCode.INVALID_REQUEST, 'State too large', {
+          reason: 'STATE_TOO_LARGE',
+        });
+      });
+
+      expect(error).toEqual({
+        code: ErrorCode.INVALID_REQUEST,
+        message: 'State too large',
+        details: { reason: 'STATE_TOO_LARGE' },
+      });
+    });
+
+    test('passes CoreErrors from another bundled copy of core', async () => {
+      class OtherCopyCoreError extends Error {
+        name = 'CoreError';
+        constructor(
+          public code: ErrorCode,
+          message: string,
+          public details?: unknown,
+        ) {
+          super(message);
+        }
+      }
+
+      const error = await respondTo(() => {
+        throw new OtherCopyCoreError(ErrorCode.INVALID_REQUEST, 'Full', {
+          reason: 'HOST_STATE_FULL',
+        });
+      });
+
+      expect(error).toEqual({
+        code: ErrorCode.INVALID_REQUEST,
+        message: 'Full',
+        details: { reason: 'HOST_STATE_FULL' },
+      });
+    });
+
+    test('passes only details.reason, never other details', async () => {
+      const withReason = await respondTo(() => {
+        throw new CoreError(ErrorCode.INVALID_REQUEST, 'Denied', {
+          reason: 'STATE_TOO_LARGE',
+          request: { headers: { Authorization: 'Bearer secret' } },
+        });
+      });
+      const withoutReason = await respondTo(() => {
+        throw new CoreError(ErrorCode.EXECUTION_ERROR, 'Failed', { token: 'secret' });
+      });
+
+      expect(withReason.details).toEqual({ reason: 'STATE_TOO_LARGE' });
+      expect(withoutReason).toEqual({
+        code: ErrorCode.EXECUTION_ERROR,
+        message: 'Failed',
+        details: undefined,
+      });
+    });
+
+    test('still wraps other errors as EXECUTION_ERROR', async () => {
+      const error = await respondTo(() => {
+        throw new Error('boom');
+      });
+
+      expect(error).toMatchObject({ code: ErrorCode.EXECUTION_ERROR, message: 'boom' });
+    });
   });
 });
