@@ -15,10 +15,16 @@
  */
 
 import {
+  CoreError,
   CoreSDK,
+  ErrorCode,
   ExternalUrlPayload,
   GenericRequestData,
   GenericResponseData,
+  JsonObject,
+  URL_STATE_ACTION,
+  UrlStateSetPayload,
+  encodeUrlState,
 } from '@sitecore-marketplace-sdk/core';
 import {
   ClientSDKConfig,
@@ -165,7 +171,39 @@ export class ClientSDK {
       }
     }
 
+    if (keyOrOperationKey === URL_STATE_ACTION) {
+      request = this.urlStateRequest(request);
+    }
+
     return { request, operation };
+  }
+
+  /**
+   * Checks the state before it's sent, so the app gets the same errors as from the host instead of
+   * a `DataCloneError`. Hosts without URL state support answer with no data, with a "No schema
+   * available" error or with METHOD_NOT_FOUND; all three become a clear "not supported" error.
+   */
+  private urlStateRequest<F extends (...args: any[]) => Promise<any>>(request: F): F {
+    const notSupported = () =>
+      new CoreError(ErrorCode.METHOD_NOT_FOUND, `${URL_STATE_ACTION} is not supported by this host`);
+    return (async (operation: string, params?: UrlStateSetPayload) => {
+      if (operation.endsWith(':mutation') && params?.state !== null) {
+        await encodeUrlState(params?.state as JsonObject);
+      }
+      let data: unknown;
+      try {
+        data = await request(operation, params);
+      } catch (error) {
+        const { code, message } = (error ?? {}) as Partial<CoreError>;
+        const unknownToHost =
+          code === ErrorCode.METHOD_NOT_FOUND ||
+          (code === ErrorCode.EXECUTION_ERROR &&
+            message?.includes(`No schema available for key: ${URL_STATE_ACTION}`));
+        throw unknownToHost ? notSupported() : error;
+      }
+      if (data === null || typeof data !== 'object') throw notSupported();
+      return data;
+    }) as F;
   }
 
   private registerHandlers(): void {

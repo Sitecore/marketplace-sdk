@@ -272,6 +272,31 @@ For an overview of all the possible values, refer to the [`MutationMap` interfac
 > [!NOTE]
 > Behind the scenes, the Host SDK (integrated via the internal `core` package) attaches the required user token and performs the HTTP request on behalf of the Marketplace app (the client).
 
+### Save view state in the URL
+
+Use `application.urlState` to save a small piece of view state (filters, selected item, tab) in the host's URL, so a reload or a shared link reopens your app in the same view. The host updates its URL without a reload or a new history entry, and keeps a separate state for each app instance.
+
+```typescript
+// Save, or pass `state: null` to clear
+await client.mutate('application.urlState', { params: { state: { tab: 'seo' } } });
+
+// Read: data.state, or null
+const { data } = await client.query('application.urlState');
+
+try {
+  await client.mutate('application.urlState', { params: { state } });
+} catch (error) {
+  const { details } = error as { details?: { reason?: string } };
+  if (details?.reason === 'STATE_TOO_LARGE') {
+    // Keep only IDs in the state and load the rest from your API.
+  }
+}
+```
+
+- The state must be a plain JSON object: up to 8 KB of JSON (1,024 characters encoded), nested at most 32 levels. Declare its type with `type`, not `interface`.
+- The state comes from a URL that anyone can edit, so validate it before using it, and never put secrets or personal data in it.
+- Saving fails with `INVALID_REQUEST` and a `details.reason` of `NOT_PLAIN_OBJECT`, `NOT_SERIALIZABLE`, `STATE_TOO_LARGE` or `HOST_STATE_FULL`, with `INVALID_STATE` when the host can't keep state for this app, and with `METHOD_NOT_FOUND` when the host doesn't support it.
+
 ## Documentation
 
 For more information, refer to the reference documentation in the `/docs` folder, and the official [Marketplace developer documentation](https://doc.sitecore.com/mp/en/developers/marketplace/introduction-to-sitecore-marketplace.html) and [Marketplace SDK documentation](https://doc.sitecore.com/mp/en/developers/sdk/latest/sitecore-marketplace-sdk/sitecore-marketplace-sdk-for-javascript.html).
