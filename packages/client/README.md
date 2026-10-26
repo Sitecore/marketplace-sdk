@@ -295,7 +295,8 @@ try {
 
 - The state must be a plain JSON object: up to 8 KB of JSON (1,024 characters encoded), nested at most 32 levels. Declare its type with `type`, not `interface`.
 - The state comes from a URL that anyone can edit, so validate it before using it, and never put secrets or personal data in it.
-- Saving fails with `INVALID_REQUEST` and a `details.reason` of `NOT_PLAIN_OBJECT`, `NOT_SERIALIZABLE`, `STATE_TOO_LARGE` or `HOST_STATE_FULL`, with `INVALID_STATE` when the host can't keep state for this app, and with `METHOD_NOT_FOUND` when the host doesn't support it.
+- The host's URL holds the state of every app instance on the page. When it's full, the host removes the state of other instances, starting with the least recently saved, so state saved earlier may be missing from a later link.
+- Saving fails with `INVALID_REQUEST` and a `details.reason` of `NOT_PLAIN_OBJECT`, `NOT_SERIALIZABLE` or `STATE_TOO_LARGE`, with `INVALID_STATE` when the host can't keep state for this app, and with `METHOD_NOT_FOUND` when the host doesn't support it.
 
 ## Documentation
 
