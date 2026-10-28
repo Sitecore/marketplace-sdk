@@ -47,6 +47,10 @@ import type {
   SubscribeMap,
 } from './sdk-types';
 
+/** A value as logged: URL state is never logged. */
+const loggable = (key: string, value: unknown) =>
+  key === URL_STATE_ACTION && value !== undefined ? '[redacted]' : value;
+
 export class ClientSDK {
   private stateManager: StateManager;
   private coreSdk: CoreSDK;
@@ -187,8 +191,12 @@ export class ClientSDK {
     const notSupported = () =>
       new CoreError(ErrorCode.METHOD_NOT_FOUND, `${URL_STATE_ACTION} is not supported by this host`);
     return (async (operation: string, params?: UrlStateSetPayload) => {
-      if (operation.endsWith(':mutation') && params?.state !== null) {
-        await encodeUrlState(params?.state as JsonObject);
+      if (operation.endsWith(':mutation')) {
+        if (params?.state !== null) await encodeUrlState(params?.state as JsonObject);
+        // Only the state is sent, as plain JSON: a Proxy such as a Vue `reactive` or a MobX
+        // object passes the check, but `postMessage` can't clone it.
+        const { state } = params!;
+        params = { state: state === null ? null : JSON.parse(JSON.stringify(state)) };
       }
       let data: unknown;
       try {
@@ -261,7 +269,11 @@ export class ClientSDK {
 
     const { subscribe, onSuccess, onError, params, timeoutMs } = queryOptions || {};
     const hashedKey = subscribe ? key : await this.generateKeyWithHash(key, queryOptions);
-    logger.debug(`Query (${key}) initiated with params:`, params, `timeoutMs: ${timeoutMs}`);
+    logger.debug(
+      `Query (${key}) initiated with params:`,
+      loggable(key, params),
+      `timeoutMs: ${timeoutMs}`,
+    );
 
     let unsubscribe: (() => void) | undefined;
     try {
@@ -272,7 +284,7 @@ export class ClientSDK {
       this.stateManager.updateQueryState(hashedKey, { status: 'loading' });
 
       const data = (await request(operation, params)) as QueryMap[K]['response'];
-      logger.info(`Query (${key}) success:`, data);
+      logger.info(`Query (${key}) success:`, loggable(key, data));
 
       this.stateManager.updateQueryState(hashedKey, {
         status: 'success',
@@ -382,11 +394,15 @@ export class ClientSDK {
   ): Promise<MutationMap[K]['response']> {
     const { request, operation } = this.resolveOperation(key as string, 'mutation');
     const { onSuccess, onError, params, timeoutMs } = mutationOptions || {};
-    logger.debug(`Mutation (${key}) initiated with params:`, params, `timeoutMs: ${timeoutMs}`);
+    logger.debug(
+      `Mutation (${key}) initiated with params:`,
+      loggable(key, params),
+      `timeoutMs: ${timeoutMs}`,
+    );
 
     try {
       const data = (await request(operation, params)) as MutationMap[K]['response'];
-      logger.info(`Mutation (${key}) success:`, data);
+      logger.info(`Mutation (${key}) success:`, loggable(key, data));
       onSuccess?.(data);
       return data;
     } catch (error) {

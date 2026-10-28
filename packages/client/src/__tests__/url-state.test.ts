@@ -1,6 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { CoreError, ErrorCode } from '@sitecore-marketplace-sdk/core';
 import { ClientSDK } from '../client';
+import { logger } from '../logger';
+import * as clientExports from '../index';
 
 vi.mock('../logger');
 
@@ -97,5 +99,50 @@ describe('application.urlState', () => {
     request.mockResolvedValue(undefined);
 
     await expect(client.mutate('pages.reloadCanvas')).resolves.toBeUndefined();
+  });
+
+  it('sends a Proxy state, such as a Vue reactive object, as plain JSON', async () => {
+    request.mockResolvedValue({ ok: true });
+    const reactive = new Proxy({ tab: 'seo', filters: { range: '7d' } }, {});
+    expect(() => structuredClone(reactive)).toThrow();
+
+    await client.mutate('application.urlState', { params: { state: reactive } });
+
+    const [, sent] = request.mock.calls[0];
+    expect(sent).toEqual({ state: { tab: 'seo', filters: { range: '7d' } } });
+    expect(() => structuredClone(sent)).not.toThrow();
+  });
+
+  it('sends only the state, without other params', async () => {
+    request.mockResolvedValue({ ok: true });
+    const params = { state: { tab: 'seo' }, extra: 'dropped' };
+
+    await client.mutate('application.urlState', { params: params as never });
+    await client.mutate('application.urlState', { params: { state: null } });
+
+    expect(request.mock.calls[0][1]).toStrictEqual({ state: { tab: 'seo' } });
+    expect(request.mock.calls[1][1]).toStrictEqual({ state: null });
+  });
+
+  it('never logs the state', async () => {
+    request
+      .mockResolvedValueOnce({ ok: true })
+      .mockResolvedValueOnce({ state: { secret: 'read' } });
+
+    await client.mutate('application.urlState', { params: { state: { secret: 'saved' } } });
+    await client.query('application.urlState');
+
+    const logged = JSON.stringify([
+      vi.mocked(logger.debug).mock.calls,
+      vi.mocked(logger.info).mock.calls,
+    ]);
+    expect(logged).not.toContain('secret');
+    expect(logged).toContain('[redacted]');
+  });
+
+  it('exports the error and URL state helpers apps need', () => {
+    expect(clientExports.CoreError).toBe(CoreError);
+    expect(clientExports.ErrorCode).toBe(ErrorCode);
+    expect(clientExports.UrlStateErrorReason.STATE_TOO_LARGE).toBe('STATE_TOO_LARGE');
   });
 });
