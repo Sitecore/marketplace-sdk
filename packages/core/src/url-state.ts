@@ -16,7 +16,8 @@ import { CoreError, ErrorCode } from './errors';
  */
 
 export type JsonPrimitive = string | number | boolean | null;
-export type JsonValue = JsonPrimitive | JsonValue[] | JsonObject;
+/** `readonly` arrays are accepted too, so `as const` values and frozen stores can be saved. */
+export type JsonValue = JsonPrimitive | JsonValue[] | readonly JsonValue[] | JsonObject;
 export type JsonObject = { [key: string]: JsonValue };
 
 /** Payload of the `application.urlState` mutation. `state: null` clears the state. */
@@ -140,6 +141,16 @@ export async function encodeHostUrlState(map: HostUrlStateMap): Promise<string> 
     URL_STATE_MAX_HOST_JSON,
     UrlStateErrorReason.HOST_STATE_FULL,
   );
+  for (const [appId, instances] of Object.entries(map.apps)) {
+    for (const [instanceKey, state] of Object.entries(instances)) {
+      if (!fitsSlice(state)) {
+        fail(
+          UrlStateErrorReason.STATE_TOO_LARGE,
+          `URL state of ${appId} (${instanceKey}) is over ${URL_STATE_MAX_SLICE_JSON} bytes of JSON.`,
+        );
+      }
+    }
+  }
   return encode(
     value,
     URL_STATE_MAX_HOST_JSON,
@@ -149,9 +160,9 @@ export async function encodeHostUrlState(map: HostUrlStateMap): Promise<string> 
 }
 
 /**
- * Decodes the host map. Never throws.
- * @returns The map, or `null` for missing, malformed, oversized or tampered input, including a
- * state that its app couldn't have saved (over the per-instance limits)
+ * Decodes the host map. Never throws. A state its app couldn't have saved (over the per-instance
+ * JSON limit) is left out; the other states are kept.
+ * @returns The map, or `null` for missing, malformed, oversized or tampered input
  */
 export async function decodeHostUrlState(
   raw: string | null | undefined,
@@ -163,18 +174,26 @@ export async function decodeHostUrlState(
     URL_STATE_MAX_DEPTH + HOST_MAP_DEPTH,
   );
   if (!isHostMap(value)) return null;
-  try {
-    for (const instances of Object.values(value.apps)) {
-      for (const state of Object.values(instances)) await encodeUrlState(state);
-    }
-  } catch {
-    return null;
-  }
+  const apps = Object.entries(value.apps)
+    .map(([appId, instances]) => {
+      const kept = Object.entries(instances).filter(([, state]) => fitsSlice(state));
+      return [appId, Object.fromEntries(kept)] as const;
+    })
+    .filter(([, instances]) => Object.keys(instances).length > 0);
   return {
     org: value.org,
     ...(value.tenant !== undefined && { tenant: value.tenant }),
-    apps: value.apps,
+    apps: Object.fromEntries(apps),
   };
+}
+
+/**
+ * Whether a state in the host map is within the per-instance JSON limit. The encoded length isn't
+ * checked: it depends on the zlib build, so a state can encode to 1,022 chars in one browser and
+ * 1,042 in another. The host map's depth limit already caps each state's depth.
+ */
+function fitsSlice(state: JsonObject): boolean {
+  return new TextEncoder().encode(JSON.stringify(state)).byteLength <= URL_STATE_MAX_SLICE_JSON;
 }
 
 function fail(reason: UrlStateErrorReason, message: string): never {
@@ -200,8 +219,9 @@ function isHostMap(value: unknown): value is HostUrlStateMap {
 
 /**
  * Rejects anything that isn't plain JSON (`-0` is the one value JSON can't keep: it comes back as
- * `0`). Counts the JSON size while walking, so a small object graph that repeats references can't
- * expand into a huge JSON string.
+ * `0`). An object property set to `undefined` is allowed and left out, as `JSON.stringify` does;
+ * `undefined` in an array is refused. Counts the JSON size while walking, so a small object graph
+ * that repeats references can't expand into a huge JSON string.
  */
 function assertJson(
   root: object,
@@ -236,11 +256,13 @@ function assertJson(
         for (let i = 0; i < value.length; i++) visit(value[i], `${path}[${i}]`, depth + 1);
       } else {
         for (const key of Object.keys(value)) {
+          const child = (value as Record<string, unknown>)[key];
+          if (child === undefined) continue;
           if (UNSAFE_KEYS.has(key)) {
             fail(UrlStateErrorReason.NOT_SERIALIZABLE, `URL state can't use the key "${key}".`);
           }
           count(key.length + 3);
-          visit((value as Record<string, unknown>)[key], path ? `${path}.${key}` : key, depth + 1);
+          visit(child, path ? `${path}.${key}` : key, depth + 1);
         }
       }
       ancestors.delete(value);
