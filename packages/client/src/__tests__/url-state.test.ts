@@ -113,6 +113,16 @@ describe('application.urlState', () => {
     expect(() => structuredClone(sent)).not.toThrow();
   });
 
+  it('drops undefined properties, as JSON does', async () => {
+    request.mockResolvedValue({ ok: true });
+
+    await client.mutate('application.urlState', {
+      params: { state: { tab: 'seo', filter: undefined, nested: { page: 2, sort: undefined } } },
+    });
+
+    expect(request.mock.calls[0][1]).toStrictEqual({ state: { tab: 'seo', nested: { page: 2 } } });
+  });
+
   it('sends only the state, without other params', async () => {
     request.mockResolvedValue({ ok: true });
     const params = { state: { tab: 'seo' }, extra: 'dropped' };
