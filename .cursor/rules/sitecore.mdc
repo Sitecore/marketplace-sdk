@@ -1,0 +1,61 @@
+---
+description: Sitecore Marketplace SDK patterns for host-client transport, generated API modules, and Sitecore integrations
+alwaysApply: false
+globs:
+  - "packages/core/src/**"
+  - "packages/client/src/**"
+  - "packages/xmc/src/**"
+  - "packages/ai/src/**"
+  - "packages/shared/src/**"
+  - "packages/shared/plugins/**"
+  - "packages/xmc/generate-*.ts"
+  - "packages/ai/generate-*.ts"
+---
+
+# Sitecore Marketplace SDK Patterns
+
+## Architecture
+
+- `core` owns low-level postMessage communication, handshake, eventing, and origin validation.
+- `client` owns the higher-level Marketplace query, mutation, and subscription APIs.
+- `xmc` and `ai` extend `client` through generated module augmentations and SDK module wiring.
+- `shared` owns generator plugins and helper factories used by generated and experimental clients.
+
+## Where to Make Changes
+
+- If the problem is handshake or transport behavior, inspect `packages/core/src/**` first.
+- If the problem is query, mutation, subscription, or SDK state behavior, inspect `packages/client/src/**` first.
+- If the problem is generated operation names, namespaces, or schema patching, inspect `packages/shared/plugins/**` and the `generate-*.ts` files first.
+- If the problem only affects generated XMC or AI modules, prefer fixing generation inputs instead of editing `*.gen.ts` outputs.
+
+## Generated Module Rules
+
+- `packages/xmc/src/client-*/**` and `packages/ai/src/client-*/**` are generated surfaces.
+- Use generator configs and shared plugins as the durable source of truth.
+- Respect the namespace model used by augmentation files such as `xmc.pages.*`, `xmc.sites.*`, and `ai.skills.*`.
+- Keep hand-written module entry points small and focused on exports plus `createSDKModule` wiring.
+
+## Marketplace and Sitecore Integration Rules
+
+- Preserve the host/client separation. Do not mix postMessage transport concerns with direct HTTP client concerns unless required.
+- For iframe or host integration changes, keep origin validation and handshake behavior explicit.
+- For experimental direct clients, prefer shared helpers in `packages/shared/src/client-factory.ts` rather than duplicating auth or proxy logic.
+- Keep Marketplace-specific naming and behavior clear in docs and examples.
+
+## Documentation and Examples
+
+- Use real repo examples instead of generic starter app paths.
+- Good reference points:
+  - `packages/core/src/index.ts`
+  - `packages/client/src/client.ts`
+  - `packages/xmc/src/index.ts`
+  - `packages/ai/src/index.ts`
+  - `packages/xmc/generate-xmc.ts`
+  - `packages/ai/generate-ai.ts`
+
+## Safety Boundaries
+
+- Do not edit generated files just to change SDK behavior.
+- Do not edit `dist/**`.
+- Prefer editing source comments over generated docs when the public API description is wrong.
+- Be careful with changes that affect multiple packages or generated outputs; keep them deliberate and well-scoped.
