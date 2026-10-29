@@ -38,10 +38,12 @@ export interface GenericRequestData {
   headers?: Record<string, string>;
 
   /**
-   * The request body, which must be provided as an ArrayBuffer.
-   * This is typically used for sending binary data or serialized content.
+   * The request body as a Blob (preferred) or ArrayBuffer.
+   * Blob is preferred for large payloads over postMessage because structured
+   * clone can share underlying storage; ArrayBuffer is deep-copied unless transferred.
+   * ArrayBuffer remains accepted for backward compatibility with older hosts.
    */
-  body?: ArrayBuffer;
+  body?: Blob | ArrayBuffer;
 
   /**
    * Indicates whether authentication is required for the request.
@@ -54,13 +56,13 @@ export class GenericResponseData {
   status: number;
   statusText: string;
   headers: Record<string, string>;
-  body: ArrayBuffer;
+  body: Blob | ArrayBuffer;
 
   constructor(
     status: number,
     statusText: string,
     headers: Record<string, string>,
-    body: ArrayBuffer,
+    body: Blob | ArrayBuffer,
   ) {
     this.status = status;
     this.statusText = statusText;
@@ -80,28 +82,35 @@ export class GenericResponseData {
    * Parses the body of the response as a string.
    * @returns {Promise<string>} The parsed text.
    */
-  text(): Promise<string> {
-    return Promise.resolve(new TextDecoder().decode(this.body));
+  async text(): Promise<string> {
+    if (this.body instanceof Blob) {
+      return this.body.text();
+    }
+    return new TextDecoder().decode(this.body);
   }
 
   /**
    * Returns the body as an ArrayBuffer.
    * @returns {Promise<ArrayBuffer>} The raw binary data.
    */
-  arrayBuffer(): Promise<ArrayBuffer> {
-    return Promise.resolve(this.body);
+  async arrayBuffer(): Promise<ArrayBuffer> {
+    if (this.body instanceof Blob) {
+      return this.body.arrayBuffer();
+    }
+    return this.body;
   }
 
   /**
    * Returns the body as a Blob.
    * @returns {Promise<Blob>} The Blob representation of the response body.
    */
-  blob(): Promise<Blob> {
-    return Promise.resolve(
-      new Blob([this.body], {
-        type: this.headers['content-type'] || 'application/octet-stream',
-      }),
-    );
+  async blob(): Promise<Blob> {
+    if (this.body instanceof Blob) {
+      return this.body;
+    }
+    return new Blob([this.body], {
+      type: this.headers['content-type'] || 'application/octet-stream',
+    });
   }
 }
 
