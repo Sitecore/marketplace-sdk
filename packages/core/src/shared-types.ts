@@ -50,6 +50,13 @@ export interface GenericRequestData {
    * If true, the request will include authentication headers or tokens.
    */
   requiresAuth: boolean;
+
+  /**
+   * How the host should return the response body.
+   * Omitted or `'arrayBuffer'` keeps the historical behavior so older clients
+   * still receive an ArrayBuffer. `'blob'` opts in to a Blob response.
+   */
+  responseBodyType?: 'arrayBuffer' | 'blob';
 }
 
 export class GenericResponseData {

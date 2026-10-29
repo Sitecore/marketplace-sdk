@@ -433,6 +433,8 @@ export class ClientSDK {
       method,
       path,
       requiresAuth: true,
+      // Opt in so older hosts, and older clients talking to a new host, keep ArrayBuffer.
+      responseBodyType: 'blob',
     };
 
     return this.coreSdk

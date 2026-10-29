@@ -3,4 +3,4 @@
 "@sitecore-marketplace-sdk/client": minor
 ---
 
-Send and accept request/response bodies as `Blob` over the iframe `postMessage` bridge (with `ArrayBuffer` still accepted for compatibility). Client `_fetch` now uses `input.blob()` instead of `input.arrayBuffer()` to avoid full structured-clone copies of large payloads.
+Send request bodies as `Blob` over the iframe `postMessage` bridge, and accept either `Blob` or `ArrayBuffer` on the response. Client `_fetch` uses `input.blob()` and sets `responseBodyType: 'blob'` so a new host can return a Blob. Hosts that do not understand the flag, and clients that omit it, keep the ArrayBuffer response.
