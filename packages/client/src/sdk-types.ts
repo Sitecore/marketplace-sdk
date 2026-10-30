@@ -5,6 +5,7 @@ import {
   PagesContextParams,
   ContentLayoutUpdatedData,
   ContentFieldsUpdatedData,
+  CanvasSelectionData,
   UrlStateGetResponse,
   UrlStateSetPayload,
   UrlStateSetResponse
@@ -13,7 +14,9 @@ import {
 // Re-export event data types from core
 export type {
   ContentLayoutUpdatedData,
-  ContentFieldsUpdatedData
+  ContentFieldsUpdatedData,
+  CanvasSelection,
+  CanvasSelectionData
 } from '@sitecore-marketplace-sdk/core';
 
 // --- Host state types ---
@@ -283,6 +286,15 @@ export interface QueryMap {
     response: PagesContext;
     subscribe: true;
   };
+  /**
+   * Component selected in the Pages canvas; `selection` is `null` when nothing is selected.
+   * With `subscribe: true`, also receives every later selection change.
+   */
+  'pages.canvas.selection': {
+    params: void;
+    response: CanvasSelectionData;
+    subscribe: true;
+  };
   'application.context': {
     params: void;
     response: ApplicationContext;
@@ -336,6 +348,9 @@ export interface SubscribeMap {
   };
   'pages.content.fieldsUpdated': {
     data: ContentFieldsUpdatedData;
+  };
+  'pages.canvas.selectionChanged': {
+    data: CanvasSelectionData;
   };
 }
 

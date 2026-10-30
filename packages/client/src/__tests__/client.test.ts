@@ -280,6 +280,19 @@ describe('ClientSDK', () => {
     expect(result.data).toEqual(responseData);
   });
 
+  it('should query pages.canvas.selection and listen for changes on the same key', async () => {
+    client = await ClientSDK.init(config);
+    const current = { itemId: 'page-1', language: 'en', itemVersion: 1, selection: null };
+    const request = vi.spyOn(client['coreSdk'], 'request').mockResolvedValue(current);
+    const on = vi.spyOn(client['coreSdk'], 'on').mockReturnValue(vi.fn());
+    (StateManager.prototype.getSubscriptionCount as vi.Mock).mockReturnValue(1);
+
+    await client.query('pages.canvas.selection', { subscribe: true });
+
+    expect(request).toHaveBeenCalledWith('pages.canvas.selection:query', undefined);
+    expect(on).toHaveBeenCalledWith('pages.canvas.selection', expect.any(Function));
+  });
+
   it('should handle query error with correct state update and logging', async () => {
     const key = 'host.request';
     const options = { subscribe: true };
@@ -734,6 +747,38 @@ describe('ClientSDK', () => {
 
       expect(onData).toHaveBeenCalledWith(eventData);
       expect(logger.debug).toHaveBeenCalledWith(`Received event data for ${eventKey}:`, eventData);
+    });
+
+    it('should deliver pages.canvas.selectionChanged data, including deselection', () => {
+      client = new ClientSDK(config);
+      const eventKey = 'pages.canvas.selectionChanged';
+      let eventHandler: (data: any) => void;
+      const mockOn = vi.fn().mockImplementation((_key, handler) => {
+        eventHandler = handler;
+        return vi.fn();
+      });
+      client['coreSdk'] = { on: mockOn } as any;
+      const onData = vi.fn();
+
+      client.subscribe(eventKey, { onData });
+      const selected = {
+        itemId: 'page-1',
+        language: 'en',
+        itemVersion: 1,
+        selection: {
+          instanceId: 'inst-1',
+          renderingId: 'rend-1',
+          dataSourceId: 'ds-1',
+          placeholderKey: 'headless-main',
+        },
+      };
+      const deselected = { itemId: 'page-1', language: 'en', itemVersion: 1, selection: null };
+      eventHandler!(selected);
+      eventHandler!(deselected);
+
+      expect(mockOn).toHaveBeenCalledWith(eventKey, expect.any(Function));
+      expect(onData).toHaveBeenNthCalledWith(1, selected);
+      expect(onData).toHaveBeenNthCalledWith(2, deselected);
     });
 
     it('should call onError callback when error occurs in handler', () => {
