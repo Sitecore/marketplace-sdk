@@ -423,14 +423,18 @@ export class ClientSDK {
 
     const method = input.method || 'GET';
     const headers = input?.headers ? Object.fromEntries(new Headers(input.headers)) : undefined;
-    const body = await input.arrayBuffer();
+    // Prefer Blob over ArrayBuffer for iframe postMessage: structured clone of Blob
+    // typically shares underlying storage, while ArrayBuffer is fully copied.
+    const body = await input.blob();
 
     const genericRequest: GenericRequestData = {
-      body: body.byteLength > 0 ? body : undefined,
+      body: body.size > 0 ? body : undefined,
       headers,
       method,
       path,
       requiresAuth: true,
+      // Opt in so older hosts, and older clients talking to a new host, keep ArrayBuffer.
+      responseBodyType: 'blob',
     };
 
     return this.coreSdk
