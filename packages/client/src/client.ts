@@ -15,10 +15,16 @@
  */
 
 import {
+  CoreError,
   CoreSDK,
+  ErrorCode,
   ExternalUrlPayload,
   GenericRequestData,
   GenericResponseData,
+  JsonObject,
+  URL_STATE_ACTION,
+  UrlStateSetPayload,
+  encodeUrlState,
 } from '@sitecore-marketplace-sdk/core';
 import {
   ClientSDKConfig,
@@ -40,6 +46,10 @@ import type {
   SubscribeKey,
   SubscribeMap,
 } from './sdk-types';
+
+/** A value as logged: URL state is never logged. */
+const loggable = (key: string, value: unknown) =>
+  key === URL_STATE_ACTION && value !== undefined ? '[redacted]' : value;
 
 export class ClientSDK {
   private stateManager: StateManager;
@@ -165,7 +175,43 @@ export class ClientSDK {
       }
     }
 
+    if (keyOrOperationKey === URL_STATE_ACTION) {
+      request = this.urlStateRequest(request);
+    }
+
     return { request, operation };
+  }
+
+  /**
+   * Checks the state before it's sent, so the app gets the same errors as from the host instead of
+   * a `DataCloneError`. Hosts without URL state support answer with no data, with a "No schema
+   * available" error or with METHOD_NOT_FOUND; all three become a clear "not supported" error.
+   */
+  private urlStateRequest<F extends (...args: any[]) => Promise<any>>(request: F): F {
+    const notSupported = () =>
+      new CoreError(ErrorCode.METHOD_NOT_FOUND, `${URL_STATE_ACTION} is not supported by this host`);
+    return (async (operation: string, params?: UrlStateSetPayload) => {
+      if (operation.endsWith(':mutation')) {
+        if (params?.state !== null) await encodeUrlState(params?.state as JsonObject);
+        // Only the state is sent, as plain JSON: a Proxy such as a Vue `reactive` or a MobX
+        // object passes the check, but `postMessage` can't clone it.
+        const { state } = params!;
+        params = { state: state === null ? null : JSON.parse(JSON.stringify(state)) };
+      }
+      let data: unknown;
+      try {
+        data = await request(operation, params);
+      } catch (error) {
+        const { code, message } = (error ?? {}) as Partial<CoreError>;
+        const unknownToHost =
+          code === ErrorCode.METHOD_NOT_FOUND ||
+          (code === ErrorCode.EXECUTION_ERROR &&
+            message?.includes(`No schema available for key: ${URL_STATE_ACTION}`));
+        throw unknownToHost ? notSupported() : error;
+      }
+      if (data === null || typeof data !== 'object') throw notSupported();
+      return data;
+    }) as F;
   }
 
   private registerHandlers(): void {
@@ -223,7 +269,11 @@ export class ClientSDK {
 
     const { subscribe, onSuccess, onError, params, timeoutMs } = queryOptions || {};
     const hashedKey = subscribe ? key : await this.generateKeyWithHash(key, queryOptions);
-    logger.debug(`Query (${key}) initiated with params:`, params, `timeoutMs: ${timeoutMs}`);
+    logger.debug(
+      `Query (${key}) initiated with params:`,
+      loggable(key, params),
+      `timeoutMs: ${timeoutMs}`,
+    );
 
     let unsubscribe: (() => void) | undefined;
     try {
@@ -234,7 +284,7 @@ export class ClientSDK {
       this.stateManager.updateQueryState(hashedKey, { status: 'loading' });
 
       const data = (await request(operation, params)) as QueryMap[K]['response'];
-      logger.info(`Query (${key}) success:`, data);
+      logger.info(`Query (${key}) success:`, loggable(key, data));
 
       this.stateManager.updateQueryState(hashedKey, {
         status: 'success',
@@ -344,11 +394,15 @@ export class ClientSDK {
   ): Promise<MutationMap[K]['response']> {
     const { request, operation } = this.resolveOperation(key as string, 'mutation');
     const { onSuccess, onError, params, timeoutMs } = mutationOptions || {};
-    logger.debug(`Mutation (${key}) initiated with params:`, params, `timeoutMs: ${timeoutMs}`);
+    logger.debug(
+      `Mutation (${key}) initiated with params:`,
+      loggable(key, params),
+      `timeoutMs: ${timeoutMs}`,
+    );
 
     try {
       const data = (await request(operation, params)) as MutationMap[K]['response'];
-      logger.info(`Mutation (${key}) success:`, data);
+      logger.info(`Mutation (${key}) success:`, loggable(key, data));
       onSuccess?.(data);
       return data;
     } catch (error) {
