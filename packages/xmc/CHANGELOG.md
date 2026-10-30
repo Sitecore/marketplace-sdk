@@ -1,5 +1,13 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.4.5
+
+### Patch Changes
+
+- a644338: Accept `@sitecore-marketplace-sdk/client` 0.5 as a peer dependency.
+- Updated dependencies [a644338]
+  - @sitecore-marketplace-sdk/client@0.5.0
+
 ## 0.4.4
 
 ### Patch Changes
