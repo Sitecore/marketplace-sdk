@@ -21,6 +21,33 @@ type AssetsUpdateAssetResponses = Agent.AssetsUpdateAssetResponses;
 type AssetsUploadAssetData = Agent.AssetsUploadAssetData;
 type AssetsUploadAssetErrors = Agent.AssetsUploadAssetErrors;
 type AssetsUploadAssetResponses = Agent.AssetsUploadAssetResponses;
+type BrandContextsGetBrandContextData = Agent.BrandContextsGetBrandContextData;
+type BrandContextsGetBrandContextErrors = Agent.BrandContextsGetBrandContextErrors;
+type BrandContextsGetBrandContextItemsData = Agent.BrandContextsGetBrandContextItemsData;
+type BrandContextsGetBrandContextItemsErrors = Agent.BrandContextsGetBrandContextItemsErrors;
+type BrandContextsGetBrandContextItemsResponses = Agent.BrandContextsGetBrandContextItemsResponses;
+type BrandContextsGetBrandContextResponses = Agent.BrandContextsGetBrandContextResponses;
+type BrandContextsListBrandContextsData = Agent.BrandContextsListBrandContextsData;
+type BrandContextsListBrandContextsErrors = Agent.BrandContextsListBrandContextsErrors;
+type BrandContextsListBrandContextsResponses = Agent.BrandContextsListBrandContextsResponses;
+type BrandkitsGetBrandkitByIdData = Agent.BrandkitsGetBrandkitByIdData;
+type BrandkitsGetBrandkitByIdErrors = Agent.BrandkitsGetBrandkitByIdErrors;
+type BrandkitsGetBrandkitByIdResponses = Agent.BrandkitsGetBrandkitByIdResponses;
+type BrandkitsListBrandkitsData = Agent.BrandkitsListBrandkitsData;
+type BrandkitsListBrandkitsErrors = Agent.BrandkitsListBrandkitsErrors;
+type BrandkitsListBrandkitsResponses = Agent.BrandkitsListBrandkitsResponses;
+type BriefCreateBriefData = Agent.BriefCreateBriefData;
+type BriefCreateBriefErrors = Agent.BriefCreateBriefErrors;
+type BriefCreateBriefResponses = Agent.BriefCreateBriefResponses;
+type BriefsGenerateBriefData = Agent.BriefsGenerateBriefData;
+type BriefsGenerateBriefDeprecatedData = Agent.BriefsGenerateBriefDeprecatedData;
+type BriefsGenerateBriefDeprecatedErrors = Agent.BriefsGenerateBriefDeprecatedErrors;
+type BriefsGenerateBriefDeprecatedResponses = Agent.BriefsGenerateBriefDeprecatedResponses;
+type BriefsGenerateBriefErrors = Agent.BriefsGenerateBriefErrors;
+type BriefsGenerateBriefResponses = Agent.BriefsGenerateBriefResponses;
+type BriefUpdateBriefData = Agent.BriefUpdateBriefData;
+type BriefUpdateBriefErrors = Agent.BriefUpdateBriefErrors;
+type BriefUpdateBriefResponses = Agent.BriefUpdateBriefResponses;
 type ComponentsCreateComponentDatasourceData = Agent.ComponentsCreateComponentDatasourceData;
 type ComponentsCreateComponentDatasourceErrors = Agent.ComponentsCreateComponentDatasourceErrors;
 type ComponentsCreateComponentDatasourceResponses =
@@ -50,12 +77,42 @@ type ContentGetContentItemByPathResponses = Agent.ContentGetContentItemByPathRes
 type ContentListAvailableInsertoptionsData = Agent.ContentListAvailableInsertoptionsData;
 type ContentListAvailableInsertoptionsErrors = Agent.ContentListAvailableInsertoptionsErrors;
 type ContentListAvailableInsertoptionsResponses = Agent.ContentListAvailableInsertoptionsResponses;
+type ContentListReferrersData = Agent.ContentListReferrersData;
+type ContentListReferrersErrors = Agent.ContentListReferrersErrors;
+type ContentListReferrersResponses = Agent.ContentListReferrersResponses;
 type ContentUpdateContentData = Agent.ContentUpdateContentData;
 type ContentUpdateContentErrors = Agent.ContentUpdateContentErrors;
 type ContentUpdateContentResponses = Agent.ContentUpdateContentResponses;
 type EnvironmentsListLanguagesData = Agent.EnvironmentsListLanguagesData;
 type EnvironmentsListLanguagesErrors = Agent.EnvironmentsListLanguagesErrors;
 type EnvironmentsListLanguagesResponses = Agent.EnvironmentsListLanguagesResponses;
+type ExperimentsCreateComponentAbTestData = Agent.ExperimentsCreateComponentAbTestData;
+type ExperimentsCreateComponentAbTestErrors = Agent.ExperimentsCreateComponentAbTestErrors;
+type ExperimentsCreateComponentAbTestResponses = Agent.ExperimentsCreateComponentAbTestResponses;
+type ExperimentsUpdateAbTestData = Agent.ExperimentsUpdateAbTestData;
+type ExperimentsUpdateAbTestErrors = Agent.ExperimentsUpdateAbTestErrors;
+type ExperimentsUpdateAbTestResponses = Agent.ExperimentsUpdateAbTestResponses;
+type FlowsGetFlowDefinitionData = Agent.FlowsGetFlowDefinitionData;
+type FlowsGetFlowDefinitionErrors = Agent.FlowsGetFlowDefinitionErrors;
+type FlowsGetFlowDefinitionResponses = Agent.FlowsGetFlowDefinitionResponses;
+type FlowsGetVariantData = Agent.FlowsGetVariantData;
+type FlowsGetVariantErrors = Agent.FlowsGetVariantErrors;
+type FlowsGetVariantResponses = Agent.FlowsGetVariantResponses;
+type FlowsListFlowDefinitionsByPageData = Agent.FlowsListFlowDefinitionsByPageData;
+type FlowsListFlowDefinitionsByPageErrors = Agent.FlowsListFlowDefinitionsByPageErrors;
+type FlowsListFlowDefinitionsByPageResponses = Agent.FlowsListFlowDefinitionsByPageResponses;
+type FlowsResetComponentVariantData = Agent.FlowsResetComponentVariantData;
+type FlowsResetComponentVariantErrors = Agent.FlowsResetComponentVariantErrors;
+type FlowsResetComponentVariantResponses = Agent.FlowsResetComponentVariantResponses;
+type FlowsSetupVariantData = Agent.FlowsSetupVariantData;
+type FlowsSetupVariantErrors = Agent.FlowsSetupVariantErrors;
+type FlowsSetupVariantResponses = Agent.FlowsSetupVariantResponses;
+type GetBriefByIdData = Agent.GetBriefByIdData;
+type GetBriefByIdErrors = Agent.GetBriefByIdErrors;
+type GetBriefByIdResponses = Agent.GetBriefByIdResponses;
+type GetBriefTypeByIdData = Agent.GetBriefTypeByIdData;
+type GetBriefTypeByIdErrors = Agent.GetBriefTypeByIdErrors;
+type GetBriefTypeByIdResponses = Agent.GetBriefTypeByIdResponses;
 type JobsGetJobData = Agent.JobsGetJobData;
 type JobsGetJobErrors = Agent.JobsGetJobErrors;
 type JobsGetJobResponses = Agent.JobsGetJobResponses;
@@ -65,6 +122,12 @@ type JobsListOperationsResponses = Agent.JobsListOperationsResponses;
 type JobsRevertJobData = Agent.JobsRevertJobData;
 type JobsRevertJobErrors = Agent.JobsRevertJobErrors;
 type JobsRevertJobResponses = Agent.JobsRevertJobResponses;
+type ListBriefsData = Agent.ListBriefsData;
+type ListBriefsErrors = Agent.ListBriefsErrors;
+type ListBriefsResponses = Agent.ListBriefsResponses;
+type ListBriefTypesData = Agent.ListBriefTypesData;
+type ListBriefTypesErrors = Agent.ListBriefTypesErrors;
+type ListBriefTypesResponses = Agent.ListBriefTypesResponses;
 type PagesAddComponentOnPageData = Agent.PagesAddComponentOnPageData;
 type PagesAddComponentOnPageErrors = Agent.PagesAddComponentOnPageErrors;
 type PagesAddComponentOnPageResponses = Agent.PagesAddComponentOnPageResponses;
@@ -100,6 +163,12 @@ type PagesGetPageScreenshotResponses = Agent.PagesGetPageScreenshotResponses;
 type PagesGetPageTemplateByIdData = Agent.PagesGetPageTemplateByIdData;
 type PagesGetPageTemplateByIdErrors = Agent.PagesGetPageTemplateByIdErrors;
 type PagesGetPageTemplateByIdResponses = Agent.PagesGetPageTemplateByIdResponses;
+type PagesMoveComponentOnPageData = Agent.PagesMoveComponentOnPageData;
+type PagesMoveComponentOnPageErrors = Agent.PagesMoveComponentOnPageErrors;
+type PagesMoveComponentOnPageResponses = Agent.PagesMoveComponentOnPageResponses;
+type PagesRemoveComponentOnPageData = Agent.PagesRemoveComponentOnPageData;
+type PagesRemoveComponentOnPageErrors = Agent.PagesRemoveComponentOnPageErrors;
+type PagesRemoveComponentOnPageResponses = Agent.PagesRemoveComponentOnPageResponses;
 type PagesSearchSiteData = Agent.PagesSearchSiteData;
 type PagesSearchSiteErrors = Agent.PagesSearchSiteErrors;
 type PagesSearchSiteResponses = Agent.PagesSearchSiteResponses;
@@ -112,6 +181,12 @@ type PersonalizationCreatePersonalizationVersionErrors =
   Agent.PersonalizationCreatePersonalizationVersionErrors;
 type PersonalizationCreatePersonalizationVersionResponses =
   Agent.PersonalizationCreatePersonalizationVersionResponses;
+type PersonalizationCreatePersonalizationVersionV1Data =
+  Agent.PersonalizationCreatePersonalizationVersionV1Data;
+type PersonalizationCreatePersonalizationVersionV1Errors =
+  Agent.PersonalizationCreatePersonalizationVersionV1Errors;
+type PersonalizationCreatePersonalizationVersionV1Responses =
+  Agent.PersonalizationCreatePersonalizationVersionV1Responses;
 type PersonalizationGetConditionTemplateByIdData =
   Agent.PersonalizationGetConditionTemplateByIdData;
 type PersonalizationGetConditionTemplateByIdErrors =
@@ -128,6 +203,24 @@ type PersonalizationGetPersonalizationVersionsByPageErrors =
   Agent.PersonalizationGetPersonalizationVersionsByPageErrors;
 type PersonalizationGetPersonalizationVersionsByPageResponses =
   Agent.PersonalizationGetPersonalizationVersionsByPageResponses;
+type PersonalizationGetPersonalizationVersionsByPageV1Data =
+  Agent.PersonalizationGetPersonalizationVersionsByPageV1Data;
+type PersonalizationGetPersonalizationVersionsByPageV1Errors =
+  Agent.PersonalizationGetPersonalizationVersionsByPageV1Errors;
+type PersonalizationGetPersonalizationVersionsByPageV1Responses =
+  Agent.PersonalizationGetPersonalizationVersionsByPageV1Responses;
+type PersonalizationHideComponentOnDefaultPageData =
+  Agent.PersonalizationHideComponentOnDefaultPageData;
+type PersonalizationHideComponentOnDefaultPageErrors =
+  Agent.PersonalizationHideComponentOnDefaultPageErrors;
+type PersonalizationHideComponentOnDefaultPageResponses =
+  Agent.PersonalizationHideComponentOnDefaultPageResponses;
+type PersonalizationUpdatePersonalizationVersionData =
+  Agent.PersonalizationUpdatePersonalizationVersionData;
+type PersonalizationUpdatePersonalizationVersionErrors =
+  Agent.PersonalizationUpdatePersonalizationVersionErrors;
+type PersonalizationUpdatePersonalizationVersionResponses =
+  Agent.PersonalizationUpdatePersonalizationVersionResponses;
 type SitesGetAllPagesBySiteData = Agent.SitesGetAllPagesBySiteData;
 type SitesGetAllPagesBySiteErrors = Agent.SitesGetAllPagesBySiteErrors;
 type SitesGetAllPagesBySiteResponses = Agent.SitesGetAllPagesBySiteResponses;
@@ -158,9 +251,9 @@ export type Options<
   meta?: keyof ClientMeta extends never ? Record<string, unknown> : ClientMeta;
 };
 /**
- * Get sites list
+ * List sites
  *
- * Retrieves a list of all available sites with their basic information and configuration.
+ * Retrieves a list of available sites with their basic information including name, display name, and URL.
  */
 export const sitesGetSitesList = <ThrowOnError extends boolean = false>(
   options?: Options<SitesGetSitesListData, ThrowOnError>,
@@ -175,9 +268,9 @@ export const sitesGetSitesList = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get site details
+ * Retrieve the site details
  *
- * Retrieves detailed information about a specific site including its configuration, themes, and available languages.
+ * Retrieves the details of a specific site including its  ID, name, and root path.
  */
 export const sitesGetSiteDetails = <ThrowOnError extends boolean = false>(
   options: Options<SitesGetSiteDetailsData, ThrowOnError>,
@@ -192,9 +285,9 @@ export const sitesGetSiteDetails = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get all routes by site
+ * List pages of a site
  *
- * Returns a flat list of routes for the specified site and language, each with id and path.
+ * Retrieves a list of pages for a specific site, including each page's ID and path. You can optionally filter the pages by language.
  */
 export const sitesGetAllPagesBySite = <ThrowOnError extends boolean = false>(
   options: Options<SitesGetAllPagesBySiteData, ThrowOnError>,
@@ -209,9 +302,9 @@ export const sitesGetAllPagesBySite = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get site ID from item ID
+ * Retrieve a site ID from an item ID
  *
- * Returns the site root item ID for a given item by traversing ancestors to find the site root template
+ * Retrieves the site ID associated with a specific item ID. This is useful for determining which site an item belongs to.
  */
 export const sitesGetSiteIdFromItem = <ThrowOnError extends boolean = false>(
   options: Options<SitesGetSiteIdFromItemData, ThrowOnError>,
@@ -228,7 +321,7 @@ export const sitesGetSiteIdFromItem = <ThrowOnError extends boolean = false>(
 /**
  * Create a page
  *
- * Creates a new page in the specified location with the given template, fields, and language. The page is created as a child of the specified parent page.
+ * Creates a new page using the specified template under the parent page. You can set field values and the language for the new page.
  */
 export const pagesCreatePage = <ThrowOnError extends boolean = false>(
   options: Options<PagesCreatePageData, ThrowOnError>,
@@ -243,9 +336,9 @@ export const pagesCreatePage = <ThrowOnError extends boolean = false>(
     },
   });
 /**
- * Add language to page
+ * Add a language version to a page
  *
- * Creates a language version of an existing page. This allows you to have the same page content available in multiple languages.
+ * Adds a new language version for an existing page. This allows you to have the same page content available in multiple languages.
  */
 export const pagesAddLanguageToPage = <ThrowOnError extends boolean = false>(
   options: Options<PagesAddLanguageToPageData, ThrowOnError>,
@@ -264,9 +357,9 @@ export const pagesAddLanguageToPage = <ThrowOnError extends boolean = false>(
     },
   });
 /**
- * Get components on page
+ * Retrieve components on a page
  *
- * Retrieves a list of components that are currently added to a specific page.
+ * Retrieves the components on a page.
  */
 export const pagesGetComponentsOnPage = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetComponentsOnPageData, ThrowOnError>,
@@ -281,9 +374,9 @@ export const pagesGetComponentsOnPage = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Add component on page
+ * Add a component to a page
  *
- * Adds a component to a specific placeholder on a page. You can optionally specify a datasource for the component or create a new one.
+ * Adds a component to a specific placeholder on a page. You can specify the component type, placeholder location, and configure its initial settings. Optionally, you can specify its position relative to an existing component.
  */
 export const pagesAddComponentOnPage = <ThrowOnError extends boolean = false>(
   options: Options<PagesAddComponentOnPageData, ThrowOnError>,
@@ -302,9 +395,9 @@ export const pagesAddComponentOnPage = <ThrowOnError extends boolean = false>(
     },
   });
 /**
- * Sets the component's datasource
+ * Set the component datasource
  *
- * Set component datasource
+ * Sets the datasource for a specific component on a page. You can specify a new data source item or clear the existing one.
  */
 export const pagesSetComponentDatasource = <ThrowOnError extends boolean = false>(
   options: Options<PagesSetComponentDatasourceData, ThrowOnError>,
@@ -327,9 +420,9 @@ export const pagesSetComponentDatasource = <ThrowOnError extends boolean = false
     },
   });
 /**
- * Search site
+ * Search for pages on a site
  *
- * Searches all pages in a specific site by title or content. The response returns the matching pages with their details including id, path, display_name, and search_fields.
+ * Searches for all  pages in a specific site using a search term that matches page titles and content. The response returns the matching pages with their details including the page ID, path, and name.
  */
 export const pagesSearchSite = <ThrowOnError extends boolean = false>(
   options: Options<PagesSearchSiteData, ThrowOnError>,
@@ -340,9 +433,9 @@ export const pagesSearchSite = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get page path by live URL
+ * Retrieve the page by live URL
  *
- * Get the page item path corresponding to a live URL. You can use this endpoint to find the page item that corresponds to a specific live URL on your website.
+ * Resolves a public live URL to its corresponding page in Sitecore. Use this endpoint when you know the URL of a published page and need to identify the page behind it.
  */
 export const pagesGetPagePathByLiveUrl = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetPagePathByLiveUrlData, ThrowOnError>,
@@ -361,9 +454,9 @@ export const pagesGetPagePathByLiveUrl = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get page screenshot
+ * Retrieve the screenshot of a page
  *
- * Captures and returns a screenshot of the specified page. This endpoint takes a screenshot of the live page and returns it as a base64-encoded image.
+ * Captures and returns a base64-encoded screenshot of a page.
  */
 export const pagesGetPageScreenshot = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetPageScreenshotData, ThrowOnError>,
@@ -378,9 +471,9 @@ export const pagesGetPageScreenshot = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get page HTML
+ * Retrieve the page HTML
  *
- * Retrieves the HTML content of a specific page. This endpoint returns the raw HTML of the page as it would appear in the browser.
+ * Retrieves the HTML for a specific page. This endpoint returns the raw HTML of the page as it would appear in the browser.
  */
 export const pagesGetPageHtml = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetPageHtmlData, ThrowOnError>,
@@ -391,9 +484,9 @@ export const pagesGetPageHtml = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get page Preview URL
+ * Retrieve the page preview URL
  *
- * Retrieves the preview URL of a specific page. This endpoint returns the URL that can be used to preview the page.
+ * Retrieves the preview URL for a specific page.
  */
 export const pagesGetPagePreviewUrl = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetPagePreviewUrlData, ThrowOnError>,
@@ -408,9 +501,9 @@ export const pagesGetPagePreviewUrl = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get page template by id
+ * Retrieve the page template by ID
  *
- * Retrieves detailed information about a specific page template, including its fields and settings. Use this endpoint to understand the structure and available fields of a template before creating pages.
+ * Retrieves the details of a specific page template, including its fields and settings. Use this endpoint to understand the structure and available fields of a template before creating a page.
  */
 export const pagesGetPageTemplateById = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetPageTemplateByIdData, ThrowOnError>,
@@ -425,9 +518,9 @@ export const pagesGetPageTemplateById = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get page details
+ * Retrieve the page details
  *
- * Retrieves comprehensive information about a page including its layout, components, placeholders, and available actions. This endpoint provides all the information needed to understand and modify a page.
+ * Retrieves the details about a page including its ID, name, and path location. This endpoint provides the information you need to understand and modify the page's structure.
  */
 export const pagesGetPage = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetPageData, ThrowOnError>,
@@ -438,9 +531,9 @@ export const pagesGetPage = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get allowed components by placeholder
+ * List allowed components for a placeholder
  *
- * Retrieves a list of components that are allowed to be added to a specific placeholder on a page. This helps ensure only compatible components are added to each placeholder. You can use * to fetch all components.
+ * Retrieves the list of components that can be added to a placeholder on a page. This helps ensure that only compatible components are used in each placeholder.
  */
 export const pagesGetAllowedComponentsByPlaceholder = <ThrowOnError extends boolean = false>(
   options: Options<PagesGetAllowedComponentsByPlaceholderData, ThrowOnError>,
@@ -459,9 +552,51 @@ export const pagesGetAllowedComponentsByPlaceholder = <ThrowOnError extends bool
     ...options,
   });
 /**
+ * Move a component on a page
+ *
+ * Moves a component instance before or after another component instance on the base page layout. Components can move between compatible editable placeholders. Use targetPlaceholderPath when moving into an empty placeholder.
+ */
+export const pagesMoveComponentOnPage = <ThrowOnError extends boolean = false>(
+  options: Options<PagesMoveComponentOnPageData, ThrowOnError>,
+): RequestResult<PagesMoveComponentOnPageResponses, PagesMoveComponentOnPageErrors, ThrowOnError> =>
+  (options.client ?? client).patch<
+    PagesMoveComponentOnPageResponses,
+    PagesMoveComponentOnPageErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/pages/{pageId}/components/{componentInstanceId}/position',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Remove component on page
+ *
+ * Removes a specific component from a page. Use this to clean up orphaned component references after deleting a datasource item.
+ */
+export const pagesRemoveComponentOnPage = <ThrowOnError extends boolean = false>(
+  options: Options<PagesRemoveComponentOnPageData, ThrowOnError>,
+): RequestResult<
+  PagesRemoveComponentOnPageResponses,
+  PagesRemoveComponentOnPageErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).delete<
+    PagesRemoveComponentOnPageResponses,
+    PagesRemoveComponentOnPageErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/pages/{pageId}/components/{componentId}',
+    ...options,
+  });
+/**
  * Create content item
  *
- * Creates a new content item with the specified template, fields, and location.
+ * Creates a new content item using the specified template and field values.
  */
 export const contentCreateContentItem = <ThrowOnError extends boolean = false>(
   options: Options<ContentCreateContentItemData, ThrowOnError>,
@@ -480,9 +615,9 @@ export const contentCreateContentItem = <ThrowOnError extends boolean = false>(
     },
   });
 /**
- * Delete content
+ * Delete a content item
  *
- * Deletes a content item and optionally all its child items.
+ * Deletes a content item and optionally all of its child items.
  */
 export const contentDeleteContent = <ThrowOnError extends boolean = false>(
   options: Options<ContentDeleteContentData, ThrowOnError>,
@@ -497,9 +632,9 @@ export const contentDeleteContent = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get content item by ID
+ * Retrieve a content item by ID
  *
- * Retrieves detailed information about a specific content item using its unique identifier.
+ * Retrieves the details of a specific content item by specifying its ID.
  */
 export const contentGetContentItemById = <ThrowOnError extends boolean = false>(
   options: Options<ContentGetContentItemByIdData, ThrowOnError>,
@@ -518,9 +653,9 @@ export const contentGetContentItemById = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Update content
+ * Update a content item
  *
- * Updates comprehensive information about a content item including its fields and metadata.
+ * Updates an existing content item, including its fields and language.
  */
 export const contentUpdateContent = <ThrowOnError extends boolean = false>(
   options: Options<ContentUpdateContentData, ThrowOnError>,
@@ -539,9 +674,9 @@ export const contentUpdateContent = <ThrowOnError extends boolean = false>(
     },
   });
 /**
- * Get content item by path
+ * Retrieve a content item by path
  *
- * Retrieves detailed information about a content item using its path in the content tree.
+ * Retrieves the details of a content item by specifying its path in the content tree.
  */
 export const contentGetContentItemByPath = <ThrowOnError extends boolean = false>(
   options: Options<ContentGetContentItemByPathData, ThrowOnError>,
@@ -560,9 +695,9 @@ export const contentGetContentItemByPath = <ThrowOnError extends boolean = false
     ...options,
   });
 /**
- * List available insert options
+ * List insert options
  *
- * Retrieves the available content templates that can be inserted as child items under the specified parent item.
+ * Retrieves a list of content templates that can be inserted as child items under the specified parent item.
  */
 export const contentListAvailableInsertoptions = <ThrowOnError extends boolean = false>(
   options: Options<ContentListAvailableInsertoptionsData, ThrowOnError>,
@@ -581,9 +716,26 @@ export const contentListAvailableInsertoptions = <ThrowOnError extends boolean =
     ...options,
   });
 /**
- * Create component datasource
+ * List what references a content item
  *
- * Creates a new datasource item for a specific component with the provided field values. The datasource will be created in the appropriate location based on the component's configuration.
+ * Retrieves the items that reference the specified content item, so a caller can see what else a change would affect before making it.
+ */
+export const contentListReferrers = <ThrowOnError extends boolean = false>(
+  options: Options<ContentListReferrersData, ThrowOnError>,
+): RequestResult<ContentListReferrersResponses, ContentListReferrersErrors, ThrowOnError> =>
+  (options.client ?? client).get<
+    ContentListReferrersResponses,
+    ContentListReferrersErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/content/{itemId}/referrers',
+    ...options,
+  });
+/**
+ * Create a component datasource
+ *
+ * Creates a new datasource item for a specific component using the provided data field values. The datasource will be created in the appropriate location based on the component's configuration.
  */
 export const componentsCreateComponentDatasource = <ThrowOnError extends boolean = false>(
   options: Options<ComponentsCreateComponentDatasourceData, ThrowOnError>,
@@ -606,9 +758,9 @@ export const componentsCreateComponentDatasource = <ThrowOnError extends boolean
     },
   });
 /**
- * Search component datasources
+ * Search for component datasources
  *
- * Searches for available datasources that can be used with a specific component. This helps find existing content items that can serve as datasources.
+ * Searches for available datasources that can be used with a specific component. This helps you find existing content to use as datasources.
  */
 export const componentsSearchComponentDatasources = <ThrowOnError extends boolean = false>(
   options: Options<ComponentsSearchComponentDatasourcesData, ThrowOnError>,
@@ -629,7 +781,7 @@ export const componentsSearchComponentDatasources = <ThrowOnError extends boolea
 /**
  * List components
  *
- * Retrieves a list of all available components for a specific site. This includes both built-in components and custom components that can be used in pages.
+ * Retrieves a list of components available for a specific site, including both built-in components and custom components that can be used on pages.
  */
 export const componentsListComponents = <ThrowOnError extends boolean = false>(
   options: Options<ComponentsListComponentsData, ThrowOnError>,
@@ -644,9 +796,9 @@ export const componentsListComponents = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get component details
+ * Retrieve the component details
  *
- * Retrieves detailed information about a specific component including its fields, datasource requirements, and configuration options.
+ * Retrieves the details of a specific component, including its ID, name, and datasource options.
  */
 export const componentsGetComponent = <ThrowOnError extends boolean = false>(
   options: Options<ComponentsGetComponentData, ThrowOnError>,
@@ -661,9 +813,9 @@ export const componentsGetComponent = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Upload asset
+ * Upload an asset
  *
- * Uploads a new digital asset to the system. The asset will be processed and stored in the specified location with the provided metadata.
+ * Uploads a new digital asset to the system and stores it with the provided metadata.
  */
 export const assetsUploadAsset = <ThrowOnError extends boolean = false>(
   options: Options<AssetsUploadAssetData, ThrowOnError>,
@@ -683,9 +835,15 @@ export const assetsUploadAsset = <ThrowOnError extends boolean = false>(
     },
   });
 /**
- * Search assets
+ * Search for assets
  *
- * Searches for digital assets based on query terms, file types, or tags. Returns a list of matching assets with their metadata and download URLs.
+ * Searches for digital assets such as videos, images, and documents using query terms, file types, or tags.
+ *
+ * **Limitations**
+ *
+ * - Asset search results are limited to a maximum of 10 items per request.
+ * - This endpoint doesn't support pagination. Parameters such as `pageNumber`, `pageSize`, and `continuationToken` are ignored.
+ * - The response does not include pagination metadata such as `totalCount` or `next`.
  */
 export const assetsSearchAssets = <ThrowOnError extends boolean = false>(
   options?: Options<AssetsSearchAssetsData, ThrowOnError>,
@@ -700,9 +858,9 @@ export const assetsSearchAssets = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get asset information
+ * Retrieve the asset details
  *
- * Retrieves detailed information about a specific digital asset including its metadata, file properties, and usage information.
+ * Retrieves the details of a specific digital asset by specifying its ID.
  */
 export const assetsGetAssetInformation = <ThrowOnError extends boolean = false>(
   options: Options<AssetsGetAssetInformationData, ThrowOnError>,
@@ -721,9 +879,9 @@ export const assetsGetAssetInformation = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Update asset
+ * Update an asset
  *
- * Updates the metadata and properties of an existing digital asset. This allows you to modify asset information such as alt text, titles, and custom field values.
+ * Updates the metadata and properties of an existing digital asset, such as alt text, description, and tags.
  */
 export const assetsUpdateAsset = <ThrowOnError extends boolean = false>(
   options: Options<AssetsUpdateAssetData, ThrowOnError>,
@@ -761,9 +919,84 @@ export const environmentsListLanguages = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Create a personalization version for a page
+ * Create an A/B/n test on a component
  *
- * Creates a new personalization definition with one or more variants.
+ * Creates a new A/B/n test for a specific component on a page. This allows you to compare two or more variants of the component and determine which one performs better.
+ */
+export const experimentsCreateComponentAbTest = <ThrowOnError extends boolean = false>(
+  options: Options<ExperimentsCreateComponentAbTestData, ThrowOnError>,
+): RequestResult<
+  ExperimentsCreateComponentAbTestResponses,
+  ExperimentsCreateComponentAbTestErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).post<
+    ExperimentsCreateComponentAbTestResponses,
+    ExperimentsCreateComponentAbTestErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/experiments/flows',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Update an A/B/n test on a component
+ *
+ * Updates an existing A/B/n test for a specific component on a page. This allows you to modify the variants, targeting rules, or other settings of the test.
+ */
+export const experimentsUpdateAbTest = <ThrowOnError extends boolean = false>(
+  options: Options<ExperimentsUpdateAbTestData, ThrowOnError>,
+): RequestResult<ExperimentsUpdateAbTestResponses, ExperimentsUpdateAbTestErrors, ThrowOnError> =>
+  (options.client ?? client).put<
+    ExperimentsUpdateAbTestResponses,
+    ExperimentsUpdateAbTestErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/experiments/{flowId}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Create a personalization variant
+ *
+ * Creates a new personalization variant of a page using a single condition template and parameters.
+ *
+ * **Note:** This endpoint is maintained for backward compatibility and will be deprecated and removed on August 4, 2026. Use the [Create a personalization variant v2 endpoint](https://api-docs.sitecore.com/sai/agent-api/personalization/personalization-create_personalization_version) going forward.
+ *
+ * @deprecated
+ */
+export const personalizationCreatePersonalizationVersionV1 = <ThrowOnError extends boolean = false>(
+  options: Options<PersonalizationCreatePersonalizationVersionV1Data, ThrowOnError>,
+): RequestResult<
+  PersonalizationCreatePersonalizationVersionV1Responses,
+  PersonalizationCreatePersonalizationVersionV1Errors,
+  ThrowOnError
+> =>
+  (options.client ?? client).post<
+    PersonalizationCreatePersonalizationVersionV1Responses,
+    PersonalizationCreatePersonalizationVersionV1Errors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/personalization/{pageId}/versions',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Create a personalization variant
+ *
+ * Creates a new personalization variant of a page, enabling you to define targeting rules for different audiences.
  */
 export const personalizationCreatePersonalizationVersion = <ThrowOnError extends boolean = false>(
   options: Options<PersonalizationCreatePersonalizationVersionData, ThrowOnError>,
@@ -778,7 +1011,7 @@ export const personalizationCreatePersonalizationVersion = <ThrowOnError extends
     ThrowOnError
   >({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/api/v1/personalization/{pageId}/versions',
+    url: '/api/v2/personalization/{pageId}/versions',
     ...options,
     headers: {
       'Content-Type': 'application/json',
@@ -786,9 +1019,36 @@ export const personalizationCreatePersonalizationVersion = <ThrowOnError extends
     },
   });
 /**
- * Get personalization versions by page
+ * List personalization variants by page
  *
  * Retrieves all personalization versions configured for a specific page, including their targeting rules and content variations.
+ *
+ * **Note:** This endpoint is maintained for backward compatibility and will be deprecated and removed on August 4, 2026. Use the [List personalization variants by page v2 endpoint](https://api-docs.sitecore.com/sai/agent-api/personalization/personalization-get_personalization_versions_by_page) going forward.
+ *
+ * @deprecated
+ */
+export const personalizationGetPersonalizationVersionsByPageV1 = <
+  ThrowOnError extends boolean = false,
+>(
+  options: Options<PersonalizationGetPersonalizationVersionsByPageV1Data, ThrowOnError>,
+): RequestResult<
+  PersonalizationGetPersonalizationVersionsByPageV1Responses,
+  PersonalizationGetPersonalizationVersionsByPageV1Errors,
+  ThrowOnError
+> =>
+  (options.client ?? client).get<
+    PersonalizationGetPersonalizationVersionsByPageV1Responses,
+    PersonalizationGetPersonalizationVersionsByPageV1Errors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/personalization/by-page/{pageId}',
+    ...options,
+  });
+/**
+ * List personalization variants by page
+ *
+ * Retrieves all personalization variants defined for a specific page, including IDs, names, creation dates, and associated variants.
  */
 export const personalizationGetPersonalizationVersionsByPage = <
   ThrowOnError extends boolean = false,
@@ -805,11 +1065,11 @@ export const personalizationGetPersonalizationVersionsByPage = <
     ThrowOnError
   >({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/api/v1/personalization/by-page/{pageId}',
+    url: '/api/v2/personalization/by-page/{pageId}',
     ...options,
   });
 /**
- * Get personalization condition templates
+ * List personalization condition templates
  *
  * Retrieves all available condition templates for personalization.
  */
@@ -830,9 +1090,9 @@ export const personalizationGetConditionTemplates = <ThrowOnError extends boolea
     ...options,
   });
 /**
- * Get a condition template and its parameters for creating a personalization variant on a page
+ * Retrieve a personalization condition template
  *
- * Returns a condition template by ID and its parameters for creating a personalization variant on a page
+ * Retrieves a condition template by ID including its parameters for creating a personalization variant on a page.
  */
 export const personalizationGetConditionTemplateById = <ThrowOnError extends boolean = false>(
   options: Options<PersonalizationGetConditionTemplateByIdData, ThrowOnError>,
@@ -851,9 +1111,389 @@ export const personalizationGetConditionTemplateById = <ThrowOnError extends boo
     ...options,
   });
 /**
- * Revert Job
+ * Update a personalization variant for a page
  *
- * Reverts the operations of the specified job.
+ * Updates the audience name, variant name, and targeting rules of an existing personalization variant.
+ */
+export const personalizationUpdatePersonalizationVersion = <ThrowOnError extends boolean = false>(
+  options: Options<PersonalizationUpdatePersonalizationVersionData, ThrowOnError>,
+): RequestResult<
+  PersonalizationUpdatePersonalizationVersionResponses,
+  PersonalizationUpdatePersonalizationVersionErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).put<
+    PersonalizationUpdatePersonalizationVersionResponses,
+    PersonalizationUpdatePersonalizationVersionErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/personalization/{pageId}/versions/{variantId}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Hide a component on the default page variant
+ *
+ * Hides a component on the default page variant. Personalization must already exist on the page before you use this endpoint. A default page variant exists only after page variants have been created to personalize a page.
+ */
+export const personalizationHideComponentOnDefaultPage = <ThrowOnError extends boolean = false>(
+  options: Options<PersonalizationHideComponentOnDefaultPageData, ThrowOnError>,
+): RequestResult<
+  PersonalizationHideComponentOnDefaultPageResponses,
+  PersonalizationHideComponentOnDefaultPageErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).post<
+    PersonalizationHideComponentOnDefaultPageResponses,
+    PersonalizationHideComponentOnDefaultPageErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/personalization/{pageId}/components/{componentId}/hide',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * List flow definitions for a page
+ *
+ * Retrieves all flow definitions (both A/B/n tests and  personalizations) for a specific page, including the structure, variants, and configuration details.
+ */
+export const flowsListFlowDefinitionsByPage = <ThrowOnError extends boolean = false>(
+  options: Options<FlowsListFlowDefinitionsByPageData, ThrowOnError>,
+): RequestResult<
+  FlowsListFlowDefinitionsByPageResponses,
+  FlowsListFlowDefinitionsByPageErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).get<
+    FlowsListFlowDefinitionsByPageResponses,
+    FlowsListFlowDefinitionsByPageErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/flows/by-page/{pageId}',
+    ...options,
+  });
+/**
+ * Retrieve a flow definition
+ *
+ * Retrieves a specific flow definition (A/B/n test or personalization) on a page, including the structure, variants, and configuration details.
+ */
+export const flowsGetFlowDefinition = <ThrowOnError extends boolean = false>(
+  options: Options<FlowsGetFlowDefinitionData, ThrowOnError>,
+): RequestResult<FlowsGetFlowDefinitionResponses, FlowsGetFlowDefinitionErrors, ThrowOnError> =>
+  (options.client ?? client).get<
+    FlowsGetFlowDefinitionResponses,
+    FlowsGetFlowDefinitionErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/flows/{flowId}',
+    ...options,
+  });
+/**
+ * Reset component variant
+ *
+ * Removes any applied personalization or A/B/n test variant set up, such as copy, hide, or swap, from a component and restores it to its original state.
+ */
+export const flowsResetComponentVariant = <ThrowOnError extends boolean = false>(
+  options: Options<FlowsResetComponentVariantData, ThrowOnError>,
+): RequestResult<
+  FlowsResetComponentVariantResponses,
+  FlowsResetComponentVariantErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).post<
+    FlowsResetComponentVariantResponses,
+    FlowsResetComponentVariantErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/flows/{flowId}/variants/reset',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Get flow definition variant details
+ *
+ * Retrieves the details of a specific A/B/n test or personalization variant, including its datasource and components.
+ */
+export const flowsGetVariant = <ThrowOnError extends boolean = false>(
+  options: Options<FlowsGetVariantData, ThrowOnError>,
+): RequestResult<FlowsGetVariantResponses, FlowsGetVariantErrors, ThrowOnError> =>
+  (options.client ?? client).get<FlowsGetVariantResponses, FlowsGetVariantErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/flows/{flowId}/variants/{variantId}',
+    ...options,
+  });
+/**
+ * Set up a component variant
+ *
+ * Sets up a variant for a specific A/B/n test or personalization by copying, hiding, or swapping the original component.
+ */
+export const flowsSetupVariant = <ThrowOnError extends boolean = false>(
+  options: Options<FlowsSetupVariantData, ThrowOnError>,
+): RequestResult<FlowsSetupVariantResponses, FlowsSetupVariantErrors, ThrowOnError> =>
+  (options.client ?? client).post<
+    FlowsSetupVariantResponses,
+    FlowsSetupVariantErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/flows/{flowId}/variants/{variantId}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * List brand kits
+ *
+ * Retrieves all brand kits available within an organization.
+ */
+export const brandkitsListBrandkits = <ThrowOnError extends boolean = false>(
+  options?: Options<BrandkitsListBrandkitsData, ThrowOnError>,
+): RequestResult<BrandkitsListBrandkitsResponses, BrandkitsListBrandkitsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<
+    BrandkitsListBrandkitsResponses,
+    BrandkitsListBrandkitsErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brandkits',
+    ...options,
+  });
+/**
+ * Retrieve a brand kit by ID
+ *
+ * Retrieves a brand kit by ID, including its sections and associated fields (subsections).
+ */
+export const brandkitsGetBrandkitById = <ThrowOnError extends boolean = false>(
+  options: Options<BrandkitsGetBrandkitByIdData, ThrowOnError>,
+): RequestResult<BrandkitsGetBrandkitByIdResponses, BrandkitsGetBrandkitByIdErrors, ThrowOnError> =>
+  (options.client ?? client).get<
+    BrandkitsGetBrandkitByIdResponses,
+    BrandkitsGetBrandkitByIdErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brandkits/{brandkitId}',
+    ...options,
+  });
+/**
+ * List brand contexts
+ *
+ * Retrieves all brand contexts available within an organization. Returns metadata only; document content is not included.
+ */
+export const brandContextsListBrandContexts = <ThrowOnError extends boolean = false>(
+  options?: Options<BrandContextsListBrandContextsData, ThrowOnError>,
+): RequestResult<
+  BrandContextsListBrandContextsResponses,
+  BrandContextsListBrandContextsErrors,
+  ThrowOnError
+> =>
+  (options?.client ?? client).get<
+    BrandContextsListBrandContextsResponses,
+    BrandContextsListBrandContextsErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brand-contexts',
+    ...options,
+  });
+/**
+ * Retrieve a brand context by ID
+ *
+ * Retrieves a brand context's metadata and its complete nested folder or file tree index. No document content is included.
+ */
+export const brandContextsGetBrandContext = <ThrowOnError extends boolean = false>(
+  options: Options<BrandContextsGetBrandContextData, ThrowOnError>,
+): RequestResult<
+  BrandContextsGetBrandContextResponses,
+  BrandContextsGetBrandContextErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).get<
+    BrandContextsGetBrandContextResponses,
+    BrandContextsGetBrandContextErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brand-contexts/{brandContextId}',
+    ...options,
+  });
+/**
+ * Batch retrieve brand context items
+ *
+ * Retrieves specific files or folders from a brand context in a single batched call. File responses include Markdown content. Between 1 and 50 unique IDs per call. A single failed item is returned with `fetchStatus` is `failed` and the upstream error message in `fetchStatusMessage` rather than failing the whole batch. The response carries requested, succeeded, or failed completeness counts alongside the data array.
+ */
+export const brandContextsGetBrandContextItems = <ThrowOnError extends boolean = false>(
+  options: Options<BrandContextsGetBrandContextItemsData, ThrowOnError>,
+): RequestResult<
+  BrandContextsGetBrandContextItemsResponses,
+  BrandContextsGetBrandContextItemsErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).get<
+    BrandContextsGetBrandContextItemsResponses,
+    BrandContextsGetBrandContextItemsErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brand-contexts/{brandContextId}/items',
+    ...options,
+  });
+/**
+ * List brief types
+ *
+ * Retrieves a list of available brief types, including their metadata and field definitions such as field types, labels, validation rules, and other information used by AI when generating briefs.
+ */
+export const listBriefTypes = <ThrowOnError extends boolean = false>(
+  options?: Options<ListBriefTypesData, ThrowOnError>,
+): RequestResult<ListBriefTypesResponses, ListBriefTypesErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListBriefTypesResponses, ListBriefTypesErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brief/brief-types',
+    ...options,
+  });
+/**
+ * List briefs
+ *
+ * Retrieves a list of briefs in your organization.
+ */
+export const listBriefs = <ThrowOnError extends boolean = false>(
+  options?: Options<ListBriefsData, ThrowOnError>,
+): RequestResult<ListBriefsResponses, ListBriefsErrors, ThrowOnError> =>
+  (options?.client ?? client).get<ListBriefsResponses, ListBriefsErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brief',
+    ...options,
+  });
+/**
+ * Create a brief
+ *
+ * Creates a brief using the specified brief type ID, locale, and provided data fields. The new brief is saved as a draft in the [Brief management tool](https://doc.sitecore.com/sai/en/users/sitecoreai/managing-briefs.html).
+ */
+export const briefCreateBrief = <ThrowOnError extends boolean = false>(
+  options: Options<BriefCreateBriefData, ThrowOnError>,
+): RequestResult<BriefCreateBriefResponses, BriefCreateBriefErrors, ThrowOnError> =>
+  (options.client ?? client).post<BriefCreateBriefResponses, BriefCreateBriefErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brief',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Generate a brief
+ *
+ * Generates a brief draft and the content of its fields, using the specified brief type, brand kit, and prompt. This endpoint does not save the generated draft. You can copy the response and use the [Create a brief](#operation/brief-create_brief) endpoint to save it in the [Brief management tool](https://doc.sitecore.com/sai/en/users/sitecoreai/managing-briefs.html).
+ */
+export const briefsGenerateBrief = <ThrowOnError extends boolean = false>(
+  options: Options<BriefsGenerateBriefData, ThrowOnError>,
+): RequestResult<BriefsGenerateBriefResponses, BriefsGenerateBriefErrors, ThrowOnError> =>
+  (options.client ?? client).post<
+    BriefsGenerateBriefResponses,
+    BriefsGenerateBriefErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brief/generate',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Generate a brief
+ *
+ * Generates a brief and the content of its fields, using the specified brief type, brand kit, and prompt. This endpoint does not save the generated draft. You can copy the response and use the [Create a brief](#operation/brief-create_brief) endpoint to save it in the [Brief management tool](https://doc.sitecore.com/sai/en/users/sitecoreai/managing-briefs.html).
+ *
+ * **Note:** This endpoint is maintained for backward compatibility and will be deprecated and removed on September 20, 2026. Use the [Generate a brief endpoint](https://api-docs.sitecore.com/sai/agent-api/briefs/briefs-generate_brief) going forward.
+ *
+ * @deprecated
+ */
+export const briefsGenerateBriefDeprecated = <ThrowOnError extends boolean = false>(
+  options: Options<BriefsGenerateBriefDeprecatedData, ThrowOnError>,
+): RequestResult<
+  BriefsGenerateBriefDeprecatedResponses,
+  BriefsGenerateBriefDeprecatedErrors,
+  ThrowOnError
+> =>
+  (options.client ?? client).post<
+    BriefsGenerateBriefDeprecatedResponses,
+    BriefsGenerateBriefDeprecatedErrors,
+    ThrowOnError
+  >({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/briefs/generate',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Retrieve a brief type by ID
+ *
+ * Retrieves a specific brief type by its ID, including its field definitions and metadata.
+ */
+export const getBriefTypeById = <ThrowOnError extends boolean = false>(
+  options: Options<GetBriefTypeByIdData, ThrowOnError>,
+): RequestResult<GetBriefTypeByIdResponses, GetBriefTypeByIdErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetBriefTypeByIdResponses, GetBriefTypeByIdErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brief/brief-types/{brief_type_id}',
+    ...options,
+  });
+/**
+ * Retrieve a brief by ID
+ *
+ * Retrieves a specific brief by its ID, including its fields, type reference, and metadata.
+ */
+export const getBriefById = <ThrowOnError extends boolean = false>(
+  options: Options<GetBriefByIdData, ThrowOnError>,
+): RequestResult<GetBriefByIdResponses, GetBriefByIdErrors, ThrowOnError> =>
+  (options.client ?? client).get<GetBriefByIdResponses, GetBriefByIdErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brief/{brief_id}',
+    ...options,
+  });
+/**
+ * Update a brief
+ *
+ * Partially updates an existing brief using the provided fields. Only the fields included in the request body will be updated; all other existing fields will remain unchanged.
+ */
+export const briefUpdateBrief = <ThrowOnError extends boolean = false>(
+  options: Options<BriefUpdateBriefData, ThrowOnError>,
+): RequestResult<BriefUpdateBriefResponses, BriefUpdateBriefErrors, ThrowOnError> =>
+  (options.client ?? client).put<BriefUpdateBriefResponses, BriefUpdateBriefErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/api/v1/brief/{brief_id}',
+    ...options,
+    headers: {
+      'Content-Type': 'application/json',
+      ...options.headers,
+    },
+  });
+/**
+ * Revert a job
+ *
+ * Reverts the operations linked to a specific job ID, restoring the state prior to execution. This is useful for undoing changes made by automated processes.
  */
 export const jobsRevertJob = <ThrowOnError extends boolean = false>(
   options: Options<JobsRevertJobData, ThrowOnError>,
@@ -864,9 +1504,9 @@ export const jobsRevertJob = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * Get Job Details
+ * Retrieve job details
  *
- * Retrieves the details of the specified job.
+ * Retrieves the details of a specific job.
  */
 export const jobsGetJob = <ThrowOnError extends boolean = false>(
   options: Options<JobsGetJobData, ThrowOnError>,
@@ -877,9 +1517,9 @@ export const jobsGetJob = <ThrowOnError extends boolean = false>(
     ...options,
   });
 /**
- * List Job Operations
+ * List job operations
  *
- * Retrieves the operations associated with the specified job.
+ * Retrieves a list of actions associated with a specific job ID, including operation type, status, and timestamps, to support tracing and potential reversion of those actions.
  */
 export const jobsListOperations = <ThrowOnError extends boolean = false>(
   options: Options<JobsListOperationsData, ThrowOnError>,
