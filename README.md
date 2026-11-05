@@ -67,6 +67,16 @@ pnpm install
 
 This installs all dependencies across the packages and sets up the workspaces.
 
+#### AI guidance for contributors
+
+This repository includes AI guidance files for Cursor, GitHub Copilot, and other coding agents:
+
+- `.cursor/rules/` for detailed repo rules and Sitecore Marketplace SDK conventions.
+- `.github/copilot-instructions.md` for project-wide Copilot instructions.
+- `llms.txt` for a concise LLM-friendly overview of the repo structure and source-of-truth files.
+
+These files are intended to help contributors and AI coding agents stay aligned with the monorepo structure, generated-code boundaries, and contribution workflow.
+
 #### Monorepo commands
 
 Here are the main monorepo commands defined in the root `package.json`:

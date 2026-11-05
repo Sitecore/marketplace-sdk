@@ -1,0 +1,58 @@
+---
+description: JavaScript and TypeScript coding rules for Marketplace SDK packages and docs
+alwaysApply: false
+globs:
+  - "**/*.js"
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "**/*.mjs"
+---
+
+# JavaScript and TypeScript Rules
+
+## Language and Typing
+
+- Prefer TypeScript-first changes and keep code compatible with strict mode.
+- Prefer explicit types for public APIs, exported helpers, and complex return values.
+- Reuse existing shared types before introducing new ones.
+- Avoid `any` unless there is a clear interoperability reason.
+- Use descriptive type and interface names in PascalCase.
+
+## Naming
+
+- Use camelCase for variables, functions, methods, and instances.
+- Use PascalCase for classes, types, and exported interfaces.
+- Use UPPER_SNAKE_CASE for shared constants.
+- Use kebab-case for directory names where the repo already follows that style, such as generated client folders and shared plugin folders.
+
+## File and Module Layout
+
+- Keep package entry points small and focused on exports and module wiring.
+- Keep implementation logic in nearby source files under `src/**`.
+- Prefer small, single-purpose functions and helpers over large nested blocks.
+- Match the style already used in the touched package.
+
+## API and Documentation Style
+
+- Add or preserve JSDoc on public classes, exported functions, and externally consumed types.
+- When changing package behavior, update the nearest README or source doc comments if the public contract changed.
+- Keep examples accurate to the repo. Use real package imports such as `@sitecore-marketplace-sdk/client`, `@sitecore-marketplace-sdk/xmc`, and `@sitecore-marketplace-sdk/ai`.
+
+## Testing and Validation
+
+- Tests in this repo use Vitest.
+- Prefer adding or updating nearby tests in the touched package when behavior changes.
+- Keep validation narrow: touched package tests, workspace diagnostics, or a targeted command.
+
+## Performance and Safety
+
+- Avoid adding dependencies unless the change clearly needs one.
+- Prefer existing utilities and shared abstractions over duplicating transport, logging, or codegen logic.
+- Avoid noisy console logging in shipped SDK code unless explicitly required for debugging.
+- Treat browser and iframe boundaries carefully in `core` and `client` packages.
+
+## Repo-Specific Examples
+
+- Public class and JSDoc patterns: `packages/core/src/index.ts`, `packages/client/src/client.ts`
+- Typed module entry points: `packages/xmc/src/index.ts`, `packages/ai/src/index.ts`
+- Internal helpers and exports: `packages/shared/src/index.ts`
