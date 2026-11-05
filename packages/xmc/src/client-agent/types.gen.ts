@@ -15,26 +15,48 @@ export namespace Agent {
   export type AddComponentRequest = {
     /**
      * Componentrenderingid
+     *
+     * The unique identifier of the component rendering definition.
      */
     componentRenderingId: string;
     /**
      * Placeholderpath
+     *
+     * The path of the placeholder where the component will be placed.
      */
     placeholderPath: string;
     /**
      * Componentitemname
+     *
+     * The name of the component item to create.
      */
     componentItemName: string;
     /**
      * Language
+     *
+     * The language code for the component.
      */
     language?: string;
     /**
      * Fields
+     *
+     * Field values to set on the component or its datasource.
      */
     fields?: {
       [key: string]: unknown;
     } | null;
+    /**
+     * Insertbeforecomponentid
+     *
+     * The unique identifier of the component before which the new component will be inserted.
+     */
+    insertBeforeComponentId?: string | null;
+    /**
+     * Insertaftercomponentid
+     *
+     * The unique identifier of the component after which the new component will be inserted.
+     */
+    insertAfterComponentId?: string | null;
   };
   /**
    * AddComponentResponse
@@ -42,18 +64,26 @@ export namespace Agent {
   export type AddComponentResponse = {
     /**
      * Componentid
+     *
+     * The unique identifier of the newly added component.
      */
-    componentId: string;
+    componentId?: string;
     /**
      * Pageid
+     *
+     * The unique identifier of the page to which the component was added.
      */
-    pageId: string;
+    pageId?: string;
     /**
      * Placeholderid
+     *
+     * The unique identifier of the placeholder where the component was placed.
      */
     placeholderId?: string | null;
     /**
      * Datasourceid
+     *
+     * The unique identifier of the datasource used by the component, if applicable.
      */
     datasourceId?: string | null;
   };
@@ -63,6 +93,8 @@ export namespace Agent {
   export type AddLanguageRequest = {
     /**
      * Language
+     *
+     * The language code of the new version to add.
      */
     language?: string;
   };
@@ -72,8 +104,104 @@ export namespace Agent {
   export type AddLanguageResponse = {
     /**
      * Success
+     *
+     * Whether the language version was added successfully.
      */
-    success: boolean;
+    success?: boolean;
+  };
+  /**
+   * AffectedComponent
+   */
+  export type AffectedComponent = {
+    /**
+     * Pageid
+     *
+     * The page containing the referencing component.
+     */
+    pageId?: string;
+    /**
+     * Pagename
+     *
+     * Human-readable display name of the page.
+     */
+    pageName?: string;
+    /**
+     * Componentid
+     *
+     * instanceId of the rendering — same ID used by remove_component_on_page.
+     */
+    componentId?: string;
+    /**
+     * Componentrenderingid
+     *
+     * The unique identifier of the component rendering definition.
+     */
+    componentRenderingId?: string;
+    /**
+     * Placeholderkey
+     *
+     * Placeholder path where the component lives.
+     */
+    placeholderKey?: string;
+    /**
+     * Language
+     *
+     * Language version of the page layout.
+     */
+    language?: string;
+    /**
+     * Removed
+     *
+     * True if cascade removed the component; False if left in place.
+     */
+    removed?: boolean;
+    /**
+     * Error
+     *
+     * Why removal failed, when removed is False and removal was attempted. Null when removed is True or removal was never attempted.
+     */
+    error?: string | null;
+  };
+  /**
+   * AffectedExperiment
+   */
+  export type AffectedExperiment = {
+    /**
+     * Flowid
+     *
+     * Engage flow ref/friendlyId for the A/B test.
+     */
+    flowId?: string;
+    /**
+     * Name
+     *
+     * The A/B test's display name.
+     */
+    name?: string;
+    /**
+     * Pageid
+     *
+     * The page the test's component lives on.
+     */
+    pageId?: string;
+    /**
+     * Componentid
+     *
+     * instanceId of the component the test runs on.
+     */
+    componentId?: string;
+    /**
+     * Archived
+     *
+     * True only if this call actually archived it.
+     */
+    archived?: boolean;
+    /**
+     * Error
+     *
+     * Why archiving failed, when archived is False. Null when archived is True.
+     */
+    error?: string | null;
   };
   /**
    * AllowedChildTemplateModel
@@ -81,12 +209,16 @@ export namespace Agent {
   export type AllowedChildTemplateModel = {
     /**
      * Name
+     *
+     * The name of the allowed child template.
      */
-    name: string;
+    name?: string;
     /**
      * Templateid
+     *
+     * The unique identifier of the allowed child template.
      */
-    templateId: string;
+    templateId?: string;
   };
   /**
    * AssetInformationMetadata
@@ -94,18 +226,26 @@ export namespace Agent {
   export type AssetInformationMetadata = {
     /**
      * Width
+     *
+     * The width of the asset in pixels, or null if not applicable.
      */
     width?: number | null;
     /**
      * Height
+     *
+     * The height of the asset in pixels, or null if not applicable.
      */
     height?: number | null;
     /**
      * Format
+     *
+     * The file format of the asset (e.g., jpg, png), or null if not applicable.
      */
     format?: string | null;
     /**
      * Alt Text
+     *
+     * Alternative text for the asset, or null if not provided.
      */
     alt_text?: string | null;
   };
@@ -115,25 +255,41 @@ export namespace Agent {
   export type AssetInformationResponse = {
     /**
      * Id
+     *
+     * The unique identifier of the asset.
      */
-    id: string;
+    id?: string;
     /**
      * Name
+     *
+     * The name of the asset.
      */
     name?: string | null;
     /**
      * Type
+     *
+     * The type of asset, for example, image or document.
      */
     type?: string | null;
     /**
      * Url
+     *
+     * The URL where the asset can be accessed.
      */
     url?: string | null;
     /**
      * Size
+     *
+     * The size of the asset in bytes.
      */
     size?: number | null;
+    /**
+     * Additional metadata about the asset.
+     */
     metadata?: AssetInformationMetadata | null;
+    /**
+     * Details about the inner item if the asset is a container item.
+     */
     innerItem?: InnerItemModel | null;
   };
   /**
@@ -142,26 +298,38 @@ export namespace Agent {
   export type AssetMetadataModel = {
     /**
      * Alt
+     *
+     * Alternative text for the asset, or null if not provided.
      */
     alt?: string | null;
     /**
      * Width
+     *
+     * The width of the asset in pixels, or null if not applicable.
      */
     width?: number | null;
     /**
      * Height
+     *
+     * The height of the asset in pixels, or null if not applicable.
      */
     height?: number | null;
     /**
      * Extension
+     *
+     * The file extension of the asset (e.g., jpg, png), or null if not applicable.
      */
     extension?: string | null;
     /**
      * Size
+     *
+     * The size of the asset in bytes, or null if not applicable.
      */
     size?: number | null;
     /**
      * Description
+     *
+     * A description of the asset, or null if not provided.
      */
     description?: string | null;
   };
@@ -171,33 +339,147 @@ export namespace Agent {
   export type AssetSearchResultModel = {
     /**
      * Itemid
+     *
+     * The unique identifier of the asset.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Path
+     *
+     * The path of the asset in the content tree.
      */
-    path: string;
+    path?: string;
     /**
      * Name
+     *
+     * The name of the asset.
      */
-    name: string;
+    name?: string;
     /**
      * Displayname
+     *
+     * The display name of the asset, or null if not set.
      */
     displayName?: string | null;
     /**
      * Type
+     *
+     * The type of asset such as image or document.
      */
     type?: string | null;
     /**
      * Templateid
+     *
+     * The unique identifier of the template used by the asset.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Templatename
+     *
+     * The name of the template used by the asset.
      */
-    templateName: string;
+    templateName?: string;
+    /**
+     * Metadata about the asset.
+     */
     innerItem?: AssetMetadataModel | null;
+  };
+  /**
+   * AudienceCondition
+   */
+  export type AudienceCondition = {
+    /**
+     * Source
+     *
+     * Data source identifier (e.g. CDP, SESSION, ORDER).
+     */
+    source?: string | null;
+    /**
+     * Field
+     *
+     * Field name within the data source to evaluate.
+     */
+    field?: string | null;
+    /**
+     * Mapkey
+     *
+     * Key used when the source field is a map/dictionary, to access a specific entry.
+     */
+    mapKey?: string | null;
+    operator?: ConditionOperator | null;
+    /**
+     * Value
+     *
+     * Value to compare against. Can be a string, number, boolean, array, or null depending on the operator.
+     */
+    value?: unknown | null;
+    /**
+     * Unit
+     *
+     * Time unit used with temporal operators (e.g. DAYS, HOURS).
+     */
+    unit?: string | null;
+    /**
+     * Scope
+     *
+     * Optional count scope for nested array count conditions. Supported values: total, session.
+     */
+    scope?: string | null;
+    with?: AudienceGroup | null;
+    /**
+     * Logical operator combining this condition with the others in its group (AND / OR).
+     */
+    unionType?: UnionType | null;
+    /**
+     * Templateid
+     *
+     * Friendly ID of the audience template that defines the condition logic.
+     */
+    templateId?: string;
+    /**
+     * Params
+     *
+     * Key-value parameter overrides supplied to the audience template at evaluation time.
+     */
+    params?: {
+      [key: string]: string;
+    };
+  };
+  /**
+   * AudienceDefinition
+   */
+  export type AudienceDefinition = {
+    /**
+     * Top-level boolean operator combining the groups.
+     */
+    operator?: Operator | null;
+    /**
+     * Groups
+     *
+     * List of condition groups that make up the audience rule.
+     */
+    groups?: Array<AudienceGroup> | null;
+  };
+  /**
+   * AudienceGroup
+   */
+  export type AudienceGroup = {
+    /**
+     * Boolean operator combining the conditions within this group.
+     */
+    operator?: Operator | null;
+    /**
+     * Conditions
+     *
+     * List of individual conditions that form this group.
+     */
+    conditions?: Array<AudienceCondition> | null;
+    /**
+     * Eventsource
+     *
+     * Optional typed event source key (e.g. form, search, custom). When set, all conditions in the group are collapsed into a single event-instance check against this event type.
+     */
+    eventSource?: string | null;
   };
   /**
    * Body_assets-upload_asset
@@ -205,33 +487,533 @@ export namespace Agent {
   export type BodyAssetsUploadAsset = {
     /**
      * File
+     *
+     * The file to upload as an asset. You must select a file from your local machine.
      */
     file: Blob | File;
     /**
      * Upload Request
      *
      *
-     * JSON string containing document creation parameters.
-     * Expected structure:
-     * {
-     * "name":  "string (required) - Name of the asset",
-     * "itemPath": "string (required) - Path to the asset item",
-     * "language": "string (required) - Language of the asset",
-     * "extension": "string (required) - File extension of the asset",
-     * "siteName": "string (required) - Name of the site"
-     * }
+     * A JSON string containing the following parameters for uploading an asset:
+     * -  `name` - the name of the asset.
      *
-     * Example:
+     * - `itemPath` - the path to the asset.
+     *
+     * - `language` - the language code of the asset.
+     *
+     * - `extension` - the asset's file extension.
+     *
+     * - `siteName` - the name of the site. process.
+     *
+     * JSON structure with example values:
+     *
+     * ```json
      * {
-     * "name": "example.jpg",
+     * "name":  "{YOUR_ASSETNAME}.jpg",
      * "itemPath": "/sitecore/Media Library/Images",
      * "language": "en",
      * "extension": "jpg",
-     * "siteName": "MySite"
+     * "siteName": "skate-park"
      * }
+     *
      *
      */
     upload_request: string;
+  };
+  /**
+   * BooleanConfig
+   */
+  export type BooleanConfig = {
+    /**
+     * Type
+     *
+     * The type of field in the brief type.
+     */
+    type?: 'Boolean';
+    /**
+     * Name
+     *
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The display label of the field, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Helptext
+     *
+     * The text providing help or guidance for the field, which can be localized for different languages.
+     */
+    helpText?: {
+      [key: string]: string;
+    };
+    /**
+     * Required
+     *
+     * Whether the field is required.
+     */
+    required?: boolean;
+    /**
+     * Aieditable
+     *
+     * Whether the field is editable by AI.
+     */
+    aiEditable?: boolean;
+    /**
+     * Aiintent
+     *
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+  };
+  /**
+   * BooleanFieldValue
+   *
+   * Boolean field value
+   */
+  export type BooleanFieldValue = {
+    /**
+     * Type
+     *
+     * The type of field in the brief type.
+     */
+    type: 'Boolean';
+    /**
+     * Value
+     *
+     * The value of the field.
+     */
+    value: boolean;
+  };
+  /**
+   * BrandContextBatchGetResponse
+   *
+   * Response model for the batch get items endpoint - completeness counts plus one entry
+   * per requested id, in the order requested.
+   */
+  export type BrandContextBatchGetResponse = {
+    /**
+     * Requested
+     *
+     * The number of IDs requested.
+     */
+    requested?: number;
+    /**
+     * Succeeded
+     *
+     * The number of IDs whose fetch succeeded.
+     */
+    succeeded?: number;
+    /**
+     * Failed
+     *
+     * The number of IDs whose fetch failed.
+     */
+    failed?: number;
+    /**
+     * Data
+     *
+     * One entry per requested ID, in the order requested. Each entry contains the fetched data for that ID, or an error if the fetch failed.
+     */
+    data?: Array<BrandContextBatchItemResponse>;
+  };
+  /**
+   * BrandContextBatchItemResponse
+   *
+   * Model for a single item in a batch content fetch for brand context items. No children, this is a batch lookup by ID, not a tree traversal. Fields other than `brandContextItemId`, `fetchStatus`, or `fetchStatusMessage` are absent when the fetch itself failed.
+   */
+  export type BrandContextBatchItemResponse = {
+    /**
+     * Brandcontextitemid
+     *
+     * The unique identifier of the brand context item, which can be a folder or a file.
+     */
+    brandContextItemId?: string;
+    /**
+     * Displayname
+     *
+     * The display name of the folder or file.
+     */
+    displayName?: string | null;
+    /**
+     * Type
+     *
+     * The type of the brand context item. One of 'folder' or 'file'.
+     */
+    type?: string | null;
+    /**
+     * Content
+     *
+     * The Markdown content of the brand context file. Null for folders, or when `fetchStatus` is `failed`.
+     */
+    content?: string | null;
+    /**
+     * Contentlength
+     *
+     * The character count of the brand context file's content. Only present when content was fetched.
+     */
+    contentLength?: number | null;
+    /**
+     * Whether this brand context item's fetch succeeded. Failed only on a genuine failure - a folder fetched successfully is 'succeeded' with content: null.
+     */
+    fetchStatus?: FetchStatus;
+    /**
+     * Fetchstatusmessage
+     *
+     * The upstream error message for a failed fetch. Null when `fetchStatus` is `succeeded`.
+     */
+    fetchStatusMessage?: string | null;
+    /**
+     * Createddatetime
+     *
+     * Date and time the brand context item was created.
+     */
+    createdDateTime?: string | null;
+    /**
+     * Updateddatetime
+     *
+     * Date and time the brand context item was last updated.
+     */
+    updatedDateTime?: string | null;
+  };
+  /**
+   * BrandContextFileNode
+   *
+   * Model for a file in a brand context's nested tree index. No children field at all - files never have descendants. No content either.
+   */
+  export type BrandContextFileNode = {
+    /**
+     * Brandcontextitemid
+     *
+     * The unique identifier of the brand context item, which can be a folder or a file.
+     */
+    brandContextItemId?: string;
+    /**
+     * Displayname
+     *
+     * The display name of the folder or file.
+     */
+    displayName?: string;
+    /**
+     * Type
+     *
+     * Always 'file' for this node type.
+     */
+    type?: 'file';
+    /**
+     * Createddatetime
+     *
+     * Date and time the brand context file was created.
+     */
+    createdDateTime?: string;
+    /**
+     * Updateddatetime
+     *
+     * Date and time the brand context file was last updated.
+     */
+    updatedDateTime?: string;
+  };
+  /**
+   * BrandContextFolderNode
+   *
+   * Model for a folder in a brand context's nested tree index. Can contain nested folders and files, but no content.
+   */
+  export type BrandContextFolderNode = {
+    /**
+     * Brandcontextitemid
+     *
+     * The unique identifier of the brand context item, which can be a folder or a file.
+     */
+    brandContextItemId?: string;
+    /**
+     * Displayname
+     *
+     * The display name of the folder or file.
+     */
+    displayName?: string;
+    /**
+     * Type
+     *
+     * Always 'folder' for this node type.
+     */
+    type?: 'folder';
+    /**
+     * Createddatetime
+     *
+     * Date and time the brand context item was created.
+     */
+    createdDateTime?: string;
+    /**
+     * Updateddatetime
+     *
+     * Date and time the brand context item was last updated.
+     */
+    updatedDateTime?: string;
+    /**
+     * Children
+     *
+     * Nested folders or files. Always present, empty if this folder has no descendants.
+     */
+    children?: Array<BrandContextFolderNode | BrandContextFileNode>;
+  };
+  /**
+   * BriefFieldValue
+   *
+   * Model for individual brief field values.
+   */
+  export type BriefFieldValue = {
+    /**
+     * Label
+     *
+     * The display label for the field.
+     */
+    label?: string | null;
+    /**
+     * Type
+     *
+     * The type of field in the brief.
+     */
+    type?: string;
+    /**
+     * Value
+     *
+     * The generated content for the field.
+     */
+    value?: unknown;
+    [key: string]: unknown;
+  };
+  /**
+   * BriefTypeLink
+   */
+  export type BriefTypeLink = {
+    /**
+     * Type
+     */
+    type?: string;
+    /**
+     * Relatedtype
+     */
+    relatedType?: string;
+    /**
+     * Id
+     */
+    id?: string;
+    /**
+     * Uri
+     */
+    uri?: string | null;
+  };
+  /**
+   * BriefTypeModel
+   */
+  export type BriefTypeModel = {
+    /**
+     * Id
+     *
+     * The unique UUID of the brief type.
+     */
+    id?: string;
+    /**
+     * Name
+     *
+     * The name of the brief type.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The label of the brief type, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Icon
+     *
+     * The name of the icon associated with the brief type, which is used to visually represent the brief type in the UI.
+     */
+    icon?: string | null;
+    /**
+     * Iconcolor
+     *
+     * The color of the icon associated with the brief type.
+     */
+    iconColor?: string | null;
+    /**
+     * Description
+     *
+     * The description of the brief type.
+     */
+    description?: string | null;
+    /**
+     * Fields
+     *
+     * The list of fields that belong to this brief type, including their configurations and metadata.
+     */
+    fields?: Array<
+      | SimpleTextConfig
+      | RichTextConfig
+      | TimelineConfig
+      | BudgetConfig
+      | DateTimeConfig
+      | BooleanConfig
+    >;
+  };
+  /**
+   * BudgetConfig
+   */
+  export type BudgetConfig = {
+    /**
+     * Type
+     *
+     * The type of field in the brief type.
+     */
+    type?: 'Budget';
+    /**
+     * Name
+     *
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The display label of the field, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Helptext
+     *
+     * The text providing help or guidance for the field, which can be localized for different languages.
+     */
+    helpText?: {
+      [key: string]: string;
+    };
+    /**
+     * Required
+     *
+     * Whether the field is required.
+     */
+    required?: boolean;
+    /**
+     * Aieditable
+     *
+     * Whether the field is editable by AI.
+     */
+    aiEditable?: boolean;
+    /**
+     * Aiintent
+     *
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * Currencies
+     *
+     * A list of allowed currencies for the budget field, specified as ISO currency codes.
+     */
+    currencies?: Array<string>;
+  };
+  /**
+   * BudgetFieldValue
+   *
+   * The Budget field value.
+   */
+  export type BudgetFieldValue = {
+    /**
+     * Type
+     *
+     * The type of the field value, which is always 'Budget' for this schema.
+     */
+    type: 'Budget';
+    /**
+     * The budget amount and currency.
+     */
+    value: BudgetValue;
+  };
+  /**
+   * BudgetValue
+   *
+   * Budget field value
+   */
+  export type BudgetValue = {
+    /**
+     * Amount
+     *
+     * The numeric amount of the budget.
+     */
+    amount: number;
+    /**
+     * Currency
+     *
+     * The ISO currency code for the budget amount.
+     */
+    currency: string;
+  };
+  /**
+   * ChildContentItemResponse
+   */
+  export type ChildContentItemResponse = {
+    /**
+     * Itemid
+     *
+     * The unique identifier of the content item.
+     */
+    itemId?: string;
+    /**
+     * Name
+     *
+     * The name of the content item.
+     */
+    name?: string;
+    /**
+     * Path
+     *
+     * The path of the content item in the content tree.
+     */
+    path?: string;
+    /**
+     * The workflow information of the content item, or null if not in a workflow.
+     */
+    workflow?: WorkflowModel | null;
+    /**
+     * Version
+     *
+     * The version number of the content item, or null if not applicable.
+     */
+    version?: number | null;
+    /**
+     * The template used by the content item.
+     */
+    template?: ModelsContentTemplateModel;
+    /**
+     * Fields
+     *
+     * A key-value map of field names and their values for the content item.
+     */
+    fields?: {
+      [key: string]: unknown;
+    } | null;
+    /**
+     * Created At
+     *
+     * The timestamp when the content item was created.
+     */
+    created_at?: string | null;
+    /**
+     * Updated At
+     *
+     * The timestamp when the content item was updated.
+     */
+    updated_at?: string | null;
   };
   /**
    * ComponentDetailsModel
@@ -239,22 +1021,36 @@ export namespace Agent {
   export type ComponentDetailsModel = {
     /**
      * Itemid
+     *
+     * The unique identifier of the item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the item.
      */
-    name: string;
+    name?: string;
     /**
      * Displayname
+     *
+     * The display name of the item.
      */
-    displayName: string;
+    displayName?: string;
     /**
      * Path
+     *
+     * The path to the item.
      */
-    path: string;
-    template: ComponentTemplateModel;
-    fields: ComponentFields;
+    path?: string;
+    /**
+     * The template used by the component.
+     */
+    template?: ComponentTemplateModel;
+    /**
+     * The fields associated with the component.
+     */
+    fields?: ComponentFields;
   };
   /**
    * ComponentFields
@@ -262,8 +1058,10 @@ export namespace Agent {
   export type ComponentFields = {
     /**
      * Nodes
+     *
+     * A list of field nodes associated with the component.
      */
-    nodes: Array<FieldModel>;
+    nodes?: Array<ModelsPagesFieldModel>;
   };
   /**
    * ComponentGroup
@@ -271,12 +1069,16 @@ export namespace Agent {
   export type ComponentGroup = {
     /**
      * Title
+     *
+     * The title of the component group.
      */
-    title: string;
+    title?: string;
     /**
      * Components
+     *
+     * A list of components in the group.
      */
-    components: Array<ComponentInfo>;
+    components?: Array<ComponentInfo>;
   };
   /**
    * ComponentInfo
@@ -284,24 +1086,34 @@ export namespace Agent {
   export type ComponentInfo = {
     /**
      * Category
+     *
+     * The category of the component.
      */
-    category: string;
+    category?: string;
     /**
      * Displayname
+     *
+     * The display name of the component.
      */
-    displayName: string;
+    displayName?: string;
     /**
      * Iconurl
+     *
+     * The URL of the icon representing the component.
      */
-    iconUrl: string;
+    iconUrl?: string;
     /**
      * Id
+     *
+     * The unique identifier of the component.
      */
-    id: string;
+    id?: string;
     /**
      * Componentname
+     *
+     * The internal name of the component.
      */
-    componentName: string;
+    componentName?: string;
   };
   /**
    * ComponentModel
@@ -309,34 +1121,64 @@ export namespace Agent {
   export type ComponentModel = {
     /**
      * Id
+     *
+     * The unique identifier of the component instance.
      */
-    id: string;
+    id?: string;
     /**
      * Componentid
+     *
+     * The unique identifier of the component rendering definition.
      */
-    componentId: string;
+    componentId?: string;
     /**
      * Componentname
+     *
+     * The internal name of the component.
      */
-    componentName: string;
+    componentName?: string;
     /**
      * Datasource
+     *
+     * The unique identifier of the datasource item used by the component, or null if not applicable.
      */
     dataSource?: string | null;
     /**
+     * The resolved datasource item, including its field values — the content this component displays. Null when the component has no datasource or it could not be resolved.
+     */
+    dataSourceItem?: DataSourceItemModel | null;
+    /**
      * Placeholder
+     *
+     * The path of the placeholder where the component is placed, or null if not applicable.
      */
     placeholder?: string | null;
+    /**
+     * Parameters configured for the component.
+     */
     parameters?: ComponentParametersModel | null;
     /**
      * Deviceid
+     *
+     * The unique identifier of the device definition for which the component is configured, or null if not device-specific.
      */
     deviceId?: string | null;
     /**
      * Layoutid
+     *
+     * The unique identifier of the layout definition in which the component is placed, or null if not applicable.
      */
     layoutId?: string | null;
+    /**
+     * Detailed information about the component item.
+     */
     componentDetails?: ComponentDetailsModel | null;
+    /**
+     * Editable
+     *
+     * Whether the component is editable.
+     */
+    editable?: boolean | null;
   };
   /**
    * ComponentParametersModel
@@ -344,26 +1186,38 @@ export namespace Agent {
   export type ComponentParametersModel = {
     /**
      * Gridparameters
+     *
+     * Grid parameters for the component, or null if not applicable.
      */
     GridParameters?: string | null;
     /**
      * Fieldnames
+     *
+     * Field names associated with the component, or null if not applicable.
      */
     FieldNames?: string | null;
     /**
      * Styles
+     *
+     * The styles for the component, or null if not applicable.
      */
     Styles?: string | null;
     /**
      * Renderingidentifier
+     *
+     * The unique identifier of the rendering, or null if not applicable.
      */
     RenderingIdentifier?: string | null;
     /**
      * Cssstyles
+     *
+     * CSS styles for the component, or null if not applicable.
      */
     CSSStyles?: string | null;
     /**
      * Dynamicplaceholderid
+     *
+     * The identifier for dynamic placeholders, or null if not applicable.
      */
     DynamicPlaceholderId?: string | null;
   };
@@ -373,38 +1227,56 @@ export namespace Agent {
   export type ComponentResponse = {
     /**
      * Id
+     *
+     * The unique identifier of the component.
      */
-    id: string;
+    id?: string;
     /**
      * Name
+     *
+     * The name of the component.
      */
-    name: string;
+    name?: string;
     /**
      * Datasourcetemplateid
+     *
+     * The template ID for the component's datasource. May be None if the component has no datasource template.
      */
-    datasourceTemplateId: string;
+    datasourceTemplateId?: string | null;
     /**
      * Datasourcelocations
+     *
+     * A list of locations for the component's datasource.
      */
-    datasourceLocations: Array<string>;
+    datasourceLocations?: Array<string>;
     /**
      * Datasourcetemplatepath
+     *
+     * The path to the datasource template.
      */
-    datasourceTemplatePath: string;
+    datasourceTemplatePath?: string;
     /**
      * Datasourcefields
+     *
+     * A list of fields for the datasource.
      */
-    datasourceFields: Array<DatasourceFieldNode>;
+    datasourceFields?: Array<DatasourceFieldNode>;
     /**
      * Datasourceautogenerated
+     *
+     * Whether the datasource is auto-generated.
      */
-    datasourceAutoGenerated: boolean;
+    datasourceAutoGenerated?: boolean;
     /**
      * Datasourcerequired
+     *
+     * Whether the datasource is required.
      */
-    datasourceRequired: boolean;
+    datasourceRequired?: boolean;
     /**
      * Hasdynamicplaceholder
+     *
+     * Whether the component has a dynamic placeholder.
      */
     hasDynamicPlaceholder?: boolean | null;
   };
@@ -414,12 +1286,16 @@ export namespace Agent {
   export type ComponentShortInfo = {
     /**
      * Id
+     *
+     * The unique identifier of the component.
      */
-    id: string;
+    id?: string;
     /**
      * Name
+     *
+     * The name of the component.
      */
-    name: string;
+    name?: string;
   };
   /**
    * ComponentTemplateModel
@@ -427,12 +1303,16 @@ export namespace Agent {
   export type ComponentTemplateModel = {
     /**
      * Templateid
+     *
+     * The unique identifier of the template.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Name
+     *
+     * The name of the template.
      */
-    name: string;
+    name?: string;
   };
   /**
    * Components
@@ -440,10 +1320,14 @@ export namespace Agent {
   export type Components = {
     /**
      * Groups
+     *
+     * A list of component groups.
      */
-    groups: Array<ComponentGroup>;
+    groups?: Array<ComponentGroup>;
     /**
      * Ungrouped
+     *
+     * A list of ungrouped components.
      */
     ungrouped?: Array<ComponentInfo>;
   };
@@ -451,139 +1335,280 @@ export namespace Agent {
    * ComponentsResponse
    */
   export type ComponentsResponse = {
-    components: Components;
+    /**
+     * Components available for the specified site.
+     */
+    components?: Components;
   };
   /**
-   * ConditionTemplate
+   * ConditionGroupInput
+   *
+   * Represents a group of conditions with a union type
    */
-  export type ConditionTemplate = {
+  export type ConditionGroupInput = {
     /**
-     * Href
+     * Union Type
+     *
+     * The union type for combining conditions within the group. Either 'AND' or 'OR'. The first group should not have a union type.
      */
-    href: string;
+    union_type?: 'AND' | 'OR' | null;
     /**
-     * Ref
+     * Conditions
+     *
+     * A list of conditions in this group.
      */
-    ref: string;
+    conditions: Array<ConditionInput>;
+  };
+  /**
+   * ConditionInput
+   *
+   * Represents a single condition in a condition group
+   */
+  export type ConditionInput = {
     /**
-     * Name
+     * Condition Template Id
+     *
+     * The unique identifier of the condition template to apply.
      */
-    name: string;
+    condition_template_id: string;
     /**
-     * Modifiedbyref
+     * Condition Params
+     *
+     * A key-value map of parameters for the condition template.
      */
-    modifiedByRef: string;
-    /**
-     * Modifiedat
-     */
-    modifiedAt: string;
-    /**
-     * Revision
-     */
-    revision: number;
-    /**
-     * Archived
-     */
-    archived: boolean;
-    /**
-     * Friendlyid
-     */
-    friendlyId: string;
-    /**
-     * Type
-     */
-    type: string;
-    /**
-     * Status
-     */
-    status: string;
-    /**
-     * Icon
-     */
-    icon: string;
-    /**
-     * Additionalfields
-     */
-    additionalFields: {
+    condition_params: {
       [key: string]: unknown;
     };
-    /**
-     * Templateelements
-     */
-    templateElements: Array<{
-      [key: string]: unknown;
-    }>;
-    /**
-     * Defaulttemplate
-     */
-    defaultTemplate: boolean;
-    /**
-     * Tags
-     */
-    tags: Array<string>;
-    /**
-     * Customtemplate
-     */
-    customTemplate: boolean;
-    /**
-     * Clientkey
-     */
-    clientKey?: string | null;
-    /**
-     * Description
-     */
-    description?: string | null;
-    /**
-     * Revisioncomment
-     */
-    revisionComment?: string | null;
-    /**
-     * Render
-     */
-    render?: boolean | null;
   };
+  /**
+   * ConditionOperator
+   */
+  export const ConditionOperator = {
+    NULL: 'NULL',
+    NOT_NULL: 'NOT_NULL',
+    EQUALS: 'EQUALS',
+    NOT_EQUAL: 'NOT_EQUAL',
+    CONTAINS: 'CONTAINS',
+    NOT_CONTAINS: 'NOT_CONTAINS',
+    STARTS_WITH: 'STARTS_WITH',
+    NOT_STARTS_WITH: 'NOT_STARTS_WITH',
+    ENDS_WITH: 'ENDS_WITH',
+    NOT_ENDS_WITH: 'NOT_ENDS_WITH',
+    GREATER_THAN: 'GREATER_THAN',
+    GREATER_THAN_EQUAL: 'GREATER_THAN_EQUAL',
+    LESS_THAN: 'LESS_THAN',
+    LESS_THAN_EQUAL: 'LESS_THAN_EQUAL',
+    BETWEEN: 'BETWEEN',
+    NOT_BETWEEN: 'NOT_BETWEEN',
+    TRUE: 'TRUE',
+    FALSE: 'FALSE',
+    IN: 'IN',
+    NOT_IN: 'NOT_IN',
+    BEFORE: 'BEFORE',
+    AFTER: 'AFTER',
+    EQUAL_DAY: 'EQUAL_DAY',
+    NOT_EQUAL_DAY: 'NOT_EQUAL_DAY',
+    EQUAL_YEAR: 'EQUAL_YEAR',
+    NOT_EQUAL_YEAR: 'NOT_EQUAL_YEAR',
+    IN_PAST: 'IN_PAST',
+    NOT_IN_PAST: 'NOT_IN_PAST',
+    IN_NEXT: 'IN_NEXT',
+    NOT_IN_NEXT: 'NOT_IN_NEXT',
+    IS_NOW_PLUS: 'IS_NOW_PLUS',
+    IS_NOW_MINUS: 'IS_NOW_MINUS',
+  } as const;
+  /**
+   * ConditionOperator
+   */
+  export type ConditionOperator = (typeof ConditionOperator)[keyof typeof ConditionOperator];
   /**
    * ContentItemResponse
    */
   export type ContentItemResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the content item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the content item.
      */
-    name: string;
+    name?: string;
     /**
      * Path
+     *
+     * The path of the content item in the content tree.
      */
-    path: string;
+    path?: string;
+    /**
+     * The workflow information of the content item, or null if not in a workflow.
+     */
     workflow?: WorkflowModel | null;
     /**
-     * Children
-     */
-    children?: {
-      [key: string]: Array<ContentItemResponse>;
-    } | null;
-    /**
      * Version
+     *
+     * The version number of the content item, or null if not applicable.
      */
     version?: number | null;
-    template: ModelsContentTemplateModel;
+    /**
+     * The template used by the content item.
+     */
+    template?: ModelsContentTemplateModel;
     /**
      * Fields
+     *
+     * A key-value map of field names and their values for the content item.
      */
     fields?: {
       [key: string]: unknown;
     } | null;
     /**
      * Created At
+     *
+     * The timestamp when the content item was created.
      */
     created_at?: string | null;
     /**
      * Updated At
+     *
+     * The timestamp when the content item was updated.
      */
     updated_at?: string | null;
+    /**
+     * Children
+     */
+    children?: {
+      [key: string]: Array<ChildContentItemResponse>;
+    } | null;
+  };
+  /**
+   * CreateBriefRequestModel
+   *
+   * Request model for creating a new brief
+   */
+  export type CreateBriefRequestModel = {
+    /**
+     * Name
+     *
+     * The name of the brief.
+     */
+    name: string;
+    /**
+     * Locale
+     *
+     * The locale code associated with the brief, in the format xx-XX.
+     */
+    locale: string;
+    /**
+     * Brieftypeid
+     *
+     * The unique identifier of the brief type to use for generating a brief. To get this ID, you can use the [List brief types](#operation/brieftypes-list_brieftypes) endpoint to retrieve the list of brief types available in your organization.
+     */
+    briefTypeId: string;
+    /**
+     * Fields
+     *
+     * Dictionary of field names to their values.
+     */
+    fields?: {
+      [key: string]:
+        | ({
+            type: 'SimpleText';
+          } & SimpleTextFieldValue)
+        | ({
+            type: 'RichText';
+          } & RichTextFieldValue)
+        | ({
+            type: 'DateTime';
+          } & DateTimeFieldValue)
+        | ({
+            type: 'Budget';
+          } & BudgetFieldValue)
+        | ({
+            type: 'Boolean';
+          } & BooleanFieldValue)
+        | ({
+            type: 'Timeline';
+          } & TimelineFieldValue);
+    } | null;
+  };
+  /**
+   * CreateBriefResponseModel
+   */
+  export type CreateBriefResponseModel = {
+    /**
+     * Id
+     *
+     * The unique identifier of the created brief.
+     */
+    id?: string;
+    /**
+     * Icon
+     *
+     * The icon associated with the brief.
+     */
+    icon?: string | null;
+    /**
+     * Name
+     *
+     * The name of the brief.
+     */
+    name?: string;
+    /**
+     * Status
+     *
+     * The status of the brief. *Draft* by default.
+     */
+    status?: string;
+    /**
+     * Locale
+     *
+     * The locale code in the format xx-XX.
+     */
+    locale?: string;
+    /**
+     * Fields
+     *
+     * Dictionary of field names to their values.
+     */
+    fields?: {
+      [key: string]: unknown;
+    };
+    /**
+     * Istemplate
+     *
+     * Whether the brief is a template
+     */
+    isTemplate?: boolean | null;
+    /**
+     * Contributors
+     *
+     * A list of users who are contributors to the brief, or null if no contributors.
+     */
+    contributors?: Array<string> | null;
+    /**
+     * The user who created the brief.
+     */
+    createdBy?: ExternalLink | null;
+    /**
+     * Createdon
+     *
+     * The ISO 8601 timestamp when the brief was created.
+     */
+    createdOn?: string | null;
+    /**
+     * The user who last updated the brief.
+     */
+    updatedBy?: ExternalLink | null;
+    /**
+     * Updatedon
+     *
+     * The ISO 8601 timestamp when the brief was last updated.
+     */
+    updatedOn?: string | null;
   };
   /**
    * CreateComponentDatasourceRequest
@@ -591,22 +1616,30 @@ export namespace Agent {
   export type CreateComponentDatasourceRequest = {
     /**
      * Sitename
+     *
+     * The name of the site for which the datasource is created.
      */
     siteName: string;
     /**
      * Datafields
+     *
+     * A key-value map of data field names and their values for the datasource.
      */
     dataFields: {
       [key: string]: unknown;
     };
     /**
      * Children
+     *
+     * A list of child datasource objects, or null if none.
      */
     children?: Array<{
       [key: string]: unknown;
     }> | null;
     /**
      * Language
+     *
+     * The language code for the datasource.
      */
     language?: string;
   };
@@ -616,12 +1649,16 @@ export namespace Agent {
   export type CreateComponentDatasourceResponse = {
     /**
      * Datasourceid
+     *
+     * The unique identifier of the created datasource.
      */
-    datasourceId: string;
+    datasourceId?: string;
     /**
      * Datasourcelocation
+     *
+     * The location path of the created datasource.
      */
-    datasourceLocation: string;
+    datasourceLocation?: string;
   };
   /**
    * CreateContentItemRequest
@@ -629,22 +1666,32 @@ export namespace Agent {
   export type CreateContentItemRequest = {
     /**
      * Templateid
+     *
+     * The unique identifier of the template used to create the content item.
      */
     templateId: string;
     /**
      * Name
+     *
+     * The name of the content item to create.
      */
     name: string;
     /**
      * Parentid
+     *
+     * The unique identifier of the parent item.
      */
     parentId: string;
     /**
      * Language
+     *
+     * The language code for the content item.
      */
     language?: string;
     /**
      * Fields
+     *
+     * A key-value map of field names and their values for the content item, or null if none.
      */
     fields?: {
       [key: string]: unknown;
@@ -656,24 +1703,89 @@ export namespace Agent {
   export type CreateContentItemResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the created content item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the created content item.
+     */
+    name?: string;
+    /**
+     * Path
+     *
+     * The path of the created content item.
+     */
+    path?: string;
+    /**
+     * Templateid
+     *
+     * The unique identifier of the template used for the content item.
+     */
+    templateId?: string;
+    /**
+     * Version
+     *
+     * The version number of the created content item.
+     */
+    version?: number;
+  };
+  /**
+   * CreateExperimentRequest
+   */
+  export type CreateExperimentRequest = {
+    /**
+     * Site Id
+     *
+     * The unique identifier of the site.
+     */
+    site_id: string;
+    /**
+     * Page Id
+     *
+     * The unique identifier of the page that includes the component to A/B/n test.
+     */
+    page_id: string;
+    /**
+     * Language
+     *
+     * The language code for the A/B/n test.
+     */
+    language?: string | null;
+    /**
+     * Component Id
+     *
+     * The unique identifier of the component to A/B/n test.
+     */
+    component_id: string;
+    /**
+     * Name
+     *
+     * The name of the A/B/n test.
      */
     name: string;
     /**
-     * Path
+     * How the A/B/n test evaluates the performance of its variants:
+     *
+     * - `pageViewGoal` - measures the number of page views.
+     * - `bouncersGoal` - measures the number of bounces.
+     * - `exitsGoal` - measures the number of exits.
      */
-    path: string;
+    goal_type: GoalType;
     /**
-     * Templateid
+     * Targeted Pages
+     *
+     * A list of page paths where you want to track the A/B/n test goal.
      */
-    templateId: string;
+    targeted_pages?: Array<string>;
     /**
-     * Version
+     * Variants
+     *
+     * A list of variants to use for the A/B/n test. Traffic splits must sum to 100 and exactly one variant must be marked as control.
      */
-    version: number;
+    variants: Array<Variant>;
   };
   /**
    * CreatePageRequest
@@ -681,22 +1793,32 @@ export namespace Agent {
   export type CreatePageRequest = {
     /**
      * Templateid
+     *
+     * The unique identifier of the page template to be used for the new page.
      */
     templateId: string;
     /**
      * Name
+     *
+     * The name of the page to create.
      */
     name: string;
     /**
      * Parentid
+     *
+     * The unique identifier of the parent item for the new page.
      */
     parentId: string;
     /**
      * Language
+     *
+     * The language code for the new page.
      */
     language?: string;
     /**
      * Fields
+     *
+     * A list of field objects to set on the page, or null if none.
      */
     fields?: Array<{
       [key: string]: unknown;
@@ -708,43 +1830,146 @@ export namespace Agent {
   export type CreatePageResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the created page.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the created page.
      */
-    name: string;
+    name?: string;
   };
   /**
-   * CreatePersonalizationRequest
+   * CreatePersonalizationRequestV1
    */
-  export type CreatePersonalizationRequest = {
+  export type CreatePersonalizationRequestV1 = {
     /**
      * Name
+     *
+     * The name of the personalization rule.
      */
     name: string;
     /**
      * Language
+     *
+     * The language code for the personalization rule, or null for default.
      */
     language?: string | null;
     /**
      * Variant Name
+     *
+     * The name of the personalization variant.
      */
     variant_name: string;
     /**
      * Audience Name
+     *
+     * The name of the audience for the personalization rule.
      */
     audience_name: string;
     /**
      * Condition Template Id
+     *
+     * The unique identifier of the condition template to apply.
      */
     condition_template_id: string;
     /**
      * Condition Params
+     *
+     * A key-value map of parameters for the condition template.
      */
     condition_params: {
       [key: string]: unknown;
     };
+  };
+  /**
+   * CreatePersonalizationRequestV2
+   */
+  export type CreatePersonalizationRequestV2 = {
+    /**
+     * Name
+     *
+     * The name of the personalization rule.
+     */
+    name: string;
+    /**
+     * Language
+     *
+     * The language code for the personalization rule, or null for default.
+     */
+    language?: string | null;
+    /**
+     * Variant Name
+     *
+     * The name of the personalization variant.
+     */
+    variant_name: string;
+    /**
+     * Audience Name
+     *
+     * The name of the audience for the personalization rule.
+     */
+    audience_name: string;
+    /**
+     * Condition Groups
+     *
+     * List of condition groups with their conditions
+     */
+    condition_groups: Array<ConditionGroupInput>;
+  };
+  /**
+   * DataSourceItemModel
+   *
+   * The item a component renders. This is where a page's visible text lives.
+   *
+   * Deliberately lean: this model is repeated once per component and once per child, so anything
+   * carried here is multiplied across the whole page response. When the response grows past the
+   * client's inlining limit it is written to a file instead, the caller compresses it by hand, and
+   * the content gets dropped in the process — so size here is not cosmetic, it decides whether the
+   * content is usable at all. Children therefore omit `path` and `template`, which are derivable
+   * from the parent, and empty field values are omitted everywhere.
+   */
+  export type DataSourceItemModel = {
+    /**
+     * Itemid
+     *
+     * The unique identifier of the datasource item. Use this in the [Update a content item](#operation/content-update_content) endpoint to edit the text shown on the page.
+     */
+    itemId?: string;
+    /**
+     * Name
+     *
+     * The name of the datasource item. Use this to distinguish between repeated components on the same page.
+     */
+    name?: string;
+    /**
+     * Path
+     *
+     * The full path to the datasource item. Omitted on children — a child's path is its parent's path plus its name.
+     */
+    path?: string | null;
+    /**
+     * Template
+     *
+     * The name of the template the datasource item uses. Omitted on children.
+     */
+    template?: string | null;
+    /**
+     * Fields
+     *
+     * The datasource item's field values — the content actually shown on the page. Fields whose value is empty are omitted; call get_content_item_by_id on this item for the complete field list including empty ones.
+     */
+    fields?: {
+      [key: string]: unknown;
+    };
+    /**
+     * Children
+     *
+     * Child items of the datasource, such as the individual teasers of a Teaser Group or tiles of a Tiles component. Page text often lives here rather than on the datasource itself.
+     */
+    children?: Array<DataSourceItemModel> | null;
   };
   /**
    * DatasourceFieldNode
@@ -752,16 +1977,92 @@ export namespace Agent {
   export type DatasourceFieldNode = {
     /**
      * Name
+     *
+     * The name of the datasource field.
      */
-    name: string;
+    name?: string;
     /**
      * Type
+     *
+     * The type of datasource field.
      */
-    type: string;
+    type?: string;
     /**
      * Validation
+     *
+     * Validation rules for the datasource field.
      */
-    validation: string;
+    validation?: string;
+  };
+  /**
+   * DateTimeConfig
+   */
+  export type DateTimeConfig = {
+    /**
+     * Type
+     *
+     * The type of field in the brief type.
+     */
+    type?: 'DateTime';
+    /**
+     * Name
+     *
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The display label of the field, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Helptext
+     *
+     * The text providing help or guidance for the field, which can be localized for different languages.
+     */
+    helpText?: {
+      [key: string]: string;
+    };
+    /**
+     * Required
+     *
+     * Whether the field is required.
+     */
+    required?: boolean;
+    /**
+     * Aieditable
+     *
+     * Whether the field is editable by AI.
+     */
+    aiEditable?: boolean;
+    /**
+     * Aiintent
+     *
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+  };
+  /**
+   * DateTimeFieldValue
+   *
+   * DateTime field value
+   */
+  export type DateTimeFieldValue = {
+    /**
+     * Type
+     *
+     * The type of field in the brief type.
+     */
+    type: 'DateTime';
+    /**
+     * Value
+     *
+     * The value of the DateTime field.
+     */
+    value: string;
   };
   /**
    * DeleteContentResponse
@@ -769,142 +2070,889 @@ export namespace Agent {
   export type DeleteContentResponse = {
     /**
      * Success
+     *
+     * Whether the content item was deleted successfully.
      */
-    success: boolean;
+    success?: boolean;
     /**
      * Deletedid
+     *
+     * The unique identifier of the deleted content item.
      */
-    deletedId: string;
+    deletedId?: string;
+    /**
+     * Affectedcomponents
+     *
+     * Components that referenced the deleted item. Populated regardless of remove_references; removed=True when the component was cleaned up.
+     */
+    affectedComponents?: Array<AffectedComponent>;
+    /**
+     * Affectedexperiments
+     *
+     * A/B tests found on affected components. archived=True only when the component was actually removed and the test was successfully archived.
+     */
+    affectedExperiments?: Array<AffectedExperiment>;
   };
   /**
-   * FieldModel
+   * EditablePlaceholderModel
    */
-  export type FieldModel = {
+  export type EditablePlaceholderModel = {
+    /**
+     * Placeholderpath
+     *
+     * The full path of the placeholder.
+     */
+    placeholderPath?: string;
+    /**
+     * Placeholdername
+     *
+     * The name of the placeholder (last path segment).
+     */
+    placeholderName?: string;
+    /**
+     * Displayname
+     *
+     * The display name of the placeholder.
+     */
+    displayName?: string | null;
+  };
+  /**
+   * ExperienceFlowDefinitionSplitV1
+   */
+  export type ExperienceFlowDefinitionSplitV1 = {
+    /**
+     * Template
+     *
+     * A serialized JSON payload for the split template. This payload typically includes variantId.
+     */
+    template?: string;
+    /**
+     * Variantname
+     *
+     * The display name of the variant used in this split.
+     */
+    variantName?: string;
+    /**
+     * Audiencename
+     *
+     * The display name of the audience targeted by this split.
+     */
+    audienceName?: string;
+    /**
+     * Conditiongroups
+     *
+     * The list of condition groups that determine when this split is eligible.
+     */
+    conditionGroups?: Array<FlowDefinitionConditionGroupV1>;
+  };
+  /**
+   * ExperienceFlowDefinitionSplitV2
+   */
+  export type ExperienceFlowDefinitionSplitV2 = {
+    /**
+     * Template
+     *
+     * A serialized JSON payload for the split template. This payload typically includes variantId.
+     */
+    template?: string;
+    /**
+     * Variantname
+     *
+     * The display name of the variant used in this split.
+     */
+    variantName?: string;
+    /**
+     * Audiencename
+     *
+     * The display name of the audience targeted by this split.
+     */
+    audienceName?: string;
+    /**
+     * Conditiongroups
+     *
+     * The list of condition groups that determine when this split is eligible.
+     */
+    conditionGroups?: Array<FlowDefinitionConditionGroupV2>;
+  };
+  /**
+   * ExperienceFlowResponseV1
+   *
+   * Response model for the v1 create personalization endpoint, matching the pre-AI-6608 shape.
+   */
+  export type ExperienceFlowResponseV1 = {
+    /**
+     * Clientkey
+     *
+     * The client key associated with the flow definition (A/B/n test or personalization).
+     */
+    clientKey?: string;
+    /**
+     * Href
+     *
+     * The URL of the flow definition (A/B/n test or personalization).
+     */
+    href?: string | null;
+    /**
+     * Ref
+     *
+     * A reference identifier for the flow definition (A/B/n test or personalization).
+     */
+    ref?: string;
     /**
      * Name
+     *
+     * The name of the flow definition (A/B/n test or personalization).
      */
-    name: string;
+    name?: string;
     /**
-     * Value
+     * Modifiedbyref
+     *
+     * A reference identifier for the user who last modified the flow definition (A/B/n test or personalization).
      */
-    value: string;
+    modifiedByRef?: string | null;
+    /**
+     * Modifiedat
+     *
+     * The timestamp when the flow definition (A/B/n test or personalization) was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * Revision
+     *
+     * The revision number of the flow definition (A/B/n test or personalization).
+     */
+    revision?: number | null;
+    /**
+     * Archived
+     *
+     * Whether the flow definition (A/B/n test or personalization) is archived.
+     */
+    archived?: boolean;
+    /**
+     * Friendlyid
+     *
+     * A user-friendly identifier for the flow definition (A/B/n test or personalization).
+     */
+    friendlyId?: string;
+    /**
+     * Type
+     *
+     * The type of the flow definition (A/B/n test or personalization).
+     */
+    type?: string;
+    /**
+     * Subtype
+     *
+     * The subtype of the flow definition (A/B/n test or personalization).
+     */
+    subtype?: string;
+    /**
+     * Channels
+     *
+     * A list of channels associated with the flow definition (A/B/n test or personalization), such as web or mobile.
+     */
+    channels?: Array<string> | null;
+    /**
+     * Triggers
+     *
+     * A list of triggers for the flow definition (A/B/n test or personalization), or null if none.
+     */
+    triggers?: Array<unknown> | null;
+    /**
+     * Dashboardlinks
+     *
+     * A list of dashboard links for the experience (A/B/n test or personalization), or null if none.
+     */
+    dashboardLinks?: Array<unknown> | null;
+    /**
+     * Tags
+     *
+     * A list of tags associated with the flow definition (A/B/n test or personalization), or null if none.
+     */
+    tags?: Array<unknown> | null;
+    /**
+     * Businessprocess
+     *
+     * The business process associated with the flow definition (A/B/n test or personalization).
+     */
+    businessProcess?: string | null;
+    /**
+     * Siteid
+     *
+     * The unique identifier of the site associated with the A/B/n test or personalization.
+     */
+    siteId?: string;
+    /**
+     * The traffic distribution configuration for the personalization experience (A/B/n test or personalization).
+     */
+    traffic?: ExperienceTrafficV1;
+    /**
+     * Transpiledvariants
+     *
+     * A list of transpiled variants for the flow definition (A/B/n test or personalization), or null if none.
+     */
+    transpiledVariants?: Array<unknown> | null;
+    /**
+     * Variants
+     *
+     * A list of variants for the flow definition (A/B/n test or personalization), or null if none.
+     */
+    variants?: Array<unknown> | null;
+    /**
+     * Status
+     *
+     * The current status of the flow definition (A/B/n test or personalization).
+     */
+    status?: string;
+    /**
+     * The schedule configuration for the flow definition.
+     */
+    schedule?: FlowDefinitionSchedule | null;
+    /**
+     * Links to the revisions of the flow definition.
+     */
+    revisions?: FlowDefinitionRevisions | null;
+    /**
+     * The sample size configuration for the flow definition.
+     */
+    sampleSizeConfig?: FlowDefinitionSampleSizeConfigV1 | null;
+    /**
+     * Notificationenabled
+     *
+     * Whether notifications are enabled for the flow definition (A/B/n test or personalization).
+     */
+    notificationEnabled?: boolean | null;
   };
+  /**
+   * ExperienceFlowResponseV2
+   */
+  export type ExperienceFlowResponseV2 = {
+    /**
+     * Clientkey
+     *
+     * The client key associated with the flow definition (A/B/n test or personalization).
+     */
+    clientKey?: string;
+    /**
+     * Href
+     *
+     * The URL of the flow definition (A/B/n test or personalization).
+     */
+    href?: string | null;
+    /**
+     * Ref
+     *
+     * A reference identifier for the flow definition (A/B/n test or personalization).
+     */
+    ref?: string;
+    /**
+     * Name
+     *
+     * The name of the flow definition (A/B/n test or personalization).
+     */
+    name?: string;
+    /**
+     * Modifiedbyref
+     *
+     * A reference identifier for the user who last modified the flow definition (A/B/n test or personalization).
+     */
+    modifiedByRef?: string | null;
+    /**
+     * Modifiedat
+     *
+     * The timestamp when the flow definition was last modified (A/B/n test or personalization).
+     */
+    modifiedAt?: string | null;
+    /**
+     * Revision
+     *
+     * The revision number of the flow definition (A/B/n test or personalization).
+     */
+    revision?: number | null;
+    /**
+     * Archived
+     *
+     * Whether the flow definition (A/B/n test or personalization) is archived.
+     */
+    archived?: boolean;
+    /**
+     * Friendlyid
+     *
+     * A user-friendly identifier for the flow definition (A/B/n test or personalization).
+     */
+    friendlyId?: string;
+    /**
+     * Type
+     *
+     * The type of the flow definition (A/B/n test or personalization).
+     */
+    type?: string;
+    /**
+     * Channels
+     *
+     * A list of channels associated with the flow definition (A/B/n test or personalization), such as web or mobile.
+     */
+    channels?: Array<string> | null;
+    /**
+     * Triggers
+     *
+     * A list of triggers for the flow definition (A/B/n test or personalization), or null if none.
+     */
+    triggers?: Array<unknown> | null;
+    /**
+     * Tags
+     *
+     * A list of tags associated with the flow definition (A/B/n test or personalization), or null if none.
+     */
+    tags?: Array<unknown> | null;
+    /**
+     * Businessprocess
+     *
+     * The business process associated with the flow definition (A/B/n test or personalization).
+     */
+    businessProcess?: string | null;
+    /**
+     * Siteid
+     *
+     * The unique identifier of the site associated with A/B/n test or personalization.
+     */
+    siteId?: string;
+    /**
+     * Transpiledvariants
+     *
+     * A list of transpiled variants for the flow definition (A/B/n test or personalization), or null if none. `variantId` is typically in `transpiledVariants[].tasks[].input.template` as serialized JSON.
+     */
+    transpiledVariants?: Array<unknown> | null;
+    /**
+     * Variants
+     *
+     * A list of variants for the flow definition (A/B/n test or personalization), or null if none.
+     */
+    variants?: Array<unknown> | null;
+    /**
+     * Status
+     *
+     * The current status of the flow definition (A/B/n test or personalization).
+     */
+    status?: string;
+    /**
+     * The schedule configuration for the flow definition (A/B/n test or personalization).
+     */
+    schedule?: FlowDefinitionSchedule | null;
+    /**
+     * Links to the revisions of the flow definition.
+     */
+    revisions?: FlowDefinitionRevisions | null;
+    /**
+     * The sample size configuration for the flow definition.
+     */
+    sampleSizeConfig?: FlowDefinitionSampleSizeConfigV2 | null;
+    /**
+     * Notificationenabled
+     *
+     * Whether notifications are enabled for the flow definition (A/B/n test or personalization).
+     */
+    notificationEnabled?: boolean | null;
+    /**
+     * Subtype
+     *
+     * The subtype of the flow definition (A/B/n test or personalization), identifying it as a personalization experience.
+     */
+    subtype?: 'EXPERIENCE';
+    /**
+     * The traffic distribution configuration for the personalization experience.
+     */
+    traffic?: ExperienceTrafficV2;
+    /**
+     * Dashboardlinks
+     *
+     * A list of dashboard links for the experience, or null if none.
+     */
+    dashboardLinks?: Array<unknown> | null;
+  };
+  /**
+   * ExperienceTrafficV1
+   */
+  export type ExperienceTrafficV1 = {
+    /**
+     * Type
+     *
+     * The type of traffic distribution for the flow definition (A/B/n test or personalization).
+     */
+    type?: string;
+    /**
+     * Weightingalgorithm
+     *
+     * The algorithm used for weighting traffic distribution (A/B/n test or personalization).
+     */
+    weightingAlgorithm?: string | null;
+    /**
+     * Modifiedat
+     *
+     * The timestamp when the traffic distribution was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * Splits
+     *
+     * A list of traffic splits for each personalization experience variant (A/B/n test or personalization).
+     */
+    splits?: Array<ExperienceFlowDefinitionSplitV1>;
+  };
+  /**
+   * ExperienceTrafficV2
+   */
+  export type ExperienceTrafficV2 = {
+    /**
+     * Type
+     *
+     * The type of traffic distribution for the flow definition (A/B/n test or personalization).
+     */
+    type?: string;
+    /**
+     * Weightingalgorithm
+     *
+     * The algorithm used for weighting traffic distribution.
+     */
+    weightingAlgorithm?: string | null;
+    /**
+     * Modifiedat
+     *
+     * The timestamp when the traffic distribution was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * Splits
+     *
+     * A list of traffic splits for each personalization experience variant.
+     */
+    splits?: Array<ExperienceFlowDefinitionSplitV2>;
+  };
+  /**
+   * ExperimentFlowDefinitionSplit
+   */
+  export type ExperimentFlowDefinitionSplit = {
+    /**
+     * Ref
+     *
+     * A reference identifier for the experiment variant.
+     */
+    ref?: string;
+    /**
+     * Split
+     *
+     * The traffic allocation percentage for this experiment variant.
+     */
+    split?: number;
+  };
+  /**
+   * ExperimentFlowResponse
+   */
+  export type ExperimentFlowResponse = {
+    /**
+     * Clientkey
+     *
+     * The client key associated with the flow definition (A/B/n test or personalization).
+     */
+    clientKey?: string;
+    /**
+     * Href
+     *
+     * The URL of the flow definition (A/B/n test or personalization).
+     */
+    href?: string | null;
+    /**
+     * Ref
+     *
+     * A reference identifier for the flow definition (A/B/n test or personalization).
+     */
+    ref?: string;
+    /**
+     * Name
+     *
+     * The name of the flow definition (A/B/n test or personalization).
+     */
+    name?: string;
+    /**
+     * Modifiedbyref
+     *
+     * A reference identifier for the user who last modified the flow definition (A/B/n test or personalization).
+     */
+    modifiedByRef?: string | null;
+    /**
+     * Modifiedat
+     *
+     * The timestamp when the flow definition (A/B/n test or personalization) was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * Revision
+     *
+     * The revision number of the flow definition (A/B/n test or personalization).
+     */
+    revision?: number | null;
+    /**
+     * Archived
+     *
+     * Whether the flow definition (A/B/n test or personalization) is archived.
+     */
+    archived?: boolean;
+    /**
+     * Friendlyid
+     *
+     * A user-friendly identifier for the flow definition (A/B/n test or personalization).
+     */
+    friendlyId?: string;
+    /**
+     * Type
+     *
+     * The type of the flow definition (A/B/n test or personalization).
+     */
+    type?: string;
+    /**
+     * Channels
+     *
+     * A list of channels associated with the flow definition (A/B/n test or personalization), such as web or mobile.
+     */
+    channels?: Array<string> | null;
+    /**
+     * Triggers
+     *
+     * A list of triggers for the flow definition (A/B/n test or personalization), or null if none.
+     */
+    triggers?: Array<unknown> | null;
+    /**
+     * Tags
+     *
+     * A list of tags associated with the flow definition (A/B/n test or personalization), or null if none.
+     */
+    tags?: Array<unknown> | null;
+    /**
+     * Businessprocess
+     *
+     * The business process associated with the flow definition (A/B/n test or personalization).
+     */
+    businessProcess?: string | null;
+    /**
+     * Siteid
+     *
+     * The unique identifier of the site associated with the A/B/n test or personalization.
+     */
+    siteId?: string;
+    /**
+     * Transpiledvariants
+     *
+     * A list of transpiled variants for the flow definition (A/B/n test or personalization), or null if none.
+     */
+    transpiledVariants?: Array<unknown> | null;
+    /**
+     * Variants
+     *
+     * A list of variants for the experiment (A/B/n test or personalization), or null if none.
+     */
+    variants?: Array<ExperimentVariantModel> | null;
+    /**
+     * Status
+     *
+     * The current status of the flow definition (A/B/n test or personalization).
+     */
+    status?: string;
+    /**
+     * The schedule configuration for the flow definition (A/B/n test or personalization).
+     */
+    schedule?: FlowDefinitionSchedule | null;
+    /**
+     * Links to the revisions of the flow definition (A/B/n test or personalization).
+     */
+    revisions?: FlowDefinitionRevisions | null;
+    /**
+     * The sample size configuration for the flow definition (A/B/n test or personalization).
+     */
+    sampleSizeConfig?: FlowDefinitionSampleSizeConfigV2 | null;
+    /**
+     * Notificationenabled
+     *
+     * Whether notifications are enabled for the flow definition (A/B/n test or personalization).
+     */
+    notificationEnabled?: boolean | null;
+    /**
+     * Subtype
+     *
+     * The subtype of the flow definition (A/B/n test or personalization), identifying it as an A/B experiment.
+     */
+    subtype?: 'EXPERIMENT';
+    /**
+     * The traffic distribution configuration for the A/B/n test.
+     */
+    traffic?: ExperimentTraffic;
+    /**
+     * The goals tracked for the experiment, keyed by goal identifier.
+     */
+    goals?: ExperimentGoalModel | null;
+  };
+  /**
+   * ExperimentGoalDefinition
+   */
+  export type ExperimentGoalDefinition = {
+    /**
+     * Type
+     *
+     * The type of goal.
+     */
+    type?: string;
+    /**
+     * Name
+     *
+     * The name of the goal.
+     */
+    name?: string;
+    /**
+     * Friendlyid
+     *
+     * A user-friendly identifier for the goal.
+     */
+    friendlyId?: string;
+    /**
+     * Ref
+     *
+     * A reference identifier for the goal.
+     */
+    ref?: string | null;
+    /**
+     * Description
+     *
+     * A description of the goal, or null if not provided.
+     */
+    description?: string | null;
+    /**
+     * Goalcalculation
+     *
+     * A key-value map defining the calculation method for the goal.
+     */
+    goalCalculation?: {
+      [key: string]: unknown;
+    } | null;
+    /**
+     * Pageparameters
+     *
+     * A list of page parameters associated with the goal.
+     */
+    pageParameters?: Array<{
+      [key: string]: unknown;
+    }>;
+  };
+  /**
+   * ExperimentGoalModel
+   */
+  export type ExperimentGoalModel = {
+    [key: string]: ExperimentGoalDefinition;
+  };
+  /**
+   * ExperimentTaskInputModel
+   */
+  export type ExperimentTaskInputModel = {
+    /**
+     * Inputtype
+     *
+     * The type of task input.
+     */
+    inputType?: string;
+    /**
+     * Type
+     *
+     * The MIME type of the task input payload.
+     */
+    type?: string;
+    /**
+     * Template
+     *
+     * A serialized JSON payload for the task template. For experiments, this typically includes a variantId value.
+     */
+    template?: string;
+  };
+  /**
+   * ExperimentTaskModel
+   */
+  export type ExperimentTaskModel = {
+    /**
+     * Implementation
+     *
+     * The implementation type of the task.
+     */
+    implementation?: string;
+    /**
+     * The input configuration for the task.
+     */
+    input?: ExperimentTaskInputModel;
+  };
+  /**
+   * ExperimentTraffic
+   */
+  export type ExperimentTraffic = {
+    /**
+     * Type
+     *
+     * The type of traffic distribution for the flow definition (A/B/n test or personalization).
+     */
+    type?: string;
+    /**
+     * Weightingalgorithm
+     *
+     * The algorithm used for weighting traffic. Either 'USER_DEFINED' or 'AUTO'.
+     */
+    weightingAlgorithm?: 'USER_DEFINED' | 'AUTO';
+    /**
+     * Modifiedat
+     *
+     * The timestamp when the traffic distribution was last modified.
+     */
+    modifiedAt?: string | null;
+    /**
+     * Allocation
+     *
+     * The total traffic allocation percentage for the A/B/n test.
+     */
+    allocation?: number;
+    /**
+     * Coupled
+     *
+     * Whether the traffic splits are coupled and adjusted together.
+     */
+    coupled?: boolean;
+    /**
+     * Splits
+     *
+     * A list of traffic splits for each A/B/n test variant.
+     */
+    splits?: Array<ExperimentFlowDefinitionSplit>;
+  };
+  /**
+   * ExperimentVariantModel
+   */
+  export type ExperimentVariantModel = {
+    /**
+     * Ref
+     *
+     * A reference identifier for the variant.
+     */
+    ref?: string;
+    /**
+     * Name
+     *
+     * The name of the variant.
+     */
+    name?: string;
+    /**
+     * Iscontrol
+     *
+     * Whether this is the control variant (baseline) for comparison in the A/B/n test.
+     */
+    isControl?: boolean;
+    /**
+     * Tasks
+     *
+     * A list of tasks associated with the variant.
+     */
+    tasks?: Array<ExperimentTaskModel>;
+  };
+  /**
+   * ExternalLink
+   *
+   * Represents an external link with reference to external systems
+   */
+  export type ExternalLink = {
+    /**
+     * Type
+     *
+     * The type of the link, which is always 'ExternalLink' for this model.
+     */
+    type?: 'ExternalLink';
+    relatedSystem?: RelatedSystem;
+    /**
+     * Relatedtype
+     *
+     * The type of the related entity in the external system, or null if not specified.
+     */
+    relatedType?: string | null;
+    /**
+     * Id
+     *
+     * The unique identifier of the related entity in the external system.
+     */
+    id?: string;
+  };
+  /**
+   * FetchStatus
+   *
+   * The status of the fetch operation, indicating whether it succeeded or failed.
+   */
+  export const FetchStatus = { SUCCEEDED: 'succeeded', FAILED: 'failed' } as const;
+  /**
+   * FetchStatus
+   *
+   * The status of the fetch operation, indicating whether it succeeded or failed.
+   */
+  export type FetchStatus = (typeof FetchStatus)[keyof typeof FetchStatus];
+  /**
+   * FieldValueType
+   */
+  export const FieldValueType = {
+    STRING: 'STRING',
+    NUMBER: 'NUMBER',
+    BOOLEAN: 'BOOLEAN',
+    DATE: 'DATE',
+    ARRAY: 'ARRAY',
+  } as const;
+  /**
+   * FieldValueType
+   */
+  export type FieldValueType = (typeof FieldValueType)[keyof typeof FieldValueType];
   /**
    * FlowDefinitionCondition
    */
   export type FlowDefinitionCondition = {
     /**
      * Templateid
+     *
+     * The unique identifier of the condition template.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Params
+     *
+     * A key-value map of parameters for the condition.
      */
-    params: {
+    params?: {
       [key: string]: string;
     };
   };
   /**
-   * FlowDefinitionConditionGroup
+   * FlowDefinitionConditionGroupV1
    */
-  export type FlowDefinitionConditionGroup = {
+  export type FlowDefinitionConditionGroupV1 = {
     /**
      * Conditions
+     *
+     * A list of conditions in this condition group.
      */
-    conditions: Array<FlowDefinitionCondition>;
+    conditions?: Array<FlowDefinitionCondition>;
   };
   /**
-   * FlowDefinitionResponse
+   * FlowDefinitionConditionGroupV2
    */
-  export type FlowDefinitionResponse = {
+  export type FlowDefinitionConditionGroupV2 = {
     /**
-     * Clientkey
+     * Uniontype
+     *
+     * Union type for combining conditions. Either AND or OR. First group should not have a unionType.
      */
-    clientKey: string;
+    unionType?: 'AND' | 'OR' | null;
     /**
-     * Href
+     * Conditions
+     *
+     * A list of conditions in this condition group.
      */
-    href: string;
-    /**
-     * Ref
-     */
-    ref: string;
-    /**
-     * Name
-     */
-    name: string;
-    /**
-     * Modifiedbyref
-     */
-    modifiedByRef: string;
-    /**
-     * Modifiedat
-     */
-    modifiedAt: string;
-    /**
-     * Revision
-     */
-    revision: number;
-    /**
-     * Archived
-     */
-    archived: boolean;
-    /**
-     * Friendlyid
-     */
-    friendlyId: string;
-    /**
-     * Type
-     */
-    type: string;
-    /**
-     * Subtype
-     */
-    subtype: string;
-    /**
-     * Channels
-     */
-    channels: Array<string>;
-    /**
-     * Triggers
-     */
-    triggers?: Array<unknown> | null;
-    /**
-     * Dashboardlinks
-     */
-    dashboardLinks?: Array<unknown> | null;
-    /**
-     * Tags
-     */
-    tags?: Array<unknown> | null;
-    /**
-     * Businessprocess
-     */
-    businessProcess: string;
-    /**
-     * Siteid
-     */
-    siteId: string;
-    traffic: FlowDefinitionTraffic;
-    /**
-     * Transpiledvariants
-     */
-    transpiledVariants?: Array<unknown> | null;
-    /**
-     * Variants
-     */
-    variants?: Array<unknown> | null;
-    /**
-     * Status
-     */
-    status: string;
-    schedule: FlowDefinitionSchedule;
-    revisions: FlowDefinitionRevisions;
-    sampleSizeConfig: FlowDefinitionSampleSizeConfig;
-    /**
-     * Notificationenabled
-     */
-    notificationEnabled: boolean;
+    conditions?: Array<FlowDefinitionCondition>;
   };
   /**
    * FlowDefinitionRevisions
@@ -912,25 +2960,62 @@ export namespace Agent {
   export type FlowDefinitionRevisions = {
     /**
      * Href
+     *
+     * The URL to access the revisions of the flow definition (A/B/n test or personalization).
      */
-    href: string;
+    href?: string | null;
   };
   /**
-   * FlowDefinitionSampleSizeConfig
+   * FlowDefinitionSampleSizeConfigV1
    */
-  export type FlowDefinitionSampleSizeConfig = {
+  export type FlowDefinitionSampleSizeConfigV1 = {
     /**
      * Basevalue
+     *
+     * The base value used for sample size calculation.
      */
-    baseValue: number;
+    baseValue?: number;
     /**
      * Minimumdetectabledifference
+     *
+     * The minimum detectable difference for the sample size calculation.
      */
-    minimumDetectableDifference: number;
+    minimumDetectableDifference?: number;
     /**
      * Confidencelevel
+     *
+     * The confidence level for the sample size calculation.
      */
-    confidenceLevel: number;
+    confidenceLevel?: number;
+  };
+  /**
+   * FlowDefinitionSampleSizeConfigV2
+   */
+  export type FlowDefinitionSampleSizeConfigV2 = {
+    /**
+     * Basevalue
+     *
+     * The base value used for sample size calculation.
+     */
+    baseValue?: number;
+    /**
+     * Minimumdetectabledifference
+     *
+     * The minimum detectable difference for the sample size calculation.
+     */
+    minimumDetectableDifference?: number;
+    /**
+     * Confidencelevel
+     *
+     * The confidence level for the sample size calculation.
+     */
+    confidenceLevel?: number;
+    /**
+     * Samplesize
+     *
+     * The calculated sample size, or null if not yet computed.
+     */
+    sampleSize?: number | null;
   };
   /**
    * FlowDefinitionSchedule
@@ -938,54 +3023,285 @@ export namespace Agent {
   export type FlowDefinitionSchedule = {
     /**
      * Type
+     *
+     * The type of schedule for the flow definition (A/B/n test or personalization).
      */
-    type: string;
+    type?: string;
     /**
      * Startdate
+     *
+     * The start date of the schedule.
      */
-    startDate: string;
+    startDate?: string | null;
   };
   /**
-   * FlowDefinitionSplit
+   * GenerateBriefRequest
+   *
+   * Request model for generating a content brief
    */
-  export type FlowDefinitionSplit = {
+  export type GenerateBriefRequest = {
     /**
-     * Template
+     * Brieftypeid
+     *
+     * The unique identifier of the brief type to use for generating a brief. To get this ID, you can use the [List brief types](#operation/brieftypes-list_brieftypes) endpoint to retrieve the list of brief types available in your organization.
      */
-    template: string;
+    briefTypeId: string;
     /**
-     * Variantname
+     * Brandid
+     *
+     * The unique identifier of the brand kit. To get this ID, you can use the [List brand kits](#operation/brandkits-list_brandkits) endpoint to retrieve the list of brand kits in your organization.
      */
-    variantName: string;
+    brandId: string;
     /**
-     * Audiencename
+     * Prompt
+     *
+     * The prompt for brief generation. This provides AI the context or instructions for generating the brief.
      */
-    audienceName: string;
-    /**
-     * Conditiongroups
-     */
-    conditionGroups: Array<FlowDefinitionConditionGroup>;
+    prompt: string;
   };
   /**
-   * FlowDefinitionTraffic
+   * GenerateBriefResponse
+   *
+   * The response model for a generated content brief with dynamic field keys.
    */
-  export type FlowDefinitionTraffic = {
+  export type GenerateBriefResponse = {
+    [key: string]: BriefFieldValue;
+  };
+  /**
+   * GetBrandContextResponse
+   *
+   * Response model for the get brand context by ID endpoint - metadata + nested tree, no content.
+   */
+  export type GetBrandContextResponse = {
     /**
-     * Type
+     * Brandcontextid
+     *
+     * The unique identifier of the brand context.
      */
-    type: string;
+    brandContextId?: string;
     /**
-     * Weightingalgorithm
+     * Displayname
+     *
+     * The display name of the brand context.
      */
-    weightingAlgorithm: string;
+    displayName?: string;
     /**
-     * Modifiedat
+     * Sourceref
+     *
+     * The source URL the brand context was bootstrapped from.
      */
-    modifiedAt: string;
+    sourceRef?: string | null;
     /**
-     * Splits
+     * Runstatus
+     *
+     * The status of the most recent bootstrap run.
      */
-    splits: Array<FlowDefinitionSplit>;
+    runStatus?: string | null;
+    /**
+     * Createddatetime
+     *
+     * Date and time the brand context was created.
+     */
+    createdDateTime?: string;
+    /**
+     * Updateddatetime
+     *
+     * Date and time the brand context was last updated.
+     */
+    updatedDateTime?: string;
+    /**
+     * Children
+     *
+     * The nested folder or file tree of the brand context.
+     */
+    children?: Array<BrandContextFolderNode | BrandContextFileNode>;
+  };
+  /**
+   * GetBrandKitResponse
+   *
+   * Response model for get brandkit by ID endpoint
+   */
+  export type GetBrandKitResponse = {
+    /**
+     * Id
+     *
+     * The unique identifier of the brand kit.
+     */
+    id?: string;
+    /**
+     * Description
+     *
+     * The brand kit description.
+     */
+    description?: string | null;
+    /**
+     * Name
+     *
+     * The name of the brand kit.
+     */
+    name?: string;
+    /**
+     * Brandname
+     *
+     * The name of the brand associated with the brand kit.
+     */
+    brandName?: string | null;
+    /**
+     * Companyname
+     *
+     * The name of the company associated with the brand kit.
+     */
+    companyName?: string | null;
+    /**
+     * Status
+     *
+     * The status of the brand kit.
+     */
+    status?: string;
+    /**
+     * Tags
+     *
+     * A list of tags associated with the brand kit.
+     */
+    tags?: Array<TagModel> | null;
+    /**
+     * Sections
+     *
+     * A list of sections in the brand kit.
+     */
+    sections?: Array<SectionModel> | null;
+  };
+  /**
+   * GetBriefResponse
+   */
+  export type GetBriefResponse = {
+    /**
+     * Id
+     *
+     * The unique identifier of the brief.
+     */
+    id?: string;
+    /**
+     * Icon
+     *
+     * The icon associated with the brief.
+     */
+    icon?: string | null;
+    /**
+     * Name
+     *
+     * The name of the brief.
+     */
+    name?: string;
+    /**
+     * Status
+     *
+     * The status of the brief. Draft by default.
+     */
+    status?: string;
+    /**
+     * Locale
+     *
+     * The locale code in the format xx-XX.
+     */
+    locale?: string;
+    /**
+     * Fields
+     *
+     * Dictionary of field names to their values.
+     */
+    fields?: {
+      [key: string]: unknown;
+    };
+    /**
+     * Istemplate
+     */
+    isTemplate?: boolean;
+    /**
+     * Contributors
+     *
+     * A list of contributors associated with the brief.
+     */
+    contributors?: Array<string> | null;
+    /**
+     * The user who created the brief.
+     */
+    createdBy?: ExternalLink | null;
+    /**
+     * Createdon
+     *
+     * The ISO 8601 timestamp when the brief was created.
+     */
+    createdOn?: string | null;
+    /**
+     * The user who last updated the brief.
+     */
+    updatedBy?: ExternalLink | null;
+    /**
+     * Updatedon
+     *
+     * The ISO 8601 timestamp when the brief was last updated.
+     */
+    updatedOn?: string | null;
+    briefType?: BriefTypeLink | null;
+  };
+  /**
+   * GetBriefTypeResponse
+   *
+   * Response model for get brief type by ID — extends BriefTypeModel with audit fields
+   */
+  export type GetBriefTypeResponse = {
+    /**
+     * Id
+     *
+     * The unique UUID of the brief type.
+     */
+    id?: string;
+    /**
+     * Name
+     *
+     * The name of the brief type.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The label of the brief type, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Icon
+     *
+     * The name of the icon associated with the brief type, which is used to visually represent the brief type in the UI.
+     */
+    icon?: string | null;
+    /**
+     * Iconcolor
+     *
+     * The color of the icon associated with the brief type.
+     */
+    iconColor?: string | null;
+    /**
+     * Description
+     *
+     * The description of the brief type.
+     */
+    description?: string | null;
+    /**
+     * Fields
+     *
+     * The list of fields that belong to this brief type, including their configurations and metadata.
+     */
+    fields?: Array<
+      | SimpleTextConfig
+      | RichTextConfig
+      | TimelineConfig
+      | BudgetConfig
+      | DateTimeConfig
+      | BooleanConfig
+    >;
   };
   /**
    * GetPageComponentsResponse
@@ -993,35 +3309,54 @@ export namespace Agent {
   export type GetPageComponentsResponse = {
     /**
      * Pageid
+     *
+     * The unique identifier of the page.
      */
-    pageId: string;
+    pageId?: string;
     /**
      * Pagename
+     *
+     * The name of the page.
      */
-    pageName: string;
+    pageName?: string;
     /**
      * Pagepath
+     *
+     * The path to the page.
      */
-    pagePath: string;
+    pagePath?: string;
     /**
      * Version
+     *
+     * The version number of the page.
      */
-    version: number;
+    version?: number;
     /**
      * Language
+     *
+     * The language code of the page.
      */
-    language: string;
+    language?: string;
     /**
      * Route
+     *
+     * The route of the page, or null if not applicable.
      */
     route?: string | null;
     /**
      * Layouteditingkind
+     *
+     * The layout editing kind of the page, or null if not applicable.
      */
     layoutEditingKind?: string | null;
+    /**
+     * The template used for the page, or null if not applicable.
+     */
     template?: ModelsPagesTemplateModel | null;
     /**
      * Components
+     *
+     * A list of components on the page, or null if none.
      */
     components?: Array<ComponentModel> | null;
   };
@@ -1031,12 +3366,16 @@ export namespace Agent {
   export type GetPagePreviewUrlResponse = {
     /**
      * Pageid
+     *
+     * The unique identifier of the page.
      */
-    pageId: string;
+    pageId?: string;
     /**
      * Previewurl
+     *
+     * The preview URL of the page.
      */
-    previewUrl: string;
+    previewUrl?: string;
   };
   /**
    * GetPageResponse
@@ -1044,25 +3383,53 @@ export namespace Agent {
   export type GetPageResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the page.
      */
-    name: string;
+    name?: string;
     /**
      * Templateid
+     *
+     * The template ID used for the page.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Locationpath
+     *
+     * The location path of the page in the content tree.
      */
-    locationPath: string;
+    locationPath?: string;
     /**
      * Insertoptions
+     *
+     * A list of options for inserting the page.
      */
-    insertOptions: Array<PageInsertOptionModel>;
+    insertOptions?: Array<PageInsertOptionModel>;
+    /**
+     * Editableplaceholders
+     *
+     * Editable placeholders on the page.
+     */
+    editablePlaceholders?: Array<EditablePlaceholderModel>;
   };
+  /**
+   * GoalType
+   */
+  export const GoalType = {
+    PAGE_VIEW_GOAL: 'pageViewGoal',
+    BOUNCES_GOAL: 'bouncesGoal',
+    EXITS_GOAL: 'exitsGoal',
+  } as const;
+  /**
+   * GoalType
+   */
+  export type GoalType = (typeof GoalType)[keyof typeof GoalType];
   /**
    * HTTPValidationError
    */
@@ -1073,19 +3440,69 @@ export namespace Agent {
     detail?: Array<ValidationError>;
   };
   /**
+   * HideComponentRequest
+   *
+   * Request model for hiding a component on the Default variant
+   */
+  export type HideComponentRequest = {
+    /**
+     * Language
+     *
+     * Language code for the page
+     */
+    language?: string | null;
+    /**
+     * Page Version
+     *
+     * The version of the page to use, or null for the latest version.
+     */
+    page_version?: number | null;
+  };
+  /**
+   * HideComponentResponse
+   *
+   * Response model for hide component operation
+   */
+  export type HideComponentResponse = {
+    /**
+     * Pageid
+     *
+     * The unique identifier of the page where the component was hidden.
+     */
+    pageId?: string;
+    /**
+     * Componentid
+     *
+     * The unique identifier of the component that was hidden.
+     */
+    componentId?: string;
+    /**
+     * Language
+     *
+     * The language of the page.
+     */
+    language?: string;
+  };
+  /**
    * InnerItemModel
    */
   export type InnerItemModel = {
     /**
      * Displayname
+     *
+     * The display name of the inner item, or null if not set.
      */
     displayName?: string | null;
     /**
      * Height
+     *
+     * The height of the inner item, or null if not set.
      */
     height?: number | null;
     /**
      * Width
+     *
+     * The width of the inner item, or null if not set.
      */
     width?: number | null;
   };
@@ -1095,12 +3512,16 @@ export namespace Agent {
   export type InsertOptionModel = {
     /**
      * Name
+     *
+     * The name of the insert option.
      */
-    name: string;
+    name?: string;
     /**
      * Templateid
+     *
+     * The unique identifier of the template used for the insert option.
      */
-    templateId: string;
+    templateId?: string;
   };
   /**
    * LanguageModel
@@ -1108,16 +3529,157 @@ export namespace Agent {
   export type LanguageModel = {
     /**
      * Displayname
+     *
+     * The display name of the language.
      */
-    displayName: string;
+    displayName?: string;
     /**
      * Iso
+     *
+     * The ISO code of the language.
      */
-    iso: string;
+    iso?: string;
     /**
      * Name
+     *
+     * The name of the language.
      */
-    name: string;
+    name?: string;
+  };
+  /**
+   * Link
+   */
+  export type Link = {
+    /**
+     * Href
+     *
+     * URL of the linked resource.
+     */
+    href?: string | null;
+  };
+  /**
+   * ListBrandContextResponse
+   *
+   * Model for a brand context summary (used in the list endpoint)
+   */
+  export type ListBrandContextResponse = {
+    /**
+     * Brandcontextid
+     *
+     * The unique identifier of the brand context.
+     */
+    brandContextId?: string;
+    /**
+     * Displayname
+     *
+     * The display name of the brand context.
+     */
+    displayName?: string;
+    /**
+     * Sourceref
+     *
+     * The source URL the brand context was bootstrapped from. Null if it was not bootstrapped from a site.
+     */
+    sourceRef?: string | null;
+    /**
+     * Runstatus
+     *
+     * The status of the most recent bootstrap run. Null if the brand context has never been bootstrapped.
+     */
+    runStatus?: string | null;
+    /**
+     * Createddatetime
+     *
+     * Date and time the brand context was created.
+     */
+    createdDateTime?: string;
+    /**
+     * Updateddatetime
+     *
+     * Date and time the brand context was last updated.
+     */
+    updatedDateTime?: string;
+  };
+  /**
+   * ListBrandKitResponse
+   *
+   * Model for brandkit summary (used in list endpoint)
+   */
+  export type ListBrandKitResponse = {
+    /**
+     * Id
+     *
+     * The unique identifier of the brand kit.
+     */
+    id?: string;
+    /**
+     * Name
+     *
+     * The name of the brand kit.
+     */
+    name?: string;
+    /**
+     * Description
+     *
+     * The brand kit description.
+     */
+    description?: string | null;
+    /**
+     * Brandname
+     *
+     * The name of the brand associated with the brand kit. Returns null if no brand name is set.
+     */
+    brandName?: string | null;
+    /**
+     * Companyname
+     *
+     * The name of the company associated with the brand kit. Returns null if no company name is set.
+     */
+    companyName?: string | null;
+    /**
+     * Status
+     *
+     * The status of the brand kit.
+     */
+    status?: string;
+    /**
+     * Tags
+     *
+     * A list of tags associated with the brand kit.
+     */
+    tags?: Array<TagModel> | null;
+  };
+  /**
+   * ListBriefTypesResponse
+   */
+  export type ListBriefTypesResponse = {
+    /**
+     * Totalcount
+     *
+     * The total number of available brief types.
+     */
+    totalCount?: number;
+    /**
+     * Data
+     *
+     * A list of available brief types.
+     */
+    data?: Array<BriefTypeModel>;
+  };
+  /**
+   * ListBriefsResponse
+   */
+  export type ListBriefsResponse = {
+    /**
+     * Totalcount
+     *
+     * The total number of briefs matching the query criteria.
+     */
+    totalCount?: number;
+    /**
+     * Data
+     */
+    data?: Array<GetBriefResponse>;
   };
   /**
    * ListSitesResponse
@@ -1125,8 +3687,10 @@ export namespace Agent {
   export type ListSitesResponse = {
     /**
      * Sites
+     *
+     * A list of sites.
      */
-    sites: Array<SiteBasicModel>;
+    sites?: Array<SiteBasicModel>;
   };
   /**
    * MediaItem
@@ -1134,24 +3698,102 @@ export namespace Agent {
   export type MediaItem = {
     /**
      * Id
+     *
+     * The unique identifier of the media item.
      */
-    id: string;
+    id?: string;
     /**
      * Embedurl
+     *
+     * The URL to embed or access the media item.
      */
-    embedUrl: string;
+    embedUrl?: string;
     /**
      * Size
+     *
+     * The size of the media item in bytes.
      */
-    size: number;
+    size?: number;
     /**
      * Dimensions
+     *
+     * The dimensions of the media item.
      */
-    dimensions: string;
+    dimensions?: string;
     /**
      * Extension
+     *
+     * The file extension of the media item.
      */
-    extension: string;
+    extension?: string;
+  };
+  /**
+   * MoveComponentRequest
+   *
+   * Request to move a component instance before or after a sibling.
+   */
+  export type MoveComponentRequest = {
+    /**
+     * Targetplaceholderpath
+     *
+     * Destination placeholder path for the moved component.
+     */
+    targetPlaceholderPath?: string | null;
+    /**
+     * Insertbeforecomponentid
+     *
+     * The page-component instance ID before which to move the component.
+     */
+    insertBeforeComponentId?: string | null;
+    /**
+     * Insertaftercomponentid
+     *
+     * The page-component instance ID after which to move the component.
+     */
+    insertAfterComponentId?: string | null;
+    /**
+     * Language
+     *
+     * The language of the page version to update.
+     */
+    language?: string;
+  };
+  /**
+   * MoveComponentResponse
+   *
+   * Result of moving a page-component instance within its placeholder.
+   */
+  export type MoveComponentResponse = {
+    /**
+     * Success
+     *
+     * Whether the component was moved.
+     */
+    success?: boolean;
+    /**
+     * Pageid
+     *
+     * The page containing the moved component.
+     */
+    pageId?: string;
+    /**
+     * Componentinstanceid
+     *
+     * The moved page-component instance ID.
+     */
+    componentInstanceId?: string;
+    /**
+     * Sourceplaceholderpath
+     *
+     * The placeholder from which the component was moved.
+     */
+    sourcePlaceholderPath?: string | null;
+    /**
+     * Targetplaceholderpath
+     *
+     * The placeholder to which the component was moved.
+     */
+    targetPlaceholderPath?: string | null;
   };
   /**
    * NonVisualContentLocationModel
@@ -1159,33 +3801,65 @@ export namespace Agent {
   export type NonVisualContentLocationModel = {
     /**
      * Itemid
+     *
+     * The unique identifier of the item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the item.
      */
-    name: string;
+    name?: string;
     /**
      * Path
+     *
+     * The path to the item.
      */
-    path: string;
+    path?: string;
     /**
      * Allowed Child Content Templates
+     *
+     * A list of allowed child content templates.
      */
-    allowed_child_content_templates: Array<AllowedChildTemplateModel>;
+    allowed_child_content_templates?: Array<AllowedChildTemplateModel>;
   };
   /**
+   * OffsetDateTime
+   */
+  export type OffsetDateTime = string;
+  /**
+   * Operator
+   */
+  export const Operator = { AND: 'AND', OR: 'OR' } as const;
+  /**
+   * Operator
+   */
+  export type Operator = (typeof Operator)[keyof typeof Operator];
+  /**
    * PageHtmlResponse
+   *
+   * Response model containing the HTML content of a page.
    */
   export type PageHtmlResponse = {
     /**
      * Pageid
+     *
+     * The unique identifier of the page.
      */
-    pageId: string;
+    pageId?: string;
     /**
      * Html
+     *
+     * The HTML content of the page.
      */
-    html: string;
+    html?: string;
+    /**
+     * Renderinghosturl
+     *
+     * The origin (scheme and host only) of the rendering host that produced html. Root-relative asset references in `html` are resolved against this origin, not the site's public hostname, which may point to a separate deployment with different build hashes. The value is empty if the origin cannot be determined, in which case callers should fall back rather than fail.
+     */
+    renderingHostUrl?: string;
   };
   /**
    * PageInsertOptionModel
@@ -1193,12 +3867,16 @@ export namespace Agent {
   export type PageInsertOptionModel = {
     /**
      * Templateid
+     *
+     * The unique identifier of the template.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Name
+     *
+     * The name of the template.
      */
-    name: string;
+    name?: string;
   };
   /**
    * PageLocationModel
@@ -1206,20 +3884,34 @@ export namespace Agent {
   export type PageLocationModel = {
     /**
      * Itemid
+     *
+     * The unique identifier of the item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the item.
      */
-    name: string;
+    name?: string;
     /**
      * Path
+     *
+     * The path to the item.
      */
-    path: string;
+    path?: string;
     /**
      * Allowed Child Page Templates
+     *
+     * A list of allowed child page templates.
      */
-    allowed_child_page_templates: Array<AllowedChildTemplateModel>;
+    allowed_child_page_templates?: Array<AllowedChildTemplateModel>;
+    /**
+     * Is Page Folder
+     *
+     * True when this location is a page folder (no presentation component); False for standard renderable pages.
+     */
+    is_page_folder?: boolean;
   };
   /**
    * PageModel
@@ -1227,12 +3919,16 @@ export namespace Agent {
   export type PageModel = {
     /**
      * Id
+     *
+     * The unique identifier of the page.
      */
-    id: string;
+    id?: string;
     /**
      * Path
+     *
+     * The path to the page.
      */
-    path: string;
+    path?: string;
   };
   /**
    * PagePathByLiveUrlResponse
@@ -1240,21 +3936,38 @@ export namespace Agent {
   export type PagePathByLiveUrlResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the page.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the page.
      */
-    name: string;
+    name?: string;
     /**
      * Haspresentation
+     *
+     * Whether the page has presentation details.
      */
-    hasPresentation: boolean;
-    template: PagePathTemplateModel;
+    hasPresentation?: boolean;
+    /**
+     * The template details of the page.
+     */
+    template?: PagePathTemplateModel;
     /**
      * Insertoptions
+     *
+     * Insert options for the page.
      */
-    insertOptions: Array<PagePathInsertOptionModel>;
+    insertOptions?: Array<PagePathInsertOptionModel>;
+    /**
+     * Language
+     *
+     * The language in which the page was resolved. For locale-prefixed URLs, such as /fr/..., this reflects the language identified from the URL. Use the returned language value in subsequent requests to read or update the page’s field values for the correct language version; otherwise, the request may default to English.
+     */
+    language?: string;
   };
   /**
    * PagePathInsertOptionModel
@@ -1262,12 +3975,16 @@ export namespace Agent {
   export type PagePathInsertOptionModel = {
     /**
      * Name
+     *
+     * The name of the insert option.
      */
-    name: string;
+    name?: string;
     /**
      * Templateid
+     *
+     * The unique identifier of the template.
      */
-    templateId: string;
+    templateId?: string;
   };
   /**
    * PagePathTemplateModel
@@ -1275,12 +3992,16 @@ export namespace Agent {
   export type PagePathTemplateModel = {
     /**
      * Templateid
+     *
+     * The unique identifier of the template.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Name
+     *
+     * The name of the template.
      */
-    name: string;
+    name?: string;
   };
   /**
    * PageScreenshotResponse
@@ -1288,24 +4009,34 @@ export namespace Agent {
   export type PageScreenshotResponse = {
     /**
      * Type
+     *
+     * The type of screenshot.
      */
-    type: string;
+    type?: string;
     /**
      * Fullpage
+     *
+     * Whether the screenshot is of the full page.
      */
-    fullPage: boolean;
+    fullPage?: boolean;
     /**
      * Encoding
+     *
+     * The encoding format of the screenshot.
      */
-    encoding: string;
+    encoding?: string;
     /**
      * Timestamp
+     *
+     * The timestamp when the screenshot was taken.
      */
-    timestamp: string;
+    timestamp?: string;
     /**
      * Screenshot Base64
+     *
+     * The base64-encoded screenshot data.
      */
-    screenshot_base64: string;
+    screenshot_base64?: string;
   };
   /**
    * PageSearchItemModel
@@ -1313,24 +4044,34 @@ export namespace Agent {
   export type PageSearchItemModel = {
     /**
      * Itemid
+     *
+     * The unique identifier of the item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the item.
      */
-    name: string;
+    name?: string;
     /**
      * Path
+     *
+     * The path of the item.
      */
-    path: string;
+    path?: string;
     /**
      * Templateid
+     *
+     * The unique identifier of the template.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Fields
+     *
+     * A list of search fields associated with the item.
      */
-    fields: Array<FieldModel>;
+    fields?: Array<ModelsPagesFieldModel>;
   };
   /**
    * PageTemplateFieldModel
@@ -1338,16 +4079,22 @@ export namespace Agent {
   export type PageTemplateFieldModel = {
     /**
      * Name
+     *
+     * The name of the field.
      */
-    name: string;
+    name?: string;
     /**
      * Type
+     *
+     * The field type.
      */
-    type: string;
+    type?: string;
     /**
      * Validation
+     *
+     * Whether the field has validation rules.
      */
-    validation: boolean;
+    validation?: boolean;
   };
   /**
    * PageTemplateResponse
@@ -1355,41 +4102,341 @@ export namespace Agent {
   export type PageTemplateResponse = {
     /**
      * Templateid
+     *
+     * The unique identifier of the template.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Name
+     *
+     * The name of the template.
      */
-    name: string;
+    name?: string;
     /**
      * Fields
+     *
+     * A list of fields associated with the template.
      */
-    fields: Array<PageTemplateFieldModel>;
+    fields?: Array<PageTemplateFieldModel>;
   };
   /**
-   * PersonalizationVariantDetailModel
+   * PersonalizationVariantDetailModelV1
    */
-  export type PersonalizationVariantDetailModel = {
+  export type PersonalizationVariantDetailModelV1 = {
     /**
      * Page Id
+     *
+     * The unique identifier of the page.
+     */
+    page_id?: string;
+    /**
+     * Variant Name
+     *
+     * The name of the variant.
+     */
+    variant_name?: string;
+    /**
+     * Audience Name
+     *
+     * The name of the audience targeted by the variant.
+     */
+    audience_name?: string;
+    /**
+     * Template
+     *
+     * The template used for the variant.
+     */
+    template?: string;
+    /**
+     * Condition Groups
+     *
+     * A list of condition groups for the personalization variant.
+     */
+    condition_groups?: Array<FlowDefinitionConditionGroupV1>;
+  };
+  /**
+   * PersonalizationVariantDetailModelV2
+   */
+  export type PersonalizationVariantDetailModelV2 = {
+    /**
+     * Page Id
+     *
+     * The unique identifier of the page.
+     */
+    page_id?: string;
+    /**
+     * Variant Name
+     *
+     * The name of the variant.
+     */
+    variant_name?: string;
+    /**
+     * Audience Name
+     *
+     * The name of the audience targeted by the variant.
+     */
+    audience_name?: string;
+    /**
+     * Template
+     *
+     * The template used for the variant.
+     */
+    template?: string;
+    /**
+     * Condition Groups
+     *
+     * A list of condition groups for the personalization variant.
+     */
+    condition_groups?: Array<FlowDefinitionConditionGroupV2>;
+  };
+  /**
+   * ReferrerModel
+   *
+   * An item that references another, and the field that makes the reference.
+   */
+  export type ReferrerModel = {
+    /**
+     * Id
+     *
+     * The unique identifier of the item that references this content.
+     */
+    id?: string;
+    /**
+     * Name
+     *
+     * The name of the referring item.
+     */
+    name?: string;
+    /**
+     * Path
+     *
+     * The path of the referring item.
+     */
+    path?: string;
+    /**
+     * Via
+     *
+     * The field on the referring item that makes the reference.
+     */
+    via?: string;
+    /**
+     * Kind
+     *
+     * Whether the referring item is a page, a component, or could not be classified.
+     */
+    kind?: string;
+    /**
+     * Page Item Id
+     *
+     * The page this referrer sits on -- itself when it is a page, otherwise its nearest page ancestor. Empty when no ancestor is a page, or when the lookup did not answer for one.
+     */
+    page_item_id?: string;
+    /**
+     * Page Url
+     *
+     * That page's own address, as the CMS holds it. Empty when the page is unknown or has none; NEVER composed from a hostname.
+     */
+    page_url?: string;
+  };
+  /**
+   * ReferrersResponse
+   *
+   * How widely a content item is used, and a sample of what uses it.
+   */
+  export type ReferrersResponse = {
+    /**
+     * Total Places
+     *
+     * How many distinct items reference this one. Null means the server could not answer -- never confuse it with zero.
+     */
+    total_places?: number | null;
+    /**
+     * Items
+     *
+     * A sample of the referring items, capped. Read total_places for the full count.
+     */
+    items?: Array<ReferrerModel>;
+  };
+  /**
+   * RelatedSystem
+   *
+   * Represents the related system reference for external links
+   */
+  export const RelatedSystem = {
+    CONTENTHUB: 'contenthub',
+    MMS: 'mms',
+    AI: 'ai',
+    XMCLOUD: 'xmcloud',
+    CO: 'co',
+  } as const;
+  /**
+   * RelatedSystem
+   *
+   * Represents the related system reference for external links
+   */
+  export type RelatedSystem = (typeof RelatedSystem)[keyof typeof RelatedSystem];
+  /**
+   * RemoveComponentResponse
+   */
+  export type RemoveComponentResponse = {
+    /**
+     * Success
+     *
+     * Whether the component was successfully removed.
+     */
+    success?: boolean;
+    /**
+     * Removedcomponentid
+     *
+     * The unique identifier of the removed component.
+     */
+    removedComponentId?: string;
+    /**
+     * Affectedexperiments
+     *
+     * A/B tests found on the removed component. archived=True only if this call successfully archived it.
+     */
+    affectedExperiments?: Array<AffectedExperiment>;
+  };
+  /**
+   * ResetComponentRequest
+   *
+   * Request model for resetting a component variant in a flow
+   */
+  export type ResetComponentRequest = {
+    /**
+     * Language
+     *
+     * The language code for the page.
+     */
+    language?: string | null;
+    /**
+     * Page Version
+     *
+     * The version of the page to use, or null for the latest version.
+     */
+    page_version?: number | null;
+    /**
+     * Page Id
+     *
+     * The unique identifier of the page containing the variant. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
      */
     page_id: string;
     /**
-     * Variant Name
+     * Component Id
+     *
+     * The unique identifier of the component with personalization or A/B test variant to reset. To get this ID, use [List components of a page](#operation/pages-get_all_components_by_page).
      */
-    variant_name: string;
+    component_id: string;
     /**
-     * Audience Name
+     * Variant Id
+     *
+     * The unique identifier of the personalization or A/B testing variant to reset. To get this ID, you can use the [List flow definitions](https://api-docs.sitecore.com/sai/agent-api/flow-definitions/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+     *
+     * If you provide this value, the specified personalization or A/B test variant is reset. For personalization only, if you omit this value, the component on the default page variant is reset.
      */
-    audience_name: string;
+    variant_id?: string | null;
+  };
+  /**
+   * ResetComponentResponse
+   *
+   * Response model for reset component operation
+   */
+  export type ResetComponentResponse = {
     /**
-     * Template
+     * Pageid
+     *
+     * The unique identifier of the page where the component was reset
      */
-    template: string;
+    pageId?: string;
     /**
-     * Condition Groups
+     * Componentid
+     *
+     * The unique identifier of the component that was reset
      */
-    condition_groups?: Array<FlowDefinitionConditionGroup>;
+    componentId?: string;
+    /**
+     * Language
+     *
+     * The language of the page.
+     */
+    language?: string;
+  };
+  /**
+   * RichTextConfig
+   */
+  export type RichTextConfig = {
+    /**
+     * Type
+     *
+     * The type of field in the brief type.
+     */
+    type?: 'RichText';
+    /**
+     * Name
+     *
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The display label of the field, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Helptext
+     *
+     * The help text for the field, which can be localized for different languages.
+     */
+    helpText?: {
+      [key: string]: string;
+    };
+    /**
+     * Required
+     *
+     * Whether the field is required.
+     */
+    required?: boolean;
+    /**
+     * Aieditable
+     *
+     * Whether the field is editable by AI.
+     */
+    aiEditable?: boolean;
+    /**
+     * Aiintent
+     *
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * Aicontext
+     *
+     * The AI context for the field.
+     */
+    aiContext?: string | null;
+  };
+  /**
+   * RichTextFieldValue
+   *
+   * Rich text field value
+   */
+  export type RichTextFieldValue = {
+    /**
+     * Type
+     *
+     * The type of the field value.
+     */
+    type: 'RichText';
+    /**
+     * Value
+     *
+     * The rich text content of the field value.
+     */
+    value: string;
   };
   /**
    * SearchResponse
@@ -1397,6 +4444,8 @@ export namespace Agent {
   export type SearchResponse = {
     /**
      * Results
+     *
+     * A list of search results.
      */
     results?: Array<SearchResult>;
   };
@@ -1406,16 +4455,47 @@ export namespace Agent {
   export type SearchResult = {
     /**
      * Itemid
+     *
+     * The unique identifier of the item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Templateid
+     *
+     * The unique identifier of the template associated with the item.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Name
+     *
+     * The name of the item.
      */
-    name: string;
+    name?: string;
+  };
+  /**
+   * SectionModel
+   *
+   * Model for the brand kit sections.
+   */
+  export type SectionModel = {
+    /**
+     * Id
+     *
+     * The unique identifier of the brand kit section.
+     */
+    id?: string;
+    /**
+     * Name
+     *
+     * The name of the brand kit section.
+     */
+    name?: string;
+    /**
+     * Fields
+     *
+     * A list of brand kit fields (subsections).
+     */
+    fields?: Array<ModelsBrandkitsFieldModel> | null;
   };
   /**
    * SetComponentDatasourceRequest
@@ -1423,12 +4503,24 @@ export namespace Agent {
   export type SetComponentDatasourceRequest = {
     /**
      * Datasourceid
+     *
+     * The unique identifier of the datasource to set for the component. To get this ID, you can use the [List datasources](#operation/datasources-list_datasources_by_page) endpoint.
      */
     datasourceId: string;
     /**
      * Language
+     *
+     * The language for the datasource.
      */
     language?: string | null;
+    /**
+     * Variantid
+     *
+     * The unique identifier of personalization or A/B/n test variant to update. To get this ID, you can use the [List flow definitions](#operation/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+     *
+     * If you provide this value, the datasource update applies only to the specified variant. If you omit this value, the change applies to the base page.
+     */
+    variantId?: string | null;
   };
   /**
    * SetComponentDatasourceResponse
@@ -1436,24 +4528,188 @@ export namespace Agent {
   export type SetComponentDatasourceResponse = {
     /**
      * Success
+     *
+     * Whether the datasource was set successfully.
      */
-    success: boolean;
+    success?: boolean;
     /**
      * Message
+     *
+     * A message providing additional information about the operation.
      */
-    message: string;
+    message?: string;
     /**
      * Componentid
+     *
+     * The unique identifier of the component.
      */
-    componentId: string;
+    componentId?: string;
     /**
      * Pageid
+     *
+     * The unique identifier of the page.
      */
-    pageId: string;
+    pageId?: string;
     /**
      * Datasourceid
+     *
+     * The unique identifier of the datasource.
      */
-    datasourceId: string;
+    datasourceId?: string;
+  };
+  /**
+   * SetupVariantRequest
+   */
+  export type SetupVariantRequest = {
+    /**
+     * Page Id
+     *
+     * The unique identifier of the page containing the component.
+     */
+    page_id: string;
+    /**
+     * Component Id
+     *
+     * The unique identifier of the component to set up as a variant.
+     */
+    component_id: string;
+    /**
+     * The strategy for the variant. Either HIDE, SWAP, or COPY.
+     */
+    variant_strategy: VariantStrategy;
+    /**
+     * Language
+     *
+     * The language code for the variant setup.
+     */
+    language?: string;
+    /**
+     * Page Version
+     *
+     * The version of the page to use, or null for the latest version.
+     */
+    page_version?: number | null;
+    /**
+     * The replacement component details when the variant strategy is SWAP, or null otherwise.
+     */
+    swapped_component?: SwappedComponentModel | null;
+  };
+  /**
+   * SetupVariantResponse
+   */
+  export type SetupVariantResponse = {
+    /**
+     * Pageid
+     *
+     * The unique identifier of the page.
+     */
+    pageId?: string;
+    /**
+     * Componentid
+     *
+     * The unique identifier of the component set up as a variant.
+     */
+    componentId?: string;
+    /**
+     * Componentrenderingid
+     *
+     * The unique identifier of the component rendering definition.
+     */
+    componentRenderingId?: string;
+    /**
+     * Flowid
+     *
+     * The unique identifier of the A/B/n test or personalization.
+     */
+    flowId?: string;
+    /**
+     * Variantid
+     *
+     * The unique identifier of the A/B/n test or personalization variant.
+     */
+    variantId?: string;
+    /**
+     * Datasource
+     *
+     * The path to the datasource used by the variant, or null if not applicable.
+     */
+    datasource?: string | null;
+  };
+  /**
+   * SimpleTextConfig
+   */
+  export type SimpleTextConfig = {
+    /**
+     * Type
+     *
+     * Type of the field the brief type.
+     */
+    type?: 'SimpleText';
+    /**
+     * Name
+     *
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The display label of the field, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Helptext
+     *
+     * The text providing help or guidance for the field, which can be localized for different languages.
+     */
+    helpText?: {
+      [key: string]: string;
+    };
+    /**
+     * Required
+     *
+     * Whether the field is required.
+     */
+    required?: boolean;
+    /**
+     * Aieditable
+     *
+     * Whether the field is editable by AI.
+     */
+    aiEditable?: boolean;
+    /**
+     * Aiintent
+     *
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * Aicontext
+     *
+     * The AI context for the field.
+     */
+    aiContext?: string | null;
+  };
+  /**
+   * SimpleTextFieldValue
+   *
+   * Simple text field value
+   */
+  export type SimpleTextFieldValue = {
+    /**
+     * Type
+     *
+     * Type of the field value.
+     */
+    type: 'SimpleText';
+    /**
+     * Value
+     *
+     * The text value of the field.
+     */
+    value: string;
   };
   /**
    * SiteBasicModel
@@ -1461,20 +4717,28 @@ export namespace Agent {
   export type SiteBasicModel = {
     /**
      * Id
+     *
+     * The unique identifier of the site.
      */
-    id: string;
+    id?: string;
     /**
      * Name
+     *
+     * The name of the site.
      */
-    name: string;
+    name?: string;
     /**
      * Targethostname
+     *
+     * The target hostname of the site.
      */
-    targetHostname: string;
+    targetHostname?: string;
     /**
      * Rootpath
+     *
+     * The root path of the site.
      */
-    rootPath: string;
+    rootPath?: string;
   };
   /**
    * SiteIdFromItemResponse
@@ -1482,16 +4746,22 @@ export namespace Agent {
   export type SiteIdFromItemResponse = {
     /**
      * Siterootitemid
+     *
+     * The unique identifier of the site root item.
      */
-    siteRootItemId: string;
+    siteRootItemId?: string;
     /**
      * Siterootdisplayname
+     *
+     * The display name of the site root.
      */
-    siteRootDisplayName: string;
+    siteRootDisplayName?: string;
     /**
      * Siterootname
+     *
+     * The name of the site root.
      */
-    siteRootName: string;
+    siteRootName?: string;
   };
   /**
    * SiteInformationResponse
@@ -1499,49 +4769,449 @@ export namespace Agent {
   export type SiteInformationResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the item.
      */
-    itemId: string;
+    itemId?: string;
+    /**
+     * Name
+     *
+     * The name of the site.
+     */
+    name?: string;
+    /**
+     * Brand Information
+     *
+     * Information about the brand associated with the site.
+     */
+    brand_information?: string;
+    /**
+     * Rootpath
+     *
+     * The root path of the site.
+     */
+    rootPath?: string;
+    /**
+     * Page Locations
+     *
+     * A list of page locations (pages and page folders) associated with the site. The `is_page_folder` flag helps identify which ones are pages and which ones are page folders.
+     */
+    page_locations?: Array<PageLocationModel>;
+    /**
+     * Non Visual Content Locations
+     *
+     * A list of non-visual content locations associated with the site.
+     */
+    non_visual_content_locations?: Array<NonVisualContentLocationModel>;
+  };
+  /**
+   * StatusEnum
+   */
+  export const StatusEnum = { DRAFT: 'DRAFT', PUBLISHED: 'PUBLISHED' } as const;
+  /**
+   * StatusEnum
+   */
+  export type StatusEnum = (typeof StatusEnum)[keyof typeof StatusEnum];
+  /**
+   * SwappedComponentModel
+   */
+  export type SwappedComponentModel = {
+    /**
+     * Componentrenderingid
+     *
+     * The unique identifier of the replacement component rendering definition.
+     */
+    componentRenderingId: string;
+    /**
+     * Datasourcepath
+     *
+     * The path to the datasource used by the swapped component.
+     */
+    datasourcePath: string;
+  };
+  /**
+   * TagModel
+   *
+   * Model for brand kit tags with category and values
+   */
+  export type TagModel = {
+    /**
+     * Category
+     *
+     * The tag category.
+     */
+    category?: string;
+    /**
+     * Values
+     *
+     * A list of tag values for the category.
+     */
+    values?: Array<string>;
+  };
+  /**
+   * Template
+   */
+  export type Template = {
+    /**
+     * Definition
+     *
+     * Template definition content. For AUDIENCE type templates this is a structured AudienceDefinition object serialised as JSON; for all other types it is a plain string (e.g., JavaScript source).
+     */
+    definition?: string | AudienceDefinition | null;
+    /**
+     * Clientkey
+     */
+    clientKey?: string | null;
+    /**
+     * Href
+     */
+    href?: string | null;
+    ref?: UuidModel | null;
     /**
      * Name
      */
-    name: string;
+    name?: string;
     /**
-     * Brand Information
+     * Description
      */
-    brand_information: string;
+    description?: string | null;
     /**
-     * Rootpath
+     * Modifiedbyref
      */
-    rootPath: string;
+    modifiedByRef?: string | null;
     /**
-     * Page Locations
+     * Modifiedbyemail
      */
-    page_locations: Array<PageLocationModel>;
+    modifiedByEmail?: string | null;
+    modifiedAt?: OffsetDateTime | null;
     /**
-     * Non Visual Content Locations
+     * Revision
      */
-    non_visual_content_locations: Array<NonVisualContentLocationModel>;
+    revision?: number | null;
+    /**
+     * Revisioncomment
+     */
+    revisionComment?: string | null;
+    /**
+     * Archived
+     */
+    archived?: boolean | null;
+    createdAt?: OffsetDateTime | null;
+    /**
+     * Createdbyref
+     */
+    createdByRef?: string | null;
+    /**
+     * Createdbyemail
+     */
+    createdByEmail?: string | null;
+    /**
+     * Friendlyid
+     *
+     * Unique human-readable identifier for this template. Lowercase letters, digits, and underscores only.
+     */
+    friendlyId?: string | null;
+    /**
+     * Template type determining how the template definition is processed.
+     */
+    type?: TypeEnum;
+    /**
+     * Current lifecycle status of this template.
+     */
+    status?: StatusEnum;
+    /**
+     * Icon
+     *
+     * Icon identifier for display in the editor.
+     */
+    icon?: string | null;
+    /**
+     * HAL link to the revision history of this template.
+     */
+    revisions?: Link | null;
+    /**
+     * Additionalfields
+     *
+     * Additional key-value metadata fields associated with this template.
+     */
+    additionalFields?: {
+      [key: string]: string;
+    } | null;
+    /**
+     * Templateelements
+     *
+     * Configurable element slots within this template.
+     */
+    templateElements?: Array<TemplateElement> | null;
+    /**
+     * Transpileddefinition
+     *
+     * Compiled/transpiled form of the definition, populated after processing.
+     */
+    transpiledDefinition?: string | null;
+    /**
+     * Render
+     */
+    render?: boolean | null;
+    /**
+     * Defaulttemplate
+     */
+    defaultTemplate?: boolean | null;
+    /**
+     * Tags
+     */
+    tags?: Array<string> | null;
+    /**
+     * Customtemplate
+     */
+    customTemplate?: boolean | null;
+    valueType?: FieldValueType | null;
   };
+  /**
+   * TemplateElement
+   */
+  export type TemplateElement = {
+    /**
+     * Id
+     *
+     * Unique identifier for this template element within the template.
+     */
+    id?: string | null;
+    /**
+     * Template
+     *
+     * Template content or reference for this element.
+     */
+    template?: string | null;
+  };
+  /**
+   * TimelineCalculation
+   *
+   * Represents the timeline calculation constraint.
+   */
+  export const TimelineCalculation = {
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+  } as const;
+  /**
+   * TimelineCalculation
+   *
+   * Represents the timeline calculation constraint.
+   */
+  export type TimelineCalculation = (typeof TimelineCalculation)[keyof typeof TimelineCalculation];
+  /**
+   * TimelineConfig
+   */
+  export type TimelineConfig = {
+    /**
+     * Type
+     *
+     * The type of field in the brief type.
+     */
+    type?: 'Timeline';
+    /**
+     * Name
+     *
+     * The name of the field. Must be alphanumeric with no spaces or special characters.
+     */
+    name?: string;
+    /**
+     * Label
+     *
+     * The display label of the field, which can be localized for different languages.
+     */
+    label?: {
+      [key: string]: string;
+    };
+    /**
+     * Helptext
+     *
+     * The text providing help or guidance for the field, which can be localized for different languages.
+     */
+    helpText?: {
+      [key: string]: string;
+    };
+    /**
+     * Required
+     *
+     * Whether the field is required.
+     */
+    required?: boolean;
+    /**
+     * Aieditable
+     *
+     * Whether the field is editable by AI.
+     */
+    aiEditable?: boolean;
+    /**
+     * Aiintent
+     *
+     * The AI intent associated with the field.
+     */
+    aiIntent?: string | null;
+    /**
+     * The timeline calculation constraint. Either `Flexible`, `Backward` or `Forward`.
+     */
+    calculation?: string;
+    /**
+     * Skipholidays
+     *
+     * Whether to skip holidays in timeline calculations.
+     */
+    skipHolidays?: boolean;
+    /**
+     * Skipweekend
+     *
+     * Whether to skip weekends in timeline calculations.
+     */
+    skipWeekend?: boolean;
+    /**
+     * Timezone
+     *
+     * The timezone to use for timeline calculations.
+     */
+    timezone?: string;
+  };
+  /**
+   * TimelineEvent
+   *
+   * Represents a timeline event.
+   */
+  export type TimelineEvent = {
+    /**
+     * Title
+     *
+     * The title of the timeline event.
+     */
+    title: string;
+    /**
+     * Duration
+     *
+     * The duration of the timeline event in the specified units.
+     */
+    duration?: number | null;
+    /**
+     * Timeline duration unit: Either `Day` or `Week`.
+     */
+    unit?: TimelineEventUnit | null;
+    /**
+     * Duedate
+     *
+     * The due date of the timeline event in yyyy-mm-dd format.
+     */
+    dueDate?: string | null;
+  };
+  /**
+   * TimelineEventUnit
+   *
+   * Represents the units of time for timeline events.
+   */
+  export const TimelineEventUnit = { DAY: 'Day', WEEK: 'Week' } as const;
+  /**
+   * TimelineEventUnit
+   *
+   * Represents the units of time for timeline events.
+   */
+  export type TimelineEventUnit = (typeof TimelineEventUnit)[keyof typeof TimelineEventUnit];
+  /**
+   * TimelineFieldValue
+   *
+   * Timeline field value
+   */
+  export type TimelineFieldValue = {
+    /**
+     * Type
+     *
+     * The type of the field value
+     */
+    type: 'Timeline';
+    /**
+     * The timeline value containing start date, end date, and events.
+     */
+    value: TimelineValue;
+  };
+  /**
+   * TimelineValue
+   */
+  export type TimelineValue = {
+    /**
+     * Startdate
+     *
+     * The start date of the timeline in yyyy-mm-dd format.
+     */
+    startDate?: string;
+    /**
+     * Enddate
+     *
+     * The end date of the timeline in yyyy-mm-dd format.
+     */
+    endDate?: string;
+    /**
+     * Events
+     *
+     * A list of events included in the timeline.
+     */
+    events?: Array<TimelineEvent>;
+  };
+  /**
+   * TypeEnum
+   */
+  export const TypeEnum = {
+    WEB: 'WEB',
+    EMAIL: 'EMAIL',
+    DECISION: 'DECISION',
+    AUDIENCE: 'AUDIENCE',
+    CONDITION: 'CONDITION',
+    SEGMENT: 'SEGMENT',
+    JS_MODULE: 'JS_MODULE',
+    VALUE_EXTRACTOR: 'VALUE_EXTRACTOR',
+  } as const;
+  /**
+   * TypeEnum
+   */
+  export type TypeEnum = (typeof TypeEnum)[keyof typeof TypeEnum];
+  /**
+   * UUIDModel
+   */
+  export type UuidModel = string;
+  /**
+   * UnionType
+   */
+  export const UnionType = { AND: 'AND', OR: 'OR' } as const;
+  /**
+   * UnionType
+   */
+  export type UnionType = (typeof UnionType)[keyof typeof UnionType];
   /**
    * UpdateAssetRequest
    */
   export type UpdateAssetRequest = {
     /**
      * Fields
+     *
+     * A key-value map of metadata fields to update for the asset.
      */
     fields: {
       [key: string]: unknown;
     };
     /**
      * Language
+     *
+     * The new language code of the asset.
      */
     language: string;
     /**
      * Name
+     *
+     * The new name for the asset. If null, the name will not be updated.
      */
     name?: string | null;
     /**
      * Alttext
+     *
+     * The new alt text for the asset. If null, the alt text will not be updated.
      */
     altText?: string | null;
   };
@@ -1551,22 +5221,143 @@ export namespace Agent {
   export type UpdateAssetResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the asset.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The updated name of the asset.
      */
-    name: string;
+    name?: string;
     /**
      * Path
+     *
+     * The path to the asset.
      */
-    path: string;
+    path?: string;
     /**
      * Updatedfields
+     *
+     * The fields that were updated in the asset.
      */
-    updatedFields: {
+    updatedFields?: {
       [key: string]: unknown;
     };
+  };
+  /**
+   * UpdateBriefRequestModel
+   *
+   * Model for updating an existing brief
+   */
+  export type UpdateBriefRequestModel = {
+    /**
+     * Name
+     *
+     * The name of the brief
+     */
+    name?: string | null;
+    /**
+     * Fields
+     *
+     * Dictionary of field names to their values
+     */
+    fields?: {
+      [key: string]:
+        | ({
+            type: 'SimpleText';
+          } & SimpleTextFieldValue)
+        | ({
+            type: 'RichText';
+          } & RichTextFieldValue)
+        | ({
+            type: 'DateTime';
+          } & DateTimeFieldValue)
+        | ({
+            type: 'Budget';
+          } & BudgetFieldValue)
+        | ({
+            type: 'Boolean';
+          } & BooleanFieldValue)
+        | ({
+            type: 'Timeline';
+          } & TimelineFieldValue);
+    } | null;
+  };
+  /**
+   * UpdateBriefResponse
+   */
+  export type UpdateBriefResponse = {
+    /**
+     * Id
+     *
+     * The unique identifier of the brief.
+     */
+    id?: string;
+    /**
+     * Icon
+     *
+     * The icon associated with the brief.
+     */
+    icon?: string | null;
+    /**
+     * Name
+     *
+     * The name of the brief.
+     */
+    name?: string;
+    /**
+     * Status
+     *
+     * The status of the brief. Draft by default.
+     */
+    status?: string;
+    /**
+     * Locale
+     *
+     * The locale code in the format xx-XX.
+     */
+    locale?: string;
+    /**
+     * Fields
+     *
+     * Dictionary of field names to their values.
+     */
+    fields?: {
+      [key: string]: unknown;
+    };
+    /**
+     * Istemplate
+     */
+    isTemplate?: boolean;
+    /**
+     * Contributors
+     *
+     * A list of users who contributed to the brief.
+     */
+    contributors?: Array<string> | null;
+    /**
+     * The user who created the brief.
+     */
+    createdBy?: ExternalLink | null;
+    /**
+     * Createdon
+     *
+     * The ISO 8601 timestamp when the brief was created.
+     */
+    createdOn?: string | null;
+    /**
+     * The user who last updated the brief.
+     */
+    updatedBy?: ExternalLink | null;
+    /**
+     * Updatedon
+     *
+     * The ISO 8601 timestamp when the brief was last updated.
+     */
+    updatedOn?: string | null;
+    briefType?: BriefTypeLink | null;
   };
   /**
    * UpdateContentRequest
@@ -1574,20 +5365,34 @@ export namespace Agent {
   export type UpdateContentRequest = {
     /**
      * Fields
+     *
+     * A key-value map of fields to update for the content item. If null, fields will not be updated.
      */
     fields?: {
       [key: string]: unknown;
     } | null;
     /**
      * Language
+     *
+     * The language version of the content item to update.
      */
     language?: string;
     /**
      * Createnewversion
+     *
+     * Whether to create a new version of the content item.
      */
     createNewVersion?: boolean;
     /**
+     * Versionname
+     *
+     * The name for the new version, displayed beside the version number. This is only applicable if `createNewVersion` is true.
+     */
+    versionName?: string | null;
+    /**
      * Sitename
+     *
+     * The unique name of the site where the content item resides.
      */
     siteName?: string | null;
   };
@@ -1597,22 +5402,108 @@ export namespace Agent {
   export type UpdateContentResponse = {
     /**
      * Itemid
+     *
+     * The unique identifier of the content item.
      */
-    itemId: string;
+    itemId?: string;
     /**
      * Name
+     *
+     * The name of the content item.
      */
-    name: string;
+    name?: string;
     /**
      * Path
+     *
+     * The path to the content item.
      */
-    path: string;
+    path?: string;
     /**
      * Updatedfields
+     *
+     * The fields that were updated in the content item.
      */
-    updatedFields: {
+    updatedFields?: {
       [key: string]: unknown;
     };
+    /**
+     * Language
+     *
+     * The language version used for the update.
+     */
+    language?: string | null;
+    /**
+     * Version
+     *
+     * The item version the update was written to. A new version is created automatically when the item is in a final workflow state, so this may differ from the version you read.
+     */
+    version?: number | null;
+  };
+  /**
+   * UpdateExperimentRequest
+   */
+  export type UpdateExperimentRequest = {
+    /**
+     * Name
+     *
+     * The updated name of the A/B/n test.
+     */
+    name?: string | null;
+    /**
+     * Archived
+     *
+     * Whether to archive the A/B/n test.
+     */
+    archived?: boolean | null;
+    /**
+     * How the A/B/n test evaluates the performance of its variants:
+     *
+     * - `pageViewGoal` - measures the number of page views.
+     * - `bouncersGoal` - measures the number of bounces.
+     * - `exitsGoal` - measures the number of exits.
+     */
+    goal_type?: GoalType | null;
+    /**
+     * Targeted Pages
+     *
+     * The updated list of page paths to target for the experiment.
+     */
+    targeted_pages?: Array<string> | null;
+    /**
+     * Variants
+     *
+     * An updated list of variants to use for the A/B/n test. Traffic splits must sum to 100 and exactly one variant must be marked as control.
+     */
+    variants?: Array<Variant> | null;
+  };
+  /**
+   * UpdatePersonalizationRequest
+   */
+  export type UpdatePersonalizationRequest = {
+    /**
+     * Language
+     *
+     * The language code for the personalization rule, or null for default.
+     */
+    language?: string | null;
+    /**
+     * Variant Name
+     *
+     * The name of the personalization variant.
+     */
+    variant_name: string;
+    /**
+     * Audience Name
+     *
+     * The name of the audience for the personalization rule.
+     */
+    audience_name: string;
+    /**
+     * Condition Groups
+     *
+     * List of condition groups with their conditions
+     */
+    condition_groups: Array<ConditionGroupInput>;
   };
   /**
    * UploadAssetResponse
@@ -1620,9 +5511,14 @@ export namespace Agent {
   export type UploadAssetResponse = {
     /**
      * Success
+     *
+     * Whether the asset upload was successful.
      */
-    success: boolean;
-    mediaItem: MediaItem;
+    success?: boolean;
+    /**
+     * The uploaded media item details.
+     */
+    mediaItem?: MediaItem;
   };
   /**
    * ValidationError
@@ -1630,22 +5526,138 @@ export namespace Agent {
   export type ValidationError = {
     /**
      * Location
+     *
+     * The location of the error in the request.
      */
-    loc: Array<string | number>;
+    loc?: Array<string | number>;
     /**
      * Message
+     *
+     * The error message.
      */
-    msg: string;
+    msg?: string;
     /**
      * Error Type
+     *
+     * The type of error.
      */
-    type: string;
+    type?: string;
+    /**
+     * Input
+     *
+     * The input that caused the error.
+     */
+    input?: unknown;
+    /**
+     * Context
+     *
+     * The context in which the error occurred.
+     */
+    ctx?: {
+      [key: string]: unknown;
+    };
   };
   /**
+   * Variant
+   */
+  export type Variant = {
+    /**
+     * Name
+     *
+     * The name of the variant.
+     */
+    name: string;
+    /**
+     * Is Control
+     *
+     * Whether this is the control variant (baseline) for comparison in the A/B/n test.
+     */
+    is_control: boolean;
+    /**
+     * Traffic Split
+     *
+     * The percentage of traffic assigned to this variant. All variant splits must sum to 100.
+     */
+    traffic_split: number;
+  };
+  /**
+   * VariantComponentModel
+   */
+  export type VariantComponentModel = {
+    /**
+     * Componentid
+     *
+     * The unique identifier of the component.
+     */
+    componentId?: string;
+    /**
+     * Componentrenderingid
+     *
+     * The unique identifier of the component rendering definition.
+     */
+    componentRenderingId?: string;
+    /**
+     * The variant strategy applied to this component. Either HIDE, SWAP, COPY, or null.
+     */
+    variantStrategy?: VariantStrategy | null;
+    /**
+     * Datasourcepath
+     *
+     * The path to the datasource used by the variant component, or null if not applicable.
+     */
+    datasourcePath?: string | null;
+    /**
+     * Componentname
+     *
+     * The internal name of the component.
+     */
+    componentName?: string;
+  };
+  /**
+   * VariantInfoResponse
+   */
+  export type VariantInfoResponse = {
+    /**
+     * Flowid
+     *
+     * The unique identifier of the A/B/n test or personalization.
+     */
+    flowId?: string;
+    /**
+     * Variantid
+     *
+     * The unique identifier of the A/B/n test or personalization variant.
+     */
+    variantId?: string;
+    /**
+     * Components
+     *
+     * A list of components associated with the variant.
+     */
+    components?: Array<VariantComponentModel>;
+  };
+  /**
+   * VariantStrategy
+   */
+  export const VariantStrategy = {
+    HIDE: 'HIDE',
+    SWAP: 'SWAP',
+    COPY: 'COPY',
+  } as const;
+  /**
+   * VariantStrategy
+   */
+  export type VariantStrategy = (typeof VariantStrategy)[keyof typeof VariantStrategy];
+  /**
    * WorkflowModel
+   *
+   * Model representing the workflow state of an item.
    */
   export type WorkflowModel = {
-    workflowState: WorkflowStateModel;
+    /**
+     * The current workflow state of the content item.
+     */
+    workflowState?: WorkflowStateModel | null;
   };
   /**
    * WorkflowStateModel
@@ -1653,12 +5665,53 @@ export namespace Agent {
   export type WorkflowStateModel = {
     /**
      * Final
+     *
+     * Whether this is a final workflow state.
      */
-    final: boolean;
+    final?: boolean;
     /**
      * Displayname
+     *
+     * The display name of the workflow state.
      */
-    displayName: string;
+    displayName?: string;
+  };
+  /**
+   * FieldModel
+   *
+   * Model for the brand kit section field.
+   */
+  export type ModelsBrandkitsFieldModel = {
+    /**
+     * Id
+     *
+     * The unique identifier of the brand kit field (subsection).
+     */
+    id?: string;
+    /**
+     * Name
+     *
+     * The name of the brand kit field.
+     */
+    name?: string;
+    /**
+     * Type
+     *
+     * The type of the brand kit field.
+     */
+    type?: string;
+    /**
+     * Value
+     *
+     * The value of the brand kit field.
+     */
+    value?: unknown | null;
+    /**
+     * Intent
+     *
+     * The intent of the brand kit field.
+     */
+    intent?: string | null;
   };
   /**
    * TemplateModel
@@ -1666,12 +5719,33 @@ export namespace Agent {
   export type ModelsContentTemplateModel = {
     /**
      * Templateid
+     *
+     * The unique identifier of the template.
      */
-    templateId: string;
+    templateId?: string;
     /**
      * Name
+     *
+     * The name of the template.
      */
-    name: string;
+    name?: string;
+  };
+  /**
+   * FieldModel
+   */
+  export type ModelsPagesFieldModel = {
+    /**
+     * Name
+     *
+     * The name of the field.
+     */
+    name?: string;
+    /**
+     * Value
+     *
+     * The value of the field.
+     */
+    value?: string;
   };
   /**
    * TemplateModel
@@ -1679,12 +5753,16 @@ export namespace Agent {
   export type ModelsPagesTemplateModel = {
     /**
      * Id
+     *
+     * The unique identifier of the template.
      */
-    id: string;
+    id?: string;
     /**
      * Name
+     *
+     * The name of the template.
      */
-    name: string;
+    name?: string;
   };
   export type SitesGetSitesListData = {
     body?: never;
@@ -1692,7 +5770,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -1707,18 +5785,14 @@ export namespace Agent {
   };
   export type SitesGetSitesListErrors = {
     /**
-     * No sites found
-     */
-    404: unknown;
-    /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
   export type SitesGetSitesListError = SitesGetSitesListErrors[keyof SitesGetSitesListErrors];
   export type SitesGetSitesListResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: ListSitesResponse;
   };
@@ -1730,13 +5804,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Siteid
+       *
+       * The unique identifier of the site. To get this ID, use [List sites](#operation/sites-get_sites_list).
        */
       siteId: string;
     };
@@ -1750,14 +5826,14 @@ export namespace Agent {
   };
   export type SitesGetSiteDetailsErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
   export type SitesGetSiteDetailsError = SitesGetSiteDetailsErrors[keyof SitesGetSiteDetailsErrors];
   export type SitesGetSiteDetailsResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: SiteInformationResponse;
   };
@@ -1769,19 +5845,23 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Sitename
+       *
+       * The unique name of the site. To get this name, use [List sites](#operation/sites-get_sites_list).
        */
       siteName: string;
     };
     query?: {
       /**
        * Language
+       *
+       * The language code for filtering pages.
        */
       language?: string;
       /**
@@ -1793,7 +5873,7 @@ export namespace Agent {
   };
   export type SitesGetAllPagesBySiteErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -1803,7 +5883,7 @@ export namespace Agent {
     /**
      * Response Sites-Get All Pages By Site
      *
-     * Successful Response
+     * Successful response
      */
     200: Array<PageModel>;
   };
@@ -1815,13 +5895,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Itemid
+       *
+       * The unique identifier of the item.
        */
       itemId: string;
     };
@@ -1835,7 +5917,7 @@ export namespace Agent {
   };
   export type SitesGetSiteIdFromItemErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -1843,7 +5925,7 @@ export namespace Agent {
     SitesGetSiteIdFromItemErrors[keyof SitesGetSiteIdFromItemErrors];
   export type SitesGetSiteIdFromItemResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: SiteIdFromItemResponse;
   };
@@ -1855,7 +5937,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -1870,14 +5952,14 @@ export namespace Agent {
   };
   export type PagesCreatePageErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
   export type PagesCreatePageError = PagesCreatePageErrors[keyof PagesCreatePageErrors];
   export type PagesCreatePageResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     201: CreatePageResponse;
   };
@@ -1888,13 +5970,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Pageid
+       *
+       * The unique identifier of the page.To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
        */
       pageId: string;
     };
@@ -1908,7 +5992,7 @@ export namespace Agent {
   };
   export type PagesAddLanguageToPageErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -1916,7 +6000,7 @@ export namespace Agent {
     PagesAddLanguageToPageErrors[keyof PagesAddLanguageToPageErrors];
   export type PagesAddLanguageToPageResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: AddLanguageResponse;
   };
@@ -1928,25 +6012,45 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Pageid
+       *
+       * The unique identifier of the page from which to retrieve components. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
        */
       pageId: string;
     };
     query?: {
       /**
        * Language
+       *
+       * The language code for filtering components.
        */
       language?: string | null;
       /**
        * Version
+       *
+       * The version number of the page to retrieve components from.
        */
       version?: number | null;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the  personalization or A/B/n test variant on the page. To get this ID, you can use the [List flow definitions](https://api-docs.sitecore.com/sai/agent-api/flow-definitions/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       *
+       * If you provide this value, the endpoint returns components of the specified variant. If you omit this value, the endpoint returns components of the base page.
+       */
+      variantId?: string | null;
+      /**
+       * Includerenderingdetails
+       *
+       * Whether the response includes rendering details for each component.
+       */
+      includeRenderingDetails?: boolean;
       /**
        * The Sitecore context ID.
        */
@@ -1956,7 +6060,7 @@ export namespace Agent {
   };
   export type PagesGetComponentsOnPageErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -1964,7 +6068,7 @@ export namespace Agent {
     PagesGetComponentsOnPageErrors[keyof PagesGetComponentsOnPageErrors];
   export type PagesGetComponentsOnPageResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: GetPageComponentsResponse;
   };
@@ -1976,13 +6080,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Pageid
+       *
+       * The unique identifier of the page. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
        */
       pageId: string;
     };
@@ -1996,7 +6102,7 @@ export namespace Agent {
   };
   export type PagesAddComponentOnPageErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2004,7 +6110,7 @@ export namespace Agent {
     PagesAddComponentOnPageErrors[keyof PagesAddComponentOnPageErrors];
   export type PagesAddComponentOnPageResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     201: AddComponentResponse;
   };
@@ -2012,6 +6118,565 @@ export namespace Agent {
     PagesAddComponentOnPageResponses[keyof PagesAddComponentOnPageResponses];
   export type PagesSetComponentDatasourceData = {
     body: SetComponentDatasourceRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page.To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+      /**
+       * Componentid
+       *
+       * The unique identifier of the component on the page. To get this ID, use [Retrieve components on a page](#operation/pages-get_components_on_page).
+       */
+      componentId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/components/{componentId}/datasource';
+  };
+  export type PagesSetComponentDatasourceErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesSetComponentDatasourceError =
+    PagesSetComponentDatasourceErrors[keyof PagesSetComponentDatasourceErrors];
+  export type PagesSetComponentDatasourceResponses = {
+    /**
+     * Successful response
+     */
+    200: SetComponentDatasourceResponse;
+  };
+  export type PagesSetComponentDatasourceResponse =
+    PagesSetComponentDatasourceResponses[keyof PagesSetComponentDatasourceResponses];
+  export type PagesSearchSiteData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query: {
+      /**
+       * Search Query
+       *
+       * The search term to look for in page titles and content.
+       */
+      search_query: string;
+      /**
+       * Site Name
+       *
+       * The unique name of the site to search within.
+       */
+      site_name: string;
+      /**
+       * Language
+       *
+       * The language code for filtering pages.
+       */
+      language?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/search';
+  };
+  export type PagesSearchSiteErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesSearchSiteError = PagesSearchSiteErrors[keyof PagesSearchSiteErrors];
+  export type PagesSearchSiteResponses = {
+    /**
+     * Response Pages-Search Site
+     *
+     * Successful response
+     */
+    200: Array<PageSearchItemModel>;
+  };
+  export type PagesSearchSiteResponse = PagesSearchSiteResponses[keyof PagesSearchSiteResponses];
+  export type PagesGetPagePathByLiveUrlData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query: {
+      /**
+       * Live Url
+       *
+       * The full public URL of the page to resolve. The URL must be absolute and include the page path.
+       */
+      live_url: string;
+      /**
+       * Deep
+       *
+       * Whether to search the site's published routes when the standard lookup cannot find the page. Set to `true` when a page you know exists is returned as not found, for example when its public URL differs from its item name in Sitecore. This lookup can take significantly longer.
+       */
+      deep?: boolean;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/path-by-url';
+  };
+  export type PagesGetPagePathByLiveUrlErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesGetPagePathByLiveUrlError =
+    PagesGetPagePathByLiveUrlErrors[keyof PagesGetPagePathByLiveUrlErrors];
+  export type PagesGetPagePathByLiveUrlResponses = {
+    /**
+     * Successful response
+     */
+    200: PagePathByLiveUrlResponse;
+  };
+  export type PagesGetPagePathByLiveUrlResponse =
+    PagesGetPagePathByLiveUrlResponses[keyof PagesGetPagePathByLiveUrlResponses];
+  export type PagesGetPageScreenshotData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+    };
+    query: {
+      /**
+       * Version
+       *
+       * The version number of the page to retrieve the screenshot for.
+       */
+      version: number;
+      /**
+       * Language
+       *
+       * The language code for the page.
+       */
+      language?: string;
+      /**
+       * Width
+       *
+       * The width of the screenshot in pixels.
+       */
+      width?: number;
+      /**
+       * Height
+       *
+       * The height of the screenshot in pixels.
+       */
+      height?: number;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the personalization or A/B/n test variant to show in the screenshot. To get this ID, you can use the [List flow definitions](#operation/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       *
+       * If you provide this value, the screenshot is captured for the specified variant. If you omit this value, the screenshot is captured for the base page.
+       */
+      variantId?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/screenshot';
+  };
+  export type PagesGetPageScreenshotErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesGetPageScreenshotError =
+    PagesGetPageScreenshotErrors[keyof PagesGetPageScreenshotErrors];
+  export type PagesGetPageScreenshotResponses = {
+    /**
+     * Successful response
+     */
+    200: PageScreenshotResponse;
+  };
+  export type PagesGetPageScreenshotResponse =
+    PagesGetPageScreenshotResponses[keyof PagesGetPageScreenshotResponses];
+  export type PagesGetPageHtmlData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+    };
+    query: {
+      /**
+       * Language
+       *
+       * The language code for the page content.
+       */
+      language: string;
+      /**
+       * Version
+       *
+       * The version number of the page to retrieve.
+       */
+      version?: number | null;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the personalization or A/B/n test variant to use. To get this ID, you can use the [List flow definitions](#operation/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       *
+       * If you provide this value, the HTML content is retrieved for the specified variant. If you omit this value, the HTML content for the base page is returned.
+       */
+      variantId?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/html';
+  };
+  export type PagesGetPageHtmlErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesGetPageHtmlError = PagesGetPageHtmlErrors[keyof PagesGetPageHtmlErrors];
+  export type PagesGetPageHtmlResponses = {
+    /**
+     * Successful response
+     */
+    200: PageHtmlResponse;
+  };
+  export type PagesGetPageHtmlResponse = PagesGetPageHtmlResponses[keyof PagesGetPageHtmlResponses];
+  export type PagesGetPagePreviewUrlData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+    };
+    query?: {
+      /**
+       * Language
+       *
+       * The language code for the page content.
+       */
+      language?: string;
+      /**
+       * Version
+       *
+       * The version number of the page to retrieve the preview URL for.
+       */
+      version?: number | null;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the personalization or A/B/n test variant to preview. To get this ID, you can use the [List flow definitions](#operation/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       *
+       * If you provide this value, the preview URL is retrieved for the specified variant. If you omit this value, the preview URL for the base page is returned.
+       */
+      variantId?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/preview-url';
+  };
+  export type PagesGetPagePreviewUrlErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesGetPagePreviewUrlError =
+    PagesGetPagePreviewUrlErrors[keyof PagesGetPagePreviewUrlErrors];
+  export type PagesGetPagePreviewUrlResponses = {
+    /**
+     * Successful response
+     */
+    200: GetPagePreviewUrlResponse;
+  };
+  export type PagesGetPagePreviewUrlResponse =
+    PagesGetPagePreviewUrlResponses[keyof PagesGetPagePreviewUrlResponses];
+  export type PagesGetPageTemplateByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query: {
+      /**
+       * Templateid
+       *
+       * The unique identifier of the page template. To get this ID, you can use the [List templates of a site](#operation/sites-get_all_templates_by_site) endpoint.
+       */
+      templateId: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/template-by-id';
+  };
+  export type PagesGetPageTemplateByIdErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesGetPageTemplateByIdError =
+    PagesGetPageTemplateByIdErrors[keyof PagesGetPageTemplateByIdErrors];
+  export type PagesGetPageTemplateByIdResponses = {
+    /**
+     * Successful response
+     */
+    200: PageTemplateResponse;
+  };
+  export type PagesGetPageTemplateByIdResponse =
+    PagesGetPageTemplateByIdResponses[keyof PagesGetPageTemplateByIdResponses];
+  export type PagesGetPageData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+    };
+    query?: {
+      /**
+       * Language
+       *
+       * The language code for the page content.
+       */
+      language?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}';
+  };
+  export type PagesGetPageErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesGetPageError = PagesGetPageErrors[keyof PagesGetPageErrors];
+  export type PagesGetPageResponses = {
+    /**
+     * Successful response
+     */
+    200: GetPageResponse;
+  };
+  export type PagesGetPageResponse = PagesGetPageResponses[keyof PagesGetPageResponses];
+  export type PagesGetAllowedComponentsByPlaceholderData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+      /**
+       * Placeholdername
+       *
+       * The unique identifier of the placeholder.
+       */
+      placeholderName: string;
+    };
+    query?: {
+      /**
+       * Language
+       *
+       * The language code for filtering components.
+       */
+      language?: string | null;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the personalization or A/B/n test variant to use. To get this ID, you can use the [List flow definitions](#operation/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       *
+       * If you provide this value, the list of allowed components is retrieved for the specified variant. If you omit this value, the list for the base page is returned.
+       */
+      variantId?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/placeholders/{placeholderName}/allowed-components';
+  };
+  export type PagesGetAllowedComponentsByPlaceholderErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PagesGetAllowedComponentsByPlaceholderError =
+    PagesGetAllowedComponentsByPlaceholderErrors[keyof PagesGetAllowedComponentsByPlaceholderErrors];
+  export type PagesGetAllowedComponentsByPlaceholderResponses = {
+    /**
+     * Response Pages-Get Allowed Components By Placeholder
+     *
+     * Successful response
+     */
+    200: Array<ComponentShortInfo>;
+  };
+  export type PagesGetAllowedComponentsByPlaceholderResponse =
+    PagesGetAllowedComponentsByPlaceholderResponses[keyof PagesGetAllowedComponentsByPlaceholderResponses];
+  export type PagesMoveComponentOnPageData = {
+    body: MoveComponentRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * Job ID for auditing purposes
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       */
+      pageId: string;
+      /**
+       * Componentinstanceid
+       */
+      componentInstanceId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/pages/{pageId}/components/{componentInstanceId}/position';
+  };
+  export type PagesMoveComponentOnPageErrors = {
+    /**
+     * Invalid move request or target placeholder constraints.
+     */
+    400: unknown;
+    /**
+     * Missing or invalid authentication token.
+     */
+    401: unknown;
+    /**
+     * Insufficient permissions to update the page.
+     */
+    403: unknown;
+    /**
+     * The page, component instance, or anchor was not found.
+     */
+    404: unknown;
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+    /**
+     * An unexpected server error occurred.
+     */
+    500: unknown;
+  };
+  export type PagesMoveComponentOnPageError =
+    PagesMoveComponentOnPageErrors[keyof PagesMoveComponentOnPageErrors];
+  export type PagesMoveComponentOnPageResponses = {
+    /**
+     * Successful response
+     */
+    200: MoveComponentResponse;
+  };
+  export type PagesMoveComponentOnPageResponse =
+    PagesMoveComponentOnPageResponses[keyof PagesMoveComponentOnPageResponses];
+  export type PagesRemoveComponentOnPageData = {
+    body?: never;
     headers?: {
       /**
        * X-Sc-Job-Id
@@ -2032,367 +6697,6 @@ export namespace Agent {
     };
     query?: {
       /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/{pageId}/components/{componentId}/datasource';
-  };
-  export type PagesSetComponentDatasourceErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesSetComponentDatasourceError =
-    PagesSetComponentDatasourceErrors[keyof PagesSetComponentDatasourceErrors];
-  export type PagesSetComponentDatasourceResponses = {
-    /**
-     * Successful Response
-     */
-    200: SetComponentDatasourceResponse;
-  };
-  export type PagesSetComponentDatasourceResponse =
-    PagesSetComponentDatasourceResponses[keyof PagesSetComponentDatasourceResponses];
-  export type PagesSearchSiteData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path?: never;
-    query: {
-      /**
-       * Search Query
-       */
-      search_query: string;
-      /**
-       * Site Name
-       */
-      site_name: string;
-      /**
-       * Language
-       */
-      language?: string;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/search';
-  };
-  export type PagesSearchSiteErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesSearchSiteError = PagesSearchSiteErrors[keyof PagesSearchSiteErrors];
-  export type PagesSearchSiteResponses = {
-    /**
-     * Response Pages-Search Site
-     *
-     * Successful Response
-     */
-    200: Array<PageSearchItemModel>;
-  };
-  export type PagesSearchSiteResponse = PagesSearchSiteResponses[keyof PagesSearchSiteResponses];
-  export type PagesGetPagePathByLiveUrlData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path?: never;
-    query: {
-      /**
-       * Live Url
-       */
-      live_url: string;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/path-by-url';
-  };
-  export type PagesGetPagePathByLiveUrlErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesGetPagePathByLiveUrlError =
-    PagesGetPagePathByLiveUrlErrors[keyof PagesGetPagePathByLiveUrlErrors];
-  export type PagesGetPagePathByLiveUrlResponses = {
-    /**
-     * Successful Response
-     */
-    200: PagePathByLiveUrlResponse;
-  };
-  export type PagesGetPagePathByLiveUrlResponse =
-    PagesGetPagePathByLiveUrlResponses[keyof PagesGetPagePathByLiveUrlResponses];
-  export type PagesGetPageScreenshotData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      /**
-       * Pageid
-       */
-      pageId: string;
-    };
-    query: {
-      /**
-       * Version
-       */
-      version: number;
-      /**
-       * Language
-       */
-      language?: string;
-      /**
-       * Width
-       */
-      width?: number;
-      /**
-       * Height
-       */
-      height?: number;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/{pageId}/screenshot';
-  };
-  export type PagesGetPageScreenshotErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesGetPageScreenshotError =
-    PagesGetPageScreenshotErrors[keyof PagesGetPageScreenshotErrors];
-  export type PagesGetPageScreenshotResponses = {
-    /**
-     * Successful Response
-     */
-    200: PageScreenshotResponse;
-  };
-  export type PagesGetPageScreenshotResponse =
-    PagesGetPageScreenshotResponses[keyof PagesGetPageScreenshotResponses];
-  export type PagesGetPageHtmlData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      /**
-       * Pageid
-       */
-      pageId: string;
-    };
-    query: {
-      /**
-       * Language
-       */
-      language: string;
-      /**
-       * Version
-       */
-      version?: number | null;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/{pageId}/html';
-  };
-  export type PagesGetPageHtmlErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesGetPageHtmlError = PagesGetPageHtmlErrors[keyof PagesGetPageHtmlErrors];
-  export type PagesGetPageHtmlResponses = {
-    /**
-     * Successful Response
-     */
-    200: PageHtmlResponse;
-  };
-  export type PagesGetPageHtmlResponse = PagesGetPageHtmlResponses[keyof PagesGetPageHtmlResponses];
-  export type PagesGetPagePreviewUrlData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      /**
-       * Pageid
-       */
-      pageId: string;
-    };
-    query?: {
-      /**
-       * Language
-       */
-      language?: string;
-      /**
-       * Version
-       */
-      version?: number | null;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/{pageId}/preview-url';
-  };
-  export type PagesGetPagePreviewUrlErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesGetPagePreviewUrlError =
-    PagesGetPagePreviewUrlErrors[keyof PagesGetPagePreviewUrlErrors];
-  export type PagesGetPagePreviewUrlResponses = {
-    /**
-     * Successful Response
-     */
-    200: GetPagePreviewUrlResponse;
-  };
-  export type PagesGetPagePreviewUrlResponse =
-    PagesGetPagePreviewUrlResponses[keyof PagesGetPagePreviewUrlResponses];
-  export type PagesGetPageTemplateByIdData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path?: never;
-    query: {
-      /**
-       * Templateid
-       */
-      templateId: string;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/template-by-id';
-  };
-  export type PagesGetPageTemplateByIdErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesGetPageTemplateByIdError =
-    PagesGetPageTemplateByIdErrors[keyof PagesGetPageTemplateByIdErrors];
-  export type PagesGetPageTemplateByIdResponses = {
-    /**
-     * Successful Response
-     */
-    200: PageTemplateResponse;
-  };
-  export type PagesGetPageTemplateByIdResponse =
-    PagesGetPageTemplateByIdResponses[keyof PagesGetPageTemplateByIdResponses];
-  export type PagesGetPageData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      /**
-       * Pageid
-       */
-      pageId: string;
-    };
-    query?: {
-      /**
-       * Language
-       */
-      language?: string;
-      /**
-       * The Sitecore context ID.
-       */
-      sitecoreContextId?: string;
-    };
-    url: '/api/v1/pages/{pageId}';
-  };
-  export type PagesGetPageErrors = {
-    /**
-     * Validation Error
-     */
-    422: HttpValidationError;
-  };
-  export type PagesGetPageError = PagesGetPageErrors[keyof PagesGetPageErrors];
-  export type PagesGetPageResponses = {
-    /**
-     * Successful Response
-     */
-    200: GetPageResponse;
-  };
-  export type PagesGetPageResponse = PagesGetPageResponses[keyof PagesGetPageResponses];
-  export type PagesGetAllowedComponentsByPlaceholderData = {
-    body?: never;
-    headers?: {
-      /**
-       * X-Sc-Job-Id
-       *
-       * Job ID for auditing purposes
-       */
-      'x-sc-job-id'?: unknown;
-    };
-    path: {
-      /**
-       * Pageid
-       */
-      pageId: string;
-      /**
-       * Placeholdername
-       */
-      placeholderName: string;
-    };
-    query?: {
-      /**
        * Language
        */
       language?: string | null;
@@ -2401,33 +6705,31 @@ export namespace Agent {
        */
       sitecoreContextId?: string;
     };
-    url: '/api/v1/pages/{pageId}/placeholders/{placeholderName}/allowed-components';
+    url: '/api/v1/pages/{pageId}/components/{componentId}';
   };
-  export type PagesGetAllowedComponentsByPlaceholderErrors = {
+  export type PagesRemoveComponentOnPageErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
-  export type PagesGetAllowedComponentsByPlaceholderError =
-    PagesGetAllowedComponentsByPlaceholderErrors[keyof PagesGetAllowedComponentsByPlaceholderErrors];
-  export type PagesGetAllowedComponentsByPlaceholderResponses = {
+  export type PagesRemoveComponentOnPageError =
+    PagesRemoveComponentOnPageErrors[keyof PagesRemoveComponentOnPageErrors];
+  export type PagesRemoveComponentOnPageResponses = {
     /**
-     * Response Pages-Get Allowed Components By Placeholder
-     *
-     * Successful Response
+     * Successful response
      */
-    200: Array<ComponentShortInfo>;
+    200: RemoveComponentResponse;
   };
-  export type PagesGetAllowedComponentsByPlaceholderResponse =
-    PagesGetAllowedComponentsByPlaceholderResponses[keyof PagesGetAllowedComponentsByPlaceholderResponses];
+  export type PagesRemoveComponentOnPageResponse =
+    PagesRemoveComponentOnPageResponses[keyof PagesRemoveComponentOnPageResponses];
   export type ContentCreateContentItemData = {
     body: CreateContentItemRequest;
     headers?: {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -2442,7 +6744,7 @@ export namespace Agent {
   };
   export type ContentCreateContentItemErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2450,7 +6752,7 @@ export namespace Agent {
     ContentCreateContentItemErrors[keyof ContentCreateContentItemErrors];
   export type ContentCreateContentItemResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     201: CreateContentItemResponse;
   };
@@ -2462,21 +6764,31 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Itemid
+       *
+       * The unique identifier of the content item to be deleted.
        */
       itemId: string;
     };
     query?: {
       /**
        * Language
+       *
+       * The language version of the content item.
+       *
+       * **Note:** Deleting a content item removes the item across all language versions. The `language` parameter does not limit deletion to a specific language version.
        */
       language?: string;
+      /**
+       * Remove References
+       */
+      remove_references?: boolean;
       /**
        * The Sitecore context ID.
        */
@@ -2486,7 +6798,7 @@ export namespace Agent {
   };
   export type ContentDeleteContentErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2494,7 +6806,7 @@ export namespace Agent {
     ContentDeleteContentErrors[keyof ContentDeleteContentErrors];
   export type ContentDeleteContentResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: DeleteContentResponse;
   };
@@ -2506,19 +6818,23 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Itemid
+       *
+       * The unique identifier of the content item to be retrieved.
        */
       itemId: string;
     };
     query?: {
       /**
        * Language
+       *
+       * The language version of the content item to be retrieved. If not specified, the default language is used.
        */
       language?: string | null;
       /**
@@ -2530,7 +6846,7 @@ export namespace Agent {
   };
   export type ContentGetContentItemByIdErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2538,7 +6854,7 @@ export namespace Agent {
     ContentGetContentItemByIdErrors[keyof ContentGetContentItemByIdErrors];
   export type ContentGetContentItemByIdResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: ContentItemResponse;
   };
@@ -2550,13 +6866,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Itemid
+       *
+       * The unique identifier of the content item to be updated.
        */
       itemId: string;
     };
@@ -2570,7 +6888,7 @@ export namespace Agent {
   };
   export type ContentUpdateContentErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2578,7 +6896,7 @@ export namespace Agent {
     ContentUpdateContentErrors[keyof ContentUpdateContentErrors];
   export type ContentUpdateContentResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: UpdateContentResponse;
   };
@@ -2590,7 +6908,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -2598,14 +6916,20 @@ export namespace Agent {
     query: {
       /**
        * Item Path
+       *
+       * The path of the content item in the content tree.
        */
       item_path: string;
       /**
        * Failonnotfound
+       *
+       * Determines the behavior when the content item is not found.
        */
       failOnNotFound?: boolean | null;
       /**
        * Language
+       *
+       * The language version of the content item to be retrieved.
        */
       language?: string | null;
       /**
@@ -2617,7 +6941,7 @@ export namespace Agent {
   };
   export type ContentGetContentItemByPathErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2627,7 +6951,7 @@ export namespace Agent {
     /**
      * Response Content-Get Content Item By Path
      *
-     * Successful Response
+     * Successful response
      */
     200:
       | ContentItemResponse
@@ -2643,19 +6967,23 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Itemid
+       *
+       * The unique identifier of the parent item under which new items can be inserted.
        */
       itemId: string;
     };
     query?: {
       /**
        * Language
+       *
+       * The language code for filtering insert options.
        */
       language?: string;
       /**
@@ -2667,7 +6995,7 @@ export namespace Agent {
   };
   export type ContentListAvailableInsertoptionsErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2677,14 +7005,14 @@ export namespace Agent {
     /**
      * Response Content-List Available Insertoptions
      *
-     * Successful Response
+     * Successful response
      */
     200: Array<InsertOptionModel>;
   };
   export type ContentListAvailableInsertoptionsResponse =
     ContentListAvailableInsertoptionsResponses[keyof ContentListAvailableInsertoptionsResponses];
-  export type ComponentsCreateComponentDatasourceData = {
-    body: CreateComponentDatasourceRequest;
+  export type ContentListReferrersData = {
+    body?: never;
     headers?: {
       /**
        * X-Sc-Job-Id
@@ -2695,7 +7023,79 @@ export namespace Agent {
     };
     path: {
       /**
+       * Itemid
+       */
+      itemId: string;
+    };
+    query: {
+      /**
+       * Site
+       *
+       * The name of the site the item belongs to, as Horizon resolves it.
+       */
+      site: string;
+      /**
+       * Language
+       */
+      language?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/content/{itemId}/referrers';
+  };
+  export type ContentListReferrersErrors = {
+    /**
+     * Invalid request parameters.
+     */
+    400: unknown;
+    /**
+     * Missing or invalid authentication token.
+     */
+    401: unknown;
+    /**
+     * Insufficient permissions to perform this action.
+     */
+    403: unknown;
+    /**
+     * The requested resource was not found.
+     */
+    404: unknown;
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+    /**
+     * An unexpected server error occurred.
+     */
+    500: unknown;
+  };
+  export type ContentListReferrersError =
+    ContentListReferrersErrors[keyof ContentListReferrersErrors];
+  export type ContentListReferrersResponses = {
+    /**
+     * Successful response
+     */
+    200: ReferrersResponse;
+  };
+  export type ContentListReferrersResponse =
+    ContentListReferrersResponses[keyof ContentListReferrersResponses];
+  export type ComponentsCreateComponentDatasourceData = {
+    body: CreateComponentDatasourceRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
        * Componentid
+       *
+       * The unique identifier of the component for which to create a datasource. To get this ID, use the [List allowed components for a placeholder](#operation/pages-get_allowed_components_by_placeholder) endpoint.
        */
       componentId: string;
     };
@@ -2709,7 +7109,7 @@ export namespace Agent {
   };
   export type ComponentsCreateComponentDatasourceErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2717,7 +7117,7 @@ export namespace Agent {
     ComponentsCreateComponentDatasourceErrors[keyof ComponentsCreateComponentDatasourceErrors];
   export type ComponentsCreateComponentDatasourceResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     201: CreateComponentDatasourceResponse;
   };
@@ -2729,19 +7129,23 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Componentid
+       *
+       * The unique identifier of the component for which to search datasources. To get this ID, use the [List allowed components for a placeholder](#operation/pages-get_allowed_components_by_placeholder) endpoint.
        */
       componentId: string;
     };
     query: {
       /**
        * Term
+       *
+       * The search term to filter available datasources.
        */
       term: string;
       /**
@@ -2753,7 +7157,7 @@ export namespace Agent {
   };
   export type ComponentsSearchComponentDatasourcesErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2761,7 +7165,7 @@ export namespace Agent {
     ComponentsSearchComponentDatasourcesErrors[keyof ComponentsSearchComponentDatasourcesErrors];
   export type ComponentsSearchComponentDatasourcesResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: SearchResponse;
   };
@@ -2773,7 +7177,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -2781,6 +7185,8 @@ export namespace Agent {
     query: {
       /**
        * Site Name
+       *
+       * The name of the site for which to list available components.
        */
       site_name: string;
       /**
@@ -2792,7 +7198,7 @@ export namespace Agent {
   };
   export type ComponentsListComponentsErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2800,7 +7206,7 @@ export namespace Agent {
     ComponentsListComponentsErrors[keyof ComponentsListComponentsErrors];
   export type ComponentsListComponentsResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: ComponentsResponse;
   };
@@ -2812,13 +7218,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Componentid
+       *
+       * The unique identifier of the component. To get this ID, use [List components of a page](#operation/pages-get_all_components_by_page).
        */
       componentId: string;
     };
@@ -2832,7 +7240,7 @@ export namespace Agent {
   };
   export type ComponentsGetComponentErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2840,7 +7248,7 @@ export namespace Agent {
     ComponentsGetComponentErrors[keyof ComponentsGetComponentErrors];
   export type ComponentsGetComponentResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: ComponentResponse;
   };
@@ -2852,7 +7260,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -2867,14 +7275,14 @@ export namespace Agent {
   };
   export type AssetsUploadAssetErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
   export type AssetsUploadAssetError = AssetsUploadAssetErrors[keyof AssetsUploadAssetErrors];
   export type AssetsUploadAssetResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     201: UploadAssetResponse;
   };
@@ -2886,7 +7294,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -2894,14 +7302,20 @@ export namespace Agent {
     query?: {
       /**
        * Query
+       *
+       * The search term to filter assets.
        */
       query?: string | null;
       /**
        * Language
+       *
+       * The language code to filter assets.
        */
       language?: string | null;
       /**
        * Type
+       *
+       * The file type to filter assets such as image, video, or document.
        */
       type?: string | null;
       /**
@@ -2913,7 +7327,7 @@ export namespace Agent {
   };
   export type AssetsSearchAssetsErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2922,7 +7336,7 @@ export namespace Agent {
     /**
      * Response Assets-Search Assets
      *
-     * Successful Response
+     * Successful response
      */
     200: Array<AssetSearchResultModel>;
   };
@@ -2934,13 +7348,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Assetid
+       *
+       * The unique identifier of the asset to be retrieved.
        */
       assetId: string;
     };
@@ -2954,7 +7370,7 @@ export namespace Agent {
   };
   export type AssetsGetAssetInformationErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -2962,7 +7378,7 @@ export namespace Agent {
     AssetsGetAssetInformationErrors[keyof AssetsGetAssetInformationErrors];
   export type AssetsGetAssetInformationResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: AssetInformationResponse;
   };
@@ -2974,13 +7390,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Assetid
+       *
+       * The unique identifier of the asset to be updated.
        */
       assetId: string;
     };
@@ -2994,14 +7412,14 @@ export namespace Agent {
   };
   export type AssetsUpdateAssetErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
   export type AssetsUpdateAssetError = AssetsUpdateAssetErrors[keyof AssetsUpdateAssetErrors];
   export type AssetsUpdateAssetResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
     200: UpdateAssetResponse;
   };
@@ -3013,7 +7431,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -3028,7 +7446,7 @@ export namespace Agent {
   };
   export type EnvironmentsListLanguagesErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3038,19 +7456,96 @@ export namespace Agent {
     /**
      * Response Environments-List Languages
      *
-     * Successful Response
+     * Successful response
      */
     200: Array<LanguageModel>;
   };
   export type EnvironmentsListLanguagesResponse =
     EnvironmentsListLanguagesResponses[keyof EnvironmentsListLanguagesResponses];
-  export type PersonalizationCreatePersonalizationVersionData = {
-    body: CreatePersonalizationRequest;
+  export type ExperimentsCreateComponentAbTestData = {
+    body: CreateExperimentRequest;
     headers?: {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/experiments/flows';
+  };
+  export type ExperimentsCreateComponentAbTestErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type ExperimentsCreateComponentAbTestError =
+    ExperimentsCreateComponentAbTestErrors[keyof ExperimentsCreateComponentAbTestErrors];
+  export type ExperimentsCreateComponentAbTestResponses = {
+    /**
+     * Successful response
+     */
+    201: ExperimentFlowResponse;
+  };
+  export type ExperimentsCreateComponentAbTestResponse =
+    ExperimentsCreateComponentAbTestResponses[keyof ExperimentsCreateComponentAbTestResponses];
+  export type ExperimentsUpdateAbTestData = {
+    body: UpdateExperimentRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Flowid
+       *
+       * The unique identifier of the A/B/n test to update. To get this ID, you can use the [List flow definitions](#/operation/flows-list_flow_definitions_by_page) endpoint for the page and use the flow `ref` value.
+       */
+      flowId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/experiments/{flowId}';
+  };
+  export type ExperimentsUpdateAbTestErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type ExperimentsUpdateAbTestError =
+    ExperimentsUpdateAbTestErrors[keyof ExperimentsUpdateAbTestErrors];
+  export type ExperimentsUpdateAbTestResponses = {
+    /**
+     * Successful response
+     */
+    200: ExperimentFlowResponse;
+  };
+  export type ExperimentsUpdateAbTestResponse =
+    ExperimentsUpdateAbTestResponses[keyof ExperimentsUpdateAbTestResponses];
+  export type PersonalizationCreatePersonalizationVersionV1Data = {
+    body: CreatePersonalizationRequestV1;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -3068,9 +7563,51 @@ export namespace Agent {
     };
     url: '/api/v1/personalization/{pageId}/versions';
   };
+  export type PersonalizationCreatePersonalizationVersionV1Errors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationCreatePersonalizationVersionV1Error =
+    PersonalizationCreatePersonalizationVersionV1Errors[keyof PersonalizationCreatePersonalizationVersionV1Errors];
+  export type PersonalizationCreatePersonalizationVersionV1Responses = {
+    /**
+     * Successful response
+     */
+    201: ExperienceFlowResponseV1;
+  };
+  export type PersonalizationCreatePersonalizationVersionV1Response =
+    PersonalizationCreatePersonalizationVersionV1Responses[keyof PersonalizationCreatePersonalizationVersionV1Responses];
+  export type PersonalizationCreatePersonalizationVersionData = {
+    body: CreatePersonalizationRequestV2;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page for which to create a personalization version. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v2/personalization/{pageId}/versions';
+  };
   export type PersonalizationCreatePersonalizationVersionErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3078,19 +7615,19 @@ export namespace Agent {
     PersonalizationCreatePersonalizationVersionErrors[keyof PersonalizationCreatePersonalizationVersionErrors];
   export type PersonalizationCreatePersonalizationVersionResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
-    201: FlowDefinitionResponse;
+    201: ExperienceFlowResponseV2;
   };
   export type PersonalizationCreatePersonalizationVersionResponse =
     PersonalizationCreatePersonalizationVersionResponses[keyof PersonalizationCreatePersonalizationVersionResponses];
-  export type PersonalizationGetPersonalizationVersionsByPageData = {
+  export type PersonalizationGetPersonalizationVersionsByPageV1Data = {
     body?: never;
     headers?: {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -3112,9 +7649,59 @@ export namespace Agent {
     };
     url: '/api/v1/personalization/by-page/{pageId}';
   };
+  export type PersonalizationGetPersonalizationVersionsByPageV1Errors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationGetPersonalizationVersionsByPageV1Error =
+    PersonalizationGetPersonalizationVersionsByPageV1Errors[keyof PersonalizationGetPersonalizationVersionsByPageV1Errors];
+  export type PersonalizationGetPersonalizationVersionsByPageV1Responses = {
+    /**
+     * Response Personalization-Get Personalization Versions By Page V1
+     *
+     * Successful response
+     */
+    200: Array<PersonalizationVariantDetailModelV1>;
+  };
+  export type PersonalizationGetPersonalizationVersionsByPageV1Response =
+    PersonalizationGetPersonalizationVersionsByPageV1Responses[keyof PersonalizationGetPersonalizationVersionsByPageV1Responses];
+  export type PersonalizationGetPersonalizationVersionsByPageData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page for which to retrieve personalization versions. To get this ID, use [List pages of a site](#operation/sites-get_all_pages_by_site).
+       */
+      pageId: string;
+    };
+    query?: {
+      /**
+       * Language
+       *
+       * The language version of the page.
+       */
+      language?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v2/personalization/by-page/{pageId}';
+  };
   export type PersonalizationGetPersonalizationVersionsByPageErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3122,11 +7709,11 @@ export namespace Agent {
     PersonalizationGetPersonalizationVersionsByPageErrors[keyof PersonalizationGetPersonalizationVersionsByPageErrors];
   export type PersonalizationGetPersonalizationVersionsByPageResponses = {
     /**
-     * Response Personalization-Get Personalization Versions By Page V1
+     * Response Personalization-Get Personalization Versions By Page
      *
-     * Successful Response
+     * Successful response
      */
-    200: Array<PersonalizationVariantDetailModel>;
+    200: Array<PersonalizationVariantDetailModelV2>;
   };
   export type PersonalizationGetPersonalizationVersionsByPageResponse =
     PersonalizationGetPersonalizationVersionsByPageResponses[keyof PersonalizationGetPersonalizationVersionsByPageResponses];
@@ -3136,7 +7723,7 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
@@ -3151,7 +7738,7 @@ export namespace Agent {
   };
   export type PersonalizationGetConditionTemplatesErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3161,9 +7748,9 @@ export namespace Agent {
     /**
      * Response Personalization-Get Condition Templates
      *
-     * Successful Response
+     * Successful response
      */
-    200: Array<ConditionTemplate>;
+    200: Array<Template>;
   };
   export type PersonalizationGetConditionTemplatesResponse =
     PersonalizationGetConditionTemplatesResponses[keyof PersonalizationGetConditionTemplatesResponses];
@@ -3173,13 +7760,15 @@ export namespace Agent {
       /**
        * X-Sc-Job-Id
        *
-       * Job ID for auditing purposes
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
        */
       'x-sc-job-id'?: unknown;
     };
     path: {
       /**
        * Template Id
+       *
+       * The unique identifier of the condition template. To get this ID, you can use the [List personalization condition templates](#/operation/personalization-get_condition_templates) endpoint to retrieve the list of available condition templates.
        */
       template_id: string;
     };
@@ -3193,7 +7782,7 @@ export namespace Agent {
   };
   export type PersonalizationGetConditionTemplateByIdErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3201,17 +7790,892 @@ export namespace Agent {
     PersonalizationGetConditionTemplateByIdErrors[keyof PersonalizationGetConditionTemplateByIdErrors];
   export type PersonalizationGetConditionTemplateByIdResponses = {
     /**
-     * Successful Response
+     * Successful response
      */
-    200: ConditionTemplate;
+    200: Template;
   };
   export type PersonalizationGetConditionTemplateByIdResponse =
     PersonalizationGetConditionTemplateByIdResponses[keyof PersonalizationGetConditionTemplateByIdResponses];
+  export type PersonalizationUpdatePersonalizationVersionData = {
+    body: UpdatePersonalizationRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page for which to update a personalization variant. To get this ID, you can use the [List pages of a site](#operation/sites-get_all_pages_by_site) endpoint to retrieve the list of pages for a specific site.
+       */
+      pageId: string;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the personalization variant to be updated. To get this ID, you can use the [List personalization variants by page](#/operation/personalization-get_personalization_versions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       */
+      variantId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/personalization/{pageId}/versions/{variantId}';
+  };
+  export type PersonalizationUpdatePersonalizationVersionErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationUpdatePersonalizationVersionError =
+    PersonalizationUpdatePersonalizationVersionErrors[keyof PersonalizationUpdatePersonalizationVersionErrors];
+  export type PersonalizationUpdatePersonalizationVersionResponses = {
+    /**
+     * Successful response
+     */
+    200: ExperienceFlowResponseV2;
+  };
+  export type PersonalizationUpdatePersonalizationVersionResponse =
+    PersonalizationUpdatePersonalizationVersionResponses[keyof PersonalizationUpdatePersonalizationVersionResponses];
+  export type PersonalizationHideComponentOnDefaultPageData = {
+    body: HideComponentRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page that includes the default page variant where the component should be hidden. To get this ID, you can use the [List pages of a site](#operation/sites-get_all_pages_by_site) endpoint to retrieve the list of pages for a specific site.
+       */
+      pageId: string;
+      /**
+       * Componentid
+       *
+       * The unique identifier of the component to hide on the default page variant. To get this ID, you can use the [List components of a page](#operation/pages-get_all_components_by_page) endpoint to retrieve the list of components for a specific page.
+       */
+      componentId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/personalization/{pageId}/components/{componentId}/hide';
+  };
+  export type PersonalizationHideComponentOnDefaultPageErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type PersonalizationHideComponentOnDefaultPageError =
+    PersonalizationHideComponentOnDefaultPageErrors[keyof PersonalizationHideComponentOnDefaultPageErrors];
+  export type PersonalizationHideComponentOnDefaultPageResponses = {
+    /**
+     * Successful response
+     */
+    201: HideComponentResponse;
+  };
+  export type PersonalizationHideComponentOnDefaultPageResponse =
+    PersonalizationHideComponentOnDefaultPageResponses[keyof PersonalizationHideComponentOnDefaultPageResponses];
+  export type FlowsListFlowDefinitionsByPageData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Pageid
+       *
+       * The unique identifier of the page for which to retrieve flow definitions (A/B/n tests or personalizations). To get this ID, you can use the [List pages of a site](#operation/sites-get_all_pages_by_site) endpoint to retrieve the list of pages for a specific site.
+       */
+      pageId: string;
+    };
+    query?: {
+      /**
+       * Language
+       *
+       * The language version of the page to filter flow definitions (A/B/n tests or personalizations).
+       */
+      language?: string;
+      /**
+       * Status
+       *
+       * The status to filter flow definitions (A/B/n tests or personalizations), such as active, paused, or draft.
+       */
+      status?: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/by-page/{pageId}';
+  };
+  export type FlowsListFlowDefinitionsByPageErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsListFlowDefinitionsByPageError =
+    FlowsListFlowDefinitionsByPageErrors[keyof FlowsListFlowDefinitionsByPageErrors];
+  export type FlowsListFlowDefinitionsByPageResponses = {
+    /**
+     * Response Flows-List Flow Definitions By Page
+     *
+     * Successful response
+     */
+    200: Array<ExperimentFlowResponse | ExperienceFlowResponseV2>;
+  };
+  export type FlowsListFlowDefinitionsByPageResponse =
+    FlowsListFlowDefinitionsByPageResponses[keyof FlowsListFlowDefinitionsByPageResponses];
+  export type FlowsGetFlowDefinitionData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Flowid
+       *
+       * The unique identifier of the A/B/n test or personalization to retrieve. To get this ID, you can use the [List flow definitions](#/operation/flows-list_flow_definitions_by_page) endpoint for the page and use the flow `ref` value.
+       */
+      flowId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}';
+  };
+  export type FlowsGetFlowDefinitionErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsGetFlowDefinitionError =
+    FlowsGetFlowDefinitionErrors[keyof FlowsGetFlowDefinitionErrors];
+  export type FlowsGetFlowDefinitionResponses = {
+    /**
+     * Response Flows-Get Flow Definition
+     *
+     * Successful response
+     */
+    200:
+      | ({
+          subtype: 'EXPERIMENT';
+        } & ExperimentFlowResponse)
+      | ({
+          subtype: 'EXPERIENCE';
+        } & ExperienceFlowResponseV2);
+  };
+  export type FlowsGetFlowDefinitionResponse =
+    FlowsGetFlowDefinitionResponses[keyof FlowsGetFlowDefinitionResponses];
+  export type FlowsResetComponentVariantData = {
+    body: ResetComponentRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Flowid
+       *
+       * The unique identifier of the A/B/n test or personalization that contains the variant to reset. To get this ID, you can use the [List flow definitions](#/operation/flows-list_flow_definitions_by_page) endpoint for the page and use the flow `ref` value.
+       */
+      flowId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}/variants/reset';
+  };
+  export type FlowsResetComponentVariantErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsResetComponentVariantError =
+    FlowsResetComponentVariantErrors[keyof FlowsResetComponentVariantErrors];
+  export type FlowsResetComponentVariantResponses = {
+    /**
+     * Successful response
+     */
+    201: ResetComponentResponse;
+  };
+  export type FlowsResetComponentVariantResponse =
+    FlowsResetComponentVariantResponses[keyof FlowsResetComponentVariantResponses];
+  export type FlowsGetVariantData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Flowid
+       *
+       * The unique identifier of the personalization or A/B/n test to retrieve. To get this ID, you can use the [List flow definitions](#/operation/flows-list_flow_definitions_by_page) for the page and use the flow `ref` value.
+       */
+      flowId: string;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the personalization or A/B/n test variant to retrieve. To get this ID, you can use the [List flow definitions](#/operation/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       */
+      variantId: string;
+    };
+    query?: {
+      /**
+       * Language
+       *
+       * The language version of the page for which to retrieve the variant details.
+       */
+      language?: string;
+      /**
+       * Version
+       *
+       * The page version for which to retrieve the variant details. If not specified, the latest version will be used.
+       */
+      version?: number | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}/variants/{variantId}';
+  };
+  export type FlowsGetVariantErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsGetVariantError = FlowsGetVariantErrors[keyof FlowsGetVariantErrors];
+  export type FlowsGetVariantResponses = {
+    /**
+     * Successful response
+     */
+    200: VariantInfoResponse;
+  };
+  export type FlowsGetVariantResponse = FlowsGetVariantResponses[keyof FlowsGetVariantResponses];
+  export type FlowsSetupVariantData = {
+    body: SetupVariantRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Flowid
+       *
+       * The unique identifier of the A/B/n test or personalization to set up. To get this ID, you can use the [List flow definitions](#/operation/flows-list_flow_definitions_by_page) endpoint for the page and use the flow `ref` value.
+       */
+      flowId: string;
+      /**
+       * Variantid
+       *
+       * The unique identifier of the personalization or A/B/n test variant to set up. To get this ID, you can use the [List flow definitions](#/operation/flows-list_flow_definitions_by_page) endpoint. Use the `transpiledVariants[].ref`, or `variants[].ref` when available.
+       */
+      variantId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/flows/{flowId}/variants/{variantId}';
+  };
+  export type FlowsSetupVariantErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type FlowsSetupVariantError = FlowsSetupVariantErrors[keyof FlowsSetupVariantErrors];
+  export type FlowsSetupVariantResponses = {
+    /**
+     * Successful response
+     */
+    201: SetupVariantResponse;
+  };
+  export type FlowsSetupVariantResponse =
+    FlowsSetupVariantResponses[keyof FlowsSetupVariantResponses];
+  export type BrandkitsListBrandkitsData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brandkits';
+  };
+  export type BrandkitsListBrandkitsErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BrandkitsListBrandkitsError =
+    BrandkitsListBrandkitsErrors[keyof BrandkitsListBrandkitsErrors];
+  export type BrandkitsListBrandkitsResponses = {
+    /**
+     * Response Brandkits-List Brandkits
+     *
+     * Successful response
+     */
+    200: Array<ListBrandKitResponse>;
+  };
+  export type BrandkitsListBrandkitsResponse =
+    BrandkitsListBrandkitsResponses[keyof BrandkitsListBrandkitsResponses];
+  export type BrandkitsGetBrandkitByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Brandkitid
+       *
+       * The unique identifier of the brand kit to retrieve. To get this ID, you can use the [List brand kits](#operation/brandkits-list_brandkits) endpoint to retrieve the list of brand kits in your organization.
+       */
+      brandkitId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brandkits/{brandkitId}';
+  };
+  export type BrandkitsGetBrandkitByIdErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BrandkitsGetBrandkitByIdError =
+    BrandkitsGetBrandkitByIdErrors[keyof BrandkitsGetBrandkitByIdErrors];
+  export type BrandkitsGetBrandkitByIdResponses = {
+    /**
+     * Successful response
+     */
+    200: GetBrandKitResponse;
+  };
+  export type BrandkitsGetBrandkitByIdResponse =
+    BrandkitsGetBrandkitByIdResponses[keyof BrandkitsGetBrandkitByIdResponses];
+  export type BrandContextsListBrandContextsData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brand-contexts';
+  };
+  export type BrandContextsListBrandContextsErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BrandContextsListBrandContextsError =
+    BrandContextsListBrandContextsErrors[keyof BrandContextsListBrandContextsErrors];
+  export type BrandContextsListBrandContextsResponses = {
+    /**
+     * Response Brand-Contexts-List Brand Contexts
+     *
+     * Successful response
+     */
+    200: Array<ListBrandContextResponse>;
+  };
+  export type BrandContextsListBrandContextsResponse =
+    BrandContextsListBrandContextsResponses[keyof BrandContextsListBrandContextsResponses];
+  export type BrandContextsGetBrandContextData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Brandcontextid
+       *
+       * The unique identifier of the brand context to retrieve. To get this ID, you can use the [List brand contexts](#operation/brand-contexts-list_brand_contexts) endpoint to retrieve the list of brand contexts in your organization.
+       */
+      brandContextId: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brand-contexts/{brandContextId}';
+  };
+  export type BrandContextsGetBrandContextErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BrandContextsGetBrandContextError =
+    BrandContextsGetBrandContextErrors[keyof BrandContextsGetBrandContextErrors];
+  export type BrandContextsGetBrandContextResponses = {
+    /**
+     * Successful response
+     */
+    200: GetBrandContextResponse;
+  };
+  export type BrandContextsGetBrandContextResponse =
+    BrandContextsGetBrandContextResponses[keyof BrandContextsGetBrandContextResponses];
+  export type BrandContextsGetBrandContextItemsData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Brandcontextid
+       *
+       * The unique identifier of the brand context from which to retrieve items. To get this ID, you can use the [List brand contexts](#operation/brand-contexts-list_brand_contexts) endpoint to retrieve the list of brand contexts in your organization.
+       */
+      brandContextId: string;
+    };
+    query: {
+      /**
+       * Ids
+       *
+       * Comma-separated brand context item IDs (UUIDs) of files or folders to fetch, up to 50. To get these IDs, you can use the [Retrieve a brand context by ID](#operation/brand-contexts-get_brand_context) endpoint to retrieve the complete nested folder or file tree index of the brand context.
+       */
+      ids: string;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brand-contexts/{brandContextId}/items';
+  };
+  export type BrandContextsGetBrandContextItemsErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BrandContextsGetBrandContextItemsError =
+    BrandContextsGetBrandContextItemsErrors[keyof BrandContextsGetBrandContextItemsErrors];
+  export type BrandContextsGetBrandContextItemsResponses = {
+    /**
+     * Successful response
+     */
+    200: BrandContextBatchGetResponse;
+  };
+  export type BrandContextsGetBrandContextItemsResponse =
+    BrandContextsGetBrandContextItemsResponses[keyof BrandContextsGetBrandContextItemsResponses];
+  export type ListBriefTypesData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/brief-types';
+  };
+  export type ListBriefTypesErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type ListBriefTypesError = ListBriefTypesErrors[keyof ListBriefTypesErrors];
+  export type ListBriefTypesResponses = {
+    /**
+     * Successful response
+     */
+    200: ListBriefTypesResponse;
+  };
+  export type ListBriefTypesResponse2 = ListBriefTypesResponses[keyof ListBriefTypesResponses];
+  export type ListBriefsData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * Name
+       *
+       * The name of the brief to filter the list of briefs by. Supports partial matches, for example, if you specify 'summer', it will match briefs with names like 'Summer Campaign Brief' or '2026 Summer Product Launch Brief'.
+       */
+      name?: string | null;
+      /**
+       * Status
+       *
+       * The status of the brief, such as draft, active, or archived.
+       */
+      status?: string | null;
+      /**
+       * Creator Id
+       *
+       * The unique identifier of the user who created the brief.
+       */
+      creator_id?: string | null;
+      /**
+       * Type Id
+       *
+       * The unique identifier of the brief type to filter briefs by. To get the list of brief type IDs, you can use the [List brief types](#operation/list-brief_types) endpoint.
+       */
+      type_id?: string | null;
+      /**
+       * Sort By
+       *
+       * The field by which to sort the list of briefs.
+       */
+      sort_by?: string | null;
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief';
+  };
+  export type ListBriefsErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type ListBriefsError = ListBriefsErrors[keyof ListBriefsErrors];
+  export type ListBriefsResponses = {
+    /**
+     * Successful response
+     */
+    200: ListBriefsResponse;
+  };
+  export type ListBriefsResponse2 = ListBriefsResponses[keyof ListBriefsResponses];
+  export type BriefCreateBriefData = {
+    body: CreateBriefRequestModel;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief';
+  };
+  export type BriefCreateBriefErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BriefCreateBriefError = BriefCreateBriefErrors[keyof BriefCreateBriefErrors];
+  export type BriefCreateBriefResponses = {
+    /**
+     * Successful response
+     */
+    201: CreateBriefResponseModel;
+  };
+  export type BriefCreateBriefResponse = BriefCreateBriefResponses[keyof BriefCreateBriefResponses];
+  export type BriefsGenerateBriefData = {
+    body: GenerateBriefRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/generate';
+  };
+  export type BriefsGenerateBriefErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BriefsGenerateBriefError = BriefsGenerateBriefErrors[keyof BriefsGenerateBriefErrors];
+  export type BriefsGenerateBriefResponses = {
+    /**
+     * Successful response
+     */
+    200: GenerateBriefResponse;
+  };
+  export type BriefsGenerateBriefResponse =
+    BriefsGenerateBriefResponses[keyof BriefsGenerateBriefResponses];
+  export type BriefsGenerateBriefDeprecatedData = {
+    body: GenerateBriefRequest;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path?: never;
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/briefs/generate';
+  };
+  export type BriefsGenerateBriefDeprecatedErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BriefsGenerateBriefDeprecatedError =
+    BriefsGenerateBriefDeprecatedErrors[keyof BriefsGenerateBriefDeprecatedErrors];
+  export type BriefsGenerateBriefDeprecatedResponses = {
+    /**
+     * Successful response
+     */
+    200: GenerateBriefResponse;
+  };
+  export type BriefsGenerateBriefDeprecatedResponse =
+    BriefsGenerateBriefDeprecatedResponses[keyof BriefsGenerateBriefDeprecatedResponses];
+  export type GetBriefTypeByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Brief Type Id
+       *
+       * The unique identifier of the brief type to retrieve. To get this ID, you can use the [List brief types](#operation/list-brief_types) endpoint to retrieve the list of brief types available in your organization.
+       */
+      brief_type_id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/brief-types/{brief_type_id}';
+  };
+  export type GetBriefTypeByIdErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type GetBriefTypeByIdError = GetBriefTypeByIdErrors[keyof GetBriefTypeByIdErrors];
+  export type GetBriefTypeByIdResponses = {
+    /**
+     * Successful response
+     */
+    200: GetBriefTypeResponse;
+  };
+  export type GetBriefTypeByIdResponse = GetBriefTypeByIdResponses[keyof GetBriefTypeByIdResponses];
+  export type GetBriefByIdData = {
+    body?: never;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Brief Id
+       *
+       * The unique identifier of the brief to retrieve. To get this ID, you can use the [List briefs](#operation/list-briefs) endpoint to retrieve the list of briefs in your organization.
+       */
+      brief_id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/{brief_id}';
+  };
+  export type GetBriefByIdErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type GetBriefByIdError = GetBriefByIdErrors[keyof GetBriefByIdErrors];
+  export type GetBriefByIdResponses = {
+    /**
+     * Successful response
+     */
+    200: GetBriefResponse;
+  };
+  export type GetBriefByIdResponse = GetBriefByIdResponses[keyof GetBriefByIdResponses];
+  export type BriefUpdateBriefData = {
+    body: UpdateBriefRequestModel;
+    headers?: {
+      /**
+       * X-Sc-Job-Id
+       *
+       * A unique identifier for the job, used to trace, audit, and revert actions performed by an AI agent through the Agent API.
+       */
+      'x-sc-job-id'?: unknown;
+    };
+    path: {
+      /**
+       * Brief Id
+       *
+       * The unique identifier of the brief to retrieve. To get this ID, you can use the [List briefs](#operation/list-briefs) endpoint to retrieve the list of briefs in your organization.
+       */
+      brief_id: string;
+    };
+    query?: {
+      /**
+       * The Sitecore context ID.
+       */
+      sitecoreContextId?: string;
+    };
+    url: '/api/v1/brief/{brief_id}';
+  };
+  export type BriefUpdateBriefErrors = {
+    /**
+     * Unprocessable entity
+     */
+    422: HttpValidationError;
+  };
+  export type BriefUpdateBriefError = BriefUpdateBriefErrors[keyof BriefUpdateBriefErrors];
+  export type BriefUpdateBriefResponses = {
+    /**
+     * Successful response
+     */
+    200: UpdateBriefResponse;
+  };
+  export type BriefUpdateBriefResponse = BriefUpdateBriefResponses[keyof BriefUpdateBriefResponses];
   export type JobsRevertJobData = {
     body?: never;
     path: {
       /**
        * Jobid
+       *
+       * The unique identifier of the job to be reverted.
        */
       jobId: string;
     };
@@ -3225,7 +8689,7 @@ export namespace Agent {
   };
   export type JobsRevertJobErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3234,7 +8698,7 @@ export namespace Agent {
     /**
      * Response Jobs-Revert Job
      *
-     * Successful Response
+     * Successful response
      */
     201: unknown;
   };
@@ -3243,6 +8707,8 @@ export namespace Agent {
     path: {
       /**
        * Jobid
+       *
+       * The unique identifier of the job to retrieve.
        */
       jobId: string;
     };
@@ -3256,7 +8722,7 @@ export namespace Agent {
   };
   export type JobsGetJobErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3265,7 +8731,7 @@ export namespace Agent {
     /**
      * Response Jobs-Get Job
      *
-     * Successful Response
+     * Successful response
      */
     200: unknown;
   };
@@ -3274,6 +8740,8 @@ export namespace Agent {
     path: {
       /**
        * Jobid
+       *
+       * The unique identifier of the job for which to list operations.
        */
       jobId: string;
     };
@@ -3287,7 +8755,7 @@ export namespace Agent {
   };
   export type JobsListOperationsErrors = {
     /**
-     * Validation Error
+     * Unprocessable entity
      */
     422: HttpValidationError;
   };
@@ -3296,7 +8764,7 @@ export namespace Agent {
     /**
      * Response Jobs-List Operations
      *
-     * Successful Response
+     * Successful response
      */
     200: unknown;
   };
