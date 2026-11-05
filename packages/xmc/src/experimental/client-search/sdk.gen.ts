@@ -29,9 +29,9 @@ export type Options<
   meta?: keyof ClientMeta extends never ? Record<string, unknown> : ClientMeta;
 };
 /**
- * Get Configs
+ * Retrieve configurations
  *
- * Get all search configurations for the authenticated client
+ * Retrieve all search configurations for the authenticated client.
  */
 export const getConfigs = <ThrowOnError extends boolean = false>(
   options?: Options<GetConfigsData, ThrowOnError>,
