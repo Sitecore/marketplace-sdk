@@ -1,5 +1,18 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.5.0
+
+### Minor Changes
+
+- e274dfd: Add a client-level `timeout` option and a per-request `timeoutMs` option to the experimental XMC and AI clients
+
+### Patch Changes
+
+- a644338: Accept `@sitecore-marketplace-sdk/client` 0.5 as a peer dependency.
+- Updated dependencies [d9d8b5d]
+- Updated dependencies [a644338]
+  - @sitecore-marketplace-sdk/client@0.5.0
+
 ## 0.4.4
 
 ### Patch Changes
