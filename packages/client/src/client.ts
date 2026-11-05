@@ -170,7 +170,11 @@ export class ClientSDK {
       const module = this.modules.get(namespace);
 
       if (module) {
-        request = module.invokeOperation.bind(module); // Bind module context if applicable
+        request = (operation: string, params: any, options?: { timeoutMs?: number }) =>
+          module.invokeOperation(operation, {
+            ...params,
+            fetch: params?.fetch ?? ((input: globalThis.Request) => this._fetch(input, options)),
+          });
         operation = operationName;
       }
     }
@@ -283,7 +287,9 @@ export class ClientSDK {
 
       this.stateManager.updateQueryState(hashedKey, { status: 'loading' });
 
-      const data = (await request(operation, params)) as QueryMap[K]['response'];
+      const data = (await request(
+        operation, params, ...(timeoutMs === undefined ? [] : [{ timeoutMs }]),
+      )) as QueryMap[K]['response'];
       logger.info(`Query (${key}) success:`, loggable(key, data));
 
       this.stateManager.updateQueryState(hashedKey, {
@@ -401,7 +407,9 @@ export class ClientSDK {
     );
 
     try {
-      const data = (await request(operation, params)) as MutationMap[K]['response'];
+      const data = (await request(
+        operation, params, ...(timeoutMs === undefined ? [] : [{ timeoutMs }]),
+      )) as MutationMap[K]['response'];
       logger.info(`Mutation (${key}) success:`, loggable(key, data));
       onSuccess?.(data);
       return data;
@@ -471,7 +479,7 @@ export class ClientSDK {
     }
   }
 
-  private async _fetch(input: globalThis.Request): Promise<Response> {
+  private async _fetch(input: globalThis.Request, options?: { timeoutMs?: number }): Promise<Response> {
     const url = new URL(input.url);
     const path = url.pathname + url.search + url.hash;
 
@@ -488,7 +496,7 @@ export class ClientSDK {
     };
 
     return this.coreSdk
-      .request<GenericRequestData, GenericResponseData>('host.request', genericRequest)
+      .request<GenericRequestData, GenericResponseData>('host.request', genericRequest, options)
       .then((response) => {
         const init: ResponseInit = {
           headers: response.headers || {},
