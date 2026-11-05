@@ -290,7 +290,7 @@ export class ClientSDK {
       const data = (await request(
         operation, params, ...(timeoutMs === undefined ? [] : [{ timeoutMs }]),
       )) as QueryMap[K]['response'];
-      logger.info(`Query (${key}) success:`, data);
+      logger.info(`Query (${key}) success:`, loggable(key, data));
 
       this.stateManager.updateQueryState(hashedKey, {
         status: 'success',
@@ -410,7 +410,7 @@ export class ClientSDK {
       const data = (await request(
         operation, params, ...(timeoutMs === undefined ? [] : [{ timeoutMs }]),
       )) as MutationMap[K]['response'];
-      logger.info(`Mutation (${key}) success:`, loggable(key, data);
+      logger.info(`Mutation (${key}) success:`, loggable(key, data));
       onSuccess?.(data);
       return data;
     } catch (error) {
