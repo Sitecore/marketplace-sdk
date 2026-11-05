@@ -1,5 +1,5 @@
 import { PostMessageBridge } from '../post-message';
-import { CoreError } from '../errors';
+import { CoreError, ErrorCode } from '../errors';
 import type { HandshakeMessage } from '../types';
 import { afterEach, beforeEach, describe, expect, test, vi, Mock } from 'vitest';
 import { source } from './shared';
@@ -530,5 +530,237 @@ describe('PostMessageBridge', () => {
     //     );
     //   });
     // });
+  });
+
+  describe('request handler errors', () => {
+    const respondTo = async (handler: () => unknown) => {
+      bridge['requestHandlers'].set('testAction', handler);
+      await bridge['handleRequest']({
+        id: 'req-1',
+        type: 'request',
+        action: 'testAction',
+        payload: {},
+        timestamp: Date.now(),
+        source,
+      });
+      const calls = (mockTarget.postMessage as Mock).mock.calls;
+      return calls[calls.length - 1][0].error;
+    };
+
+    test('passes a CoreError code, message and details to the requester', async () => {
+      const error = await respondTo(() => {
+        throw new CoreError(ErrorCode.INVALID_REQUEST, 'State too large', {
+          reason: 'STATE_TOO_LARGE',
+        });
+      });
+
+      expect(error).toEqual({
+        code: ErrorCode.INVALID_REQUEST,
+        message: 'State too large',
+        details: { reason: 'STATE_TOO_LARGE' },
+      });
+    });
+
+    test('passes CoreErrors from another bundled copy of core', async () => {
+      class OtherCopyCoreError extends Error {
+        name = 'CoreError';
+        constructor(
+          public code: ErrorCode,
+          message: string,
+          public details?: unknown,
+        ) {
+          super(message);
+        }
+      }
+
+      const error = await respondTo(() => {
+        throw new OtherCopyCoreError(ErrorCode.INVALID_REQUEST, 'Full', {
+          reason: 'HOST_STATE_FULL',
+        });
+      });
+
+      expect(error).toEqual({
+        code: ErrorCode.INVALID_REQUEST,
+        message: 'Full',
+        details: { reason: 'HOST_STATE_FULL' },
+      });
+    });
+
+    test('passes only details.reason, never other details', async () => {
+      const withReason = await respondTo(() => {
+        throw new CoreError(ErrorCode.INVALID_REQUEST, 'Denied', {
+          reason: 'STATE_TOO_LARGE',
+          request: { headers: { Authorization: 'Bearer secret' } },
+        });
+      });
+      const withoutReason = await respondTo(() => {
+        throw new CoreError(ErrorCode.EXECUTION_ERROR, 'Failed', { token: 'secret' });
+      });
+
+      expect(withReason.details).toEqual({ reason: 'STATE_TOO_LARGE' });
+      expect(withoutReason).toEqual({
+        code: ErrorCode.EXECUTION_ERROR,
+        message: 'Failed',
+        details: undefined,
+      });
+    });
+
+    test('still wraps other errors as EXECUTION_ERROR', async () => {
+      const error = await respondTo(() => {
+        throw new Error('boom');
+      });
+
+      expect(error).toMatchObject({ code: ErrorCode.EXECUTION_ERROR, message: 'boom' });
+    });
+
+    test('sends only the message of other errors, never the error itself', async () => {
+      const error = await respondTo(() => {
+        throw Object.assign(new Error('Request failed with status 401'), {
+          config: { headers: { Authorization: 'Bearer secret' } },
+          retry: () => {},
+        });
+      });
+
+      expect(error).toEqual({
+        code: ErrorCode.EXECUTION_ERROR,
+        message: 'Request failed with status 401',
+      });
+    });
+  });
+
+  describe('message source', () => {
+    const frame = () => {
+      const iframe = document.createElement('iframe');
+      document.body.appendChild(iframe);
+      const window = iframe.contentWindow!;
+      vi.spyOn(window, 'postMessage').mockImplementation(() => {});
+      return window;
+    };
+    const request = (id: string, payload: unknown) => ({
+      id,
+      type: 'request',
+      action: 'testAction',
+      payload,
+      timestamp: Date.now(),
+      source,
+    });
+    const dispatch = async (data: unknown, from: Window) => {
+      window.dispatchEvent(new MessageEvent('message', { data, origin: mockTargetOrigin, source: from }));
+      await new Promise((resolve) => setTimeout(resolve, 0));
+    };
+    const handshakeInit = (id: string) => ({
+      id,
+      type: 'handshake',
+      event: 'handshake:init',
+      handshakeType: 'request',
+      sdkType: 'client',
+      version: '1.0.0',
+      timestamp: Date.now(),
+      source,
+    });
+    const hostBridge = (target?: Window) => {
+      const hostBridge = new PostMessageBridge({
+        target,
+        targetOrigin: mockTargetOrigin,
+        selfOrigin: testSelfOrigin,
+        timeout: 5000,
+      });
+      hostBridge.initialize({
+        type: 'host',
+        targetOrigin: mockTargetOrigin,
+        selfOrigin: testSelfOrigin,
+        version: '1.0.0',
+      });
+      return hostBridge;
+    };
+
+    afterEach(() => {
+      document.body.innerHTML = '';
+    });
+
+    test('ignores a request from another window of the same origin', async () => {
+      const own = frame();
+      const other = frame();
+      const handler = vi.fn(() => 'ok');
+      const host = hostBridge(own);
+      host.onRequest('testAction', handler);
+
+      await dispatch(request('from-other', { widget: 2 }), other);
+      await dispatch(request('from-own', { widget: 1 }), own);
+
+      expect(handler).toHaveBeenCalledTimes(1);
+      expect(handler).toHaveBeenCalledWith({ widget: 1 });
+      expect(own.postMessage).toHaveBeenCalledWith(
+        expect.objectContaining({ id: 'from-own', type: 'response' }),
+        mockTargetOrigin,
+      );
+      host.destroy();
+    });
+
+    test('drops buffered messages from other windows once the target is set', async () => {
+      const own = frame();
+      const other = frame();
+      const handler = vi.fn(() => 'ok');
+      const host = hostBridge();
+      host.onRequest('testAction', handler);
+
+      await dispatch(handshakeInit('other-init'), other);
+      await dispatch(request('other-req', { widget: 2 }), other);
+      await dispatch(handshakeInit('own-init'), own);
+      await dispatch(request('own-req', { widget: 1 }), own);
+      host.setTarget(own);
+      await new Promise((resolve) => setTimeout(resolve, 0));
+
+      expect(handler).toHaveBeenCalledTimes(1);
+      expect(handler).toHaveBeenCalledWith({ widget: 1 });
+      const sent = (own.postMessage as Mock).mock.calls.map(([message]) => message.id);
+      expect(sent).toEqual(['own-init', 'own-req']);
+      host.destroy();
+    });
+  });
+
+  describe('URL state in debug logs', () => {
+    const logged = (spy: Mock) => JSON.stringify(spy.mock.calls);
+
+    test('redacts URL state requests, and the responses to them, on both sides', async () => {
+      const debug = vi.spyOn(console, 'debug').mockImplementation(() => {});
+      bridge['initialized'] = true;
+      bridge['connected'] = true;
+      bridge['sdkType'] = 'client';
+      const saved = bridge.request('application.urlState:mutation', { state: { secret: 'saved' } });
+      await simulateResponse({ type: 'response', success: true, data: { ok: true } });
+      await saved;
+
+      bridge.onRequest('application.urlState:query', () => ({ state: { secret: 'read' } }));
+      await bridge['handleRequest']({
+        id: 'query-1',
+        type: 'request',
+        action: 'application.urlState:query',
+        timestamp: Date.now(),
+        source,
+      });
+
+      expect(logged(debug as Mock)).not.toContain('secret');
+      expect(logged(debug as Mock)).toContain('[redacted]');
+      expect(bridge['urlStateRequestIds'].size).toBe(0);
+      debug.mockRestore();
+    });
+
+    test('still logs other requests in full', async () => {
+      const debug = vi.spyOn(console, 'debug').mockImplementation(() => {});
+      bridge['connected'] = true;
+      bridge.onRequest('host.user', () => ({ name: 'visible' }));
+
+      await bridge['handleRequest']({
+        id: 'user-1',
+        type: 'request',
+        action: 'host.user',
+        timestamp: Date.now(),
+        source,
+      });
+
+      expect(logged(debug as Mock)).toContain('visible');
+      debug.mockRestore();
+    });
   });
 });

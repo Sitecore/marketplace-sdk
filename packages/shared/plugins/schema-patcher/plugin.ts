@@ -13,6 +13,68 @@ function getXScSdk(obj: Record<string, any> | undefined): XScSdk | undefined {
   return obj?.['x-sc-sdk'] as XScSdk | undefined;
 }
 
+const COMPONENT_REF_PREFIX = '#/components/';
+
+function collectComponentRefs(value: unknown, refs: Set<string>): void {
+  if (Array.isArray(value)) {
+    for (const item of value) collectComponentRefs(item, refs);
+    return;
+  }
+  if (!value || typeof value !== 'object') return;
+  for (const [key, child] of Object.entries(value)) {
+    if (key === '$ref' && typeof child === 'string' && child.startsWith(COMPONENT_REF_PREFIX)) {
+      refs.add(child);
+    } else {
+      collectComponentRefs(child, refs);
+    }
+  }
+}
+
+function resolveComponentRef(spec: Record<string, any> | undefined, ref: string): unknown {
+  const [type, name] = ref.slice(COMPONENT_REF_PREFIX.length).split('/');
+  return spec?.components?.[type]?.[name];
+}
+
+/** Expands a set of component refs to include every component they transitively reference. */
+function expandComponentRefs(spec: Record<string, any> | undefined, refs: Set<string>): Set<string> {
+  const queue = [...refs];
+  while (queue.length) {
+    const nested = new Set<string>();
+    collectComponentRefs(resolveComponentRef(spec, queue.pop()!), nested);
+    for (const ref of nested) {
+      if (!refs.has(ref)) {
+        refs.add(ref);
+        queue.push(ref);
+      }
+    }
+  }
+  return refs;
+}
+
+/**
+ * Removes components (schemas, parameters, etc.) that were only referenced by
+ * operations excluded via `x-sc-sdk.generate: false`, so their types are not
+ * emitted. Components still used by generated operations, or never referenced
+ * by any operation, are kept.
+ */
+function pruneExcludedComponents(
+  ir: any,
+  spec: Record<string, any> | undefined,
+  removedRefs: Set<string>,
+  keptRefs: Set<string>,
+): void {
+  if (!removedRefs.size || !ir?.components) return;
+  expandComponentRefs(spec, removedRefs);
+  expandComponentRefs(spec, keptRefs);
+  for (const ref of removedRefs) {
+    if (keptRefs.has(ref)) continue;
+    const [type, name] = ref.slice(COMPONENT_REF_PREFIX.length).split('/');
+    if (ir.components[type]) {
+      delete ir.components[type][name];
+    }
+  }
+}
+
 function isEmptySchema(value: unknown): boolean {
   return (
     typeof value === 'object' &&
@@ -85,6 +147,8 @@ export const handler: DefinePlugin<Config>['Handler'] = ({ plugin }) => {
   // Process all routes: apply x-sc-sdk directives and inject sitecoreContextId
   if (ir && ir.paths) {
     const pathsToDelete: string[] = [];
+    const removedRefs = new Set<string>();
+    const keptRefs = new Set<string>();
 
     for (const path in ir.paths) {
       const irMethods = (ir.paths as Record<string, any>)[path];
@@ -107,8 +171,10 @@ export const handler: DefinePlugin<Config>['Handler'] = ({ plugin }) => {
         const effectiveGenerate = opSdk?.generate ?? pathLevelGenerate;
         if (effectiveGenerate === false) {
           methodsToDelete.push(method);
+          collectComponentRefs(specOp, removedRefs);
           continue;
         }
+        collectComponentRefs(specOp, keptRefs);
 
         // x-sc-sdk.operationName → override IR operation id
         if (opSdk?.operationName) {
@@ -139,12 +205,22 @@ export const handler: DefinePlugin<Config>['Handler'] = ({ plugin }) => {
       if (!hasRemainingMethods) {
         pathsToDelete.push(path);
       }
+
+      // Path-level refs (e.g. shared parameters) belong to whichever side the path ends up on
+      if (specPath) {
+        const pathLevel = Object.fromEntries(
+          Object.entries(specPath).filter(([key]) => !(HTTP_METHODS as readonly string[]).includes(key)),
+        );
+        collectComponentRefs(pathLevel, hasRemainingMethods ? keptRefs : removedRefs);
+      }
     }
 
     // Delete empty paths
     for (const p of pathsToDelete) {
       delete (ir.paths as Record<string, any>)[p];
     }
+
+    pruneExcludedComponents(ir, spec, removedRefs, keptRefs);
 
     // Keep `{}` for property-less objects in request bodies
     for (const path in ir.paths) {

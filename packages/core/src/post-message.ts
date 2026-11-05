@@ -13,8 +13,10 @@ import {
   HandshakeConfig,
 } from './types';
 import { AllowedOrigins } from './allowed-origins';
+import { URL_STATE_ACTION } from './url-state';
 
 const DEFAULT_TIMEOUT = 30000; // 30 seconds
+const REDACTED = '[redacted]';
 
 /**
  * PostMessageBridge handles the communication between host and client applications
@@ -45,8 +47,12 @@ export class PostMessageBridge {
   // Store request handlers for incoming requests.
   private requestHandlers = new Map<string, (payload: any) => Promise<any> | any>();
 
-  // Store buffered messages received before the target was available
-  private bufferedMessages: Array<{ message: Message, origin: string }> = [];
+  // Store buffered messages received before the target was available, with the window that sent them
+  private bufferedMessages: Array<{ message: Message; origin: string; source: MessageEventSource | null }> =
+    [];
+
+  /** IDs of `application.urlState` requests in flight, so their responses are redacted in logs too. */
+  private urlStateRequestIds = new Set<string>();
 
   private initialized = false;
   private source = 'sitecore-marketplace-sdk';
@@ -79,7 +85,7 @@ export class PostMessageBridge {
 
     this.config.target = target;
     this.listenerMode = false;
-    
+
     // Process any pending handshake init messages
     if (this.handshakeManager && this.handshakeManager.hasPendingInitMessage()) {
       this.handshakeManager.processPendingInitMessage((message) => {
@@ -87,17 +93,18 @@ export class PostMessageBridge {
         this.connected = true;
       });
     }
-    
-    // Process any buffered messages
+
+    // Process the buffered messages that came from the target, including its handshake. Messages
+    // from other windows, such as another iframe of the same app, are dropped.
     if (this.bufferedMessages.length > 0) {
       console.debug(`[${this.sdkType} PostMessageBridge] Processing ${this.bufferedMessages.length} buffered messages`);
-      
+
       // Create a copy of the buffer to iterate over as we'll be clearing it
       const messagesToProcess = [...this.bufferedMessages];
       this.bufferedMessages = [];
-      
-      // Process each buffered message
-      for (const { message, origin } of messagesToProcess) {
+
+      for (const { message, origin, source } of messagesToProcess) {
+        if (this.isFromOtherWindow(source)) continue;
         this.processMessage(message, origin);
       }
     }
@@ -212,16 +219,19 @@ export class PostMessageBridge {
       timestamp: Date.now(),
     };
 
+    if (action.split(':')[0] === URL_STATE_ACTION) this.urlStateRequestIds.add(id);
+
     // Log outbound request details.
     console.debug(
       `[${this.sdkType} PostMessageBridge] Outbound Request - Action: ${action}, Message:`,
-      message,
+      this.loggable(message),
     );
 
     return new Promise<R>((resolve, reject) => {
       const timeout = setTimeout(() => {
         if (this.pendingRequests.has(id)) {
           this.pendingRequests.delete(id);
+          this.urlStateRequestIds.delete(id);
           reject(
             this.formatError(
               CoreError.timeout(
@@ -275,6 +285,7 @@ export class PostMessageBridge {
     this.eventEmitter.clear();
     this.pendingRequests.forEach(({ timeout }) => clearTimeout(timeout));
     this.pendingRequests.clear();
+    this.urlStateRequestIds.clear();
     this.bufferedMessages = [];
     this.handshakeManager = null;
     this.initialized = false;
@@ -307,27 +318,43 @@ export class PostMessageBridge {
       return;
     }
     
-    // If we're in listener mode (no target yet), buffer the message for later processing
+    // If we're in listener mode (no target yet), buffer the message for later processing. A
+    // handshake is buffered too: until the target is known, it may come from another iframe.
     if (this.listenerMode || !this.config.target) {
-      if (message.type === 'handshake') {
-        // For handshake messages in listener mode, we can still handle them 
-        // but can't respond until we have a target
-        if (this.handshakeManager) {
-          this.handshakeManager.handleHandshakeMessage(
-            message as HandshakeMessage | HandshakeResponseMessage
-          );
-        }
-      }
-      
-      // Buffer the message for processing once we have a target
-      this.bufferedMessages.push({ message, origin: event.origin });
-      console.debug(`[${this.sdkType} PostMessageBridge] Buffering message in listener mode:`, message);
+      this.bufferedMessages.push({ message, origin: event.origin, source: event.source });
+      console.debug(
+        `[${this.sdkType} PostMessageBridge] Buffering message in listener mode:`,
+        this.loggable(message),
+      );
       return;
     }
-    
+
+    // Several iframes of one app share an origin, so the origin alone doesn't say which iframe
+    // sent the message.
+    if (this.isFromOtherWindow(event.source)) return;
+
     // Process the message normally if we have a target
     this.processMessage(message, event.origin);
   };
+
+  /**
+   * Whether a message came from a window other than the target. A message with no source window
+   * (dispatched in the same window) is accepted.
+   */
+  private isFromOtherWindow(source: MessageEventSource | null): boolean {
+    return source !== null && source !== undefined && source !== this.config.target;
+  }
+
+  /** The message as logged: `application.urlState` payloads and their responses are redacted. */
+  private loggable(message: Message): Message {
+    if (message.type === 'request' && message.action.split(':')[0] === URL_STATE_ACTION) {
+      return { ...message, payload: REDACTED };
+    }
+    if (message.type === 'response' && this.urlStateRequestIds.has(message.id)) {
+      return { ...message, data: REDACTED };
+    }
+    return message;
+  }
 
   private isValidOrigin(event: MessageEvent, message: Message): boolean {
     let isValidOrigin = false;
@@ -353,7 +380,7 @@ export class PostMessageBridge {
 
       console.debug(
         `[${this.sdkType} PostMessageBridge] Received message:`,
-        event.data,
+        this.loggable(message),
         `from origin: ${eventOriginUrl.origin}. Expected origin: ${expectedOriginUrl.origin}`,
       );
 
@@ -413,7 +440,7 @@ export class PostMessageBridge {
     console.debug(
       `[${this.sdkType} PostMessageBridge] Handling response for message ID: %s`,
       message.id,
-      message,
+      this.loggable(message),
     );
 
     const pending = this.pendingRequests.get(message.id);
@@ -422,6 +449,7 @@ export class PostMessageBridge {
     const { resolve, reject, timeout } = pending;
     clearTimeout(timeout);
     this.pendingRequests.delete(message.id);
+    this.urlStateRequestIds.delete(message.id);
 
     if (message.success) {
       resolve(message.data);
@@ -454,11 +482,20 @@ export class PostMessageBridge {
     console.debug(
       `[${this.sdkType} PostMessageBridge] Handling request for action: %s`,
       message.action,
-      message,
+      this.loggable(message),
     );
 
-    const fullKey = message.action.split(':');
-    const actionWithoutPostfix = fullKey[0];
+    if (message.action.split(':')[0] === URL_STATE_ACTION) this.urlStateRequestIds.add(message.id);
+    try {
+      await this.respond(message);
+    } finally {
+      this.urlStateRequestIds.delete(message.id);
+    }
+  }
+
+  /** Runs the request's handler and sends the response. */
+  private async respond(message: RequestMessage): Promise<void> {
+    const actionWithoutPostfix = message.action.split(':')[0];
     const handler = this.requestHandlers.get(message.action) ?? this.requestHandlers.get(actionWithoutPostfix);
     const catchAllHandler = this.requestHandlers.get('*');
     if (!handler && !catchAllHandler) {
@@ -497,15 +534,43 @@ export class PostMessageBridge {
         id: message.id,
         type: 'response',
         success: false,
-        error: {
-          code: ErrorCode.EXECUTION_ERROR,
-          message: err?.message || 'Error processing request',
-          details: err,
-        },
+        error: this.isCoreError(err)
+          ? {
+              code: err.code,
+              message: err.message || 'Error processing request',
+              details: this.publicDetails(err.details),
+            }
+          : {
+              // The error itself stays on this side: it can hold data the other window must not
+              // see, such as request headers, and it may not be cloneable.
+              code: ErrorCode.EXECUTION_ERROR,
+              message: err?.message || 'Error processing request',
+            },
         timestamp: Date.now(),
       };
       this.postMessage(response);
     }
+  }
+
+  /**
+   * Matches CoreErrors from any bundled copy of core, not only this module's class.
+   */
+  private isCoreError(err: unknown): err is CoreError {
+    if (err instanceof CoreError) return true;
+    const candidate = err as Partial<CoreError> | null;
+    return (
+      candidate?.name === 'CoreError' &&
+      Object.values(ErrorCode).includes(candidate.code as ErrorCode)
+    );
+  }
+
+  /**
+   * Only a string `details.reason` crosses to the other window. Other details can hold data it
+   * must not see, such as request headers.
+   */
+  private publicDetails(details: unknown): { reason: string } | undefined {
+    const reason = (details as { reason?: unknown } | null)?.reason;
+    return typeof reason === 'string' ? { reason } : undefined;
   }
 
   /**
@@ -523,7 +588,7 @@ export class PostMessageBridge {
     message.source = this.source;
     console.debug(
       `[${this.sdkType} PostMessageBridge] Sending message:`,
-      message,
+      this.loggable(message),
       `to targetOrigin: ${this.config.targetOrigin}`,
     );
 

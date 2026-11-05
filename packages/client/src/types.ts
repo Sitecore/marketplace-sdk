@@ -105,3 +105,15 @@ export type ClientSDKInitConfig = {
 };
 
 export { UserInfo, ApplicationContext } from '@sitecore-marketplace-sdk/core';
+
+// Errors and URL state types, so apps can type their state and check `details.reason` without a
+// direct dependency on core.
+export { CoreError, ErrorCode, UrlStateErrorReason } from '@sitecore-marketplace-sdk/core';
+export type {
+  JsonObject,
+  JsonPrimitive,
+  JsonValue,
+  UrlStateGetResponse,
+  UrlStateSetPayload,
+  UrlStateSetResponse,
+} from '@sitecore-marketplace-sdk/core';

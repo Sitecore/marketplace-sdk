@@ -4,7 +4,10 @@ import {
   UserInfo,
   PagesContextParams,
   ContentLayoutUpdatedData,
-  ContentFieldsUpdatedData
+  ContentFieldsUpdatedData,
+  UrlStateGetResponse,
+  UrlStateSetPayload,
+  UrlStateSetResponse
 } from '@sitecore-marketplace-sdk/core';
 
 // Re-export event data types from core
@@ -295,6 +298,14 @@ export interface QueryMap {
     response: string;
     subscribe: false; // subscribe feature isn't working properly, setting subscribable to false
   };
+  /**
+   * Current URL state of this app instance, or `null`. Always asks the host for its latest value.
+   */
+  'application.urlState': {
+    params: void;
+    response: UrlStateGetResponse;
+    subscribe: false;
+  };
 }
 
 export interface MutationMap {
@@ -306,6 +317,15 @@ export interface MutationMap {
   'pages.context': {
     params: PagesContextParams;
     response: void;
+    subscribe: false;
+  };
+  /**
+   * Saves this app instance's state in the host URL. `state: null` clears it.
+   * Resolves once the host has stored the value.
+   */
+  'application.urlState': {
+    params: UrlStateSetPayload;
+    response: UrlStateSetResponse;
     subscribe: false;
   };
 }
