@@ -97,7 +97,7 @@ importers:
         version: 12.3.0(rollup@4.62.4)(tslib@2.8.1)(typescript@5.9.3)
       '@sitecore-marketplace-sdk/client':
         specifier: '*'
-        version: 0.4.0
+        version: 0.4.1
       '@types/node':
         specifier: '>=20.19.0'
         version: 26.2.0
@@ -246,7 +246,7 @@ importers:
         version: 12.3.0(rollup@4.62.4)(tslib@2.8.1)(typescript@5.9.3)
       '@sitecore-marketplace-sdk/client':
         specifier: ^0.4.0
-        version: 0.4.0
+        version: 0.4.1
       '@types/node':
         specifier: '>=20.19.0'
         version: 26.2.0
@@ -982,8 +982,8 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@sitecore-marketplace-sdk/client@0.4.0':
-    resolution: {integrity: sha512-UmC8i20tVRz5IQbkZ/vRdMppBFKTSFbphRt8NULZEoz/pyyKQUbEfdHNyEP9L90EoEqI6b2RRYslVZiSa42wow==}
+  '@sitecore-marketplace-sdk/client@0.4.1':
+    resolution: {integrity: sha512-bqpSaYaQNAPQNqjYp437xGGmiyphUa5/PiaVrJycDNtABK2OFRlF/glqkIWXy38EoaN5rDrPE6WfHQ+C+2lZfg==}
     engines: {node: '>=16'}
 
   '@sitecore-marketplace-sdk/core@0.3.5':
@@ -2650,11 +2650,10 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@sitecore-marketplace-sdk/client@0.4.0':
+  '@sitecore-marketplace-sdk/client@0.4.1':
     dependencies:
       '@sitecore-marketplace-sdk/core': 0.3.5
       tslib: 2.8.1
-      uuid: 11.1.1
 
   '@sitecore-marketplace-sdk/core@0.3.5':
     dependencies:
