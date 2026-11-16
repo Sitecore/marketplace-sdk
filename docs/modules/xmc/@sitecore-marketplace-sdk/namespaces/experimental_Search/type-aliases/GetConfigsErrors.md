@@ -8,7 +8,7 @@
 
 > **GetConfigsErrors** = `object`
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:68](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L68)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:196](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L196)
 
 ## Properties
 
@@ -16,9 +16,9 @@ Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:68](https:
 
 > **400**: [`ErrorResponse`](ErrorResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:72](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L72)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:200](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L200)
 
-Auth error
+Bad request
 
 ***
 
@@ -26,6 +26,6 @@ Auth error
 
 > **500**: [`ErrorResponse`](ErrorResponse.md)
 
-Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:76](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L76)
+Defined in: [packages/xmc/src/experimental/client-search/types.gen.ts:204](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/experimental/client-search/types.gen.ts#L204)
 
-Internal Server Error
+Internal server error
