@@ -2,14 +2,8 @@
 '@sitecore-marketplace-sdk/xmc': minor
 ---
 
-Update the Search Config API (`xmc.search`) schema.
+Fix the Search Config API (`xmc.search`) schema to match the Origin API response. The previously onboarded schema was incomplete and inaccurate.
 
-Added to `Config`: `connections`, `deletedAt`, `deletedBy`, `hasDraft`, `locales`, `publishedAt`, `publishedBy`, `schedule`, `sourceType`, `status`, `suggestion`, and `versionNumber`. `searchSettings` gains `semanticRanking`. New sub-schemas introduced: `Connection`, `Schedule`, `SitemapSettings`, `SitecrawlSettings`, `SuggestionSettings`, `SuggestionModeSettings`, `SemanticRankingSearchSetting`, `CrawlRule`, `FieldExtraction`, `ExtractionPattern`, `Site`, and `ExtractionSource`.
+`Config` now includes `connections`, `deletedAt`, `deletedBy`, `hasDraft`, `locales`, `publishedAt`, `publishedBy`, `schedule`, `sourceType`, `status`, `suggestion`, and `versionNumber`; `searchSettings` includes `semanticRanking`; and the related sub-schemas (`Connection`, `Schedule`, `SitemapSettings`, `SitecrawlSettings`, `SuggestionSettings`, `SuggestionModeSettings`, `SemanticRankingSearchSetting`, `CrawlRule`, `FieldExtraction`, `ExtractionPattern`, `Site`, `ExtractionSource`) are now typed.
 
-Breaking:
-
-- Removed `Config.contentType`, `Config.contentTypes`, and `Config.templateIds` (replaced by `sourceType` / `templateId`).
-- `Config` now requires `createdAt`, `description`, `fields`, `id`, `name`, `searchClientKey`, `tenantId`, and `updatedAt` (previously optional).
-- `Field` now requires `displayName`, `facet`, `filter`, `key`, `name`, `retrieve`, `search`, `sort`, and `type` (previously optional).
-- `SearchFeature.enabled` is now required.
-- `ErrorResponse.internal` and `ErrorResponse.message` changed from `{ [key: string]: unknown }` to `unknown`.
+The stale `Config.contentType`, `Config.contentTypes`, and `Config.templateIds` fields are removed (replaced by `sourceType` / `templateId`). `Config` and `Field` now correctly mark their required properties, and `ErrorResponse.internal` / `ErrorResponse.message` are typed as `unknown`.
