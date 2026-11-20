@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "",
   "type": "module",
-  "main": "./dist/index.cjs.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
   "types": "./dist/ai/src/index.d.ts",
   "files": [
@@ -58,7 +58,7 @@
     ".": {
       "types": "./dist/ai/src/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/index.cjs"
     }
   }
 }
