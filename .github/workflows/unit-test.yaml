@@ -30,6 +30,10 @@ jobs:
           sudo apt-get install -y bc
       - name: Build
         run: pnpm build
+      - name: Import built packages
+        run: node scripts/check-package-entries.mjs
+      - name: Require built packages
+        run: node scripts/check-package-entries.cjs
       - name: Run unit tests
         run: pnpm coverage
       - name: Run generator plugin tests
