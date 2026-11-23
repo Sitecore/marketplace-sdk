@@ -1,5 +1,13 @@
 # @sitecore-marketplace-sdk/client
 
+## 0.5.1
+
+### Patch Changes
+
+- a20f5a5: Publish the CommonJS build as `dist/index.cjs` so `require()` loads it when the package is marked as an ES module. The client depends on the workspace core, so the release uses that fixed build.
+- Updated dependencies [a20f5a5]
+  - @sitecore-marketplace-sdk/core@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes
