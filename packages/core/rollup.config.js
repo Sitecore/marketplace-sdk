@@ -5,7 +5,7 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.cjs.js', // CommonJS output
+      file: 'dist/index.cjs', // CommonJS output
       format: 'cjs',
       sourcemap: true,
       exports: 'named',
