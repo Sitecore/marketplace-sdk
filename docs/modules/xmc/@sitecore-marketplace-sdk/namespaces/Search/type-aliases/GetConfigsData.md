@@ -8,41 +8,41 @@
 
 > **GetConfigsData** = `object`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:53](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L53)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:181](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L181)
 
 ## Properties
 
 ### body?
 
-> `optional` **body**: `never`
+> `optional` **body?**: `never`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:54](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L54)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:182](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L182)
 
 ***
 
 ### path?
 
-> `optional` **path**: `never`
+> `optional` **path?**: `never`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:55](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L55)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:183](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L183)
 
 ***
 
 ### query?
 
-> `optional` **query**: `object`
+> `optional` **query?**: `object`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:56](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L56)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:184](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L184)
 
 ##### context.\*?
 
-> `optional` **context.\***: `string`
+> `optional` **context.\*?**: `string`
 
 Context filters
 
 #### sitecoreContextId?
 
-> `optional` **sitecoreContextId**: `string`
+> `optional` **sitecoreContextId?**: `string`
 
 The Sitecore context ID.
 
@@ -52,4 +52,4 @@ The Sitecore context ID.
 
 > **url**: `"/v1/config"`
 
-Defined in: [packages/xmc/src/client-search/types.gen.ts:66](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L66)
+Defined in: [packages/xmc/src/client-search/types.gen.ts:194](https://github.com/Sitecore/marketplace-sdk/blob/main/packages/xmc/src/client-search/types.gen.ts#L194)
