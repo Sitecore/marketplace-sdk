@@ -283,3 +283,23 @@ export interface ContentLayoutUpdatedData extends BaseContentUpdatedData {
 export interface ContentFieldsUpdatedData extends BaseContentUpdatedData {
   fields: Field[];
 }
+
+/**
+ * The rendering selected in the Pages canvas.
+ */
+export interface CanvasSelection {
+  /** Rendering instance id, as in `presentationDetails`. */
+  instanceId: string;
+  renderingId: string;
+  /** Resolved datasource item id, not a path. */
+  dataSourceId: string | null;
+  placeholderKey: string;
+}
+
+/**
+ * Payload of the `pages.canvas.selectionChanged` event.
+ */
+export interface CanvasSelectionData extends BaseContentUpdatedData {
+  /** `null` when nothing is selected. */
+  selection: CanvasSelection | null;
+}
