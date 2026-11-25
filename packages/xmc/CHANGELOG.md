@@ -1,5 +1,21 @@
 # @sitecore-marketplace-sdk/xmc
 
+## 0.6.0
+
+### Minor Changes
+
+- 0090b48: Fix the Search Config API (`xmc.search`) schema to match the Origin API response. The previously onboarded schema was incomplete and inaccurate.
+
+  `Config` now includes `connections`, `deletedAt`, `deletedBy`, `hasDraft`, `locales`, `publishedAt`, `publishedBy`, `schedule`, `sourceType`, `status`, `suggestion`, and `versionNumber`; `searchSettings` includes `semanticRanking`; and the related sub-schemas (`Connection`, `Schedule`, `SitemapSettings`, `SitecrawlSettings`, `SuggestionSettings`, `SuggestionModeSettings`, `SemanticRankingSearchSetting`, `CrawlRule`, `FieldExtraction`, `ExtractionPattern`, `Site`, `ExtractionSource`) are now typed.
+
+  The stale `Config.contentType`, `Config.contentTypes`, and `Config.templateIds` fields are removed (replaced by `sourceType` / `templateId`). `Config` and `Field` now correctly mark their required properties, and `ErrorResponse.internal` / `ErrorResponse.message` are typed as `unknown`.
+
+### Patch Changes
+
+- a20f5a5: Publish the CommonJS build as `dist/index.cjs` so `require()` loads it when the package is marked as an ES module. The client depends on the workspace core, so the release uses that fixed build.
+- Updated dependencies [a20f5a5]
+  - @sitecore-marketplace-sdk/client@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes
