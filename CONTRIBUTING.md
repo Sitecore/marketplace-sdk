@@ -37,6 +37,14 @@ Thank you for your interest in contributing! We welcome contributions from the c
 - Use the issue tracker to report bugs or request features.
 - Provide as much detail as possible.
 
+## AI-assisted development
+
+- Cursor users should follow the repo guidance under `.cursor/rules/`.
+- GitHub Copilot users should use `.github/copilot-instructions.md` for project-wide guidance.
+- General-purpose LLM tools can use `llms.txt` for a concise overview of the repo and its main source-of-truth files.
+- AI-generated contributions should still follow the same review standards, tests, and changeset requirements as any other contribution.
+- All contributors, with or without AI tools, must follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
+
 ## Code of Conduct
 
 - Be respectful and inclusive.
